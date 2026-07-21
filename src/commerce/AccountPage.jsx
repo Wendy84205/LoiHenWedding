@@ -3,8 +3,8 @@ import {
   ArrowRight, BarChart2, CalendarDays, ChevronRight,
   ExternalLink, FileImage, Gift, Globe, Headphones, Heart,
   Layout, Link2, LogOut, Mail, MessageSquare, PenLine, Play, RefreshCw,
-  Rocket, Star, User, Users, X, Smile, Zap,
-  Camera, Eye, Image
+  Rocket, Star, User, Users, X, Smile, Zap, Check,
+  Camera, Eye, Image, CreditCard, Sparkles, ShieldCheck, QrCode
 } from 'lucide-react';
 import { StudioHeader, StudioFooter } from '../studio/StudioChrome.jsx';
 import {
@@ -45,7 +45,7 @@ function AccountLogin({ onSession }) {
     try {
       const result = await signInCustomer(email);
       if (commerceDemoMode) onSession(result);
-      else setState({ busy: '', sent: true, error: '' });
+      else setState({ busy: '', sent: false, error: 'Đã gửi link đăng nhập. Vui lòng kiểm tra hộp thư của bạn.' });
     } catch (error) {
       setState({ busy: '', sent: false, error: error.message });
     }
@@ -63,7 +63,6 @@ function AccountLogin({ onSession }) {
 
   return (
     <div className="accountPage premium-login-theme">
-      {/* Decorative Grid Pattern behind login */}
       <div className="login-grid-pattern"></div>
       <div className="login-glow-orb-1"></div>
       <div className="login-glow-orb-2"></div>
@@ -130,8 +129,11 @@ function AccountLogin({ onSession }) {
             )}
           </button>
 
-          {state.sent && <p className="accountSuccess" role="status">✓ Đã gửi link đăng nhập. Hãy kiểm tra hộp thư của bạn.</p>}
-          {state.error && <p className="commerceError" role="alert">✕ {state.error}</p>}
+          {state.error && (
+            <p className={state.error.startsWith('Đã gửi') ? 'accountSuccess' : 'commerceError'} role="alert">
+              {state.error}
+            </p>
+          )}
           {!commerceConfigured && commerceDemoMode && <small className="login-demo-helper">Chế độ demo lưu dữ liệu trong trình duyệt hiện tại.</small>}
         </form>
       </main>
@@ -148,7 +150,7 @@ function SparklesIcon() {
   );
 }
 
-/* ── Sidebar ────────────────────────────────────────────────── */
+/* ── Unified Fixed Dashboard Sidebar ─────────────────────────── */
 function DashSidebar({ activeTab, onTab, onSignOut }) {
   const navSections = [
     {
@@ -183,7 +185,7 @@ function DashSidebar({ activeTab, onTab, onSignOut }) {
     {
       section: 'HỖ TRỢ',
       items: [
-        { id: 'feedback', icon: MessageSquare, label: 'Đóng góp ý kiến' },
+        { id: 'feedback', icon: Headphones, label: 'Đóng góp ý kiến' },
       ],
     },
   ];
@@ -192,7 +194,7 @@ function DashSidebar({ activeTab, onTab, onSignOut }) {
     <aside className="dash-sidebar">
       <a href="/" className="dash-sidebar-brand">
         <div className="dash-sidebar-brand-icon">LH</div>
-        <span>Lời Hẹn</span>
+        <span>Lời Hẹn <em>Studio</em></span>
       </a>
 
       <nav className="dash-sidebar-nav">
@@ -238,7 +240,7 @@ function OverviewTab({ account, metrics, onTab }) {
     { icon: <Rocket size={20} />, label: 'Gói dịch vụ', color: 'blue-violet', onClick: () => onTab('plan') },
     { icon: <Headphones size={20} />, label: 'Hỗ trợ', color: 'blue', onClick: () => onTab('feedback') },
     { icon: <MessageSquare size={20} />, label: 'Đóng góp ý kiến', color: 'green', onClick: () => onTab('feedback') },
-    { icon: <Play size={20} />, label: 'Hướng dẫn', color: 'red-pink', onClick: () => {} },
+    { icon: <Play size={20} />, label: 'Hướng dẫn', color: 'red-pink', onClick: () => onTab('create') },
     { icon: <User size={20} />, label: 'Tài khoản', color: 'indigo', onClick: () => onTab('profile') },
   ];
 
@@ -390,6 +392,100 @@ function OverviewTab({ account, metrics, onTab }) {
   );
 }
 
+/* ── Full Dashboard Plan/Packages Tab ────────────────────────── */
+function PlanTab({ onTab }) {
+  const packages = [
+    {
+      code: 'FREE',
+      name: 'Gói Miễn Phí',
+      price: '0đ',
+      desc: 'Trải nghiệm tạo thiệp mời cơ bản trọn đời',
+      badge: 'Miễn phí',
+      color: 'gray',
+      features: [
+        '1 Website thiệp mời',
+        'Tối đa 10 hình ảnh',
+        '300 Lượt xem thiệp',
+        'Mẫu thiết kế Free cơ bản',
+        'Hỗ trợ qua email'
+      ]
+    },
+    {
+      code: 'BASIC',
+      name: 'Gói Basic',
+      price: '99.000đ',
+      desc: 'Cho đám cưới ấm cúng với đầy đủ tính năng',
+      badge: 'Phổ biến',
+      color: 'pink',
+      popular: true,
+      features: [
+        '1 Website thiệp mời cao cấp',
+        'Tối đa 30 hình ảnh HD',
+        '1.000 Lượt xem thiệp',
+        'Mở khóa kho mẫu Basic',
+        'Nhạc nền tùy chọn',
+        'Hệ thống RSVP xác nhận tham dự',
+        'Sổ lưu bút nhận lời chúc'
+      ]
+    },
+    {
+      code: 'PREMIUM',
+      name: 'Gói Premium',
+      price: '199.000đ',
+      desc: 'Đầy đủ hiệu ứng, nhạc nền & không giới hạn lượt xem',
+      badge: 'Khuyên dùng',
+      color: 'purple',
+      features: [
+        'Không giới hạn lượt xem thiệp',
+        'Không giới hạn tải hình ảnh HD',
+        'Tất cả mẫu Premium đặc biệt',
+        'Album ảnh cưới Cappy.me',
+        'Mã QR mừng cưới tiện lợi',
+        'Xuất dữ liệu RSVP sang Excel',
+        'Hỗ trợ ưu tiên 24/7'
+      ]
+    }
+  ];
+
+  return (
+    <div className="dash-plan-tab">
+      <div className="dash-tab-header">
+        <h2>Gói dịch vụ của bạn</h2>
+        <p>Lựa chọn gói dịch vụ phù hợp với nhu cầu ngày cưới của hai bạn</p>
+      </div>
+
+      <div className="dash-plan-grid">
+        {packages.map(p => (
+          <div key={p.code} className={`dash-plan-card ${p.popular ? 'popular' : ''}`}>
+            {p.popular && <span className="dash-plan-badge-top">BÁN CHẠY NHẤT</span>}
+            <div className="dash-plan-card-header">
+              <h3>{p.name}</h3>
+              <p className="dash-plan-desc">{p.desc}</p>
+              <div className="dash-plan-price">
+                <span className="amount">{p.price}</span>
+                <span className="unit">/ thiệp</span>
+              </div>
+            </div>
+
+            <ul className="dash-plan-features">
+              {p.features.map(f => (
+                <li key={f}>
+                  <Check size={16} className="text-pink" />
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
+
+            <button type="button" className={`dash-plan-btn ${p.popular ? 'primary' : 'secondary'}`} onClick={() => onTab('create')}>
+              {p.code === 'FREE' ? 'Đang sử dụng' : 'Nâng cấp ngay'}
+            </button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 /* ── Create / Catalog Tab ────────────────────────────────────── */
 function CreateTab() {
   const premiumSlugs = new Set(['thiep-cuoi-61', 'thiep-cuoi-39', 'thiep-cuoi-44', 'thiep-cuoi-47', 'thiep-cuoi-42']);
@@ -433,6 +529,26 @@ function CreateTab() {
   );
 }
 
+/* ── Websites Tab ────────────────────────────────────────────── */
+function WebsitesTab({ onTab }) {
+  return (
+    <div className="dash-websites-tab">
+      <div className="dash-tab-header">
+        <h2>Website sự kiện khác</h2>
+        <p>Quản lý các trang website sự kiện phụ hoặc thiệp mời kỷ niệm</p>
+      </div>
+      <div className="dash-empty-card">
+        <div className="dash-empty-icon"><Globe size={32} /></div>
+        <h3>Chưa có website sự kiện phụ nào</h3>
+        <p>Tạo thêm trang website thông báo lễ dạm ngõ, ăn hỏi hoặc tiệc báo hỷ.</p>
+        <button type="button" className="dash-cta-btn" onClick={() => onTab('create')}>
+          <PenLine size={15} /> Tạo thiết kế mới
+        </button>
+      </div>
+    </div>
+  );
+}
+
 /* ── Wishes / Guestbook Tab ──────────────────────────────────── */
 function WishesTab() {
   const mockWishes = [
@@ -456,6 +572,34 @@ function WishesTab() {
             <p>{wish.message}</p>
           </div>
         ))}
+      </div>
+    </div>
+  );
+}
+
+/* ── Gifts / Registry Tab ────────────────────────────────────── */
+function GiftsTab() {
+  return (
+    <div className="dash-gifts-tab">
+      <div className="dash-tab-header">
+        <h2>Quản lý Quà tặng & Mã QR Mừng Cưới</h2>
+        <p>Thiết lập tài khoản nhận mừng cưới và hộp mừng đám cưới online</p>
+      </div>
+
+      <div className="dash-gifts-grid">
+        <div className="dash-gift-box-card">
+          <div className="dash-gift-icon-wrapper"><QrCode size={24} /></div>
+          <h3>Mã QR Ngân Hàng Mừng Cưới</h3>
+          <p>Tự động tạo mã QR VietQR nhận tiền mừng cưới trực tiếp về tài khoản chú rể / cô dâu.</p>
+          <button type="button" className="dash-btn-outline">Thiết lập tài khoản →</button>
+        </div>
+
+        <div className="dash-gift-box-card">
+          <div className="dash-gift-icon-wrapper"><Gift size={24} /></div>
+          <h3>Danh sách Quà ước nguyện (Registry)</h3>
+          <p>Tạo danh sách các món quà kỷ niệm mong muốn để bạn bè dễ dàng lựa chọn tặng.</p>
+          <button type="button" className="dash-btn-outline">Thêm quà ước nguyện →</button>
+        </div>
       </div>
     </div>
   );
@@ -533,13 +677,16 @@ function FeedbackTab() {
 }
 
 /* ── Invitations Tab ─────────────────────────────────────────── */
-function InvitationsTab({ orders }) {
+function InvitationsTab({ orders, onTab }) {
   if (!orders.length) {
     return (
-      <div className="dash-empty">
-        <Mail size={36} />
+      <div className="dash-empty-card">
+        <div className="dash-empty-icon"><Mail size={32} /></div>
         <h3>Chưa có thiệp nào</h3>
         <p>Tạo đơn mới để bắt đầu thiết kế thiệp cưới của bạn</p>
+        <button type="button" className="dash-cta-btn" onClick={() => onTab('create')}>
+          <PenLine size={15} /> Tạo thiết kế ngay
+        </button>
       </div>
     );
   }
@@ -656,7 +803,6 @@ export default function AccountPage() {
   const [loading, setLoading] = useState(true);
 
   const load = useCallback(async () => {
-    // Auto-set demo session when ?demo=true is in URL (for preview only)
     if (new URLSearchParams(window.location.search).get('demo') === 'true') {
       const demoSession = { demo: true, user: { id: 'demo-customer', email: 'demo@loihen.local' } };
       localStorage.setItem('loi-hen-demo-customer-session', JSON.stringify(demoSession));
@@ -708,6 +854,7 @@ export default function AccountPage() {
 
   return (
     <div className="dash-layout">
+      {/* 100% Fixed Sidebar across all tabs */}
       <DashSidebar activeTab={activeTab} onTab={setActiveTab} onSignOut={signOut} />
 
       <main className="dash-main">
@@ -737,7 +884,7 @@ export default function AccountPage() {
           </div>
         </header>
 
-        {/* Content */}
+        {/* Content Area */}
         <div className="dash-content">
           {commerceDemoMode && (
             <div className="dash-demo-banner">
@@ -746,33 +893,12 @@ export default function AccountPage() {
           )}
 
           {activeTab === 'overview' && <OverviewTab account={account} metrics={metrics} onTab={setActiveTab} />}
-          {activeTab === 'plan' && (
-            <div className="dash-empty">
-              <Rocket size={36} />
-              <h3>Gói dịch vụ của bạn</h3>
-              <p>Nâng cấp để mở khóa thêm tính năng và thiệp premium</p>
-              <a href="/dich-vu/thiep-cuoi-online" className="dash-cta-btn">
-                Xem các gói <ArrowRight size={15} />
-              </a>
-            </div>
-          )}
+          {activeTab === 'plan' && <PlanTab onTab={setActiveTab} />}
           {activeTab === 'create' && <CreateTab />}
-          {activeTab === 'invitations' && <InvitationsTab orders={orders} />}
-          {activeTab === 'websites' && (
-            <div className="dash-empty">
-              <Globe size={36} />
-              <h3>Website khác</h3>
-              <p>Bạn chưa tạo trang website phụ nào khác ngoài thiệp online.</p>
-            </div>
-          )}
+          {activeTab === 'invitations' && <InvitationsTab orders={orders} onTab={setActiveTab} />}
+          {activeTab === 'websites' && <WebsitesTab onTab={setActiveTab} />}
           {activeTab === 'wishes' && <WishesTab />}
-          {activeTab === 'gifts' && (
-            <div className="dash-empty">
-              <Gift size={36} />
-              <h3>Album Quà tặng & Kỷ niệm</h3>
-              <p>Tính năng tải lên quà tặng hoặc quản lý mừng cưới đang được cấu hình.</p>
-            </div>
-          )}
+          {activeTab === 'gifts' && <GiftsTab />}
           {activeTab === 'rsvp' && <RsvpTab />}
           {activeTab === 'profile' && <ProfileTab account={account} onSignOut={signOut} />}
           {activeTab === 'feedback' && <FeedbackTab />}

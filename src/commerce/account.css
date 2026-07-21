@@ -1606,3 +1606,257 @@ body:has(.dash-layout) {
   padding: 0 24px;
 }
 
+/* ─── Plan & Packages Tab ───────────────────────────────────── */
+.dash-plan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.dash-plan-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid var(--dash-line);
+  border-radius: var(--dash-radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.dash-plan-card:hover {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+.dash-plan-card.popular {
+  border-color: var(--dash-pink);
+  box-shadow: 0 10px 30px -5px rgba(232, 93, 122, 0.12);
+}
+
+.dash-plan-badge-top {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: linear-gradient(135deg, var(--dash-pink), #c84b8c);
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 99px;
+}
+
+.dash-plan-card-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: var(--dash-ink);
+}
+
+.dash-plan-desc {
+  font-size: 0.84rem;
+  color: var(--dash-muted);
+  margin: 0 0 16px;
+  min-height: 38px;
+}
+
+.dash-plan-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--dash-line);
+}
+
+.dash-plan-price .amount {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--dash-ink);
+}
+
+.dash-plan-price .unit {
+  font-size: 0.82rem;
+  color: var(--dash-muted);
+}
+
+.dash-plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  flex: 1;
+  display: grid;
+  gap: 12px;
+}
+
+.dash-plan-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.86rem;
+  color: #334155;
+}
+
+.text-pink {
+  color: var(--dash-pink);
+  flex-shrink: 0;
+}
+
+.dash-plan-btn {
+  height: 44px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  width: 100%;
+}
+
+.dash-plan-btn.primary {
+  border: none;
+  background: linear-gradient(135deg, var(--dash-pink), #c84b8c);
+  color: #ffffff;
+}
+
+.dash-plan-btn.primary:hover {
+  opacity: 0.95;
+  box-shadow: 0 4px 12px rgba(232, 93, 122, 0.25);
+}
+
+.dash-plan-btn.secondary {
+  border: 1px solid var(--dash-line);
+  background: #ffffff;
+  color: var(--dash-ink);
+}
+
+.dash-plan-btn.secondary:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+/* ─── Empty Card & Gifts Grid ────────────────────────────────── */
+.dash-empty-card {
+  background: #ffffff;
+  border: 1px dashed var(--dash-line);
+  border-radius: var(--dash-radius);
+  padding: 48px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.dash-empty-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: var(--dash-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.dash-empty-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--dash-ink);
+}
+
+.dash-empty-card p {
+  font-size: 0.86rem;
+  color: var(--dash-muted);
+  margin: 0 0 8px;
+  max-width: 400px;
+}
+
+.dash-cta-btn {
+  height: 42px;
+  padding: 0 20px;
+  border-radius: 10px;
+  border: none;
+  background: var(--dash-pink);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.86rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.dash-cta-btn:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.dash-gifts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.dash-gift-box-card {
+  background: #ffffff;
+  border: 1px solid var(--dash-line);
+  border-radius: var(--dash-radius);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.dash-gift-icon-wrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(232, 93, 122, 0.08);
+  color: var(--dash-pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dash-gift-box-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--dash-ink);
+}
+
+.dash-gift-box-card p {
+  font-size: 0.84rem;
+  color: var(--dash-muted);
+  margin: 0;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.dash-btn-outline {
+  height: 38px;
+  padding: 0 16px;
+  border: 1px solid var(--dash-line);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--dash-ink);
+  font-weight: 600;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.dash-btn-outline:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+
