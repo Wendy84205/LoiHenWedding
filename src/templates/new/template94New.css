@@ -1,0 +1,69 @@
+html.template94new-page, body.template94new-page { background: #d7d7d7; }
+.t94n { width: min(500px, 100vw); margin: auto; overflow: hidden; color: #171414; background: #fff; font-family: "Miller Banner", Georgia, serif; box-shadow: 0 20px 70px rgba(0, 0, 0, .2); }
+.t94n-music { background: #111; }
+.t94n-hero { height: 900px; position: relative; }
+.t94n-hero > img { height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.06); }
+.t94n-title { position: absolute; right: 0; bottom: 0; left: 0; padding: 38px 25px; color: #fff; background: linear-gradient(transparent, rgba(0, 0, 0, .84)); text-align: center; }
+.t94n-title span { display: block; font-size: 58px; line-height: 1; letter-spacing: .05em; }
+.t94n-title small { display: block; margin-top: 12px; font-size: 19px; }
+.t94n-title h1 { margin: 28px 0 8px; font-size: 29px; font-weight: 400; letter-spacing: .04em; }
+.t94n-title i { font-family: Georgia, serif; }
+.t94n-title p { font: 600 10px/1 "Beezle", sans-serif; letter-spacing: .18em; }
+.t94n-manifesto { display: grid; justify-items: center; gap: 22px; padding: 85px 38px; text-align: center; }
+.t94n-manifesto > svg { width: 34px; height: 34px; }
+.t94n-manifesto h2 { margin: 0; font-size: 32px; font-weight: 400; line-height: 1.45; }
+.t94n-manifesto p { font-size: 18px; line-height: 1.75; }
+.t94n-editorial { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; padding: 65px 15px; background: #ebe9e5; }
+.t94n-editorial img { height: 470px; object-fit: cover; filter: grayscale(1); opacity: .72; }
+.t94n-editorial img:last-child { grid-column: 2; grid-row: 2; margin-top: -75px; }
+.t94n-editorial > div { position: relative; z-index: 2; margin-left: -50px; padding: 28px 22px; background: rgba(255, 255, 255, .94); }
+.t94n-editorial small { font: 600 10px/1 "Beezle", sans-serif; letter-spacing: .22em; }
+.t94n-editorial h2 { margin: 10px 0; font-size: 27px; font-weight: 400; }
+.t94n-editorial p { line-height: 1.6; }
+.t94n-chapel { position: relative; padding: 85px 0 70px; text-align: center; }
+.t94n-chapel > p { max-width: 390px; margin: 0 auto 42px; padding: 0 25px; color: #727272; font-size: 18px; line-height: 1.75; }
+.t94n-chapel > div { display: grid; grid-template-columns: .9fr 1.1fr; align-items: start; gap: 10px; }
+.t94n-chapel > div img { height: 420px; object-fit: cover; opacity: .64; }
+.t94n-chapel > div img:nth-child(2) { height: 610px; }
+.t94n-chapel > div img:nth-child(3) { width: 74%; height: 250px; margin-top: -190px; border: 10px solid #fff; }
+.t94n-chapel > h2 { position: absolute; top: 275px; right: 15px; margin: 0; color: #805854; font: 400 38px/1 "Sunshine", cursive; }
+.t94n-weddingWords { display: grid; gap: 35px; padding: 70px 25px; text-align: center; }
+.t94n-weddingWords > img { height: 580px; object-fit: cover; opacity: .7; }
+.t94n-weddingWords > div:nth-of-type(1) small { color: #7f5b58; font: 400 42px/1 "Sunshine", cursive; }
+.t94n-weddingWords > div:nth-of-type(1) p { max-width: 340px; margin: 22px auto 0; color: #666; font-size: 18px; line-height: 1.65; }
+.t94n-weddingWords > div:last-child { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.t94n-weddingWords > div:last-child img { height: 430px; object-fit: cover; opacity: .7; }
+.t94n-events { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #111; }
+.t94n-events > div { padding: 55px 18px; background: #f7f7f5; text-align: center; }
+.t94n-events small { font: 600 10px/1 "Beezle", sans-serif; letter-spacing: .2em; }
+.t94n-events h2 { font-size: 24px; font-weight: 400; }
+.t94n-events > .ni-map { grid-column: 1 / -1; padding: 15px; color: #fff; background: #111; }
+.t94n-address { display: grid; gap: 34px; padding: 80px 28px; text-align: center; }
+.t94n-address > h2 { margin: 0; color: #6f514e; font-size: 39px; font-weight: 400; }
+.t94n-address > h2 small { display: block; font-size: 16px; }
+.t94n-address h3 { margin: 0 0 12px; font-size: 20px; font-weight: 400; }
+.t94n-address iframe { width: 100%; height: 245px; border: 0; filter: saturate(.7) opacity(.78); }
+.t94n-day { display: grid; gap: 35px; padding: 75px 28px; }
+.t94n .ni-calendar { padding: 25px 14px; border-top: 2px solid #111; border-bottom: 2px solid #111; text-align: center; }
+.t94n .ni-calendar h3 { font-size: 27px; font-weight: 400; }
+.t94n .ni-weekdays { margin: 22px 0 9px; font: 600 10px/1 "Beezle", sans-serif; }
+.t94n .ni-days > span { height: 42px; }
+.t94n .ni-days svg { width: 35px; color: #111; }
+.t94n-count > span { height: 72px; border-right: 1px solid #111; }
+.t94n-count > span:last-child { border: 0; }
+.t94n-end { display: grid; justify-items: center; gap: 35px; padding: 48px 22px 42px; color: #111; text-align: center; }
+.t94n-end > p { max-width: 390px; margin: 0; font-size: 18px; line-height: 1.75; }
+.t94n-finalPhoto { width: calc(100% + 44px); height: 520px; object-fit: cover; opacity: .78; }
+.t94n-end h2 { display: flex; align-items: center; gap: 8px; margin: 0; font: 400 48px/1 "Sunshine", cursive; }
+@media (max-width: 420px) {
+  .t94n-hero { height: 790px; }
+  .t94n-title span { font-size: 49px; }
+  .t94n-editorial img { height: 400px; }
+  .t94n-editorial > div { margin-left: -38px; }
+  .t94n-chapel > div img { height: 350px; }
+  .t94n-chapel > div img:nth-child(2) { height: 520px; }
+  .t94n-weddingWords, .t94n-address, .t94n-day { padding-right: 18px; padding-left: 18px; }
+  .t94n-weddingWords > img { height: 500px; }
+  .t94n-weddingWords > div:last-child img { height: 360px; }
+  .t94n-finalPhoto { height: 560px; }
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "file": "image-1.webp",
+    "source": "https://assets.cinelove.me/templates/assets/b7f24ba1-69cf-4920-a990-c4c322991e65/226a4ccc-0ef7-4983-8e83-1c097eef1b9d.png",
+    "width": 911,
+    "height": 1920
+  },
+  {
+    "file": "image-2.webp",
+    "source": "https://assets.cinelove.me/templates/assets/b7f24ba1-69cf-4920-a990-c4c322991e65/d2bf8244-9999-421a-9955-6a789709501c.jpg",
+    "width": 2000,
+    "height": 3000
+  },
+  {
+    "file": "image-3.webp",
+    "source": "https://img.cinelove.me/templates/assets/b7f24ba1-69cf-4920-a990-c4c322991e65/d57e1d9f-d57f-4a8b-b81e-606ec5c04ce4.jpg?crop=0,0,1998,2628",
+    "width": 1998,
+    "height": 2628
+  },
+  {
+    "file": "image-4.webp",
+    "source": "https://assets.cinelove.me/templates/assets/b7f24ba1-69cf-4920-a990-c4c322991e65/3a83df36-e228-4ffc-895c-749ac2804bc9.jpg",
+    "width": 2000,
+    "height": 3000
+  },
+  {
+    "file": "image-5.webp",
+    "source": "https://img.cinelove.me/templates/assets/b7f24ba1-69cf-4920-a990-c4c322991e65/2363836f-cbb8-49b4-8a20-1d8d6b203736.jpg?crop=0,1340,2000,1327",
+    "width": 1999,
+    "height": 1342
+  },
+  {
+    "file": "image-6.webp",
+    "source": "https://img.cinelove.me/templates/assets/b7f24ba1-69cf-4920-a990-c4c322991e65/2363836f-cbb8-49b4-8a20-1d8d6b203736.jpg?crop=0,0,1999,1342",
+    "width": 1999,
+    "height": 1342
+  },
+  {
+    "file": "image-7.webp",
+    "source": "https://img.cinelove.me/templates/assets/b7f24ba1-69cf-4920-a990-c4c322991e65/fb1e5d7b-12d5-4a73-a5b8-7a6aba1a9cf0.jpg?crop=0,307,2000,1831",
+    "width": 2000,
+    "height": 1831
+  }
+]

@@ -1,0 +1,146 @@
+@import url("./cineloveFonts.css");
+html.template48-page,body.template48-page{background:#e5e7e2}body.template48-page{padding-top:0;padding-bottom:0}.template48{width:min(500px,100vw);min-height:100vh;position:relative;overflow:hidden;isolation:isolate;color:#2f392b;background:#f7f5eb;box-shadow:0 20px 70px rgba(38,55,35,.2);font-family:"Cormorant Garamond",Georgia,serif}.template48 button,.template48 input,.template48 select{font:inherit}.t48-music{width:42px;height:42px;position:fixed;z-index:190;top:13px;right:max(12px,calc((100vw - 500px)/2 + 12px));display:grid;place-items:center;border:2px solid #fff;border-radius:50%;color:#fff;background:#294b32;box-shadow:0 7px 19px rgba(23,50,30,.25)}.t48-music.is-playing{animation:t48-spin 4s linear infinite}@keyframes t48-spin{to{transform:rotate(360deg)}}
+.t48-envelopeIntro{height:810px;position:relative;display:grid;align-content:start;justify-items:center;padding-top:3.4rem;overflow:hidden;background:#faf8ed}.t48-envelopeIntro:before,.t48-envelopeIntro:after{content:"";position:absolute;width:220px;height:310px;border:1px solid #96a96d;border-radius:50%;opacity:.42}.t48-envelopeIntro:before{left:-160px;top:80px;transform:rotate(-28deg)}.t48-envelopeIntro:after{right:-175px;bottom:10px;transform:rotate(32deg)}.t48-envelopeIntro h1{position:relative;z-index:2;margin:0;color:#4b6840;font:400 3.2rem/1 "Sacramento",cursive}.t48-stem{position:absolute;width:75px;height:180px;border-left:2px solid #799365;border-radius:50%;transform:rotate(22deg)}.t48-stem:before,.t48-stem:after{content:"";position:absolute;width:34px;height:16px;border:1px solid #8da47a;border-radius:50% 0 50% 0}.t48-stem:before{left:-28px;top:55px;transform:rotate(25deg)}.t48-stem:after{left:5px;top:95px;transform:rotate(-25deg)}.stem-one{left:25px;top:135px}.stem-two{right:22px;top:115px;transform:scaleX(-1) rotate(22deg)}
+.t48-envelope{width:350px;height:235px;position:relative;margin-top:180px;border:0;padding:0;background:transparent;perspective:900px;overflow:visible}.t48-envelopeBack{position:absolute;z-index:1;inset:0;border-radius:3px;background:#35573c;box-shadow:0 18px 35px rgba(31,55,36,.19)}.t48-envelopeCard{height:210px;position:absolute;z-index:2;left:18px;right:18px;top:12px;display:grid;align-content:end;justify-items:center;overflow:hidden;border-radius:3px;padding:1rem;color:#fff;background:#d6d2bc;transition:transform 1.05s cubic-bezier(.22,1,.36,1);box-shadow:0 10px 22px rgba(28,48,31,.2)}.t48-envelopeCard:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(17,37,22,.5))}.t48-envelopeCard img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover}.t48-envelopeCard b,.t48-envelopeCard small{position:relative;z-index:1}.t48-envelopeCard b{font:400 1.45rem/1 "Sacramento",cursive}.t48-envelopeCard small{margin-top:.35rem;font:500 .58rem/1 "Montserrat",sans-serif;letter-spacing:.13em}.t48-envelopeFlap{position:absolute;z-index:4;inset:0 0 auto;height:125px;clip-path:polygon(0 0,100% 0,50% 100%);background:#45664b;transform-origin:top;transition:transform .8s ease,z-index 0s .38s}.t48-envelopeFront{position:absolute;z-index:5;inset:0;clip-path:polygon(0 0,50% 51%,100% 0,100% 100%,0 100%);background:linear-gradient(146deg,#3e6145 0 49.7%,#2f5138 50% 100%)}.t48-seal{width:48px;height:48px;position:absolute;z-index:6;left:calc(50% - 24px);top:91px;display:grid;place-items:center;border-radius:50%;color:#ead8bd;background:#9b6849;box-shadow:inset 0 0 0 3px rgba(244,216,184,.23);font:500 .55rem/1 "Montserrat",sans-serif;transition:opacity .3s}.t48-envelope.is-open .t48-envelopeFlap{z-index:1;transform:rotateX(180deg)}.t48-envelope.is-open .t48-envelopeCard{z-index:3;transform:translateY(-173px)}.t48-envelope.is-open .t48-seal{opacity:0}.t48-envelopeIntro>p{position:relative;z-index:2;margin:2.4rem 0 0;color:#4f5f48;font:400 1.25rem/1 "Cormorant Garamond",serif}
+.t48-invitation{min-height:1500px;padding:0 1.5rem 4rem;background:#faf8ef}.t48-invitePhoto{height:340px;object-fit:cover}.t48-familyGrid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:2.7rem;text-align:center}.t48-familyGrid article+article{border-left:1px solid #819075}.t48-familyGrid h3{margin:0 0 .6rem;color:#48623f;font-size:1rem}.t48-familyGrid p{margin:0;font-size:.75rem;line-height:1.45}.t48-familyGrid small{display:block;margin-top:.4rem;color:#6f7569;font-size:.65rem}.t48-names{display:grid;gap:.6rem;margin:3.2rem 0 2rem;color:#4a663f;text-align:center;font:400 2rem/1 "Italiana",serif}.t48-names i{color:#b39965;font:400 1.8rem/1 "Sacramento",cursive}.t48-respect{margin:0;text-align:center;font-size:.85rem;line-height:1.75}.t48-respect b{display:inline-block;margin:.7rem 0;color:#bd8f8e;font:400 2.2rem/1 "Sacramento",cursive}.t48-eventDate{display:grid;justify-items:center;gap:1rem;margin:3rem 0;text-align:center}.t48-eventDate>b{font:500 .86rem/1 "Montserrat",sans-serif}.t48-eventDate>div{width:min(390px,100%);display:grid;grid-template-columns:1fr 90px 1fr;align-items:center;border-top:1px solid #708066;border-bottom:1px solid #708066}.t48-eventDate span{font:500 .7rem/1.25 "Montserrat",sans-serif}.t48-eventDate strong{padding:.75rem;border-right:1px solid #708066;border-left:1px solid #708066;font:400 3rem/1 "Italiana",serif}.t48-eventDate small{font-size:.73rem}.t48-venue{display:grid;justify-items:center;gap:.65rem;text-align:center}.t48-venue p{margin:0;font-size:.8rem}.t48-venue h2{margin:0;color:#455f3d;font:400 1.75rem/1 "Italiana",serif}.t48-venue span{max-width:340px;font-size:.73rem;line-height:1.45}.t48-venue a{min-height:42px;display:inline-flex;align-items:center;gap:.45rem;margin-top:.7rem;border-radius:999px;padding:0 1.2rem;color:#fff;background:#416249;font:500 .7rem/1 "Montserrat",sans-serif;text-decoration:none}
+.t48-landscape{height:760px;position:relative;overflow:hidden;background:#40513d}.t48-landscape img{height:100%;object-fit:cover}.t48-landscape:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(28,48,30,.52))}.t48-landscape>div{position:absolute;z-index:2;left:0;right:0;bottom:3.4rem;display:grid;color:#fff;text-align:center}.t48-landscape span{font:400 1.5rem/1 "Sacramento",cursive}.t48-landscape b{font:400 3.4rem/1 "Sacramento",cursive}
+.t48-profiles{min-height:1250px;padding:4.5rem 1.4rem;background:#faf8ef}.t48-profile{min-height:530px;position:relative}.t48-profileCard{width:62%;position:relative;z-index:1}.t48-profileCard img{height:390px;object-fit:cover}.t48-profileCard small{display:block;margin-top:.8rem;color:#7f8a73;font-size:.7rem}.t48-profileCard h2{margin:.25rem 0 0;color:#4b6840;font:400 2.5rem/1 "Sacramento",cursive}.t48-profileCut{width:56%;height:330px;position:absolute;z-index:2;right:0;bottom:8px;border:8px solid #faf8ef;object-fit:cover;transform:rotate(5deg)}.t48-bride{margin-top:3rem}.t48-bride .t48-profileCard{margin-left:auto;text-align:right}.t48-bride .t48-profileCut{right:auto;left:0;transform:rotate(-5deg)}
+.t48-story{min-height:940px;position:relative;padding:4rem 1.5rem;background:#f4f1e4}.t48-story h2{margin:0;color:#47613e;text-align:center;font:400 3.5rem/1 "Sacramento",cursive}.t48-story>p{max-width:390px;margin:2.5rem auto 3rem;text-align:center;font-size:.84rem;line-height:1.65}.t48-story>img{height:540px;object-fit:cover}.t48-story>span{position:absolute;right:1.7rem;bottom:3.5rem;color:#fff;font:400 2.4rem/1 "Sacramento",cursive}
+.t48-date{min-height:1250px;padding:4rem 1.4rem;background:#faf8ef}.t48-calendar{padding:1.5rem 1rem 2rem;color:#f5f1df;background:#35573c}.t48-calendar h2{margin:0 0 1.8rem;text-align:center;font:400 2.5rem/1 "Sacramento",cursive}.t48-calendar>div{display:grid;grid-template-columns:repeat(7,1fr);gap:.55rem 0}.t48-calendar span{min-height:38px;position:relative;display:grid;place-items:center;font:400 .65rem/1 "Montserrat",sans-serif}.t48-calendar svg{width:42px;height:37px;position:absolute;color:#d74e5f}.t48-calendar i{position:relative;z-index:1;font-style:normal}.t48-timelineTitle,.t48-countTitle{margin:3.7rem 0 2rem;color:#46613e;text-align:center;font:400 2.8rem/1 "Sacramento",cursive}.t48-timeline{position:relative;display:grid;grid-template-columns:repeat(3,1fr)}.t48-timeline:before{content:"";position:absolute;top:38px;left:15%;right:15%;border-top:1px solid #6f8065}.t48-timeline article{position:relative;z-index:1;display:grid;justify-items:center;gap:.5rem;text-align:center}.t48-timeline svg{width:49px;height:49px;padding:9px;color:#405c39;background:#faf8ef}.t48-timeline b{font:500 .7rem/1 "Montserrat",sans-serif}.t48-timeline span{font-size:.72rem}.t48-memory{margin:3rem 0 0;text-align:center;font-size:.8rem;font-style:italic}.t48-countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem}.t48-countdown span{min-height:75px;display:grid;place-content:center;gap:.25rem;color:#fff;background:#47654b;text-align:center}.t48-countdown b{font:500 1rem/1 "Montserrat",sans-serif}.t48-countdown small{font-size:.62rem}
+.t48-album{min-height:1700px;padding:4rem 1.2rem;background:#f7f4e9}.t48-album h2{display:grid;grid-template-columns:1fr 40px 1fr;align-items:end;margin:0 0 3rem;color:#45613e;text-align:center;font:400 2.3rem/1 "Italiana",serif}.t48-album h2 i{color:#b48e7e;font:400 2rem/1 "Sacramento",cursive}.t48-albumGrid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}.t48-albumGrid img{height:330px;object-fit:cover}.t48-albumGrid img:first-child{grid-column:1/-1;height:470px}.t48-albumGrid img:last-child{grid-column:1/-1;height:470px}.t48-album>p{margin:3rem auto 0;text-align:center;font-size:.85rem;font-style:italic;line-height:1.5}
+.t48-rsvp{min-height:760px;display:grid;align-content:center;justify-items:center;gap:2.5rem;padding:4rem 1.4rem;background:#fbf9f0}.t48-rsvp form{width:min(335px,100%);display:grid;gap:1rem;padding:2rem 1.4rem;border:1px solid #dddccf;background:#fff;box-shadow:0 14px 30px rgba(49,62,44,.1);font-family:Arial,sans-serif}.t48-rsvp h2{margin:0 .3rem;text-align:center;font-size:1.1rem}.t48-rsvp label{display:grid;gap:.4rem;color:#555;font-size:.72rem}.t48-rsvp input:not([type="radio"]),.t48-rsvp select{height:42px;border:1px solid #ddd;border-radius:3px;padding:0 .65rem;background:#fff}.t48-rsvp fieldset{display:grid;gap:.45rem;margin:0;border:0;padding:0}.t48-rsvp legend{margin-bottom:.4rem;color:#555;font-size:.72rem}.t48-rsvp fieldset label{grid-template-columns:18px 1fr;align-items:center}.t48-rsvp input[type="radio"]{width:17px;height:17px;accent-color:#3f6046}.t48-rsvp button{min-height:42px;display:flex;align-items:center;justify-content:center;gap:.4rem;border:0;color:#fff;background:#3d5f44}.t48-success{display:flex;align-items:center;gap:.35rem;color:#3f6046;font-size:.67rem}.t48-rsvp>p{margin:0;color:#4c6842;font:400 2.7rem/1 "Sacramento",cursive}
+.t48-gift{min-height:950px;padding:4.5rem 1.5rem;background:#f6f3e7;text-align:center}.t48-gift>div{display:grid;justify-items:center;gap:1.5rem}.t48-gift h2{margin:0;color:#47633f;font:400 3rem/1 "Sacramento",cursive}.t48-gift svg{width:110px;height:110px;padding:15px;color:#d28e9d;background:#f3c4cc}.t48-gift p{max-width:390px;margin:0;font-size:.82rem;line-height:1.6}.t48-gift>img{height:480px;margin-top:3rem;object-fit:cover}.t48-gift h3{margin:2.5rem 0 0;color:#48643f;font:400 3rem/1 "Sacramento",cursive}
+@media(max-width:420px){.t48-envelope{width:320px;height:215px}.t48-envelopeCard{height:195px}.t48-envelope.is-open .t48-envelopeCard{transform:translateY(-160px)}.t48-envelopeFlap{height:115px}.t48-seal{top:82px}.t48-invitation,.t48-profiles,.t48-story,.t48-date,.t48-album,.t48-rsvp,.t48-gift{padding-right:1rem;padding-left:1rem}.t48-profileCard img{height:350px}.t48-profileCut{height:295px}.t48-albumGrid img{height:285px}.t48-albumGrid img:first-child,.t48-albumGrid img:last-child{height:420px}}
+@media(prefers-reduced-motion:reduce){.t48-music.is-playing{animation:none}.t48-envelopeCard,.t48-envelopeFlap{transition:none}}
+
+/* Source-matched paper, type and section pacing. */
+.template48{color:#3a4a3a;background:#faf7f1 url('/assets/template48-ref/background.png') center top/100% auto repeat-y;font-family:"Quicksand",sans-serif}
+.t48-envelopeIntro{height:662px;padding-top:0;background:transparent}
+.t48-envelopeIntro::before,.t48-envelopeIntro::after,.t48-stem{display:none}
+.t48-envelopeIntro h1{z-index:4;margin-top:0;color:#465c3d;font:400 65px/1.15 "Aquarelle",cursive}
+.t48-orchid{position:absolute;z-index:3;pointer-events:none;object-fit:contain;animation:t48-float 3s ease-in-out infinite}
+.t48-orchidLarge{width:157px;height:289px;top:22px;left:-2px}
+.t48-orchidSmall{width:190px;height:190px;top:38px;right:-35px;animation-delay:.45s}
+@keyframes t48-float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-8px) rotate(1.5deg)}}
+.t48-envelope{width:368px;height:246px;margin-top:112px;animation:t48-envelope-float 3s ease-in-out infinite}
+@keyframes t48-envelope-float{0%,100%{filter:drop-shadow(0 19px 18px rgba(33,48,30,.12))}50%{filter:drop-shadow(0 25px 22px rgba(33,48,30,.18));transform:translateY(-4px)}}
+.t48-envelopeBack{background:#304e33;box-shadow:none}
+.t48-envelopeCard{height:222px;left:17px;right:17px;top:11px;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.t48-envelopeCard b{font:700 29px/1 "Soul Note Display",cursive}
+.t48-envelopeCard small{font:500 14px/1 "Quicksand",sans-serif}
+.t48-envelopeFlap{height:132px;background:#29472f;transition:transform .8s ease,z-index 0s .38s}
+.t48-envelopeFront{background:linear-gradient(146deg,#3e5f40 0 49.7%,#344f36 50% 100%)}
+.t48-seal{width:48px;height:48px;left:calc(50% - 24px);top:96px;border-radius:0;background:transparent url('/assets/template48-ref/wax-seal.webp') center/contain no-repeat;box-shadow:none}
+.t48-envelope.is-open .t48-envelopeCard{transform:translateY(-120px)}
+.t48-envelopeIntro>p{margin:64px 0 0;color:#4b5320;font:400 26px/1 "Signora",cursive;text-shadow:0 16px 11px rgba(0,0,0,.35);animation:t48-pulse 1.9s ease-in-out infinite}
+@keyframes t48-pulse{50%{opacity:.58;transform:scale(.98)}}
+
+.t48-invitation{min-height:1450px;padding:0 10px 35px;background:transparent}
+.t48-invitePhoto{width:calc(100% + 20px);height:330px;margin-left:-10px;object-fit:cover}
+.t48-familyGrid{gap:0;margin-top:36px}
+.t48-familyGrid article{padding:0 14px}
+.t48-familyGrid article+article{border-left:1px solid #3a4a3a}
+.t48-familyGrid h3{margin:0 0 12px;color:#3a4a3a;font:700 26px/1.2 "Quicksand",sans-serif}
+.t48-familyGrid p{font:400 19px/1.25 "Quicksand",sans-serif}
+.t48-familyGrid small{margin-top:8px;color:#3a4a3a;font:400 19px/1.2 "Quicksand",sans-serif;font-style:italic}
+.t48-names{grid-template-columns:1fr;gap:0;margin:28px 18px 14px;color:#3a4a3a;text-align:left;font:700 48px/1.35 "Soul Note Display",cursive}
+.t48-names i{margin-left:185px;color:#3a4a3a;font:700 54px/1 "Soul Note Display",cursive}
+.t48-names span:last-child{margin-left:auto}
+.t48-respect{margin:0;text-align:center;font:400 22px/1.48 "Cinelove Times","Times New Roman",serif;text-transform:uppercase}
+.t48-respect b{margin:5px 0;color:#c71515;font:700 47px/1 "Carlytte",cursive;text-transform:none}
+.t48-eventDate{gap:12px;margin:35px 0 20px}
+.t48-eventDate>b{font:400 30px/1 "Quicksand",sans-serif}
+.t48-eventDate>div{width:100%;grid-template-columns:1fr 124px 1fr;border:0}
+.t48-eventDate span{padding:12px 4px;border-top:1px solid #333;border-bottom:1px solid #333;font:400 37px/1.1 "Quicksand",sans-serif}
+.t48-eventDate strong{padding:0;border:0;font:400 82px/1 "Quicksand",sans-serif}
+.t48-eventDate small{font:400 21px/1.25 "Quicksand",sans-serif}
+.t48-venue{gap:12px}
+.t48-venue p{font:700 22px/1.2 "Quicksand",sans-serif}
+.t48-venue h2{color:#3a4a3a;font:400 42px/1 "scarlet-bradley.regular",serif;text-transform:uppercase}
+.t48-venue span{max-width:430px;font:400 18px/1.35 "Quicksand",sans-serif}
+.t48-venue a{min-height:50px;margin-top:8px;border-radius:0;color:#3a4a3a;background:transparent;font:400 33px/1 "scarlet-bradley.regular",serif}
+.t48-venue a svg{width:38px;height:38px;fill:#16864b;stroke:#16864b}
+
+.t48-landscape{height:820px;background:#30462e}
+.t48-landscape img{height:100%;object-fit:cover;object-position:center}
+.t48-landscape::after{background:linear-gradient(180deg,rgba(25,40,28,.06),rgba(25,40,28,.2))}
+.t48-landscape>div{bottom:auto;top:30px;align-items:start;text-align:left;padding-left:55px}
+.t48-landscape span,.t48-landscape b{color:#faf7f7;font:400 54px/1 "HoaTay1",cursive}
+.t48-landscape b{margin-left:120px}
+
+.t48-profiles{min-height:700px;position:relative;padding:0;background:transparent}
+.t48-profile{min-height:0;position:absolute;inset:auto}
+.t48-groom{width:100%;height:350px;top:20px;left:0}
+.t48-bride{width:100%;height:350px;top:315px;left:0;margin:0}
+.t48-profileCard{width:190px;position:absolute}
+.t48-groom .t48-profileCard{left:55px;top:5px;transform:rotate(-8deg)}
+.t48-bride .t48-profileCard{right:48px;top:0;transform:rotate(8deg)}
+.t48-profileCard img{height:270px;border:10px solid #fff;object-fit:cover}
+.t48-profileCard small{margin-top:7px;color:#333;font:500 26px/1 "Summerfun",cursive}
+.t48-profileCard h2{margin:3px 0 0;color:#4b5320;font:400 48px/1 "HoaTay1",cursive}
+.t48-profileCut{width:175px;height:190px;right:35px;bottom:15px;border:8px solid #fff;object-fit:cover;transform:rotate(5deg)}
+.t48-bride .t48-profileCut{left:35px;bottom:20px;transform:rotate(-5deg)}
+
+.t48-story{min-height:820px;padding:28px 28px 0;background:transparent}
+.t48-story h2{font:500 78px/1 "Monsieur La Doulaise",cursive}
+.t48-story>p{max-width:435px;margin:20px auto 26px;font:400 19px/1.7 "Quicksand",sans-serif}
+.t48-story>img{width:calc(100% + 56px);height:500px;margin-left:-28px;object-fit:cover}
+.t48-story>span{right:22px;bottom:20px;color:#faf7f7;font:400 48px/1 "HoaTay1",cursive}
+
+.t48-date{min-height:1460px;padding:0;background:transparent}
+.t48-calendar{height:710px;display:grid;align-content:end;padding:250px 42px 36px;color:#faf7f7;background:linear-gradient(180deg,rgba(32,55,35,.03),rgba(19,45,24,.32)),url('/assets/template48-ref/hill.png') center/cover no-repeat}
+.t48-calendar h2{margin:0 0 24px;text-align:right;font:500 35px/1 "Summerfun",cursive}
+.t48-calendar>div{gap:18px 0}
+.t48-calendar span{min-height:30px;font:400 14px/1 Arial,sans-serif}
+.t48-calendar svg{width:44px;height:39px;color:#d93434}
+.t48-timelineTitle,.t48-countTitle{margin:30px 0 26px;color:#4b5320;font:400 61px/1 "HoaTay1",cursive}
+.t48-timeline{padding:0 20px}
+.t48-timeline::before{display:none}
+.t48-timeline svg{width:92px;height:92px;padding:14px;color:#3a4a3a;background:transparent;stroke-width:1.3}
+.t48-timeline b{font:500 21px/1 "Quicksand",sans-serif}
+.t48-timeline span{font:500 20px/1.25 "Quicksand",sans-serif}
+.t48-memory{min-height:110px;display:grid;place-items:center;margin:28px 0 0;padding:15px 44px;color:#faf7f7;background:#5a5f3b;font:500 20px/1.5 "The Artisan",serif}
+.t48-countTitle{margin-top:28px}
+.t48-countdown{gap:12px;padding:0 45px}
+.t48-countdown span{min-height:68px;color:#faf7f7;background:#5a5f3b}
+.t48-countdown b{font:500 20px/1 "Quicksand",sans-serif}.t48-countdown small{font:400 15px/1 "Quicksand",sans-serif}
+
+.t48-album{min-height:1630px;padding:38px 0 30px;background:transparent}
+.t48-album h2{grid-template-columns:1fr 75px 1fr;margin:0 20px 35px;color:#4b5320;font:400 65px/1 "PlayfairDisplay",serif}
+.t48-album h2 i{color:#4b5320;font:400 63px/1 "Monsieur La Doulaise",cursive}
+.t48-albumGrid{gap:8px}
+.t48-albumGrid img{height:303px}.t48-albumGrid img:first-child{height:380px}.t48-albumGrid img:last-child{height:380px}
+.t48-album>p{margin:26px 32px 0;font:400 18px/1.45 "Quicksand",sans-serif}
+
+.t48-rsvp{min-height:700px;gap:34px;padding:48px 20px;background:transparent}
+.t48-rsvp form{font-family:"Quicksand",Arial,sans-serif}
+.t48-rsvp>p{color:#4b5320;font:400 61px/1 "HoaTay1",cursive}
+.t48-gift{min-height:874px;padding:45px 28px 24px;background:transparent}
+.t48-gift h2{color:#4b5320;font:400 63px/1 "HoaTay1",cursive}
+.t48-gift svg{animation:t48-wiggle 2.2s ease-in-out infinite}
+@keyframes t48-wiggle{0%,100%{transform:rotate(0)}20%{transform:rotate(-5deg)}40%{transform:rotate(5deg)}60%{transform:rotate(-3deg)}}
+.t48-gift p{font:400 18px/1.55 "Quicksand",sans-serif}
+.t48-gift>img{height:333px;margin-top:26px;object-fit:cover}
+.t48-gift h3{margin:22px 0 0;color:#4b5320;font:400 63px/1 "HoaTay1",cursive}
+
+@media(max-width:420px){
+  .t48-envelopeIntro{height:560px}.t48-envelopeIntro h1{font-size:53px}.t48-orchidLarge{width:125px;height:230px}.t48-orchidSmall{width:150px;height:150px}.t48-envelope{width:310px;height:207px;margin-top:94px}.t48-envelopeCard{height:188px}.t48-envelopeFlap{height:112px}.t48-seal{top:79px}.t48-envelope.is-open .t48-envelopeCard{transform:translateY(-100px)}.t48-envelopeIntro>p{margin-top:50px;font-size:22px}
+  .t48-invitation{min-height:1290px}.t48-invitePhoto{height:274px}.t48-familyGrid h3{font-size:21px}.t48-familyGrid p,.t48-familyGrid small{font-size:15px}.t48-names{font-size:39px}.t48-names i{margin-left:42%;font-size:45px}.t48-respect{font-size:18px}.t48-respect b{font-size:39px}.t48-eventDate>b{font-size:24px}.t48-eventDate span{font-size:29px}.t48-eventDate strong{font-size:67px}.t48-eventDate small{font-size:17px}.t48-venue h2{font-size:34px}.t48-venue a{font-size:27px}
+  .t48-landscape{height:680px}.t48-landscape span,.t48-landscape b{font-size:44px}.t48-profiles{min-height:640px}.t48-profileCard{width:165px}.t48-profileCard img{height:240px}.t48-profileCut{width:150px;height:170px}.t48-profileCard h2{font-size:40px}.t48-story{min-height:730px}.t48-story h2{font-size:65px}.t48-story>p{font-size:16px}.t48-story>img{height:420px}
+  .t48-date{min-height:1280px}.t48-calendar{height:610px;padding:220px 24px 30px}.t48-calendar>div{gap:14px 0}.t48-timelineTitle,.t48-countTitle{font-size:51px}.t48-timeline svg{width:72px;height:72px}.t48-timeline b,.t48-timeline span{font-size:16px}.t48-memory{font-size:16px}.t48-countdown{padding:0 20px}.t48-album{min-height:1420px}.t48-album h2{font-size:50px}.t48-album h2 i{font-size:50px}.t48-albumGrid img{height:260px}.t48-albumGrid img:first-child,.t48-albumGrid img:last-child{height:370px}.t48-rsvp{min-height:650px}.t48-gift{min-height:760px}.t48-gift h2,.t48-gift h3{font-size:52px}.t48-gift>img{height:320px}
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .t48-orchid,
+  .t48-envelope,
+  .t48-envelopeIntro > p,
+  .t48-gift svg,
+  .t48-music.is-playing {
+    animation: none;
+  }
+
+  .t48-envelopeCard,
+  .t48-envelopeFlap {
+    transition: none;
+  }
+}

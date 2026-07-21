@@ -1,0 +1,57 @@
+/* Targeted corrections from source/local structural comparison. */
+.t51n,
+.t53n,
+.t69n,
+.t104n { width: min(430px, 100vw); }
+
+.t51n-title h1,
+.t51n-invite h2,
+.t51n-timeline h2,
+.t51n-venue h2,
+.t51n-album > h2,
+.t51n-end h2 { font-family: "Chillatos", "Aquarelle", cursive; }
+.t51n-hero { min-height: 780px; padding-top: 34px; }
+.t51n-frame { height: 550px; }
+.t51n-venue > img { height: 520px; }
+.t51n-album img { height: 285px; }
+.t51n-album img:last-child { height: 410px; }
+
+.t69n { color: #311d20; background: #fffdf8; }
+.t69n-hero { height: 720px; }
+.t69n-invite { gap: 28px; padding: 52px 26px; }
+.t69n-timeline { gap: 0; padding: 48px 30px; color: #551b22; background: #fffdf8; }
+.t69n-timeline h2 { margin-bottom: 20px; color: #780b12; font-family: "Gasthony Signature", cursive; }
+.t69n-timeline > div:not(:first-child) { min-height: 72px; border-color: rgba(120, 11, 18, .2); }
+.t69n-day { gap: 26px; padding: 48px 24px; }
+.t69n-end { gap: 38px; padding: 48px 20px; }
+.t69n-end h2 { color: #780b12; font-family: "Gasthony Signature", cursive; }
+
+.t104n-intro {
+  width: 100vw;
+  height: 100dvh;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  padding: 28px;
+}
+.t104n-intro h2 { position: relative; z-index: 2; margin: 0; font-size: 43px; font-weight: 400; }
+.t104n-intro button { position: relative; z-index: 2; min-height: 44px; border: 1px solid rgba(255,255,255,.7); border-radius: 2px; padding: 0 20px; color: #fff; background: transparent; cursor: pointer; }
+.t104n-hero { min-height: 680px; padding-bottom: 45px; }
+.t104n-hero > img { height: 520px; }
+.t104n-timeline { padding-top: 52px; padding-bottom: 45px; }
+.t104n-path { height: 780px; }
+.t104n-path span:nth-of-type(1) { top: 65px; }
+.t104n-path span:nth-of-type(2) { top: 240px; }
+.t104n-path span:nth-of-type(3) { top: 430px; }
+.t104n-path span:nth-of-type(4) { top: 620px; }
+
+@media (max-width: 420px) {
+  .t51n-frame { height: 520px; }
+  .t69n-hero { height: 680px; }
+  .t104n-intro { height: 100dvh; }
+  .t104n-path { height: 730px; }
+  .t104n-path span:nth-of-type(1) { top: 60px; }
+  .t104n-path span:nth-of-type(2) { top: 220px; }
+  .t104n-path span:nth-of-type(3) { top: 400px; }
+  .t104n-path span:nth-of-type(4) { top: 575px; }
+}

@@ -1,0 +1,337 @@
+/* Source font assignments that must load after each template's layout overrides. */
+.t2-welcomeCopy span,
+.t2-story blockquote,
+.t2-poem,
+.t2-countdownNote {
+  font-family: "Soul Note Display", serif;
+  font-style: normal;
+}
+
+.t2-storyPromise {
+  font: 400 30px/1.15 "BethanWhite", cursive;
+}
+
+.t2-editorialLabels,
+.t2-editorialWords {
+  font-family: "Belinda Avenue", cursive;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.t2-profiles span,
+.t2-perfect figcaption {
+  font-family: "Signora", cursive;
+}
+
+.t2-dateCopy span,
+.t2-countdown b,
+.t2-countdown small {
+  font-family: "Scarlet Bradley.regular", serif;
+}
+
+.t2-sunshine figcaption {
+  font: 400 32px/1 "Faugllin Balseyn", cursive;
+}
+
+.t2-footer span {
+  font: 400 64px/.9 "BethanWhite", cursive;
+}
+
+.t38-save b {
+  font: 400 20px/1 "Mentawai", serif;
+}
+
+.t38-portraits figcaption {
+  font-family: "Katty Diona", cursive;
+  font-size: 42px;
+}
+
+.t38-eventStamp strong,
+.t38-venueRsvp header p {
+  font-family: "Lobster", cursive;
+}
+
+.t38-storyQuote,
+.t38-chapter blockquote {
+  font-family: "Sacramento", cursive;
+}
+
+.t39-coverTitle {
+  font: 400 64px/.9 "Katty Diona", cursive;
+}
+
+.t39-coverNames b {
+  font: 400 36px/1 "Katty Diona", cursive;
+}
+
+.t39-weddingDay {
+  font: 500 40px/1 "Carlytte", cursive;
+}
+
+.t39-monthTitle {
+  font: 400 35px/1 "Madam Ghea", cursive;
+}
+
+.t39-personStack span {
+  font: 700 33px/1 "Carlytte", cursive;
+}
+
+.t39-personStack h2 {
+  font: 700 32px/1 "Madam Ghea", cursive;
+  letter-spacing: 0;
+}
+
+.t39-timeline h2 {
+  font: 400 50px/1 "Signora", cursive;
+}
+
+.t39-countdown span {
+  font: 400 57px/1 "Signora", cursive;
+}
+
+.t39-giftSection h2 {
+  font: 500 26px/1 "Signora", cursive;
+}
+
+.t42-intro > p {
+  font: 500 25px/1 "Aquarelle", cursive;
+}
+
+.t42-heroNames span {
+  font: 500 39px/1 "BucThu", cursive;
+}
+
+.t42-family > .t42-scriptTitle {
+  font: 700 26px/1 "HoaTay1", cursive;
+}
+
+.t42-coupleNames,
+.t42-profile h3 {
+  font-family: "HoaTay1", cursive;
+  font-size: 37px;
+}
+
+.t42-familyGrid small {
+  font-family: "The Artisan", serif;
+  font-size: 16px;
+}
+
+.t42-about > .t42-scriptTitle,
+.t42-album > .t42-scriptTitle {
+  font: 500 48px/1 "Carlytte", cursive;
+}
+
+.t42-saveHead span {
+  font: 500 35px/1 "PlayfairDisplay", serif;
+}
+
+.t42-footer span {
+  font: 500 100px/.9 "The Hamstter", cursive;
+}
+
+.t44-scriptTitle {
+  font: 500 68px/1 "Katty Diona", cursive;
+}
+
+.t44-poem p {
+  font: 500 18px/1.55 "PlayfairDisplay", serif;
+}
+
+.t44-countdown strong,
+.t44-countdown em {
+  font: 400 14px/1 "Scarlet Bradley.regular", serif;
+}
+
+.t44-dateTitle p {
+  font: 500 26px/1.2 "Madam Ghea", cursive;
+}
+
+.t44-coverEvent strong {
+  font-size: 24px;
+}
+
+.t44-sweetWords {
+  font: 500 18px/1 "Belinda Avenue", cursive;
+}
+
+.t60n {
+  font-family: "BrikeyMoura Regular", Georgia, serif;
+}
+
+.t60n .t60n-couple h2,
+.t60n .t60n-date strong {
+  font-family: "Chetta Vissto", cursive;
+}
+
+.t60n .t60n-names h1 i {
+  font-family: "Arcittya Begatri", cursive;
+}
+
+.t60n .t60n-invite small {
+  font-family: "Scarlet Bradley.regular", serif;
+}
+
+.t60n .t60n-dateSection .ni-calendar h3,
+.t60n .t60n-dateSection .ni-days {
+  font-family: "BrikeyMoura Regular", Georgia, serif;
+}
+
+.t60n .t60n-ending h2 {
+  font-family: "Moon Light", cursive;
+}
+
+.t85n {
+  font-family: "Marmelad Regular", Georgia, serif;
+}
+
+.t85n .t85n-coverCopy h1,
+.t85n .t85n-day h2,
+.t85n .t85n-thanks h2,
+.t85n .t85n-end > h2 {
+  font-family: "Chillatos", cursive;
+}
+
+.t85n .t85n-album h2 {
+  font-family: "Ephesis Regular", cursive;
+}
+
+.t85n .t85n-coverCopy p {
+  font: 400 27px/1 "Lobster", cursive;
+}
+
+.t69n .t69n-end h2 {
+  font-family: "Ephesis Regular", cursive;
+}
+
+.t92n .t92n-title small,
+.t92n .t92n-title h1,
+.t92n .t92n-heroInvite b {
+  font-family: "Miller Banner", serif;
+}
+
+.t92n .t92n-title h1 {
+  font-size: 33px;
+}
+
+.t92n .t92n-title small {
+  font-size: 26px;
+}
+
+.t92n .t92n-heroInvite b {
+  font-size: 23px;
+}
+
+.t92n .t92n-heroInvite span {
+  font: 500 18px/1 "Chillatos", cursive;
+}
+
+.t94n .t94n-title span,
+.t94n .t94n-title small,
+.t94n .t94n-title h1 {
+  font-family: "Beezle", sans-serif;
+}
+
+.t94n .t94n-chapel > h2 {
+  font: 400 32px/1 "Sunshine", cursive;
+  letter-spacing: 0;
+}
+
+.t94n .t94n-weddingWords > div:nth-of-type(1) small {
+  font: 400 40px/1 "Lumios Marker", cursive;
+}
+
+.t95n .t95n-heading h1 b {
+  font-family: "Logate", cursive;
+  font-size: 47px;
+}
+
+.t95n .t95n-monogram span {
+  font: 400 34px/1 "Antro Vectra", cursive;
+}
+
+.t95n .t95n-thankPhoto span {
+  font: 400 26px/1.35 "Chillatos", cursive;
+}
+
+.t95n .t95n-thankPhoto b {
+  font: 400 72px/1 "Antro Vectra", cursive;
+}
+
+.t99n .t99n-hero > small,
+.t99n .t99n-story p,
+.t99n .t99n-modernStory p {
+  font-family: "Outer Sans Thin", sans-serif;
+}
+
+.t99n .t99n-hero > small {
+  font-size: 16px;
+}
+
+.t99n .t99n-hero > p,
+.t99n .t99n-timeCard p {
+  font: 400 26px/1 "Plus Jakarta Sans", sans-serif;
+}
+
+.t99n .t99n-rsvp h3,
+.t99n .t99n-gift h3 {
+  font: 400 38px/1 "Clodia", cursive;
+}
+
+.t105n {
+  font-family: "Paris Regular", Georgia, serif;
+}
+
+.t105n .t105n-title h1,
+.t105n .t105n-seed h2,
+.t105n .t105n-couple h3,
+.t105n .t105n-story h2,
+.t105n .t105n-storyAside b,
+.t105n .t105n-invite h2,
+.t105n .t105n-timeline > h2,
+.t105n .t105n-thanks h2,
+.t105n .t105n-end > h2 {
+  font-family: "Paris Regular", cursive;
+}
+
+.t112n .t112n-redProfiles > p,
+.t112n .t112n-countAlbum > p {
+  font-family: "Times New Normal", serif;
+}
+
+.t112n .t112n-redProfiles > p {
+  font-size: 21px;
+}
+
+.t112n .t112n-profileCard small,
+.t112n .t112n-countAlbum h3 i {
+  font-family: "Arcittya Begatri", cursive;
+}
+
+.t112n .t112n-profileCard small {
+  font-size: 29px;
+}
+
+.t112n .t112n-family p,
+.t112n .t112n-invite h2,
+.t112n .t112n-invite p {
+  font-family: "Mallong", cursive;
+}
+
+.t112n .t112n-paperCalendar .ni-calendar h3 {
+  font: 400 42px/1 "HoaTay1", cursive;
+}
+
+.t112n .t112n-paperCalendar > div:last-child p,
+.t112n .t112n-thanks h2 {
+  font-family: "Aquarelle", cursive;
+}
+
+.t112n .t112n-countAlbum h3 i {
+  font-size: 58px;
+}
+
+@media (max-width: 420px) {
+  .t44-coverEvent strong {
+    font-size: 20px;
+  }
+}

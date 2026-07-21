@@ -1,0 +1,191 @@
+html.template53new-page,
+body.template53new-page { background: #e5e0d8; }
+
+.t53n {
+  --t53-blue: #4870a3;
+  --t53-ink: #343432;
+  --t53-olive: #4b5320;
+  width: min(500px, 100vw);
+  margin: auto;
+  overflow: hidden;
+  color: var(--t53-ink);
+  background: #f8f3eb url('/assets/new-templates/thiep-cuoi-53/image-1.png') center top / 100% auto repeat-y;
+  box-shadow: 0 20px 65px rgba(62, 70, 78, .18);
+  font-family: "Mallong", Georgia, serif;
+}
+
+.t53n img { display: block; width: 100%; }
+.t53n-music { color: #fff; background: #111; }
+
+.t53n-hero { padding-top: 16px; text-align: center; }
+.t53n-ceremony { margin: 0; font: 400 40px/1.1 "BucThu", cursive; }
+.t53n-heroNames { display: grid; grid-template-columns: 1fr 50px 1fr; align-items: center; margin: 0 18px 10px; font: 400 40px/1.1 "Aquarelle", cursive; }
+.t53n-heroNames i { color: var(--t53-blue); font-size: 42px; font-style: normal; }
+.t53n-meta { display: grid; grid-template-columns: .8fr .9fr 1.1fr; margin: 0 20px 14px; font: 500 12px/1.45 "Quicksand", sans-serif; text-transform: uppercase; }
+.t53n-meta span { display: grid; align-content: center; min-height: 46px; padding: 0 8px; border-right: 2px solid var(--t53-ink); }
+.t53n-meta span:last-child { border-right: 0; }
+.t53n-meta b { font-weight: 500; }
+.t53n-hero > img { height: 332px; object-fit: cover; object-position: center 31%; }
+.t53n-heroDate { padding: 18px 22px 20px; }
+.t53n-heroDate > b { font: 500 18px/1 "Quicksand", sans-serif; }
+.t53n-heroDate p { margin: 11px 0 0; font: 400 15px/1.8 "Mallong", serif; }
+
+.t53n-envelopeSection { padding: 22px 24px 34px; text-align: center; }
+.t53n-envelopeReveal { min-height: 300px; display: grid; place-items: center; }
+.t53n-envelopeShape { width: 300px; height: 218px; position: relative; display: block; margin: 50px auto 15px; border: 0; padding: 0; background: transparent; filter: drop-shadow(0 14px 13px rgba(44, 62, 78, .2)); cursor: pointer; perspective: 800px; }
+.t53n-envelopeBack { position: absolute; z-index: 1; inset: 0; border-radius: 3px; background: #3d70ad; }
+.t53n-envelopeFlap { position: absolute; z-index: 4; inset: 0 0 auto; height: 130px; clip-path: polygon(0 0, 100% 0, 50% 100%); background: #4d7fb9; transform-origin: top center; transition: transform .7s cubic-bezier(.22, 1, .36, 1), z-index 0s .34s; }
+.t53n-envelopePocket { position: absolute; z-index: 5; inset: 0; border-radius: 0 0 3px 3px; background: linear-gradient(144deg, transparent 49.5%, #376aa8 50%) 0 0 / 50% 100% no-repeat, linear-gradient(216deg, transparent 49.5%, #3b70ae 50%) 100% 0 / 50% 100% no-repeat, linear-gradient(35deg, #416fa7 49.5%, transparent 50%) 0 100% / 50% 80% no-repeat, linear-gradient(-35deg, #37669e 49.5%, transparent 50%) 100% 100% / 50% 80% no-repeat; }
+.t53n-envelopeLetter { width: 220px; height: 174px; position: absolute; z-index: 3; top: 19px; left: 40px; overflow: hidden; border-radius: 4px; background: #f2e4d5; transition: transform .88s cubic-bezier(.22, 1, .36, 1) .2s; }
+.t53n-envelopeLetter img { height: 100%; object-fit: cover; object-position: center 20%; }
+.t53n-envelopeLetter i { width: 68px; height: 68px; position: absolute; top: 57px; left: 73px; display: grid; place-items: center; border-radius: 50%; color: #d61926; background: rgba(255, 255, 255, .12); filter: drop-shadow(0 6px 6px rgba(142, 18, 24, .22)); }
+.t53n-envelopeLetter svg { width: 68px; height: 68px; stroke-width: 0; }
+.t53n-envelopeSeal { width: 36px; height: 36px; position: absolute; z-index: 6; top: 92px; left: 132px; display: grid; place-items: center; border-radius: 50%; color: #fff6ec; background: #8c5e3d; box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .15), 0 2px 5px rgba(55, 35, 24, .35); font: 400 10px/1 Georgia, serif; transition: opacity .25s ease .1s, transform .35s ease; }
+.t53n-envelopeShape.is-open .t53n-envelopeFlap { z-index: 2; transform: rotateX(180deg); transition: transform .7s cubic-bezier(.22, 1, .36, 1), z-index 0s .34s; }
+.t53n-envelopeShape.is-open .t53n-envelopeLetter { transform: translateY(-78px); }
+.t53n-envelopeShape.is-open .t53n-envelopeSeal { opacity: 0; transform: scale(.7); transition-delay: 0s; }
+.t53n-envelopeShape:focus-visible { outline: 3px solid var(--t53-blue); outline-offset: 8px; }
+
+.t53n-families { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 28px; }
+.t53n-families > div:first-child { text-align: right; }
+.t53n-families > div:last-child { text-align: left; }
+.t53n-families h2 { margin: 0 0 7px; font: 400 25px/1.2 "Mallong", serif; }
+.t53n-families p { margin: 0; font: 400 16px/1.35 "Montserrat", sans-serif; }
+.t53n-families small { display: block; margin-top: 5px; font: italic 13px/1 "Montserrat", sans-serif; }
+.t53n-inviteNames { display: grid; justify-items: center; margin: 36px 0 14px; color: var(--t53-blue); font: 400 56px/.95 "Mallong", serif; }
+.t53n-inviteNames small { margin: -2px 0; color: var(--t53-olive); font: 400 45px/1 "Gasthony Signature", "Aquarelle", cursive; }
+.t53n-inviteLine { margin: 0; font-size: 25px; }
+
+.t53n-event { display: grid; gap: 48px; padding: 4px 0 54px; text-align: center; }
+.t53n-eventCard { display: grid; justify-items: center; gap: 9px; }
+.t53n-eventCard + .t53n-eventCard { padding-top: 44px; border-top: 2px dashed var(--t53-blue); }
+.t53n-eventCard h3 { margin: 0; color: var(--t53-blue); font: 400 31px/1.25 "Mallong", serif; }
+.t53n-eventCard > p { margin: 0; font: 400 31px/1.25 "Mallong", serif; text-transform: uppercase; letter-spacing: .04em; }
+.t53n-dateLine { width: 100%; display: grid; grid-template-columns: 1fr 120px 1fr; align-items: center; }
+.t53n-dateLine span { padding: 9px 4px; border-top: 2px dotted var(--t53-ink); border-bottom: 2px dotted var(--t53-ink); font: 400 27px/1 "Mallong", serif; text-transform: uppercase; }
+.t53n-dateLine b { color: var(--t53-blue); font: 500 82px/.8 "Quicksand", sans-serif; }
+.t53n-eventCard > small { font-size: 16px; }
+.t53n-eventCard h4 { margin: 5px 0 0; color: var(--t53-blue); font: 400 31px/1.1 "Mallong", serif; text-transform: uppercase; }
+.t53n-eventCard em { font-size: 16px; font-style: normal; }
+.t53n-eventCard .ni-map { min-width: 118px; justify-content: center; margin-top: 5px; border-radius: 999px; padding: 10px 19px; color: #fff; background: var(--t53-blue); font: 500 13px/1 "Quicksand", sans-serif; }
+
+.t53n-timeline { padding: 26px 18px 68px; text-align: center; }
+.t53n-timeline h2,
+.t53n-timeline h3 { margin: 0 0 24px; color: var(--t53-olive); font: 400 61px/1.08 "Gasthony Signature", "Aquarelle", cursive; }
+.t53n-timelineItems { display: grid; grid-template-columns: repeat(3, 1fr); }
+.t53n-timelineItems > div { display: grid; justify-items: center; gap: 10px; }
+.t53n-timelineItems svg { width: 63px; height: 63px; stroke-width: 1.1; }
+.t53n-timelineItems b { font: 400 21px/1 "Quicksand", sans-serif; }
+.t53n-timelineItems span { font: 400 15px/1.2 "Quicksand", sans-serif; }
+.t53n-timeline h3 { margin-top: 34px; }
+.t53n-swatches { display: flex; justify-content: center; gap: 28px; }
+.t53n-swatches i { width: 48px; height: 48px; border: 1px solid #aaa; border-radius: 50%; background: var(--t53-blue); }
+.t53n-swatches i:nth-child(2) { background: #202528; }
+.t53n-swatches i:nth-child(3) { background: #e6e2da; }
+.t53n-swatches i:nth-child(4) { background: #fff; }
+.t53n-dressNote { max-width: 350px; margin: 28px auto 0; font: 400 14px/1.6 "Quicksand", sans-serif; }
+
+.t53n-story { padding: 0 18px 36px; }
+.t53n-portraits { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+.t53n-portraits article { min-width: 0; display: grid; justify-items: center; text-align: center; }
+.t53n-portraits article img { height: 310px; object-fit: cover; }
+.t53n-portraits article:first-child img { object-position: 18% center; }
+.t53n-portraits article:nth-child(2) img { object-position: 86% center; }
+.t53n-portraits i { margin-top: 12px; font: 400 25px/1 "Carlytte", cursive; }
+.t53n-portraits b { margin-top: 8px; color: var(--t53-blue); font: 400 28px/1.2 "Mallong", serif; }
+.t53n-portraits small { color: var(--t53-blue); font: 400 21px/1.2 "Carlytte", cursive; }
+.t53n-storyHeart { width: 92px; height: 92px; position: absolute; z-index: 2; top: 265px; left: calc(50% - 46px); color: #d91f31; filter: drop-shadow(0 5px 5px rgba(151, 20, 31, .2)); }
+.t53n-storyCopy { padding: 45px 20px 0; color: var(--t53-olive); }
+.t53n-storyCopy h2 { margin: 0 0 30px; color: var(--t53-ink); font: 400 53px/1 "Gasthony Signature", "Aquarelle", cursive; text-align: center; }
+.t53n-storyCopy p { margin: 0 0 12px; font: 400 14px/1.85 "Quicksand", sans-serif; }
+.t53n-storyCopy p b { font-weight: 500; }
+
+.t53n-dateAlbum { padding: 30px 16px 52px; }
+.t53n-calendarStage { min-height: 840px; position: relative; padding-top: 92px; }
+.t53n-calendarStage > img { width: 88%; height: 610px; position: absolute; left: 0; bottom: 0; object-fit: cover; object-position: center 22%; }
+.t53n-month { position: absolute; z-index: 3; top: 15px; right: 16px; color: var(--t53-blue); font: 400 37px/1 "Gasthony Signature", "Aquarelle", cursive; transform: rotate(-5deg); }
+.t53n-calendarStage .ni-calendar { width: 64%; position: absolute; z-index: 3; top: 66px; right: 0; padding: 18px 12px; background: rgba(255, 255, 255, .9); text-align: center; box-shadow: 0 10px 24px rgba(63, 71, 72, .08); }
+.t53n-calendarStage .ni-calendar h3,
+.t53n-calendarStage .ni-weekdays { display: none; }
+.t53n-calendarStage .ni-days { gap: 0; }
+.t53n-calendarStage .ni-days > span { height: 36px; color: #9a9a98; font: 400 11px/1 "Quicksand", sans-serif; }
+.t53n-calendarStage .ni-days svg { width: 34px; color: #e05d63; }
+.t53n-calendarStage > em { position: absolute; z-index: 4; bottom: 24px; left: 70px; color: rgba(60, 60, 58, .55); font: 400 42px/1 "Gasthony Signature", cursive; }
+.t53n-count { width: 70%; gap: 9px; position: relative; z-index: 5; margin: -45px 0 22px auto; }
+.t53n-count > span { height: 78px; color: #fff; background: var(--t53-blue); }
+.t53n-count b { font-size: 19px; }
+
+.t53n-memoryTitle { display: grid; grid-template-columns: 145px 1fr; align-items: center; gap: 20px; margin: 12px 9px 35px; }
+.t53n-memoryTitle > img { height: 145px; border: 5px solid var(--t53-blue); object-fit: cover; }
+.t53n-memoryTitle p { display: grid; margin: 0; color: var(--t53-blue); font-family: "Gasthony Signature", "Aquarelle", cursive; text-align: center; }
+.t53n-memoryTitle b { font-size: 48px; font-weight: 400; }
+.t53n-memoryTitle small { color: var(--t53-ink); font-size: 24px; }
+.t53n-memoryTitle span { font-size: 31px; }
+
+.t53n-slider { padding: 8px; border: 4px solid var(--t53-blue); border-radius: 9px; background: #fff; }
+.t53n-mainPhoto { height: 318px; position: relative; overflow: hidden; border-radius: 12px; }
+.t53n-mainPhoto > img { height: 100%; object-fit: cover; }
+.t53n-mainPhoto > svg { position: absolute; top: 13px; right: 13px; padding: 5px; border-radius: 50%; color: #353b43; background: rgba(255, 255, 255, .88); }
+.t53n-mainPhoto button { width: 42px; height: 42px; position: absolute; top: calc(50% - 21px); display: grid; place-items: center; border: 0; border-radius: 50%; color: #1e2937; background: rgba(255, 255, 255, .9); cursor: pointer; }
+.t53n-mainPhoto button:nth-of-type(1) { left: 11px; }
+.t53n-mainPhoto button:nth-of-type(2) { right: 11px; }
+.t53n-thumbnails { display: grid; grid-template-columns: repeat(5, 1fr); gap: 7px; margin-top: 9px; }
+.t53n-thumbnails button { min-width: 0; border: 2px solid transparent; border-radius: 5px; padding: 0; overflow: hidden; background: none; cursor: pointer; }
+.t53n-thumbnails button.is-active { border-color: var(--t53-blue); }
+.t53n-thumbnails img { height: 67px; object-fit: cover; }
+
+.t53n-ending { display: grid; justify-items: center; gap: 40px; padding: 30px 20px 0; text-align: center; }
+.t53n-rsvpNote { max-width: 340px; margin: 0; color: var(--t53-blue); font-size: 18px; line-height: 1.45; }
+.t53n-rsvp { width: min(300px, 100%); }
+.t53n-gift { display: grid; justify-items: center; gap: 18px; }
+.t53n-gift > span { width: 122px; height: 88px; position: relative; display: grid; place-items: center; color: #d72635; background: #f7c7cd; clip-path: polygon(0 18%, 50% 52%, 100% 18%, 100% 100%, 0 100%); }
+.t53n-gift > span::before { content: ''; width: 88px; height: 66px; position: absolute; z-index: -1; top: -9px; left: 17px; background: #ee5662; transform: rotate(-12deg); }
+.t53n-gift svg { width: 42px; height: 42px; }
+.t53n-gift h2 { margin: 0; color: var(--t53-blue); font: 400 31px/1 "Mallong", serif; }
+.t53n-thanks { width: calc(100% + 40px); position: relative; margin-top: 10px; color: #333; }
+.t53n-thanks > img { height: 560px; object-fit: cover; object-position: center 27%; }
+.t53n-thanks::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 30%, rgba(250, 245, 237, .88) 82%, rgba(250, 245, 237, .96)); }
+.t53n-thanks > div { position: absolute; z-index: 2; right: 30px; bottom: 18px; left: 30px; font: 400 15px/1.7 "Soul Note Display", serif; }
+.t53n-thanks p { margin: 6px 0; }
+.t53n-thanks b { display: block; margin-top: 6px; font-size: 28px; font-weight: 400; }
+
+@media (max-width: 420px) {
+  .t53n-ceremony { font-size: 31px; }
+  .t53n-heroNames { grid-template-columns: 1fr 38px 1fr; margin-right: 9px; margin-left: 9px; font-size: 31px; }
+  .t53n-heroNames i { font-size: 34px; }
+  .t53n-meta { margin-right: 10px; margin-left: 10px; font-size: 10px; }
+  .t53n-meta span { padding: 0 5px; }
+  .t53n-hero > img { height: 260px; }
+  .t53n-heroDate p { font-size: 13px; }
+  .t53n-envelopeSection { padding-right: 16px; padding-left: 16px; }
+  .t53n-envelopeShape { width: 268px; height: 195px; }
+  .t53n-envelopeLetter { width: 198px; height: 155px; left: 35px; }
+  .t53n-envelopeLetter i { top: 48px; left: 66px; }
+  .t53n-envelopeSeal { top: 81px; left: 116px; }
+  .t53n-families { gap: 18px; }
+  .t53n-families p { font-size: 14px; }
+  .t53n-inviteNames { font-size: 46px; }
+  .t53n-eventCard > p { font-size: 26px; }
+  .t53n-dateLine { grid-template-columns: 1fr 96px 1fr; }
+  .t53n-dateLine span { font-size: 23px; }
+  .t53n-dateLine b { font-size: 69px; }
+  .t53n-timeline h2,
+  .t53n-timeline h3 { font-size: 55px; }
+  .t53n-timelineItems svg { width: 55px; height: 55px; }
+  .t53n-portraits { gap: 62px; }
+  .t53n-portraits article img { height: 256px; }
+  .t53n-storyHeart { top: 218px; }
+  .t53n-storyCopy { padding-right: 10px; padding-left: 10px; }
+  .t53n-storyCopy h2 { font-size: 47px; }
+  .t53n-calendarStage { min-height: 720px; }
+  .t53n-calendarStage > img { height: 530px; }
+  .t53n-calendarStage .ni-calendar { width: 66%; }
+  .t53n-calendarStage .ni-days > span { height: 31px; }
+  .t53n-count { width: 72%; }
+  .t53n-memoryTitle { grid-template-columns: 125px 1fr; }
+  .t53n-memoryTitle > img { height: 125px; }
+  .t53n-memoryTitle b { font-size: 42px; }
+  .t53n-mainPhoto { height: 264px; }
+  .t53n-thumbnails img { height: 56px; }
+  .t53n-thanks > img { height: 505px; }
+}

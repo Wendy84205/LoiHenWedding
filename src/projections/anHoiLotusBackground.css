@@ -1,0 +1,146 @@
+@import "../templates/cineloveFonts.css";
+
+html.projection-an-hoi-page,
+body.projection-an-hoi-page { min-width: 0; margin: 0; padding: 0; overflow: hidden; background: #f8e6e8; }
+body.projection-an-hoi-page { display: block; }
+
+.backgroundAnHoi {
+  --projection-accent: #8f1735;
+  --projection-controls: #fff9f5;
+  --projection-panel: rgba(97, 15, 37, .68);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #7d1731;
+  background: #faecec;
+  font-family: "Montserrat", Arial, sans-serif;
+}
+
+.backgroundAnHoi::before {
+  content: "";
+  position: absolute;
+  z-index: 8;
+  inset: 22px;
+  border: 1px solid rgba(146, 36, 65, .34);
+  pointer-events: none;
+}
+
+.bah-paper {
+  position: absolute;
+  z-index: -5;
+  inset: 0;
+  opacity: .42;
+  background-image: url('/assets/new-templates/thiep-cuoi-63/happiness.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: min(28vw, 520px);
+  filter: saturate(.55) sepia(.15);
+}
+.bah-paper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(90deg, rgba(255,255,255,.64), transparent 28% 72%, rgba(255,255,255,.64)), repeating-linear-gradient(0deg, rgba(121,39,60,.018) 0 1px, transparent 1px 5px);
+}
+
+.bah-sun { position: absolute; z-index: -4; width: min(46vw, 760px); aspect-ratio: 1; border: 1px solid rgba(158, 42, 72, .1); border-radius: 50%; animation: bah-orbit 18s ease-in-out infinite; }
+.bah-sun::before, .bah-sun::after { content: ""; position: absolute; border: 1px solid rgba(158, 42, 72, .08); border-radius: 50%; inset: 9%; }
+.bah-sun::after { inset: 19%; }
+.bah-sunOne { top: -34%; left: -12%; }
+.bah-sunTwo { right: -13%; bottom: -37%; animation-delay: -9s; }
+@keyframes bah-orbit { 0%, 100% { opacity: .44; transform: scale(.97) rotate(0); } 50% { opacity: 1; transform: scale(1.035) rotate(8deg); } }
+
+.bah-lotus { width: min(24vw, 380px); height: min(24vw, 380px); position: absolute; z-index: -1; bottom: 6%; opacity: .9; }
+.bah-lotusLeft { left: 0; transform: translateX(-20%); }
+.bah-lotusRight { right: 0; transform: translateX(20%) scaleX(-1); }
+.bah-lotus::after { content: ""; width: 46%; height: 1px; position: absolute; left: 28%; bottom: 17%; background: #a42b49; transform: rotate(-20deg); transform-origin: left; }
+.bah-lotus > b { width: 52%; height: 17%; position: absolute; left: 23%; bottom: 8%; border: 1px solid rgba(147,31,61,.48); border-radius: 50%; transform: rotate(-10deg); }
+.bah-lotusPetals { position: absolute; inset: 13% 8% 28%; transform-origin: bottom center; animation: bah-bloom 9s ease-in-out infinite; }
+.bah-lotusPetals i { width: 28%; height: 60%; position: absolute; left: 36%; bottom: 0; border: 1px solid #a62f4d; border-radius: 70% 70% 45% 45%; background: rgba(239,151,167,.26); transform-origin: 50% 100%; }
+.bah-lotusPetals i:nth-child(1) { transform: rotate(-68deg) scale(.84); }
+.bah-lotusPetals i:nth-child(2) { transform: rotate(-45deg) scale(.92); }
+.bah-lotusPetals i:nth-child(3) { transform: rotate(-23deg); }
+.bah-lotusPetals i:nth-child(4) { transform: rotate(0) scale(1.08); background: rgba(255,210,216,.5); }
+.bah-lotusPetals i:nth-child(5) { transform: rotate(23deg); }
+.bah-lotusPetals i:nth-child(6) { transform: rotate(45deg) scale(.92); }
+.bah-lotusPetals i:nth-child(7) { transform: rotate(68deg) scale(.84); }
+@keyframes bah-bloom { 0%, 100% { transform: scale(.96) translateY(3%); } 50% { transform: scale(1.04) translateY(0); } }
+
+.bah-sparkles { position: absolute; z-index: 3; inset: 0; pointer-events: none; }
+.bah-sparkles i { width: 3px; height: 3px; position: absolute; top: var(--bah-y); left: var(--bah-x); border-radius: 50%; opacity: 0; background: #b33c59; box-shadow: 0 0 10px rgba(179,60,89,.55); animation: bah-sparkle var(--bah-duration) ease-in-out var(--bah-delay) infinite; }
+@keyframes bah-sparkle { 0%, 100% { opacity: 0; transform: translateY(14px) scale(.5); } 42% { opacity: .52; transform: translateY(-10px) scale(1); } 70% { opacity: .08; transform: translate(9px, -22px) scale(.7); } }
+
+.bah-back,
+.bah-fullscreen { width: 44px; height: 44px; position: absolute; z-index: 32; top: 42px; display: grid; place-items: center; border: 1px solid rgba(127,22,49,.35); border-radius: 50%; padding: 0; color: #821b36; background: rgba(255,249,246,.72); backdrop-filter: blur(8px); cursor: pointer; }
+.bah-back { left: 43px; text-decoration: none; }
+.bah-fullscreen { right: 43px; }
+
+.bah-copy { width: min(76vw, 1280px); position: absolute; z-index: 4; top: 49%; left: 50%; text-align: center; translate: -50% -50%; }
+.bah-kicker { margin: 0 0 11px; font-size: 10px; font-weight: 600; letter-spacing: .24em; }
+.bah-copy h1 { margin: 0; color: #6f102a; font: 400 clamp(43px, 4.2vw, 78px)/.95 "PlayfairDisplay", Georgia, serif; letter-spacing: 0; }
+.bah-invitation { margin: 15px 0 28px; color: rgba(111,16,42,.74); font: italic 17px/1.4 "PlayfairDisplay", Georgia, serif; }
+.bah-names { display: grid; grid-template-columns: 1fr minmax(132px, 10vw) 1fr; align-items: center; gap: 28px; }
+.bah-names strong { font: 400 clamp(40px, 4.4vw, 82px)/.9 "Carlytte", "PlayfairDisplay", serif; letter-spacing: 0; }
+.bah-happiness { width: clamp(92px, 8vw, 142px); aspect-ratio: 1; position: relative; justify-self: center; display: grid; place-items: center; border: 1px solid rgba(133,24,52,.38); border-radius: 50%; animation: bah-seal 9s ease-in-out infinite; }
+.bah-happiness::before, .bah-happiness::after { content: ""; position: absolute; width: inherit; aspect-ratio: 1; border: 1px solid rgba(133,24,52,.16); border-radius: 50%; transform: scale(1.13); }
+.bah-happiness::after { transform: scale(.83); }
+.bah-happiness i { color: #941d3b; font: normal 54px/1 "Cinelove Times", serif; }
+@keyframes bah-seal { 0%, 100% { transform: rotate(-3deg) scale(.98); } 50% { transform: rotate(3deg) scale(1.025); } }
+.bah-date { width: min(470px, 42vw); display: grid; grid-template-columns: 1fr 92px 1fr; align-items: center; margin: 34px auto 0; border-top: 1px solid rgba(132,27,53,.27); border-bottom: 1px solid rgba(132,27,53,.27); }
+.bah-date b { padding: 4px 0 8px; border-inline: 1px solid rgba(132,27,53,.27); font: 400 60px/.9 "PlayfairDisplay", Georgia, serif; }
+.bah-date span { font-size: 9px; font-weight: 600; letter-spacing: .12em; }
+.bah-time { margin: 19px 0 0; font-size: 11px; font-weight: 600; letter-spacing: .18em; }
+.bah-location { margin: 8px 0 0; color: rgba(111,16,42,.64); font: 500 9px/1 "Montserrat", sans-serif; letter-spacing: .16em; }
+.bah-family { position: absolute; z-index: 4; bottom: 12%; margin: 0; color: rgba(107,17,40,.58); font-size: 8px; font-weight: 600; letter-spacing: .09em; }
+.bah-familyLeft { left: 5%; }
+.bah-familyRight { right: 5%; }
+.bah-transport { --projection-panel: rgba(104, 17, 41, .73); }
+
+.backgroundAnHoi.is-presenting .bah-back,
+.backgroundAnHoi.is-presenting .bah-fullscreen { opacity: 0; pointer-events: none; }
+
+@media (min-width: 2560px) and (min-height: 1400px) {
+  .backgroundAnHoi::before { inset: 42px; }
+  .bah-copy { width: min(76vw, 2560px); }
+  .bah-paper { background-size: min(28vw, 1040px); }
+  .bah-lotus { width: min(24vw, 760px); height: min(24vw, 760px); }
+  .bah-back, .bah-fullscreen { width: 88px; height: 88px; top: 78px; }
+  .bah-back svg, .bah-fullscreen svg { width: 34px; height: 34px; }
+  .bah-back { left: 72px; }
+  .bah-fullscreen { right: 72px; }
+  .bah-kicker { font-size: 20px; }
+  .bah-copy h1 { font-size: 156px; }
+  .bah-invitation { margin: 30px 0 48px; font-size: 34px; }
+  .bah-names { grid-template-columns: 1fr minmax(240px, 10vw) 1fr; gap: 54px; }
+  .bah-names strong { font-size: 164px; }
+  .bah-happiness { width: 220px; }
+  .bah-happiness i { font-size: 108px; }
+  .bah-date { width: 900px; grid-template-columns: 1fr 180px 1fr; margin-top: 58px; }
+  .bah-date b { font-size: 118px; }
+  .bah-date span { font-size: 18px; }
+  .bah-time { margin-top: 31px; font-size: 22px; }
+  .bah-location { font-size: 17px; }
+  .bah-family { font-size: 16px; }
+}
+
+@media (max-width: 800px) {
+  .bah-copy { width: calc(100% - 44px); top: 45%; }
+  .bah-copy h1 { font-size: 38px; }
+  .bah-invitation { margin: 10px auto 22px; max-width: 320px; font-size: 13px; }
+  .bah-names { grid-template-columns: 1fr 66px 1fr; gap: 7px; }
+  .bah-names strong { font-size: 31px; }
+  .bah-happiness { width: 58px; }
+  .bah-happiness i { font-size: 28px; }
+  .bah-date { width: min(330px, 85vw); grid-template-columns: 1fr 68px 1fr; margin-top: 24px; }
+  .bah-date b { font-size: 45px; }
+  .bah-date span { font-size: 7px; }
+  .bah-family { display: none; }
+  .bah-lotus { width: 180px; height: 180px; bottom: 5%; opacity: .7; }
+  .bah-back, .bah-fullscreen { top: 37px; }
+  .bah-back { left: 38px; }
+  .bah-fullscreen { right: 38px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bah-sun, .bah-lotusPetals, .bah-happiness, .bah-sparkles i { animation: none; }
+}

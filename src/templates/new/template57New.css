@@ -1,0 +1,349 @@
+html.template57new-page,
+body.template57new-page {
+  background: #e5c9aa;
+}
+
+.t57n {
+  width: min(500px, 100vw);
+  margin: auto;
+  overflow: hidden;
+  color: #542a29;
+  background: #fff2f0;
+  font-family: "PlayfairDisplay", Georgia, serif;
+  box-shadow: 0 18px 70px rgba(95, 48, 39, .22);
+}
+
+.t57n-music {
+  background: #8e3334;
+}
+
+.t57n-hero {
+  height: 950px;
+  position: relative;
+  color: #fff;
+}
+
+.t57n-hero > img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.t57n-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(85, 42, 36, .08), rgba(83, 35, 34, .56));
+}
+
+.t57n-title {
+  position: absolute;
+  z-index: 2;
+  right: 25px;
+  bottom: 42px;
+  left: 25px;
+  text-align: center;
+}
+
+.t57n-title small {
+  letter-spacing: .2em;
+}
+
+.t57n-title h1 {
+  margin: 10px 0;
+  font: 400 49px/1 "Carlytte", cursive;
+}
+
+.t57n-title h1 i {
+  font-family: "PlayfairDisplay", serif;
+}
+
+.t57n-intro {
+  min-height: 1300px;
+  display: grid;
+  align-content: center;
+  padding: 70px 25px;
+  text-align: center;
+}
+
+.t57n-intro > div:first-child {
+  display: grid;
+  justify-items: center;
+  gap: 11px;
+}
+
+.t57n-intro h2 {
+  margin: 0;
+  font: 400 43px/1 "Carlytte", cursive;
+}
+
+.t57n-intro p {
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.t57n-family {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-top: 42px;
+  padding: 30px 0;
+  border-top: 1px solid #b87372;
+  border-bottom: 1px solid #b87372;
+}
+
+.t57n-family span {
+  padding: 0 10px;
+}
+
+.t57n-family span + span {
+  border-left: 1px solid rgba(142, 51, 52, .3);
+}
+
+.t57n-family b {
+  color: #8e3334;
+  font-size: 14px;
+  letter-spacing: .12em;
+}
+
+.t57n-family p {
+  margin: 10px 0 0;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.t57n-calendarArt {
+  position: relative;
+  margin: 58px -25px 0;
+}
+
+.t57n-calendarArt > img {
+  width: 100%;
+  height: 650px;
+  object-fit: cover;
+}
+
+.t57n-calendarArt .ni-calendar {
+  width: calc(100% - 52px);
+  position: absolute;
+  right: 26px;
+  bottom: 24px;
+  padding: 22px 16px;
+  border: 1px solid rgba(142, 51, 52, .45);
+  background: rgba(255, 247, 244, .91);
+  backdrop-filter: blur(4px);
+}
+
+.t57n-calendarArt .ni-calendar h3 {
+  margin-bottom: 14px;
+  color: #8e3334;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.t57n-calendarArt .ni-weekdays {
+  font-size: 9px;
+}
+
+.t57n-calendarArt .ni-days > span {
+  height: 31px;
+}
+
+.t57n-calendarArt .ni-days svg {
+  width: 31px;
+  color: #b64043;
+}
+
+.t57n-events {
+  min-height: 1100px;
+  display: grid;
+  align-content: center;
+  gap: 18px;
+  padding: 55px 30px;
+  background: #f7e8e7;
+}
+
+.t57n-events > div:not(.t57n-count) {
+  padding: 28px 20px;
+  border-radius: 10px;
+  background: #fff;
+  text-align: center;
+}
+
+.t57n-events small {
+  font-size: 17px;
+}
+
+.t57n-events h2 {
+  margin: 10px 0;
+  color: #963b3b;
+  font-size: 35px;
+  font-weight: 400;
+}
+
+.t57n-events p {
+  line-height: 1.6;
+}
+
+.t57n-events .ni-map {
+  border-radius: 22px;
+  padding: 10px 20px;
+  color: #fff;
+  background: #963b3b;
+}
+
+.t57n-count {
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.t57n-count > span {
+  height: 70px;
+  color: #fff;
+  background: #9c3a3c;
+}
+
+.t57n-date {
+  min-height: 850px;
+  display: grid;
+  align-content: center;
+  padding: 70px 28px;
+  color: #fff;
+  background: #963b3b;
+  text-align: center;
+}
+
+.t57n-date span {
+  font: 400 45px/1 "Carlytte", cursive;
+}
+
+.t57n-date h2 {
+  font-size: 31px;
+  font-weight: 400;
+}
+
+.t57n-date > div > div {
+  display: grid;
+  grid-template-columns: 1fr 110px 1fr;
+  align-items: center;
+}
+
+.t57n-date small {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  padding: 11px 0;
+}
+
+.t57n-date b {
+  color: #efc17c;
+  font-size: 72px;
+  font-weight: 400;
+}
+
+.t57n-album {
+  min-height: 1800px;
+  display: grid;
+  align-content: center;
+  padding: 65px 14px;
+  background: #fff2f0;
+  text-align: center;
+}
+
+.t57n-album h2 {
+  margin: 0 0 35px;
+  color: #963b3b;
+  font: 400 56px/1 "Carlytte", cursive;
+}
+
+.t57n-album > img {
+  height: 500px;
+  object-fit: cover;
+}
+
+.t57n-album > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.t57n-album > div img {
+  height: 330px;
+  object-fit: cover;
+}
+
+.t57n-ending {
+  min-height: 1450px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 55px;
+  padding: 70px 22px 50px;
+  color: #fff;
+  background: #963b3b;
+}
+
+.t57n-gift > svg {
+  color: #963b3b;
+  background: #efc17c;
+}
+
+.t57n-ending h2 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+  font: 400 52px/1 "Carlytte", cursive;
+}
+
+.t57n-ending h2 svg {
+  width: 31px;
+}
+
+@media (max-width: 420px) {
+  .t57n-hero {
+    height: 820px;
+    min-height: 820px;
+  }
+
+  .t57n-intro {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .t57n-calendarArt {
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+
+  .t57n-calendarArt > img {
+    height: 570px;
+  }
+
+  .t57n-calendarArt .ni-calendar {
+    width: calc(100% - 30px);
+    right: 15px;
+    bottom: 15px;
+  }
+
+  .t57n-events,
+  .t57n-date {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .t57n-date > div > div {
+    grid-template-columns: 1fr 88px 1fr;
+  }
+
+  .t57n-date b {
+    font-size: 61px;
+  }
+
+  .t57n-album > img {
+    height: 430px;
+  }
+
+  .t57n-album > div img {
+    height: 280px;
+  }
+}

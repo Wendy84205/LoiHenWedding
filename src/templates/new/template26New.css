@@ -1,0 +1,60 @@
+html.template26new-page, body.template26new-page { background: #ead7c5; }
+.t26n { width: min(500px, 100vw); margin: auto; overflow: hidden; color: #5d3a34; background: #fff; font-family: "Signora", "PlayfairDisplay", serif; box-shadow: 0 20px 70px rgba(91, 52, 43, .2); }
+.t26n-music { background: #bd2a2a; }
+.t26n { background-image: radial-gradient(#e9a09a 1.2px, transparent 1.2px); background-size: 65px 75px; }
+.t26n-hero { min-height: 900px; display: grid; align-content: start; justify-items: center; gap: 24px; padding: 34px 18px 0; background: rgba(255, 255, 255, .92); text-align: center; }
+.t26n-hero > div { width: 100%; }
+.t26n-hero small { letter-spacing: .22em; }
+.t26n-hero h1 { margin: 10px 0; font: 400 40px/1 "Signora", serif; }
+.t26n-hero h1 i { color: #bd2a2a; font-family: Georgia, serif; }
+.t26n-hero p { font-size: 23px; letter-spacing: .18em; }
+.t26n-hero > img { height: 700px; object-fit: contain; }
+.t26n-banner { padding: 15px; color: #5d3a34; background: #f5d1cb; font-size: 17px; letter-spacing: .12em; text-align: center; }
+.t26n-letter { padding: 75px 35px; background: rgba(255, 255, 255, .92); text-align: center; }
+.t26n-letter > div { display: grid; justify-items: center; gap: 14px; }
+.t26n-letter h2 { margin: 0; color: #bd2a2a; font: 400 45px/1 "Signora", serif; }
+.t26n-letter p { font-size: 20px; line-height: 1.8; }
+.t26n-letter svg { color: #bd2a2a; }
+.t26n-couple { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; padding: 65px 25px; background: rgba(255, 255, 255, .94); text-align: center; }
+.t26n-couple > div { min-width: 0; }
+.t26n-couple img { height: 300px; border-radius: 50%; object-fit: cover; }
+.t26n-couple h3 { margin: 14px 0 4px; color: #c2696c; font: 400 31px/1 "Signora", serif; }
+.t26n-couple small { font: 600 9px/1 "Quicksand", sans-serif; letter-spacing: .17em; }
+.t26n-photoStory { display: grid; gap: 42px; padding: 80px 25px; background: rgba(255, 255, 255, .92); }
+.t26n-photoStory > img { height: 590px; object-fit: cover; opacity: .82; }
+.t26n-photoStory > p { max-width: 390px; margin: 0; font-size: 23px; line-height: 1.75; text-align: right; }
+.t26n-photoStory > div { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.t26n-photoStory > div img { height: 420px; object-fit: cover; opacity: .82; }
+.t26n-photoStory > p:last-child { text-align: left; }
+.t26n-vowPage { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; padding: 70px 20px; background: rgba(255, 255, 255, .94); }
+.t26n-vowPage > img { height: 650px; object-fit: cover; opacity: .8; }
+.t26n-vowPage > div { position: relative; z-index: 2; margin-left: -45px; padding: 35px 20px; background: rgba(255, 255, 255, .94); }
+.t26n-vowPage small { font: 600 10px/1 "Quicksand", sans-serif; letter-spacing: .18em; }
+.t26n-vowPage h2 { margin: 12px 0; color: #bd2a2a; font-size: 33px; font-weight: 400; line-height: 1.3; }
+.t26n-vowPage p { line-height: 1.7; }
+.t26n-date { display: grid; gap: 35px; padding: 75px 28px; background: rgba(255, 255, 255, .94); text-align: center; }
+.t26n .ni-calendar { padding: 28px 16px; border: 2px solid #e4a0a1; box-shadow: 0 8px 22px rgba(115, 63, 58, .14); }
+.t26n .ni-calendar h3 { font: 400 29px/1 "PlayfairDisplay", serif; }
+.t26n .ni-weekdays { margin: 22px 0 9px; font: 600 10px/1 "Quicksand", sans-serif; }
+.t26n .ni-days > span { height: 42px; }
+.t26n .ni-days svg { width: 35px; color: #d95860; }
+.t26n-date p { font-size: 21px; line-height: 1.75; }
+.t26n-date .ni-map { border-radius: 22px; padding: 10px 20px; color: #fff; background: #d88d92; }
+.t26n-count { gap: 8px; }
+.t26n-count > span { height: 72px; color: #fff; background: #d88d92; }
+.t26n-end { display: grid; justify-items: center; gap: 55px; padding: 0 22px 65px; background: rgba(255, 255, 255, .94); }
+.t26n-end > img { width: calc(100% + 44px); height: 560px; object-fit: cover; opacity: .82; }
+.t26n-end > .t26n-finalMark { width: 230px; height: 230px; object-fit: contain; opacity: 1; }
+.t26n-finalWords { max-width: 380px; margin: 0; color: #6d4b46; font-size: 20px; line-height: 1.8; text-align: center; }
+.t26n-gift > svg { color: #fff; background: #bd2a2a; }
+@media (max-width: 420px) {
+  .t26n-hero { min-height: 790px; }
+  .t26n-hero > img { height: 600px; }
+  .t26n-couple { gap: 12px; padding-right: 14px; padding-left: 14px; }
+  .t26n-couple img { height: 260px; }
+  .t26n-photoStory, .t26n-date { padding-right: 18px; padding-left: 18px; }
+  .t26n-photoStory > img { height: 500px; }
+  .t26n-photoStory > div img { height: 350px; }
+  .t26n-vowPage { padding-right: 12px; padding-left: 12px; }
+  .t26n-vowPage > img { height: 550px; }
+}

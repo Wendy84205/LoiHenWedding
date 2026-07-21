@@ -1,0 +1,89 @@
+@import url("./cineloveFonts.css");
+html.template16-page,body.template16-page{background:#e5e5e3}body.template16-page{padding-top:0;padding-bottom:0}.template16{width:min(500px,100vw);min-height:100vh;position:relative;overflow:hidden;isolation:isolate;color:#282621;background:#f8f6ee;box-shadow:0 20px 70px rgba(53,49,40,.18);font-family:"Cormorant Garamond",Georgia,serif}.template16 button,.template16 input,.template16 select{font:inherit}.template16 img{filter:sepia(.33) saturate(.7) contrast(.95)}
+.t16-music{width:41px;height:41px;position:fixed;z-index:180;top:13px;right:max(12px,calc((100vw - 500px)/2 + 12px));display:grid;place-items:center;border:2px solid #fff;border-radius:50%;color:#fff;background:#272722;box-shadow:0 6px 18px rgba(0,0,0,.22)}.t16-music.is-playing{animation:t16-spin 4s linear infinite}@keyframes t16-spin{to{transform:rotate(360deg)}}
+.t16-hero{height:720px;position:relative;overflow:hidden;background:#aaa793}.t16-hero h1{position:absolute;z-index:3;top:150px;left:22px;margin:0;font:400 1.55rem/1 "Italiana",serif;letter-spacing:.08em}.t16-arch{width:72%;height:600px;position:absolute;right:20px;bottom:0;overflow:hidden;border-radius:170px 170px 0 0;background:#d8d2c3}.t16-arch img{height:100%;object-fit:cover;object-position:center}.t16-lineMark{width:1px;height:150px;position:absolute;z-index:3;left:45px;bottom:80px;background:#272621;transform-origin:top}
+.t16-opening{min-height:1050px;padding:4.5rem 1.5rem;background:#f8f6ee}.t16-opening>blockquote{margin:0 auto 1rem;text-align:center;font-size:.9rem;font-style:italic;line-height:1.5}.t16-chapter{margin:0 0 3rem;text-align:center;font-size:.78rem;font-style:italic}.t16-wide{height:300px;object-fit:cover}.t16-openingGrid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:1.2rem}.t16-openingGrid>div{display:grid;align-content:center;gap:1rem;padding:1.2rem;background:#e8e3d6}.t16-openingGrid strong{font:400 1rem/1 "Italiana",serif}.t16-openingGrid span{font-size:.75rem;font-style:italic;line-height:1.45}.t16-openingGrid img{height:310px;object-fit:cover}.t16-openingGrid img:last-child{grid-column:1/-1;height:270px}.t16-smallPoem{margin-top:3.2rem!important}
+.t16-profiles{min-height:760px;padding:4rem 1.6rem;background:#fffdf7}.t16-profiles>p{margin:0 0 3rem;text-align:center;font-size:.86rem;line-height:1.55}.t16-profiles>p i{display:block;margin-top:.7rem;color:#777}.t16-profileGrid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}.t16-profileGrid figure{margin:0}.t16-profileGrid img{height:350px;object-fit:cover}.t16-profileGrid figcaption{display:grid;justify-items:center;gap:.35rem;padding-top:1rem;text-align:center}.t16-profileGrid small{font:500 .65rem/1 "Montserrat",sans-serif;letter-spacing:.14em}.t16-profileGrid b{font:500 1.05rem/1 "Cormorant Garamond",serif}.t16-profileGrid a{margin-top:.45rem;border-radius:999px;padding:.45rem 1rem;color:#fff;background:#303029;font:500 .6rem/1 "Montserrat",sans-serif;text-decoration:none}
+.t16-story{min-height:1050px;padding:4rem 1.6rem;background:#f3f0e7}.t16-storyHero{height:470px}.t16-storyHero img{height:100%;object-fit:cover}.t16-story>p{max-width:390px;margin:3rem auto 0;text-align:center;font-size:.84rem;line-height:1.6}.t16-story blockquote{margin:2rem 0 3rem;text-align:center;font:400 1.8rem/1 "Sacramento",cursive}.t16-storyPair{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}.t16-storyPair img{height:320px;object-fit:cover}
+.t16-collage{min-height:1080px;padding:4rem 1.5rem;background:#fffdf7}.t16-collage blockquote{margin:0 0 3rem;text-align:center;font-size:1rem;font-style:italic;line-height:1.55}.t16-collageTop{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:end}.t16-collageTop img:first-child{height:360px;object-fit:cover}.t16-collageTop img:last-child{height:300px;object-fit:cover}.t16-collageBottom{display:grid;grid-template-columns:1.1fr .9fr;gap:1.2rem;margin-top:1.2rem}.t16-collageBottom img:first-child{height:290px;object-fit:cover}.t16-collageBottom img:last-child{height:360px;object-fit:cover}.t16-collage>p{margin:3.4rem auto 0;text-align:center;font-size:.9rem;font-style:italic;line-height:1.55}
+.t16-date{min-height:850px;display:grid;align-content:center;padding:4rem 1.6rem;background:#f2efe5}.t16-dateHeading{display:grid;grid-template-columns:1fr 90px 1fr;align-items:center;border-top:1px solid #8a887f;border-bottom:1px solid #8a887f;text-align:center}.t16-dateHeading span{padding:1rem .4rem;font-size:.75rem}.t16-dateHeading strong{padding:.7rem .2rem;border-right:1px solid #8a887f;border-left:1px solid #8a887f;font:400 2.5rem/1 "Italiana",serif}.t16-calendar{width:320px;margin:3rem auto;padding:1.3rem;background:#fff;box-shadow:0 10px 25px rgba(57,52,44,.11)}.t16-calendar h2{margin:0 0 1.3rem;font:500 1.4rem/1 "Montserrat",sans-serif}.t16-calendar>div{display:grid;grid-template-columns:repeat(7,1fr);gap:.35rem 0}.t16-calendar span{min-height:33px;position:relative;display:grid;place-items:center;font:400 .6rem/1 "Montserrat",sans-serif}.t16-calendar svg{width:38px;height:34px;position:absolute;color:#b96d67}.t16-calendar i{position:relative;z-index:1;font-style:normal}.t16-calendar .is-wedding i{color:#fff}.t16-date>p{margin:0;text-align:center;font-size:.8rem;line-height:1.5}.t16-date blockquote{margin:3rem 0 0;text-align:center;font-size:1rem;font-style:italic;line-height:1.55}
+.t16-venueRsvp{min-height:1250px;padding:4rem 1.5rem;background:#fffdf8}.t16-venueIntro{display:grid;grid-template-columns:45% 55%;align-items:center}.t16-venueIntro img{height:350px;object-fit:cover}.t16-venueIntro p{margin:0;padding-left:1rem;text-align:center;font-size:.8rem;font-style:italic;line-height:1.55}.t16-map{height:260px;position:relative;display:grid;place-content:center;justify-items:center;gap:.6rem;margin:3rem 0;color:#37352f;background:repeating-linear-gradient(33deg,#eef0e9 0 33px,#fff 34px 40px);text-align:center;text-decoration:none}.t16-map:before{content:"";position:absolute;width:420px;border-top:26px solid rgba(215,210,197,.65);transform:rotate(-27deg)}.t16-map>*{position:relative;z-index:1}.t16-map svg{color:#6e715f}.t16-map b{max-width:320px;font-size:.78rem}.t16-map span{border-radius:999px;padding:.5rem 1rem;color:#fff;background:#6c6a5d;font:500 .62rem/1 "Montserrat",sans-serif}.t16-venueRsvp form{width:min(335px,100%);display:grid;gap:1rem;margin:3rem auto 0;padding:2rem 1.4rem;border:1px solid #dedbd2;background:#fff;box-shadow:0 14px 30px rgba(53,48,42,.1);font-family:Arial,sans-serif}.t16-venueRsvp h2{margin:0 .3rem;text-align:center;font-size:1.1rem}.t16-venueRsvp label{display:grid;gap:.4rem;color:#555;font-size:.72rem}.t16-venueRsvp input:not([type="radio"]),.t16-venueRsvp select{height:42px;border:1px solid #ddd;border-radius:3px;padding:0 .65rem;background:#fff}.t16-venueRsvp fieldset{display:grid;gap:.45rem;margin:0;border:0;padding:0}.t16-venueRsvp legend{margin-bottom:.4rem;color:#555;font-size:.72rem}.t16-venueRsvp fieldset label{grid-template-columns:18px 1fr;align-items:center}.t16-venueRsvp input[type="radio"]{width:17px;height:17px;accent-color:#7b786a}.t16-venueRsvp button{min-height:42px;display:flex;align-items:center;justify-content:center;gap:.4rem;border:0;color:#fff;background:#777466}.t16-success{display:flex;align-items:center;gap:.35rem;color:#625f53;font-size:.67rem}
+.t16-thanks{min-height:720px;position:relative;overflow:hidden;background:#aaa797}.t16-thanks>img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover}.t16-thanks:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(31,30,26,.05),rgba(31,30,26,.55))}.t16-thanks>div{position:absolute;z-index:2;left:0;right:0;bottom:3rem;color:#fff;text-align:center}.t16-thanks h2{margin:0;font:400 4rem/1 "Sacramento",cursive}.t16-thanks p{margin:.8rem 0 0;font-size:.75rem}
+@media(max-width:420px){.t16-hero{height:660px}.t16-arch{width:74%;height:550px;right:14px}.t16-hero h1{left:12px;font-size:1.25rem}.t16-opening,.t16-profiles,.t16-story,.t16-collage,.t16-date,.t16-venueRsvp{padding-right:1.15rem;padding-left:1.15rem}.t16-openingGrid{gap:.75rem}.t16-profileGrid{gap:1rem}.t16-profileGrid img{height:310px}.t16-storyPair,.t16-collageTop,.t16-collageBottom{gap:.75rem}.t16-calendar{width:300px}.t16-venueIntro img{height:310px}}
+@media(prefers-reduced-motion:reduce){.t16-music.is-playing{animation:none}}
+
+/* Source-matched typography and vertical rhythm. */
+.template16{color:#000;background:#fff;font-family:"Signora",Georgia,serif}
+.template16 img{filter:none}
+.t16-hero{height:500px;background:#b8afa0}
+.t16-hero h1{top:153px;left:34px;color:#000;font:700 38px/1.7 "Mallong",serif;letter-spacing:9px}
+.t16-arch{width:271px;height:355px;right:55px;bottom:49px;border-radius:145px 145px 0 0;background:#ddd5c7}
+.t16-arch img{object-position:center}
+.t16-lineMark{left:34px;bottom:85px;height:108px;background:#000}
+.t16-heroPoem{position:absolute;z-index:4;left:13px;bottom:15px;width:252px;margin:0;color:#fafafa;text-align:center;font:500 15px/1.2 "Signora",serif}
+
+.t16-opening{min-height:1120px;padding:34px 34px 45px;background:#fff}
+.t16-opening>blockquote{margin:0 auto 20px;font:500 24px/1.18 "Signora",serif}
+.t16-chapter{margin:0 0 28px;font:500 26px/1.2 "Mallong",serif}
+.t16-wide{width:384px;height:254px;margin:0 auto;object-fit:cover}
+.t16-openingGrid{grid-template-columns:165px 1fr;gap:15px;margin-top:24px}
+.t16-openingGrid>div{min-height:210px;gap:10px;padding:18px 14px;background:#f5f2ea}
+.t16-openingGrid strong{font:400 22px/1 "Soul Note Display",serif}
+.t16-openingGrid span{font:500 18px/1.3 "Signora",serif}
+.t16-openingGrid img{height:253px;object-fit:cover}
+.t16-openingGrid img:last-child{grid-column:1/-1;width:394px;height:260px;margin:0 auto}
+.t16-smallPoem{margin:26px 0 0!important;font-size:22px!important}
+
+.t16-profiles{min-height:780px;padding:38px 28px 42px;background:#fff}
+.t16-profiles>p{margin:0 0 30px;font:500 23px/1.25 "Signora",serif}
+.t16-profiles>p i{margin-top:8px;font:500 22px/1 "Mallong",serif}
+.t16-profileGrid{gap:18px;align-items:start}
+.t16-profileGrid img{height:300px;object-fit:cover}
+.t16-profileGrid figcaption{gap:5px;padding-top:12px}
+.t16-profileGrid small{font:500 21px/1 "Mallong",serif;letter-spacing:0}
+.t16-profileGrid b{font:500 22px/1.2 "Signora",serif}
+.t16-profileGrid a{background:#000;font:500 14px/1 "Soul Note Display",serif}
+
+.t16-story{min-height:900px;padding:35px 32px 40px;background:#fff}
+.t16-storyHero{width:436px;height:295px;margin:0 auto}
+.t16-story>p{max-width:381px;margin:35px auto 0;font:500 22px/1.28 "Signora",serif}
+.t16-story blockquote{margin:28px 0 18px;font:500 22px/1.2 "Mallong",serif}
+.t16-storyPair{gap:15px}
+.t16-storyPair img{height:250px;object-fit:cover}
+
+.t16-collage{min-height:850px;padding:36px 28px 35px;background:#fff}
+.t16-collage blockquote{margin:0 0 25px;font:500 22px/1.3 "Signora",serif}
+.t16-collageTop,.t16-collageBottom{gap:14px}
+.t16-collageTop img:first-child{height:270px}.t16-collageTop img:last-child{height:235px}
+.t16-collageBottom{margin-top:14px}.t16-collageBottom img:first-child{height:220px}.t16-collageBottom img:last-child{height:270px}
+.t16-collage>p{margin:25px auto 0;font:500 22px/1.3 "Signora",serif}
+
+.t16-date{min-height:700px;padding:35px 32px;background:#fff}
+.t16-dateHeading{border-color:#000}
+.t16-dateHeading span{font:500 18px/1.25 "Soul Note Display",serif}
+.t16-dateHeading strong{border-color:#000;font:400 42px/1 "Soul Note Display",serif}
+.t16-calendar{width:320px;margin:28px auto;padding:18px;background:#fff;box-shadow:0 8px 22px rgba(0,0,0,.1)}
+.t16-calendar h2{font:400 29px/1 Arial,sans-serif}
+.t16-calendar span{font:400 14px/1 Arial,sans-serif}
+.t16-date>p{font:500 22px/1.35 "Soul Note Display",serif}
+.t16-date blockquote{margin:28px 0 0;font:500 22px/1.3 "Signora",serif}
+
+.t16-venueRsvp{min-height:850px;padding:30px 30px 36px;background:#fff}
+.t16-venueIntro{grid-template-columns:249px 1fr;gap:14px}
+.t16-venueIntro img{height:370px;object-fit:cover}
+.t16-venueIntro p{padding:0;font:500 22px/1.25 "Signora",serif}
+.t16-map{height:205px;margin:24px 0;font-family:"Signora",serif}
+.t16-map b{font-size:18px}.t16-map span{font-family:"Soul Note Display",serif}
+.t16-venueRsvp form{margin:24px auto 0;padding:20px 18px;font-family:"Soul Note Display",Arial,sans-serif}
+.t16-venueRsvp h2{font-size:18px}
+.t16-thanks{min-height:163px;background:#b8afa0}
+.t16-thanks>img{object-position:center 28%}
+.t16-thanks h2{font:500 64px/1 "Carlytte",cursive}
+.t16-thanks p{font:500 18px/1.3 "Signora",serif}
+
+@media(max-width:420px){
+  .t16-hero{height:420px}.t16-arch{width:228px;height:299px;right:9%;bottom:42px}.t16-hero h1{top:128px;left:20px;font-size:31px;letter-spacing:7px}.t16-lineMark{left:24px;bottom:72px;height:90px}.t16-heroPoem{left:10px;bottom:10px;width:220px;font-size:13px}
+  .t16-opening{min-height:980px;padding:28px 20px}.t16-opening>blockquote{font-size:20px}.t16-wide{width:88%;height:220px}.t16-openingGrid{grid-template-columns:38% 1fr}.t16-openingGrid>div{min-height:185px}.t16-openingGrid img{height:220px}.t16-openingGrid img:last-child{width:92%;height:225px}.t16-smallPoem{font-size:19px!important}
+  .t16-profiles{min-height:690px}.t16-profiles>p,.t16-profileGrid b{font-size:19px}.t16-profileGrid img{height:250px}.t16-story{min-height:800px}.t16-storyHero{width:100%;height:250px}.t16-story>p{font-size:18px}.t16-storyPair img{height:215px}
+  .t16-collage{min-height:780px}.t16-collage blockquote,.t16-collage>p{font-size:18px}.t16-date{min-height:650px}.t16-venueRsvp{min-height:800px}.t16-venueIntro{grid-template-columns:52% 48%}.t16-venueIntro img{height:315px}.t16-venueIntro p{font-size:18px}.t16-thanks{min-height:340px}
+}

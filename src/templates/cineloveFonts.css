@@ -1,0 +1,70 @@
+@font-face { font-family: "Aquarelle"; src: url('/assets/fonts/cinelove/aquarelle.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Belinda Avenue"; src: url('/assets/fonts/cinelove/belinda-avenue.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "BethanWhite"; src: url('/assets/fonts/cinelove/bethanwhite.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Carlytte"; src: url('/assets/fonts/cinelove/carlytte.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "HoaTay1"; src: url('/assets/fonts/cinelove/hoatay1.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Katty Diona"; src: url('/assets/fonts/cinelove/katty-diona.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Mallong"; src: url('/assets/fonts/cinelove/mallong.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Monsieur La Doulaise"; src: url('/assets/fonts/cinelove/monsieur-la-doulaise.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Montserrat"; src: url('/assets/fonts/cinelove/montserrat.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "OpenSans"; src: url('/assets/fonts/cinelove/opensans.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "PlayfairDisplay"; src: url('/assets/fonts/cinelove/playfairdisplay.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Poppins"; src: url('/assets/fonts/cinelove/poppins.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Quicksand"; src: url('/assets/fonts/cinelove/quicksand.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "scarlet-bradley.regular"; src: url('/assets/fonts/cinelove/scarlet-bradleyregular.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Scarlet Bradley.regular"; src: url('/assets/fonts/cinelove/scarlet-bradleyregular.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Signora"; src: url('/assets/fonts/cinelove/signora.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Soul Note Display"; src: url('/assets/fonts/cinelove/soul-note-display.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Summerfun"; src: url('/assets/fonts/cinelove/summerfun.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "The Artisan"; src: url('/assets/fonts/cinelove/the-artisan.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Cinelove Times"; src: url('/assets/fonts/cinelove/times-new-roman.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Anisa Signature"; src: url('/assets/fonts/cinelove/anisa-signature.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Pecita"; src: url('/assets/fonts/cinelove/pecita.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Loving Ambros"; src: url('/assets/fonts/cinelove/loving-ambros.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "BrikeyMoura"; src: url('/assets/fonts/cinelove/brikeymoura-regular.woff2') format('woff2'); font-style: normal; font-display: swap; }
+@font-face { font-family: "BrikeyMoura"; src: url('/assets/fonts/cinelove/brikeymoura-italic.woff2') format('woff2'); font-style: italic; font-display: swap; }
+@font-face { font-family: "BrikeyMoura Regular"; src: url('/assets/fonts/cinelove/brikeymoura-regular.woff2') format('woff2'); font-style: normal; font-display: swap; }
+
+/* Additional source families used by the audited templates. */
+@font-face { font-family: "Lora Regular"; src: url('/assets/fonts/cinelove/lora-regular.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "BaskervilleBook"; src: url('/assets/fonts/cinelove/baskervillebook.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Beezle"; src: url('/assets/fonts/cinelove/beezle.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "ShowcaseSans"; src: url('/assets/fonts/cinelove/showcasesans.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Alton JNL"; src: url('/assets/fonts/cinelove/alton-jnl.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Gasthony Signature"; src: url('/assets/fonts/cinelove/gasthony-signature.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Eastin Hikary"; src: url('/assets/fonts/cinelove/eastin-hikary.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "BrownyCakesSignature"; src: url('/assets/fonts/cinelove/brownycakessignature.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "PingFangSaTuoTi"; src: url('/assets/fonts/cinelove/pingfangsatuoti.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Marmelad Regular"; src: url('/assets/fonts/cinelove/marmelad-regular.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Chillatos"; src: url('/assets/fonts/cinelove/chillatos.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Ephesis Regular"; src: url('/assets/fonts/cinelove/ephesis-regular.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Miller Banner"; src: url('/assets/fonts/cinelove/miller-banner.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Amherst"; src: url('/assets/fonts/cinelove/amherst.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Lumios Marker"; src: url('/assets/fonts/cinelove/lumios-marker.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "SVN Desire"; src: url('/assets/fonts/cinelove/svn-desire.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Moon Light"; src: url('/assets/fonts/cinelove/moon-light.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Antro Vectra"; src: url('/assets/fonts/cinelove/antro-vectra.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Outer Sans Light"; src: url('/assets/fonts/cinelove/outer-sans-light.woff2') format('woff2'); font-weight: 300; font-display: swap; }
+@font-face { font-family: "Outer Sans Thin"; src: url('/assets/fonts/cinelove/outer-sans-thin.woff2') format('woff2'); font-weight: 200; font-display: swap; }
+@font-face { font-family: "Plus Jakarta Sans"; src: url('/assets/fonts/cinelove/plus-jakarta-sans.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Clodia"; src: url('/assets/fonts/cinelove/clodia.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Paris Regular"; src: url('/assets/fonts/cinelove/paris-regular.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Madam Ghea"; src: url('/assets/fonts/cinelove/madam-ghea.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "The Hamstter"; src: url('/assets/fonts/cinelove/the-hamstter.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Faugllin Balseyn"; src: url('/assets/fonts/cinelove/faugllin-balseyn.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Right Here"; src: url('/assets/fonts/cinelove/right-here.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Lobster"; src: url('/assets/fonts/cinelove/lobster.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Sacramento"; src: url('/assets/fonts/cinelove/sacramento.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "BucThu"; src: url('/assets/fonts/cinelove/bucthu.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Chetta Vissto"; src: url('/assets/fonts/cinelove/chetta-vissto.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Arcittya Begatri"; src: url('/assets/fonts/cinelove/arcittya-begatri.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Logate"; src: url('/assets/fonts/cinelove/logate.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Binerka"; src: url('/assets/fonts/cinelove/binerka.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Times New Normal"; src: url('/assets/fonts/cinelove/times-new-normal.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "EdwardianScriptRegular"; src: url('/assets/fonts/cinelove/edwardianscriptregular.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Abbassy Script"; src: url('/assets/fonts/cinelove/abbassy-script.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Amstirdam"; src: url('/assets/fonts/cinelove/amstirdam.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Gillastone"; src: url('/assets/fonts/cinelove/gillastone.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Mentawai"; src: url('/assets/fonts/cinelove/mentawai.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Perfect Beloved"; src: url('/assets/fonts/cinelove/perfect-beloved.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "Sunshine"; src: url('/assets/fonts/cinelove/sunshine-script.woff2') format('woff2'); font-display: swap; }

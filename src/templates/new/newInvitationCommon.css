@@ -1,0 +1,54 @@
+@import url("../cineloveFonts.css");
+
+.new-invitation-page,
+body.new-invitation-page { min-width: 0; padding: 0; background: #e7e7e7; }
+.new-invitation-page *,
+.new-invitation-page *::before,
+.new-invitation-page *::after { box-sizing: border-box; }
+.new-invitation-page img { width: 100%; display: block; }
+.new-invitation-page button,
+.new-invitation-page input,
+.new-invitation-page select { font: inherit; }
+.ni-music { width: 42px; height: 42px; position: fixed; z-index: 500; top: 13px; right: max(12px, calc((100vw - 500px) / 2 + 12px)); display: grid; place-items: center; border: 2px solid currentColor; border-radius: 50%; padding: 0; color: #fff; background: rgba(28, 28, 28, .68); box-shadow: 0 7px 22px rgba(0, 0, 0, .18); backdrop-filter: blur(6px); cursor: pointer; }
+.ni-music.is-playing { animation: ni-spin 4s linear infinite; }
+@keyframes ni-spin { to { transform: rotate(360deg); } }
+.ni-countdown { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.ni-countdown > span { min-width: 0; display: grid; place-content: center; text-align: center; }
+.ni-countdown b,
+.ni-countdown small { display: block; }
+.ni-calendar h3 { margin: 0; }
+.ni-weekdays,
+.ni-days { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.ni-weekdays span,
+.ni-days > span { min-width: 0; display: grid; place-items: center; text-align: center; }
+.ni-days > span { position: relative; }
+.ni-days svg { position: absolute; }
+.ni-days i { position: relative; z-index: 1; font-style: normal; }
+.ni-map { display: inline-flex; align-items: center; justify-content: center; gap: .45rem; text-decoration: none; }
+.ni-rsvp { width: min(355px, 100%); display: grid; gap: 1rem; padding: 2rem 1.5rem; border: 1px solid #dedede; border-radius: 4px; color: #333; background: rgba(255, 255, 255, .95); box-shadow: 0 15px 38px rgba(0, 0, 0, .1); font: 400 14px/1.35 Arial, sans-serif; text-align: left; }
+.ni-rsvp h3 { margin: 0 0 .45rem; font-size: 1.35rem; text-align: center; }
+.ni-rsvp label { display: grid; gap: .45rem; }
+.ni-rsvp input:not([type="radio"]),
+.ni-rsvp select { width: 100%; height: 44px; border: 1px solid #d8d8d8; border-radius: 3px; padding: 0 .75rem; color: #333; background: #fff; }
+.ni-rsvp fieldset { display: grid; gap: .5rem; margin: 0; border: 0; padding: 0; }
+.ni-rsvp legend { margin-bottom: .45rem; }
+.ni-rsvp fieldset label { grid-template-columns: 18px 1fr; align-items: center; }
+.ni-rsvp input[type="radio"] { width: 17px; height: 17px; accent-color: var(--rsvp-accent); }
+.ni-rsvp button { min-height: 44px; display: flex; align-items: center; justify-content: center; gap: .45rem; border: 0; border-radius: 3px; color: #fff; background: var(--rsvp-accent); cursor: pointer; }
+.ni-rsvpSuccess { display: flex; align-items: center; justify-content: center; gap: .35rem; color: var(--rsvp-accent); font-size: .78rem; }
+.ni-rsvp.is-compact { gap: .75rem; padding: 1.4rem 1.2rem; }
+.ni-rsvpError { color: #a12f3f; font-size: .78rem; text-align: center; }
+.ni-wish { width: min(355px, 100%); display: grid; gap: 1rem; padding: 2rem 1.5rem; border: 1px solid #dedede; border-radius: 4px; color: #333; background: rgba(255, 255, 255, .95); box-shadow: 0 15px 38px rgba(0, 0, 0, .1); font: 400 14px/1.35 Arial, sans-serif; text-align: left; }
+.ni-wish h3 { margin: 0 0 .45rem; font-size: 1.35rem; text-align: center; }
+.ni-wish label { display: grid; gap: .45rem; }
+.ni-wish input,
+.ni-wish textarea { width: 100%; border: 1px solid #d8d8d8; border-radius: 3px; padding: .7rem .75rem; color: #333; background: #fff; font: inherit; resize: vertical; }
+.ni-wish button { min-height: 44px; display: flex; align-items: center; justify-content: center; gap: .45rem; border: 0; border-radius: 3px; color: #fff; background: var(--wish-accent); cursor: pointer; }
+.ni-gift { display: grid; justify-items: center; gap: 1rem; text-align: center; }
+.ni-gift > svg { width: 88px; height: 88px; padding: 15px; }
+.ni-gift h3,
+.ni-gift p { margin: 0; }
+.ni-falling { position: absolute; z-index: 3; inset: 0; overflow: hidden; pointer-events: none; }
+.ni-falling i { position: absolute; top: -10%; left: var(--fall-left); color: currentColor; font-style: normal; animation: ni-fall var(--fall-duration) linear var(--fall-delay) infinite; }
+@keyframes ni-fall { from { transform: translate3d(0, -10vh, 0) rotate(0); } to { transform: translate3d(25px, 115vh, 0) rotate(270deg); } }
+@media (prefers-reduced-motion: reduce) { .ni-music.is-playing, .ni-falling i { animation: none; } }

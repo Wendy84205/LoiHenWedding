@@ -1,0 +1,117 @@
+@import "../templates/cineloveFonts.css";
+
+html.projection-botanical-engagement-page,
+body.projection-botanical-engagement-page { min-width: 0; margin: 0; padding: 0; overflow: hidden; background: #eff1eb; }
+body.projection-botanical-engagement-page { display: block; }
+
+.backgroundBotanical {
+  --projection-accent: #b59557;
+  --projection-controls: #fff;
+  --projection-panel: rgba(42, 61, 45, .72);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #273a2b;
+  background: #f5f4ed;
+  font-family: "Montserrat", Arial, sans-serif;
+}
+
+.backgroundBotanical::before {
+  content: "";
+  position: absolute;
+  z-index: 8;
+  inset: 22px;
+  border: 1px solid rgba(47,77,52,.32);
+  pointer-events: none;
+}
+
+.bbe-photo { position: absolute; z-index: -5; inset: 0 0 0 50%; background: url('/assets/new-templates/thiep-cuoi-63/preview.webp') center / cover no-repeat; transform-origin: center; }
+.bbe-photoVeil { position: absolute; z-index: -4; inset: 0; background: linear-gradient(90deg, #f5f4ed 0 43%, rgba(245,244,237,.97) 48%, rgba(245,244,237,.08) 64%, rgba(21,43,27,.12) 100%); }
+.bbe-photoVeil::after { content: ""; position: absolute; inset: 0 0 0 48%; background: linear-gradient(0deg, rgba(16,40,24,.36), transparent 42%); }
+
+.bbe-flower { position: absolute; z-index: -1; display: block; pointer-events: none; filter: saturate(.72) contrast(.95); transform-origin: center; animation: bbe-flower 10s ease-in-out infinite; }
+.bbe-flowerTop { width: min(34vw, 620px); top: -14%; left: -8%; opacity: .52; }
+.bbe-flowerBottom { width: min(35vw, 660px); right: -8%; bottom: -18%; opacity: .42; transform: rotate(180deg); animation-delay: -5s; }
+@keyframes bbe-flower { 0%, 100% { translate: 0 0; rotate: -1deg; } 50% { translate: 12px 8px; rotate: 2deg; } }
+
+.bbe-lines { position: absolute; z-index: -2; width: min(44vw, 760px); aspect-ratio: 1; top: 50%; left: 24%; transform: translate(-50%, -50%); pointer-events: none; }
+.bbe-lines i { position: absolute; inset: 0; border: 1px solid rgba(64,95,69,.14); border-radius: 50%; animation: bbe-lines 10s ease-in-out infinite; }
+.bbe-lines i:nth-child(2) { inset: 10%; animation-delay: -3.3s; }
+.bbe-lines i:nth-child(3) { inset: 20%; animation-delay: -6.6s; }
+@keyframes bbe-lines { 0%, 100% { opacity: .45; transform: scale(.97); } 50% { opacity: 1; transform: scale(1.03); } }
+
+.bbe-back,
+.bbe-fullscreen { width: 44px; height: 44px; position: absolute; z-index: 32; top: 42px; display: grid; place-items: center; border: 1px solid rgba(45,72,50,.34); border-radius: 50%; padding: 0; color: #2e4934; background: rgba(250,250,246,.78); backdrop-filter: blur(8px); cursor: pointer; }
+.bbe-back { left: 43px; text-decoration: none; }
+.bbe-fullscreen { right: 43px; color: #fff; border-color: rgba(255,255,255,.55); background: rgba(28,48,33,.32); }
+
+.bbe-copy { width: min(45vw, 760px); position: absolute; z-index: 4; top: 50%; left: clamp(70px, 7vw, 140px); translate: 0 -51%; text-align: center; }
+.bbe-monogram { width: 82px; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; gap: 4px; margin: 0 auto 22px; border: 1px solid rgba(49,78,55,.42); border-radius: 50%; color: #35523b; }
+.bbe-monogram span { font: 400 26px/1 "PlayfairDisplay", Georgia, serif; }
+.bbe-monogram i { color: #b18d4e; font: italic 15px/1 "PlayfairDisplay", Georgia, serif; }
+.bbe-kicker { margin: 0 0 15px; color: #927343; font-size: 10px; font-weight: 600; letter-spacing: .2em; }
+.bbe-copy h1 { margin: 0; font: 400 clamp(45px, 4.4vw, 82px)/.92 "PlayfairDisplay", Georgia, serif; letter-spacing: 0; }
+.bbe-lead { margin: 22px 0 23px; color: rgba(39,58,43,.7); font: italic 16px/1.5 "PlayfairDisplay", Georgia, serif; }
+.bbe-names { display: grid; gap: 3px; }
+.bbe-names strong { font: 400 clamp(39px, 4vw, 72px)/.82 "Carlytte", "PlayfairDisplay", serif; letter-spacing: 0; }
+.bbe-names em { margin: 1px 0 3px; color: #ad8849; font: italic 25px/.7 "PlayfairDisplay", Georgia, serif; }
+.bbe-event { width: min(350px, 32vw); display: grid; grid-template-columns: 112px 1fr; align-items: center; margin: 28px auto 0; border-top: 1px solid rgba(46,74,52,.32); border-bottom: 1px solid rgba(46,74,52,.32); }
+.bbe-event b { padding: 8px 0 10px; border-right: 1px solid rgba(46,74,52,.32); font: 400 44px/1 "PlayfairDisplay", Georgia, serif; }
+.bbe-event span { font-size: 9px; font-weight: 600; line-height: 1.6; letter-spacing: .12em; }
+.bbe-place { margin: 18px 0 0; font-size: 9px; font-weight: 600; letter-spacing: .14em; }
+.bbe-caption { position: absolute; z-index: 4; right: 4.5%; bottom: 8.5%; margin: 0; color: rgba(255,255,255,.84); font-size: 9px; font-weight: 600; letter-spacing: .18em; text-shadow: 0 2px 14px rgba(9,25,15,.5); }
+.bbe-transport { --projection-panel: rgba(40, 62, 44, .75); }
+
+.backgroundBotanical.is-presenting .bbe-back,
+.backgroundBotanical.is-presenting .bbe-fullscreen { opacity: 0; pointer-events: none; }
+
+@media (min-width: 2560px) and (min-height: 1400px) {
+  .backgroundBotanical::before { inset: 42px; }
+  .bbe-flowerTop { width: min(34vw, 1240px); }
+  .bbe-flowerBottom { width: min(35vw, 1320px); }
+  .bbe-lines { width: min(44vw, 1520px); }
+  .bbe-back, .bbe-fullscreen { width: 88px; height: 88px; top: 78px; }
+  .bbe-back svg, .bbe-fullscreen svg { width: 34px; height: 34px; }
+  .bbe-back { left: 72px; }
+  .bbe-fullscreen { right: 72px; }
+  .bbe-copy { width: min(45vw, 1500px); left: 7vw; }
+  .bbe-monogram { width: 164px; margin-bottom: 42px; }
+  .bbe-monogram span { font-size: 52px; }
+  .bbe-monogram i { font-size: 28px; }
+  .bbe-kicker { font-size: 20px; }
+  .bbe-copy h1 { font-size: 164px; }
+  .bbe-lead { margin: 38px 0; font-size: 32px; }
+  .bbe-names strong { font-size: 144px; }
+  .bbe-names em { font-size: 46px; }
+  .bbe-event { width: 700px; grid-template-columns: 224px 1fr; margin-top: 48px; }
+  .bbe-event b { font-size: 88px; }
+  .bbe-event span { font-size: 18px; }
+  .bbe-place, .bbe-caption { font-size: 17px; }
+}
+
+@media (max-width: 800px) {
+  .bbe-photo { inset: 48% 0 0; background-position: center; }
+  .bbe-photoVeil { background: linear-gradient(180deg, #f5f4ed 0 45%, rgba(245,244,237,.82) 55%, rgba(245,244,237,.04) 73%); }
+  .bbe-photoVeil::after { inset: 48% 0 0; }
+  .bbe-copy { width: calc(100% - 48px); top: 8%; left: 24px; translate: none; }
+  .bbe-monogram { width: 55px; margin-bottom: 8px; }
+  .bbe-monogram span { font-size: 18px; }
+  .bbe-kicker { margin-bottom: 7px; font-size: 7px; }
+  .bbe-copy h1 { font-size: 38px; }
+  .bbe-lead { margin: 9px 0 12px; font-size: 12px; }
+  .bbe-names { display: flex; justify-content: center; align-items: center; gap: 7px; }
+  .bbe-names strong { font-size: 30px; }
+  .bbe-names em { font-size: 18px; }
+  .bbe-event { width: 280px; grid-template-columns: 86px 1fr; margin-top: 16px; }
+  .bbe-event b { font-size: 35px; }
+  .bbe-caption { display: none; }
+  .bbe-flowerTop { width: 250px; }
+  .bbe-back, .bbe-fullscreen { top: 37px; }
+  .bbe-back { left: 38px; }
+  .bbe-fullscreen { right: 38px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bbe-flower, .bbe-lines i { animation: none; }
+  .bbe-photo { transform: none !important; }
+}

@@ -1,0 +1,19 @@
+.studioLegalPage { min-height: 100vh; color: #171717; background: #fff; font-family: "Manrope", "Outfit", sans-serif; }
+.studioLegalHero { width: min(920px, calc(100% - 40px)); margin: 0 auto; padding: 150px 0 64px; border-bottom: 1px solid #d9d9d4; }
+.studioLegalHero > span { display: inline-flex; align-items: center; gap: 8px; color: #963747; font-size: .76rem; font-weight: 700; letter-spacing: .12em; }
+.studioLegalHero h1 { margin: 22px 0 14px; font: 500 clamp(2.7rem, 7vw, 5.6rem)/.95 "Playfair Display", Georgia, serif; letter-spacing: 0; }
+.studioLegalHero p { max-width: 650px; margin: 0 0 24px; color: #555; font-size: 1rem; line-height: 1.75; }
+.studioLegalHero time { color: #777; font-size: .78rem; }
+.studioLegalContent { width: min(920px, calc(100% - 40px)); margin: 0 auto; padding: 34px 0 110px; }
+.studioLegalContent section { display: grid; grid-template-columns: 54px 1fr; gap: 20px; padding: 30px 0; border-bottom: 1px solid #e7e7e2; }
+.studioLegalContent section > span { color: #9a4b57; font: 600 .76rem/1 "Manrope", sans-serif; }
+.studioLegalContent h2 { margin: 0 0 10px; font: 500 clamp(1.35rem, 3vw, 1.85rem)/1.2 "Playfair Display", Georgia, serif; letter-spacing: 0; }
+.studioLegalContent p { margin: 0; color: #515151; line-height: 1.8; }
+.studioLegalContact { margin-top: 34px !important; padding: 22px; border-left: 3px solid #963747; background: #faf8f6; }
+.studioNotFound { display: flex; min-height: 100dvh; flex-direction: column; }
+.studioNotFound > section { width: min(720px, calc(100% - 40px)); flex: 1; margin: 0 auto; padding: 170px 0 100px; text-align: center; }
+.studioNotFound > section > span { color: #a33d4f; font: 500 clamp(5rem, 20vw, 11rem)/.8 "Playfair Display", Georgia, serif; }
+.studioNotFound h1 { margin: 42px 0 15px; font: 500 clamp(2rem, 5vw, 3.6rem)/1 "Playfair Display", Georgia, serif; letter-spacing: 0; }
+.studioNotFound p { color: #666; line-height: 1.7; }
+.studioNotFound a { min-height: 46px; display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; padding: 0 20px; color: #fff; background: #171717; text-decoration: none; }
+@media (max-width: 600px) { .studioLegalHero { padding-top: 120px; } .studioLegalContent section { grid-template-columns: 34px 1fr; gap: 10px; } }

@@ -1,0 +1,330 @@
+html.template15new-page,
+body.template15new-page {
+  background: #e8e8e8;
+}
+
+.t15n {
+  width: min(500px, 100vw);
+  margin: auto;
+  overflow: hidden;
+  color: #171717;
+  background: #fff;
+  font-family: "Quicksand", Arial, sans-serif;
+  box-shadow: 0 20px 70px rgba(0, 0, 0, .2);
+}
+
+.t15n-music {
+  background: #b7182b;
+}
+
+.t15n-hero {
+  min-height: 1000px;
+  position: relative;
+  padding: 34px 25px 0;
+}
+
+.t15n-top {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  padding: 16px 0 24px;
+  border-top: 2px solid #b7182b;
+  border-bottom: 1px solid #171717;
+}
+
+.t15n-top small {
+  grid-column: 1 / -1;
+  font-size: 9px;
+  letter-spacing: .2em;
+}
+
+.t15n-top h1 {
+  max-width: 320px;
+  margin: 12px 0 0;
+  color: #171717;
+  font: 500 42px/1.05 "Signora", cursive;
+}
+
+.t15n-top b {
+  padding-bottom: 4px;
+  color: #b7182b;
+  font-size: 13px;
+}
+
+.t15n-hero > img {
+  height: 675px;
+  margin-top: 24px;
+  border-radius: 86px 0 0;
+  object-fit: cover;
+}
+
+.t15n-names {
+  position: absolute;
+  right: 25px;
+  bottom: 28px;
+  left: 25px;
+  padding: 18px;
+  color: #fff;
+  background: #b7182b;
+  text-align: center;
+}
+
+.t15n-names small {
+  letter-spacing: .2em;
+}
+
+.t15n-names h2 {
+  margin: 8px 0 0;
+  font: 400 40px/1 "Signora", cursive;
+}
+
+.t15n-names i {
+  font-family: Georgia, serif;
+}
+
+.t15n-marquee {
+  overflow: hidden;
+  padding: 15px 0;
+  border-top: 1px solid #b7182b;
+  border-bottom: 1px solid #b7182b;
+  color: #b7182b;
+  white-space: nowrap;
+}
+
+.t15n-marquee span {
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: .12em;
+  animation: t15marquee 16s linear infinite;
+}
+
+@keyframes t15marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.t15n-note {
+  min-height: 700px;
+  display: grid;
+  align-content: center;
+  padding: 80px 36px;
+  text-align: center;
+}
+
+.t15n-note > div {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+}
+
+.t15n-note svg {
+  color: #b7182b;
+}
+
+.t15n-note h2 {
+  margin: 0;
+  font: 400 37px/1.15 "PlayfairDisplay", serif;
+}
+
+.t15n-note p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.t15n-invite {
+  min-height: 950px;
+  display: grid;
+  grid-template-columns: 1.08fr .92fr;
+  align-content: center;
+  align-items: center;
+  background: #b7182b;
+}
+
+.t15n-invite > img {
+  height: 650px;
+  object-fit: cover;
+}
+
+.t15n-card {
+  position: relative;
+  z-index: 2;
+  margin-left: -42px;
+  padding: 38px 25px;
+  color: #171717;
+  background: #fff;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, .15);
+  text-align: center;
+}
+
+.t15n-card small {
+  letter-spacing: .15em;
+}
+
+.t15n-card h2 {
+  margin: 12px 0;
+  font: 400 35px/1 "Signora", cursive;
+}
+
+.t15n-card p {
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.t15n-card .ni-map {
+  border-bottom: 1px solid #b7182b;
+  padding: 7px;
+  color: #b7182b;
+}
+
+.t15n-day {
+  min-height: 950px;
+  display: grid;
+  align-content: center;
+  gap: 35px;
+  padding: 75px 28px;
+}
+
+.t15n .ni-calendar {
+  padding: 24px 0;
+  border-top: 3px solid #b7182b;
+  border-bottom: 1px solid #171717;
+  text-align: center;
+}
+
+.t15n .ni-calendar h3 {
+  font: 700 27px/1 "PlayfairDisplay", serif;
+}
+
+.t15n .ni-weekdays {
+  margin: 22px 0 9px;
+  font-size: 10px;
+}
+
+.t15n .ni-days > span {
+  height: 42px;
+}
+
+.t15n .ni-days svg {
+  width: 34px;
+  color: #b7182b;
+}
+
+.t15n-count > span {
+  height: 75px;
+  color: #fff;
+  background: #b7182b;
+}
+
+.t15n-count b {
+  font-size: 25px;
+}
+
+.t15n-poem {
+  min-height: 700px;
+  display: grid;
+  align-content: center;
+  gap: 28px;
+  padding: 90px 40px;
+  background: #f4f0f0;
+  text-align: center;
+}
+
+.t15n-poem h2 {
+  margin: 0;
+  color: #b7182b;
+  font: 400 38px/1.2 "Signora", cursive;
+}
+
+.t15n-poem p {
+  max-width: 380px;
+  margin: 0 auto;
+  font-family: "PlayfairDisplay", Georgia, serif;
+  font-size: 18px;
+  line-height: 2;
+}
+
+.t15n-film {
+  min-height: 1100px;
+  display: grid;
+  align-content: center;
+  padding: 65px 12px;
+  background: #f2eeee;
+}
+
+.t15n-film > img {
+  height: 510px;
+  object-fit: cover;
+}
+
+.t15n-film > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.t15n-film > div img {
+  height: 305px;
+  object-fit: cover;
+}
+
+.t15n-end {
+  min-height: 1000px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 45px;
+  padding: 70px 22px;
+  color: #fff;
+  background: #b7182b;
+}
+
+.t15n-end > svg {
+  width: 45px;
+  height: 45px;
+}
+
+.t15n-end h2 {
+  margin: 0;
+  font: 400 48px/1 "Signora", cursive;
+}
+
+@media (max-width: 420px) {
+  .t15n-hero {
+    min-height: 880px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .t15n-hero > img {
+    height: 575px;
+  }
+
+  .t15n-top h1 {
+    font-size: 37px;
+  }
+
+  .t15n-names {
+    right: 16px;
+    left: 16px;
+  }
+
+  .t15n-invite {
+    grid-template-columns: 1fr;
+  }
+
+  .t15n-invite > img {
+    height: 500px;
+  }
+
+  .t15n-card {
+    margin: -55px 20px 35px;
+  }
+
+  .t15n-day,
+  .t15n-poem {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+}

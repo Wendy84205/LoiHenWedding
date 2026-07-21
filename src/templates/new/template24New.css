@@ -1,0 +1,66 @@
+html.template24new-page, body.template24new-page { background: #e3ddd1; }
+.t24n { width: min(500px, 100vw); margin: auto; overflow: hidden; color: #27201b; background: #fff9ed; font-family: "Signora", "PlayfairDisplay", serif; box-shadow: 0 20px 70px rgba(47, 38, 28, .18); }
+.t24n-music { background: #a91919; }
+.t24n-hero { min-height: 920px; position: relative; display: grid; grid-template-columns: 42px 1fr 42px; align-items: center; padding: 85px 12px 25px; }
+.t24n-hero > span { font: 600 10px/1 "Quicksand", sans-serif; letter-spacing: .22em; writing-mode: vertical-rl; }
+.t24n-hero > span:first-child { transform: rotate(180deg); }
+.t24n-hero > img { height: 650px; margin-top: 125px; object-fit: cover; }
+.t24n-title { position: absolute; top: 55px; right: 28px; left: 28px; text-align: center; }
+.t24n-title::before { content: "WEDDING\A INVITATION"; white-space: pre; display: block; color: #111; font: 400 57px/1.05 "PlayfairDisplay", serif; letter-spacing: .08em; }
+.t24n-title h1 { margin: 42px 0 0; color: #6e1a17; font: 400 30px/1.2 "Signora", serif; }
+.t24n-title h1 i { color: #a91919; font-family: Georgia, serif; }
+.t24n-title p { margin: 16px 0 0; color: #a91919; font: 400 44px/1 "PlayfairDisplay", serif; }
+.t24n-note { padding: 75px 38px; text-align: center; }
+.t24n-note small { letter-spacing: .24em; }
+.t24n-note h2 { margin: 18px 0; font-size: 31px; font-weight: 400; font-style: italic; line-height: 1.35; }
+.t24n-note p { font-size: 19px; line-height: 1.8; }
+.t24n-portraitDiary { display: grid; gap: 65px; padding: 55px 0 85px; text-align: center; }
+.t24n-portraitDiary > div { display: grid; grid-template-columns: 1fr 1fr; gap: 46px; padding: 0 26px; }
+.t24n-portraitDiary > div img { height: 470px; object-fit: cover; opacity: .78; }
+.t24n-earlyCount { width: 70%; justify-self: center; gap: 18px; }
+.t24n-earlyCount > span { height: 72px; color: #fff; background: #ca8581; }
+.t24n-portraitDiary > p { max-width: 430px; justify-self: center; margin: 0; padding: 0 25px; font-size: 23px; line-height: 1.85; }
+.t24n-portraitDiary > img { width: 90%; height: 640px; justify-self: center; object-fit: cover; opacity: .78; }
+.t24n-portraitDiary > div:last-child { grid-template-columns: 1.12fr .88fr; align-items: start; gap: 16px; }
+.t24n-portraitDiary > div:last-child img { height: 600px; opacity: .8; }
+.t24n-portraitDiary > div:last-child img:last-child { height: 480px; margin-top: 90px; }
+.t24n-quote { display: grid; justify-items: center; gap: 20px; padding: 65px 30px; color: #fff; background: #a91919; text-align: center; }
+.t24n-quote p { font-size: 27px; font-style: italic; }
+.t24n-stack { height: 850px; position: relative; padding: 70px 25px; background: #eee5d8; }
+.t24n-stack > img { position: absolute; object-fit: cover; box-shadow: 0 18px 35px rgba(48, 33, 22, .2); }
+.t24n-stack > img:nth-of-type(1) { width: 65%; height: 560px; top: 80px; left: 30px; }
+.t24n-stack > img:nth-of-type(2) { width: 60%; height: 510px; right: 25px; bottom: 70px; }
+.t24n-seal { width: 75px; height: 75px; position: absolute; z-index: 3; top: 390px; left: calc(50% - 37px); display: grid; place-items: center; border-radius: 50%; color: #fff; background: #a91919; }
+.t24n-seal svg { width: 30px; }
+.t24n-address { display: grid; justify-items: center; gap: 30px; padding: 90px 28px; text-align: center; }
+.t24n-address h2 { justify-self: start; margin: 0; font-size: 28px; font-weight: 400; }
+.t24n-address > p { margin: 0; font-size: 22px; }
+.t24n-address iframe { width: 100%; height: 300px; border: 1px solid #9e8d7f; border-radius: 8px; filter: saturate(.65) opacity(.78); }
+.t24n-address > img { width: 82%; height: 620px; object-fit: cover; opacity: .78; }
+.t24n-event { display: grid; gap: 38px; padding: 75px 28px; text-align: center; }
+.t24n-event h2 { margin: 10px 0; font: 400 40px/1 "Signora", cursive; }
+.t24n-event strong { display: block; color: #a91919; font-size: 94px; font-weight: 400; line-height: 1; }
+.t24n-event .ni-map { border-bottom: 1px solid #a91919; padding: 8px; color: #a91919; }
+.t24n .ni-calendar { padding: 25px 14px; border-top: 1px solid #a91919; border-bottom: 1px solid #a91919; }
+.t24n .ni-calendar h3 { font-size: 27px; font-weight: 400; }
+.t24n .ni-weekdays { margin: 22px 0 9px; font: 600 10px/1 "Quicksand", sans-serif; }
+.t24n .ni-days > span { height: 43px; }
+.t24n .ni-days svg { width: 35px; color: #a91919; }
+.t24n-end { display: grid; justify-items: center; gap: 55px; padding: 0 22px 55px; color: #fff; background: #a91919; }
+.t24n-end > img { width: calc(100% + 44px); height: 620px; object-fit: cover; opacity: .82; }
+.t24n-gift > svg { color: #a91919; background: #efe3cd; }
+.t24n-end h2 { margin: 0; font: 400 52px/1 "Signora", cursive; }
+@media (max-width: 420px) {
+  .t24n-hero { min-height: 820px; grid-template-columns: 34px 1fr 34px; }
+  .t24n-hero > img { height: 560px; }
+  .t24n-title::before { font-size: 48px; }
+  .t24n-portraitDiary > div { gap: 20px; padding-right: 16px; padding-left: 16px; }
+  .t24n-portraitDiary > div img { height: 400px; }
+  .t24n-portraitDiary > img { height: 540px; }
+  .t24n-portraitDiary > div:last-child img { height: 510px; }
+  .t24n-stack { height: 760px; }
+  .t24n-stack > img:nth-of-type(1) { height: 500px; }
+  .t24n-stack > img:nth-of-type(2) { height: 450px; }
+  .t24n-address, .t24n-event { padding-right: 18px; padding-left: 18px; }
+  .t24n-address > img { height: 530px; }
+}

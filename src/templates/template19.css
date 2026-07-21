@@ -1,0 +1,92 @@
+@import url("./cineloveFonts.css");
+html.template19-page,body.template19-page{background:#e5e5e4}body.template19-page{padding-top:0;padding-bottom:0}.template19{width:min(500px,100vw);min-height:100vh;position:relative;overflow:hidden;isolation:isolate;color:#2d2a27;background:#f8f4ec;box-shadow:0 20px 70px rgba(55,47,41,.18);font-family:"Cormorant Garamond",Georgia,serif}.template19 button,.template19 input,.template19 select{font:inherit}.template19 img{filter:sepia(.24) saturate(.7) contrast(.98)}.t19-music{width:41px;height:41px;position:fixed;z-index:180;top:13px;right:max(12px,calc((100vw - 500px)/2 + 12px));display:grid;place-items:center;border:2px solid #fff;border-radius:50%;color:#fff;background:#242220;box-shadow:0 6px 18px rgba(0,0,0,.22)}.t19-music.is-playing{animation:t19-spin 4s linear infinite}@keyframes t19-spin{to{transform:rotate(360deg)}}
+.t19-hero{height:880px;position:relative;overflow:hidden;padding:1.5rem 1.2rem;background:#f8f4ec}.t19-meet{margin:0;text-align:right;font:500 .58rem/1 "Montserrat",sans-serif;letter-spacing:.09em}.t19-welcome{position:relative;z-index:3;display:grid;grid-template-columns:1fr 55px 1fr;align-items:end;margin-top:1rem;font:400 1.4rem/1 "Italiana",serif;letter-spacing:.1em}.t19-welcome i{text-align:center;font-style:normal;font-size:.7rem}.t19-welcome span:last-of-type{text-align:right}.t19-welcome small{grid-column:1/-1;margin-top:1rem;font:400 .68rem/1 "Cormorant Garamond",serif;letter-spacing:0}.t19-hero>img{width:93%;height:700px;position:absolute;right:-12%;bottom:0;object-fit:cover;object-position:center}.t19-hero:after{content:"";position:absolute;inset:260px 0 0;background:linear-gradient(90deg,#f8f4ec 0,transparent 24%);pointer-events:none}.t19-cornerNames{position:absolute;z-index:3;right:17px;bottom:22px;display:grid;gap:.3rem;text-align:right;font:500 .55rem/1 "Montserrat",sans-serif}
+.t19-ourStory{min-height:970px;padding:4rem 1.6rem;background:#fbf8f1}.t19-storyNames{display:grid;gap:.25rem;margin-bottom:3rem;text-align:right;font:500 .63rem/1 "Montserrat",sans-serif}.t19-ourStory h1{margin:0 0 1.2rem;font:400 1.8rem/1 "Italiana",serif;letter-spacing:.06em}.t19-ourStory>p{margin:0;font-size:.87rem;line-height:1.65}.t19-nameLine{display:grid;grid-template-columns:1fr 22px 1fr;align-items:center;gap:.5rem;margin:2.3rem 0;text-align:center;font-size:.8rem}.t19-nameLine svg{width:14px;color:#722f30}.t19-ourStory>img{height:450px;object-fit:cover}
+.t19-love{min-height:1160px;padding:4rem 1.5rem;background:#f6f1e8}.t19-lovePortrait{position:relative;margin:0}.t19-lovePortrait img{height:530px;object-fit:cover}.t19-lovePortrait figcaption{position:absolute;inset:0;display:grid;align-content:center;justify-items:center;color:#fff;text-align:center;background:rgba(48,42,38,.13)}.t19-lovePortrait span{font:400 4.3rem/1 "Sacramento",cursive}.t19-lovePortrait p{margin:1rem 0 0;font-size:.76rem;font-style:italic;line-height:1.45}.t19-longText{margin:3.4rem auto;max-width:410px;text-align:center;font-size:.87rem;line-height:1.65}.t19-coupleWide{height:390px;object-fit:cover}
+.t19-married{min-height:890px;padding:4rem 1.5rem;background:#fbf8f1}.t19-married>p{margin:0 0 2.4rem;text-align:center;font-size:.8rem;line-height:1.5}.t19-married>img{height:500px;object-fit:cover}.t19-married h2{margin:2.4rem 0 1.3rem;text-align:center;font:400 1.75rem/1 "Italiana",serif;letter-spacing:.08em}.t19-married blockquote{margin:0;text-align:center;font-size:.9rem;font-style:italic;line-height:1.55}
+.t19-poetry{min-height:1540px;padding:4rem 1.35rem;background:#f7f3eb}.t19-poetry>blockquote{margin:0 0 3rem;text-align:center;font-size:.9rem;font-style:italic;line-height:1.55}.t19-photoColumns{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}.t19-photoColumns img{height:430px;object-fit:cover}.t19-poetry>p{margin:3.5rem auto;max-width:405px;text-align:center;font-size:.86rem;line-height:1.65}.t19-stacked{display:grid;gap:.9rem}.t19-stacked img{height:310px;object-fit:cover}.t19-galaxy{margin-top:3rem!important}.t19-poetry h3{margin:2.7rem 0 0;text-align:center;font:400 1.1rem/1 "Italiana",serif;letter-spacing:.12em}
+.t19-invitation{min-height:900px;position:relative;padding:3rem 1.4rem 4rem;background:#fbf8f1}.t19-invitation>img{height:580px;object-fit:cover}.t19-inviteOverlay{width:86%;position:absolute;left:7%;top:390px;display:grid;justify-items:center;gap:.7rem;padding:1.5rem 1rem;color:#fff;background:rgba(48,43,39,.68);text-align:center;backdrop-filter:blur(4px)}.t19-inviteOverlay small{font:500 .6rem/1 "Montserrat",sans-serif}.t19-inviteOverlay h2{margin:0;font:400 2.2rem/1 "Italiana",serif}.t19-inviteOverlay h2 i{font:400 2.3rem/1 "Sacramento",cursive}.t19-inviteOverlay strong{font:500 .75rem/1 "Montserrat",sans-serif;letter-spacing:.08em}.t19-inviteOverlay span{font-size:.68rem}.t19-invitation blockquote{margin:3.2rem 0 0;text-align:center;font-size:.9rem;font-style:italic;line-height:1.5}
+.t19-contact{min-height:1150px;padding:4rem 1.5rem;background:#f7f3eb}.t19-contactGrid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}.t19-contactGrid article{display:grid;justify-items:center;gap:.7rem;text-align:center}.t19-contactGrid img{width:150px;height:150px;border-radius:50%;object-fit:cover}.t19-contactGrid b{font-size:.9rem}.t19-contactGrid a{min-height:34px;display:inline-flex;align-items:center;gap:.35rem;border-radius:999px;padding:0 .85rem;color:#fff;background:#484640;font:500 .62rem/1 "Montserrat",sans-serif;text-decoration:none}.t19-contact>p{max-width:390px;margin:3.5rem auto;text-align:center;font-size:.84rem;line-height:1.6}.t19-contact h2{margin:0 0 1.5rem;text-align:center;font:400 1.5rem/1 "Italiana",serif}.t19-map{height:290px;position:relative;display:grid;place-content:center;justify-items:center;gap:.6rem;overflow:hidden;color:#3e3c37;background:repeating-linear-gradient(30deg,#e9ece6 0 30px,#fff 31px 38px);text-align:center;text-decoration:none}.t19-map:before{content:"";position:absolute;width:440px;border-top:27px solid rgba(205,202,192,.68);transform:rotate(-28deg)}.t19-map>*{position:relative;z-index:1}.t19-map b{max-width:330px;font-size:.78rem}.t19-map span{border-radius:999px;padding:.48rem 1rem;color:#fff;background:#57544d;font:500 .62rem/1 "Montserrat",sans-serif}
+.t19-rsvp{min-height:720px;display:grid;place-items:center;padding:4rem 1.4rem;background:linear-gradient(rgba(248,244,236,.87),rgba(248,244,236,.87)),url('/assets/template39/couple-red-seated.webp') center/cover}.t19-rsvp form{width:min(335px,100%);display:grid;gap:1rem;padding:2rem 1.4rem;border:1px solid #dedad1;background:rgba(255,255,255,.92);box-shadow:0 14px 30px rgba(55,48,43,.1);font-family:Arial,sans-serif}.t19-rsvp h2{margin:0 .3rem;text-align:center;font-size:1.1rem}.t19-rsvp label{display:grid;gap:.4rem;color:#555;font-size:.72rem}.t19-rsvp input:not([type="radio"]),.t19-rsvp select{height:42px;border:1px solid #ddd;border-radius:3px;padding:0 .65rem;background:#fff}.t19-rsvp fieldset{display:grid;gap:.45rem;margin:0;border:0;padding:0}.t19-rsvp legend{margin-bottom:.4rem;color:#555;font-size:.72rem}.t19-rsvp fieldset label{grid-template-columns:18px 1fr;align-items:center}.t19-rsvp input[type="radio"]{width:17px;height:17px;accent-color:#69655d}.t19-rsvp button{min-height:42px;display:flex;align-items:center;justify-content:center;gap:.4rem;border:0;color:#fff;background:#67635b}.t19-success{display:flex;align-items:center;gap:.35rem;color:#625f58;font-size:.67rem}
+.t19-thanks{min-height:760px;position:relative;overflow:hidden;background:#b1a89d}.t19-thanks>img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center}.t19-thanks:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(52,45,40,.08),rgba(40,35,32,.62))}.t19-thanks>div{position:absolute;z-index:2;left:0;right:0;bottom:3.2rem;display:grid;justify-items:center;color:#fff;text-align:center}.t19-thanks h2{margin:0;font:400 2.2rem/1 "Italiana",serif;letter-spacing:.12em}.t19-thanks strong{margin-top:.7rem;font:400 2rem/1 "Italiana",serif}.t19-thanks p{margin:1rem 0 0;font-size:.75rem}
+@media(max-width:420px){.t19-hero{height:820px}.t19-welcome{font-size:1.15rem}.t19-hero>img{width:105%;right:-18%;height:660px}.t19-ourStory,.t19-love,.t19-married,.t19-poetry,.t19-invitation,.t19-contact,.t19-rsvp{padding-right:1rem;padding-left:1rem}.t19-photoColumns{gap:.7rem}.t19-photoColumns img{height:385px}.t19-contactGrid{gap:1rem}.t19-contactGrid img{width:135px;height:135px}}
+@media(prefers-reduced-motion:reduce){.t19-music.is-playing{animation:none}}
+
+/* Source-matched editorial layout. */
+.template19{color:#000;background:#fff;font-family:"Signora",Georgia,serif}
+.template19 img{filter:none}
+.t19-hero{height:900px;padding:0;background:#fff}
+.t19-meet{position:absolute;z-index:5;top:35px;right:0;width:194px;margin:0;font:500 18px/1.55 "Signora",serif;letter-spacing:0}
+.t19-welcome{position:absolute;z-index:5;inset:71px 0 auto 23px;display:block;margin:0;font:400 34px/1.2 "Signora",serif;letter-spacing:8px}
+.t19-welcome>span:first-child{position:absolute;top:0;left:0}
+.t19-welcome>i{position:absolute;top:51px;left:0;font:400 23px/1 "Signora",serif;letter-spacing:0}
+.t19-welcome>span:nth-of-type(2){position:absolute;top:83px;left:227px;width:239px;text-align:left;font-size:26px;letter-spacing:2px}
+.t19-welcome>small{position:absolute;top:125px;left:0;margin:0;font:400 20px/1.35 "Signora",serif}
+.t19-hero>img{width:100%;height:748px;right:0;bottom:-20px;object-fit:cover;object-position:center top}
+.t19-hero::after{display:none}
+.t19-cornerNames{right:0;bottom:0;width:215px;gap:12px;text-align:left;font:500 18px/1.1 "Signora",serif}
+
+.t19-ourStory{min-height:650px;padding:35px 28px 30px;background:#fff}
+.t19-storyNames{margin-bottom:22px;font:500 18px/1.35 "Signora",serif}
+.t19-ourStory h1{margin:0 0 14px;font:700 26px/1.2 "Mallong",serif;letter-spacing:0}
+.t19-ourStory>p{font:500 18px/1.55 "Signora",serif}
+.t19-nameLine{margin:20px 0;font:500 18px/1.2 "Signora",serif}
+.t19-ourStory>img{width:308px;height:190px;margin-left:auto;object-fit:cover;object-position:center 45%}
+
+.t19-love{min-height:1200px;padding:24px 0 35px;background:#fff}
+.t19-lovePortrait{height:515px}
+.t19-lovePortrait img{width:308px;height:463px;margin-left:auto;object-fit:cover}
+.t19-lovePortrait figcaption{display:block;color:#000;background:transparent;text-align:left}
+.t19-lovePortrait span{position:absolute;top:55px;left:3px;font:500 144px/1 "BethanWhite",cursive;letter-spacing:17px}
+.t19-lovePortrait p{position:absolute;left:103px;bottom:0;width:365px;margin:0;text-align:center;font:500 18px/1.4 "Signora",serif}
+.t19-longText{max-width:371px;margin:58px auto 52px;font:500 18px/1.55 "Signora",serif}
+.t19-coupleWide{width:500px;height:367px;object-fit:cover}
+
+.t19-married{min-height:550px;padding:24px 0 30px;background:#fff}
+.t19-married>p{margin:0 0 20px;font:500 18px/1.35 "Signora",serif}
+.t19-married>img{width:500px;height:300px;object-fit:cover;object-position:center 35%}
+.t19-married h2{margin:20px 0 12px;font:500 26px/1 "Quicksand",sans-serif;letter-spacing:0}
+.t19-married blockquote{font:500 18px/1.4 "Signora",serif}
+
+.t19-poetry{min-height:2100px;padding:45px 28px;background:#fff}
+.t19-poetry>blockquote{margin:0 0 35px;font:500 18px/1.45 "Signora",serif}
+.t19-photoColumns{gap:15px}
+.t19-photoColumns img{height:365px;object-fit:cover}
+.t19-poetry>p{max-width:300px;margin:70px 0 70px auto;text-align:left;font:500 18px/1.7 "Signora",serif}
+.t19-stacked{gap:18px}
+.t19-stacked img{width:435px;height:273px;margin:0 auto;object-fit:cover}
+.t19-galaxy{width:318px;margin:90px 0 0 auto!important;text-align:left!important;font-size:18px!important}
+.t19-poetry h3{margin:35px 0 0;text-align:right;font:500 22px/1 "Quicksand",sans-serif;letter-spacing:0;text-transform:uppercase}
+
+.t19-invitation{min-height:1000px;padding:0 0 42px;background:#fff}
+.t19-invitation>img{width:500px;height:741px;object-fit:cover}
+.t19-inviteOverlay{width:46%;left:auto;right:20px;top:515px;gap:9px;padding:20px 14px;color:#000;background:rgba(255,255,255,.72);backdrop-filter:blur(2px)}
+.t19-inviteOverlay small{font:500 18px/1.2 "Signora",serif}
+.t19-inviteOverlay h2{font:500 24px/1 "Signora",serif}.t19-inviteOverlay h2 i{font:500 24px/1 "Signora",serif}
+.t19-inviteOverlay strong,.t19-inviteOverlay span{font:500 16px/1.3 "Signora",serif;letter-spacing:0}
+.t19-invitation blockquote{margin:50px 28px 0;font:500 18px/1.45 "Signora",serif}
+
+.t19-contact{min-height:900px;padding:45px 32px;background:#fff}
+.t19-contactGrid{gap:32px}
+.t19-contactGrid img{width:150px;height:150px}
+.t19-contactGrid b{font:500 18px/1 "Signora",serif}
+.t19-contactGrid a{background:#000;font:500 14px/1 "Signora",serif}
+.t19-contact>p{max-width:390px;margin:48px auto;font:500 18px/1.55 "Signora",serif}
+.t19-contact h2{font:500 22px/1.2 "Signora",serif}
+.t19-map{height:270px;font-family:"Signora",serif}.t19-map b{font-size:18px}.t19-map span{background:#000;font-family:"Signora",serif}
+
+.t19-rsvp{min-height:488px;padding:30px 24px;background:#fff}
+.t19-rsvp form{padding:22px 18px;font-family:"Signora",Arial,sans-serif}
+.t19-thanks{min-height:745px;background:#b8afa0}
+.t19-thanks>img{object-position:center}
+.t19-thanks::after{background:linear-gradient(180deg,rgba(30,25,20,.03),rgba(30,25,20,.52))}
+.t19-thanks>div{bottom:58px}
+.t19-thanks h2{font:700 26px/1 "Mallong",serif;letter-spacing:0}
+.t19-thanks strong{font:500 24px/1.2 "Signora",serif}
+.t19-thanks p{font:500 18px/1.35 "Signora",serif}
+
+@media(max-width:420px){
+  .t19-hero{height:750px}.t19-meet{top:28px;width:165px;font-size:15px}.t19-welcome{top:58px;left:18px;font-size:28px;letter-spacing:6px}.t19-welcome>i{top:43px;font-size:20px}.t19-welcome>span:nth-of-type(2){top:70px;left:47%;font-size:22px}.t19-welcome>small{top:108px;font-size:17px}.t19-hero>img{height:620px}.t19-cornerNames{width:180px;font-size:15px}
+  .t19-ourStory{min-height:600px}.t19-ourStory>p{font-size:16px}.t19-love{min-height:1050px}.t19-lovePortrait{height:450px}.t19-lovePortrait img{width:64%;height:390px}.t19-lovePortrait span{font-size:112px;letter-spacing:12px}.t19-lovePortrait p{left:18%;bottom:0;width:78%;font-size:16px}.t19-longText{font-size:16px}.t19-coupleWide{width:100%;height:305px}
+  .t19-married{min-height:500px}.t19-married>img{width:100%;height:260px}.t19-poetry{min-height:1850px;padding-right:18px;padding-left:18px}.t19-photoColumns img{height:310px}.t19-poetry>p{font-size:16px}.t19-stacked img{width:100%;height:230px}.t19-invitation{min-height:880px}.t19-invitation>img{width:100%;height:620px}.t19-inviteOverlay{top:420px}.t19-contact{min-height:820px}.t19-rsvp{min-height:470px}.t19-thanks{min-height:620px}
+}

@@ -1,0 +1,75 @@
+@import "../templates/cineloveFonts.css";
+
+html.projection-film-page,
+body.projection-film-page { min-width: 0; margin: 0; padding: 0; overflow: hidden; background: #050605; }
+body.projection-film-page { display: block; }
+
+.projectionFilm { --projection-accent: #8dff88; --projection-controls: #ecf1e7; --projection-panel: rgba(5,6,5,.76); min-height: 100dvh; position: relative; display: grid; grid-template-rows: auto 1fr auto; gap: 1rem; overflow: hidden; padding: 1.25rem clamp(1rem, 3vw, 3rem) 5.6rem; color: #ecf1e7; background: #050605; font-family: "Montserrat", Arial, sans-serif; }
+.pf-header { display: grid; grid-template-columns: auto 1fr auto auto; align-items: center; gap: 1rem; color: rgba(236,241,231,.78); font-size: .63rem; font-weight: 700; }
+.pf-header a,
+.pf-present { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid rgba(236,241,231,.5); border-radius: 50%; color: #ecf1e7; background: transparent; text-decoration: none; }
+.pf-header > span { justify-self: center; }
+.pf-header small { color: #8bdc86; font-size: .56rem; }
+
+.pf-stage { min-height: 0; display: grid; place-items: center; overflow: hidden; background: #000; }
+.pf-frame { height: min(66dvh, calc((100vw - 8rem) * .75)); aspect-ratio: 4 / 3; max-width: 100%; position: relative; overflow: hidden; background: #080908; box-shadow: 0 0 0 1px #262826, 0 25px 70px rgba(0,0,0,.62); }
+.pf-frame img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; filter: sepia(.18) saturate(.72) contrast(1.12) brightness(.82); animation: pf-vhs-shake .32s steps(2, end) infinite, pf-vhs-cut .8s steps(2, end) both; }
+.pf-frame::before { content: ""; position: absolute; z-index: 4; inset: 0; opacity: .28; background: repeating-linear-gradient(0deg, rgba(255,255,255,.08) 0 1px, transparent 1px 4px); mix-blend-mode: screen; pointer-events: none; animation: pf-scan 7s linear infinite; }
+.pf-frame::after { content: ""; position: absolute; z-index: 5; inset: 0; background: radial-gradient(ellipse at center, transparent 52%, rgba(0,0,0,.68) 100%), linear-gradient(90deg, rgba(255,0,30,.04), transparent 36%, rgba(0,200,255,.04)); pointer-events: none; }
+
+@keyframes pf-vhs-cut {
+  0% { clip-path: inset(42% 0 43% 0); transform: translateX(12px) scale(1.03); filter: saturate(0) contrast(1.8); }
+  28% { clip-path: inset(5% 0 71% 0); transform: translateX(-9px) scale(1.02); }
+  54% { clip-path: inset(64% 0 3% 0); transform: translateX(5px) scale(1.01); }
+  100% { clip-path: inset(0); transform: translateX(0) scale(1); }
+}
+@keyframes pf-vhs-shake { 0%, 100% { margin-left: 0; } 50% { margin-left: 1px; } }
+@keyframes pf-scan { from { background-position: 0 0; } to { background-position: 0 140px; } }
+
+.pf-vhsStatus { position: absolute; z-index: 7; top: 1.1rem; right: 1.2rem; left: 1.2rem; display: flex; justify-content: space-between; color: #8dff88; font: 700 clamp(.62rem, .9vw, .82rem)/1 monospace; text-shadow: 0 0 7px rgba(95,255,88,.55); }
+.pf-vhsStatus span { animation: pf-blink 1.15s steps(2, end) infinite; }
+@keyframes pf-blink { 50% { opacity: .35; } }
+.pf-filmNumber { position: absolute; z-index: 7; top: 50%; color: rgba(236,241,231,.78); font: 700 .55rem/1 monospace; writing-mode: vertical-rl; }
+.pf-filmNumber.left { left: .8rem; transform: rotate(180deg) translateY(50%); }
+.pf-filmNumber.right { right: .8rem; transform: translateY(-50%); }
+.pf-frame p { position: absolute; z-index: 7; right: 1.2rem; bottom: 1.15rem; left: 1.2rem; margin: 0; color: #f4f5ef; text-align: center; font: 500 clamp(.9rem, 1.6vw, 1.55rem)/1.2 monospace; text-shadow: 0 2px 8px #000; }
+
+.pf-controls { display: grid; grid-template-columns: auto 1fr auto auto; align-items: center; gap: .7rem; justify-self: center; }
+.pf-controls > button,
+.pf-controls > div > button { min-width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid rgba(236,241,231,.43); border-radius: 50%; color: #ecf1e7; background: transparent; }
+.pf-controls > div { display: flex; gap: .4rem; }
+.pf-controls > div > button { min-width: 30px; width: 30px; height: 30px; border-radius: 2px; color: rgba(236,241,231,.68); font: 700 .55rem/1 monospace; }
+.pf-controls > div > button.is-active { color: #071006; border-color: #8dff88; background: #8dff88; }
+.pf-controls .pf-play { width: 34px; height: 34px; min-width: 34px; }
+.pf-caption { margin: 0; color: rgba(236,241,231,.72); text-align: center; font: 600 .62rem/1 monospace; }
+.pf-caption i { color: #8dff88; }
+
+.projectionFilm.is-presenting .pf-header a,
+.projectionFilm.is-presenting .pf-present,
+.projectionFilm.is-presenting .pf-controls { opacity: 0; pointer-events: none; }
+
+@media (max-width: 640px) {
+  .projectionFilm { gap: .75rem; padding: .8rem .8rem 4.7rem; }
+  .pf-header { grid-template-columns: auto 1fr auto; }
+  .pf-header small { display: none; }
+  .pf-frame { height: min(58dvh, calc((100vw - 1.6rem) * .75)); }
+  .pf-frame p { bottom: .8rem; font-size: .76rem; }
+  .pf-filmNumber { display: none; }
+}
+
+@media (min-width: 2560px) and (min-height: 1400px) {
+  .projectionFilm { gap: 1.8rem; padding: 2.5rem 5rem 7.5rem; }
+  .pf-header { font-size: .92rem; }
+  .pf-header a, .pf-present { width: 56px; height: 56px; }
+  .pf-header small { font-size: .8rem; }
+  .pf-vhsStatus { top: 2rem; right: 2.2rem; left: 2.2rem; font-size: 1.15rem; }
+  .pf-filmNumber { font-size: .82rem; }
+  .pf-frame p { right: 2rem; bottom: 2rem; left: 2rem; font-size: 2.2rem; }
+  .pf-caption { font-size: .85rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pf-frame img,
+  .pf-frame::before,
+  .pf-vhsStatus span { animation: none; }
+}

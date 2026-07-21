@@ -1,0 +1,280 @@
+html.template82new-page,
+body.template82new-page {
+  background: #e8e2de;
+}
+
+.t82n {
+  width: min(500px, 100vw);
+  margin: auto;
+  overflow: hidden;
+  color: #292929;
+  background: #fff;
+  font-family: "BrownyCakesSignature", Arial, sans-serif;
+  box-shadow: 0 20px 70px rgba(58, 46, 43, .16);
+}
+
+.t82n-music {
+  color: #222;
+  background: #fff;
+}
+
+.t82n-hero,
+.t82n-letterCard,
+.t82n-eventCard,
+.t82n-rsvpFrame {
+  position: relative;
+  border: 2px solid #242424;
+  border-radius: 46% 43% 3% 5% / 2% 2% 3% 3%;
+}
+
+.t82n-hero::before,
+.t82n-letterCard::before,
+.t82n-eventCard::before,
+.t82n-rsvpFrame::before {
+  content: "";
+  position: absolute;
+  inset: 7px -4px -5px 5px;
+  z-index: 0;
+  border: 1px solid rgba(36, 36, 36, .48);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.t82n-hero {
+  min-height: 850px;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  justify-items: center;
+  margin: 34px 22px 0;
+  padding: 35px 20px 0;
+  text-align: center;
+}
+
+.t82n-hero h1,
+.t82n-letter h2,
+.t82n-event > h2,
+.t82n-end > h2 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font: 400 38px/1.1 "BrownyCakesSignature", "BrownyCakesSignature", sans-serif;
+  letter-spacing: .06em;
+}
+
+.t82n-hero strong {
+  position: relative;
+  z-index: 1;
+  margin-top: 18px;
+  font: 700 22px/1 "PingFangSaTuoTi", serif;
+  letter-spacing: .05em;
+}
+
+.t82n-hero > img {
+  width: 108%;
+  height: 690px;
+  position: relative;
+  z-index: 1;
+  align-self: end;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.t82n-letter {
+  display: grid;
+  gap: 35px;
+  padding: 90px 22px 60px;
+  text-align: center;
+}
+
+.t82n-letterCard {
+  min-height: 760px;
+  display: grid;
+  align-content: start;
+  justify-items: center;
+  gap: 18px;
+  padding: 35px 27px 28px;
+}
+
+.t82n-letterCard > img {
+  width: 155px;
+  height: 120px;
+  position: relative;
+  z-index: 1;
+  object-fit: contain;
+}
+
+.t82n-letterCard > p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #777;
+  font: 400 24px/1.65 "BrownyCakesSignature", cursive;
+}
+
+.t82n-couple {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 8px;
+}
+
+.t82n-couple span {
+  min-width: 0;
+  display: grid;
+  justify-items: center;
+}
+
+.t82n-couple img {
+  width: 128px;
+  height: 128px;
+  border: 2px solid #292929;
+  border-radius: 50%;
+  background: #fff;
+  object-fit: cover;
+  object-position: top;
+}
+
+.t82n-couple small,
+.t82n-couple b {
+  display: block;
+  margin-top: 8px;
+  font-family: "BrownyCakesSignature", cursive;
+  font-weight: 400;
+}
+
+.t82n-couple b {
+  font-size: 24px;
+}
+
+.t82n-event {
+  display: grid;
+  gap: 24px;
+  padding: 42px 22px 38px;
+  text-align: center;
+}
+
+.t82n-eventCard {
+  display: grid;
+  gap: 24px;
+  padding: 28px 20px 32px;
+}
+
+.t82n-eventCard > * {
+  position: relative;
+  z-index: 1;
+}
+
+.t82n .ni-calendar {
+  padding: 12px 8px 18px;
+  border: 1px solid #cf7a80;
+  text-align: left;
+}
+
+.t82n .ni-calendar h3 {
+  font: 700 24px/1 "PingFangSaTuoTi", serif;
+  letter-spacing: .18em;
+}
+
+.t82n .ni-weekdays {
+  margin: 20px 0 8px;
+  font-size: 9px;
+}
+
+.t82n .ni-days > span {
+  height: 34px;
+  font-size: 11px;
+}
+
+.t82n .ni-days svg {
+  width: 35px;
+  color: #df4c57;
+}
+
+.t82n-event iframe {
+  width: 100%;
+  height: 160px;
+  border: 2px solid #292929;
+  border-radius: 22px 19px 17px 20px;
+}
+
+.t82n-event p {
+  margin: 0;
+  color: #777;
+  font: 400 22px/1.55 "BrownyCakesSignature", cursive;
+}
+
+.t82n-event p b {
+  color: #292929;
+  font-family: "BrownyCakesSignature", sans-serif;
+  font-size: 13px;
+}
+
+.t82n-end {
+  display: grid;
+  gap: 22px;
+  padding: 36px 22px 38px;
+  text-align: center;
+}
+
+.t82n-rsvpFrame {
+  min-height: 0;
+  display: grid;
+  align-content: start;
+  justify-items: center;
+  padding: 16px 18px 22px;
+}
+
+.t82n-rsvpFrame > img {
+  width: 180px;
+  height: 118px;
+  position: relative;
+  z-index: 1;
+  object-fit: contain;
+}
+
+.t82n-rsvp {
+  position: relative;
+  z-index: 1;
+  margin-top: -2px;
+}
+
+@media (max-width: 420px) {
+  .t82n-hero {
+    min-height: 730px;
+    margin-right: 17px;
+    margin-left: 17px;
+  }
+
+  .t82n-hero > img {
+    height: 580px;
+  }
+
+  .t82n-letter,
+  .t82n-event,
+  .t82n-end {
+    padding-right: 17px;
+    padding-left: 17px;
+  }
+
+  .t82n-letterCard {
+    min-height: 700px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .t82n-letterCard > p {
+    font-size: 21px;
+  }
+
+  .t82n-couple {
+    gap: 14px;
+  }
+
+  .t82n-couple img {
+    width: 108px;
+    height: 108px;
+  }
+}

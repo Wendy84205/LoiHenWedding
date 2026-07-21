@@ -1,0 +1,97 @@
+@import url("./cineloveFonts.css");
+
+html.template36-page, body.template36-page { background: #e8e9ea; }
+body.template36-page { padding-top: 0; padding-bottom: 0; }
+.template36 { width: min(500px,100vw); min-height: 100vh; position: relative; overflow: hidden; isolation: isolate; color: #292423; background: #fff; box-shadow: 0 20px 70px rgba(60,40,40,.16); font-family: "Cormorant Garamond", Georgia, serif; }
+.template36 button, .template36 input, .template36 select { font: inherit; }
+.t36-music { width: 41px; height: 41px; position: fixed; z-index: 180; top: 13px; right: max(12px,calc((100vw - 500px)/2 + 12px)); display: grid; place-items: center; border: 2px solid #fff; border-radius: 50%; color: #fff; background: #161616; box-shadow: 0 6px 18px rgba(0,0,0,.2); }.t36-music.is-playing { animation: t36-spin 4s linear infinite; }@keyframes t36-spin { to { transform: rotate(360deg); } }
+.t36-hero { height: 760px; position: relative; overflow: hidden; padding: 1.6rem 1.25rem; background: #fff; }.t36-topQuote { margin: 0; text-align: center; font-size: .68rem; font-style: italic; line-height: 1.35; }.t36-orbit { width: 420px; height: 535px; position: absolute; top: 93px; left: calc(50% - 210px); display: grid; place-items: center; border: 1px solid #e7a5ac; border-radius: 50%; transform: rotate(-8deg); }.t36-orbit::before, .t36-orbit::after { content: ""; position: absolute; border: 1px solid #efb5ba; border-radius: 50%; }.t36-orbit::before { width: 350px; height: 490px; transform: rotate(17deg); }.t36-orbit::after { width: 330px; height: 450px; transform: rotate(-12deg); }.t36-orbit span { position: absolute; z-index: 4; top: -10px; color: #d06a77; font: 500 .7rem/1 "Montserrat", sans-serif; letter-spacing: .34em; transform: rotate(8deg); }.t36-orbit img { width: 305px; height: 455px; position: relative; z-index: 2; border-radius: 48% 48% 45% 45%; object-fit: cover; transform: rotate(8deg); }.t36-hero h1 { position: absolute; z-index: 5; left: 0; right: 0; bottom: 91px; margin: 0; color: #c25e6d; text-align: center; font: 400 2.6rem/1 "Sacramento", cursive; }.t36-hero h1 i { color: #312827; font-size: 1.1rem; }.t36-married { position: absolute; bottom: 54px; left: 0; right: 0; margin: 0; color: #777; text-align: center; font: 500 .55rem/1 "Montserrat", sans-serif; letter-spacing: .28em; }.t36-zeroCount { position: absolute; z-index: 6; left: 17px; right: 17px; bottom: 5px; display: grid; grid-template-columns: repeat(4,1fr); padding: .65rem .4rem; border-radius: 10px; color: #fff; background: rgba(214,109,121,.78); backdrop-filter: blur(5px); }.t36-zeroCount span { display: grid; justify-items: center; gap: .15rem; }.t36-zeroCount b { font: 500 .83rem/1 "Montserrat",sans-serif; }.t36-zeroCount small { font-size: .57rem; }
+.t36-invitation { min-height: 790px; position: relative; padding: 3.5rem 2rem; background: #fff; }.t36-dateStrip { width: 78%; display: grid; grid-template-columns: 1fr 70px 1fr; align-items: center; margin: 0 auto; border-top: 1px solid #c8c1bf; border-bottom: 1px solid #c8c1bf; text-align: center; }.t36-dateStrip span { padding: .65rem .2rem; font-size: .72rem; }.t36-dateStrip strong { color: #c35f6c; font: 500 2.1rem/1 "Italiana",serif; }.t36-addressStrip { width: 82%; display: grid; grid-template-columns: 70px 1fr; align-items: center; margin: 1rem auto 2.5rem; }.t36-addressStrip i { color: #c85e6c; font: 400 1.5rem/1 "Sacramento",cursive; }.t36-addressStrip p { margin: 0; font-size: .68rem; }.t36-invitePhoto { width: 76%; height: 425px; position: relative; margin: 0 auto; }.t36-invitePhoto::before { content: ""; position: absolute; inset: -14px 13px 13px -14px; border: 1px solid #e399a3; }.t36-invitePhoto img { height: 100%; position: relative; z-index: 1; object-fit: cover; }.t36-invitePhoto span { position: absolute; z-index: 2; right: -48px; top: 0; color: #777; font: 400 1.35rem/1 "Italiana",serif; writing-mode: vertical-rl; letter-spacing: .16em; }.t36-formal { margin: 2.4rem 0 0; text-align: center; font-size: .85rem; font-style: italic; line-height: 1.5; }
+.t36-about { min-height: 950px; padding: 3.2rem 1.45rem 4rem; background: #fff; }.t36-aboutLead { display: grid; grid-template-columns: 62% 38%; align-items: center; }.t36-aboutLead img { height: 230px; object-fit: cover; }.t36-aboutLead p { margin: 0; padding-left: .8rem; color: #666; font-size: .67rem; font-style: italic; line-height: 1.5; }.t36-about h2 { margin: 2rem 0 1.3rem; color: #2e2928; font: 400 2.2rem/1 "Italiana",serif; }.t36-aboutCards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }.t36-aboutCards figure { margin: 0; }.t36-aboutCards img { height: 310px; object-fit: cover; }.t36-aboutCards figcaption { display: grid; padding-top: .65rem; }.t36-aboutCards small { color: #777; font-size: .63rem; }.t36-aboutCards b { color: #cf6775; font: 400 1.9rem/1 "Sacramento",cursive; }.t36-aboutCards figure:nth-child(2) figcaption { text-align: right; }.t36-about blockquote { margin: 3rem auto 0; color: #5a5150; text-align: center; font-size: .9rem; font-style: italic; line-height: 1.5; }
+.t36-beginning { min-height: 940px; position: relative; padding: 3rem 1.5rem 4rem; background: #fff; }.t36-roundPhoto { width: 300px; height: 300px; overflow: hidden; border-radius: 50%; }.t36-roundPhoto img { height: 100%; object-fit: cover; }.t36-poem { width: 62%; margin: 1.8rem 0 3.5rem auto; text-align: center; font-size: .8rem; font-style: italic; line-height: 1.55; }.t36-english { position: relative; min-height: 420px; display: grid; grid-template-columns: 43% 57%; align-items: center; }.t36-english::before { content: "LOVE"; position: absolute; top: -45px; left: -12px; color: #d56674; font: 400 3rem/1 "Italiana",serif; opacity: .9; }.t36-english h2 { margin: 0; font: 400 1rem/1.5 "Italiana",serif; }.t36-english h2 span { color: #bd5967; }.t36-english img { height: 360px; object-fit: cover; }
+.t36-freedom { min-height: 1280px; padding: 3.5rem 1.5rem 4rem; background: #fbfaf9; }.t36-freedomGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }.t36-freedomGrid > img { height: 340px; border-radius: 140px 140px 0 0; object-fit: cover; }.t36-freedomGrid > div { padding-top: 90px; }.t36-freedomGrid > div img { height: 300px; object-fit: cover; }.t36-freedomGrid p { margin: 1rem 0 0; text-align: center; font: 400 .9rem/1.5 "Italiana",serif; }.t36-freedomGrid span { color: #c8616f; }.t36-freedom blockquote { margin: 4rem auto; text-align: center; font-size: 1rem; font-style: italic; line-height: 1.55; }.t36-fullPortrait { position: relative; margin: 0; }.t36-fullPortrait img { height: 520px; object-fit: cover; }.t36-fullPortrait figcaption { position: absolute; right: -4px; bottom: 18px; color: #fff; font: 400 3.2rem/1 "Sacramento",cursive; }
+.t36-gallery { min-height: 1100px; padding: 4rem 1.45rem; background: #fff; }.t36-gallery > p { margin: 0 0 3rem; text-align: center; font-size: .95rem; font-style: italic; line-height: 1.5; }.t36-galleryPair { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }.t36-galleryPair img { height: 480px; object-fit: cover; }.t36-cantHelp { min-height: 430px; position: relative; margin-top: 3rem; }.t36-cantHelp img { width: 73%; height: 410px; object-fit: cover; }.t36-cantHelp span { position: absolute; right: 0; bottom: 35px; color: #c95f6d; text-align: right; font: 400 2.8rem/.9 "Sacramento",cursive; }
+.t36-dateVenue { min-height: 890px; padding: 4rem 1.6rem; background: #fff; }.t36-calendar { padding: 1.5rem 1rem 2rem; border-top: 2px solid #dd7d88; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; border-left: 1px solid #ddd; box-shadow: 0 9px 18px rgba(59,46,44,.08); }.t36-calendar h2 { margin: 0 0 1.4rem; color: #c55c6a; font: 400 2rem/1 "Sacramento",cursive; }.t36-calendar h2 b { float: right; color: #555; font: 500 .7rem/2 "Montserrat",sans-serif; }.t36-calendar > div { display: grid; grid-template-columns: repeat(7,1fr); gap: .45rem 0; }.t36-calendar span { min-height: 35px; position: relative; display: grid; place-items: center; font: 400 .63rem/1 "Montserrat",sans-serif; }.t36-calendar svg { width: 42px; height: 36px; position: absolute; color: #df4f61; }.t36-calendar i { position: relative; z-index: 1; font-style: normal; }.t36-calendar .is-wedding i { color: #fff; }.t36-timeCopy { display: grid; grid-template-columns: 90px 1fr; align-items: center; margin: 2.6rem 0; }.t36-timeCopy span { color: #c55d6b; font: 400 1.9rem/1 "Italiana",serif; }.t36-timeCopy p { margin: 0; font-size: .78rem; line-height: 1.5; }.t36-map { height: 270px; position: relative; display: grid; place-content: center; justify-items: center; gap: .55rem; overflow: hidden; color: #bd5866; background: repeating-linear-gradient(30deg,#edf1ec 0 28px,#fff 29px 34px); text-align: center; text-decoration: none; }.t36-map::before { content: ""; position: absolute; width: 360px; border-top: 30px solid rgba(255,255,255,.8); transform: rotate(-34deg); }.t36-map > * { position: relative; z-index: 1; }.t36-map b { color: #574d4c; font-size: .78rem; }.t36-map span { border-radius: 999px; padding: .45rem 1rem; color: #fff; background: #c66471; font: 500 .63rem/1 "Montserrat",sans-serif; }
+.t36-tips { min-height: 900px; padding: 4rem 1.6rem; background: #fff; }.t36-tipsPhoto { width: 72%; height: 330px; margin-left: auto; }.t36-tipsPhoto img { height: 100%; object-fit: cover; }.t36-tips h2 { margin: 2.2rem 0 1.3rem; color: #2e2928; font: 400 2.2rem/1 "Italiana",serif; }.t36-tips ul { display: grid; gap: 1rem; margin: 0; padding-left: 1.25rem; font-size: .76rem; line-height: 1.5; }.t36-tips li::marker { color: #d26370; }.t36-tips > p { margin: 3rem 0 0; color: #c25d69; text-align: center; font: 400 2rem/1 "Sacramento",cursive; }
+.t36-rsvp { min-height: 650px; display: grid; place-items: center; padding: 4rem 1.5rem; background: #fbfaf9; }.t36-rsvp form { width: min(330px,100%); display: grid; gap: 1rem; padding: 2rem 1.4rem; border: 1px solid #e3dedb; background: #fff; box-shadow: 0 14px 30px rgba(65,46,45,.1); font-family: Arial,sans-serif; }.t36-rsvp h2 { margin: 0 .3rem; text-align: center; font-size: 1.1rem; }.t36-rsvp label { display: grid; gap: .4rem; color: #555; font-size: .72rem; }.t36-rsvp input:not([type="radio"]), .t36-rsvp select { height: 42px; border: 1px solid #ddd; border-radius: 3px; padding: 0 .65rem; background: #fff; }.t36-rsvp fieldset { display: grid; gap: .45rem; margin: 0; border: 0; padding: 0; }.t36-rsvp legend { margin-bottom: .4rem; color: #555; font-size: .72rem; }.t36-rsvp fieldset label { grid-template-columns: 18px 1fr; align-items: center; }.t36-rsvp input[type="radio"] { width: 17px; height: 17px; accent-color: #d46875; }.t36-rsvp button { min-height: 42px; display: flex; align-items: center; justify-content: center; gap: .4rem; border: 0; color: #fff; background: #db6a77; }.t36-success { display: flex; align-items: center; gap: .35rem; color: #a24855; font-size: .67rem; }
+.t36-gift { min-height: 800px; display: grid; place-content: center; justify-items: center; gap: 2.4rem; padding: 4rem 2rem; background: #fff; text-align: center; }.t36-giftFrame { width: 285px; min-height: 390px; display: grid; justify-items: center; align-content: start; gap: .7rem; padding: 1.5rem; border: 3px solid #ca5f6d; border-radius: 26px; color: #bd5260; }.t36-giftFrame > svg { width: 58px; height: 58px; margin-top: -50px; padding: 10px; background: #fff; }.t36-giftFrame h2 { margin: 0; font: 500 1rem/1 "Montserrat",sans-serif; }.t36-giftFrame img { width: 190px; height: 190px; object-fit: contain; }.t36-giftFrame small { color: #665958; font-size: .65rem; }.t36-gift > p { margin: 0; font-size: .8rem; font-style: italic; line-height: 1.5; }.t36-gift h3 { margin: 0; color: #c05a67; font: 400 2.7rem/1 "Italiana",serif; }
+@media (max-width:420px){.t36-orbit{width:365px;height:505px;left:calc(50% - 182px)}.t36-orbit img{width:275px;height:430px}.t36-orbit::before{width:320px}.t36-orbit::after{width:295px}.t36-hero h1{font-size:2.25rem}.t36-invitation{padding-right:1.2rem;padding-left:1.2rem}.t36-invitePhoto{width:80%}.t36-aboutCards{gap:.9rem}.t36-aboutCards img{height:275px}.t36-roundPhoto{width:270px;height:270px}.t36-galleryPair{gap:.8rem}.t36-galleryPair img{height:420px}.t36-dateVenue,.t36-tips{padding-right:1.15rem;padding-left:1.15rem}}
+@media (prefers-reduced-motion:reduce){.t36-music.is-playing{animation:none}}
+
+/* Source-matched soft studio composition. */
+.template36{color:#454139;background:#fff;font-family:"OpenSans",Arial,sans-serif}
+.t36-hero{height:940px;padding:13px 20px;background:#fff url('/assets/template36-ref/background.png') center/cover no-repeat}
+.t36-topQuote{font:500 13px/1.4 "OpenSans",sans-serif}
+.t36-orbit{width:470px;height:760px;top:70px;left:15px;border-color:#d7d7d7;transform:none}
+.t36-orbit::before{width:432px;height:720px;border-color:#eee;transform:rotate(7deg)}
+.t36-orbit::after{width:458px;height:695px;border-color:#f3d3d6;transform:rotate(-5deg)}
+.t36-orbit span{top:12px;color:#000;font:500 15px/1 "OpenSans",sans-serif;letter-spacing:9px;transform:none}
+.t36-orbit img{width:449px;height:673px;border-radius:48% 48% 44% 44%;object-fit:cover;transform:none}
+.t36-hero h1{bottom:13px;color:#000;font:500 26px/1.25 "PlayfairDisplay",serif}
+.t36-hero h1 i{color:#c44b4b;font:700 36px/1 "Mallong",serif}
+.t36-married{bottom:76px;color:#000;font:500 16px/1 "OpenSans",sans-serif;letter-spacing:7px}
+.t36-zeroCount{top:824px;bottom:auto;padding:5px 30px;color:#c44b4b;background:transparent;backdrop-filter:none}
+.t36-zeroCount b,.t36-zeroCount small{font:400 17px/1.1 "Poppins",sans-serif}
+
+.t36-invitation{min-height:900px;padding:24px 9px 35px;background:#fff}
+.t36-dateStrip{width:312px;grid-template-columns:103px 103px 103px;border-color:#000}
+.t36-dateStrip span{padding:7px 2px;font:500 19px/1.35 "OpenSans",sans-serif}
+.t36-dateStrip strong{color:#000;font:700 36px/1 Arial,sans-serif}
+.t36-addressStrip{width:392px;grid-template-columns:108px 1fr;margin:25px 0}
+.t36-addressStrip i{color:#c44b4b;font:700 34px/1 "Carlytte",cursive}
+.t36-addressStrip p{font:500 17px/1.3 "OpenSans",sans-serif}
+.t36-invitePhoto{width:459px;height:544px;margin:0 auto}
+.t36-invitePhoto::before{display:none}
+.t36-invitePhoto img{width:100%;height:100%;object-fit:cover}
+.t36-invitePhoto span{right:-3px;top:0;color:#000;font:500 19px/1 "OpenSans",sans-serif;letter-spacing:7px}
+.t36-formal{margin:28px 0 0;font:500 23px/1.45 "Aquarelle",cursive}
+
+.t36-about{min-height:900px;padding:35px 22px 40px;background:#fff}
+.t36-aboutLead{grid-template-columns:257px 1fr;gap:12px}
+.t36-aboutLead img{height:180px}.t36-aboutLead p{padding:0;font:500 17px/1.4 "OpenSans",sans-serif}
+.t36-about h2{margin:32px 0 20px;font:700 36px/1 "Mallong",serif}
+.t36-aboutCards{gap:20px}
+.t36-aboutCards img{height:330px}
+.t36-aboutCards small{font:500 16px/1 "OpenSans",sans-serif}
+.t36-aboutCards b{color:#c44b4b;font:700 28px/1.2 "Mallong",serif}
+.t36-about blockquote{margin:30px auto 0;font:500 23px/1.45 "Aquarelle",cursive}
+
+.t36-beginning{min-height:1050px;padding:35px 20px 40px;background:#fff}
+.t36-roundPhoto{width:350px;height:350px}
+.t36-poem{width:78%;margin:25px 0 55px auto;font:500 25px/1.42 "Aquarelle",cursive}
+.t36-english{min-height:430px;grid-template-columns:43% 57%}
+.t36-english::before{top:-42px;color:#000;font:500 30px/1 "OpenSans",sans-serif}
+.t36-english h2{font:500 17px/1.5 "OpenSans",sans-serif}.t36-english h2 span{color:#000}
+.t36-english img{height:400px}
+
+.t36-freedom{min-height:1200px;padding:35px 22px 40px;background:#fff}
+.t36-freedomGrid{gap:18px}.t36-freedomGrid>img{height:360px;border-radius:150px 150px 0 0}.t36-freedomGrid>div{padding-top:70px}.t36-freedomGrid>div img{height:300px}
+.t36-freedomGrid p{font:500 17px/1.45 "OpenSans",sans-serif}.t36-freedomGrid span{color:#000}
+.t36-freedom blockquote{margin:44px auto;font:500 25px/1.45 "Aquarelle",cursive}
+.t36-fullPortrait img{height:500px}.t36-fullPortrait figcaption{font:500 36px/1 "Mallong",serif}
+
+.t36-gallery{min-height:1050px;padding:38px 24px;background:#fff}
+.t36-gallery>p{margin:0 0 38px;font:500 27px/1.45 "Aquarelle",cursive}
+.t36-galleryPair{gap:18px}.t36-galleryPair img{height:430px}
+.t36-cantHelp{min-height:400px;margin-top:32px}.t36-cantHelp img{width:73%;height:380px}.t36-cantHelp span{color:#c44b4b;font:700 36px/.95 "Mallong",serif}
+
+.t36-dateVenue{min-height:850px;padding:38px 18px;background:#fff}
+.t36-calendar{padding:22px 15px 25px;border-color:#ef96a0;box-shadow:none}
+.t36-calendar h2{font:700 34px/1 "Carlytte",cursive}.t36-calendar h2 b{font:500 18px/1.8 "OpenSans",sans-serif}
+.t36-calendar span{font:400 14px/1 Arial,sans-serif}
+.t36-timeCopy{grid-template-columns:145px 1fr;margin:35px 0}.t36-timeCopy span{color:#000;font:500 34px/1 "Carlytte",cursive}.t36-timeCopy p{font:500 18px/1.45 "OpenSans",sans-serif}
+.t36-map{height:250px}.t36-map b{font:500 17px/1.2 "OpenSans",sans-serif}.t36-map span{font-family:"OpenSans",sans-serif}
+
+.t36-tips{min-height:800px;padding:38px 24px;background:#fff}
+.t36-tipsPhoto{width:72%;height:276px}.t36-tips h2{font:700 36px/1 "Mallong",serif}.t36-tips ul{font:500 17px/1.5 "OpenSans",sans-serif}.t36-tips>p{font:500 25px/1.3 "Aquarelle",cursive}
+.t36-rsvp{min-height:600px;padding:40px 24px;background:#fff}
+.t36-rsvp form{font-family:"OpenSans",Arial,sans-serif}
+.t36-gift{min-height:682px;padding:45px 24px;background:#fff}
+.t36-giftFrame{min-height:390px}.t36-giftFrame h2{font-family:"OpenSans",sans-serif}.t36-gift>p{font:500 23px/1.5 "Aquarelle",cursive}.t36-gift h3{font:700 36px/1 "Mallong",serif}
+
+@media(max-width:420px){
+  .t36-hero{height:790px}.t36-orbit{width:94%;height:640px;left:3%;top:62px}.t36-orbit img{width:88%;height:575px}.t36-orbit::before{width:89%;height:610px}.t36-orbit::after{width:92%;height:590px}.t36-orbit span{font-size:12px;letter-spacing:7px}.t36-married{bottom:70px;font-size:13px}.t36-zeroCount{top:690px;padding:5px 15px}.t36-hero h1{bottom:12px;font-size:22px}
+  .t36-invitation{min-height:790px}.t36-dateStrip{width:78%;grid-template-columns:1fr 72px 1fr}.t36-dateStrip span{font-size:15px}.t36-addressStrip{width:90%;grid-template-columns:95px 1fr}.t36-addressStrip i{font-size:29px}.t36-addressStrip p{font-size:14px}.t36-invitePhoto{width:94%;height:470px}.t36-formal{font-size:19px}
+  .t36-about{min-height:820px}.t36-aboutLead{grid-template-columns:58% 42%}.t36-aboutLead p{font-size:14px}.t36-aboutCards img{height:285px}.t36-about blockquote{font-size:19px}.t36-beginning{min-height:930px}.t36-roundPhoto{width:290px;height:290px}.t36-poem{font-size:20px}.t36-english img{height:350px}
+  .t36-freedom{min-height:1060px}.t36-freedomGrid>img{height:300px}.t36-freedomGrid>div img{height:255px}.t36-freedom blockquote{font-size:20px}.t36-fullPortrait img{height:440px}.t36-gallery{min-height:940px}.t36-gallery>p{font-size:21px}.t36-galleryPair img{height:360px}.t36-cantHelp img{height:330px}.t36-dateVenue{min-height:790px}.t36-tips{min-height:730px}.t36-tips ul{font-size:14px}.t36-gift{min-height:650px}
+}

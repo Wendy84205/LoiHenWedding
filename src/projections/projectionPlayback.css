@@ -1,0 +1,164 @@
+.projectionSurface {
+  --projection-accent: #f0c878;
+  --projection-controls: #fff;
+  --projection-panel: rgba(12, 10, 9, .56);
+  width: 100vw;
+  min-width: 0;
+  min-height: 100dvh;
+  touch-action: manipulation;
+}
+
+.projectionTransport {
+  width: min(calc(100% - 56px), 1180px);
+  min-height: 52px;
+  position: absolute;
+  z-index: 30;
+  bottom: max(18px, env(safe-area-inset-bottom));
+  left: 50%;
+  display: grid;
+  grid-template-columns: 34px 42px 34px max-content minmax(150px, 1fr) max-content 36px;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px;
+  border: 1px solid color-mix(in srgb, var(--projection-controls) 28%, transparent);
+  border-radius: 6px;
+  color: var(--projection-controls);
+  background: var(--projection-panel);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, .18);
+  backdrop-filter: blur(12px) saturate(118%);
+  transform: translateX(-50%);
+  transition: opacity .3s ease, transform .3s ease;
+}
+
+.projectionTransport button {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+
+.projectionTransport button:hover,
+.projectionTransport button:focus-visible {
+  color: var(--projection-accent);
+  background: color-mix(in srgb, var(--projection-controls) 12%, transparent);
+  outline: none;
+}
+
+.projectionTransport .projectionTransportPlay {
+  width: 42px;
+  height: 42px;
+  color: var(--projection-play-icon, #17130e);
+  background: var(--projection-accent);
+}
+
+.projectionTransport .projectionTransportPlay:hover,
+.projectionTransport .projectionTransportPlay:focus-visible {
+  color: var(--projection-play-icon, #17130e);
+  background: color-mix(in srgb, var(--projection-accent) 84%, #fff);
+}
+
+.projectionTransport time {
+  min-width: 38px;
+  font: 600 10px/1 "Montserrat", Arial, sans-serif;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.projectionTransportTimeline {
+  width: 100%;
+  height: 18px;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+.projectionTransportTimeline::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 3px;
+  border-radius: 0;
+  background: linear-gradient(90deg, var(--projection-accent) 0 var(--projection-played), color-mix(in srgb, var(--projection-controls) 30%, transparent) var(--projection-played) 100%);
+}
+
+.projectionTransportTimeline::-moz-range-track {
+  width: 100%;
+  height: 3px;
+  border-radius: 0;
+  background: linear-gradient(90deg, var(--projection-accent) 0 var(--projection-played), color-mix(in srgb, var(--projection-controls) 30%, transparent) var(--projection-played) 100%);
+}
+
+.projectionTransportTimeline::-webkit-slider-thumb {
+  width: 11px;
+  height: 11px;
+  margin-top: -4px;
+  border: 2px solid var(--projection-controls);
+  border-radius: 50%;
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--projection-accent);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, .3);
+}
+
+.projectionTransportTimeline::-moz-range-thumb {
+  width: 9px;
+  height: 9px;
+  border: 2px solid var(--projection-controls);
+  border-radius: 50%;
+  background: var(--projection-accent);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, .3);
+}
+
+.projectionTransportTimeline:focus-visible { outline: 1px solid var(--projection-accent); outline-offset: 4px; }
+
+.projectionSurface.is-presenting:not(.show-controls) .projectionTransport {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 12px);
+}
+
+@media (min-width: 2560px) and (min-height: 1400px) {
+  .projectionTransport {
+    width: min(calc(100% - 120px), 2360px);
+    min-height: 104px;
+    bottom: 36px;
+    grid-template-columns: 68px 84px 68px max-content minmax(300px, 1fr) max-content 72px;
+    gap: 20px;
+    padding: 14px 20px;
+  }
+  .projectionTransport button { width: 68px; height: 68px; }
+  .projectionTransport .projectionTransportPlay { width: 84px; height: 84px; }
+  .projectionTransport svg { width: 30px; height: 30px; }
+  .projectionTransport time { min-width: 76px; font-size: 20px; }
+  .projectionTransportTimeline { height: 30px; }
+  .projectionTransportTimeline::-webkit-slider-runnable-track { height: 6px; }
+  .projectionTransportTimeline::-moz-range-track { height: 6px; }
+  .projectionTransportTimeline::-webkit-slider-thumb { width: 20px; height: 20px; margin-top: -7px; border-width: 3px; }
+  .projectionTransportTimeline::-moz-range-thumb { width: 17px; height: 17px; border-width: 3px; }
+}
+
+@media (max-width: 700px) {
+  .projectionTransport {
+    width: calc(100% - 24px);
+    min-height: 48px;
+    bottom: max(10px, env(safe-area-inset-bottom));
+    grid-template-columns: 30px 38px 30px minmax(86px, 1fr) 32px;
+    gap: 5px;
+    padding: 5px 7px;
+  }
+  .projectionTransport button { width: 30px; height: 30px; }
+  .projectionTransport .projectionTransportPlay { width: 38px; height: 38px; }
+  .projectionTransport time { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projectionTransport { transition: none; }
+}

@@ -1,0 +1,359 @@
+html.template49new-page,
+body.template49new-page {
+  background: #4b0707;
+}
+
+.t49n {
+  width: min(500px, 100vw);
+  margin: auto;
+  overflow: hidden;
+  color: #fff1df;
+  background: #8f0d0c;
+  font-family: "Quicksand", Arial, sans-serif;
+  box-shadow: 0 18px 70px rgba(55, 0, 0, .45);
+}
+
+.t49n-music {
+  color: #f6d599;
+  background: #8e0505;
+}
+
+.t49n-hero,
+.t49n-happiness,
+.t49n-gallery,
+.t49n-ending {
+  position: relative;
+  background-color: #8f0d0c;
+  background-image: url('/assets/new-templates/thiep-cuoi-49/image-7.png');
+  background-size: 720px auto;
+}
+
+.t49n-hero {
+  min-height: 960px;
+  padding: 54px 22px 0;
+  text-align: center;
+}
+
+.t49n-heroNames {
+  position: relative;
+  z-index: 4;
+  margin: 0 0 28px;
+  font: 400 27px/1.2 "PlayfairDisplay", serif;
+}
+
+.t49n-heroNames i {
+  color: #e9c579;
+  font-family: "Aquarelle", cursive;
+}
+
+.t49n-arch {
+  height: 820px;
+  position: relative;
+  z-index: 2;
+  border: 20px solid #fff9ed;
+  border-bottom-width: 34px;
+  border-radius: 235px 235px 0 0;
+  background: #700604;
+}
+
+.t49n-arch > img {
+  height: 100%;
+  border-radius: 215px 215px 0 0;
+  object-fit: cover;
+}
+
+.t49n-arch > b {
+  width: 74px;
+  height: 60px;
+  position: absolute;
+  z-index: 3;
+  top: -44px;
+  left: calc(50% - 37px);
+  display: grid;
+  place-items: center;
+  color: #e9c579;
+  background: #8f0d0c;
+  font: 700 52px/1 serif;
+}
+
+.t49n-arch > small {
+  position: absolute;
+  z-index: 3;
+  top: 25px;
+  right: 25px;
+  left: 25px;
+  color: #71100e;
+  font-size: 15px;
+  letter-spacing: .16em;
+}
+
+.t49n-arch::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: -20px;
+  right: -20px;
+  left: -20px;
+  height: 142px;
+  border-radius: 235px 235px 0 0;
+  background: #fff9ed;
+  pointer-events: none;
+}
+
+.t49n-arch > strong {
+  position: absolute;
+  z-index: 4;
+  right: 20px;
+  bottom: -29px;
+  left: 20px;
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: .16em;
+}
+
+.t49n-happiness {
+  display: grid;
+  justify-items: center;
+  gap: 42px;
+  padding: 90px 28px 70px;
+  text-align: center;
+}
+
+.t49n-happiness h2 {
+  margin: 0;
+  color: #e9c579;
+  font: 400 48px/1 "Aquarelle", cursive;
+}
+
+.t49n-family {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.t49n-family span {
+  min-width: 0;
+}
+
+.t49n-family b {
+  color: #e9c579;
+}
+
+.t49n-family p,
+.t49n-happiness p {
+  line-height: 1.75;
+}
+
+.t49n-happiness h3 {
+  margin: 16px 0 0;
+  color: #e9c579;
+  font: 400 42px/1.25 "Aquarelle", cursive;
+}
+
+.t49n-happiness h3 i {
+  display: block;
+  margin: 12px 0;
+  color: #fff1df;
+  font: 400 17px/1 "PlayfairDisplay", serif;
+}
+
+.t49n-happiness > img {
+  width: 82%;
+  height: 620px;
+  border: 12px solid #fff9ed;
+  object-fit: cover;
+}
+
+.t49n-invite {
+  display: grid;
+  gap: 32px;
+  padding: 72px 28px;
+  color: #6a0e0d;
+  background: #fff8e9;
+  text-align: center;
+}
+
+.t49n-invite h2 {
+  margin: 10px 0;
+  font: 400 43px/1 "Aquarelle", cursive;
+}
+
+.t49n-date {
+  display: grid;
+  grid-template-columns: 1fr 100px 1fr;
+  align-items: center;
+}
+
+.t49n-date span {
+  border-top: 1px solid #8f0d0c;
+  border-bottom: 1px solid #8f0d0c;
+  padding: 11px 0;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.t49n-date strong {
+  color: #8f0d0c;
+  font: 400 72px/1 "PlayfairDisplay", serif;
+}
+
+.t49n-invite h3 {
+  font-size: 21px;
+}
+
+.t49n-invite .ni-map {
+  border-radius: 22px;
+  padding: 10px 22px;
+  color: #fff;
+  background: #8f0d0c;
+}
+
+.t49n-dateSection {
+  min-height: 760px;
+  padding: 100px 25px 70px;
+  color: #5f0a09;
+  background: #8f0d0c;
+}
+
+.t49n-dateSection > div:first-child {
+  transform: rotate(-9deg);
+}
+
+.t49n-dateSection .ni-calendar {
+  padding: 34px 20px;
+  color: #5f0a09;
+  background: #f2d9d7;
+  box-shadow: 0 18px 30px rgba(43, 0, 0, .3);
+}
+
+.t49n-dateSection .ni-calendar h3 {
+  margin-bottom: 25px;
+  font-size: 28px;
+  letter-spacing: .14em;
+}
+
+.t49n-dateSection .ni-weekdays {
+  margin-bottom: 10px;
+  font-size: 10px;
+}
+
+.t49n-dateSection .ni-days > span {
+  height: 39px;
+}
+
+.t49n-dateSection .ni-days svg {
+  width: 40px;
+  color: #d82f39;
+}
+
+.t49n-count {
+  gap: 8px;
+  margin-top: 85px;
+}
+
+.t49n-count > span {
+  height: 74px;
+  color: #790c0b;
+  background: #f2d9d7;
+}
+
+.t49n-gallery {
+  padding: 82px 18px;
+  text-align: center;
+}
+
+.t49n-gallery h2 {
+  margin: 0;
+  color: #e9c579;
+  font: 400 50px/1 "Aquarelle", cursive;
+}
+
+.t49n-gallery > p {
+  max-width: 390px;
+  margin: 28px auto 40px;
+  line-height: 1.8;
+}
+
+.t49n-gallery > div {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 10px;
+}
+
+.t49n-gallery img {
+  height: 470px;
+  border: 9px solid #fff9ed;
+  object-fit: cover;
+}
+
+.t49n-gallery img:last-child {
+  grid-column: 1 / -1;
+  height: 390px;
+}
+
+.t49n-ending {
+  display: grid;
+  justify-items: center;
+  gap: 55px;
+  padding: 75px 22px 55px;
+  color: #f6d599;
+}
+
+.t49n-gift > svg {
+  color: #8f0d0c;
+  background: #f6d599;
+}
+
+.t49n-ending h2 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+  font: 400 44px/1 "Aquarelle", cursive;
+}
+
+@media (max-width: 420px) {
+  .t49n-hero {
+    min-height: 835px;
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .t49n-arch {
+    height: 705px;
+    border-width: 16px;
+    border-bottom-width: 30px;
+  }
+
+  .t49n-arch::before {
+    right: -16px;
+    left: -16px;
+    height: 126px;
+  }
+
+  .t49n-happiness > img {
+    height: 520px;
+  }
+
+  .t49n-invite {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .t49n-date {
+    grid-template-columns: 1fr 84px 1fr;
+  }
+
+  .t49n-date strong {
+    font-size: 61px;
+  }
+
+  .t49n-gallery img {
+    height: 390px;
+  }
+
+  .t49n-gallery img:last-child {
+    height: 330px;
+  }
+}

@@ -1,0 +1,64 @@
+html.template10new-page, body.template10new-page { background: #dedede; }
+.t10n { width: min(500px, 100vw); margin: auto; overflow: hidden; color: #171717; background: #fff; font-family: "Signora", "PlayfairDisplay", serif; box-shadow: 0 18px 70px rgba(0, 0, 0, .18); }
+.t10n-music { background: #111; }
+.t10n-hero { min-height: 760px; position: relative; padding: 28px 25px 0; }
+.t10n-heading { display: grid; grid-template-columns: auto 1fr; align-items: end; gap: 8px 22px; }
+.t10n-heading span { font: 500 11px/1 "Quicksand", sans-serif; letter-spacing: .28em; }
+.t10n-heading h1 { margin: 0; font: 400 47px/.9 "Signora", serif; }
+.t10n-heading p { margin: 0; font: 500 12px/1 "Quicksand", sans-serif; letter-spacing: .18em; }
+.t10n-heading i { font-family: Georgia, serif; }
+.t10n-hero > img { height: 535px; margin-top: 28px; object-fit: cover; }
+.t10n-stamp { width: 70px; height: 70px; position: absolute; right: 18px; bottom: 20px; display: grid; place-content: center; border: 1px solid #111; border-radius: 50%; background: #fff; font-size: 26px; line-height: .75; }
+.t10n-stamp small { font: 500 9px/1 "Quicksand", sans-serif; letter-spacing: .14em; }
+.t10n-vow { display: grid; justify-items: center; gap: 24px; padding: 65px 25px; text-align: center; }
+.t10n-vow p { margin: 0; font-size: 24px; line-height: 1.55; }
+.t10n-vow svg { width: 21px; }
+.t10n-welcome { display: grid; justify-items: center; gap: 34px; padding: 30px 22px 80px; text-align: center; }
+.t10n-welcome > img:first-child { height: 330px; object-fit: cover; }
+.t10n-welcome h2 { margin: 0; font: 400 40px/1 "Carlytte", cursive; letter-spacing: .08em; }
+.t10n-familyArt { height: 360px; object-fit: contain; }
+.t10n-welcome > p { max-width: 380px; margin: 0; font-size: 20px; line-height: 1.75; }
+.t10n-portraits { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; padding: 70px 22px; text-align: center; }
+.t10n-portraits img { height: 390px; object-fit: cover; object-position: top; }
+.t10n-portraits h2 { margin: 15px 0 8px; font: 400 37px/1 "Signora", cursive; }
+.t10n-portraits a { display: inline-flex; align-items: center; gap: 5px; color: #111; font: 500 10px/1 "Quicksand", sans-serif; text-decoration: none; letter-spacing: .12em; }
+.t10n-portraits a svg { width: 13px; }
+.t10n-story { padding: 85px 38px; color: #fff; background: #151515; text-align: center; }
+.t10n-story > small { letter-spacing: .28em; }
+.t10n-story h2 { margin: 14px 0 22px; font: 400 46px/1 "Carlytte", cursive; }
+.t10n-story p { font-size: 18px; line-height: 1.75; }
+.t10n-story img { height: 480px; margin-top: 35px; object-fit: cover; filter: grayscale(1); }
+.t10n-daylight { display: grid; gap: 22px; padding: 90px 22px; text-align: center; }
+.t10n-daylight > img { height: 420px; object-fit: cover; }
+.t10n-daylight > small { font: 400 31px/1 "Signora", serif; }
+.t10n-daylight > p { max-width: 350px; justify-self: center; margin: 5px 0 25px; font-size: 21px; line-height: 1.65; }
+.t10n-archPhoto { width: 82%; justify-self: center; overflow: hidden; border-radius: 220px 220px 0 0; }
+.t10n-archPhoto img { height: 580px; object-fit: cover; }
+.t10n-event { display: grid; gap: 38px; padding: 75px 28px; text-align: center; }
+.t10n-event > div:first-child { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center; }
+.t10n-event > div:first-child > div:first-child { display: grid; border-right: 1px solid #111; }
+.t10n-event strong { font-size: 92px; font-weight: 400; line-height: 1; }
+.t10n-event small, .t10n-event span { font: 500 10px/1.5 "Quicksand", sans-serif; letter-spacing: .15em; }
+.t10n-event .ni-map { border-bottom: 1px solid #111; padding: 7px; color: #111; }
+.t10n .ni-calendar { border-top: 1px solid #111; border-bottom: 1px solid #111; padding: 25px 0; }
+.t10n .ni-calendar h3 { font-size: 27px; font-weight: 400; }
+.t10n .ni-weekdays { margin: 22px 0 9px; font: 500 10px/1 "Quicksand", sans-serif; }
+.t10n .ni-days > span { height: 42px; }
+.t10n .ni-days svg { width: 33px; color: #111; }
+.t10n-count > span { height: 75px; border-right: 1px solid #111; }
+.t10n-count > span:last-child { border: 0; }
+.t10n-count b { font-size: 28px; }
+.t10n-end { display: grid; justify-items: center; gap: 55px; padding: 0 24px 65px; background: #f4f3f0; }
+.t10n-end > img { width: calc(100% + 48px); height: 550px; object-fit: cover; filter: grayscale(.25); }
+.t10n-gift > svg { color: #fff; background: #111; }
+.t10n-gift h3 { font: 400 35px/1 "Signora", cursive; }
+@media (max-width: 420px) {
+  .t10n-heading h1 { font-size: 40px; }
+  .t10n-hero { min-height: 700px; padding-right: 18px; padding-left: 18px; }
+  .t10n-hero > img { height: 490px; }
+  .t10n-welcome, .t10n-daylight, .t10n-event { padding-right: 18px; padding-left: 18px; }
+  .t10n-familyArt { height: 300px; }
+  .t10n-portraits { gap: 10px; padding-right: 12px; padding-left: 12px; }
+  .t10n-portraits img { height: 330px; }
+  .t10n-archPhoto img { height: 500px; }
+}

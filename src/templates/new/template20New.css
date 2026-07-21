@@ -1,0 +1,77 @@
+html.template20new-page, body.template20new-page { background: #ddd5cc; }
+.t20n { width: min(500px, 100vw); margin: auto; overflow: hidden; color: #312d29; background: #fff; font-family: "Quicksand", Arial, sans-serif; box-shadow: 0 20px 70px rgba(60, 52, 46, .2); }
+.t20n-music { background: #303b34; }
+.t20n-hero { min-height: 205px; padding: 30px 22px 18px; background: #fff; }
+.t20n-heading { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 5px 18px; }
+.t20n-heading small { font-size: 27px; font-weight: 700; letter-spacing: -.02em; }
+.t20n-heading h1 { margin: 0; font-size: 22px; font-weight: 600; }
+.t20n-heading h1 i { font-family: "Carlytte", cursive; font-weight: 400; }
+.t20n-heading p { grid-column: 1 / -1; margin: 3px 0; font-size: 18px; }
+.t20n-heading b { font-size: 22px; font-weight: 400; }
+.t20n-heading span { justify-self: end; font-size: 19px; }
+.t20n-player { height: 170px; position: relative; display: flex; align-items: center; gap: 14px; margin: 0 25px; border-radius: 10px; padding: 22px; overflow: hidden; color: #fff; }
+.t20n-player::after { content: ""; position: absolute; inset: 0; background: rgba(28, 42, 34, .22); }
+.t20n-player > img { position: absolute; inset: 0; height: 100%; object-fit: cover; }
+.t20n-player > svg, .t20n-player > div, .t20n-player > button { position: relative; z-index: 2; }
+.t20n-player > svg { width: 66px; height: 66px; padding: 8px; border: 3px solid #fff; border-radius: 50%; animation: ni-spin 6s linear infinite; }
+.t20n-player > div { display: grid; flex: 1; gap: 3px; }
+.t20n-player small { font-size: 9px; letter-spacing: .2em; }
+.t20n-player b { font-size: 22px; }
+.t20n-player button { width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid #fff; border-radius: 50%; color: #fff; background: rgba(0, 0, 0, .2); }
+.t20n-letter { padding: 70px 32px 90px; text-align: center; }
+.t20n-letter > div { display: grid; justify-items: center; gap: 16px; }
+.t20n-letter h2 { margin: 0; font: 400 48px/1 "Carlytte", cursive; }
+.t20n-letter p { font: 400 22px/1.85 "Signora", serif; }
+.t20n-letter svg { color: #c97778; }
+.t20n-scrap { min-height: 1220px; position: relative; background: #edf1eb; }
+.t20n-scrap img { position: absolute; object-fit: cover; box-shadow: 0 12px 28px rgba(45, 54, 44, .16); }
+.t20n-scrap img:nth-of-type(1) { width: 72%; height: 560px; top: 65px; left: 0; }
+.t20n-scrap img:nth-of-type(2) { width: 54%; height: 470px; top: 440px; right: 0; }
+.t20n-scrap img:nth-of-type(3) { width: 67%; height: 500px; bottom: 55px; left: 28px; }
+.t20n-tape { position: absolute; z-index: 3; top: 680px; left: 18px; transform: rotate(-8deg); padding: 16px 22px; color: #fff; background: #c97a7a; font-weight: 700; letter-spacing: .12em; }
+.t20n-seasons { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 12px; padding: 105px 18px; background: #fff; }
+.t20n-seasonCopy, .t20n-seasonQuote { min-width: 0; padding: 35px 18px; align-self: center; }
+.t20n-seasonCopy small { color: #c97778; font: 400 42px/1 "Carlytte", cursive; }
+.t20n-seasonCopy h2, .t20n-seasonQuote h2 { margin: 12px 0; font: 400 32px/1.2 "Signora", serif; }
+.t20n-seasonCopy p, .t20n-seasonQuote p { font-size: 17px; line-height: 1.75; }
+.t20n-seasons > img { height: 720px; object-fit: cover; }
+.t20n-seasons > img:nth-of-type(1) { margin-top: 120px; }
+.t20n-seasons > img:nth-of-type(2) { margin-top: -80px; }
+.t20n-seasonQuote { margin-top: 80px; text-align: right; }
+.t20n-forever { display: grid; gap: 40px; padding: 95px 20px; background: #f7f8f5; text-align: center; }
+.t20n-forever > img { width: 88%; height: 760px; justify-self: center; object-fit: cover; }
+.t20n-forever > div:nth-of-type(1) { max-width: 390px; justify-self: center; }
+.t20n-forever small { color: #c97778; letter-spacing: .14em; }
+.t20n-forever h2 { margin: 12px 0; font: 400 42px/1.15 "Signora", serif; }
+.t20n-forever p { font-size: 18px; line-height: 1.75; }
+.t20n-forever > div:last-child { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.t20n-forever > div:last-child img { height: 570px; object-fit: cover; }
+.t20n-forever > div:last-child img:last-child { margin-top: 85px; }
+.t20n-invite { display: grid; gap: 34px; padding: 85px 28px; text-align: center; }
+.t20n-invite h2 { margin: 8px 0; color: #bd7776; font: 400 45px/1 "Signora", cursive; }
+.t20n-invite p { line-height: 1.7; }
+.t20n-invite .ni-map { border-radius: 24px; padding: 10px 20px; color: #fff; background: #3f4c42; }
+.t20n .ni-calendar { padding: 25px 14px; border: 1px solid #bd7776; background: #fff; }
+.t20n .ni-calendar h3 { font: 400 27px/1 "PlayfairDisplay", serif; }
+.t20n .ni-weekdays { margin: 22px 0 9px; font-size: 10px; }
+.t20n .ni-days > span { height: 42px; }
+.t20n .ni-days svg { width: 35px; color: #bd7776; }
+.t20n-map { width: 100%; height: 280px; border: 0; filter: saturate(.72) opacity(.82); }
+.t20n-count { gap: 8px; }
+.t20n-count > span { height: 72px; color: #fff; background: #bd7776; }
+.t20n-end { display: grid; justify-items: center; gap: 55px; padding: 0 24px 65px; color: #fff; background: #3f4c42; }
+.t20n-end > img { width: calc(100% + 48px); height: 620px; object-fit: cover; opacity: .86; }
+.t20n-end h2 { margin: 0; font: 400 44px/1 "Signora", cursive; }
+@media (max-width: 420px) {
+  .t20n-heading small { font-size: 23px; }
+  .t20n-player { margin-right: 18px; margin-left: 18px; }
+  .t20n-scrap { min-height: 1080px; }
+  .t20n-scrap img:nth-of-type(1) { height: 480px; }
+  .t20n-scrap img:nth-of-type(2) { height: 410px; top: 390px; }
+  .t20n-scrap img:nth-of-type(3) { height: 430px; }
+  .t20n-seasons { padding-right: 10px; padding-left: 10px; }
+  .t20n-seasons > img { height: 620px; }
+  .t20n-forever, .t20n-invite { padding-right: 18px; padding-left: 18px; }
+  .t20n-forever > img { height: 650px; }
+  .t20n-forever > div:last-child img { height: 480px; }
+}

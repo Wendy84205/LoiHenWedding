@@ -1,0 +1,25 @@
+html.template69new-page,body.template69new-page{background:#16080b}.t69n{width:min(500px,100vw);margin:auto;overflow:hidden;color:#f2e8e3;background:#190b0f;font-family:"BaskervilleBook",Georgia,serif;box-shadow:0 20px 80px rgba(0,0,0,.48)}.t69n-music{background:#780b12}.t69n-hero{height:900px;position:relative}.t69n-hero>img{height:100%;object-fit:cover;filter:saturate(.75) contrast(1.05)}.t69n-hero:after{content:"";position:absolute;inset:0;background:rgba(15,3,6,.4)}.t69n-title{position:absolute;z-index:2;right:28px;bottom:50px;left:28px;text-align:center}.t69n-title small{font:500 11px/1 "Montserrat",sans-serif;letter-spacing:.28em}.t69n-title h1{margin:15px 0;color:#fff;font:400 49px/1 "Gasthony Signature",cursive}.t69n-title h1 i{font-family:Georgia,serif}.t69n-title p{letter-spacing:.2em}.t69n-invite{display:grid;gap:45px;padding:80px 30px;text-align:center}.t69n-invite h2{margin:10px 0;color:#b64e52;font:400 45px/1 "Gasthony Signature",cursive}.t69n-invite p{font-size:18px;line-height:1.7}.t69n-date{display:grid;grid-template-columns:1fr 105px 1fr;align-items:center}.t69n-date span{border-top:1px solid #b64e52;border-bottom:1px solid #b64e52;padding:12px 0;font:500 11px/1.5 "Montserrat",sans-serif}.t69n-date strong{color:#b64e52;font-size:78px;font-weight:400}.t69n-timeline{display:grid;gap:0;padding:75px 45px;background:#780b12}.t69n-timeline h2{margin:0 0 35px;font:400 50px/1 "Gasthony Signature",cursive;text-align:center}.t69n-timeline>div:not(:first-child){display:grid;grid-template-columns:40px 75px 1fr;align-items:center;min-height:95px;border-bottom:1px solid rgba(255,255,255,.28)}.t69n-timeline svg{color:#e2a4a0}.t69n-timeline b{font-size:24px}.t69n-timeline span{text-transform:uppercase;letter-spacing:.08em}.t69n-cinema{display:grid;grid-template-columns:1fr 1fr;gap:7px;padding:65px 10px;background:#080808}.t69n-cinema img{height:420px;object-fit:cover}.t69n-cinema p{grid-column:1/-1;margin:15px 0 0;font:500 11px/1 "Montserrat",sans-serif;letter-spacing:.3em;text-align:center}.t69n-day{display:grid;gap:35px;padding:75px 28px}.t69n-day>.ni-map{border:1px solid #b64e52;padding:11px;color:#f2e8e3}.t69n .ni-calendar{padding:25px 14px;border:1px solid #b64e52;text-align:center}.t69n .ni-calendar h3{font-size:27px;font-weight:400}.t69n .ni-weekdays{margin:22px 0 9px;font:500 10px/1 "Montserrat",sans-serif}.t69n .ni-days>span{height:42px}.t69n .ni-days svg{width:35px;color:#b64e52}.t69n-count{gap:8px}.t69n-count>span{height:72px;background:#780b12}.t69n-end{display:grid;justify-items:center;gap:55px;padding:0 22px 55px;background:#780b12}.t69n-end>img{width:calc(100% + 44px);height:510px;object-fit:cover}.t69n-gift>svg{color:#780b12;background:#e0bbb2}.t69n-end h2{margin:0;font:400 45px/1 "Gasthony Signature",cursive}@media(max-width:420px){.t69n-hero{height:790px}.t69n-date{grid-template-columns:1fr 85px 1fr}.t69n-date strong{font-size:65px}.t69n-timeline{padding-left:25px;padding-right:25px}.t69n-cinema img{height:360px}.t69n-day{padding-left:18px;padding-right:18px}}
+
+.t69n .t69n-invite,
+.t69n .t69n-day,
+.t69n .t69n-end {
+  color: #571016;
+  background: #fffdf8;
+}
+
+.t69n .t69n-day > .ni-map {
+  color: #780b12;
+  background: #fff;
+}
+
+.t69n .t69n-count > span {
+  color: #fff;
+}
+
+.t69n .t69n-end > img {
+  opacity: .82;
+}
+
+.t69n .t69n-end h2 {
+  color: #780b12;
+}

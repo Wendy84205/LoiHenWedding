@@ -1,0 +1,71 @@
+@import "../templates/cineloveFonts.css";
+
+html.projection-sea-page,
+body.projection-sea-page { min-width: 0; margin: 0; padding: 0; overflow: hidden; background: #e7e7e4; }
+body.projection-sea-page { display: block; }
+
+.projectionSea { --projection-accent: #171717; --projection-controls: #171717; --projection-play-icon: #f4f4f1; --projection-panel: rgba(242,242,239,.82); min-height: 100dvh; position: relative; display: grid; grid-template-columns: minmax(0, 3fr) minmax(320px, 2fr); overflow: hidden; color: #171717; background: #e7e7e4; font-family: "Montserrat", Arial, sans-serif; }
+.ps-side { height: 68px; position: absolute; z-index: 8; top: 0; right: 0; left: 0; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1rem; padding: 0 2rem; border-bottom: 1px solid rgba(20,20,20,.22); background: rgba(242,242,239,.72); backdrop-filter: blur(8px); }
+.ps-side a { width: 39px; height: 39px; display: grid; place-items: center; border: 1px solid #1e1e1e; border-radius: 50%; color: #1e1e1e; text-decoration: none; }
+.ps-side > span { justify-self: center; font-size: .69rem; font-weight: 700; }
+.ps-side small { font-size: .58rem; font-weight: 700; }
+
+.ps-media { min-height: 100%; position: relative; grid-column: 1; grid-row: 1; overflow: hidden; background: #c8c8c4; }
+.ps-media > img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; }
+.ps-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 70%, rgba(17,17,17,.17)); pointer-events: none; }
+.ps-photoLabel { position: absolute; z-index: 2; bottom: 5.35rem; left: 2rem; margin: 0; padding: .6rem .75rem; color: #171717; background: rgba(243,243,240,.86); font-size: .57rem; font-weight: 700; }
+
+.ps-copy { position: relative; z-index: 3; grid-column: 2; grid-row: 1; display: grid; align-content: center; padding: 6rem clamp(2rem, 4vw, 5rem) 5.5rem; background: #e7e7e4; }
+.ps-copy > p { margin: 0; color: #5d5d59; font-size: .64rem; font-weight: 800; }
+.ps-copy h1 { width: min(52vw, 760px); margin: 1.25rem 0 0 clamp(-10vw, -9rem, -5rem); color: #171717; font: 400 clamp(3.8rem, 7.2vw, 8.5rem)/.83 "PlayfairDisplay", Georgia, serif; }
+.ps-copy blockquote { max-width: 420px; margin: 2rem 0 0; padding-top: 1.25rem; border-top: 1px solid #7f7f79; color: #41413e; font: italic clamp(.95rem, 1.2vw, 1.2rem)/1.48 "PlayfairDisplay", Georgia, serif; }
+.ps-names { display: flex; align-items: center; gap: .6rem; margin-top: 2.4rem; color: #1c1c1c; font-size: .63rem; font-weight: 800; }
+.ps-names i { font: italic 400 1.25rem/1 "PlayfairDisplay", Georgia, serif; }
+.ps-dots { display: flex; gap: .5rem; margin-top: 1.65rem; }
+.ps-dots button { width: 30px; height: 2px; border: 0; padding: 0; background: rgba(24,24,24,.25); }
+.ps-dots button.is-active { background: #171717; }
+
+.ps-mediaControls { position: absolute; z-index: 9; right: 2rem; bottom: 1.75rem; display: flex; gap: .45rem; }
+.ps-mediaControls button,
+.ps-present { width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid rgba(22,22,22,.55); border-radius: 50%; color: #171717; background: rgba(242,242,239,.78); backdrop-filter: blur(6px); }
+.ps-present { position: absolute; z-index: 9; top: 5.5rem; right: 2rem; }
+
+.projectionSea.is-presenting .ps-side a,
+.projectionSea.is-presenting .ps-mediaControls,
+.projectionSea.is-presenting .ps-present { opacity: 0; pointer-events: none; }
+
+@media (max-width: 760px) {
+  .projectionSea { grid-template-columns: 1fr; grid-template-rows: 58dvh 42dvh; }
+  .ps-side { height: 60px; padding: 0 1rem; }
+  .ps-side > span { font-size: .58rem; }
+  .ps-side small { display: none; }
+  .ps-media { min-height: 0; grid-column: 1; grid-row: 1; }
+  .ps-photoLabel { bottom: .8rem; left: 1rem; font-size: .48rem; }
+  .ps-copy { grid-column: 1; grid-row: 2; align-content: start; padding: 1.2rem 1.2rem 4.5rem; }
+  .ps-copy h1 { width: 100%; margin: .55rem 0 0; font-size: clamp(2.45rem, 11.5vw, 4rem); line-height: .9; }
+  .ps-copy blockquote { margin-top: .85rem; padding-top: .7rem; font-size: .85rem; }
+  .ps-names { margin-top: .75rem; }
+  .ps-dots { margin-top: .75rem; }
+  .ps-mediaControls { right: 1rem; bottom: 1rem; }
+  .ps-present { top: .65rem; right: 1rem; }
+}
+
+@media (min-width: 2560px) and (min-height: 1400px) {
+  .ps-side { height: 104px; padding: 0 4rem; }
+  .ps-side a, .ps-present { width: 56px; height: 56px; }
+  .ps-side > span { font-size: .95rem; }
+  .ps-side small { font-size: .8rem; }
+  .ps-present { top: 8rem; right: 4rem; }
+  .ps-photoLabel { bottom: 7rem; left: 4rem; padding: .9rem 1.1rem; font-size: .78rem; }
+  .ps-copy { padding: 9rem 7rem 8rem; }
+  .ps-copy > p { font-size: .88rem; }
+  .ps-copy h1 { width: min(52vw, 1320px); margin-top: 2rem; font-size: 10.5rem; }
+  .ps-copy blockquote { max-width: 680px; margin-top: 3rem; font-size: 1.55rem; }
+  .ps-names { margin-top: 3rem; font-size: .9rem; }
+  .ps-dots { margin-top: 2rem; }
+  .ps-dots button { width: 48px; height: 3px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ps-media > img { transform: none !important; }
+}

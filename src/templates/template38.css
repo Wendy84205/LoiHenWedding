@@ -1,0 +1,96 @@
+@import url("./cineloveFonts.css");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lobster&family=Montserrat:wght@400;500;600&family=Sacramento&display=swap");
+
+html.template38-page,
+body.template38-page { background: #e6e7e8; }
+body.template38-page { padding-top: 0; padding-bottom: 0; }
+
+.template38 { width: min(500px, 100vw); min-height: 100vh; position: relative; overflow: hidden; isolation: isolate; color: #251817; background: #852425; box-shadow: 0 20px 70px rgba(61, 20, 21, .25); font-family: "Scarlet Bradley.regular", Georgia, serif; }
+.template38 button, .template38 input { font: inherit; }
+.t38-music { width: 41px; height: 41px; position: fixed; z-index: 170; top: 13px; right: max(12px, calc((100vw - 500px) / 2 + 12px)); display: grid; place-items: center; border: 2px solid #fff; border-radius: 50%; color: #fff; background: #111; box-shadow: 0 6px 18px rgba(0,0,0,.24); }
+.t38-music.is-playing { animation: t38-spin 4s linear infinite; }
+@keyframes t38-spin { to { transform: rotate(360deg); } }
+
+.t38-hero { height: 690px; position: relative; overflow: hidden; color: #fff; background: #852425; }
+.t38-hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 120px; background: linear-gradient(180deg, transparent, rgba(75,14,16,.24)); }
+.t38-save { position: absolute; z-index: 2; top: 16px; left: 18px; display: grid; line-height: 1; }
+.t38-save span { font: 400 1.755rem/1 "Faugllin Balseyn", cursive; }
+.t38-save b { font-size: .66rem; font-weight: 500; letter-spacing: .08em; }
+.t38-hero h1 { position: relative; z-index: 2; margin: 0; padding-top: 3.3rem; text-align: center; font: 400 1.853rem/1 "Faugllin Balseyn", cursive; }
+.t38-hero h1 i { color: #f0cfc8; font-style: normal; }
+.t38-doubleJoy { position: absolute; z-index: 0; top: 8.1rem; right: 2.35rem; color: #b93b3b; font: 600 7.4rem/1 Georgia, serif; opacity: .78; transform: rotate(-5deg); filter: drop-shadow(0 0 1px rgba(255,215,208,.4)); }
+.t38-hero > img { width: 88%; height: 575px; position: absolute; z-index: 1; left: 6%; bottom: -10px; object-fit: contain; object-position: center bottom; filter: drop-shadow(0 14px 18px rgba(43,8,10,.28)); }
+
+.t38-invitation { position: relative; z-index: 3; margin: -55px 28px 0; padding: 2rem 1.15rem 3.4rem; border-radius: 64px 64px 0 0; color: #251817; background: #fffdf5; }
+.t38-invitation h2 { margin: 0 0 1rem; text-align: center; font: 400 1.755rem/1 "Right Here", cursive; }
+.t38-families { display: grid; grid-template-columns: 1fr 24px 1fr; align-items: start; gap: .2rem; text-align: center; }
+.t38-families article { display: grid; gap: .3rem; font-size: .72rem; line-height: 1.2; }
+.t38-families b { font-size: .78rem; }
+.t38-families i { color: #a02f31; font: 400 1.65rem/1 "Carlytte", cursive; }
+.t38-portraits { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 1.5rem .8rem 0; }
+.t38-portraits figure { margin: 0; text-align: center; }
+.t38-portraits img { aspect-ratio: 1; border: 6px solid #852425; border-radius: 50%; object-fit: cover; box-shadow: 0 8px 18px rgba(89,31,31,.17); }
+.t38-portraits figcaption { margin-top: .75rem; color: #9d3638; font: 400 1.28rem/1 "Carlytte", cursive; }
+.t38-countdown { max-width: 300px; display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; margin: 1.3rem auto 0; }
+.t38-countdown span { min-height: 70px; display: grid; place-content: center; gap: .2rem; border-radius: 4px; color: #fff; text-align: center; background: #050505; }
+.t38-countdown b { font: 400 1.15rem/1 "Montserrat", sans-serif; }
+.t38-countdown small { font: 400 .65rem/1 "Montserrat", sans-serif; }
+.t38-divider { height: 3px; position: relative; margin: 1.75rem .3rem 1rem; background: #a96868; }
+.t38-divider::before, .t38-divider::after { content: ""; width: 36px; height: 36px; position: absolute; top: 50%; border-radius: 50%; background: #852425; transform: translateY(-50%); }
+.t38-divider::before { left: -36px; }.t38-divider::after { right: -36px; }
+.t38-invitation h3 { margin: 0 0 1.35rem; text-align: center; font: 400 1.755rem/1 "Faugllin Balseyn", cursive; }
+.t38-photoTriptych { height: 255px; display: grid; grid-template-columns: .9fr 1.08fr .9fr; align-items: center; gap: .75rem; }
+.t38-photoTriptych img { height: 200px; object-fit: cover; box-shadow: 0 10px 20px rgba(58,24,22,.15); }
+.t38-photoTriptych img:nth-child(2) { height: 245px; }
+.t38-inviteLine { margin: 1.35rem 0 .75rem; text-align: center; font-size: .82rem; font-weight: 600; }
+.t38-eventStamp { max-width: 330px; display: grid; grid-template-columns: 1fr 1.12fr 1fr; align-items: center; margin: 0 auto; text-align: center; }
+.t38-eventStamp > span { min-height: 88px; display: grid; align-content: center; gap: .18rem; padding: .25rem; }
+.t38-eventStamp > span:nth-child(2) { border-right: 2px solid #28201e; border-left: 2px solid #28201e; }
+.t38-eventStamp small { font-size: .72rem; }.t38-eventStamp b { font-size: 1.15rem; }.t38-eventStamp strong { font-size: 2rem; line-height: .85; }
+
+.t38-date { margin: 0 28px; padding: .3rem 1.9rem 3.2rem; background: #fffdf5; }
+.t38-calendar { position: relative; overflow: hidden; border: 1px solid #92918c; border-radius: 5px; background: #fff; }
+.t38-calendar > h2 { margin: 0; padding: .55rem 1.4rem; color: #fff; background: #ad7c7b; font: 500 1.8rem/1 "Montserrat", sans-serif; }
+.t38-calendarGrid { display: grid; grid-template-columns: repeat(7, 1fr); gap: .24rem .05rem; padding: 1.3rem .8rem 1.5rem; }
+.t38-calendarGrid > b { color: #666; text-align: center; font: 500 .65rem/1 "Montserrat", sans-serif; }
+.t38-calendarGrid > span { min-height: 34px; position: relative; display: grid; place-items: center; color: #555; font: 400 .65rem/1 "Montserrat", sans-serif; }
+.t38-calendarGrid svg { position: absolute; color: #e59999; transform: scale(1.3); }
+.t38-calendarGrid i { position: relative; z-index: 1; font-style: normal; }.t38-calendarGrid .is-wedding i { color: #fff; }
+.t38-calendar > strong { position: absolute; z-index: 0; inset: 45% 0 auto; color: rgba(169,122,122,.12); text-align: center; font: 500 5.2rem/1 "Montserrat", sans-serif; pointer-events: none; }
+
+.t38-venueRsvp { margin: 0 28px; padding: .1rem 1.15rem 3.5rem; background: #fffdf5; }
+.t38-venueRsvp header { text-align: center; }.t38-venueRsvp header h2, .t38-rsvpTitle { margin: 0; font: 400 1.755rem/1 "Faugllin Balseyn", cursive; }.t38-venueRsvp header p { margin: .85rem 0 1.2rem; font-size: .95rem; font-style: italic; font-weight: 600; line-height: 1.25; }
+.t38-map { height: 255px; position: relative; display: grid; place-content: center; justify-items: center; gap: .3rem; overflow: hidden; color: #9f3236; background: #eaf0e8; text-align: center; text-decoration: none; }
+.t38-map::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(28deg, transparent 0 36px, rgba(164,178,158,.28) 37px 42px), repeating-linear-gradient(-30deg, transparent 0 55px, rgba(184,200,178,.22) 56px 61px); }
+.t38-map > * { position: relative; z-index: 1; }.t38-map b { font: 600 .72rem/1 "Montserrat", sans-serif; }.t38-map small { color: #5d6c59; font: 500 .62rem/1 "Montserrat", sans-serif; }
+.t38-mapRoad { position: absolute !important; z-index: 0 !important; border-radius: 50%; background: rgba(255,255,255,.72); }.t38-mapRoad.roadOne { width: 310px; height: 24px; transform: rotate(22deg); }.t38-mapRoad.roadTwo { width: 330px; height: 18px; transform: rotate(-35deg); }.t38-mapRoad.roadThree { width: 240px; height: 13px; transform: rotate(71deg); }
+.t38-rsvpTitle { text-align: center; }
+.t38-seal { width: 80px; height: 80px; display: grid; place-items: center; margin: 1rem auto; border: 3px solid #c74e50; border-radius: 8px; color: #c74e50; font: 600 3.6rem/1 Georgia, serif; transform: rotate(-2deg); }
+.t38-venueRsvp form { display: grid; gap: 1rem; max-width: 350px; margin: 1.2rem auto 0; padding: 2rem 1.25rem; border: 1px solid #e1dfd9; border-radius: 4px; background: #fff; box-shadow: 0 12px 24px rgba(76,36,32,.09); }
+.t38-venueRsvp label { display: grid; gap: .42rem; color: #60605d; font: 400 .8rem/1.3 "Montserrat", sans-serif; }.t38-venueRsvp input:not([type="radio"]) { width: 100%; height: 42px; border: 1px solid #ddd; border-radius: 3px; padding: 0 .7rem; font-size: .76rem; }.t38-venueRsvp fieldset { display: grid; gap: .5rem; margin: 0; border: 0; padding: 0; }.t38-venueRsvp legend { margin-bottom: .4rem; color: #60605d; font: 400 .8rem/1 "Montserrat", sans-serif; }.t38-venueRsvp fieldset label { grid-template-columns: 18px 1fr; align-items: center; }.t38-venueRsvp input[type="radio"] { width: 17px; height: 17px; accent-color: #d85f61; }.t38-venueRsvp button { min-height: 44px; display: flex; align-items: center; justify-content: center; gap: .4rem; border: 0; border-radius: 3px; color: #fff; background: #d85f61; font: 500 .8rem/1 "Montserrat", sans-serif; }.t38-success { display: flex; align-items: center; gap: .35rem; color: #7b3435; font: 500 .7rem/1.4 "Montserrat", sans-serif; }
+
+.t38-story { position: relative; padding: 3.5rem 26px 4.5rem; color: #f2d7d2; background: #852425; }
+.t38-charms { display: flex; justify-content: space-between; align-items: center; color: #e6b5ae; }.t38-charms span { width: 46px; height: 46px; display: grid; place-items: center; }.t38-charms svg { width: 30px; height: 30px; }
+.t38-storyCutout { width: 58%; height: 310px; margin: -1.7rem auto 0; object-fit: contain; filter: drop-shadow(0 10px 12px rgba(44,8,9,.22)); }
+.t38-storyQuote { margin: 1.3rem auto 2.8rem; text-align: center; font: 400 1.45rem/1.15 "Carlytte", cursive; }
+.t38-storyFrame { min-height: 480px; display: grid; grid-template-columns: 35% 65%; align-items: stretch; padding: 1rem; background: #e4ccca; }
+.t38-storyFrame > span { align-self: center; color: #8d3032; text-align: center; font: 400 3.4rem/.95 "Carlytte", cursive; }.t38-storyFrame i { font-style: normal; }.t38-storyFrame img { height: 100%; object-fit: cover; }
+
+.t38-chapter { padding: 3.5rem 23px 4.2rem; color: #8b3032; background: #e4ccca; }
+.t38-chapter blockquote { margin: 0 auto 2.3rem; text-align: center; font: 400 1.65rem/1.35 "Carlytte", cursive; }
+.t38-chapterPair { display: grid; grid-template-columns: 1fr 1fr; gap: 2.3rem; }.t38-chapterPair img { height: 180px; object-fit: cover; background: #aa5551; }
+.t38-chapter figure { position: relative; margin: 1.6rem 0 0; padding: .75rem; background: #f0dedd; }.t38-chapter figure img { height: 375px; object-fit: cover; }.t38-chapter figcaption { position: absolute; right: 1rem; bottom: .5rem; font: 400 2.34rem/1 "The Hamstter", cursive; }
+.t38-chapter > p { margin: 2.7rem 0 1.5rem; color: #742425; text-align: center; font: 600 1rem/1.35 "scarlet-bradley.regular", serif; }
+.t38-lastPair { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }.t38-lastPair img { height: 315px; object-fit: cover; }
+
+.t38-thanks { min-height: 690px; position: relative; overflow: hidden; color: #fff; background: #8d201f; }
+.t38-thanks > img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; object-position: center; }
+.t38-thanks::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(99,17,18,.1), rgba(72,11,12,.12) 58%, rgba(48,5,7,.76)); }
+.t38-thanks > div { position: absolute; z-index: 1; left: 0; right: 0; bottom: 2.7rem; display: grid; justify-items: center; gap: .9rem; padding: 1.25rem; background: rgba(77,9,11,.62); }.t38-thanks span { font: 400 2.34rem/1 "Right Here", cursive; }.t38-thanks small { font: 500 .55rem/1 "Montserrat", sans-serif; letter-spacing: .18em; }
+
+@media (max-width: 420px) {
+  .t38-hero { height: 640px; }.t38-hero h1 { padding-top: 3.65rem; font-size: 1.8rem; }.t38-doubleJoy { right: .8rem; font-size: 6.6rem; }.t38-hero > img { width: 96%; left: 2%; height: 535px; }
+  .t38-invitation, .t38-date, .t38-venueRsvp { margin-right: 18px; margin-left: 18px; }.t38-invitation { padding-right: .8rem; padding-left: .8rem; }.t38-invitation h2 { font-size: 2.2rem; }.t38-portraits { gap: 1.2rem; }.t38-countdown { gap: .45rem; }.t38-countdown span { min-height: 64px; }.t38-photoTriptych { gap: .45rem; }.t38-photoTriptych img { height: 180px; }.t38-photoTriptych img:nth-child(2) { height: 225px; }.t38-date { padding-right: 1.15rem; padding-left: 1.15rem; }.t38-calendarGrid { padding-right: .4rem; padding-left: .4rem; }.t38-storyFrame { min-height: 430px; }.t38-storyFrame > span { font-size: 2.9rem; }.t38-chapterPair { gap: 1rem; }.t38-lastPair { gap: 1rem; }.t38-lastPair img { height: 280px; }.t38-thanks { min-height: 620px; }
+}
+
+@media (prefers-reduced-motion: reduce) { .t38-music.is-playing { animation: none; } }

@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Italiana&family=Quicksand:wght@400;500;600&family=Sacramento&display=swap");
+
+html.template46-page,
+body.template46-page { background: #e7e8e9; }
+body.template46-page { padding-top: 0; padding-bottom: 0; }
+
+.template46 { width: min(500px, 100vw); min-height: 100vh; position: relative; overflow: hidden; isolation: isolate; color: #333; background: #fff; box-shadow: 0 22px 70px rgba(55, 24, 24, .2); font-family: "Quicksand", Arial, sans-serif; }
+.template46 button, .template46 input, .template46 select { font: inherit; }
+.t46-music { width: 41px; height: 41px; position: fixed; z-index: 170; top: 13px; right: max(12px, calc((100vw - 500px) / 2 + 12px)); display: grid; place-items: center; border: 2px solid #fff; border-radius: 50%; color: #fff; background: #121212; box-shadow: 0 7px 20px rgba(0,0,0,.2); }
+.t46-music.is-playing { animation: t46-spin 4s linear infinite; }
+@keyframes t46-spin { to { transform: rotate(360deg); } }
+
+.t46-hero { height: 515px; position: relative; overflow: hidden; color: #fff; background: #741718; }
+.t46-arcText { position: absolute; z-index: 2; top: 2rem; left: -1.5rem; margin: 0; transform: rotate(-52deg); font: 400 1.65rem/1 "Italiana", serif; letter-spacing: .12em; }
+.t46-heroArch { width: 61%; height: 480px; position: absolute; z-index: 1; left: 8%; bottom: 0; overflow: hidden; border-radius: 180px 180px 0 0; background: #e7e7e7; }
+.t46-heroArch img { width: 100%; height: 100%; object-fit: contain; object-position: center bottom; }
+.t46-heroSchedule { width: 31%; position: absolute; z-index: 2; right: 2.4%; bottom: 2rem; display: grid; gap: 1rem; text-align: center; }
+.t46-heroSchedule article { display: grid; gap: .55rem; padding: .15rem 0 .8rem; border-bottom: 2px solid rgba(255,255,255,.88); }
+.t46-heroSchedule article:last-child { border-bottom: 0; }
+.t46-heroSchedule span { font: 400 .73rem/1.2 "Cormorant Garamond", serif; }.t46-heroSchedule b { font: 500 .72rem/1.2 "Cormorant Garamond", serif; }.t46-heroSchedule small { font: 500 .67rem/1 "Cormorant Garamond", serif; }
+
+.t46-family { padding: 3.3rem 1.15rem 2.8rem; background: #fff; }
+.t46-family > h1 { margin: 0 0 2.1rem; color: #64191a; text-align: center; font: 400 3.7rem/1 "Italiana", serif; letter-spacing: .12em; }
+.t46-familyGrid { display: grid; grid-template-columns: 1fr 22px 1fr; align-items: start; gap: .25rem; text-align: center; }
+.t46-familyGrid article { display: grid; gap: .65rem; }.t46-familyGrid h2 { margin: 0; font: 600 1.2rem/1 "Cormorant Garamond", serif; }.t46-familyGrid p { margin: 0; font-size: .7rem; line-height: 1.5; }.t46-familyGrid small { color: #555; font-size: .55rem; line-height: 1.4; }.t46-familyGrid > i { color: #9d191d; font-style: normal; font-size: 1rem; }
+.t46-names { display: grid; grid-template-columns: 1fr 30px 1fr; align-items: center; gap: .25rem; margin: 1.5rem auto 0; color: #8b2125; text-align: center; font: 400 2rem/1 "Sacramento", cursive; }.t46-names i { font: 400 1.1rem/1 Georgia, serif; }
+
+.t46-invitation { padding: 1.7rem 1.15rem 3.6rem; background: #fff; }
+.t46-inviteHead { text-align: center; }.t46-inviteHead span { display: block; font: 400 2.25rem/1 "Sacramento", cursive; }.t46-inviteHead p { margin: .6rem 0 0; font-size: .65rem; font-weight: 600; }
+.t46-invitePhotos { height: 260px; display: grid; grid-template-columns: .9fr 1.12fr .9fr; align-items: center; gap: 1.4rem; margin: 1.75rem 1.3rem 0; }
+.t46-invitePhotos img { height: 205px; border: 1px solid #7a1c1d; object-fit: cover; box-shadow: 0 8px 14px rgba(66,32,30,.13); }.t46-invitePhotos img:nth-child(2) { height: 250px; padding: 5px; object-fit: contain; background: #ddd; }
+.t46-at { margin: 1rem 0 .55rem; text-align: center; font-size: .64rem; }
+.t46-dateRow { max-width: 330px; display: grid; grid-template-columns: 1fr 1.45fr 1fr; margin: 0 auto; color: #792123; text-align: center; }.t46-dateRow b { padding: .25rem .4rem; font: 500 1.3rem/1 "Cormorant Garamond", serif; }.t46-dateRow b:nth-child(2) { border-right: 2px solid #302727; border-left: 2px solid #302727; }
+.t46-lunar { margin: .55rem 0 0; text-align: center; font-size: .72rem; }
+.t46-mainVenue { display: grid; justify-items: center; gap: .5rem; margin-top: 1.1rem; text-align: center; }.t46-mainVenue span { font-weight: 600; font-size: .75rem; }.t46-mainVenue h2 { margin: 0; color: #781d1f; font: 500 1.6rem/1 "Cormorant Garamond", serif; }.t46-mainVenue p { margin: 0; font-size: .7rem; }.t46-mainVenue a, .t46-locationGrid a { min-height: 30px; display: inline-flex; align-items: center; justify-content: center; gap: .3rem; border-radius: 999px; padding: 0 1rem; color: #fff; background: #9d6061; font-size: .65rem; text-decoration: none; }
+.t46-locationGrid { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; margin-top: 2.1rem; }
+.t46-locationGrid article { min-height: 210px; display: grid; align-content: start; justify-items: center; gap: .42rem; padding: .8rem .6rem; border-right: 3px solid #77191a; border-left: 3px solid #77191a; text-align: center; }.t46-locationGrid h3 { width: calc(100% + 1.2rem); margin: -.8rem 0 .35rem; padding: .48rem .2rem; color: #fff; background: #a06a6b; font: 500 .86rem/1.15 "Cormorant Garamond", serif; }.t46-locationGrid b, .t46-locationGrid strong { font-size: .72rem; }.t46-locationGrid span, .t46-locationGrid p { margin: 0; font-size: .67rem; }
+
+.t46-calendarSection { padding: 1.6rem 0 3rem; border-bottom: 4px solid #8e5455; background: #fff; }
+.t46-calendar { box-shadow: 0 6px 12px rgba(32,20,19,.12); }.t46-calendar h2 { margin: 0; padding: .75rem .8rem; color: #fff; background: #9e6768; font: 500 1.45rem/1 "Cormorant Garamond", serif; }.t46-calendar > div { display: grid; grid-template-columns: repeat(7, 1fr); gap: .8rem .1rem; padding: 1.25rem .65rem 2rem; }.t46-calendar span { min-height: 50px; position: relative; display: grid; place-items: center; color: #666; font-size: .73rem; }.t46-calendar span svg { position: absolute; color: #e59a9b; transform: scale(1.18); }.t46-calendar span.is-eve svg { color: #9d5758; }.t46-calendar span i { position: relative; z-index: 1; font-style: normal; }.t46-calendar span.is-wedding i { color: #fff; }
+
+.t46-story { padding: 1.1rem 0 1rem; background: #fff; }
+.t46-storyColumns { display: grid; grid-template-columns: 44% 56%; align-items: start; }
+.t46-tallBride { margin: 0; padding-top: 5.1rem; }.t46-tallBride img { height: 529px; object-fit: cover; }.t46-tallBride figcaption { min-height: 190px; display: grid; place-content: center; padding: 1rem; color: #555; font-size: .8rem; line-height: 1.45; }
+.t46-storyRight { padding: 1rem .55rem 2rem .9rem; background: #761516; }.t46-storyRight figure { margin: 0 0 1rem; }.t46-storyRight img { height: 285px; object-fit: cover; }.t46-storyRight figure:nth-child(2) img { height: 300px; }.t46-storyRight figcaption { padding: .45rem .2rem; color: #efdfe0; text-align: center; font-size: .88rem; }.t46-storyRight figure:nth-child(2) figcaption { margin-top: -.6rem; font: 400 1.8rem/1 "Sacramento", cursive; }.t46-storyRight > p { margin: .5rem 0 0; color: #e8d8d8; text-align: center; font-size: .66rem; line-height: 1.5; }
+
+.t46-gallery { position: relative; padding: 0 1.25rem .25rem; overflow: hidden; background: linear-gradient(180deg, #751516 0 180px, #fff 180px); }
+.t46-galleryQuote { margin: 0 -1.25rem 1.5rem; padding: 1.2rem 1rem 1.5rem; color: #f1dddd; text-align: center; font: 400 1.65rem/1 "Sacramento", cursive; }
+.t46-galleryGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2.2rem; }.t46-galleryGrid img { height: 270px; object-fit: cover; }
+.t46-withYou { position: relative; margin: 2.2rem 0 0; padding: 1.4rem .8rem 1rem 47%; min-height: 170px; }.t46-withYou::before { content: ""; position: absolute; width: 230px; height: 150px; left: -80px; top: -20px; border: 2px solid #c7a9a9; border-radius: 50%; transform: rotate(42deg); }.t46-withYou h2 { margin: 0; color: #781b1c; font: 400 1.45rem/1 "Italiana", serif; }.t46-withYou p { margin: .65rem 0 0; color: #555; font-size: .76rem; line-height: 1.5; }
+
+.t46-portrait { position: relative; padding: 3.625rem 1.2rem .375rem; border-top: 4px solid #8c4b4d; background: linear-gradient(180deg, #fff 0 55%, rgba(182,195,191,.6) 55% 82%, #fff 82%); }
+.t46-portraitEnglish { width: 64%; margin: 0 auto -2rem; position: relative; z-index: 2; top: -1rem; padding: 1.35rem .7rem; color: #f4eaea; background: rgba(132,74,75,.85); text-align: center; font-size: .75rem; }
+.t46-portrait > img { display: block; object-fit: cover; }.t46-portrait > img:nth-of-type(1) { width: 100%; height: 306px; margin: 0 auto; }.t46-portrait > img:nth-of-type(2) { width: 100%; height: 316px; margin: 0 auto; object-fit: contain; background: rgba(150,122,119,.2); }
+.t46-portrait > p { width: 64%; position: relative; z-index: 2; margin: .75rem auto 0; padding: 1rem .7rem; color: #f4eaea; background: #751516; text-align: center; font-size: .73rem; line-height: 1.45; }
+
+.t46-countdownSection { height: 669px; position: relative; overflow: hidden; border-top: 4px solid #8b5051; border-bottom: 4px solid #8b5051; background: #eee; }.t46-countdownSection > img { width: 100%; height: 100%; object-fit: cover; }.t46-countdownSection::after { content: ""; position: absolute; inset: 0; background: rgba(255,255,255,.08); pointer-events: none; }.t46-countdown { position: absolute; z-index: 2; right: 0; top: 34.5%; display: grid; gap: 1.25rem; }.t46-countdown span { width: 70px; min-height: 55px; display: grid; place-content: center; gap: .18rem; color: #fff; background: #9b6061; text-align: center; }.t46-countdown b { font-size: .78rem; }.t46-countdown small { font-size: .62rem; }
+
+.t46-rsvp { position: relative; min-height: 900px; padding: 2rem 1.25rem 3.875rem; background: linear-gradient(180deg, #741718 0 310px, #fff 310px); }
+.t46-rsvp::before { content: ""; position: absolute; width: 210px; height: 310px; left: -120px; bottom: 20px; border: 2px solid #c9adad; border-radius: 50%; transform: rotate(28deg); }
+.t46-rsvpPhoto { height: 492px; display: grid; grid-template-columns: 32px 1fr 32px; align-items: start; gap: .5rem; color: #fff; }.t46-rsvpPhoto img { height: 450px; margin-top: .75rem; object-fit: contain; background: #baa6a4; }.t46-rsvpPhoto span { padding-top: 1rem; font: 400 1.25rem/1 "Italiana", serif; writing-mode: vertical-rl; }.t46-rsvpPhoto span:first-child { transform: rotate(180deg); }
+.t46-rsvp form { width: 300px; min-height: 406px; position: relative; z-index: 3; display: grid; gap: 1rem; margin: -75px auto 0; padding: 1.6rem 1.25rem; border-radius: 4px; background: rgba(255,255,255,.92); box-shadow: 0 12px 28px rgba(50,31,30,.14); backdrop-filter: blur(5px); font-family: Arial, sans-serif; }.t46-rsvp h2 { margin: 0 0 .3rem; text-align: center; font-size: 1.125rem; }.t46-rsvp label { display: grid; gap: .4rem; color: #666; font-size: .72rem; }.t46-rsvp input:not([type="radio"]), .t46-rsvp select { width: 100%; height: 42px; border: 1px solid #ddd; border-radius: 3px; padding: 0 .65rem; background: #fff; font-size: .7rem; }.t46-rsvp fieldset { display: grid; gap: .48rem; margin: 0; border: 0; padding: 0; }.t46-rsvp legend { margin-bottom: .4rem; color: #666; font-size: .72rem; }.t46-rsvp fieldset label { grid-template-columns: 17px 1fr; align-items: center; }.t46-rsvp input[type="radio"] { width: 16px; height: 16px; accent-color: #7b1516; }.t46-rsvp button { min-height: 42px; display: flex; align-items: center; justify-content: center; gap: .4rem; border: 0; border-radius: 3px; color: #fff; background: #741718; font-size: .72rem; }.t46-success { display: flex; align-items: center; gap: .35rem; color: #6f2527; font-size: .65rem; line-height: 1.4; }
+
+.t46-gift { min-height: 560px; display: grid; place-items: center; padding: 2rem 2.8rem 2.25rem; background: #fff; }.t46-gift > div { width: 100%; min-height: 467px; display: grid; align-content: start; justify-items: center; gap: 3rem; padding: 3rem 1.2rem 1.5rem; color: #f6eeee; background: #741718; text-align: center; }.t46-gift h2 { margin: 0; font: 400 1.65rem/2 "Cormorant Garamond", serif; }.t46-gift svg { width: 100px; height: 100px; color: #e790a5; filter: drop-shadow(0 7px 8px rgba(33,3,5,.2)); }.t46-gift p { max-width: 322px; margin: 0; color: #e9dada; font-size: .9rem; line-height: 1.55; }
+
+@media (max-width: 420px) {
+  .t46-hero { height: 485px; }.t46-heroArch { width: 64%; height: 450px; left: 5%; }.t46-heroSchedule { width: 31%; right: 1%; }.t46-arcText { font-size: 1.35rem; }
+  .t46-family > h1 { font-size: 3rem; }.t46-names { font-size: 1.65rem; }.t46-invitePhotos { gap: .75rem; margin-right: .45rem; margin-left: .45rem; }.t46-dateRow b { font-size: 1.08rem; }.t46-locationGrid { gap: .45rem; }.t46-locationGrid article { padding-right: .35rem; padding-left: .35rem; }.t46-calendar > div { gap: .55rem .05rem; padding-right: .3rem; padding-left: .3rem; }.t46-tallBride { padding-top: 3.8rem; }.t46-tallBride img { height: 465px; }.t46-storyRight img { height: 250px; }.t46-storyRight figure:nth-child(2) img { height: 270px; }.t46-galleryGrid { gap: .8rem 1rem; }.t46-galleryGrid img { height: 235px; }.t46-withYou { padding-left: 42%; }.t46-portrait { padding-top: 3rem; padding-bottom: .375rem; }.t46-portrait > img:nth-of-type(1) { height: 269px; }.t46-portrait > img:nth-of-type(2) { height: 278px; }.t46-countdownSection { height: 590px; }.t46-rsvp { min-height: 850px; }.t46-rsvpPhoto { height: 460px; }.t46-rsvpPhoto img { height: 420px; }.t46-gift { padding-right: 1.8rem; padding-left: 1.8rem; }
+}
+
+@media (prefers-reduced-motion: reduce) { .t46-music.is-playing { animation: none; } }

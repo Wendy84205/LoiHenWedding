@@ -1,0 +1,20 @@
+[
+  {
+    "file": "image-1.webp",
+    "source": "https://assets.cinelove.me/templates/assets/1aff13ef-44e9-4096-b7b5-796f7d39026c/ba6ead09-5df1-4df2-ab31-687366ac319f.jpg",
+    "width": 394,
+    "height": 394
+  },
+  {
+    "file": "image-2.webp",
+    "source": "https://img.cinelove.me/templates/assets/1aff13ef-44e9-4096-b7b5-796f7d39026c/4a62eb48-259b-4583-9434-e916cce80c04.jpg?crop=76,47,706,706",
+    "width": 706,
+    "height": 706
+  },
+  {
+    "file": "image-3.webp",
+    "source": "https://assets.cinelove.me/templates/assets/1aff13ef-44e9-4096-b7b5-796f7d39026c/abc5df00-873b-4b6f-ad91-7ccb019ede36.webp",
+    "width": 1365,
+    "height": 2048
+  }
+]

@@ -1,0 +1,13 @@
+.vercel
+.audit
+.firecrawl
+.qa
+.DS_Store
+dist
+.env
+.env.*
+!.env.example
+coverage
+playwright-report
+test-results
+*.log

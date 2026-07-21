@@ -1,0 +1,135 @@
+.templateCommerceSpacer {
+  width: 100%;
+  height: calc(68px + env(safe-area-inset-bottom));
+  background: #fff;
+}
+
+.templateCommerceBar {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10020;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 68px;
+  padding: 10px max(14px, env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) max(14px, env(safe-area-inset-left));
+  border-top: 1px solid #dedbd7;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 -8px 28px rgba(28, 24, 23, 0.12);
+  color: #211e1c;
+  font-family: Manrope, Arial, sans-serif;
+  backdrop-filter: blur(14px);
+}
+
+.templateCommerceBar a {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.templateCommerceBack {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid #d8d4d0;
+  border-radius: 6px;
+  color: #211e1c;
+  background: #fff;
+}
+
+.templateCommerceBack svg,
+.templateCommerceAction svg {
+  width: 18px;
+  height: 18px;
+}
+
+.templateCommerceIdentity {
+  min-width: 0;
+}
+
+.templateCommerceIdentity small,
+.templateCommerceIdentity strong {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.templateCommerceIdentity small {
+  margin-bottom: 3px;
+  color: #ba493a;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.templateCommerceIdentity strong {
+  font-size: 0.93rem;
+  line-height: 1.2;
+}
+
+.templateCommerceAction {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 18px;
+  border-radius: 6px;
+  color: #fff;
+  background: #b53c32;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.templateCommerceBack:focus-visible,
+.templateCommerceAction:focus-visible {
+  outline: 3px solid rgba(181, 60, 50, 0.35);
+  outline-offset: 2px;
+}
+
+@media (hover: hover) {
+  .templateCommerceBack:hover { background: #f7f5f3; }
+  .templateCommerceAction:hover { background: #963128; }
+}
+
+@media (max-width: 520px) {
+  .templateCommerceSpacer { height: calc(64px + env(safe-area-inset-bottom)); }
+
+  .templateCommerceBar {
+    grid-template-columns: 40px minmax(0, 1fr) auto;
+    gap: 8px;
+    min-height: 64px;
+    padding-top: 8px;
+  }
+
+  .templateCommerceBack {
+    width: 38px;
+    height: 42px;
+  }
+
+  .templateCommerceIdentity small { font-size: 0.54rem; }
+  .templateCommerceIdentity strong { font-size: 0.78rem; }
+
+  .templateCommerceAction {
+    width: 44px;
+    min-width: 44px;
+    padding: 0;
+  }
+
+  .templateCommerceAction span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}
+
+@media print {
+  .templateCommerceBar { display: none; }
+}

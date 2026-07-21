@@ -1,0 +1,4206 @@
+/* Final visual-fidelity adjustments shared by the audited invitation routes. */
+
+.t4n-albumEditorial {
+  min-height: 2100px;
+  display: grid;
+  align-content: start;
+  gap: 75px;
+  padding: 110px 22px;
+  background: #fff;
+  text-align: center;
+}
+
+.t4n-albumEditorial small {
+  font: 600 10px/1 "Quicksand", sans-serif;
+  letter-spacing: .2em;
+}
+
+.t4n-albumEditorial h2,
+.t4n-albumEditorial h3 {
+  margin: 12px 0 0;
+  color: #9e5457;
+  font: 400 50px/1.05 "Signora", cursive;
+}
+
+.t4n-final {
+  display: grid;
+  justify-items: center;
+  gap: 30px;
+  padding: 0 28px 70px;
+  background: #fff;
+  text-align: center;
+}
+
+.t4n-final > img {
+  width: 72%;
+  height: 590px;
+  object-fit: cover;
+  opacity: .78;
+}
+
+.t4n-final > p {
+  max-width: 360px;
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.t4n-albumEditorial > img {
+  width: 78%;
+  height: 720px;
+  justify-self: start;
+  object-fit: cover;
+}
+
+.t4n-albumEditorial > p {
+  width: 76%;
+  justify-self: end;
+  margin: -125px 0 15px;
+  padding: 36px 25px;
+  background: #f6efea;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.t4n-albumEditorial > div:nth-last-of-type(1) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.t4n-albumEditorial > div:nth-last-of-type(1) img {
+  height: 510px;
+  object-fit: cover;
+}
+
+.t4n-albumEditorial > div:nth-last-of-type(1) img:last-child {
+  margin-top: 70px;
+}
+
+.t4n-albumEditorial h3 {
+  max-width: 380px;
+  justify-self: center;
+  color: #151313;
+  font-size: 40px;
+}
+
+.t18n-albumEditorial {
+  min-height: 2200px;
+  display: grid;
+  align-content: start;
+  gap: 90px;
+  padding: 110px 18px;
+  background: #fff;
+}
+
+.t18n-albumEditorial > h2 {
+  margin: 0;
+  color: #9c1a15;
+  font: 400 58px/1 "Signora", cursive;
+  text-align: center;
+}
+
+.t18n-albumLead {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  align-items: center;
+}
+
+.t18n-albumLead img {
+  height: 720px;
+  object-fit: cover;
+}
+
+.t18n-albumLead p {
+  position: relative;
+  z-index: 2;
+  margin-left: -45px;
+  padding: 35px 24px;
+  color: #301211;
+  background: rgba(255, 255, 255, .94);
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.t18n-albumPair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.t18n-albumPair img {
+  height: 620px;
+  object-fit: cover;
+}
+
+.t18n-albumPair img:last-child {
+  margin-top: 85px;
+}
+
+.t18n-albumQuote {
+  margin: 15px 0 0;
+  color: #301211;
+  font-size: 38px;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.t18n-albumQuote b {
+  color: #9c1a15;
+  font-weight: 400;
+}
+
+.t18n-final {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  padding: 55px 24px 80px;
+  background: #fff;
+}
+
+.t18n-final > img {
+  height: 610px;
+  object-fit: cover;
+  opacity: .78;
+}
+
+.t18n-final > div {
+  position: relative;
+  z-index: 2;
+  margin-left: -35px;
+  padding: 32px 20px;
+  background: rgba(255, 255, 255, .94);
+  text-align: center;
+}
+
+.t18n-final h2 {
+  margin: 0;
+  color: #9c1a15;
+  font: 400 38px/1 "Signora", cursive;
+}
+
+.t18n-final p {
+  line-height: 1.7;
+}
+
+.t63n .t63n-hero {
+  min-height: 900px;
+  align-content: start;
+  padding: 34px 25px 80px;
+}
+
+.t63n .t63n-hero::before {
+  opacity: .32;
+}
+
+.t63n .t63n-phoenixLeft,
+.t63n .t63n-phoenixRight {
+  width: 225px;
+  top: 250px;
+  bottom: auto;
+  opacity: .96;
+}
+
+.t63n .t63n-phoenixLeft {
+  left: -82px;
+}
+
+.t63n .t63n-phoenixRight {
+  right: -82px;
+}
+
+.t63n .t63n-hero h1 {
+  max-width: 270px;
+  margin: 22px auto 0;
+  font-size: 44px;
+  line-height: 1.16;
+}
+
+.t63n .t63n-hero h1 i {
+  margin: 8px 0;
+  font-size: 25px;
+}
+
+.t63n .t63n-heroCount {
+  width: 82%;
+  position: absolute;
+  right: 0;
+  bottom: 75px;
+  left: 0;
+  margin: auto;
+}
+
+.t63n-final {
+  position: relative;
+  color: #174f38;
+  background: #f7f5eb;
+}
+
+.t63n-final > img {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+  opacity: .86;
+}
+
+.t63n-final > p {
+  position: absolute;
+  right: 22px;
+  bottom: 24px;
+  left: 22px;
+  margin: 0;
+  padding: 13px 18px;
+  background: rgba(247, 245, 235, .9);
+  text-align: center;
+}
+
+.t63n .t63n-end {
+  min-height: 650px;
+  align-content: center;
+  gap: 25px;
+  padding: 50px 22px;
+  color: #174f38;
+  background: #f7f5eb;
+}
+
+.t63n-guestbook {
+  width: min(330px, 100%);
+  min-height: 210px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 10px;
+  border: 1px solid #d4c9ae;
+  padding: 28px;
+  background: #fff;
+  box-shadow: 0 14px 30px rgba(39, 76, 54, .08);
+  text-align: center;
+}
+
+.t63n-guestbook > svg {
+  color: #b99a43;
+}
+
+.t63n .t63n-guestbook h2 {
+  margin: 0;
+  color: #174f38;
+  font-size: 39px;
+}
+
+.t63n-guestbook p {
+  margin: 0;
+  font: 400 15px/1.6 "Cinelove Times", serif;
+}
+
+.t63n .t63n-end > h2 {
+  color: #174f38;
+}
+
+.t73n .t73n-end {
+  color: #304737;
+  background: #fbfff5;
+}
+
+.t73n .t73n-gift > svg {
+  color: #fbfff5;
+  background: #8b4d45;
+}
+
+.t73n .t73n-end h2 {
+  color: #8b4d45;
+}
+
+.t73n-final {
+  min-height: 774px;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 90px 35px;
+  color: #304737;
+  background: #fbfff5;
+  text-align: center;
+}
+
+.t73n-final h2 {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  color: #6f4d48;
+  font: 400 43px/1.15 "Cinelove Times", serif;
+  text-transform: uppercase;
+}
+
+.t73n-final p {
+  position: relative;
+  z-index: 2;
+  margin: 26px 0 0;
+  font: 400 40px/1 "Anisa Signature", cursive;
+}
+
+.t73n-finalFlowerTop,
+.t73n-finalFlowerBottom {
+  position: absolute;
+  pointer-events: none;
+  opacity: .62;
+}
+
+.t73n-finalFlowerTop {
+  width: 260px;
+  top: -60px;
+  left: -90px;
+}
+
+.t73n-finalFlowerBottom {
+  width: 340px;
+  right: -100px;
+  bottom: -80px;
+}
+
+.t64n-film {
+  display: grid;
+  align-content: start;
+  gap: 95px;
+  padding: 130px 24px;
+  background: #fff;
+  text-align: center;
+}
+
+.t64n-filmIntro {
+  min-height: 480px;
+  display: grid;
+  align-content: center;
+}
+
+.t64n-filmIntro small {
+  font: 600 10px/1 "Quicksand", sans-serif;
+  letter-spacing: .25em;
+}
+
+.t64n-filmIntro h2,
+.t64n-filmOutro h2 {
+  margin: 34px 0;
+  font: 400 44px/1.2 "Cinelove Times", serif;
+  letter-spacing: .12em;
+}
+
+.t64n-filmIntro p,
+.t64n-filmOutro p {
+  max-width: 370px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+.t64n-filmHero {
+  height: 850px;
+  object-fit: cover;
+  opacity: .72;
+}
+
+.t64n-filmGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.t64n-filmGrid img {
+  height: 580px;
+  object-fit: cover;
+  opacity: .7;
+}
+
+.t64n-filmGrid img:nth-child(2),
+.t64n-filmGrid img:nth-child(4) {
+  margin-top: 90px;
+}
+
+.t64n-filmEssay {
+  min-height: 520px;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 65px 34px;
+  font-size: 20px;
+  line-height: 2;
+}
+
+.t64n-filmWide {
+  height: 820px;
+  object-fit: cover;
+  opacity: .72;
+}
+
+.t64n-filmOutro {
+  min-height: 600px;
+  display: grid;
+  align-content: center;
+  padding: 50px 28px;
+}
+
+.t64n .t64n-end {
+  color: #191919;
+  background: #fff;
+}
+
+.t64n-finalQuote {
+  min-height: 850px;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 70px;
+  padding: 90px 30px;
+  background: #fff;
+  text-align: center;
+}
+
+.t64n-finalQuote > p {
+  margin: 0;
+  font-size: 20px;
+  line-height: 2;
+}
+
+.t64n-finalQuote > p b {
+  font-weight: 400;
+}
+
+.t64n-finalCount {
+  width: 100%;
+  gap: 12px;
+}
+
+.t64n-finalCount > span {
+  height: 78px;
+  color: #fff;
+  background: #b77170;
+}
+
+.t64n-finalQuote > img {
+  width: 230px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.t67n-vows {
+  display: grid;
+  gap: 85px;
+  padding: 110px 22px 120px;
+  background: #fff;
+}
+
+.t67n-vows > h2 {
+  margin: 0;
+  color: #8d1c12;
+  font: 400 52px/1 "PlayfairDisplay", serif;
+  text-align: center;
+}
+
+.t67n-vowRow {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  align-items: center;
+}
+
+.t67n-vowRow img {
+  height: 680px;
+  object-fit: cover;
+  opacity: .66;
+}
+
+.t67n-vowRow p {
+  position: relative;
+  z-index: 2;
+  margin-left: -42px;
+  padding: 35px 22px;
+  background: rgba(255, 255, 255, .94);
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.t67n-vowPair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.t67n-vowPair img {
+  height: 600px;
+  object-fit: cover;
+  opacity: .68;
+}
+
+.t67n-vowPair img:last-child {
+  margin-top: 80px;
+}
+
+.t67n-vowEnd {
+  margin: 20px 0 0;
+  font-size: 40px;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.t67n-vowEnd b {
+  color: #8d1c12;
+  font-weight: 400;
+}
+
+.t67n .t67n-end {
+  padding-top: 90px;
+  color: #6a625e;
+  background: #fff;
+}
+
+.t67n .t67n-gift > svg {
+  color: #fff;
+  background: #8d1c12;
+}
+
+.t67n .t67n-end h2 {
+  color: #8d1c12;
+}
+
+.t91n-memory {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 14px;
+  padding: 105px 20px;
+  background: #f3f1e9;
+}
+
+.t91n-memory > img {
+  height: 620px;
+  object-fit: cover;
+  opacity: .82;
+}
+
+.t91n-memory > img:last-child {
+  margin-top: 90px;
+}
+
+.t91n-memory > div {
+  grid-column: 1 / -1;
+  max-width: 390px;
+  justify-self: center;
+  padding: 65px 20px;
+  text-align: center;
+}
+
+.t91n-memory small {
+  font: 600 10px/1 "Quicksand", sans-serif;
+  letter-spacing: .22em;
+}
+
+.t91n-memory h2 {
+  margin: 18px 0;
+  color: #183d2d;
+  font: 400 44px/1 "PlayfairDisplay", serif;
+}
+
+.t91n-memory p {
+  font-size: 18px;
+  line-height: 1.85;
+}
+
+.t91n .t91n-end {
+  color: #24251f;
+  background: #f3f1e9;
+}
+
+.t91n .t91n-gift > svg {
+  color: #f3f1e9;
+  background: #183d2d;
+}
+
+.t91n .t91n-end h2 {
+  color: #183d2d;
+}
+
+.t92n .t92n-end {
+  color: #3d3833;
+  background: #f5f0e7;
+}
+
+.t92n .t92n-endCopy h2 {
+  color: #a06f6f;
+}
+
+.t92n .t92n-gift > svg {
+  color: #f5f0e7;
+  background: #9f2f35;
+}
+
+.t95n .t95n-hero {
+  min-height: 1260px;
+  padding-bottom: 55px;
+}
+
+.t95n .t95n-heading {
+  min-height: 700px;
+}
+
+.t95n .t95n-heading > i {
+  height: 92px;
+  margin: 43px 0 30px;
+}
+
+.t95n .t95n-hero > img {
+  height: 500px;
+}
+
+.t95n .t95n-monogram {
+  min-height: 440px;
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+.t95n .t95n-monogram span {
+  margin-top: 34px;
+}
+
+.t95n .t95n-invite {
+  min-height: 800px;
+  gap: 32px;
+  padding-top: 65px;
+  padding-bottom: 65px;
+}
+
+.t95n .t95n-invite > img {
+  height: 420px;
+}
+
+.t95n .t95n-location {
+  gap: 32px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.t95n .t95n-day {
+  gap: 35px;
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+.t95n .t95n-day > img {
+  height: 340px;
+}
+
+.t95n .t95n-collage {
+  min-height: 650px;
+  grid-template-rows: 200px 270px auto;
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+.t95n .t95n-collage > img:nth-child(1),
+.t95n .t95n-collage > img:nth-child(3) {
+  height: 175px;
+}
+
+.t95n .t95n-collage > img:nth-child(2) {
+  height: 215px;
+}
+
+.t95n .t95n-end {
+  gap: 45px;
+  padding: 80px 22px 0;
+  color: #111;
+  background: #fff;
+}
+
+.t95n .t95n-gift > svg {
+  color: #fff;
+  background: #111;
+}
+
+.t95n .t95n-thankPhoto {
+  height: 650px;
+  margin-top: 15px;
+}
+
+.t96n .t96n-hero {
+  min-height: 1350px;
+}
+
+.t96n .t96n-photoStory {
+  min-height: 650px;
+  padding-top: 60px;
+  padding-bottom: 55px;
+}
+
+.t96n .t96n-photoStory > p {
+  margin-top: 55px;
+}
+
+.t96n .t96n-portrait {
+  min-height: 850px;
+  grid-template-rows: 540px auto;
+  padding-top: 60px;
+  padding-bottom: 55px;
+}
+
+.t96n .t96n-portrait > img {
+  height: 540px;
+}
+
+.t96n .t96n-portrait > p {
+  margin-top: 45px;
+}
+
+.t96n .t96n-galleryLead {
+  min-height: 760px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.t96n .t96n-galleryLead > img {
+  height: 260px;
+}
+
+.t96n .t96n-galleryLead > img:first-child {
+  height: 260px;
+}
+
+.t96n .t96n-galleryLead > div:last-child {
+  padding-top: 35px;
+}
+
+@media (max-width: 420px) {
+  .t4n-albumEditorial,
+  .t18n-albumEditorial {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .t64n-film {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .t67n-vows {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+}
+
+/* Template 62 uses Quicksand for body copy in the reference; display titles stay in Carlytte. */
+.new-invitation-page.t62n {
+  font-family: "Quicksand", Arial, sans-serif;
+}
+
+/* Remaining source-length corrections. These preserve each template's own layout. */
+.t5n .t5n-hero { min-height: 1020px; align-content: center; }
+.t5n .t5n-invite { min-height: 1300px; align-content: center; }
+.t5n .t5n-love { min-height: 1500px; align-content: center; }
+.t5n .t5n-calendarSection { min-height: 900px; align-content: center; }
+.t5n .t5n-gallery { min-height: 1300px; align-content: center; }
+.t5n .t5n-ending { min-height: 1100px; align-content: center; }
+
+.t15n .t15n-hero { min-height: 1000px; }
+.t15n .t15n-note { min-height: 700px; align-content: center; }
+.t15n .t15n-invite { min-height: 950px; align-content: center; }
+.t15n .t15n-day { min-height: 950px; align-content: center; }
+.t15n .t15n-poem { min-height: 700px; align-content: center; }
+.t15n .t15n-film { min-height: 1100px; align-content: center; }
+.t15n .t15n-end { min-height: 1000px; align-content: center; }
+
+.t21n .t21n-hero { min-height: 850px; }
+.t21n .t21n-letter { min-height: 1500px; align-content: space-around; }
+.t21n .t21n-family { min-height: 500px; align-content: center; }
+.t21n .t21n-invite { min-height: 850px; align-content: center; }
+.t21n .t21n-timeline { min-height: 1100px; align-content: center; }
+.t21n .t21n-illustrations { min-height: 1200px; align-content: center; }
+.t21n .t21n-ending { min-height: 1050px; align-content: center; }
+
+.t23n .t23n-hero { min-height: 900px; }
+.t23n .t23n-moon { min-height: 900px; align-content: center; }
+.t23n .t23n-invite { min-height: 900px; align-content: center; }
+.t23n .t23n-collage { min-height: 1100px; align-content: center; }
+.t23n .t23n-dateSection { min-height: 950px; align-content: center; }
+.t23n .t23n-album { min-height: 1500px; align-content: center; }
+.t23n .t23n-ending { min-height: 1100px; align-content: center; }
+
+.t28n .t28n-hero { min-height: 900px; }
+.t28n .t28n-couple { min-height: 900px; align-content: center; }
+.t28n .t28n-green { min-height: 1100px; align-content: center; }
+.t28n .t28n-invite { min-height: 650px; align-content: center; }
+.t28n .t28n-dateSection { min-height: 850px; align-content: center; }
+.t28n .t28n-album { min-height: 1900px; align-content: center; }
+.t28n .t28n-ending { min-height: 1200px; align-content: center; }
+
+.t30n .t30n-hero { min-height: 1000px; }
+.t30n .t30n-welcome { min-height: 1700px; align-content: center; }
+.t30n .t30n-profiles { min-height: 1000px; align-content: center; }
+.t30n .t30n-invite { min-height: 1000px; align-content: center; }
+.t30n .t30n-dateSection { min-height: 1100px; align-content: center; }
+.t30n .t30n-album { min-height: 2150px; align-content: center; }
+.t30n .t30n-ending { min-height: 1250px; align-content: center; }
+
+.t30n-letterEnd {
+  min-height: 300px;
+  display: grid;
+  align-content: center;
+  padding: 58px 38px;
+  color: #252b24;
+  background: #fff;
+}
+
+.t30n-letterEnd p {
+  max-width: 390px;
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 1.85;
+  text-align: left;
+}
+
+.t37n .t37n-hero { min-height: 1000px; }
+.t37n .t37n-profiles { min-height: 1000px; align-content: center; }
+.t37n .t37n-about { min-height: 800px; align-content: center; }
+.t37n .t37n-invite { min-height: 800px; align-content: center; }
+.t37n .t37n-day { min-height: 1500px; align-content: center; }
+.t37n .t37n-end { min-height: 1700px; align-content: center; }
+
+.template47 .t47-cover { min-height: 900px; }
+.template47 .t47-family { min-height: 1000px; align-content: center; }
+.template47 .t47-invitation { min-height: 950px; align-content: center; }
+.template47 .t47-date { min-height: 950px; }
+.template47 .t47-story { min-height: 750px; }
+.template47 .t47-countdownBand { min-height: 300px; align-content: center; }
+.template47 .t47-rsvp { min-height: 850px; align-content: center; }
+.template47 .t47-album { min-height: 1000px; align-content: center; }
+.template47 .t47-gift { min-height: 400px; align-content: center; }
+.template47 .t47-wish { min-height: 800px; align-content: center; }
+
+.t49n .t49n-hero { min-height: 1000px; }
+.t49n .t49n-happiness { min-height: 1400px; align-content: center; }
+.t49n .t49n-invite { min-height: 900px; align-content: center; }
+.t49n .t49n-gallery { min-height: 1800px; align-content: center; }
+.t49n .t49n-dateSection { min-height: 900px; align-content: center; }
+.t49n .t49n-ending { min-height: 1300px; align-content: center; }
+
+.t50n .t50n-opening { min-height: 800px; }
+.t50n .t50n-hero { min-height: 1000px; }
+.t50n .t50n-invite { min-height: 850px; align-content: center; }
+.t50n .t50n-calendar { min-height: 1000px; align-content: center; }
+.t50n .t50n-album { min-height: 1500px; align-content: center; }
+.t50n .t50n-ending { min-height: 1200px; align-content: center; }
+
+.t52n .t52n-hero { min-height: 1030px; }
+.t52n .t52n-profiles { min-height: 850px; align-content: center; }
+.t52n .t52n-invite { min-height: 1200px; align-content: center; }
+.t52n .t52n-calendar { min-height: 1300px; align-content: center; }
+.t52n .t52n-album { min-height: 1400px; align-content: center; }
+.t52n .t52n-ending { min-height: 1150px; align-content: center; }
+
+.t57n .t57n-hero { min-height: 950px; }
+.t57n .t57n-intro { min-height: 1300px; align-content: center; }
+.t57n .t57n-events { min-height: 1100px; align-content: center; }
+.t57n .t57n-date { min-height: 850px; align-content: center; }
+.t57n .t57n-album { min-height: 1800px; align-content: center; }
+.t57n .t57n-ending { min-height: 1450px; align-content: center; }
+
+.t62n .t62n-hero { min-height: 1000px; }
+.t62n .t62n-invite { min-height: 1100px; align-content: center; }
+.t62n .t62n-couple { min-height: 1300px; align-content: center; }
+.t62n .t62n-calendar { min-height: 1000px; align-content: center; }
+.t62n .t62n-album { min-height: 2600px; align-content: center; }
+.t62n .t62n-ending { min-height: 1750px; align-content: center; }
+
+/* Compact source layouts: no duplicated gallery/gift chapters. */
+.t54n .t54n-hero { height: 720px; }
+.t54n .t54n-families { min-height: 425px; }
+.t54n .t54n-invite { min-height: 730px; padding-top: 45px; padding-bottom: 45px; align-content: center; }
+.t54n .t54n-plan { min-height: 820px; padding-top: 40px; padding-bottom: 40px; }
+.t54n .t54n-ending { min-height: 670px; padding-top: 45px; padding-bottom: 45px; align-content: center; }
+.t54n .t54n-illustration { min-height: 650px; }
+
+.t55n .t55n-hero { height: 760px; }
+.t55n .t55n-profiles { min-height: 760px; gap: 28px; padding-top: 38px; padding-bottom: 38px; }
+.t55n .t55n-profiles img { height: 260px; }
+.t55n .t55n-profiles article { padding-top: 14px; padding-bottom: 14px; }
+.t55n .t55n-invite { min-height: 500px; gap: 20px; padding-top: 38px; padding-bottom: 38px; align-content: center; }
+.t55n .t55n-calendar { min-height: 500px; padding-top: 35px; padding-bottom: 35px; }
+.t55n .t55n-calendar .ni-calendar { padding-top: 16px; padding-bottom: 16px; }
+.t55n .t55n-calendar .ni-days > span { height: 29px; }
+.t55n .t55n-calendar > p { margin-top: 15px; }
+.t55n .t55n-dress { min-height: 170px; padding-top: 28px; padding-bottom: 28px; }
+.t55n .t55n-ending { min-height: 610px; padding-top: 38px; padding-bottom: 38px; align-content: center; }
+.t55n .t55n-album { min-height: 880px; padding-top: 38px; padding-bottom: 38px; }
+.t55n .t55n-album img { height: 155px; }
+.t55n .t55n-album img:first-child,
+.t55n .t55n-album img:last-child { height: 230px; }
+
+.t81n { background: #f7f4ed; }
+.t81n .t81n-hero { height: 720px; }
+.t81n .t81n-title { display: none; }
+.t81n .t81n-invite {
+  min-height: 850px;
+  gap: 18px;
+  padding: 70px 38px;
+  color: #292520;
+  background: #f7f4ed;
+  align-content: center;
+}
+.t81n .t81n-invite > div { display: grid; justify-items: center; gap: 13px; }
+.t81n .t81n-invite strong { font: 400 34px/1.2 "Signora", cursive; }
+.t81n .t81n-invite h3 { margin: 4px 0 0; font-size: 20px; font-weight: 400; letter-spacing: .12em; }
+.t81n .t81n-invite .ni-map { border: 2px solid #9b1717; border-radius: 24px; padding: 8px 24px; color: #5f1717; }
+.t81n .t81n-end {
+  min-height: 908px;
+  gap: 35px;
+  padding: 55px 22px;
+  color: #28231f;
+  background: #f7f4ed;
+  align-content: center;
+}
+.t81n .t81n-rsvp { background: #e7e6e2; }
+.t81n .t81n-end h2 { color: #6e1717; font: 500 12px/1 "Quicksand", sans-serif; letter-spacing: .28em; text-transform: uppercase; }
+
+@media (max-width: 420px) {
+  .t30n .t30n-album,
+  .t62n .t62n-album {
+    min-height: calc(var(--unused, 0px) + 1700px);
+  }
+
+  .t81n .t81n-hero { height: 720px; }
+}
+
+/* Template 7: white/red ribbon story, handwritten vows and paired home maps. */
+.t7n-tronVen {
+  min-height: 2600px;
+  display: grid;
+  align-content: space-around;
+  gap: 55px;
+  padding: 95px 25px;
+  color: #444;
+  background: #fff;
+  text-align: center;
+}
+
+.t7n-lineArt {
+  height: 80px;
+  position: relative;
+}
+
+.t7n-lineArt span {
+  display: block;
+  width: 82%;
+  height: 42px;
+  margin: auto;
+  border-top: 2px solid #333;
+  border-radius: 50%;
+  transform: rotate(-3deg);
+}
+
+.t7n-tronVen > small,
+.t7n-vowCard small {
+  width: max-content;
+  justify-self: center;
+  padding: 12px 30px;
+  color: #fff;
+  background: #a44747;
+  font: 500 12px/1 "Quicksand", sans-serif;
+  letter-spacing: .16em;
+}
+
+.t7n-tronVen > p,
+.t7n-vowCard p {
+  max-width: 400px;
+  justify-self: center;
+  margin: 0;
+  font: 400 23px/1.95 "Signora", cursive;
+}
+
+.t7n-tronVen > img {
+  width: 88%;
+  height: 760px;
+  justify-self: center;
+  object-fit: cover;
+}
+
+.t7n-tronVen > div:not(.t7n-lineArt) {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.t7n-tronVen > div:not(.t7n-lineArt) img {
+  height: 720px;
+  object-fit: cover;
+}
+
+.t7n-tronVen > div:not(.t7n-lineArt) img:first-child {
+  height: 540px;
+  margin-top: 120px;
+}
+
+.t7n-tronVen > h2 {
+  margin: 0;
+  font: 400 48px/1.2 "Loving Ambros", "PlayfairDisplay", serif;
+  text-align: left;
+}
+
+.t7n-mapVow {
+  min-height: 1600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: space-around;
+  gap: 35px 14px;
+  padding: 90px 24px;
+  background: #fff;
+  text-align: center;
+}
+
+.t7n-mapVow > div:not(.t7n-vowCard) iframe {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  filter: grayscale(.45);
+}
+
+.t7n-mapVow > div:not(.t7n-vowCard) small {
+  display: block;
+  margin-top: 14px;
+  font-size: 11px;
+  letter-spacing: .18em;
+}
+
+.t7n-mapVow > div:not(.t7n-vowCard) p {
+  line-height: 1.7;
+}
+
+.t7n-vowCard {
+  grid-column: 1/-1;
+  display: grid;
+  gap: 30px;
+  padding: 70px 10px;
+}
+
+.t7n-mapVow > img {
+  grid-column: 1/-1;
+  width: 72%;
+  height: 580px;
+  justify-self: end;
+  object-fit: cover;
+}
+
+/* Template 112: red satin portraits laid over textured invitation paper. */
+.t112n-redProfiles {
+  min-height: 2200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: space-around;
+  gap: 55px 20px;
+  padding: 95px 20px;
+  color: #7b1718;
+  background: #f4eee6;
+  background-image: radial-gradient(rgba(133, 24, 25, .08) 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+
+.t112n-redProfiles > p {
+  grid-column: 1/-1;
+  max-width: 400px;
+  justify-self: center;
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.9;
+  text-align: center;
+}
+
+.t112n-profileCard {
+  display: grid;
+  gap: 13px;
+  padding: 12px 12px 30px;
+  background: #fff;
+  box-shadow: 0 15px 32px rgba(87, 14, 16, .12);
+}
+
+.t112n-profileCard:nth-child(3) {
+  margin-top: 280px;
+}
+
+.t112n-profileCard img {
+  height: 970px;
+  object-fit: cover;
+}
+
+.t112n-profileCard small {
+  font: 500 10px/1 "Quicksand", sans-serif;
+  letter-spacing: .2em;
+}
+
+.t112n-profileCard h2 {
+  margin: 0;
+  font: 400 31px/1 "PlayfairDisplay", serif;
+}
+
+.t112n-paperCalendar {
+  min-height: 1500px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: space-around;
+  gap: 50px 16px;
+  padding: 95px 18px;
+  color: #7e1719;
+  background: #f7f1e9;
+}
+
+.t112n-envelope {
+  height: 330px;
+  display: grid;
+  place-items: center;
+  color: #e7bd98;
+  background: #89151c;
+  clip-path: polygon(0 0, 100% 0, 100% 83%, 50% 100%, 0 83%);
+}
+
+.t112n-envelope span {
+  font-size: 11px;
+  letter-spacing: .25em;
+}
+
+.t112n-envelope b {
+  font-size: 76px;
+}
+
+.t112n-paperCalendar .ni-calendar {
+  min-height: 460px;
+  padding: 22px 8px;
+  color: #7e1719;
+  background: #fff8e9;
+  box-shadow: 0 15px 30px rgba(95, 21, 21, .12);
+}
+
+.t112n-paperCalendar > img {
+  grid-column: 1/-1;
+  height: 590px;
+  object-fit: cover;
+}
+
+.t112n-paperCalendar > div:last-child {
+  grid-column: 1/-1;
+  text-align: center;
+}
+
+.t112n-paperCalendar h2 {
+  margin: 0;
+  font: 400 47px/1 "PlayfairDisplay", serif;
+}
+
+.t112n-paperCalendar p {
+  margin: 5px 0 0;
+  font: 400 40px/1 "Signora", cursive;
+}
+
+/* Template 8: red and kraft-paper scrapbook layers. */
+.t8n-paperStory {
+  min-height: 2800px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: space-around;
+  gap: 55px 18px;
+  padding: 95px 24px;
+  color: #82483e;
+  background: #d4b58d;
+}
+
+.t8n-paperNames {
+  display: grid;
+  gap: 12px;
+}
+
+.t8n-paperNames:nth-child(2) {
+  margin-top: 80px;
+}
+
+.t8n-paperNames img {
+  height: 620px;
+  object-fit: cover;
+  border: 10px solid #f6ead9;
+}
+
+.t8n-paperNames small {
+  font: 600 10px/1 "Quicksand", sans-serif;
+  letter-spacing: .18em;
+}
+
+.t8n-paperNames h2 {
+  margin: 0;
+  font: 400 42px/1 "Signora", cursive;
+}
+
+.t8n-paperStory > p {
+  grid-column: 1/-1;
+  max-width: 410px;
+  justify-self: center;
+  margin: 0;
+  padding: 55px 25px;
+  background: #e9d8bf;
+  font-size: 19px;
+  line-height: 1.9;
+  text-align: center;
+}
+
+.t8n-paperStory > img {
+  grid-column: 1/-1;
+  width: 88%;
+  height: 620px;
+  justify-self: center;
+  object-fit: contain;
+}
+
+.t8n-paperStory > div:last-child {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.t8n-paperStory > div:last-child img {
+  height: 560px;
+  object-fit: contain;
+}
+
+.t8n-locationPaper {
+  min-height: 1700px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: space-around;
+  gap: 45px 18px;
+  padding: 90px 22px;
+  color: #89564d;
+  background: #e6d3b9;
+}
+
+.t8n-locationPaper > div:first-child {
+  grid-column: 1/-1;
+  text-align: center;
+}
+
+.t8n-locationPaper h2 {
+  margin: 0 0 14px;
+  font-size: 27px;
+}
+
+.t8n-locationPaper p {
+  line-height: 1.8;
+}
+
+.t8n-locationPaper iframe {
+  width: 100%;
+  height: 410px;
+  border: 8px solid #ad665d;
+}
+
+.t8n-locationPaper .ni-calendar {
+  min-height: 410px;
+  padding: 18px 8px;
+  background: #efe3ce;
+}
+
+.t8n-notePaper {
+  grid-column: 1/-1;
+  width: 78%;
+  justify-self: end;
+  padding: 50px 35px;
+  background: #f5ecdc;
+  transform: rotate(3deg);
+  box-shadow: 0 12px 26px rgba(93, 52, 45, .12);
+}
+
+.t8n-locationPaper > img {
+  grid-column: 1/-1;
+  width: 70%;
+  height: 590px;
+  justify-self: start;
+  object-fit: cover;
+  border: 10px solid #d1ae87;
+}
+
+/* Template 99: clean modern story collage and neutral map card. */
+.t99n-modernStory {
+  min-height: 1800px;
+  display: grid;
+  align-content: space-around;
+  gap: 55px;
+  padding: 90px 18px;
+  color: #555;
+  background: #fbfbf7;
+}
+
+.t99n-layered {
+  min-height: 980px;
+  position: relative;
+}
+
+.t99n-layered img {
+  position: absolute;
+  object-fit: cover;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .1);
+}
+
+.t99n-layered img:nth-child(1) {
+  width: 68%;
+  height: 720px;
+  top: 120px;
+  left: 15%;
+}
+
+.t99n-layered img:nth-child(2) {
+  width: 35%;
+  height: 430px;
+  top: 30px;
+  left: 0;
+}
+
+.t99n-layered img:nth-child(3) {
+  width: 35%;
+  height: 430px;
+  right: 0;
+  bottom: 10px;
+}
+
+.t99n-modernStory > div:last-child {
+  max-width: 420px;
+  justify-self: center;
+  text-align: center;
+}
+
+.t99n-modernStory small {
+  font: 600 10px/1 "Quicksand", sans-serif;
+  letter-spacing: .22em;
+}
+
+.t99n-modernStory h2 {
+  margin: 14px 0;
+  font-size: 37px;
+  font-weight: 400;
+}
+
+.t99n-modernStory p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.85;
+}
+
+.t99n-mapCard {
+  min-height: 1000px;
+  display: grid;
+  align-content: space-around;
+  gap: 30px;
+  padding: 75px 30px;
+  color: #666;
+  background: #f7f7f2;
+  text-align: center;
+}
+
+.t99n-mapCard > h2 {
+  margin: 0;
+  font: 500 43px/1 "Quicksand", sans-serif;
+}
+
+.t99n-mapCard > p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.t99n-mapCard iframe {
+  width: 100%;
+  height: 360px;
+  border: 0;
+  filter: grayscale(.3);
+}
+
+.t99n-timeCard {
+  display: grid;
+  gap: 7px;
+}
+
+.t99n-timeCard span {
+  font-size: 13px;
+  letter-spacing: .18em;
+}
+
+.t99n-timeCard strong {
+  font-size: 44px;
+  font-weight: 400;
+}
+
+.t99n-timeCard p {
+  margin: 0;
+  font-size: 22px;
+}
+
+@media (max-width: 420px) {
+  .t7n-mapVow {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .t8n-paperStory,
+  .t8n-locationPaper {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+}
+
+/* Template 43: traditional red invitation with addresses and formal portraits. */
+.t43n-addresses {
+  min-height: 1200px;
+  display: grid;
+  align-content: space-around;
+  gap: 45px;
+  padding: 85px 0;
+  color: #efd2aa;
+  background: #a40000;
+  text-align: center;
+}
+
+.t43n-addresses > h2 {
+  margin: 0;
+  font: 400 50px/1 "Signora", cursive;
+}
+
+.t43n-addressRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 25px;
+}
+
+.t43n-addressRow iframe {
+  width: 100%;
+  height: 310px;
+  border: 0;
+  filter: sepia(.5) saturate(.7);
+}
+
+.t43n-addressRow small {
+  font: 500 12px/1 "Quicksand", sans-serif;
+  letter-spacing: .2em;
+}
+
+.t43n-addressRow p {
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.t43n-redStory {
+  min-height: 2700px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: space-around;
+  gap: 55px 25px;
+  padding: 95px 28px;
+  color: #efd2aa;
+  background: #a40000;
+}
+
+.t43n-redPortrait {
+  display: grid;
+  gap: 12px;
+}
+
+.t43n-redPortrait:nth-child(2) {
+  margin-top: 320px;
+}
+
+.t43n-redPortrait img {
+  height: 780px;
+  object-fit: cover;
+  border: 1px solid #e7bc8b;
+  padding: 8px;
+}
+
+.t43n-redPortrait span {
+  font: 400 28px/1 "PlayfairDisplay", serif;
+}
+
+.t43n-redPortrait h2 {
+  margin: 0;
+  font: 400 31px/1 "Signora", cursive;
+}
+
+.t43n-redStory > p {
+  grid-column: 1/-1;
+  max-width: 400px;
+  justify-self: center;
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.9;
+  text-align: center;
+}
+
+.t43n-redStory > div:last-child {
+  grid-column: 1/-1;
+  display: grid;
+  gap: 36px;
+}
+
+.t43n-redStory > div:last-child img {
+  height: 690px;
+  object-fit: cover;
+  border: 8px solid #d1a19b;
+}
+
+.t43n-redStory > div:last-child img:last-child {
+  width: 78%;
+  justify-self: center;
+}
+
+/* Template 26: white illustrated invitation with floating confetti rhythm. */
+.t26n-photoStory {
+  min-height: 2600px;
+  display: grid;
+  align-content: space-around;
+  gap: 55px;
+  padding: 95px 28px;
+  background-color: #fff;
+  background-image: radial-gradient(#efaea5 2px, transparent 2px);
+  background-size: 56px 56px;
+  text-align: center;
+}
+
+.t26n-photoStory > img {
+  height: 720px;
+  object-fit: cover;
+}
+
+.t26n-photoStory > p {
+  max-width: 410px;
+  justify-self: center;
+  margin: 0;
+  padding: 25px;
+  background: rgba(255, 255, 255, .86);
+  font: 400 20px/1.95 "PlayfairDisplay", serif;
+}
+
+.t26n-photoStory > div {
+  display: grid;
+  gap: 14px;
+}
+
+.t26n-photoStory > div img {
+  height: 680px;
+  object-fit: cover;
+}
+
+.t26n-vowPage {
+  min-height: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+  gap: 30px;
+  padding: 90px 24px;
+  background: #fff;
+}
+
+.t26n-vowPage > img {
+  height: 850px;
+  object-fit: cover;
+  border-radius: 220px 220px 0 0;
+}
+
+.t26n-vowPage > div {
+  align-self: center;
+}
+
+.t26n-vowPage small {
+  color: #d7827d;
+  font: 600 10px/1 "Quicksand", sans-serif;
+  letter-spacing: .2em;
+}
+
+.t26n-vowPage h2 {
+  margin: 16px 0;
+  color: #bc4a4a;
+  font: 400 39px/1.05 "Signora", cursive;
+}
+
+.t26n-vowPage p {
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* Template 14: pale champagne album with staggered classical portraits. */
+.t14n-beginning {
+  min-height: 2600px;
+  display: grid;
+  align-content: space-around;
+  gap: 60px;
+  padding: 95px 0;
+  color: #5f5144;
+  background: #f9f4ef;
+  text-align: center;
+}
+
+.t14n-beginning > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: start;
+}
+
+.t14n-beginning > div img {
+  height: 720px;
+  object-fit: cover;
+}
+
+.t14n-beginning > div img:last-child {
+  margin-top: 170px;
+}
+
+.t14n-beginning > p {
+  max-width: 400px;
+  justify-self: center;
+  margin: 0;
+  padding: 0 25px;
+  font-size: 20px;
+  line-height: 1.9;
+}
+
+.t14n-beginning > h2 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.t14n-reliance {
+  min-height: 1600px;
+  display: grid;
+  align-content: space-around;
+  gap: 50px;
+  padding: 85px 0;
+  color: #5e5145;
+  background: #f9f4ef;
+  text-align: center;
+}
+
+.t14n-reliance > img {
+  width: 86%;
+  height: 590px;
+  justify-self: center;
+  object-fit: cover;
+}
+
+.t14n-reliance > p {
+  max-width: 410px;
+  justify-self: center;
+  margin: 0;
+  padding: 0 22px;
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+.t14n-reliance > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.t14n-reliance > div img {
+  height: 620px;
+  object-fit: cover;
+}
+
+.t14n-reliance > h2 {
+  max-width: 420px;
+  justify-self: center;
+  margin: 0;
+  padding: 0 20px;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+/* Template 6: black music-zine spreads and gold handwritten captions. */
+.t6n-loveLetter {
+  min-height: 2000px;
+  display: grid;
+  align-content: space-around;
+  gap: 45px;
+  padding: 95px 34px;
+  color: #d9bb7a;
+  background: #000;
+  text-align: center;
+}
+
+.t6n-loveLetter > p {
+  margin: 0;
+  color: #ddd;
+  font: 400 20px/1.9 "Signora", cursive;
+}
+
+.t6n-loveLetter > img {
+  height: 650px;
+  object-fit: cover;
+  border-radius: 24px;
+  filter: brightness(.82);
+}
+
+.t6n-loveLetter > h2 {
+  margin: -120px 0 0;
+  position: relative;
+  z-index: 1;
+  font: 400 68px/1 "Signora", cursive;
+}
+
+.t6n-loveLetter > small {
+  font: 500 11px/1 "Quicksand", sans-serif;
+  letter-spacing: .55em;
+}
+
+.t6n-darkDiary {
+  min-height: 2100px;
+  display: grid;
+  align-content: space-around;
+  gap: 60px;
+  padding: 100px 25px;
+  color: #d2af68;
+  background: #000;
+  text-align: center;
+}
+
+.t6n-darkPair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 38px;
+  align-items: start;
+}
+
+.t6n-darkPair img {
+  height: 700px;
+  object-fit: cover;
+}
+
+.t6n-darkPair img:last-child {
+  margin-top: 180px;
+}
+
+.t6n-darkDiary > h2 {
+  margin: 0;
+  font: 400 58px/1 "Signora", cursive;
+}
+
+.t6n-darkDiary > img {
+  width: 88%;
+  height: 720px;
+  justify-self: start;
+  object-fit: cover;
+  filter: brightness(.75);
+}
+
+.t6n-darkDiary > p {
+  max-width: 390px;
+  justify-self: center;
+  margin: 0;
+  color: #ddd;
+  font: 400 19px/1.9 "Signora", cursive;
+}
+
+@media (max-width: 420px) {
+  .t43n-redStory {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .t26n-vowPage {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .t14n-beginning > div,
+  .t14n-reliance > div {
+    gap: 28px;
+  }
+}
+
+/* Template 17: red ceremonial portrait chapters before the formal date card. */
+.t17n-bornFree {
+  min-height: 2200px;
+  display: grid;
+  align-content: space-around;
+  gap: 55px;
+  padding: 95px 22px;
+  color: #8c3731;
+  background: #fff;
+  text-align: center;
+}
+
+.t17n-bornFree > small {
+  font: 500 12px/1 "Quicksand", sans-serif;
+  letter-spacing: .32em;
+}
+
+.t17n-bornFree > p {
+  max-width: 390px;
+  justify-self: center;
+  margin: 0;
+  color: #4e403d;
+  font-size: 19px;
+  line-height: 1.9;
+}
+
+.t17n-bornFree > h2 {
+  margin: 0;
+  color: #c67e78;
+  font: 400 69px/1 "Signora", cursive;
+}
+
+.t17n-bornFree > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.t17n-bornFree img {
+  height: 980px;
+  object-fit: cover;
+  border-bottom: 12px solid #b3645f;
+}
+
+.t17n-years {
+  min-height: 2700px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: space-around;
+  gap: 55px 0;
+  padding: 100px 0;
+  color: #5c302d;
+  background: #c38783;
+}
+
+.t17n-yearsCopy {
+  grid-column: 1/-1;
+  max-width: 410px;
+  justify-self: end;
+  padding: 35px;
+  background: rgba(255, 255, 255, .9);
+  text-align: right;
+}
+
+.t17n-yearsCopy p,
+.t17n-years blockquote {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.9;
+}
+
+.t17n-years > img {
+  height: 780px;
+  object-fit: cover;
+}
+
+.t17n-years > img:nth-of-type(1) {
+  grid-column: 1/-1;
+}
+
+.t17n-years > img:nth-of-type(2) {
+  width: 91%;
+  grid-column: 1/-1;
+  justify-self: end;
+}
+
+.t17n-years blockquote {
+  grid-column: 1/-1;
+  padding: 50px 30px;
+  color: #f8e9db;
+  font-style: italic;
+  text-align: center;
+}
+
+.t17n-years > img:nth-of-type(3) {
+  grid-column: 1/-1;
+  height: 840px;
+}
+
+/* Template 10: bright studio album with generous white editorial spacing. */
+.t10n-welcome {
+  min-height: 2200px;
+  display: grid;
+  align-content: space-around;
+  gap: 60px;
+  padding: 90px 25px;
+  background: #fff;
+  text-align: center;
+}
+
+.t10n-welcome > img {
+  height: 650px;
+  object-fit: cover;
+}
+
+.t10n-welcome > h2 {
+  margin: 0;
+  font: 400 48px/1 "Belinda Avenue", "Signora", cursive;
+}
+
+.t10n-welcome > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+}
+
+.t10n-welcome > div img {
+  height: 790px;
+  object-fit: cover;
+}
+
+.t10n-welcome > p,
+.t10n-daylight > p {
+  max-width: 410px;
+  justify-self: center;
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.9;
+}
+
+.t10n-daylight {
+  min-height: 2300px;
+  display: grid;
+  align-content: space-around;
+  gap: 45px;
+  padding: 90px 22px;
+  background: #fff;
+  text-align: center;
+}
+
+.t10n-daylight > img {
+  height: 680px;
+  object-fit: cover;
+}
+
+.t10n-daylight > small {
+  font: 400 27px/1 "PlayfairDisplay", serif;
+}
+
+.t10n-archPhoto {
+  width: 86%;
+  height: 760px;
+  justify-self: center;
+  overflow: hidden;
+  border-radius: 250px 250px 0 0;
+}
+
+.t10n-archPhoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Template 11: layered red love-story pages and framed photographs. */
+.t11n-loveStory {
+  min-height: 2500px;
+  display: grid;
+  align-content: space-around;
+  gap: 60px;
+  padding: 95px 22px;
+  color: #f7ded7;
+  background: #af6967;
+  text-align: center;
+}
+
+.t11n-loveStory > small {
+  font: 500 14px/1 "Quicksand", sans-serif;
+  letter-spacing: .35em;
+}
+
+.t11n-storyFrame {
+  position: relative;
+  width: 78%;
+  height: 1200px;
+  justify-self: start;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, .48);
+}
+
+.t11n-storyFrame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.t11n-storyFrame span {
+  position: absolute;
+  top: 42%;
+  left: calc(100% - 5px);
+  width: 145px;
+  font: 400 28px/1.65 "Signora", cursive;
+  text-align: left;
+}
+
+.t11n-loveStory > p {
+  max-width: 390px;
+  justify-self: center;
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.85;
+}
+
+.t11n-loveStory > img {
+  width: 90%;
+  height: 680px;
+  justify-self: end;
+  object-fit: cover;
+  border: 8px solid #d4a09b;
+}
+
+.t11n-redDiary {
+  min-height: 2400px;
+  position: relative;
+  display: grid;
+  align-content: space-around;
+  gap: 50px;
+  padding: 100px 24px;
+  color: #f6e0d5;
+  background: #7c1112;
+  text-align: center;
+}
+
+.t11n-redDiary > img:first-child {
+  height: 900px;
+  object-fit: cover;
+  border: 2px solid #c6968c;
+  padding: 12px;
+}
+
+.t11n-redDiary > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.t11n-redDiary > div img {
+  height: 620px;
+  object-fit: cover;
+}
+
+.t11n-redDiary > p {
+  max-width: 390px;
+  justify-self: center;
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.9;
+}
+
+.t11n-redDiary > .t11n-sticker {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  justify-self: center;
+}
+
+/* Template 24: cream portrait diary and the map chapter shown in the source. */
+.t24n-portraitDiary {
+  min-height: 3300px;
+  display: grid;
+  align-content: space-around;
+  gap: 65px;
+  padding: 95px 0;
+  color: #34322e;
+  background: #fff8e9;
+  text-align: center;
+}
+
+.t24n-portraitDiary > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 42px;
+  padding: 0 25px;
+}
+
+.t24n-portraitDiary > div img {
+  height: 810px;
+  object-fit: cover;
+}
+
+.t24n-portraitDiary > p {
+  max-width: 430px;
+  justify-self: center;
+  margin: 0;
+  padding: 0 22px;
+  font-size: 20px;
+  line-height: 2;
+}
+
+.t24n-portraitDiary > img {
+  width: 88%;
+  height: 900px;
+  justify-self: start;
+  object-fit: cover;
+  border-radius: 0 210px 0 0;
+}
+
+.t24n-portraitDiary > div:last-child {
+  align-items: start;
+  padding: 0;
+}
+
+.t24n-portraitDiary > div:last-child img:first-child {
+  height: 760px;
+}
+
+.t24n-portraitDiary > div:last-child img:last-child {
+  height: 620px;
+  margin-top: 170px;
+}
+
+.t24n-address {
+  min-height: 1050px;
+  display: grid;
+  align-content: space-around;
+  gap: 35px;
+  padding: 80px 40px 0;
+  color: #333;
+  background: #fff8e9;
+  text-align: center;
+}
+
+.t24n-address > h2 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 400;
+}
+
+.t24n-address > p {
+  margin: 0;
+  font-size: 18px;
+}
+
+.t24n-address iframe {
+  width: 100%;
+  height: 330px;
+  border: 0;
+}
+
+.t24n-address > img {
+  width: calc(100% + 80px);
+  height: 400px;
+  margin-left: -40px;
+  object-fit: cover;
+}
+
+@media (max-width: 420px) {
+  .t17n-bornFree {
+    min-height: 2050px;
+  }
+
+  .t17n-years {
+    min-height: 2500px;
+  }
+
+  .t10n-welcome > div {
+    gap: 24px;
+  }
+
+  .t11n-storyFrame span {
+    width: 115px;
+    font-size: 23px;
+  }
+
+  .t24n-portraitDiary > div {
+    gap: 22px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+
+/* Template 20: airy editorial diary, matching the long photo-led source. */
+.t20n .t20n-hero {
+  min-height: 205px;
+  padding: 30px 24px 20px;
+  color: #242424;
+  background: #fff;
+}
+
+.t20n-heading {
+  position: relative;
+  display: grid;
+  gap: 4px;
+}
+
+.t20n-heading small {
+  font: 600 23px/1 "Quicksand", sans-serif;
+  text-transform: lowercase;
+}
+
+.t20n-heading h1 {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  margin: 0;
+  font: 400 21px/1.2 "Loving Ambros", "PlayfairDisplay", serif;
+}
+
+.t20n-heading h1 i {
+  color: #d27f88;
+  font: inherit;
+}
+
+.t20n-heading p,
+.t20n-heading b,
+.t20n-heading span {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.t20n-heading span {
+  margin-top: 3px;
+  text-align: right;
+}
+
+.t20n .t20n-player {
+  position: relative;
+  min-height: 205px;
+  margin: 0 24px;
+  padding: 22px;
+  overflow: hidden;
+  border-radius: 9px;
+  background: #30342f;
+}
+
+.t20n-player::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(28, 34, 29, .15), rgba(28, 34, 29, .72));
+}
+
+.t20n-player > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.t20n-player > svg,
+.t20n-player > div,
+.t20n-player > button {
+  position: relative;
+  z-index: 2;
+}
+
+.t20n .t20n-letter {
+  min-height: 520px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background: #fff;
+}
+
+.t20n-seasons {
+  min-height: 3800px;
+  display: grid;
+  align-content: space-around;
+  gap: 65px;
+  padding: 100px 25px;
+  background: #fff;
+}
+
+.t20n-seasonCopy,
+.t20n-seasonQuote {
+  max-width: 390px;
+  padding: 25px 8px;
+}
+
+.t20n-seasonCopy small {
+  color: #ba6d75;
+  font-size: 12px;
+  letter-spacing: .28em;
+}
+
+.t20n-seasonCopy h2,
+.t20n-seasonQuote h2,
+.t20n-forever h2 {
+  margin: 12px 0;
+  font: 400 46px/1.05 "Signora", cursive;
+}
+
+.t20n-seasonCopy p,
+.t20n-seasonQuote p,
+.t20n-forever p {
+  margin: 0;
+  font: 400 18px/1.9 "PlayfairDisplay", serif;
+}
+
+.t20n-seasons > img {
+  width: 92%;
+  height: 1040px;
+  object-fit: cover;
+}
+
+.t20n-seasons > img:nth-of-type(1) {
+  justify-self: end;
+  border-radius: 220px 0 0 0;
+}
+
+.t20n-seasons > img:nth-of-type(2) {
+  justify-self: start;
+  height: 930px;
+  border-radius: 0 0 220px 0;
+}
+
+.t20n-seasonQuote {
+  justify-self: end;
+  text-align: right;
+}
+
+.t20n-forever {
+  min-height: 3900px;
+  display: grid;
+  align-content: space-around;
+  gap: 75px;
+  padding: 110px 22px;
+  color: #343a34;
+  background: #e9eee6;
+  text-align: center;
+}
+
+.t20n-forever > img {
+  height: 1250px;
+  object-fit: cover;
+  border-radius: 240px 240px 8px 8px;
+}
+
+.t20n-forever > div:not(:last-child) {
+  max-width: 400px;
+  justify-self: center;
+}
+
+.t20n-forever small {
+  color: #b36f78;
+  font-size: 10px;
+  letter-spacing: .28em;
+}
+
+.t20n-forever > div:last-child {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.t20n-forever > div:last-child img {
+  height: 790px;
+  object-fit: cover;
+}
+
+.t20n-forever > div:last-child img:first-child {
+  margin-top: 120px;
+}
+
+/* Template 94: monochrome chapel editorial and paired address maps. */
+.t94n-chapel {
+  min-height: 2350px;
+  position: relative;
+  display: grid;
+  align-content: space-around;
+  gap: 55px;
+  padding: 100px 25px;
+  background: #fafafa;
+}
+
+.t94n-chapel > p {
+  max-width: 400px;
+  justify-self: center;
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.t94n-chapel > div {
+  display: grid;
+  grid-template-columns: 1fr 1.08fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.t94n-chapel img {
+  height: 760px;
+  object-fit: cover;
+}
+
+.t94n-chapel img:nth-child(2) {
+  margin-top: 180px;
+}
+
+.t94n-chapel img:nth-child(3) {
+  grid-column: 1;
+  height: 520px;
+  margin-top: -320px;
+}
+
+.t94n-chapel > h2 {
+  position: absolute;
+  top: 730px;
+  right: 22px;
+  margin: 0;
+  color: #8f4b55;
+  font: 400 47px/1 "PlayfairDisplay", serif;
+  letter-spacing: .12em;
+}
+
+.t94n-weddingWords {
+  min-height: 1900px;
+  display: grid;
+  align-content: space-around;
+  gap: 55px;
+  padding: 90px 25px;
+  background: #fff;
+  text-align: center;
+}
+
+.t94n-weddingWords > img {
+  height: 760px;
+  object-fit: cover;
+}
+
+.t94n-weddingWords > div:nth-of-type(1) {
+  max-width: 370px;
+  justify-self: center;
+}
+
+.t94n-weddingWords small {
+  display: block;
+  margin-bottom: 15px;
+  color: #a6a3a0;
+  font: 400 42px/1 "Signora", cursive;
+}
+
+.t94n-weddingWords p {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+.t94n-weddingWords > div:last-child {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.t94n-weddingWords > div:last-child img {
+  height: 620px;
+  object-fit: cover;
+}
+
+.t94n-address {
+  min-height: 1080px;
+  display: grid;
+  align-content: space-around;
+  gap: 40px;
+  padding: 75px 42px;
+  background: #fff;
+  text-align: center;
+}
+
+.t94n-address > h2 {
+  margin: 0;
+  font-size: 45px;
+  font-weight: 400;
+}
+
+.t94n-address > h2 small {
+  display: block;
+  font-size: 19px;
+}
+
+.t94n-address h3 {
+  margin: 0 0 14px;
+  font-size: 22px;
+}
+
+.t94n-address iframe {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  filter: grayscale(.35);
+}
+
+/* Template 108: warm autumn portrait story with deliberately slow reveals. */
+.t108n-coupleStory {
+  min-height: 2600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: space-around;
+  gap: 28px 15px;
+  padding: 95px 20px;
+  background: #fffdf9;
+}
+
+.t108n-person {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.t108n-person:nth-child(2) {
+  margin-top: 310px;
+}
+
+.t108n-person img {
+  height: 780px;
+  object-fit: cover;
+}
+
+.t108n-person small {
+  color: #b38d75;
+  font-size: 11px;
+  letter-spacing: .2em;
+}
+
+.t108n-person h2 {
+  margin: 0;
+  font: 400 42px/1 "Carlytte", "Signora", cursive;
+}
+
+.t108n-person p {
+  margin: 0;
+  font: 400 16px/1.9 "PlayfairDisplay", serif;
+}
+
+.t108n-miniatures {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  align-items: end;
+}
+
+.t108n-miniatures img {
+  height: 520px;
+  object-fit: cover;
+}
+
+.t108n-miniatures img:nth-child(2) {
+  height: 400px;
+}
+
+.t108n-poem {
+  min-height: 2200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: space-around;
+  gap: 55px 12px;
+  padding: 90px 0;
+  background: #f9f5ee;
+}
+
+.t108n-poem > img:first-child {
+  grid-column: 1/-1;
+  width: 86%;
+  height: 790px;
+  justify-self: end;
+  object-fit: cover;
+}
+
+.t108n-poem > div {
+  grid-column: 1/-1;
+  padding: 0 28px;
+}
+
+.t108n-poem p {
+  margin: 0;
+  font-size: 19px;
+  line-height: 2;
+}
+
+.t108n-poem > img:not(:first-child) {
+  height: 700px;
+  object-fit: cover;
+}
+
+.t108n-married {
+  min-height: 1600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+  gap: 55px 20px;
+  padding: 95px 0;
+  background: #fff;
+}
+
+.t108n-married > img {
+  height: 950px;
+  object-fit: cover;
+  border-radius: 0 230px 230px 0;
+}
+
+.t108n-married > div {
+  align-self: center;
+  padding-right: 20px;
+}
+
+.t108n-married small {
+  color: #a68167;
+  font-size: 12px;
+  letter-spacing: .16em;
+}
+
+.t108n-married h2 {
+  margin: 14px 0;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.t108n-married p {
+  line-height: 1.8;
+}
+
+.t108n-married > p {
+  grid-column: 1/-1;
+  max-width: 390px;
+  justify-self: center;
+  padding: 0 22px;
+  text-align: center;
+}
+
+/* Template 34: long, candid garden story before the formal invitation. */
+.t34n-storyBook {
+  min-height: 3300px;
+  display: grid;
+  align-content: space-around;
+  gap: 60px;
+  padding: 95px 16px;
+  background: #fff;
+}
+
+.t34n-storyBook > img {
+  width: 90%;
+  height: 760px;
+  justify-self: center;
+  object-fit: cover;
+}
+
+.t34n-storyBook > p {
+  max-width: 430px;
+  justify-self: center;
+  margin: 0;
+  padding: 0 12px;
+  font-size: 20px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.t34n-storyBook > div {
+  display: grid;
+  gap: 14px;
+}
+
+.t34n-storyBook > div img {
+  height: 680px;
+  object-fit: cover;
+}
+
+.t34n-promise {
+  min-height: 1600px;
+  display: grid;
+  align-content: space-around;
+  gap: 55px;
+  padding: 90px 24px;
+  background: #f8f8f4;
+  text-align: center;
+}
+
+.t34n-promise > img {
+  height: 570px;
+  object-fit: cover;
+}
+
+.t34n-promise small {
+  color: #6f806f;
+  font: 600 10px/1 "Quicksand", sans-serif;
+  letter-spacing: .28em;
+}
+
+.t34n-promise h2 {
+  margin: 15px 0;
+  color: #38523f;
+  font: 400 39px/1.1 "Signora", cursive;
+}
+
+.t34n-promise p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* Template 41: lake calendar, then the airy handwritten vow sequence. */
+.t41n-forestDate {
+  min-height: 1250px;
+  position: relative;
+  display: grid;
+  align-content: end;
+  overflow: hidden;
+  color: #fff;
+  background: #dce5dc;
+}
+
+.t41n-forestDate > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.t41n-forestDate::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(34, 61, 45, .05), rgba(34, 61, 45, .35));
+}
+
+.t41n-calendarOverlay,
+.t41n-forestDate > p {
+  position: relative;
+  z-index: 1;
+}
+
+.t41n-calendarOverlay {
+  width: 86%;
+  margin: 0 auto 90px;
+  padding: 10px;
+  background: rgba(255, 255, 255, .08);
+  backdrop-filter: blur(1px);
+}
+
+.t41n-calendarOverlay .ni-calendar {
+  color: #fff;
+  background: transparent;
+}
+
+.t41n-forestDate > p {
+  margin: 0;
+  padding: 30px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.t41n-vowStory {
+  min-height: 3300px;
+  display: grid;
+  grid-template-columns: 1fr 115px;
+  align-content: space-around;
+  gap: 70px 0;
+  padding: 100px 0;
+  background: #fff;
+}
+
+.t41n-vowStory > img {
+  height: 950px;
+  object-fit: cover;
+}
+
+.t41n-vowStory > img:nth-of-type(1) {
+  width: 100%;
+  border-radius: 0 220px 220px 0;
+}
+
+.t41n-sideWords {
+  align-self: center;
+  padding: 15px 8px;
+  color: #bc7079;
+}
+
+.t41n-sideWords h2 {
+  margin: 0;
+  font: 400 35px/1.25 "Signora", cursive;
+}
+
+.t41n-sideWords p {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.t41n-vowStory > p {
+  grid-column: 1/-1;
+  max-width: 415px;
+  justify-self: center;
+  margin: 0;
+  padding: 0 25px;
+  font-size: 18px;
+  line-height: 1.85;
+  text-align: center;
+}
+
+.t41n-vowStory > img:nth-of-type(2),
+.t41n-vowStory > img:nth-of-type(3) {
+  grid-column: 1/-1;
+  width: 77%;
+  justify-self: end;
+  height: 760px;
+}
+
+.t41n-vowStory > img:nth-of-type(3) {
+  width: 62%;
+  justify-self: start;
+  margin-top: -260px;
+  border: 12px solid #fff;
+}
+
+@media (max-width: 420px) {
+  .t20n-seasons {
+    min-height: 3450px;
+  }
+
+  .t20n-forever {
+    min-height: 3550px;
+  }
+
+  .t94n-chapel {
+    min-height: 2350px;
+  }
+
+  .t108n-coupleStory {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .t34n-storyBook {
+    min-height: 3050px;
+  }
+
+  .t41n-vowStory {
+    grid-template-columns: 1fr 95px;
+  }
+}
+
+/* Template 68: bright editorial layout from the audited reference. */
+.t68n .t68n-hero {
+  height: 900px;
+  background: #fff;
+}
+
+.t68n .t68n-hero::after {
+  background: linear-gradient(180deg, rgba(0, 0, 0, .08), transparent 48%, rgba(0, 0, 0, .28));
+}
+
+.t68n .t68n-hero > img {
+  object-position: center center;
+}
+
+.t68n-heroWord {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  right: 0;
+  left: 0;
+  color: #ffc95b;
+  font: 400 clamp(56px, 15vw, 76px)/.9 "PlayfairDisplay", Georgia, serif;
+  text-align: center;
+}
+
+.t68n .t68n-title {
+  right: 20px;
+  bottom: 128px;
+  left: 20px;
+}
+
+.t68n .t68n-title small,
+.t68n .t68n-title p,
+.t68n .t68n-event small {
+  letter-spacing: 0;
+}
+
+.t68n .t68n-title h1 {
+  margin: 8px 0;
+  font: 400 55px/.95 "Signora", cursive;
+}
+
+.t68n-heroInvite {
+  position: absolute;
+  z-index: 3;
+  right: 20px;
+  bottom: 26px;
+  left: 20px;
+  margin: 0;
+  padding: 11px 16px;
+  color: #272727;
+  background: rgba(255, 255, 255, .9);
+  font-size: 17px;
+  text-align: center;
+}
+
+.t68n .t68n-poem {
+  min-height: 600px;
+  display: grid;
+  align-content: center;
+  gap: 45px;
+  padding: 60px 42px;
+  background: #fff;
+}
+
+.t68n .t68n-poem > div {
+  grid-template-columns: 42px 1fr;
+  gap: 32px;
+}
+
+.t68n .t68n-poem p {
+  margin: 0;
+  color: #777;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.9;
+}
+
+.t68n .t68n-poem blockquote {
+  max-width: 365px;
+  margin: 0 auto;
+  color: #777;
+  font-size: 18px;
+  line-height: 1.9;
+  text-align: center;
+}
+
+.t68n-sunlight {
+  min-height: 780px;
+  display: grid;
+  align-content: start;
+  position: relative;
+  padding: 60px 30px 70px;
+  background: #fff;
+}
+
+.t68n-sunlight > img {
+  width: 76%;
+  height: 530px;
+  justify-self: center;
+  object-fit: cover;
+  opacity: .75;
+}
+
+.t68n-sunlight > p {
+  width: 74%;
+  justify-self: end;
+  margin: -50px 0 0;
+  padding: 34px 24px;
+  position: relative;
+  z-index: 2;
+  color: #777;
+  background: rgba(255, 255, 255, .94);
+  font-size: 18px;
+  line-height: 1.9;
+  text-align: center;
+}
+
+.t68n-sunlight > i {
+  position: absolute;
+  color: #999;
+  font: 400 12px/1 "Quicksand", sans-serif;
+  font-style: normal;
+  writing-mode: vertical-rl;
+}
+
+.t68n-sunlight > i:nth-of-type(1) {
+  top: 185px;
+  left: 17px;
+}
+
+.t68n-sunlight > i:nth-of-type(2) {
+  right: 14px;
+  bottom: 170px;
+}
+
+.t68n .t68n-photoText {
+  min-height: 680px;
+  grid-template-columns: 1fr;
+  align-content: center;
+  padding: 50px 30px;
+  background: #fff;
+}
+
+.t68n .t68n-photoText > img {
+  width: 72%;
+  height: 500px;
+  object-fit: cover;
+  opacity: .75;
+}
+
+.t68n .t68n-photoText > div {
+  width: 76%;
+  justify-self: end;
+  margin: -120px 0 0;
+  padding: 34px 24px;
+  background: rgba(255, 255, 255, .95);
+  box-shadow: 0 14px 35px rgba(70, 65, 55, .08);
+  text-align: center;
+}
+
+.t68n .t68n-photoText h2 {
+  color: #c69c49;
+  font-size: 41px;
+}
+
+.t68n .t68n-quote {
+  min-height: 320px;
+  align-content: center;
+  color: #777;
+  background: #fff;
+}
+
+.t68n .t68n-quote p {
+  max-width: 385px;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.t68n-welcomePhoto {
+  min-height: 800px;
+  display: grid;
+  align-content: start;
+  padding: 60px 24px;
+  background: #fff;
+  text-align: center;
+}
+
+.t68n-welcomePhoto > img {
+  width: 78%;
+  height: 520px;
+  justify-self: end;
+  object-fit: cover;
+  opacity: .72;
+}
+
+.t68n-welcomePhoto > div {
+  width: 80%;
+  margin: -90px 0 0;
+  padding: 35px 24px;
+  position: relative;
+  z-index: 2;
+  color: #777;
+  background: rgba(255, 255, 255, .95);
+}
+
+.t68n-welcomePhoto h2 {
+  margin: 12px 0;
+  color: #c69c49;
+  font: 400 42px/1 "Signora", cursive;
+}
+
+.t68n-welcomePhoto p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.t68n .t68n-event {
+  min-height: 1150px;
+  align-content: center;
+  color: #777;
+  background: #fff;
+}
+
+.t68n-mapSection {
+  min-height: 850px;
+  display: grid;
+  align-content: center;
+  gap: 45px;
+  padding: 90px 28px;
+  color: #777;
+  background: #fff;
+  text-align: center;
+}
+
+.t68n-mapSection h2 {
+  margin: 12px 0;
+  color: #c69c49;
+  font: 400 42px/1 "Signora", cursive;
+}
+
+.t68n-mapSection p {
+  margin: 0;
+  font-size: 18px;
+}
+
+.t68n-map,
+.t68n-map iframe {
+  width: 100%;
+}
+
+.t68n-map iframe {
+  height: 360px;
+  display: block;
+  border: 0;
+  filter: grayscale(.55) contrast(.9);
+}
+
+.t68n .t68n-event h2 {
+  color: #333;
+  font-size: 28px;
+}
+
+.t68n .ni-calendar {
+  border-color: #e4c77d;
+}
+
+.t68n .t68n-count > span {
+  color: #444;
+  background: #f6f2e8;
+}
+
+.t68n .t68n-album {
+  min-height: 1060px;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  padding: 80px 14px;
+  background: #fff;
+}
+
+.t68n .t68n-album > h2 {
+  margin: 0 0 30px;
+  color: #c69c49;
+  font: 400 52px/1 "Signora", cursive;
+  text-align: center;
+}
+
+.t68n .t68n-album > img {
+  width: 78%;
+  height: 420px;
+  justify-self: center;
+  object-fit: cover;
+  opacity: .75;
+}
+
+.t68n .t68n-album > div {
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.t68n .t68n-album > div img {
+  height: 260px;
+  opacity: .72;
+}
+
+.t68n .t68n-album > div img:last-child {
+  margin-top: 40px;
+}
+
+.t68n .t68n-album > p {
+  max-width: 380px;
+  margin: 40px auto 0;
+  color: #777;
+  font-size: 18px;
+  line-height: 1.9;
+  text-align: center;
+}
+
+.t68n .t68n-end {
+  min-height: 1600px;
+  align-content: start;
+  color: #777;
+  background: #fff;
+}
+
+.t68n .t68n-endQuote {
+  max-width: 380px;
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.9;
+  text-align: center;
+}
+
+.t68n .t68n-endPhoto {
+  width: calc(100% + 44px);
+  height: 520px;
+  object-fit: cover;
+  opacity: .72;
+}
+
+.t68n .t68n-end h2 {
+  color: #c69c49;
+}
+
+/* Template 85: full-image red opening and white invitation paper. */
+.t85n {
+  background: #fff;
+  font-family: "Cinelove Times", Georgia, serif;
+}
+
+.t85n .t85n-cover {
+  min-height: 900px;
+  display: block;
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  color: #fff;
+  background: #6a060d;
+}
+
+.t85n .t85n-cover::before,
+.t85n .t85n-cover::after {
+  display: none;
+}
+
+.t85n-cover > img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.t85n-cover::after {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 48%, rgba(73, 0, 5, .48));
+}
+
+.t85n .t85n-seal {
+  width: 58px;
+  height: 88px;
+  position: absolute;
+  z-index: 2;
+  top: 52%;
+  left: 0;
+  border: 0;
+  color: #fff1d7;
+  background: #7b0b0c;
+  font-size: 35px;
+}
+
+.t85n-coverCopy {
+  position: absolute;
+  z-index: 3;
+  right: 24px;
+  bottom: 52px;
+  left: 24px;
+  text-align: center;
+  text-shadow: 0 2px 16px rgba(40, 0, 0, .45);
+}
+
+.t85n .t85n-coverCopy h1 {
+  margin: 8px 0;
+  color: #fff;
+  font: 400 55px/.95 "Signora", cursive;
+}
+
+.t85n .t85n-coverCopy small,
+.t85n .t85n-coverCopy p {
+  letter-spacing: 0;
+}
+
+.t85n .t85n-hero {
+  min-height: 900px;
+  display: grid;
+  align-content: start;
+  gap: 55px;
+  padding: 90px 28px;
+  background: #fff;
+}
+
+.t85n .t85n-hero h2 {
+  margin-top: 0;
+  font-size: 48px;
+}
+
+.t85n .t85n-hero p {
+  color: #555;
+  line-height: 1.8;
+}
+
+.t85n .t85n-hero > img {
+  width: 78%;
+  height: 610px;
+  justify-self: end;
+  border: 0;
+  object-fit: cover;
+  opacity: .78;
+}
+
+.t85n .t85n-story {
+  min-height: 1200px;
+  align-content: start;
+  gap: 45px;
+  padding: 100px 28px;
+  background: #fff;
+}
+
+.t85n .t85n-story h2 {
+  font-size: 47px;
+}
+
+.t85n .t85n-story img {
+  width: 74%;
+  height: 660px;
+  justify-self: start;
+  opacity: .72;
+}
+
+.t85n .t85n-story p {
+  width: 82%;
+  justify-self: end;
+  margin: -150px 0 0;
+  padding: 34px 25px;
+  position: relative;
+  z-index: 2;
+  color: #555;
+  background: rgba(255, 255, 255, .96);
+  box-shadow: 0 14px 35px rgba(75, 18, 20, .08);
+}
+
+.t85n .t85n-family {
+  min-height: 330px;
+  color: #6a060d;
+  background: #f3dfe0;
+}
+
+.t85n .t85n-family p {
+  margin: 8px 0 0;
+  color: #555;
+  font-size: 13px;
+}
+
+.t85n .t85n-day {
+  min-height: 1300px;
+  align-content: center;
+  color: #4b3434;
+  background: #fff;
+}
+
+.t85n .t85n-day h2 {
+  margin: 14px 0 30px;
+  color: #6a060d;
+  font: 400 42px/1 "Signora", cursive;
+}
+
+.t85n-dateCard {
+  display: grid;
+  grid-template-columns: 1fr 115px 1fr;
+  align-items: center;
+  margin: 35px 0 18px;
+}
+
+.t85n-dateCard span {
+  border-top: 1px solid #a98888;
+  border-bottom: 1px solid #a98888;
+  padding: 12px 0;
+  color: #6a060d;
+  font: 600 11px/1 "Quicksand", sans-serif;
+}
+
+.t85n .t85n-dateCard strong {
+  color: #6a060d;
+  font: 400 82px/1 "PlayfairDisplay", Georgia, serif;
+}
+
+.t85n-schedule {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.t85n-schedule > div {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+}
+
+.t85n-schedule svg {
+  width: 38px;
+  height: 38px;
+  color: #6a060d;
+  stroke-width: 1.3;
+}
+
+.t85n-schedule b {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.t85n-schedule span,
+.t85n-venue small {
+  font: 600 10px/1.3 "Quicksand", sans-serif;
+}
+
+.t85n-venue {
+  width: 100%;
+  padding: 38px 22px;
+  background: #f7ecec;
+  text-align: center;
+}
+
+.t85n-venue p {
+  margin: 10px 0 18px;
+}
+
+.t85n-venue iframe {
+  width: 100%;
+  height: 280px;
+  display: block;
+  margin-top: 24px;
+  border: 0;
+  filter: grayscale(.45) sepia(.15);
+}
+
+.t85n .t85n-album {
+  min-height: 1400px;
+  grid-template-columns: 1fr 1fr;
+  align-content: start;
+  gap: 10px;
+  padding: 95px 16px;
+  color: #6a060d;
+  background: #fff;
+}
+
+.t85n .t85n-album h2 {
+  grid-column: 1 / -1;
+  margin: 0 0 45px;
+  font: 400 52px/1 "Signora", cursive;
+  text-align: center;
+}
+
+.t85n .t85n-album h2 small {
+  display: block;
+  margin-top: 13px;
+  font: 600 10px/1 "Quicksand", sans-serif;
+}
+
+.t85n .t85n-album img {
+  height: 450px;
+  opacity: .76;
+}
+
+.t85n .t85n-album img:nth-of-type(2) {
+  margin-top: 55px;
+}
+
+.t85n .t85n-album img:last-child {
+  grid-column: 1 / -1;
+  width: 82%;
+  height: 520px;
+  justify-self: center;
+  margin-top: 40px;
+}
+
+.t85n .t85n-end {
+  min-height: 1600px;
+  align-content: start;
+  color: #4b3434;
+  background: #fff;
+  gap: 25px;
+  padding: 50px 22px;
+}
+
+.t85n-thanks {
+  max-width: 390px;
+  text-align: center;
+}
+
+.t85n-thanks small {
+  color: #6a060d;
+  font-style: italic;
+}
+
+.t85n .t85n-thanks h2 {
+  display: block;
+  margin: 8px 0 16px;
+  color: #6a060d;
+  font-size: 52px;
+}
+
+.t85n-thanks p {
+  margin: 0;
+  line-height: 1.8;
+}
+
+.t85n .t85n-count {
+  width: 100%;
+}
+
+.t85n .t85n-endPhoto {
+  width: calc(100% + 44px);
+  height: 450px;
+  object-fit: cover;
+  opacity: .78;
+}
+
+.t85n .t85n-end > h2 {
+  color: #6a060d;
+}
+
+/* Template 105: white botanical stationery with layered illustrations. */
+.t105n {
+  color: #565c4f;
+  background: #fff;
+  font-family: "Cinelove Times", Georgia, serif;
+}
+
+.t105n .t105n-hero {
+  min-height: 920px;
+  display: block;
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  background: #fff;
+}
+
+.t105n .t105n-title {
+  position: absolute;
+  z-index: 4;
+  top: 45px;
+  right: 24px;
+  left: 24px;
+}
+
+.t105n .t105n-title small,
+.t105n .t105n-title p {
+  letter-spacing: 0;
+}
+
+.t105n .t105n-title h1 {
+  margin: 12px 0 6px;
+  font: 400 34px/.78 "Signora", cursive;
+}
+
+.t105n .t105n-title h1 span {
+  display: block;
+}
+
+.t105n .t105n-flowerField {
+  width: 100%;
+  height: 760px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  border-radius: 0;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.t105n .t105n-walkingCouple {
+  width: 78%;
+  height: 690px;
+  position: absolute;
+  z-index: 2;
+  right: 11%;
+  bottom: 3px;
+  margin: 0;
+  border-radius: 0;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.t105n .t105n-seed {
+  min-height: 470px;
+  align-content: center;
+  color: #565c4f;
+  background: #fff;
+}
+
+.t105n .t105n-seed h2 {
+  color: #565c4f;
+  font-size: 47px;
+}
+
+.t105n .t105n-seed > svg {
+  color: #aebb9d;
+}
+
+.t105n .t105n-couple {
+  min-height: 980px;
+  align-content: center;
+  gap: 28px;
+  padding: 90px 22px;
+  background: #fff;
+}
+
+.t105n .t105n-couple > div {
+  display: grid;
+  justify-items: center;
+}
+
+.t105n .t105n-couple img {
+  width: 100%;
+  height: 410px;
+  border-radius: 0;
+  object-fit: cover;
+  opacity: .8;
+}
+
+.t105n .t105n-couple h3 {
+  color: #565c4f;
+  font-size: 35px;
+}
+
+.t105n .t105n-couple p {
+  margin: 15px 0 0;
+  color: #777;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.t105n .t105n-story {
+  min-height: 1050px;
+  align-content: start;
+  gap: 35px;
+  padding: 100px 28px;
+  background: #fff;
+}
+
+.t105n .t105n-story h2 {
+  font-size: 53px;
+}
+
+.t105n .t105n-story > p {
+  max-width: 380px;
+  margin: 0 auto 18px;
+  color: #777;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.9;
+}
+
+.t105n .t105n-story > img {
+  width: 78%;
+  height: 540px;
+  justify-self: start;
+  object-fit: cover;
+  opacity: .75;
+}
+
+.t105n-storyAside {
+  width: 78%;
+  justify-self: end;
+  margin-top: -130px;
+  padding: 32px 24px;
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, .95);
+  box-shadow: 0 14px 35px rgba(70, 80, 62, .08);
+}
+
+.t105n-storyAside p {
+  margin: 0 0 14px;
+  color: #777;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.t105n-storyAside b {
+  font: 400 29px/1 "Signora", cursive;
+}
+
+.t105n-memories {
+  min-height: 1150px;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  padding: 95px 16px;
+  background: #fff;
+}
+
+.t105n-memories > img {
+  width: 82%;
+  height: 530px;
+  justify-self: center;
+  object-fit: cover;
+  opacity: .76;
+}
+
+.t105n-memories > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.t105n-memories > div img {
+  height: 350px;
+  object-fit: cover;
+  opacity: .75;
+}
+
+.t105n-memories > div img:last-child {
+  margin-top: 55px;
+}
+
+.t105n-memories > p {
+  max-width: 380px;
+  margin: 70px auto 0;
+  color: #777;
+  font-size: 18px;
+  line-height: 1.9;
+  text-align: center;
+}
+
+.t105n-invite {
+  min-height: 700px;
+  display: grid;
+  place-items: center;
+  padding: 90px 34px;
+  background: #f6f8f2;
+  text-align: center;
+}
+
+.t105n-invite h2 {
+  margin: 20px 0;
+  color: #565c4f;
+  font: 400 47px/1 "Signora", cursive;
+}
+
+.t105n-invite h3 {
+  margin: 45px 0 15px;
+  font-size: 29px;
+  font-weight: 400;
+}
+
+.t105n-invite p {
+  color: #777;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.t105n-timeline {
+  min-height: 600px;
+  display: grid;
+  align-content: center;
+  gap: 50px;
+  padding: 85px 25px;
+  background: #fff;
+  text-align: center;
+}
+
+.t105n-timeline > h2 {
+  margin: 0;
+  font: 400 48px/1 "Signora", cursive;
+}
+
+.t105n-timeline > div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.t105n-timeline > div > div {
+  display: grid;
+  justify-items: center;
+  gap: 9px;
+}
+
+.t105n-timeline svg {
+  width: 38px;
+  height: 38px;
+  stroke-width: 1.2;
+}
+
+.t105n-timeline b {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.t105n-timeline span {
+  font: 600 9px/1.3 "Quicksand", sans-serif;
+}
+
+.t105n .t105n-day {
+  min-height: 1150px;
+  align-content: center;
+  color: #565c4f;
+  background: #fff;
+}
+
+.t105n .t105n-day h2 {
+  font-size: 31px;
+}
+
+.t105n .t105n-day .ni-map {
+  border-radius: 0;
+  color: #565c4f;
+  background: transparent;
+  border-bottom: 1px solid #565c4f;
+}
+
+.t105n .t105n-count > span {
+  color: #565c4f;
+  background: #edf1e8;
+}
+
+.t105n .t105n-end {
+  min-height: 1015px;
+  align-content: start;
+  color: #565c4f;
+  background: #fff;
+  gap: 45px;
+}
+
+.t105n .t105n-end > img:first-child {
+  height: 260px;
+  object-fit: cover;
+  opacity: .76;
+}
+
+.t105n .t105n-end > .t105n-endLandscape {
+  width: calc(100% + 44px);
+  height: 360px;
+  object-fit: cover;
+  opacity: .76;
+}
+
+.t105n-thanks {
+  max-width: 380px;
+  text-align: center;
+}
+
+.t105n .t105n-thanks h2 {
+  display: block;
+  margin: 0 0 15px;
+  color: #565c4f;
+  font: 400 53px/1 "Signora", cursive;
+}
+
+.t105n-thanks p {
+  margin: 0;
+  color: #777;
+  font-size: 18px;
+  line-height: 1.85;
+}
+
+.t105n .t105n-end > h2 {
+  color: #565c4f;
+  font-size: 41px;
+}
+
+@media (max-width: 420px) {
+  .t68n .t68n-title h1,
+  .t85n .t85n-coverCopy h1 {
+    font-size: 48px;
+  }
+
+  .t105n .t105n-title h1 {
+    font-size: 32px;
+  }
+
+  .t68n-sunlight,
+  .t68n .t68n-photoText,
+  .t68n-welcomePhoto,
+  .t85n .t85n-story,
+  .t105n .t105n-story {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .t85n-dateCard {
+    grid-template-columns: 1fr 95px 1fr;
+  }
+
+  .t105n .t105n-couple {
+    gap: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .t105n-timeline {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+}
+
+/* Final source-alignment pass: invitation-first hero used by template 24. */
+.t24n .t24n-hero {
+  height: 1050px;
+  min-height: 0;
+  display: block;
+  padding: 0;
+  background: #fff8e9;
+}
+
+.t24n .t24n-hero > span {
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  color: #1d1a18;
+  font: 400 54px/1 "PlayfairDisplay", Georgia, serif;
+  letter-spacing: .08em;
+  text-align: center;
+  writing-mode: horizontal-tb;
+}
+
+.t24n .t24n-hero > span:first-child {
+  top: 78px;
+}
+
+.t24n .t24n-hero > span:nth-of-type(2) {
+  top: 144px;
+}
+
+.t24n .t24n-hero > img {
+  width: calc(100% - 54px);
+  height: 650px;
+  position: absolute;
+  top: 400px;
+  left: 27px;
+  object-fit: cover;
+  object-position: center 32%;
+}
+
+.t24n .t24n-title {
+  top: 238px;
+  right: 20px;
+  bottom: auto;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 19px;
+}
+
+.t24n .t24n-title::before {
+  content: none;
+}
+
+.t24n .t24n-title h1 {
+  order: 2;
+  margin: 0;
+  color: #211d1b;
+  font: 400 27px/1.2 "PlayfairDisplay", Georgia, serif;
+}
+
+.t24n .t24n-title h1::before,
+.t24n .t24n-title h1::after {
+  color: #a91919;
+  font: 400 15px/1 "PlayfairDisplay", Georgia, serif;
+}
+
+.t24n .t24n-title h1::before {
+  content: "Groom  ";
+}
+
+.t24n .t24n-title h1::after {
+  content: "  Bride";
+}
+
+.t24n .t24n-title p {
+  order: 1;
+  margin: 0;
+  color: #a91919;
+  font: 400 45px/1 "PlayfairDisplay", Georgia, serif;
+  letter-spacing: .03em;
+}
+
+.t24n .t24n-portraitDiary {
+  min-height: 3060px;
+}
+
+/* Template 94 source opens with a monochrome silhouette and a white paper fade. */
+.t94n .t94n-hero {
+  height: 900px;
+  background: #fff;
+}
+
+.t94n .t94n-hero > img {
+  height: 650px;
+  object-fit: cover;
+  object-position: center 42%;
+  filter: grayscale(1) contrast(1.06);
+}
+
+.t94n .t94n-title {
+  z-index: 2;
+  top: 315px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 82px 25px 32px;
+  color: #402424;
+  background: linear-gradient(to bottom, transparent 0, rgba(255,255,255,.3) 17%, #fff 49%, #fff 100%);
+}
+
+.t94n .t94n-title span {
+  color: #fff;
+  font: 400 63px/1 "PlayfairDisplay", Georgia, serif;
+  letter-spacing: 0;
+  text-shadow: 0 2px 16px rgba(0,0,0,.22);
+}
+
+.t94n .t94n-title small {
+  margin-top: 10px;
+  color: #fff;
+  font: 400 21px/1 "PlayfairDisplay", Georgia, serif;
+  letter-spacing: .08em;
+  text-shadow: 0 2px 14px rgba(0,0,0,.22);
+}
+
+.t94n .t94n-title h1 {
+  margin: 116px 0 12px;
+  color: #402424;
+  font: 400 31px/1.1 "PlayfairDisplay", Georgia, serif;
+}
+
+.t94n .t94n-title p {
+  margin: 0;
+  color: #402424;
+  font: 400 14px/1 "PlayfairDisplay", Georgia, serif;
+  letter-spacing: .16em;
+}
+
+/* Template 112 keeps one calendar and places the countdown directly above its album. */
+.t112n .t112n-redProfiles {
+  min-height: 1300px;
+}
+
+.t112n .t112n-profileCard:nth-child(3) {
+  margin-top: 130px;
+}
+
+.t112n .t112n-profileCard img {
+  height: 600px;
+}
+
+.t112n .t112n-invite {
+  min-height: 520px;
+  align-content: center;
+}
+
+.t112n .t112n-map > img {
+  height: 700px;
+}
+
+.t112n-countAlbum {
+  min-height: 600px;
+  display: grid;
+  align-content: center;
+  gap: 34px;
+  padding: 70px 28px;
+  color: #851515;
+  background: #f7f1e9;
+  text-align: center;
+}
+
+.t112n-countAlbum > p {
+  max-width: 410px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.t112n-countAlbum > h2 {
+  margin: 0;
+  font: 400 51px/1 "Signora", cursive;
+}
+
+.t112n-countAlbum > h3 {
+  margin: 15px 0 0;
+  font: 400 57px/1 "PlayfairDisplay", Georgia, serif;
+  text-align: left;
+}
+
+.t112n-countAlbum > h3 i {
+  font: 400 42px/1 "Signora", cursive;
+}
+
+.t112n .t112n-album img {
+  height: 450px;
+}
+
+.t112n .t112n-end {
+  gap: 48px;
+  color: #711216;
+  background: #f7f1e9;
+}
+
+.t112n-qr {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.t112n-qr article {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  padding: 18px 10px;
+  background: #fff;
+  box-shadow: 0 12px 26px rgba(91, 19, 22, .08);
+}
+
+.t112n-qr small {
+  min-height: 28px;
+  font-size: 10px;
+  letter-spacing: .08em;
+}
+
+.t112n-qr span {
+  width: 155px;
+  height: 165px;
+  display: grid;
+  place-items: center;
+  color: #2d2020;
+  background: #e5e5e5;
+  font-size: 17px;
+}
+
+.t112n .t112n-endPhoto {
+  width: calc(100% + 44px);
+  height: 610px;
+  object-fit: cover;
+}
+
+.t112n-thanks {
+  max-width: 390px;
+  text-align: center;
+}
+
+.t112n .t112n-thanks h2 {
+  justify-content: center;
+  color: #711216;
+}
+
+.t112n-thanks p {
+  margin: 18px 0 0;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+@media (max-width: 420px) {
+  .t24n .t24n-hero {
+    height: 940px;
+  }
+
+  .t24n .t24n-hero > span {
+    font-size: 47px;
+  }
+
+  .t24n .t24n-hero > img {
+    height: 540px;
+  }
+
+  .t24n .t24n-title h1 {
+    font-size: 23px;
+  }
+
+  .t94n .t94n-title span {
+    font-size: 53px;
+  }
+
+  .t112n .t112n-map > img {
+    height: 620px;
+  }
+
+  .t112n .t112n-album img {
+    height: 390px;
+  }
+
+  .t112n-qr span {
+    width: 125px;
+    height: 140px;
+  }
+}

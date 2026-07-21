@@ -1,0 +1,127 @@
+@import "../templates/cineloveFonts.css";
+
+html.projection-opening-page,
+body.projection-opening-page {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #130d0b;
+}
+
+body.projection-opening-page { display: block; }
+
+.projectionOpening {
+  --projection-accent: #e9c17e;
+  --projection-controls: #fffaf0;
+  --projection-panel: rgba(19, 8, 5, .58);
+  min-height: 100dvh;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: #fffaf0;
+  background: #130d0b;
+  font-family: "PlayfairDisplay", Georgia, serif;
+}
+
+.po-image,
+.po-vignette,
+.po-grain,
+.po-bokeh { position: absolute; inset: 0; }
+.po-image { z-index: -4; background: var(--po-image) center 48% / cover no-repeat; transform-origin: center; }
+.po-vignette { z-index: -3; background: linear-gradient(90deg, rgba(13, 5, 5, .78), rgba(13, 5, 5, .12) 50%, rgba(13, 5, 5, .56)), linear-gradient(0deg, rgba(12, 4, 3, .74), transparent 48%, rgba(12, 4, 3, .18)); }
+.po-grain { z-index: -2; opacity: .13; background-image: radial-gradient(rgba(255,255,255,.38) .5px, transparent .7px); background-size: 4px 4px; mix-blend-mode: soft-light; pointer-events: none; }
+.po-bokeh { z-index: 1; overflow: hidden; pointer-events: none; }
+.po-bokeh i {
+  width: var(--po-size);
+  height: var(--po-size);
+  position: absolute;
+  left: var(--po-x);
+  bottom: -10%;
+  border-radius: 50%;
+  opacity: .15;
+  background: #f6c66f;
+  box-shadow: 0 0 calc(var(--po-size) * 2) #f5c166;
+  filter: blur(1px);
+  animation: po-bokeh-rise var(--po-duration) linear var(--po-delay) infinite;
+}
+
+@keyframes po-bokeh-rise {
+  0% { transform: translate3d(-14px, 12vh, 0) scale(.72); opacity: 0; }
+  18% { opacity: .15; }
+  70% { opacity: .12; }
+  100% { transform: translate3d(34px, -118vh, 0) scale(1.25); opacity: 0; }
+}
+
+.po-back,
+.po-present {
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  z-index: 5;
+  top: 2.1rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 250, 240, .58);
+  border-radius: 50%;
+  color: #fffaf0;
+  background: rgba(19, 8, 5, .28);
+  backdrop-filter: blur(6px);
+}
+.po-back { left: 2.1rem; text-decoration: none; }
+.po-present { right: 6.1rem; }
+.po-mark { position: absolute; z-index: 4; top: 2.15rem; right: 2.25rem; color: rgba(255, 250, 240, .92); text-align: center; font: 500 1.32rem/.8 "PlayfairDisplay", Georgia, serif; }
+.po-mark span { font: 700 .43rem/1.2 "Montserrat", sans-serif; }
+
+.po-copy { width: min(80vw, 1180px); position: relative; z-index: 2; margin: 0 auto; text-align: center; text-shadow: 0 6px 32px rgba(0, 0, 0, .4); }
+.po-copy > p { margin: 0 0 1.25rem; color: #edca8c; font: 600 clamp(.66rem, .9vw, .82rem)/1 "Montserrat", sans-serif; }
+.po-copy h1 { display: grid; gap: .13em; margin: 0; font-size: clamp(3.2rem, 7.2vw, 7.8rem); font-weight: 400; line-height: .78; }
+.po-copy h1 span { color: #fffaf0; }
+.po-copy h1 em { color: #e9c17e; font-style: italic; font-weight: 400; }
+.po-copy > i { width: min(26vw, 300px); height: 1px; display: block; margin: 2rem auto 1.2rem; background: linear-gradient(90deg, transparent, #e9c17e, transparent); }
+.po-copy > strong { display: block; font-size: clamp(1rem, 1.55vw, 1.45rem); font-style: italic; font-weight: 400; }
+.po-copy > small { display: block; margin-top: 1.15rem; color: #edca8c; font: 600 clamp(.6rem, .8vw, .72rem)/1 "Montserrat", sans-serif; }
+
+.po-controls { width: min(78vw, 1080px); position: absolute; z-index: 5; bottom: 2rem; left: 50%; display: grid; grid-template-columns: 36px auto 1fr 36px 36px; align-items: center; gap: .8rem; transform: translateX(-50%); color: rgba(255, 250, 240, .86); font: 600 .65rem/1 "Montserrat", sans-serif; }
+.po-progress { height: 1px; background: rgba(255, 250, 240, .34); }
+.po-progress i { width: var(--po-progress); height: 100%; display: block; background: #e9c17e; transition: width .7s ease; }
+.po-controls button { width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid rgba(255, 250, 240, .5); border-radius: 50%; color: #fffaf0; background: rgba(19, 8, 5, .2); }
+
+.projectionOpening.is-presenting .po-back,
+.projectionOpening.is-presenting .po-mark,
+.projectionOpening.is-presenting .po-present,
+.projectionOpening.is-presenting .po-controls { opacity: 0; pointer-events: none; }
+.projectionOpening.is-presenting .po-copy { width: min(84vw, 1320px); }
+
+@media (max-width: 640px) {
+  .po-back { top: 1.15rem; left: 1.15rem; }
+  .po-mark { top: 1.4rem; right: 1.2rem; }
+  .po-present { top: 1.15rem; right: 4.8rem; }
+  .po-copy { width: calc(100% - 36px); }
+  .po-copy h1 { font-size: clamp(2.65rem, 13.5vw, 4.4rem); line-height: .84; }
+  .po-copy > strong { padding-inline: 1rem; font-size: .98rem; }
+  .po-controls { width: calc(100% - 28px); bottom: 1.15rem; grid-template-columns: 34px auto 1fr 34px 34px; gap: .45rem; }
+  .po-controls button { width: 34px; height: 34px; }
+}
+
+@media (min-width: 2560px) and (min-height: 1400px) {
+  .po-back, .po-present { width: 58px; height: 58px; top: 3.4rem; }
+  .po-back { left: 3.5rem; }
+  .po-present { right: 8.5rem; }
+  .po-mark { top: 3.45rem; right: 3.7rem; font-size: 1.85rem; }
+  .po-mark span { font-size: .6rem; }
+  .po-copy { width: min(84vw, 2100px); }
+  .po-copy > p { font-size: 1rem; }
+  .po-copy h1 { font-size: 11.5rem; }
+  .po-copy > i { width: 480px; margin: 3rem auto 2rem; }
+  .po-copy > strong { font-size: 1.9rem; }
+  .po-copy > small { margin-top: 1.8rem; font-size: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .po-image { transform: none !important; }
+  .po-bokeh { display: none; }
+  .po-progress i { transition: none; }
+}

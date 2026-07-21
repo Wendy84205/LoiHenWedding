@@ -1,0 +1,163 @@
+html.template81new-page,
+body.template81new-page {
+  background: #dedbd4;
+}
+
+.t81n {
+  width: min(500px, 100vw);
+  margin: auto;
+  overflow: hidden;
+  color: #2b2521;
+  background: #f7f4ed url('/assets/new-templates/thiep-cuoi-81/image-2.webp') center / cover fixed;
+  font-family: "BaskervilleBook", Georgia, serif;
+  box-shadow: 0 20px 70px rgba(52, 38, 29, .18);
+}
+
+.t81n-music {
+  color: #fff;
+  background: #8f171b;
+}
+
+.t81n-hero {
+  height: 900px;
+  position: relative;
+  background: #e7e7df;
+}
+
+.t81n-hero > img {
+  height: 100%;
+  object-fit: cover;
+  object-position: 52% center;
+}
+
+.t81n-hero::after {
+  content: "";
+  position: absolute;
+  inset: 55% 0 0;
+  background: linear-gradient(180deg, transparent, rgba(18, 16, 13, .45));
+}
+
+.t81n-title {
+  position: absolute;
+  z-index: 2;
+  right: 24px;
+  bottom: 38px;
+  left: 24px;
+  color: #fff;
+  text-align: center;
+}
+
+.t81n-title small,
+.t81n-invite small {
+  font: 600 10px/1.4 "Beezle", sans-serif;
+  letter-spacing: .22em;
+}
+
+.t81n-title h1 {
+  margin: 10px 0;
+  font: 400 45px/1.05 "Eastin Hikary", cursive;
+}
+
+.t81n-title h1 i {
+  font-family: Georgia, serif;
+}
+
+.t81n-title p {
+  margin: 0;
+  letter-spacing: .17em;
+}
+
+.t81n-invite {
+  min-height: 780px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 18px;
+  padding: 70px 38px;
+  background: rgba(247, 244, 237, .88);
+  text-align: center;
+}
+
+.t81n-bow {
+  width: 92px;
+  height: 58px;
+  object-fit: contain;
+}
+
+.t81n-invite > div {
+  display: grid;
+  justify-items: center;
+  gap: 13px;
+}
+
+.t81n-invite h2 {
+  margin: 6px 0 0;
+  color: #74171a;
+  font: 400 38px/1 "Eastin Hikary", cursive;
+}
+
+.t81n-invite p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.t81n-invite strong {
+  color: #611317;
+  font: 400 34px/1.2 "Eastin Hikary", cursive;
+}
+
+.t81n-invite h3 {
+  margin: 4px 0 0;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: .12em;
+}
+
+.t81n-invite .ni-map {
+  border: 1px solid #8f171b;
+  border-radius: 24px;
+  padding: 8px 24px;
+  color: #681417;
+}
+
+.t81n-end {
+  min-height: 798px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 35px;
+  padding: 55px 22px;
+  background: rgba(247, 244, 237, .9);
+  text-align: center;
+}
+
+.t81n-doubleJoy {
+  width: 118px;
+  height: 118px;
+  object-fit: contain;
+}
+
+.t81n-rsvp {
+  width: min(390px, 100%);
+  background: rgba(231, 230, 226, .96);
+}
+
+.t81n-end h2 {
+  margin: 0;
+  color: #6e1717;
+  font: 500 12px/1.4 "Beezle", sans-serif;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 420px) {
+  .t81n-hero {
+    height: 790px;
+  }
+
+  .t81n-invite {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+}

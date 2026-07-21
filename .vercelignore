@@ -1,0 +1,13 @@
+.audit
+.firecrawl
+.qa
+.DS_Store
+.vscode
+DESIGN.md
+.env
+.env.*
+!.env.example
+coverage
+playwright-report
+test-results
+*.log

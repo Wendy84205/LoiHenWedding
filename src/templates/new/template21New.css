@@ -1,0 +1,359 @@
+html.template21new-page,
+body.template21new-page {
+  background: #ead8ba;
+}
+
+.t21n {
+  width: min(500px, 100vw);
+  margin: auto;
+  overflow: hidden;
+  color: #5f2419;
+  background: #fff1d9;
+  font-family: "PlayfairDisplay", Georgia, serif;
+  box-shadow: 0 18px 70px rgba(91, 44, 26, .22);
+}
+
+.t21n-music {
+  color: #fff8ea;
+  background: #a32319;
+}
+
+.t21n-hero {
+  min-height: 850px;
+  position: relative;
+  display: grid;
+  align-content: end;
+  padding: 18px 18px 40px;
+  background: #fff1d9;
+}
+
+.t21n-hero > img {
+  width: 100%;
+  height: 700px;
+  position: relative;
+  z-index: 2;
+  object-fit: contain;
+}
+
+.t21n-title {
+  position: relative;
+  z-index: 3;
+  margin-top: -42px;
+  text-align: center;
+}
+
+.t21n-title small {
+  font: 600 10px/1 "Quicksand", sans-serif;
+  letter-spacing: .22em;
+}
+
+.t21n-title h1 {
+  margin: 9px 0;
+  color: #9f1f19;
+  font: 400 45px/1 "Signora", cursive;
+}
+
+.t21n-title h1 i {
+  font-family: "PlayfairDisplay", serif;
+}
+
+.t21n-title p {
+  margin: 0;
+  letter-spacing: .12em;
+}
+
+.t21n-letter {
+  min-height: 1500px;
+  display: grid;
+  align-content: space-around;
+  gap: 70px;
+  padding: 70px 38px;
+  background: #fff1d9;
+}
+
+.t21n-poem {
+  max-width: 390px;
+  justify-self: center;
+  color: #604b3e;
+  font-size: 22px;
+  line-height: 2;
+  text-align: center;
+}
+
+.t21n-poem p {
+  margin: 0;
+}
+
+.t21n-poem::after {
+  content: "";
+  width: 80px;
+  display: block;
+  margin: 35px auto 0;
+  border-top: 1px dotted #8f6d5c;
+}
+
+.t21n-letterCard {
+  position: relative;
+  padding: 34px 24px;
+  border: 2px solid #a92c1d;
+  background: rgba(255, 245, 224, .7);
+  box-shadow: inset 0 0 0 8px #fff1d9, 0 0 0 1px #d58d68;
+}
+
+.t21n-letterCard::after {
+  content: "囍";
+  position: absolute;
+  right: 14px;
+  top: 48%;
+  color: rgba(166, 41, 27, .1);
+  font-size: 125px;
+  font-weight: 700;
+  transform: translateY(-50%);
+}
+
+.t21n-letterCard p,
+.t21n-letterCard h2,
+.t21n-letterCard i {
+  position: relative;
+  z-index: 1;
+}
+
+.t21n-letterCard p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.t21n-letterCard h2 {
+  margin: 34px 0;
+  font: 400 28px/1.35 "Signora", cursive;
+  text-align: center;
+}
+
+.t21n-letterCard i {
+  display: block;
+  font-size: 17px;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.t21n-invite {
+  min-height: 1050px;
+  display: grid;
+  align-content: center;
+  gap: 30px;
+  padding: 65px 28px;
+  background: #fff1d9;
+  text-align: center;
+}
+
+.t21n-invite > div:first-child {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 18px 8px;
+  background: linear-gradient(90deg, transparent, #ead0a4 18%, #ead0a4 82%, transparent);
+}
+
+.t21n-invite > div:first-child svg {
+  color: #a7251a;
+}
+
+.t21n-invite h2 {
+  margin: 0;
+  font-size: 27px;
+  font-weight: 400;
+  letter-spacing: .08em;
+}
+
+.t21n-invite small,
+.t21n-timeline small,
+.t21n-ending small {
+  display: block;
+  margin-top: 7px;
+  font: 600 9px/1.3 "Quicksand", sans-serif;
+  letter-spacing: .25em;
+}
+
+.t21n .ni-calendar {
+  padding: 25px 18px;
+  border: 1px solid #b55d48;
+  background: rgba(255, 250, 239, .7);
+}
+
+.t21n .ni-calendar h3 {
+  margin-bottom: 18px;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.t21n .ni-weekdays {
+  font: 600 9px/1 "Quicksand", sans-serif;
+}
+
+.t21n .ni-days > span {
+  height: 38px;
+}
+
+.t21n .ni-days svg {
+  width: 36px;
+  color: #b32221;
+}
+
+.t21n-count {
+  gap: 8px;
+}
+
+.t21n-count > span {
+  height: 70px;
+  color: #fff8e8;
+  background: #bd351c;
+}
+
+.t21n-invite > div:last-child {
+  padding: 38px 20px;
+  color: #fff5df;
+  background: #bd351c;
+}
+
+.t21n-invite > div:last-child h3 {
+  margin: 12px 0;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.t21n-invite > div:last-child p {
+  line-height: 1.65;
+}
+
+.t21n-invite .ni-map {
+  border: 1px solid #f2cf8a;
+  padding: 9px 22px;
+  color: #ffe6a9;
+}
+
+.t21n-timeline {
+  min-height: 1100px;
+  display: grid;
+  align-content: center;
+  padding: 65px 20px;
+  background: #fff1d9;
+  text-align: center;
+}
+
+.t21n-timeline h2 {
+  margin: 0 0 42px;
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.t21n-timeline > div {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.t21n-timeline > div > div {
+  width: 56%;
+  min-height: 120px;
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  grid-template-rows: auto auto;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+  gap: 6px 10px;
+  padding: 18px 14px;
+  border-right: 1px solid #a92c1d;
+}
+
+.t21n-timeline > div > div:nth-child(even) {
+  justify-self: end;
+  border-right: 0;
+  border-left: 1px solid #a92c1d;
+}
+
+.t21n-timeline svg {
+  width: 28px;
+  height: 28px;
+  grid-row: 1 / 3;
+  color: #a92c1d;
+}
+
+.t21n-timeline b {
+  justify-self: start;
+  font-size: 17px;
+}
+
+.t21n-timeline span {
+  justify-self: start;
+  font: 500 10px/1.35 "Quicksand", sans-serif;
+}
+
+.t21n-ending {
+  min-height: 1050px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 50px;
+  padding: 70px 22px 50px;
+  background: #fff1d9;
+  text-align: center;
+}
+
+.t21n-ending h2 {
+  margin: 0;
+  padding: 18px 35px;
+  color: #6b241a;
+  background: linear-gradient(90deg, transparent, #ead0a4 18%, #ead0a4 82%, transparent);
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.t21n-rsvp {
+  width: min(390px, 100%);
+  background: #fff8ed;
+}
+
+.t21n-ending > p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: #a92c1d;
+  font: 400 27px/1 "Signora", cursive;
+}
+
+.t21n-ending > p svg {
+  width: 20px;
+}
+
+@media (max-width: 420px) {
+  .t21n-hero {
+    min-height: 760px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .t21n-hero > img {
+    height: 630px;
+  }
+
+  .t21n-letter,
+  .t21n-invite {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .t21n-timeline {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .t21n-timeline span {
+    font-size: 9px;
+  }
+}

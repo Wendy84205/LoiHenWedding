@@ -1,0 +1,91 @@
+@import "../templates/cineloveFonts.css";
+
+html.projection-countdown-page,
+body.projection-countdown-page { min-width: 0; margin: 0; padding: 0; overflow: hidden; background: #260306; }
+body.projection-countdown-page { display: block; }
+
+.projectionCountdown { --projection-accent: #f3b0ad; --projection-controls: #fff8f2; --projection-panel: rgba(48,3,8,.65); min-height: 100dvh; position: relative; isolation: isolate; overflow: hidden; color: #fff8f2; background: #260306; font-family: "PlayfairDisplay", Georgia, serif; }
+.pc-backdrop { width: 106%; position: absolute; z-index: -4; inset: 0 -3%; background: var(--pc-image) center 42% / cover no-repeat; }
+.pc-shade { position: absolute; z-index: -3; inset: 0; background: linear-gradient(90deg, rgba(43, 3, 7, .3), rgba(43, 3, 7, .05) 48%, rgba(32, 1, 5, .73)), linear-gradient(0deg, rgba(31, 1, 4, .76), transparent 50%, rgba(31, 1, 4, .2)); }
+.pc-grain { position: absolute; z-index: -2; inset: 0; opacity: .16; background-image: radial-gradient(rgba(255,255,255,.4) .45px, transparent .6px); background-size: 4px 4px; mix-blend-mode: soft-light; pointer-events: none; }
+.pc-petals { position: absolute; z-index: 2; inset: 0; overflow: hidden; pointer-events: none; }
+.pc-petals i {
+  width: var(--pc-size);
+  height: calc(var(--pc-size) * .72);
+  position: absolute;
+  top: -12%;
+  left: var(--pc-x);
+  border-radius: 85% 12% 75% 24%;
+  opacity: .72;
+  background: linear-gradient(135deg, #f3a0aa, #9f1730 70%);
+  box-shadow: inset -2px -2px 5px rgba(78, 1, 13, .28);
+  transform-origin: 70% 30%;
+  animation: pc-petal-fall var(--pc-duration) linear var(--pc-delay) infinite;
+}
+.pc-petals i:nth-child(3n) { background: linear-gradient(135deg, #f3c1bd, #bc4153 70%); opacity: .58; }
+.pc-petals i:nth-child(4n) { filter: blur(.7px); }
+
+@keyframes pc-petal-fall {
+  0% { transform: translate3d(0, -12vh, 0) rotateX(0) rotateZ(0); opacity: 0; }
+  12% { opacity: .72; }
+  50% { transform: translate3d(var(--pc-drift), 52vh, 0) rotateX(230deg) rotateZ(210deg); }
+  100% { transform: translate3d(calc(var(--pc-drift) * -.45), 118vh, 0) rotateX(520deg) rotateZ(460deg); opacity: 0; }
+}
+
+.pc-back,
+.pc-present { width: 42px; height: 42px; position: absolute; z-index: 6; top: 2rem; display: grid; place-items: center; border: 1px solid rgba(255,248,242,.64); border-radius: 50%; color: #fff8f2; background: rgba(48, 3, 8, .35); backdrop-filter: blur(6px); }
+.pc-back { left: 2rem; text-decoration: none; }
+.pc-present { right: 2rem; }
+.pc-content { width: min(46vw, 760px); position: absolute; z-index: 3; right: clamp(2.5rem, 6vw, 7rem); bottom: clamp(8rem, 17vh, 11rem); text-align: right; text-shadow: 0 6px 28px rgba(24,0,4,.55); }
+.pc-content > p { margin: 0; color: #f3c5b8; font: 700 clamp(.62rem, .85vw, .78rem)/1 "Montserrat", sans-serif; }
+.pc-content h1 { margin: 1rem 0 0; color: #fff8f2; font-size: clamp(2.8rem, 5.7vw, 7rem); font-weight: 400; line-height: .88; }
+.pc-content > span { display: block; margin-top: 1.3rem; color: #f7d8d0; font: italic clamp(.95rem, 1.35vw, 1.3rem)/1.4 "PlayfairDisplay", Georgia, serif; }
+
+.pc-controls { position: absolute; z-index: 6; bottom: 1.8rem; left: 2rem; display: grid; grid-template-columns: 42px minmax(140px, 18vw) 42px 38px; align-items: center; gap: .65rem; }
+.pc-controls button { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid rgba(255,248,242,.58); border-radius: 50%; color: #fff8f2; background: rgba(48, 3, 8, .38); backdrop-filter: blur(6px); }
+.pc-controls .pc-play { width: 38px; height: 38px; border-color: #f3b0ad; color: #f3b0ad; }
+.pc-progress { height: 1px; background: rgba(255,248,242,.42); }
+.pc-progress i { width: var(--pc-progress); height: 100%; display: block; background: #f3b0ad; transition: width .55s ease; }
+.pc-thumbs { position: absolute; z-index: 6; bottom: 1.75rem; left: 50%; display: flex; gap: .5rem; transform: translateX(-50%); }
+.pc-thumbs button { width: 66px; height: 44px; overflow: hidden; border: 1px solid rgba(255,248,242,.4); padding: 0; opacity: .55; background: #330408; transition: opacity .2s ease, transform .2s ease, border-color .2s ease; }
+.pc-thumbs button.is-active { border-color: #f3b0ad; opacity: 1; transform: translateY(-4px); }
+.pc-thumbs img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.pc-footer { position: absolute; z-index: 3; right: 2rem; bottom: 5.3rem; margin: 0; color: rgba(255,248,242,.82); font: 700 .55rem/1 "Montserrat", sans-serif; }
+
+.projectionCountdown.is-presenting .pc-back,
+.projectionCountdown.is-presenting .pc-present,
+.projectionCountdown.is-presenting .pc-controls,
+.projectionCountdown.is-presenting .pc-thumbs { opacity: 0; pointer-events: none; }
+
+@media (max-width: 760px) {
+  .pc-back, .pc-present { top: 1.1rem; }
+  .pc-back { left: 1.1rem; }
+  .pc-present { right: 1.1rem; }
+  .pc-backdrop { background-position: center; }
+  .pc-shade { background: linear-gradient(0deg, rgba(31,1,4,.9), transparent 70%); }
+  .pc-content { width: calc(100% - 34px); right: 17px; bottom: 9.2rem; text-align: left; }
+  .pc-content h1 { font-size: clamp(2.7rem, 12vw, 4.8rem); }
+  .pc-controls { right: 1rem; bottom: 1rem; left: 1rem; grid-template-columns: 38px 1fr 38px 34px; gap: .45rem; }
+  .pc-controls button { width: 38px; height: 38px; }
+  .pc-controls .pc-play { width: 34px; height: 34px; }
+  .pc-thumbs { bottom: 4.6rem; }
+  .pc-thumbs button { width: 49px; height: 34px; }
+  .pc-footer { display: none; }
+}
+
+@media (min-width: 2560px) and (min-height: 1400px) {
+  .pc-back, .pc-present { width: 58px; height: 58px; top: 3.5rem; }
+  .pc-back { left: 3.5rem; }
+  .pc-present { right: 3.5rem; }
+  .pc-content { width: min(48vw, 1500px); right: 7vw; bottom: 22vh; }
+  .pc-content > p { font-size: 1rem; }
+  .pc-content h1 { font-size: 10.5rem; }
+  .pc-content > span { font-size: 1.75rem; }
+  .pc-footer { right: 3.5rem; bottom: 7rem; font-size: .8rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pc-backdrop { transform: none !important; }
+  .pc-petals { display: none; }
+  .pc-progress i { transition: none; }
+}

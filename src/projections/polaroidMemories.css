@@ -1,0 +1,72 @@
+@import "../templates/cineloveFonts.css";
+
+html.projection-polaroid-page,
+body.projection-polaroid-page { min-width: 0; margin: 0; padding: 0; overflow: hidden; background: #22201c; }
+body.projection-polaroid-page { display: block; }
+
+.projectionPolaroid { --projection-accent: #f5f2e9; --projection-controls: #f5f2e9; --projection-panel: rgba(19,24,20,.66); min-height: 100dvh; position: relative; isolation: isolate; display: grid; grid-template-rows: auto 1fr auto; gap: .8rem; overflow: hidden; padding: 1.4rem 2rem 1rem; color: #f5f2e9; background: linear-gradient(112deg, rgba(19,31,29,.84), rgba(38,32,25,.18) 44%, rgba(20,20,18,.82)), repeating-linear-gradient(92deg, #4f3c2e 0 4px, #5b4737 4px 9px, #443327 9px 14px, #67503d 14px 20px); font-family: "Montserrat", Arial, sans-serif; }
+.projectionPolaroid::before { content: ""; position: absolute; z-index: -1; inset: 0; opacity: .22; background: repeating-linear-gradient(88deg, transparent 0 38px, rgba(255,255,255,.09) 39px 40px, transparent 41px 78px); mix-blend-mode: soft-light; }
+.pm-grain { position: absolute; z-index: 6; inset: 0; opacity: .13; background-image: radial-gradient(rgba(255,255,255,.55) .45px, transparent .6px); background-size: 4px 4px; mix-blend-mode: overlay; pointer-events: none; animation: pm-grain-shift .5s steps(2) infinite; }
+@keyframes pm-grain-shift { 50% { transform: translate(1px, -1px); } }
+
+.pm-header { position: relative; z-index: 8; display: grid; grid-template-columns: 42px 1fr 42px; align-items: center; }
+.pm-header a,
+.pm-header button { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid rgba(245,242,233,.52); border-radius: 50%; color: #f5f2e9; background: rgba(14,18,16,.24); text-decoration: none; backdrop-filter: blur(5px); }
+.pm-header div { display: grid; justify-items: center; gap: .25rem; }
+.pm-header strong { font: 700 .68rem/1 "Montserrat", sans-serif; }
+.pm-header span { color: #c7d8c7; font-size: .52rem; font-weight: 600; }
+
+.pm-table { min-height: 0; position: relative; display: grid; place-items: center; perspective: 1500px; }
+.pm-stack { width: min(58vw, 760px); aspect-ratio: 4 / 3; position: absolute; border: 12px solid #ece7dc; border-bottom-width: 66px; background: #ddd8cd; box-shadow: 0 25px 48px rgba(0,0,0,.34); }
+.pm-stack.one { transform: translate(-2.6%, 1.5%) rotate(-4deg); opacity: .55; }
+.pm-stack.two { transform: translate(2.5%, 1.2%) rotate(3deg); opacity: .62; }
+.pm-perspective { width: min(58vw, 760px); aspect-ratio: 4 / 3; position: relative; z-index: 3; perspective: 1500px; }
+.pm-card { width: 100%; height: 100%; position: absolute; inset: 0; display: grid; grid-template-rows: minmax(0, 1fr) 68px; gap: 0; margin: 0; padding: 13px 13px 0; color: #171817; background: #f5f1e8; box-shadow: 0 28px 65px rgba(0,0,0,.48); transform-style: preserve-3d; backface-visibility: hidden; }
+.pm-photo { min-height: 0; overflow: hidden; background: #d4d1c8; }
+.pm-photo img { width: 100%; height: 100%; display: block; object-fit: cover; filter: saturate(.82) contrast(1.03); }
+.pm-card figcaption { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1rem; padding: 0 .8rem; }
+.pm-card figcaption strong { overflow-wrap: anywhere; font: 400 clamp(1.35rem, 2.4vw, 2.5rem)/1 "Pecita", "Belinda Avenue", cursive; }
+.pm-card figcaption span { color: #4d504d; font: 700 .55rem/1 "Montserrat", sans-serif; }
+
+.pm-controls { position: relative; z-index: 8; display: grid; grid-template-columns: auto auto auto auto; align-items: center; gap: .55rem; justify-self: center; }
+.pm-controls > button { width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid rgba(245,242,233,.56); border-radius: 50%; color: #f5f2e9; background: rgba(14,18,16,.28); }
+.pm-controls > div { display: flex; gap: .45rem; }
+.pm-controls > div button { width: 26px; height: 3px; border: 0; padding: 0; background: rgba(245,242,233,.3); }
+.pm-controls > div button.is-active { background: #f5f2e9; }
+.pm-note { position: absolute; z-index: 8; right: 1.5rem; bottom: 5.2rem; margin: 0; color: rgba(245,242,233,.68); font-size: .54rem; font-weight: 700; }
+
+.projectionPolaroid.is-presenting .pm-header,
+.projectionPolaroid.is-presenting .pm-controls { opacity: 0; pointer-events: none; }
+
+@media (max-width: 700px) {
+  .projectionPolaroid { gap: .4rem; padding: .9rem; }
+  .pm-header strong { font-size: .58rem; }
+  .pm-header span { display: none; }
+  .pm-stack,
+  .pm-perspective { width: calc(100vw - 54px); aspect-ratio: 3 / 4; }
+  .pm-stack { border-bottom-width: 64px; }
+  .pm-card { grid-template-rows: minmax(0, 1fr) 66px; padding: 10px 10px 0; }
+  .pm-card figcaption { grid-template-columns: 1fr; align-content: center; gap: .25rem; padding: 0 .4rem; }
+  .pm-card figcaption strong { font-size: clamp(1.35rem, 7vw, 2rem); }
+  .pm-note { display: none; }
+}
+
+@media (min-width: 2560px) and (min-height: 1400px) {
+  .projectionPolaroid { gap: 1.2rem; padding: 3rem 4rem 2rem; }
+  .pm-header { grid-template-columns: 58px 1fr 58px; }
+  .pm-header a, .pm-header button { width: 58px; height: 58px; }
+  .pm-header strong { font-size: .95rem; }
+  .pm-header span { font-size: .75rem; }
+  .pm-stack, .pm-perspective { width: min(58vw, 1520px); }
+  .pm-stack { border-width: 22px; border-bottom-width: 130px; }
+  .pm-card { grid-template-rows: minmax(0, 1fr) 130px; padding: 24px 24px 0; }
+  .pm-card figcaption { padding: 0 1.4rem; }
+  .pm-card figcaption strong { font-size: 4.4rem; }
+  .pm-card figcaption span { font-size: .85rem; }
+  .pm-note { right: 3rem; bottom: 7rem; font-size: .8rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pm-grain { animation: none; }
+  .pm-card { transform: none !important; }
+}
