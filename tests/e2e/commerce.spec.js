@@ -28,23 +28,12 @@ async function waitForAutosave(page) {
 
 async function createOrder(page) {
   await openDemoAccount(page);
-  await page.goto('/dat-thiep');
-  await page.locator('input[name="fullName"]').fill('Nguyễn An');
-  await page.locator('input[name="phone"]').fill('0901234567');
-  await page.locator('input[name="groomName"]').fill('Đức Anh');
-  await page.locator('input[name="brideName"]').fill('Hà My');
-  await page.locator('input[name="venueName"]').fill('Lời Hẹn Palace');
-  await page.locator('input[name="address"]').fill('Hà Nội');
-  await page.locator('input[name="consent"]').check();
-  await page.getByRole('button', { name: /tạo thiệp nháp và bắt đầu chỉnh sửa/i }).click();
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('Mã đơn LH-DEMO');
-  const editorUrl = await page.locator('.commercePrimaryAction').getAttribute('href');
-  const portalUrl = await page.locator('.commerceSecondaryAction').getAttribute('href');
-  return {
-    publicId: (await page.getByRole('heading', { level: 1 }).textContent()).replace('Mã đơn ', '').trim(),
-    editorUrl,
-    portalUrl,
-  };
+  await page.goto('/dat-thiep?template=thiep-cuoi-44');
+  await page.getByRole('button', { name: /dùng mẫu này và bắt đầu chỉnh sửa/i }).click();
+  await expect(page.locator('.invitationEditor')).toBeVisible();
+  const editorUrl = page.url();
+  const orderId = new URL(editorUrl).pathname.split('/').pop();
+  return { editorUrl, portalUrl: `/don-hang/${orderId}` };
 }
 
 test('customer can create an order, edit before payment and open the QR payment portal when ready to publish', async ({ page }) => {
@@ -56,20 +45,19 @@ test('customer can create an order, edit before payment and open the QR payment 
   expect(portalUrl).toContain('/don-hang/');
   await page.goto(portalUrl);
   await expect(page.getByText('CỔNG KHÁCH HÀNG')).toBeVisible();
-  await expect(page.getByRole('heading', { level: 2, name: /Đức Anh/ })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 2, name: /tên chú rể/i })).toBeVisible();
   await expect(page.getByText(/thanh toán để phát hành/i).first()).toBeVisible();
 });
 
-test('catalog selection pre-fills a validated editable template at the single fixed price', async ({ page }) => {
-  await page.goto('/dat-thiep?template=thiep-cuoi-61&package=basic');
-  await expect(page.locator('input[name="templateSlug"][value="thiep-cuoi-61"]')).toBeChecked();
-  await expect(page.getByText(/Đang chọn: Nắng Mai/)).toBeVisible();
+test('catalog selection opens a direct editable draft at the single fixed price', async ({ page }) => {
+  await openDemoAccount(page);
+  await page.goto('/dat-thiep?template=thiep-cuoi-61');
+  await expect(page.getByText(/thiệp nháp.*nắng mai/i)).toBeVisible();
   await expect(page.getByText('50.000đ').first()).toBeVisible();
-  await expect(page.locator('input[name="packageCode"]')).toHaveCount(0);
+  await expect(page.getByRole('button', { name: /dùng mẫu này và bắt đầu chỉnh sửa/i })).toBeVisible();
 
-  await page.goto('/dat-thiep?template=thiep-cuoi-8&package=unknown');
-  await expect(page.locator('input[name="templateSlug"][value="thiep-cuoi-8"]')).toBeChecked();
-  await expect(page.getByText(/Không có gói nâng cấp hoặc phí theo mẫu/)).toBeVisible();
+  await page.goto('/dat-thiep?template=thiep-cuoi-8');
+  await expect(page.getByText(/thiệp nháp.*thiệp cưới 8/i)).toBeVisible();
 });
 
 test('studio consultation retains the selected template context', async ({ page }) => {
