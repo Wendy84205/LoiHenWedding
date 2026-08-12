@@ -242,6 +242,16 @@ export async function updateOrder(orderId, patch, accessToken = '') {
   return payload.order;
 }
 
+export async function submitPaymentIntent(orderId, accessToken = '') {
+  if (commerceDemoMode) {
+    const order = localUpdateOrder(orderId, { depositStatus: 'submitted' }, 'customer');
+    return { ok: true, publicId: order.public_id, amount: order.deposit_amount || order.amount_total, status: order.deposit_status };
+  }
+  assertCommerceAvailable();
+  const headers = accessToken ? { 'X-Order-Token': accessToken } : await sessionHeaders();
+  return request('/api/payment-intent', { method: 'POST', headers, body: JSON.stringify({ orderId }) });
+}
+
 export async function deleteOrderPermanently(orderId, confirmPublicId) {
   if (commerceDemoMode) throw new Error('Không xóa dữ liệu vĩnh viễn trong chế độ demo.');
   assertCommerceAvailable();

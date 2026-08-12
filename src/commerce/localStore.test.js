@@ -10,6 +10,12 @@ import {
 import { patchSceneNode } from './scene/sceneSchema.js';
 import { getSceneTemplate } from './scene/sceneTemplates.js';
 
+function createPaidOrder() {
+  const created = localCreateOrder(orderInput);
+  localUpdateOrder(created.orderId, { depositStatus: 'paid' });
+  return created;
+}
+
 const orderInput = {
   fullName: 'Nguyễn An',
   email: 'an@example.com',
@@ -42,7 +48,7 @@ describe('local commerce draft versions', () => {
   });
 
   it('keeps published content isolated from later draft changes', () => {
-    const created = localCreateOrder(orderInput);
+    const created = createPaidOrder();
     const order = localGetOrder(created.orderId);
     const firstDraft = structuredClone(order.invitation.content);
     firstDraft.couple.groomName = 'Anh Khoa';
@@ -62,7 +68,7 @@ describe('local commerce draft versions', () => {
   });
 
   it('versions, publishes and restores scene patches with the invitation', () => {
-    const created = localCreateOrder(orderInput);
+    const created = createPaidOrder();
     const order = localGetOrder(created.orderId);
     const template = getSceneTemplate(order.template_slug);
     const textNode = template.nodes.find((node) => node.type === 'text');
@@ -92,7 +98,7 @@ describe('local commerce draft versions', () => {
   });
 
   it('switches layout as a new version without losing invitation data', () => {
-    const created = localCreateOrder(orderInput);
+    const created = createPaidOrder();
     const before = localGetOrder(created.orderId);
     const result = localSwitchInvitationTemplate(created.orderId, 'thiep-cuoi-61');
     const after = localGetOrder(created.orderId);
@@ -107,7 +113,7 @@ describe('local commerce draft versions', () => {
   });
 
   it('restores an old draft as a new version without deleting newer history', () => {
-    const created = localCreateOrder(orderInput);
+    const created = createPaidOrder();
     const original = localGetOrder(created.orderId).invitation.content;
     const second = structuredClone(original);
     second.couple.brideName = 'Lan Anh';

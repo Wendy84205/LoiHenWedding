@@ -689,16 +689,8 @@ export default function InvitationEditor({ orderId }) {
 
   if (ui.loading) return <main className="editorState"><RefreshCw className="is-spinning" /><p>Đang tải trình chỉnh sửa...</p></main>;
   if (!order || !content || !manifest || !sceneTemplate || !design || !resolvedScene) return <main className="editorState"><h1>Không thể mở trình chỉnh sửa</h1><p>{ui.error || 'Mẫu này chưa hỗ trợ scene editor.'}</p><a href={`/don-hang/${orderId}`}>Quay lại đơn hàng</a></main>;
-  if (order.deposit_status !== 'paid') return (
-    <main className="editorState editorPaymentGate">
-      <LockKeyhole />
-      <p className="editorEyebrow">EDITOR ĐANG KHÓA</p>
-      <h1>Hoàn tất thanh toán để mở quyền chỉnh sửa</h1>
-      <p>Mức phí 50.000đ mở toàn bộ công cụ thay ảnh, nội dung, font, màu sắc, bố cục, nhạc, QR, RSVP, lưu phiên bản và phát hành link.</p>
-      <a className="editorGateAction" href={`/don-hang/${orderId}`}>Đi tới thanh toán <ArrowLeft /> </a>
-    </main>
-  );
 
+  const isPaid = order.deposit_status === 'paid';
   const visibleAssets = order.assets.filter((asset) => asset.kind !== 'payment_proof');
   const selectedLayerInfo = manifest.layers.find((item) => item.key === selectedLayer) || manifest.layers[0];
   const selectedLayerVisible = !theme.hiddenLayers.includes(selectedLayerInfo.key);
@@ -756,7 +748,11 @@ export default function InvitationEditor({ orderId }) {
         </div>
         <button className={`editorSaveState state-${ui.saveStatus}`} type="button" onClick={() => flushSave(true)} title="Lưu bản nháp"><Cloud /><span>{statusLabel(ui.saveStatus)}</span></button>
         <a className="editorOpenPreview" href={previewUrl} target="_blank" rel="noreferrer"><Eye /> Xem trước</a>
-        <button className="editorReviewButton" type="button" onClick={submitReview} disabled={ui.busy === 'review' || ui.saveStatus === 'conflict'}><Send /> {ui.busy === 'review' ? 'Đang gửi' : 'Gửi duyệt'}</button>
+        {isPaid ? (
+          <button className="editorReviewButton" type="button" onClick={submitReview} disabled={ui.busy === 'review' || ui.saveStatus === 'conflict'}><Send /> {ui.busy === 'review' ? 'Đang gửi' : 'Phát hành thiệp'}</button>
+        ) : (
+          <a className="editorReviewButton editorPaymentCta" href={`/don-hang/${orderId}`}><LockKeyhole /> Thanh toán 50.000đ để phát hành</a>
+        )}
       </header>
 
       <div className="editorMobileSwitch">

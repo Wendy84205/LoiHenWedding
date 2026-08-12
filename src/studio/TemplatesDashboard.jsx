@@ -276,9 +276,9 @@ export default function TemplatesDashboard() {
       <section className="tpl-process">
         <div><span>QUY TRÌNH BẮT ĐẦU</span><h2>Chọn một mẫu. <em>Rồi biến nó thành của hai bạn.</em></h2></div>
         <ol>
-          <li><b>01</b><strong>Khám phá</strong><span>Xem bản mẫu và lưu những phong cách bạn yêu thích.</span></li>
-          <li><b>02</b><strong>Cá nhân hóa</strong><span>Thêm tên, ảnh, lịch trình, nhạc và thông tin mừng cưới.</span></li>
-          <li><b>03</b><strong>Xuất bản</strong><span>Kiểm tra trên điện thoại và nhận link để gửi khách mời.</span></li>
+          <li><b>01</b><strong>Xem & chọn mẫu</strong><span>Mở bản mẫu, lưu phong cách yêu thích và quyết định mẫu phù hợp.</span></li>
+          <li><b>02</b><strong>Tự chỉnh sửa</strong><span>Đăng nhập để thay ảnh, chữ, nhạc, QR và RSVP; bạn luôn có thể xem trước trên điện thoại.</span></li>
+          <li><b>03</b><strong>Quét QR & xuất bản</strong><span>Khi thiệp đã hoàn thiện, quét QR thanh toán 50.000đ để mở nút phát hành và gửi link khách mời.</span></li>
         </ol>
       </section>
       <StudioFooter />

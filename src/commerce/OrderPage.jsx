@@ -109,7 +109,7 @@ export default function OrderPage() {
           <span className="commerceSuccessIcon"><Check /></span>
           <p className="commerceEyebrow">ĐÃ TIẾP NHẬN YÊU CẦU</p>
           <h1>Mã đơn {state.result.publicId}</h1>
-          <p>Đơn đã được tạo trong tài khoản của bạn. Hoàn tất thanh toán 50.000đ để mở toàn bộ quyền tự chỉnh sửa thiệp.</p>
+          <p>Thiệp nháp đã được tạo trong tài khoản. Bắt đầu tự chỉnh sửa ngay; chỉ cần quét mã thanh toán 50.000đ ở bước cuối để phát hành link.</p>
           <div className="commerceLinkBox"><code>{portalUrl}</code><button type="button" onClick={copyPortal} aria-label="Sao chép link"><Copy /></button></div>
           {state.copied && <span className="commerceInlineStatus">Đã sao chép link.</span>}
           <dl className="commerceReceipt">
@@ -118,8 +118,8 @@ export default function OrderPage() {
             <div><dt>Trạng thái</dt><dd>Chờ xác nhận thanh toán</dd></div>
           </dl>
           <div className="commerceSuccessActions">
-            <a className="commercePrimaryAction" href={portalUrl}>Thanh toán & mở khóa editor <ArrowRight /></a>
-            <a className="commerceSecondaryAction" href="/tai-khoan">Về dashboard <ExternalLink /></a>
+            <a className="commercePrimaryAction" href={`/chinh-sua-thiep/${state.result.orderId}`}>Bắt đầu tự chỉnh sửa <ArrowRight /></a>
+            <a className="commerceSecondaryAction" href={portalUrl}>Thanh toán khi hoàn thiện <ExternalLink /></a>
           </div>
         </main>
         <StudioFooter />
@@ -134,12 +134,12 @@ export default function OrderPage() {
         <header className="commercePageHeader">
           <p className="commerceEyebrow">ĐẶT THIỆP CƯỚI ONLINE</p>
           <h1>Gửi thông tin để bắt đầu thiết kế</h1>
-          <p>Đã đăng nhập với <strong>{session.user?.email || 'tài khoản của bạn'}</strong>. Sau thanh toán, bạn có thể tự chỉnh sửa không giới hạn.</p>
+          <p>Đã đăng nhập với <strong>{session.user?.email || 'tài khoản của bạn'}</strong>. Bạn có thể tự chỉnh sửa không giới hạn; thanh toán QR 50.000đ chỉ cần thực hiện khi phát hành link.</p>
         </header>
 
         <form className="commerceOrderForm" onSubmit={submit}>
           <section>
-            <div className="commerceSectionTitle"><span>01</span><div><h2>Thanh toán để mở khóa mẫu</h2><p>Sau khi thanh toán, editor sẽ mở đầy đủ ảnh, nội dung, font, màu sắc, nhạc, QR và RSVP.</p></div></div>
+            <div className="commerceSectionTitle"><span>01</span><div><h2>Một mức giá, thanh toán ở bước cuối</h2><p>Bạn có thể chỉnh sửa và xem trước toàn bộ thiệp trước. Khi đã sẵn sàng phát hành, quét QR để thanh toán 50.000đ.</p></div></div>
             <div className="commerceSinglePrice">
               <div><small>THIỆP CƯỚI ONLINE</small><strong>{formatCurrency(selectedPackage.amount)}</strong><p>{selectedPackage.description}</p></div>
               <span><Check size={17} /> Áp dụng cho toàn bộ thư viện mẫu</span>
@@ -190,7 +190,7 @@ export default function OrderPage() {
             <div><small>Thanh toán một lần cho mẫu đã chọn</small><strong>{formatCurrency(selectedPackage.amount)}</strong><span>Không có gói nâng cấp hoặc phí theo mẫu</span></div>
             <label className="commerceConsent"><input type="checkbox" name="consent" checked={form.consent} onChange={update} required /><span>Tôi đồng ý với <a href="/dieu-khoan-dich-vu">điều khoản dịch vụ</a> và việc xử lý dữ liệu theo <a href="/chinh-sach-bao-mat">chính sách bảo mật</a>.</span></label>
             {state.error && <p className="commerceError" role="alert">{state.error}</p>}
-            <button className="commercePrimaryAction" type="submit" disabled={state.loading}>{state.loading ? 'Đang tạo đơn...' : <>Tiếp tục thanh toán 50.000đ <ArrowRight /></>}</button>
+            <button className="commercePrimaryAction" type="submit" disabled={state.loading}>{state.loading ? 'Đang tạo thiệp...' : <>Tạo thiệp nháp và bắt đầu chỉnh sửa <ArrowRight /></>}</button>
             <p><LockKeyhole /> Không tải ảnh cưới lên source code hoặc thư viện công khai.</p>
           </section>
         </form>

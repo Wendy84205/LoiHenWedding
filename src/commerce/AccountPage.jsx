@@ -218,8 +218,8 @@ function OverviewTab({ account, metrics, onTab }) {
   const initials = name.split(' ').map(w => w[0]).slice(-2).join('').toUpperCase();
   const pendingOrder = (account?.orders || []).find((order) => order.deposit_status !== 'paid');
   const unlockedOrder = (account?.orders || []).find((order) => order.deposit_status === 'paid');
-  const nextHref = pendingOrder ? `/don-hang/${pendingOrder.id}` : unlockedOrder ? `/chinh-sua-thiep/${unlockedOrder.id}` : '/mau-thiep';
-  const nextLabel = pendingOrder ? 'Thanh toán để mở khóa' : unlockedOrder ? 'Mở editor của tôi' : 'Chọn mẫu thiệp';
+  const nextHref = pendingOrder ? `/chinh-sua-thiep/${pendingOrder.id}` : unlockedOrder ? `/chinh-sua-thiep/${unlockedOrder.id}` : '/mau-thiep';
+  const nextLabel = pendingOrder ? 'Tiếp tục chỉnh sửa' : unlockedOrder ? 'Mở editor của tôi' : 'Chọn mẫu thiệp';
 
   const quickTools = [
     { icon: <Layout size={20} />, label: 'Chọn mẫu thiệp', color: 'purple', onClick: () => window.location.href = '/mau-thiep' },
@@ -246,11 +246,11 @@ function OverviewTab({ account, metrics, onTab }) {
       </div>
 
       <section className="dash-journey-card" aria-label="Hành trình tạo thiệp">
-        <div className="dash-journey-copy"><span>HÀNH TRÌNH CỦA BẠN</span><h2>Tạo thiệp trong ba bước rõ ràng</h2><p>Chọn mẫu yêu thích, thanh toán 50.000đ và mở toàn bộ editor để cá nhân hóa thiệp theo câu chuyện của hai bạn.</p></div>
+        <div className="dash-journey-copy"><span>HÀNH TRÌNH CỦA BẠN</span><h2>Tạo thiệp trong ba bước rõ ràng</h2><p>Chọn mẫu yêu thích, tự chỉnh sửa toàn bộ thiệp, rồi quét QR thanh toán 50.000đ ở bước cuối để phát hành link.</p></div>
         <ol className="dash-journey-steps">
           <li className={!pendingOrder && !unlockedOrder ? 'is-current' : 'is-done'}><b>01</b><div><strong>Chọn mẫu</strong><small>Khám phá thư viện và lưu mẫu yêu thích.</small></div></li>
-          <li className={pendingOrder ? 'is-current' : unlockedOrder ? 'is-done' : ''}><b>02</b><div><strong>Thanh toán</strong><small>Một mức giá 50.000đ cho mọi mẫu.</small></div></li>
-          <li className={unlockedOrder ? 'is-current' : ''}><b>03</b><div><strong>Tự chỉnh sửa</strong><small>Ảnh, font, nhạc, QR, RSVP và phát hành.</small></div></li>
+          <li className={pendingOrder ? 'is-current' : unlockedOrder ? 'is-done' : ''}><b>02</b><div><strong>Tự chỉnh sửa</strong><small>Thay ảnh, nội dung, font, nhạc, QR và RSVP.</small></div></li>
+          <li className={unlockedOrder ? 'is-done' : pendingOrder ? 'is-current' : ''}><b>03</b><div><strong>Thanh toán & phát hành</strong><small>Quét QR 50.000đ khi thiệp đã sẵn sàng gửi khách.</small></div></li>
         </ol>
         <a className="dash-journey-action" href={nextHref}>{nextLabel} <ArrowRight size={15} /></a>
       </section>
@@ -451,12 +451,8 @@ function InvitationsTab({ orders, onTab }) {
                   <div>💰 {formatCurrency(order.amount_total)}</div>
                 </div>
                 <div className="dash-order-actions">
-                  <a href={`/don-hang/${order.id}`} className="dash-order-btn primary">{order.deposit_status === 'paid' ? 'Quản lý thiệp' : 'Thanh toán mở khóa'} <ArrowRight size={13} /></a>
-                  {order.deposit_status === 'paid' ? (
-                    <a href={`/chinh-sua-thiep/${order.id}`} className="dash-order-btn"><PenLine size={13} /> Chỉnh thiệp</a>
-                  ) : (
-                    <span className="dash-order-lock">Thanh toán 50.000đ để chỉnh sửa</span>
-                  )}
+                  <a href={`/chinh-sua-thiep/${order.id}`} className="dash-order-btn primary"><PenLine size={13} /> Chỉnh thiệp</a>
+                  <a href={`/don-hang/${order.id}#payment`} className="dash-order-btn">{order.deposit_status === 'paid' ? 'Đã thanh toán' : 'Thanh toán để phát hành'} <ArrowRight size={13} /></a>
                   {order.invitation?.status === 'published' && (
                     <a href={`/w/${order.invitation.slug}`} target="_blank" rel="noreferrer" className="dash-order-btn">
                       <ExternalLink size={13} /> Mở thiệp

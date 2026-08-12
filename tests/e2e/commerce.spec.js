@@ -36,26 +36,28 @@ async function createOrder(page) {
   await page.locator('input[name="venueName"]').fill('Lời Hẹn Palace');
   await page.locator('input[name="address"]').fill('Hà Nội');
   await page.locator('input[name="consent"]').check();
-  await page.getByRole('button', { name: /tiếp tục thanh toán 50.000đ/i }).click();
+  await page.getByRole('button', { name: /tạo thiệp nháp và bắt đầu chỉnh sửa/i }).click();
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Mã đơn LH-DEMO');
-  const portalUrl = await page.locator('.commercePrimaryAction').getAttribute('href');
-  const orderId = new URL(portalUrl).pathname.split('/').pop();
+  const editorUrl = await page.locator('.commercePrimaryAction').getAttribute('href');
+  const portalUrl = await page.locator('.commerceSecondaryAction').getAttribute('href');
   return {
     publicId: (await page.getByRole('heading', { level: 1 }).textContent()).replace('Mã đơn ', '').trim(),
-    editorUrl: `/chinh-sua-thiep/${orderId}`,
+    editorUrl,
     portalUrl,
   };
 }
 
-test('customer can create an order, sees the editor locked before payment and opens the private portal', async ({ page }) => {
+test('customer can create an order, edit before payment and open the QR payment portal when ready to publish', async ({ page }) => {
   const { editorUrl, portalUrl } = await createOrder(page);
   expect(editorUrl).toContain('/chinh-sua-thiep/');
   await page.goto(editorUrl);
-  await expect(page.locator('.editorPaymentGate')).toBeVisible();
+  await expect(page.locator('.invitationEditor')).toBeVisible();
+  await expect(page.getByText(/thanh toán 50.000đ để phát hành/i)).toBeVisible();
   expect(portalUrl).toContain('/don-hang/');
   await page.goto(portalUrl);
   await expect(page.getByText('CỔNG KHÁCH HÀNG')).toBeVisible();
   await expect(page.getByRole('heading', { level: 2, name: /Đức Anh/ })).toBeVisible();
+  await expect(page.getByText(/thanh toán để phát hành/i).first()).toBeVisible();
 });
 
 test('catalog selection pre-fills a validated editable template at the single fixed price', async ({ page }) => {

@@ -4,7 +4,7 @@ import { Check, CheckCircle2, Copy, Download, ExternalLink, FileImage, Link2, Mu
 import { StudioFooter, StudioHeader } from '../studio/StudioChrome.jsx';
 import {
   addGuest, deleteGuest, downloadGuestCsv, downloadRsvpCsv, getOrder, getOrderPreviewUrl,
-  moderateWish, selfPublishInvitation, triggerDownload, updateOrder, uploadOrderAsset,
+  moderateWish, selfPublishInvitation, submitPaymentIntent, triggerDownload, updateOrder, uploadOrderAsset,
 } from './commerceApi.js';
 import { formatCurrency } from './invitationContent.js';
 import { formatStorage, getPackageUsage } from './packageLimits.js';
@@ -145,6 +145,17 @@ export default function CustomerPortal({ orderId }) {
     }
   };
 
+  const submitTransfer = async () => {
+    setState((current) => ({ ...current, busy: 'payment', error: '', success: '' }));
+    try {
+      await submitPaymentIntent(orderId, token);
+      await load();
+      setState((current) => ({ ...current, success: 'Đã ghi nhận yêu cầu thanh toán. Studio sẽ tự động hoặc thủ công xác nhận giao dịch trước khi mở phát hành.' }));
+    } catch (error) {
+      setState((current) => ({ ...current, busy: '', error: error.message }));
+    }
+  };
+
   const publishInvitation = async () => {
     setState((current) => ({ ...current, busy: 'publish', error: '', success: '' }));
     try {
@@ -172,7 +183,11 @@ export default function CustomerPortal({ orderId }) {
   const attendingRsvps = rsvps.filter((item) => item.attendance === 'yes');
   const attendingPeople = attendingRsvps.reduce((total, item) => total + Number(item.party_size || 0), 0);
   const attendanceLabel = { yes: 'Tham dự', no: 'Không tham dự', unsure: 'Chưa chắc' };
-  const bank = { name: import.meta.env.VITE_BANK_NAME, account: import.meta.env.VITE_BANK_ACCOUNT, owner: import.meta.env.VITE_BANK_OWNER };
+  const bank = { name: import.meta.env.VITE_BANK_NAME, account: import.meta.env.VITE_BANK_ACCOUNT, owner: import.meta.env.VITE_BANK_OWNER, bin: import.meta.env.VITE_BANK_BIN };
+  const paymentAmount = order.deposit_amount || order.amount_total;
+  const paymentQrUrl = bank.bin && bank.account
+    ? `https://img.vietqr.io/image/${bank.bin}-${bank.account}-compact2.png?amount=${paymentAmount}&addInfo=${encodeURIComponent(order.public_id)}&accountName=${encodeURIComponent(bank.owner || '')}`
+    : '';
 
   return (
     <div className="commercePage">
@@ -189,7 +204,7 @@ export default function CustomerPortal({ orderId }) {
 
         <div className="commercePortalGrid">
           <section className="commercePanel">
-            <div className="commercePanelHeading"><div><small>BẢN THIỆP</small><h2>{order.invitation.content.couple.groomName} &amp; {order.invitation.content.couple.brideName}</h2></div><div className="commercePanelActions"><a className="is-primary" href={`/chinh-sua-thiep/${order.id}`}><PenLine /> Tự chỉnh sửa</a><a href={previewUrl} target="_blank" rel="noreferrer">Mở thiệp <ExternalLink /></a>{!isPublished && <button type="button" onClick={publishInvitation} disabled={state.busy === 'publish' || order.deposit_status !== 'paid'} title={order.deposit_status === 'paid' ? 'Kiểm tra và phát hành thiệp' : 'Chờ studio xác nhận cọc'}><Send /> {['basic', 'premium'].includes(order.package_code) ? 'Phát hành' : 'Gửi duyệt'}</button>}</div></div>
+            <div className="commercePanelHeading"><div><small>BẢN THIỆP</small><h2>{order.invitation.content.couple.groomName} &amp; {order.invitation.content.couple.brideName}</h2></div><div className="commercePanelActions"><a className="is-primary" href={`/chinh-sua-thiep/${order.id}`}><PenLine /> Tự chỉnh sửa</a><a href={previewUrl} target="_blank" rel="noreferrer">Mở thiệp <ExternalLink /></a>{!isPublished && (order.deposit_status === 'paid' ? <button type="button" onClick={publishInvitation} disabled={state.busy === 'publish'}><Send /> Phát hành thiệp</button> : <a href="#payment" className="commercePaymentLink"><Send /> Thanh toán để phát hành</a>)}</div></div>
             <img className="commerceTemplatePreview" src={`/social/${order.template_slug}.jpg`} alt={`Mẫu ${order.template_slug}`} />
             <div className="commerceLinkBox"><code>{previewUrl}</code><button type="button" onClick={() => navigator.clipboard.writeText(previewUrl)} aria-label="Sao chép link"><Copy /></button></div>
           </section>
@@ -211,10 +226,9 @@ export default function CustomerPortal({ orderId }) {
             </dl>
           </section>}
 
-          <section className="commercePanel">
-            <div className="commercePanelHeading"><div><small>THANH TOÁN</small><h2>Cọc {formatCurrency(order.deposit_amount)}</h2></div><span className={`commerceStatus payment-${order.deposit_status}`}>{order.deposit_status === 'paid' ? 'Đã nhận' : 'Chờ xác nhận'}</span></div>
-            {bank.name && bank.account && bank.owner ? <dl className="commerceBank"><div><dt>Ngân hàng</dt><dd>{bank.name}</dd></div><div><dt>Số tài khoản</dt><dd>{bank.account}</dd></div><div><dt>Chủ tài khoản</dt><dd>{bank.owner}</dd></div><div><dt>Nội dung</dt><dd>{order.public_id}</dd></div></dl> : <p>Studio sẽ gửi thông tin chuyển khoản qua kênh liên hệ đã đăng ký.</p>}
-            <label className="commerceUploadButton"><Upload /> Tải ảnh biên nhận<input type="file" accept="image/jpeg,image/png,image/webp" onChange={(event) => upload(event, 'payment_proof')} /></label>
+          <section className="commercePanel commerceQrPayment" id="payment">
+            <div className="commercePanelHeading"><div><small>THANH TOÁN ĐỂ PHÁT HÀNH</small><h2>{formatCurrency(paymentAmount)}</h2></div><span className={`commerceStatus payment-${order.deposit_status}`}>{order.deposit_status === 'paid' ? 'Đã xác nhận' : order.deposit_status === 'submitted' ? 'Đang kiểm tra' : 'Sẵn sàng thanh toán'}</span></div>
+            {order.deposit_status === 'paid' ? <p className="commercePaymentDone"><CheckCircle2 /> Thanh toán đã xác nhận. Bạn có thể phát hành link thiệp ngay.</p> : bank.name && bank.account && bank.owner ? <div className="commerceQrPaymentBody">{paymentQrUrl && <img src={paymentQrUrl} alt={`Mã QR thanh toán ${formatCurrency(paymentAmount)}`} className="commercePaymentQr" />}<div><p>Quét mã bằng ứng dụng ngân hàng và chuyển đúng số tiền. Nội dung chuyển khoản đã được điền sẵn theo mã đơn.</p><dl className="commerceBank"><div><dt>Ngân hàng</dt><dd>{bank.name}</dd></div><div><dt>Số tài khoản</dt><dd>{bank.account}</dd></div><div><dt>Chủ tài khoản</dt><dd>{bank.owner}</dd></div><div><dt>Nội dung</dt><dd>{order.public_id}</dd></div></dl><button type="button" className="commercePrimaryAction" onClick={submitTransfer} disabled={state.busy === 'payment'}>{state.busy === 'payment' ? 'Đang ghi nhận...' : 'Tôi đã chuyển khoản'}</button></div></div> : <p>Studio sẽ gửi mã QR chuyển khoản qua kênh liên hệ đã đăng ký.</p>}
           </section>
 
           <section className="commercePanel full-span">
