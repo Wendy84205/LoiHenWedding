@@ -1,8 +1,8 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { ArrowRight, Check, Copy, ExternalLink, LockKeyhole } from 'lucide-react';
 import { StudioFooter, StudioHeader } from '../studio/StudioChrome.jsx';
 import { getInvitationDisplayTitle } from '../data/invitationCatalog.js';
-import { commerceAvailable, createOrder } from './commerceApi.js';
+import { commerceAvailable, createOrder, getCustomerSession } from './commerceApi.js';
 import { commercePackages, commercialTemplateSlugs, formatCurrency } from './invitationContent.js';
 import './commerce.css';
 
@@ -15,10 +15,9 @@ function defaultEventDate() {
 function createInitialForm() {
   const query = new URLSearchParams(window.location.search);
   const requestedTemplate = query.get('template') || '';
-  const requestedPackage = query.get('package') || '';
   return {
     fullName: '', email: '', phone: '', zalo: '',
-    packageCode: commercePackages[requestedPackage] ? requestedPackage : 'premium',
+    packageCode: 'basic',
     templateSlug: commercialTemplateSlugs.includes(requestedTemplate) ? requestedTemplate : 'thiep-cuoi-44',
     groomName: '', brideName: '', eventDate: defaultEventDate(), eventTime: '11:00', venueName: '', address: '',
     mapUrl: '', invitationMessage: '', customerNote: '', consent: false, website: '',
@@ -28,7 +27,13 @@ function createInitialForm() {
 export default function OrderPage() {
   const [form, setForm] = useState(createInitialForm);
   const [state, setState] = useState({ loading: false, error: '', result: null, copied: false });
+  const [session, setSession] = useState(undefined);
   const selectedPackage = commercePackages[form.packageCode];
+  const loginUrl = useMemo(() => `/tai-khoan?next=${encodeURIComponent(`${window.location.pathname}${window.location.search}`)}`, []);
+
+  useEffect(() => {
+    getCustomerSession().then(setSession).catch(() => setSession(null));
+  }, []);
   const portalUrl = useMemo(() => state.result
     ? `${window.location.origin}/don-hang/${state.result.orderId}?token=${encodeURIComponent(state.result.accessToken)}`
     : '', [state.result]);
@@ -40,9 +45,13 @@ export default function OrderPage() {
 
   const submit = async (event) => {
     event.preventDefault();
+    if (!session) {
+      window.location.assign(loginUrl);
+      return;
+    }
     setState({ loading: true, error: '', result: null, copied: false });
     try {
-      const result = await createOrder(form);
+      const result = await createOrder({ ...form, email: form.email || session.user?.email || '' });
       localStorage.setItem(`loi-hen-order-${result.orderId}`, JSON.stringify({ accessToken: result.accessToken, previewToken: result.previewToken }));
       setState({ loading: false, error: '', result, copied: false });
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -72,6 +81,26 @@ export default function OrderPage() {
     );
   }
 
+  if (session === undefined) {
+    return <div className="commercePage"><StudioHeader /><main className="commerceState"><LockKeyhole /><p>Đang kiểm tra tài khoản…</p></main><StudioFooter /></div>;
+  }
+
+  if (!session) {
+    return (
+      <div className="commercePage">
+        <StudioHeader />
+        <main className="commerceState commerceAuthGate">
+          <LockKeyhole />
+          <p className="commerceEyebrow">BƯỚC 1 / 3</p>
+          <h1>Đăng nhập để dùng mẫu thiệp</h1>
+          <p>Mỗi thiệp được liên kết với tài khoản của bạn để quản lý thanh toán, lịch sử chỉnh sửa và link phát hành an toàn.</p>
+          <a className="commercePrimaryAction" href={loginUrl}>Đăng nhập hoặc tạo tài khoản <ArrowRight /></a>
+        </main>
+        <StudioFooter />
+      </div>
+    );
+  }
+
   if (state.result) {
     return (
       <div className="commercePage">
@@ -80,15 +109,18 @@ export default function OrderPage() {
           <span className="commerceSuccessIcon"><Check /></span>
           <p className="commerceEyebrow">ĐÃ TIẾP NHẬN YÊU CẦU</p>
           <h1>Mã đơn {state.result.publicId}</h1>
-          <p>Link quản lý bên dưới chứa khóa riêng của đơn hàng. Chỉ gửi cho người cùng chuẩn bị thiệp.</p>
+          <p>Đơn đã được tạo trong tài khoản của bạn. Hoàn tất thanh toán 50.000đ để mở toàn bộ quyền tự chỉnh sửa thiệp.</p>
           <div className="commerceLinkBox"><code>{portalUrl}</code><button type="button" onClick={copyPortal} aria-label="Sao chép link"><Copy /></button></div>
           {state.copied && <span className="commerceInlineStatus">Đã sao chép link.</span>}
           <dl className="commerceReceipt">
-            <div><dt>Tổng gói</dt><dd>{formatCurrency(state.result.amountTotal)}</dd></div>
-            <div><dt>Tiền cọc</dt><dd>{formatCurrency(state.result.depositAmount)}</dd></div>
-            <div><dt>Trạng thái</dt><dd>Chờ xác nhận cọc</dd></div>
+            <div><dt>Giá thiệp</dt><dd>{formatCurrency(state.result.amountTotal)}</dd></div>
+            <div><dt>Thanh toán</dt><dd>{formatCurrency(state.result.depositAmount)}</dd></div>
+            <div><dt>Trạng thái</dt><dd>Chờ xác nhận thanh toán</dd></div>
           </dl>
-          <a className="commercePrimaryAction" href={portalUrl}>Mở cổng khách hàng <ExternalLink /></a>
+          <div className="commerceSuccessActions">
+            <a className="commercePrimaryAction" href={portalUrl}>Thanh toán & mở khóa editor <ArrowRight /></a>
+            <a className="commerceSecondaryAction" href="/tai-khoan">Về dashboard <ExternalLink /></a>
+          </div>
         </main>
         <StudioFooter />
       </div>
@@ -102,24 +134,20 @@ export default function OrderPage() {
         <header className="commercePageHeader">
           <p className="commerceEyebrow">ĐẶT THIỆP CƯỚI ONLINE</p>
           <h1>Gửi thông tin để bắt đầu thiết kế</h1>
-          <p>Bạn nhận link xem trước riêng tư trước khi thiệp được phát hành chính thức.</p>
+          <p>Đã đăng nhập với <strong>{session.user?.email || 'tài khoản của bạn'}</strong>. Sau thanh toán, bạn có thể tự chỉnh sửa không giới hạn.</p>
         </header>
 
         <form className="commerceOrderForm" onSubmit={submit}>
           <section>
-            <div className="commerceSectionTitle"><span>01</span><div><h2>Chọn gói dịch vụ</h2><p>Giá thử nghiệm đã gồm link, QR và ảnh chia sẻ.</p></div></div>
-            <div className="commercePackageGrid">
-              {Object.values(commercePackages).map((item) => (
-                <label className={form.packageCode === item.code ? 'is-selected' : ''} key={item.code}>
-                  <input type="radio" name="packageCode" value={item.code} checked={form.packageCode === item.code} onChange={update} />
-                  <strong>{item.name}</strong><b>{formatCurrency(item.amount)}</b><span>{item.description}</span>
-                </label>
-              ))}
+            <div className="commerceSectionTitle"><span>01</span><div><h2>Thanh toán để mở khóa mẫu</h2><p>Sau khi thanh toán, editor sẽ mở đầy đủ ảnh, nội dung, font, màu sắc, nhạc, QR và RSVP.</p></div></div>
+            <div className="commerceSinglePrice">
+              <div><small>THIỆP CƯỚI ONLINE</small><strong>{formatCurrency(selectedPackage.amount)}</strong><p>{selectedPackage.description}</p></div>
+              <span><Check size={17} /> Áp dụng cho toàn bộ thư viện mẫu</span>
             </div>
           </section>
 
           <section>
-            <div className="commerceSectionTitle"><span>02</span><div><h2>Chọn mẫu bán trực tiếp</h2><p>Đang chọn: {getInvitationDisplayTitle(form.templateSlug)}. Các mẫu còn lại được studio cá nhân hóa theo yêu cầu.</p></div></div>
+            <div className="commerceSectionTitle"><span>02</span><div><h2>Chọn mẫu để bắt đầu</h2><p>Đang chọn: {getInvitationDisplayTitle(form.templateSlug)}. Sau khi tạo, hai bạn có thể tự thay ảnh, nội dung, nhạc, RSVP và QR.</p></div></div>
             <div className="commerceTemplateSelect">
               {commercialTemplateSlugs.map((slug) => (
                 <label className={form.templateSlug === slug ? 'is-selected' : ''} key={slug}>
@@ -159,10 +187,10 @@ export default function OrderPage() {
           </section>
 
           <section className="commerceCheckout">
-            <div><small>Gói {selectedPackage.name}</small><strong>{formatCurrency(selectedPackage.amount)}</strong><span>Cọc {formatCurrency(selectedPackage.depositAmount)}</span></div>
+            <div><small>Thanh toán một lần cho mẫu đã chọn</small><strong>{formatCurrency(selectedPackage.amount)}</strong><span>Không có gói nâng cấp hoặc phí theo mẫu</span></div>
             <label className="commerceConsent"><input type="checkbox" name="consent" checked={form.consent} onChange={update} required /><span>Tôi đồng ý với <a href="/dieu-khoan-dich-vu">điều khoản dịch vụ</a> và việc xử lý dữ liệu theo <a href="/chinh-sach-bao-mat">chính sách bảo mật</a>.</span></label>
             {state.error && <p className="commerceError" role="alert">{state.error}</p>}
-            <button className="commercePrimaryAction" type="submit" disabled={state.loading}>{state.loading ? 'Đang tạo đơn...' : <>Tạo đơn và nhận link riêng <ArrowRight /></>}</button>
+            <button className="commercePrimaryAction" type="submit" disabled={state.loading}>{state.loading ? 'Đang tạo đơn...' : <>Tiếp tục thanh toán 50.000đ <ArrowRight /></>}</button>
             <p><LockKeyhole /> Không tải ảnh cưới lên source code hoặc thư viện công khai.</p>
           </section>
         </form>

@@ -3,7 +3,7 @@ import { selfPublishSchema } from '../server/validators.js';
 import { getSceneTemplate } from '../src/commerce/scene/sceneTemplates.js';
 import { runInvitationPreflight } from '../src/commerce/scene/scenePreflight.js';
 
-const autoPublishPackages = new Set(['basic', 'premium']);
+const autoPublishPackages = new Set(['basic']);
 
 export default async function handler(req, res) {
   if (!allowMethod(req, res, ['POST'])) return;
@@ -31,7 +31,7 @@ export default async function handler(req, res) {
       return;
     }
     if (order.deposit_status !== 'paid') {
-      const unpaid = new Error('Studio cần xác nhận tiền cọc trước khi tự phát hành.');
+      const unpaid = new Error('Cần xác nhận thanh toán trước khi tự phát hành.');
       unpaid.statusCode = 409;
       throw unpaid;
     }
@@ -77,7 +77,7 @@ export default async function handler(req, res) {
       throw conflict;
     }
     if (publishError?.message?.includes('deposit_not_paid')) {
-      const unpaid = new Error('Studio cần xác nhận tiền cọc trước khi tự phát hành.');
+      const unpaid = new Error('Cần xác nhận thanh toán trước khi tự phát hành.');
       unpaid.statusCode = 409;
       throw unpaid;
     }

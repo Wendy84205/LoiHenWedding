@@ -23,7 +23,7 @@ const orderInput = {
   address: 'Hà Nội',
   mapUrl: '',
   invitationMessage: 'Trân trọng kính mời.',
-  packageCode: 'premium',
+  packageCode: 'basic',
   templateSlug: 'thiep-cuoi-44',
   customerNote: '',
 };
@@ -159,22 +159,18 @@ describe('local commerce draft versions', () => {
     expect(localGetOrder(created.orderId).invitation.content.media.giftQr).toBe('');
   });
 
-  it('allows paid Basic and Premium orders to self-publish after preflight', () => {
+  it('allows a paid single-price order to self-publish after preflight', () => {
     const created = localCreateOrder(orderInput);
-    expect(() => localSelfPublishOrder(created.orderId)).toThrow('xác nhận tiền cọc');
+    expect(() => localSelfPublishOrder(created.orderId)).toThrow('xác nhận thanh toán');
     localUpdateOrder(created.orderId, { depositStatus: 'paid' });
     const result = localSelfPublishOrder(created.orderId);
     expect(result).toMatchObject({ ok: true, reviewRequired: false, status: 'published' });
     expect(localGetOrder(created.orderId).invitation.status).toBe('published');
   });
 
-  it('routes Signature orders to studio review instead of self-publishing', () => {
+  it('normalizes a legacy package request to the single-price plan', () => {
     const created = localCreateOrder({ ...orderInput, packageCode: 'signature' });
-    expect(localSelfPublishOrder(created.orderId)).toMatchObject({
-      ok: true,
-      reviewRequired: true,
-      status: 'customer_review',
-    });
-    expect(localGetOrder(created.orderId).status).toBe('customer_review');
+    expect(localGetOrder(created.orderId).package_code).toBe('basic');
+    expect(localGetOrder(created.orderId).amount_total).toBe(50000);
   });
 });

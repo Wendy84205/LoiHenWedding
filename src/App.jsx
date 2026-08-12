@@ -140,7 +140,7 @@ function App() {
   if (adminOrderId) return <RoutedPage><AdminOrderDetail orderId={adminOrderId} /></RoutedPage>;
   if (Projection) return <RoutedPage><Projection /></RoutedPage>;
   if (pathname === '/') return <RoutedPage><StudioHome /></RoutedPage>;
-  if (pathname === '/mau-thiep') return <RoutedPage><StudioServicePages type="invitations" view="library" /></RoutedPage>;
+  if (pathname === '/mau-thiep') return <RoutedPage><TemplatesDashboard /></RoutedPage>;
   if (pathname === '/dich-vu/thiep-cuoi-online') return <RoutedPage><StudioServicePages type="invitations" /></RoutedPage>;
   if (pathname === '/dich-vu/trap-cuoi') return <RoutedPage><StudioServicePages type="trays" /></RoutedPage>;
   if (pathname === '/dich-vu/trinh-chieu') return <RoutedPage><StudioServicePages type="projection" /></RoutedPage>;

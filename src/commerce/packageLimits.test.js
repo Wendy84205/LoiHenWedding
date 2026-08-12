@@ -25,10 +25,10 @@ describe('commerce package limits', () => {
     ], { kind: 'payment_proof', byteSize: 6 * 1024 * 1024 })).toThrow('vượt quá 30 MB');
   });
 
-  it('rejects new images after the package limit', () => {
-    const assets = Array.from({ length: 15 }, (_, index) => ({ kind: 'gallery', byte_size: index + 1 }));
+  it('rejects new images after the single-plan limit', () => {
+    const assets = Array.from({ length: 50 }, (_, index) => ({ kind: 'gallery', byte_size: index + 1 }));
     expect(() => assertPackageAssetQuota('basic', assets, { kind: 'gallery', byteSize: 100 }))
-      .toThrow('tối đa 15 ảnh');
+      .toThrow('tối đa 50 ảnh');
   });
 
   it('formats commercial storage limits', () => {
@@ -36,8 +36,8 @@ describe('commerce package limits', () => {
     expect(formatStorage(1073741824)).toBe('1 GB');
   });
 
-  it('enforces personalized guest limits', () => {
-    expect(() => assertPackageGuestQuota('basic', 100, 1)).toThrow('tối đa 100 khách');
-    expect(assertPackageGuestQuota('premium', 499, 1)).toBe(500);
+  it('enforces the single-plan personalized guest limit', () => {
+    expect(() => assertPackageGuestQuota('basic', 1000, 1)).toThrow('tối đa 1000 khách');
+    expect(assertPackageGuestQuota('basic', 999, 1)).toBe(1000);
   });
 });

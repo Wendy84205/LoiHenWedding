@@ -9,7 +9,7 @@ async function openDemoAccount(page, email = 'an@example.com') {
   await page.goto('/tai-khoan');
   await page.getByLabel('Email').fill(email);
   await page.getByRole('button', { name: /mở tài khoản demo/i }).click();
-  await expect(page.getByRole('heading', { name: /đơn hàng và bản thiết kế/i })).toBeVisible();
+  await expect(page.locator('.dash-layout')).toBeVisible();
 }
 
 async function openDemoEditor(page) {
@@ -27,6 +27,7 @@ async function waitForAutosave(page) {
 }
 
 async function createOrder(page) {
+  await openDemoAccount(page);
   await page.goto('/dat-thiep');
   await page.locator('input[name="fullName"]').fill('Nguyễn An');
   await page.locator('input[name="phone"]').fill('0901234567');
@@ -35,31 +36,38 @@ async function createOrder(page) {
   await page.locator('input[name="venueName"]').fill('Lời Hẹn Palace');
   await page.locator('input[name="address"]').fill('Hà Nội');
   await page.locator('input[name="consent"]').check();
-  await page.getByRole('button', { name: /tạo đơn và nhận link riêng/i }).click();
+  await page.getByRole('button', { name: /tiếp tục thanh toán 50.000đ/i }).click();
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Mã đơn LH-DEMO');
+  const portalUrl = await page.locator('.commercePrimaryAction').getAttribute('href');
+  const orderId = new URL(portalUrl).pathname.split('/').pop();
   return {
     publicId: (await page.getByRole('heading', { level: 1 }).textContent()).replace('Mã đơn ', '').trim(),
-    portalUrl: await page.locator('.commercePrimaryAction').getAttribute('href'),
+    editorUrl: `/chinh-sua-thiep/${orderId}`,
+    portalUrl,
   };
 }
 
-test('customer can create an order and open the private portal', async ({ page }) => {
-  const { portalUrl } = await createOrder(page);
+test('customer can create an order, sees the editor locked before payment and opens the private portal', async ({ page }) => {
+  const { editorUrl, portalUrl } = await createOrder(page);
+  expect(editorUrl).toContain('/chinh-sua-thiep/');
+  await page.goto(editorUrl);
+  await expect(page.locator('.editorPaymentGate')).toBeVisible();
   expect(portalUrl).toContain('/don-hang/');
   await page.goto(portalUrl);
   await expect(page.getByText('CỔNG KHÁCH HÀNG')).toBeVisible();
   await expect(page.getByRole('heading', { level: 2, name: /Đức Anh/ })).toBeVisible();
 });
 
-test('catalog selection pre-fills a validated editable template and package', async ({ page }) => {
+test('catalog selection pre-fills a validated editable template at the single fixed price', async ({ page }) => {
   await page.goto('/dat-thiep?template=thiep-cuoi-61&package=basic');
   await expect(page.locator('input[name="templateSlug"][value="thiep-cuoi-61"]')).toBeChecked();
-  await expect(page.locator('input[name="packageCode"][value="basic"]')).toBeChecked();
   await expect(page.getByText(/Đang chọn: Nắng Mai/)).toBeVisible();
+  await expect(page.getByText('50.000đ').first()).toBeVisible();
+  await expect(page.locator('input[name="packageCode"]')).toHaveCount(0);
 
   await page.goto('/dat-thiep?template=thiep-cuoi-8&package=unknown');
   await expect(page.locator('input[name="templateSlug"][value="thiep-cuoi-8"]')).toBeChecked();
-  await expect(page.locator('input[name="packageCode"][value="premium"]')).toBeChecked();
+  await expect(page.getByText(/Không có gói nâng cấp hoặc phí theo mẫu/)).toBeVisible();
 });
 
 test('studio consultation retains the selected template context', async ({ page }) => {
@@ -135,7 +143,7 @@ test('published invitation exposes handoff, RSVP dashboard and personalized link
 test('customer can sign in with Google in demo mode and retain the session', async ({ page }) => {
   await page.goto('/tai-khoan');
   await page.getByRole('button', { name: 'Đăng nhập bằng Google' }).click();
-  await expect(page.getByRole('heading', { name: /đơn hàng và bản thiết kế/i })).toBeVisible();
+  await expect(page.locator('.dash-layout')).toBeVisible();
   await expect(page.getByText('google-demo@loihen.local')).toBeVisible();
   await page.reload();
   await expect(page.getByText('google-demo@loihen.local')).toBeVisible();
@@ -145,7 +153,7 @@ test('customer can open the demo account without entering an email', async ({ pa
   await page.goto('/tai-khoan');
   await expect(page.getByLabel('Email (không bắt buộc trong demo)')).not.toHaveAttribute('required', '');
   await page.getByRole('button', { name: 'Mở tài khoản demo' }).click();
-  await expect(page.getByRole('heading', { name: /đơn hàng và bản thiết kế/i })).toBeVisible();
+  await expect(page.locator('.dash-layout')).toBeVisible();
   await expect(page.getByText('khach@loihen.local')).toBeVisible();
 });
 

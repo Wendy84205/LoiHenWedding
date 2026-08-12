@@ -3,7 +3,7 @@ import {
   AlignCenter, AlignLeft, AlignRight, ArrowLeft, Bold, CalendarDays, Check, Cloud,
   ExternalLink, Eye, FileText, Image, Italic,
   History as HistoryIcon, Images, Layers3, LayoutTemplate, Monitor, Music2, Plus, Redo2, RefreshCw,
-  Palette, Pause, Play, RotateCcw, Send, Smartphone, Sparkles, Trash2, Type, Undo2, Upload, Users,
+  Palette, Pause, Play, RotateCcw, Send, Smartphone, Sparkles, Trash2, Type, Undo2, Upload, Users, LockKeyhole,
   VolumeX, ZoomIn, ZoomOut,
 } from 'lucide-react';
 import {
@@ -689,6 +689,15 @@ export default function InvitationEditor({ orderId }) {
 
   if (ui.loading) return <main className="editorState"><RefreshCw className="is-spinning" /><p>Đang tải trình chỉnh sửa...</p></main>;
   if (!order || !content || !manifest || !sceneTemplate || !design || !resolvedScene) return <main className="editorState"><h1>Không thể mở trình chỉnh sửa</h1><p>{ui.error || 'Mẫu này chưa hỗ trợ scene editor.'}</p><a href={`/don-hang/${orderId}`}>Quay lại đơn hàng</a></main>;
+  if (order.deposit_status !== 'paid') return (
+    <main className="editorState editorPaymentGate">
+      <LockKeyhole />
+      <p className="editorEyebrow">EDITOR ĐANG KHÓA</p>
+      <h1>Hoàn tất thanh toán để mở quyền chỉnh sửa</h1>
+      <p>Mức phí 50.000đ mở toàn bộ công cụ thay ảnh, nội dung, font, màu sắc, bố cục, nhạc, QR, RSVP, lưu phiên bản và phát hành link.</p>
+      <a className="editorGateAction" href={`/don-hang/${orderId}`}>Đi tới thanh toán <ArrowLeft /> </a>
+    </main>
+  );
 
   const visibleAssets = order.assets.filter((asset) => asset.kind !== 'payment_proof');
   const selectedLayerInfo = manifest.layers.find((item) => item.key === selectedLayer) || manifest.layers[0];

@@ -1,4 +1,4 @@
-import { allowMethod, createAccessToken, createPublicOrderId, getBearerToken, getClientAddress, getServiceClient, hashValue, requireAdmin, requireUser, sendError } from '../server/commerce.js';
+import { allowMethod, createAccessToken, createPublicOrderId, getClientAddress, getServiceClient, hashValue, requireAdmin, requireUser, sendError } from '../server/commerce.js';
 import { createOrderSchema } from '../server/validators.js';
 import { buildInitialInvitationContent, commercePackages, slugifyWedding } from '../src/commerce/invitationContent.js';
 import { createScenePatch } from '../src/commerce/scene/sceneSchema.js';
@@ -24,7 +24,7 @@ export default async function handler(req, res) {
     }
 
     const input = createOrderSchema.parse(req.body || {});
-    const packageInfo = commercePackages[input.packageCode];
+    const packageInfo = commercePackages.basic;
     const sourceHash = hashValue(getClientAddress(req));
     const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000).toISOString();
     const { count: recentOrders, error: rateError } = await supabase.from('orders').select('id', { count: 'exact', head: true }).eq('source_hash', sourceHash).gte('created_at', oneHourAgo);
@@ -41,7 +41,7 @@ export default async function handler(req, res) {
     const expiresAt = new Date();
     expiresAt.setMonth(expiresAt.getMonth() + packageInfo.retentionMonths);
 
-    const accountUser = getBearerToken(req) ? await requireUser(req, supabase) : null;
+    const accountUser = await requireUser(req, supabase);
     let customerId = null;
     let customerCreated = false;
     let orderId = null;
@@ -65,9 +65,9 @@ export default async function handler(req, res) {
         const { data: customer, error: customerError } = await supabase
           .from('customers')
           .insert({
-            auth_user_id: accountUser?.id || null,
+            auth_user_id: accountUser.id,
             full_name: input.fullName,
-            email: input.email || accountUser?.email || null,
+            email: input.email || accountUser.email || null,
             phone: input.phone,
             zalo: input.zalo || null,
             consent_at: new Date().toISOString(),
@@ -84,7 +84,7 @@ export default async function handler(req, res) {
         .insert({
           public_id: publicId,
           customer_id: customerId,
-          package_code: input.packageCode,
+          package_code: packageInfo.code,
           template_slug: input.templateSlug,
           status: 'awaiting_deposit',
           amount_total: packageInfo.amount,
@@ -151,7 +151,7 @@ export default async function handler(req, res) {
       if (paymentError) throw paymentError;
 
       const origin = process.env.PUBLIC_SITE_URL || 'https://thiep-moi-online.vercel.app';
-      const customerEmail = input.email || accountUser?.email || '';
+      const customerEmail = input.email || accountUser.email || '';
       const notification = getNotificationConfiguration();
       const customerPortalUrl = `${origin}/don-hang/${orderId}?token=${encodeURIComponent(accessToken)}`;
       const adminUrl = `${origin}/admin/orders/${orderId}`;
@@ -160,7 +160,7 @@ export default async function handler(req, res) {
           to: notification.studioEmail,
           subject: `[${publicId}] Đơn thiệp cưới mới`,
           text: `${input.fullName} vừa đặt mẫu ${input.templateSlug}. Ngày cưới: ${input.eventDate} ${input.eventTime}. Mở đơn: ${adminUrl}`,
-          html: `<h1>Đơn thiệp cưới mới</h1><p><strong>${escapeEmailHtml(publicId)}</strong></p><p>Khách: ${escapeEmailHtml(input.fullName)} · ${escapeEmailHtml(input.phone)}</p><p>Mẫu: ${escapeEmailHtml(input.templateSlug)} · Gói: ${escapeEmailHtml(packageInfo.name)}</p><p>Ngày cưới: ${escapeEmailHtml(input.eventDate)} ${escapeEmailHtml(input.eventTime)}</p><p><a href="${escapeEmailHtml(adminUrl)}">Mở đơn trong quản trị</a></p>`,
+          html: `<h1>Đơn thiệp cưới mới</h1><p><strong>${escapeEmailHtml(publicId)}</strong></p><p>Khách: ${escapeEmailHtml(input.fullName)} · ${escapeEmailHtml(input.phone)}</p><p>Mẫu: ${escapeEmailHtml(input.templateSlug)} · Giá: ${escapeEmailHtml(String(packageInfo.amount))}đ</p><p>Ngày cưới: ${escapeEmailHtml(input.eventDate)} ${escapeEmailHtml(input.eventTime)}</p><p><a href="${escapeEmailHtml(adminUrl)}">Mở đơn trong quản trị</a></p>`,
           idempotencyKey: `${orderId}-created-studio`,
         }),
         customerEmail ? sendTransactionalEmailSafely({

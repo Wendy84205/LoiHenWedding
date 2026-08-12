@@ -65,13 +65,13 @@ function seedStore() {
       public_id: 'LH-DEMO-001',
       access_token: previewToken,
       preview_token: previewToken,
-      package_code: 'premium',
+      package_code: 'basic',
       template_slug: 'thiep-cuoi-104',
       status: 'published',
-      amount_total: commercePackages.premium.amount,
-      deposit_amount: commercePackages.premium.depositAmount,
+      amount_total: commercePackages.basic.amount,
+      deposit_amount: commercePackages.basic.depositAmount,
       deposit_status: 'paid',
-      revision_limit: 2,
+      revision_limit: commercePackages.basic.revisionLimit,
       revision_count: 0,
       customer_note: 'Đơn mẫu dùng để kiểm tra quy trình thương mại.',
       internal_note: '',
@@ -98,7 +98,7 @@ function seedStore() {
       },
       events: [{ id: crypto.randomUUID(), name: 'Lễ thành hôn', starts_at: content.event.startsAt, venue_name: content.event.venueName, address: content.event.address, map_url: content.event.mapUrl, sort_order: 0 }],
       assets: [],
-      payments: [{ id: crypto.randomUUID(), provider: 'bank_transfer', status: 'paid', amount: commercePackages.premium.depositAmount, created_at: nowIso() }],
+      payments: [{ id: crypto.randomUUID(), provider: 'bank_transfer', status: 'paid', amount: commercePackages.basic.depositAmount, created_at: nowIso() }],
       revisions: [],
     }],
     rsvps: [],
@@ -227,7 +227,7 @@ export function localGetOrder(orderId) {
 
 export function localCreateOrder(input) {
   const store = readStore();
-  const packageInfo = commercePackages[input.packageCode];
+  const packageInfo = commercePackages.basic;
   const orderId = crypto.randomUUID();
   const invitationId = crypto.randomUUID();
   const token = crypto.randomUUID().replaceAll('-', '') + crypto.randomUUID().replaceAll('-', '');
@@ -243,7 +243,7 @@ export function localCreateOrder(input) {
     public_id: publicId,
     access_token: token,
     preview_token: previewToken,
-    package_code: input.packageCode,
+    package_code: packageInfo.code,
     template_slug: input.templateSlug,
     status: 'awaiting_deposit',
     amount_total: packageInfo.amount,
@@ -301,7 +301,7 @@ export function localUpdateOrder(orderId, patch, role = 'admin') {
   if (role === 'customer') {
     if (patch.customerNote !== undefined) order.customer_note = patch.customerNote;
     if (patch.revisionMessage) {
-      if (order.revision_count >= order.revision_limit) throw new Error('Đơn hàng đã sử dụng hết số lần chỉnh sửa trong gói.');
+      if (order.revision_count >= order.revision_limit) throw new Error('Đơn hàng đã sử dụng hết số lần hỗ trợ chỉnh sửa.');
       order.revisions.unshift({ id: crypto.randomUUID(), requested_by: 'customer', message: patch.revisionMessage, status: 'open', created_at: nowIso() });
       order.status = 'revision';
       order.revision_count += 1;
@@ -425,11 +425,11 @@ export function localPublishOrder(orderId, slug, expiresAt) {
 export function localSelfPublishOrder(orderId) {
   const order = readStore().orders.find((item) => item.id === orderId);
   if (!order) throw new Error('Không tìm thấy đơn hàng.');
-  if (!['basic', 'premium'].includes(order.package_code)) {
+  if (order.package_code !== 'basic') {
     localSubmitInvitationReview(orderId);
     return { ok: true, reviewRequired: true, status: 'customer_review' };
   }
-  if (order.deposit_status !== 'paid') throw new Error('Studio cần xác nhận tiền cọc trước khi tự phát hành.');
+  if (order.deposit_status !== 'paid') throw new Error('Cần xác nhận thanh toán trước khi tự phát hành.');
   const preflight = runInvitationPreflight({
     content: order.invitation.content,
     design: order.invitation.design,

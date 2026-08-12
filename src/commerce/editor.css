@@ -589,6 +589,14 @@
   color: #8b2335;
 }
 
+.editorPaymentGate { padding: 32px; }
+.editorPaymentGate > svg { width: 42px; height: 42px; color: #8b2335; }
+.editorPaymentGate .editorEyebrow { color: #8b2335; font-size: 11px; font-weight: 800; letter-spacing: .13em; }
+.editorPaymentGate h1 { font: 600 clamp(30px, 5vw, 48px)/1.04 "Cormorant Garamond", Georgia, serif; }
+.editorPaymentGate p:not(.editorEyebrow) { max-width: 500px; color: #6b6560; line-height: 1.7; }
+.editorGateAction { align-items: center; background: #8b2335; border-radius: 3px; color: #fff !important; display: inline-flex; gap: 8px; margin-top: 12px; padding: 13px 18px; text-decoration: none; }
+.editorGateAction svg { transform: rotate(180deg); width: 17px; }
+
 .is-spinning,
 .state-saving svg {
   animation: editorSpin .9s linear infinite;
