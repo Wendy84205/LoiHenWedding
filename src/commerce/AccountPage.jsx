@@ -216,6 +216,10 @@ function OverviewTab({ account, metrics, onTab }) {
   const email = account?.user?.email || '';
   const name = account?.customer?.full_name || 'Khách hàng';
   const initials = name.split(' ').map(w => w[0]).slice(-2).join('').toUpperCase();
+  const pendingOrder = (account?.orders || []).find((order) => order.deposit_status !== 'paid');
+  const unlockedOrder = (account?.orders || []).find((order) => order.deposit_status === 'paid');
+  const nextHref = pendingOrder ? `/don-hang/${pendingOrder.id}` : unlockedOrder ? `/chinh-sua-thiep/${unlockedOrder.id}` : '/mau-thiep';
+  const nextLabel = pendingOrder ? 'Thanh toán để mở khóa' : unlockedOrder ? 'Mở editor của tôi' : 'Chọn mẫu thiệp';
 
   const quickTools = [
     { icon: <Layout size={20} />, label: 'Chọn mẫu thiệp', color: 'purple', onClick: () => window.location.href = '/mau-thiep' },
@@ -240,6 +244,16 @@ function OverviewTab({ account, metrics, onTab }) {
           </div>
         </div>
       </div>
+
+      <section className="dash-journey-card" aria-label="Hành trình tạo thiệp">
+        <div className="dash-journey-copy"><span>HÀNH TRÌNH CỦA BẠN</span><h2>Tạo thiệp trong ba bước rõ ràng</h2><p>Chọn mẫu yêu thích, thanh toán 50.000đ và mở toàn bộ editor để cá nhân hóa thiệp theo câu chuyện của hai bạn.</p></div>
+        <ol className="dash-journey-steps">
+          <li className={!pendingOrder && !unlockedOrder ? 'is-current' : 'is-done'}><b>01</b><div><strong>Chọn mẫu</strong><small>Khám phá thư viện và lưu mẫu yêu thích.</small></div></li>
+          <li className={pendingOrder ? 'is-current' : unlockedOrder ? 'is-done' : ''}><b>02</b><div><strong>Thanh toán</strong><small>Một mức giá 50.000đ cho mọi mẫu.</small></div></li>
+          <li className={unlockedOrder ? 'is-current' : ''}><b>03</b><div><strong>Tự chỉnh sửa</strong><small>Ảnh, font, nhạc, QR, RSVP và phát hành.</small></div></li>
+        </ol>
+        <a className="dash-journey-action" href={nextHref}>{nextLabel} <ArrowRight size={15} /></a>
+      </section>
 
       {/* Stats section */}
       <div className="dash-section-header">
