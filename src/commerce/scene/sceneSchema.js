@@ -1,15 +1,17 @@
 import { z } from 'zod';
 import { isInvitationTextFieldKey } from '../invitationContent.js';
+import { WEDDING_STICKER_IDS } from './weddingStickerLibrary.js';
 
 export const SCENE_SCHEMA_VERSION = 1;
 export const SCENE_NODE_TYPES = Object.freeze([
   'text', 'image', 'shape', 'calendar', 'countdown', 'map', 'rsvp', 'wish',
-  'giftQr', 'envelope', 'album', 'carousel', 'particle',
+  'giftQr', 'envelope', 'album', 'carousel', 'particle', 'sticker',
 ]);
 export const SCENE_ENTRANCE_EFFECTS = Object.freeze(['none', 'fade', 'rise', 'left', 'right', 'zoom']);
 export const SCENE_CONTINUOUS_EFFECTS = Object.freeze(['none', 'float', 'pulse', 'sway']);
 export const SCENE_EASINGS = Object.freeze(['linear', 'ease', 'ease-in', 'ease-out', 'ease-in-out']);
 export const SCENE_SHAPES = Object.freeze(['rectangle', 'circle', 'line', 'heart']);
+export const SCENE_STICKERS = WEDDING_STICKER_IDS;
 
 const sceneId = z.string().min(1).max(64).regex(/^[a-z0-9_-]+$/i);
 const color = z.string().regex(/^(?:#[0-9a-f]{6}|transparent)$/i);
@@ -69,6 +71,7 @@ export const sceneNodePropsSchema = z.object({
   orientation: z.enum(['horizontal', 'vertical']).optional(),
   calendarStyle: z.enum(['minimal', 'heart', 'editorial']).optional(),
   particle: z.enum(['sparkle', 'petal', 'snow']).optional(),
+  sticker: z.enum(SCENE_STICKERS).optional(),
   maxItems: z.number().int().min(1).max(60).optional(),
   columns: z.number().int().min(1).max(4).optional(),
   lockedUntilOpen: z.boolean().optional(),

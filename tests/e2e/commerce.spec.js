@@ -7,14 +7,20 @@ test.beforeEach(async ({ page }) => {
 
 async function openDemoAccount(page, email = 'an@example.com') {
   await page.goto('/tai-khoan');
-  await page.getByLabel('Email').fill(email);
-  await page.getByRole('button', { name: /mở tài khoản demo/i }).click();
-  await expect(page.locator('.dash-layout')).toBeVisible();
+  const dashboard = page.locator('.dash-layout');
+  const demoButton = page.getByRole('button', { name: /mở tài khoản demo/i });
+  await expect(dashboard.or(demoButton)).toBeVisible();
+  if (await dashboard.isVisible()) return;
+  await page.getByLabel(/Email của bạn/i).fill(email);
+  await demoButton.click();
+  await expect(dashboard).toBeVisible();
 }
 
 async function openDemoEditor(page) {
   await openDemoAccount(page);
-  const order = page.locator('.accountOrderList article').filter({ hasText: 'LH-DEMO-001' });
+  await page.getByRole('button', { name: 'Quản lý thiệp' }).click();
+  const order = page.locator('.dash-order-card').filter({ hasText: 'LH-DEMO-001' });
+  await expect(order).toBeVisible();
   await order.getByRole('link', { name: /chỉnh thiệp/i }).click();
   await expect(page.locator('.invitationEditor')).toBeVisible();
   await expect(page.locator('.sceneEditorShell')).toBeAttached();
@@ -33,7 +39,8 @@ async function createOrder(page) {
   await expect(page.locator('.invitationEditor')).toBeVisible();
   const editorUrl = page.url();
   const orderId = new URL(editorUrl).pathname.split('/').pop();
-  return { editorUrl, portalUrl: `/don-hang/${orderId}` };
+  const publicId = await page.locator('.editorIdentity strong').innerText();
+  return { editorUrl, portalUrl: `/don-hang/${orderId}`, publicId };
 }
 
 test('customer can create an order, edit before payment and open the QR payment portal when ready to publish', async ({ page }) => {
@@ -49,11 +56,35 @@ test('customer can create an order, edit before payment and open the QR payment 
   await expect(page.getByText(/thanh toán để phát hành/i).first()).toBeVisible();
 });
 
+test('editor adds, changes and persists themed wedding stickers', async ({ page }) => {
+  const { editorUrl } = await createOrder(page);
+  await page.goto(editorUrl);
+  await page.getByRole('button', { name: 'Thành phần' }).click();
+  await expect(page.getByRole('tab', { name: 'Tình yêu' })).toBeVisible();
+  await expect(page.getByRole('tab')).toHaveCount(5);
+  await page.getByRole('tab', { name: 'Ngày vui' }).click();
+  await page.getByRole('button', { name: 'Thêm sticker Bánh cưới' }).click();
+
+  const stickerNode = page.locator('[data-node-type="sticker"]').last();
+  await expect(stickerNode).toContainText('🎂');
+  const inspector = page.locator('.sceneNodeInspector');
+  await expect(inspector.getByRole('heading', { name: /nhãn dán bánh cưới/i })).toBeVisible();
+  await inspector.getByLabel('Kiểu nhãn dán').selectOption('dove');
+  await expect(stickerNode).toContainText('🕊');
+  await waitForAutosave(page);
+
+  await page.reload();
+  await expect(page.locator('[data-node-type="sticker"]')).toHaveCount(1);
+  await expect(page.locator('[data-node-type="sticker"]')).toContainText('🕊');
+  await page.getByRole('button', { name: 'Lớp' }).click();
+  await expect(page.getByText(/nhãn dán bánh cưới/i).first()).toBeVisible();
+});
+
 test('catalog selection opens a direct editable draft at the single fixed price', async ({ page }) => {
   await openDemoAccount(page);
   await page.goto('/dat-thiep?template=thiep-cuoi-61');
   await expect(page.getByText(/thiệp nháp.*nắng mai/i)).toBeVisible();
-  await expect(page.getByText('50.000đ').first()).toBeVisible();
+  await expect(page.getByText(/50\.000\s?₫/).first()).toBeVisible();
   await expect(page.getByRole('button', { name: /dùng mẫu này và bắt đầu chỉnh sửa/i })).toBeVisible();
 
   await page.goto('/dat-thiep?template=thiep-cuoi-8');
@@ -103,23 +134,21 @@ test('homepage consultation is persisted in the admin lead inbox', async ({ page
   await expect(lead).toContainText('Thiệp cưới Online');
 });
 
-test('customer can claim an existing private order into an account', async ({ page }) => {
-  const { publicId, portalUrl } = await createOrder(page);
+test('newly created invitation is visible in the signed-in account dashboard', async ({ page }) => {
+  const { publicId } = await createOrder(page);
   await openDemoAccount(page);
-  await expect(page.getByText(publicId)).toHaveCount(0);
-  await page.getByPlaceholder('Dán link quản lý đơn hàng...').fill(portalUrl);
-  await page.getByRole('button', { name: /thêm đơn/i }).click();
-  await expect(page.getByText('Đã thêm đơn hàng vào tài khoản.')).toBeVisible();
-  const claimedOrder = page.locator('.accountOrderList article').filter({ hasText: publicId });
-  await expect(claimedOrder).toBeVisible();
-  await claimedOrder.getByRole('link', { name: /quản lý đơn/i }).click();
+  await page.getByRole('button', { name: 'Quản lý thiệp' }).click();
+  const ownedOrder = page.locator('.dash-order-card').filter({ hasText: publicId });
+  await expect(ownedOrder).toBeVisible();
+  await ownedOrder.getByRole('link', { name: /thanh toán để phát hành/i }).click();
   await expect(page.getByText('CỔNG KHÁCH HÀNG')).toBeVisible();
 });
 
 test('published invitation exposes handoff, RSVP dashboard and personalized links', async ({ page }) => {
   await openDemoAccount(page);
-  const order = page.locator('.accountOrderList article').filter({ hasText: 'LH-DEMO-001' });
-  await order.getByRole('link', { name: /quản lý đơn/i }).click();
+  await page.getByRole('button', { name: 'Quản lý thiệp' }).click();
+  const order = page.locator('.dash-order-card').filter({ hasText: 'LH-DEMO-001' });
+  await order.getByRole('link', { name: 'Đã thanh toán' }).click();
   await expect(page.getByRole('heading', { name: 'Thiệp đã sẵn sàng để gửi khách' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Phản hồi tham dự' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Quản lý link gửi riêng' })).toBeVisible();
@@ -141,7 +170,7 @@ test('customer can sign in with Google in demo mode and retain the session', asy
 
 test('customer can open the demo account without entering an email', async ({ page }) => {
   await page.goto('/tai-khoan');
-  await expect(page.getByLabel('Email (không bắt buộc trong demo)')).not.toHaveAttribute('required', '');
+  await expect(page.getByLabel('Email của bạn')).not.toHaveAttribute('required', '');
   await page.getByRole('button', { name: 'Mở tài khoản demo' }).click();
   await expect(page.locator('.dash-layout')).toBeVisible();
   await expect(page.getByText('khach@loihen.local')).toBeVisible();
@@ -628,7 +657,7 @@ test('representative scene profiles fit the mobile editor canvas', async ({ page
   }
 });
 
-test('customer can edit, autosave and submit a new invitation draft', async ({ page }) => {
+test('customer can edit, autosave and open the payment gate for a new invitation draft', async ({ page }) => {
   test.setTimeout(90_000);
   const { portalUrl } = await createOrder(page);
   await page.goto(portalUrl);
@@ -650,8 +679,10 @@ test('customer can edit, autosave and submit a new invitation draft', async ({ p
   await expect(restoredName).toHaveValue('Anh Khoa');
   await expect(page.getByLabel('Cỡ chữ riêng')).toHaveValue('48');
   await expect(page.getByRole('button', { name: 'Chữ đậm' })).toHaveAttribute('aria-pressed', 'true');
-  await page.getByRole('button', { name: /gửi duyệt/i }).click();
-  await expect(page.getByText('Bản thiệp đã được gửi studio duyệt.')).toBeVisible();
+  await page.getByRole('link', { name: /thanh toán 50\.000đ để phát hành/i }).click();
+  await expect(page.getByText('CỔNG KHÁCH HÀNG')).toBeVisible();
+  await expect(page.getByText('THANH TOÁN ĐỂ PHÁT HÀNH', { exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 2, name: /50\.000\s?₫/ })).toBeVisible();
 });
 
 test('admin can publish an order and create a personalized guest link', async ({ page }) => {

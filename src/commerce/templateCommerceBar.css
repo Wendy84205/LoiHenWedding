@@ -133,3 +133,4 @@
 @media print {
   .templateCommerceBar { display: none; }
 }
+.templateCommerceMeta{display:flex;align-items:center;gap:4px;margin-top:4px;color:#73675f;font-size:.62rem;line-height:1.2;white-space:nowrap}.templateCommerceMeta svg{width:12px;height:12px;flex:0 0 auto;color:#b53c32}.templateCommerceAction{transition:background 160ms cubic-bezier(.23,1,.32,1),transform 160ms cubic-bezier(.23,1,.32,1),box-shadow 160ms cubic-bezier(.23,1,.32,1)}.templateCommerceAction:active{transform:scale(.97)}@media(max-width:520px){.templateCommerceMeta{display:none}.templateCommerceBar{min-height:64px}.templateCommerceAction{box-shadow:0 6px 14px rgba(181,60,50,.18)}}

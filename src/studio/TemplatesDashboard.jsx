@@ -2,10 +2,14 @@ import React, { useEffect, useMemo, useState } from 'react';
 import {
   ArrowRight,
   Check,
+  ChevronRight,
+  CircleCheckBig,
   ExternalLink,
   Heart,
   Image as ImageIcon,
   LayoutTemplate,
+  MonitorSmartphone,
+  Play,
   Search,
   SlidersHorizontal,
   Sparkles,
@@ -170,16 +174,18 @@ function TemplateQuickView({ item, onClose, favorite, onFavorite }) {
     <div className="tpl-modal-backdrop" role="presentation" onMouseDown={onClose}>
       <section className="tpl-modal" role="dialog" aria-modal="true" aria-labelledby="tpl-quick-view-title" onMouseDown={(event) => event.stopPropagation()}>
         <button type="button" className="tpl-modal-close" onClick={onClose} aria-label="Đóng xem nhanh"><X size={20} /></button>
-        <div className="tpl-modal-preview"><img src={item.image} alt={`Xem trước mẫu ${item.title}`} /></div>
+        <div className="tpl-modal-preview"><div className="tpl-preview-device"><div className="tpl-preview-device-bar"><span><MonitorSmartphone size={13} /> Xem thử trên điện thoại</span><i>LIVE</i></div><img src={item.image} alt={`Xem trước mẫu ${item.title}`} /></div><p><span /> Chạm vào preview để cảm nhận nhịp kể chuyện của mẫu.</p></div>
         <div className="tpl-modal-copy">
           <div className="tpl-modal-eyebrow"><span>50.000đ / mẫu</span><span>{item.style}</span></div>
           <h2 id="tpl-quick-view-title">{item.title}</h2>
           <p>Khởi tạo từ mẫu này rồi thay ảnh, tên, thời gian, địa điểm, bảng màu và các chi tiết riêng cho ngày vui của hai bạn.</p>
+          <div className="tpl-modal-assurance"><CircleCheckBig size={18} /><span><strong>Chỉnh sửa không giới hạn trước thanh toán.</strong> Chỉ quét QR 50.000đ khi bạn sẵn sàng phát hành link.</span></div>
           <ul>{item.features.map((feature) => <li key={feature}><Check size={16} /> {feature}</li>)}</ul>
           <div className="tpl-modal-buttons">
             <a href={`/template/${item.slug}`} target="_blank" rel="noopener noreferrer" className="tpl-modal-preview-link"><ExternalLink size={16} /> Xem thiệp mẫu</a>
-            <a href={orderHref} className="tpl-modal-create-link"><WandSparkles size={16} /> {item.editable ? 'Bắt đầu tùy chỉnh' : 'Nhận tư vấn thiết kế'}</a>
+            <a href={orderHref} className="tpl-modal-create-link"><WandSparkles size={16} /> {item.editable ? 'Tạo nháp & chỉnh sửa' : 'Nhận tư vấn thiết kế'}</a>
           </div>
+          <ol className="tpl-modal-journey"><li><b>01</b><span>Chọn mẫu</span></li><li><b>02</b><span>Tự chỉnh sửa</span></li><li><b>03</b><span>Quét QR phát hành</span></li></ol>
           <button type="button" className={`tpl-modal-save ${favorite ? 'is-active' : ''}`} onClick={() => onFavorite(item.slug)}>
             <Heart size={16} fill={favorite ? 'currentColor' : 'none'} /> {favorite ? 'Đã lưu vào yêu thích' : 'Lưu mẫu để xem lại'}
           </button>
@@ -242,7 +248,7 @@ export default function TemplatesDashboard() {
           <span><Sparkles size={15} /> THƯ VIỆN THIỆP CƯỚI ONLINE</span>
           <h1>Tìm một khung hình<br /><em>đúng với câu chuyện của hai bạn.</em></h1>
           <p>Khám phá {allTemplates.length} mẫu thiệp được thiết kế để xem đẹp trên điện thoại. Chọn mẫu, xem trước, rồi cá nhân hóa từng chi tiết theo ngày vui của bạn.</p>
-          <div className="tpl-hero-points"><span><LayoutTemplate size={16} /> {allTemplates.length} mẫu có sẵn</span><span><WandSparkles size={16} /> 50.000đ cho mọi mẫu</span><span><ImageIcon size={16} /> Ảnh, nhạc & RSVP</span></div>
+          <div className="tpl-hero-points"><span><LayoutTemplate size={16} /> {allTemplates.length} mẫu có sẵn</span><span><WandSparkles size={16} /> 50.000đ cho mọi mẫu</span><span><ImageIcon size={16} /> Ảnh, nhạc & RSVP</span></div><div className="tpl-hero-actions"><a href="#thu-vien"><Play size={15} /> Khám phá mẫu thiệp</a><a href="#quy-trinh">Xem cách bắt đầu <ChevronRight size={15} /></a></div>
         </div>
         <div className="tpl-hero-art" aria-hidden="true">
           <div className="tpl-art-card tpl-art-card-one"><img src="/assets/new-templates/thiep-cuoi-57/preview.jpg" alt="" /></div>
@@ -251,7 +257,7 @@ export default function TemplatesDashboard() {
         </div>
       </section>
 
-      <section className="tpl-browser" aria-label="Duyệt mẫu thiệp">
+      <section className="tpl-browser" id="thu-vien" aria-label="Duyệt mẫu thiệp">
         <div className="tpl-browser-head">
           <div><span>CHỌN THEO GU CỦA BẠN</span><h2>Mẫu nào làm bạn dừng lại lâu hơn?</h2></div>
           <p>Mở mẫu để cảm nhận hiệu ứng. Khi đã sẵn sàng, bạn có thể bắt đầu bằng nội dung và hình ảnh của riêng mình.</p>
@@ -273,7 +279,7 @@ export default function TemplatesDashboard() {
         )}
       </section>
 
-      <section className="tpl-process">
+      <section className="tpl-process" id="quy-trinh">
         <div><span>QUY TRÌNH BẮT ĐẦU</span><h2>Chọn một mẫu. <em>Rồi biến nó thành của hai bạn.</em></h2></div>
         <ol>
           <li><b>01</b><strong>Xem & chọn mẫu</strong><span>Mở bản mẫu, lưu phong cách yêu thích và quyết định mẫu phù hợp.</span></li>

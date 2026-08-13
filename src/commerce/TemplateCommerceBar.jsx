@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, CalendarDays, PenLine } from 'lucide-react';
+import { ArrowLeft, CalendarDays, CircleCheckBig, PenLine } from 'lucide-react';
 import { getInvitationDisplayTitle } from '../data/invitationCatalog.js';
 import { catalogTemplateSlugs, editableTemplateSlugs } from './invitationContent.js';
 import './templateCommerceBar.css';
@@ -31,6 +31,7 @@ export default function TemplateCommerceBar({ slug }) {
       <div className="templateCommerceIdentity">
         <small>{editable ? 'CÓ THỂ TỰ CHỈNH SỬA' : available ? 'STUDIO CÁ NHÂN HÓA' : 'MẪU THAM KHẢO'}</small>
         <strong>{getInvitationDisplayTitle(slug)}</strong>
+        {editable && <span className="templateCommerceMeta"><CircleCheckBig /> Tạo nháp miễn phí · Quét QR 50.000đ khi phát hành</span>}
       </div>
       <a className="templateCommerceAction" href={action.href}>
         <action.Icon />

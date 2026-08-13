@@ -6,6 +6,7 @@ import {
 import { useRsvpSubmit, useWishSubmit } from '../CommercialInvitationContext.jsx';
 import { getSceneTemplate } from './sceneTemplates.js';
 import { resolveSceneDocument } from './sceneSchema.js';
+import { getWeddingSticker } from './weddingStickerLibrary.js';
 import './scene.css';
 
 function getPathValue(content, path) {
@@ -182,6 +183,11 @@ function SceneParticles({ variant = 'sparkle' }) {
   return <div className={`sceneParticles is-${variant}`} aria-hidden="true">{Array.from({ length: 18 }, (_, index) => <i style={{ '--particle-index': index }} key={index} />)}</div>;
 }
 
+function SceneSticker({ node }) {
+  const sticker = getWeddingSticker(node.props.sticker);
+  return <span className={`sceneSticker sticker-${sticker.id}`} aria-label={node.label || sticker.label}>{sticker.glyph}</span>;
+}
+
 function SceneEnvelope({ node, content, opened, onOpen, editor }) {
   const letterImage = content.media.couple || content.media.hero || node.props.src || '';
   return (
@@ -213,6 +219,7 @@ function SceneNodeContent({ node, content, editor, envelopeState }) {
   if (node.type === 'album') return <SceneAlbum content={content} node={node} />;
   if (node.type === 'carousel') return <SceneAlbum content={content} node={node} carousel />;
   if (node.type === 'particle') return <SceneParticles variant={node.props.particle} />;
+  if (node.type === 'sticker') return <SceneSticker node={node} />;
   if (node.type === 'envelope') return <SceneEnvelope node={node} content={content} editor={editor} {...envelopeState} />;
   return null;
 }

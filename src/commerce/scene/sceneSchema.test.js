@@ -4,8 +4,9 @@ import { resolve } from 'node:path';
 import {
   addSceneNode, clampSceneTransform, createScenePatch, deleteSceneNode,
   normalizeScenePatch, patchSceneNode, resolveSceneDocument, scenePatchSchema,
-  templateSceneSchema,
+  SCENE_STICKERS, sceneNodeSchema, templateSceneSchema,
 } from './sceneSchema.js';
+import { WEDDING_STICKER_CATEGORIES, WEDDING_STICKERS, getWeddingSticker } from './weddingStickerLibrary.js';
 import { getSceneTemplate, sceneTemplateRegistry, sceneTemplateSlugs } from './sceneTemplates.js';
 import { editableTemplateSlugs } from '../invitationContent.js';
 
@@ -48,6 +49,25 @@ describe('scene graph schema', () => {
       .map((value) => value.slice(1, -1))
       .sort();
     expect(databaseSlugs).toEqual([...editableTemplateSlugs].sort());
+  });
+
+  it('makes every curated wedding sticker available to validated scene nodes', () => {
+    expect(WEDDING_STICKER_CATEGORIES).toHaveLength(5);
+    expect(WEDDING_STICKERS).toHaveLength(30);
+    expect(new Set(SCENE_STICKERS).size).toBe(WEDDING_STICKERS.length);
+    expect(SCENE_STICKERS).toEqual(WEDDING_STICKERS.map((sticker) => sticker.id));
+
+    for (const sticker of WEDDING_STICKERS) {
+      const node = sceneNodeSchema.parse({
+        id: `sticker-${sticker.id}`, type: 'sticker', label: `Nhãn dán ${sticker.label}`,
+        x: 100, y: 100, width: 120, height: 120, rotation: 0, zIndex: 10, locked: false, hidden: false,
+        props: { sticker: sticker.id }, style: { color: sticker.color, fontSize: 88 },
+        animation: { entrance: 'zoom', duration: 0.8, delay: 0, easing: 'ease-out', continuous: 'pulse' },
+      });
+      expect(node.props.sticker).toBe(sticker.id);
+      expect(getWeddingSticker(sticker.id)).toEqual(sticker);
+    }
+    expect(getWeddingSticker('unknown-sticker')).toEqual(WEDDING_STICKERS[0]);
   });
 
   it('creates sparse node overrides and preserves the original template', () => {

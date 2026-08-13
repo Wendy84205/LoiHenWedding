@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
 import {
-  AlignCenter, AlignLeft, AlignRight, ArrowLeft, Bold, CalendarDays, Check, Cloud,
+  AlignCenter, AlignLeft, AlignRight, ArrowLeft, ArrowRight, Bold, CalendarDays, Check, Cloud,
   ExternalLink, Eye, FileText, Image, Italic,
   History as HistoryIcon, Images, Layers3, LayoutTemplate, Monitor, Music2, Plus, Redo2, RefreshCw,
   Palette, Pause, Play, RotateCcw, Send, Smartphone, Sparkles, Trash2, Type, Undo2, Upload, Users, LockKeyhole,
-  VolumeX, ZoomIn, ZoomOut,
+  VolumeX, ZoomIn, ZoomOut, CircleHelp, X,
 } from 'lucide-react';
 import {
   deleteOrderAsset, getOrder, getOrderPreviewUrl, saveInvitationDraft,
@@ -187,6 +187,7 @@ export default function InvitationEditor({ orderId }) {
   const [sceneReplayKey, setSceneReplayKey] = useState(0);
   const [musicPreview, setMusicPreview] = useState({ src: '', playing: false });
   const [versionHistory, setVersionHistory] = useState({ loading: false, items: [] });
+  const [showGuide, setShowGuide] = useState(false);
   const [theme, setTheme] = useState(() => normalizeInvitationTheme());
   const [ui, setUi] = useState({ loading: true, saveStatus: 'loading', busy: '', error: '', success: '' });
   const musicPreviewRef = useRef(null);
@@ -747,6 +748,7 @@ export default function InvitationEditor({ orderId }) {
           <button type="button" onClick={redo} disabled={!history.future.length && !sceneHistory.future.length} aria-label="Làm lại" title="Làm lại"><Redo2 /></button>
         </div>
         <button className={`editorSaveState state-${ui.saveStatus}`} type="button" onClick={() => flushSave(true)} title="Lưu bản nháp"><Cloud /><span>{statusLabel(ui.saveStatus)}</span></button>
+        <button className="editorGuideButton" type="button" onClick={() => setShowGuide(true)}><CircleHelp /> Hướng dẫn</button>
         <a className="editorOpenPreview" href={previewUrl} target="_blank" rel="noreferrer"><Eye /> Xem trước</a>
         {isPaid ? (
           <button className="editorReviewButton" type="button" onClick={submitReview} disabled={ui.busy === 'review' || ui.saveStatus === 'conflict'}><Send /> {ui.busy === 'review' ? 'Đang gửi' : 'Phát hành thiệp'}</button>
@@ -754,6 +756,21 @@ export default function InvitationEditor({ orderId }) {
           <a className="editorReviewButton editorPaymentCta" href={`/don-hang/${orderId}`}><LockKeyhole /> Thanh toán 50.000đ để phát hành</a>
         )}
       </header>
+
+      {showGuide && <div className="editorGuideOverlay" role="presentation" onMouseDown={() => setShowGuide(false)}>
+        <section className="editorGuideModal" role="dialog" aria-modal="true" aria-labelledby="editor-guide-title" onMouseDown={(event) => event.stopPropagation()}>
+          <header><div><span>HƯỚNG DẪN EDITOR</span><h2 id="editor-guide-title">Biến mẫu thành thiệp của riêng bạn</h2></div><button type="button" onClick={() => setShowGuide(false)} aria-label="Đóng hướng dẫn"><X /></button></header>
+          <p className="editorGuideIntro">Mọi thay đổi sẽ tự lưu vào bản nháp. Bắt đầu bằng nội dung, thêm ảnh, hoàn thiện phong cách rồi xem trước trên điện thoại.</p>
+          <ol className="editorGuideSteps">
+            <li><b>01</b><div><strong>Đổi tên, ngày giờ và nội dung</strong><span>Điền cặp đôi, gia đình, sự kiện và lời mời trong các tab Văn bản, Gia đình, Sự kiện, Nội dung.</span><button type="button" onClick={() => { chooseTool('couple'); setShowGuide(false); }}>Mở Văn bản <ArrowRight /></button></div></li>
+            <li><b>02</b><div><strong>Thay ảnh và căn khung hình</strong><span>Tải ảnh theo từng vị trí, chọn ảnh đang dùng, rồi điều chỉnh điểm lấy nét ngang/dọc để gương mặt hiển thị đẹp.</span><button type="button" onClick={() => { chooseTool('media'); setShowGuide(false); }}>Mở Hình ảnh <ArrowRight /></button></div></li>
+            <li><b>03</b><div><strong>Chỉnh font, màu và chuyển động</strong><span>Chọn bảng màu, font chữ, chuyển động đầy đủ hoặc tối giản; mỗi khu vực còn có hiệu ứng riêng.</span><button type="button" onClick={() => { chooseTool('design'); setShowGuide(false); }}>Mở Phong cách <ArrowRight /></button></div></li>
+            <li><b>04</b><div><strong>Tùy biến bố cục nâng cao</strong><span>Chọn một thành phần trên canvas hoặc tab Lớp để kéo vị trí, chỉnh kích thước, thứ tự hiển thị và thêm lớp mới.</span><button type="button" onClick={() => { chooseTool('layers'); setShowGuide(false); }}>Mở Lớp <ArrowRight /></button></div></li>
+            <li><b>05</b><div><strong>Thêm nhạc, QR và RSVP</strong><span>Chọn nhạc nền trong tab Âm nhạc; tải QR mừng cưới trong Hình ảnh. RSVP và lời chúc sẽ hoạt động trên bản thiệp xem trước.</span><button type="button" onClick={() => { chooseTool('music'); setShowGuide(false); }}>Mở Âm nhạc <ArrowRight /></button></div></li>
+            <li><b>06</b><div><strong>Lưu phiên bản, kiểm tra và phát hành</strong><span>Dùng Lịch sử để khôi phục mốc cũ, Xem trước để kiểm tra trên điện thoại, sau đó thanh toán QR và phát hành link.</span><button type="button" onClick={() => { chooseTool('versions'); setShowGuide(false); }}>Mở Lịch sử <ArrowRight /></button></div></li>
+          </ol>
+        </section>
+      </div>}
 
       <div className="editorMobileSwitch">
         <button className={mobilePane === 'edit' ? 'is-active' : ''} type="button" onClick={() => setMobilePane('edit')}>Chỉnh sửa</button>
