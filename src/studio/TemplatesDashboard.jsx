@@ -106,6 +106,11 @@ function featuresForStyle(style) {
   return defaults[style] || defaults.Cinematic;
 }
 
+function packageForTemplate(slug, editable) {
+  if (slug === 'thiep-cuoi-16' || slug === 'thiep-cuoi-19' || slug === 'thiep-cuoi-5' || slug === 'thiep-cuoi-23') return 'FREE';
+  return editable ? 'PREMIUM' : 'BASIC';
+}
+
 const allTemplates = currentCatalogSlugs.map((slug) => {
   const style = styleForSlug(slug);
   return {
@@ -114,6 +119,7 @@ const allTemplates = currentCatalogSlugs.map((slug) => {
     style,
     image: getPreviewImage(slug),
     editable: editableTemplateSlugs.includes(slug),
+    package: packageForTemplate(slug, editableTemplateSlugs.includes(slug)),
     features: featuresForStyle(style),
   };
 });
@@ -125,7 +131,7 @@ function TemplateCard({ item, favorite, onFavorite, onQuickView }) {
         <img src={item.image} alt={`Mẫu thiệp ${item.title}`} loading="lazy" />
         <div className="tpl-card-wash" />
         <div className="tpl-card-topline">
-          <span className="tpl-card-price">50.000đ</span>
+          <span className={`tpl-card-package tpl-card-package-${item.package.toLowerCase()}`}>{item.package}</span>
           <button
             type="button"
             className={`tpl-favorite ${favorite ? 'is-active' : ''}`}
@@ -138,10 +144,7 @@ function TemplateCard({ item, favorite, onFavorite, onQuickView }) {
         </div>
         <div className="tpl-card-actions">
           <a href={`/template/${item.slug}`} target="_blank" rel="noopener noreferrer" className="tpl-secondary-action">
-            Xem mẫu
-          </a>
-          <a href="https://zalo.me/loihenstudio" target="_blank" rel="noreferrer" className="tpl-primary-action">
-            Liên hệ đặt
+            <Play size={13} /> Xem mẫu
           </a>
         </div>
       </div>
@@ -149,7 +152,7 @@ function TemplateCard({ item, favorite, onFavorite, onQuickView }) {
         <div>
           <span className="tpl-card-style">{item.style}</span>
           <h2>{item.title}</h2>
-          <p>{item.style} · Xem live trên mọi thiết bị</p>
+          <p>Xem trước và tùy chỉnh theo câu chuyện của bạn</p>
         </div>
         <button type="button" onClick={() => onQuickView(item)} aria-label={`Xem nhanh mẫu ${item.title}`} className="tpl-card-preview-link"><ExternalLink size={16} /></button>
       </div>
