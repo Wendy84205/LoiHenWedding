@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import {
-  ArrowRight,
   Check,
   ChevronRight,
   CircleCheckBig,
@@ -120,10 +119,6 @@ const allTemplates = currentCatalogSlugs.map((slug) => {
 });
 
 function TemplateCard({ item, favorite, onFavorite, onQuickView }) {
-  const orderHref = item.editable
-    ? `/dat-thiep?template=${encodeURIComponent(item.slug)}&source=template-library`
-    : `/tu-van?service=Thi%E1%BB%87p+c%C6%B0%E1%BB%9Bi+Online&template=${encodeURIComponent(item.slug)}`;
-
   return (
     <article className="tpl-card">
       <div className="tpl-card-media">
@@ -142,11 +137,11 @@ function TemplateCard({ item, favorite, onFavorite, onQuickView }) {
           </button>
         </div>
         <div className="tpl-card-actions">
-          <button type="button" className="tpl-secondary-action" onClick={() => onQuickView(item)}>
-            Xem nhanh
-          </button>
-          <a href={orderHref} className="tpl-primary-action">
-            {item.editable ? 'Dùng mẫu này' : 'Yêu cầu mẫu'} <ArrowRight size={15} />
+          <a href={`/template/${item.slug}`} target="_blank" rel="noopener noreferrer" className="tpl-secondary-action">
+            Xem mẫu
+          </a>
+          <a href="https://zalo.me/loihenstudio" target="_blank" rel="noreferrer" className="tpl-primary-action">
+            Liên hệ đặt
           </a>
         </div>
       </div>
@@ -154,11 +149,9 @@ function TemplateCard({ item, favorite, onFavorite, onQuickView }) {
         <div>
           <span className="tpl-card-style">{item.style}</span>
           <h2>{item.title}</h2>
-          <p>{item.editable ? 'Có thể tự chỉnh sửa' : 'Studio hỗ trợ tùy biến'}</p>
+          <p>{item.style} · Xem live trên mọi thiết bị</p>
         </div>
-        <a href={`/template/${item.slug}`} target="_blank" rel="noopener noreferrer" aria-label={`Mở mẫu ${item.title} ở tab mới`} className="tpl-card-preview-link">
-          <ExternalLink size={16} />
-        </a>
+        <button type="button" onClick={() => onQuickView(item)} aria-label={`Xem nhanh mẫu ${item.title}`} className="tpl-card-preview-link"><ExternalLink size={16} /></button>
       </div>
     </article>
   );
@@ -166,9 +159,6 @@ function TemplateCard({ item, favorite, onFavorite, onQuickView }) {
 
 function TemplateQuickView({ item, onClose, favorite, onFavorite }) {
   if (!item) return null;
-  const orderHref = item.editable
-    ? `/dat-thiep?template=${encodeURIComponent(item.slug)}&source=template-quick-view`
-    : `/tu-van?service=Thi%E1%BB%87p+c%C6%B0%E1%BB%9Bi+Online&template=${encodeURIComponent(item.slug)}`;
 
   return (
     <div className="tpl-modal-backdrop" role="presentation" onMouseDown={onClose}>
@@ -176,16 +166,16 @@ function TemplateQuickView({ item, onClose, favorite, onFavorite }) {
         <button type="button" className="tpl-modal-close" onClick={onClose} aria-label="Đóng xem nhanh"><X size={20} /></button>
         <div className="tpl-modal-preview"><div className="tpl-preview-device"><div className="tpl-preview-device-bar"><span><MonitorSmartphone size={13} /> Xem thử trên điện thoại</span><i>LIVE</i></div><img src={item.image} alt={`Xem trước mẫu ${item.title}`} /></div><p><span /> Chạm vào preview để cảm nhận nhịp kể chuyện của mẫu.</p></div>
         <div className="tpl-modal-copy">
-          <div className="tpl-modal-eyebrow"><span>50.000đ / mẫu</span><span>{item.style}</span></div>
+          <div className="tpl-modal-eyebrow"><span>THIỆP CƯỚI ONLINE</span><span>{item.style}</span></div>
           <h2 id="tpl-quick-view-title">{item.title}</h2>
-          <p>Khởi tạo từ mẫu này rồi thay ảnh, tên, thời gian, địa điểm, bảng màu và các chi tiết riêng cho ngày vui của hai bạn.</p>
-          <div className="tpl-modal-assurance"><CircleCheckBig size={18} /><span><strong>Chỉnh sửa không giới hạn trước thanh toán.</strong> Chỉ quét QR 50.000đ khi bạn sẵn sàng phát hành link.</span></div>
+          <p>Mở bản xem live để cảm nhận chuyển động, bố cục và nhịp kể chuyện trước khi chọn mẫu cho ngày vui của hai bạn.</p>
+          <div className="tpl-modal-assurance"><CircleCheckBig size={18} /><span><strong>Liên hệ Zalo để đặt theo mẫu này.</strong> Studio sẽ tư vấn phần thông tin và hình ảnh phù hợp.</span></div>
           <ul>{item.features.map((feature) => <li key={feature}><Check size={16} /> {feature}</li>)}</ul>
           <div className="tpl-modal-buttons">
             <a href={`/template/${item.slug}`} target="_blank" rel="noopener noreferrer" className="tpl-modal-preview-link"><ExternalLink size={16} /> Xem thiệp mẫu</a>
-            <a href={orderHref} className="tpl-modal-create-link"><WandSparkles size={16} /> {item.editable ? 'Tạo nháp & chỉnh sửa' : 'Nhận tư vấn thiết kế'}</a>
+            <a href="https://zalo.me/loihenstudio" target="_blank" rel="noreferrer" className="tpl-modal-create-link"><WandSparkles size={16} /> Liên hệ đặt qua Zalo</a>
           </div>
-          <ol className="tpl-modal-journey"><li><b>01</b><span>Chọn mẫu</span></li><li><b>02</b><span>Tự chỉnh sửa</span></li><li><b>03</b><span>Quét QR phát hành</span></li></ol>
+          <ol className="tpl-modal-journey"><li><b>01</b><span>Chọn mẫu</span></li><li><b>02</b><span>Gửi thông tin</span></li><li><b>03</b><span>Nhận link thiệp</span></li></ol>
           <button type="button" className={`tpl-modal-save ${favorite ? 'is-active' : ''}`} onClick={() => onFavorite(item.slug)}>
             <Heart size={16} fill={favorite ? 'currentColor' : 'none'} /> {favorite ? 'Đã lưu vào yêu thích' : 'Lưu mẫu để xem lại'}
           </button>
@@ -245,10 +235,11 @@ export default function TemplatesDashboard() {
       <StudioHeader />
       <section className="tpl-hero">
         <div className="tpl-hero-text">
-          <span><Sparkles size={15} /> THƯ VIỆN THIỆP CƯỚI ONLINE</span>
-          <h1>Tìm một khung hình<br /><em>đúng với câu chuyện của hai bạn.</em></h1>
-          <p>Khám phá {allTemplates.length} mẫu thiệp được thiết kế để xem đẹp trên điện thoại. Chọn mẫu, xem trước, rồi cá nhân hóa từng chi tiết theo ngày vui của bạn.</p>
-          <div className="tpl-hero-points"><span><LayoutTemplate size={16} /> {allTemplates.length} mẫu có sẵn</span><span><WandSparkles size={16} /> 50.000đ cho mọi mẫu</span><span><ImageIcon size={16} /> Ảnh, nhạc & RSVP</span></div><div className="tpl-hero-actions"><a href="#thu-vien"><Play size={15} /> Khám phá mẫu thiệp</a><a href="#quy-trinh">Xem cách bắt đầu <ChevronRight size={15} /></a></div>
+          <span>THE WEDDING INVITATION COLLECTION</span>
+          <h1>108 Mẫu Thiệp<br /><em>Cưới Online</em></h1>
+          <p className="tpl-hero-subtitle">Chọn mẫu · Xem live · Đặt ngay</p>
+          <p>Khám phá những mẫu thiệp được thiết kế để kể câu chuyện riêng của hai bạn — đẹp trên điện thoại, tinh tế trên mọi màn hình.</p>
+          <div className="tpl-hero-points"><span><LayoutTemplate size={16} /> {allTemplates.length} mẫu tuyển chọn</span><span><Sparkles size={16} /> 6 phong cách riêng</span><span><ImageIcon size={16} /> Tối ưu mọi thiết bị</span></div><div className="tpl-hero-actions"><a href="#thu-vien"><Play size={15} /> Xem kho mẫu</a><a href="#quy-trinh">Cách đặt thiệp <ChevronRight size={15} /></a></div>
         </div>
         <div className="tpl-hero-art" aria-hidden="true">
           <div className="tpl-art-card tpl-art-card-one"><img src="/assets/new-templates/thiep-cuoi-57/preview.jpg" alt="" /></div>
@@ -259,8 +250,8 @@ export default function TemplatesDashboard() {
 
       <section className="tpl-browser" id="thu-vien" aria-label="Duyệt mẫu thiệp">
         <div className="tpl-browser-head">
-          <div><span>CHỌN THEO GU CỦA BẠN</span><h2>Mẫu nào làm bạn dừng lại lâu hơn?</h2></div>
-          <p>Mở mẫu để cảm nhận hiệu ứng. Khi đã sẵn sàng, bạn có thể bắt đầu bằng nội dung và hình ảnh của riêng mình.</p>
+          <div><span>FIND YOUR SIGNATURE STYLE</span><h2>Mẫu nào khiến bạn muốn xem thêm một chút?</h2></div>
+          <p>Chọn theo phong cách, mở bản xem live và lưu lại những mẫu làm bạn rung động nhất.</p>
         </div>
         <div className="tpl-filter-panel">
           <label className="tpl-search" htmlFor="template-search"><Search size={18} /><input id="template-search" type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Tìm theo tên hoặc số mẫu..." /><span>{filteredTemplates.length} mẫu</span></label>
@@ -275,16 +266,16 @@ export default function TemplatesDashboard() {
             {filteredTemplates.map((item) => <TemplateCard key={item.slug} item={item} favorite={favorites.has(item.slug)} onFavorite={toggleFavorite} onQuickView={setQuickView} />)}
           </div>
         ) : (
-          <div className="tpl-empty"><LayoutTemplate size={38} /><h2>Chưa tìm thấy mẫu phù hợp</h2><p>Thử đổi từ khóa, phong cách hoặc bộ lọc gói để xem thêm lựa chọn.</p><button type="button" onClick={clearFilters}>Xóa bộ lọc</button></div>
+          <div className="tpl-empty"><LayoutTemplate size={38} /><h2>Chưa tìm thấy mẫu phù hợp</h2><p>Thử đổi từ khóa, phong cách hoặc bộ lọc yêu thích để xem thêm lựa chọn.</p><button type="button" onClick={clearFilters}>Xóa bộ lọc</button></div>
         )}
       </section>
 
       <section className="tpl-process" id="quy-trinh">
-        <div><span>QUY TRÌNH BẮT ĐẦU</span><h2>Chọn một mẫu. <em>Rồi biến nó thành của hai bạn.</em></h2></div>
+        <div><span>HOW IT WORKS</span><h2>Chọn một mẫu. <em>Phần còn lại, để studio đồng hành.</em></h2></div>
         <ol>
-          <li><b>01</b><strong>Xem & chọn mẫu</strong><span>Mở bản mẫu, lưu phong cách yêu thích và quyết định mẫu phù hợp.</span></li>
-          <li><b>02</b><strong>Tự chỉnh sửa</strong><span>Đăng nhập để thay ảnh, chữ, nhạc, QR và RSVP; bạn luôn có thể xem trước trên điện thoại.</span></li>
-          <li><b>03</b><strong>Quét QR & xuất bản</strong><span>Khi thiệp đã hoàn thiện, quét QR thanh toán 50.000đ để mở nút phát hành và gửi link khách mời.</span></li>
+          <li><b>01</b><strong>Xem & chọn mẫu</strong><span>Mở bản xem live, lưu lại phong cách yêu thích và chọn mẫu phù hợp.</span></li>
+          <li><b>02</b><strong>Liên hệ Zalo gửi thông tin</strong><span>Gửi tên, ngày cưới, hình ảnh và những mong muốn riêng cho studio.</span></li>
+          <li><b>03</b><strong>Nhận thiệp & phát hành link</strong><span>Nhận bản thiệp hoàn thiện để gửi tới những vị khách thân yêu.</span></li>
         </ol>
       </section>
       <StudioFooter />

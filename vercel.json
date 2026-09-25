@@ -35,7 +35,6 @@
     { "src": "/api/([^/]+)", "dest": "/api/router?route=$1" },
     { "src": "/admin/.+", "dest": "/admin" },
     { "src": "/don-hang/.+", "dest": "/don-hang" },
-    { "src": "/chinh-sua-thiep/.+", "dest": "/chinh-sua-thiep" },
     { "handle": "filesystem" },
     { "src": "/.*", "status": 404, "dest": "/404.html" }
   ]

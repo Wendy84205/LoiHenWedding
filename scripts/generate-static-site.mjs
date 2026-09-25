@@ -23,7 +23,6 @@ const privateRoutes = [
   ['/admin', 'Quản trị đơn hàng | Lời Hẹn Studio', 'Khu vực quản trị nội bộ.', '/social/studio.jpg', { noIndex: true }],
   ['/tai-khoan', 'Tài khoản khách hàng | Lời Hẹn Studio', 'Khu vực quản lý thiệp và đơn hàng riêng tư.', '/social/studio.jpg', { noIndex: true }],
   ['/don-hang', 'Cổng khách hàng | Lời Hẹn Studio', 'Theo dõi tiến độ và gửi tư liệu cho đơn hàng.', '/social/studio.jpg', { noIndex: true }],
-  ['/chinh-sua-thiep', 'Chỉnh sửa thiệp | Lời Hẹn Studio', 'Khu vực chỉnh sửa thiệp riêng tư dành cho khách hàng.', '/social/studio.jpg', { noIndex: true }],
 ];
 
 const projectionRoutes = [

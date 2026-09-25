@@ -871,6 +871,16 @@ body:has(.studioSite) {
 
 .studioFooter > div a:hover { color: #b84e57; }
 
+.studioCatalogFooter {
+  color: #5a4d46;
+  background: #fbf8f4;
+  border-top-color: rgba(74, 48, 40, 0.1);
+}
+
+.studioCatalogFooter .studioBrand { color: #32221d; }
+.studioCatalogFooter > div a { color: #7e3b45; }
+.studioCatalogFooter > div a:hover { color: #b15f4d; }
+
 @media (max-width: 920px) {
   .studioServiceFeature { grid-template-columns: 60px minmax(190px, 1.08fr) minmax(175px, 0.9fr) 150px 45px; }
   .studioServiceCopy { padding-right: 0.85rem; }

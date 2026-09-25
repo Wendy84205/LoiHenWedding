@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import QRCode from 'qrcode';
-import { Check, CheckCircle2, Copy, Download, ExternalLink, FileImage, Link2, Music, PenLine, RefreshCw, Send, Trash2, Upload, UserPlus, Users } from 'lucide-react';
+import { Check, CheckCircle2, Copy, Download, ExternalLink, FileImage, Link2, Music, RefreshCw, Send, Trash2, Upload, UserPlus, Users } from 'lucide-react';
 import { StudioFooter, StudioHeader } from '../studio/StudioChrome.jsx';
 import {
   addGuest, deleteGuest, downloadGuestCsv, downloadRsvpCsv, getOrder, getOrderPreviewUrl,
@@ -204,7 +204,7 @@ export default function CustomerPortal({ orderId }) {
 
         <div className="commercePortalGrid">
           <section className="commercePanel">
-            <div className="commercePanelHeading"><div><small>BẢN THIỆP</small><h2>{order.invitation.content.couple.groomName} &amp; {order.invitation.content.couple.brideName}</h2></div><div className="commercePanelActions"><a className="is-primary" href={`/chinh-sua-thiep/${order.id}`}><PenLine /> Tự chỉnh sửa</a><a href={previewUrl} target="_blank" rel="noreferrer">Mở thiệp <ExternalLink /></a>{!isPublished && (order.deposit_status === 'paid' ? <button type="button" onClick={publishInvitation} disabled={state.busy === 'publish'}><Send /> Phát hành thiệp</button> : <a href="#payment" className="commercePaymentLink"><Send /> Thanh toán để phát hành</a>)}</div></div>
+            <div className="commercePanelHeading"><div><small>BẢN THIỆP</small><h2>{order.invitation.content.couple.groomName} &amp; {order.invitation.content.couple.brideName}</h2></div><div className="commercePanelActions"><a href={previewUrl} target="_blank" rel="noreferrer">Mở thiệp <ExternalLink /></a>{!isPublished && (order.deposit_status === 'paid' ? <button type="button" onClick={publishInvitation} disabled={state.busy === 'publish'}><Send /> Phát hành thiệp</button> : <a href="#payment" className="commercePaymentLink"><Send /> Thanh toán để phát hành</a>)}</div></div>
             <img className="commerceTemplatePreview" src={`/social/${order.template_slug}.jpg`} alt={`Mẫu ${order.template_slug}`} />
             <div className="commerceLinkBox"><code>{previewUrl}</code><button type="button" onClick={() => navigator.clipboard.writeText(previewUrl)} aria-label="Sao chép link"><Copy /></button></div>
           </section>

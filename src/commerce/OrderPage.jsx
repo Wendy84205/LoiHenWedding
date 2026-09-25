@@ -48,12 +48,12 @@ export default function OrderPage() {
     getCustomerSession().then(setSession).catch(() => setSession(null));
   }, []);
 
-  const startEditing = async () => {
+  const createDraftOrder = async () => {
     setState({ loading: true, error: '' });
     try {
       const result = await createOrder(makeDraftInput(templateSlug, session));
       localStorage.setItem(`loi-hen-order-${result.orderId}`, JSON.stringify({ accessToken: result.accessToken, previewToken: result.previewToken }));
-      window.location.assign(`/chinh-sua-thiep/${result.orderId}`);
+      window.location.assign(`/don-hang/${result.orderId}`);
     } catch (error) {
       setState({ loading: false, error: error.message });
     }
@@ -66,7 +66,7 @@ export default function OrderPage() {
   if (session === undefined) return <div className="commercePage"><StudioHeader /><main className="commerceState"><LockKeyhole /><p>Đang kiểm tra tài khoản…</p></main><StudioFooter /></div>;
 
   if (!session) return (
-    <div className="commercePage"><StudioHeader /><main className="commerceState commerceAuthGate"><LockKeyhole /><p className="commerceEyebrow">BƯỚC 1 / 3</p><h1>Đăng nhập để dùng mẫu thiệp</h1><p>Mỗi thiệp nháp được gắn với tài khoản để bạn có thể lưu, chỉnh sửa và phát hành vào thời điểm phù hợp.</p><a className="commercePrimaryAction" href={loginUrl}>Đăng nhập hoặc tạo tài khoản <ArrowRight /></a></main><StudioFooter /></div>
+    <div className="commercePage"><StudioHeader /><main className="commerceState commerceAuthGate"><LockKeyhole /><p className="commerceEyebrow">BƯỚC 1 / 3</p><h1>Đăng nhập để đặt thiệp theo mẫu</h1><p>Mỗi đơn được gắn với tài khoản để bạn có thể gửi tư liệu, theo dõi tiến độ và phát hành vào thời điểm phù hợp.</p><a className="commercePrimaryAction" href={loginUrl}>Đăng nhập hoặc tạo tài khoản <ArrowRight /></a></main><StudioFooter /></div>
   );
 
   return (
@@ -75,16 +75,16 @@ export default function OrderPage() {
       <main className="commerceDraftStarter">
         <section className="commerceDraftCopy">
           <p className="commerceEyebrow">THIỆP NHÁP · {getInvitationDisplayTitle(templateSlug)}</p>
-          <h1>Bắt đầu với mẫu này, <em>chỉnh mọi thứ sau.</em></h1>
-          <p>Thiệp được mở ngay trong editor với nội dung mẫu. Bạn tự thay tên, ảnh, lịch trình, font, màu, nhạc, QR và RSVP mà không cần điền biểu mẫu ban đầu.</p>
-          <div className="commerceDraftSteps"><span><b>01</b> Tạo bản nháp</span><span><b>02</b> Tự chỉnh sửa</span><span><b>03</b> Quét QR để phát hành</span></div>
+          <h1>Bắt đầu với mẫu này, <em>studio sẽ hoàn thiện cùng bạn.</em></h1>
+          <p>Tạo đơn để gửi ảnh, thông tin ngày cưới và yêu cầu cá nhân hóa. Studio sẽ dựa trên mẫu bạn chọn để hoàn thiện thiệp, sau đó bạn có thể xem trước trước khi phát hành.</p>
+          <div className="commerceDraftSteps"><span><b>01</b> Tạo đơn</span><span><b>02</b> Gửi tư liệu</span><span><b>03</b> Quét QR để phát hành</span></div>
           {state.error && <p className="commerceError" role="alert">{state.error}</p>}
-          <button type="button" className="commercePrimaryAction commerceDraftStart" onClick={startEditing} disabled={state.loading}>{state.loading ? 'Đang mở editor...' : <>Dùng mẫu này và bắt đầu chỉnh sửa <ArrowRight /></>}</button>
-          <small><Sparkles size={15} /> Chỉ thanh toán {formatCurrency(price)} khi bạn đã hoàn thiện thiệp và muốn phát hành link.</small>
+          <button type="button" className="commercePrimaryAction commerceDraftStart" onClick={createDraftOrder} disabled={state.loading}>{state.loading ? 'Đang tạo đơn...' : <>Đặt thiệp với mẫu này <ArrowRight /></>}</button>
+          <small><Sparkles size={15} /> Chỉ thanh toán {formatCurrency(price)} khi thiệp đã sẵn sàng phát hành link.</small>
         </section>
         <section className="commerceDraftPreview">
           <img src={`/social/${templateSlug}.jpg`} alt={`Xem trước ${getInvitationDisplayTitle(templateSlug)}`} />
-          <div><span>{formatCurrency(price)} / mẫu</span><strong>Tự chỉnh sửa không giới hạn trước khi thanh toán</strong><p><Check size={16} /> Xem trước trên điện thoại bất cứ lúc nào</p></div>
+          <div><strong>Studio hỗ trợ cá nhân hóa theo thông tin của bạn</strong><p><Check size={16} /> Xem trước trên điện thoại bất cứ lúc nào</p></div>
         </section>
       </main>
       <StudioFooter />

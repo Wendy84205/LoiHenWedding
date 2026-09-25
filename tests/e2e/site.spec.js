@@ -18,28 +18,28 @@ test('homepage and invitation library expose the complete catalog', async ({ pag
   await expect(page.locator('a[href="/template/thiep-cuoi-112"]')).toHaveCount(0);
 });
 
-test('template library quick preview explains the draft-to-publish journey', async ({ page }) => {
+test('template library quick preview explains the order-to-publish journey', async ({ page }) => {
   await page.goto('/mau-thiep');
   await page.getByRole('button', { name: 'Xem nhanh' }).first().click();
   const dialog = page.getByRole('dialog');
   await expect(dialog).toBeVisible();
   await expect(dialog.locator('.tpl-preview-device')).toBeVisible();
-  await expect(dialog).toContainText('Chỉnh sửa không giới hạn trước thanh toán.');
-  await expect(dialog.getByRole('link', { name: /tạo nháp & chỉnh sửa/i })).toHaveAttribute('href', /\/dat-thiep\?template=/);
+  await expect(dialog).toContainText('Studio hỗ trợ cá nhân hóa theo thông tin của bạn.');
+  await expect(dialog.getByRole('link', { name: /đặt thiệp theo mẫu/i })).toHaveAttribute('href', /\/dat-thiep\?template=/);
   await expect(dialog).toContainText('Quét QR phát hành');
 });
 
 test('template previews expose the correct commercial action without changing the invitation', async ({ page }) => {
   await page.goto('/template/thiep-cuoi-44');
   const editableBar = page.getByRole('complementary', { name: 'Hành động cho mẫu thiệp' });
-  await expect(editableBar).toContainText('CÓ THỂ TỰ CHỈNH SỬA');
-  await expect(editableBar).toContainText('Tạo nháp miễn phí · Quét QR 50.000đ khi phát hành');
-  await expect(editableBar.getByRole('link', { name: 'Tùy chỉnh mẫu' })).toHaveAttribute('href', '/dat-thiep?template=thiep-cuoi-44&source=template-preview');
+  await expect(editableBar).toContainText('ĐẶT THIỆP THEO MẪU');
+  await expect(editableBar).toContainText('Chọn mẫu · Gửi tư liệu · Quét QR 50.000đ khi phát hành');
+  await expect(editableBar.getByRole('link', { name: 'Đặt thiệp theo mẫu' })).toHaveAttribute('href', '/dat-thiep?template=thiep-cuoi-44&source=template-preview');
 
   await page.goto('/template/thiep-bw-1');
   const blackAndWhiteBar = page.getByRole('complementary', { name: 'Hành động cho mẫu thiệp' });
-  await expect(blackAndWhiteBar).toContainText('CÓ THỂ TỰ CHỈNH SỬA');
-  await expect(blackAndWhiteBar.getByRole('link', { name: 'Tùy chỉnh mẫu' })).toHaveAttribute('href', '/dat-thiep?template=thiep-bw-1&source=template-preview');
+  await expect(blackAndWhiteBar).toContainText('ĐẶT THIỆP THEO MẪU');
+  await expect(blackAndWhiteBar.getByRole('link', { name: 'Đặt thiệp theo mẫu' })).toHaveAttribute('href', '/dat-thiep?template=thiep-bw-1&source=template-preview');
 
   await page.goto('/template/thiep-cuoi-112');
   await expect(page.getByRole('complementary', { name: 'Hành động cho mẫu thiệp' })).toContainText('MẪU THAM KHẢO');

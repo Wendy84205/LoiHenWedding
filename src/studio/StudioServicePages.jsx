@@ -616,8 +616,8 @@ const rise = {
   transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
 };
 
-function ServicePackage({ content, consultationService }) {
-  const consultationUrl = `/tu-van?service=${encodeURIComponent(consultationService)}`;
+function ServicePackage({ content }) {
+  const consultationUrl = 'https://zalo.me/loihenstudio';
 
   return (
     <section className="studioPackage" aria-labelledby="studio-package-title">
@@ -645,8 +645,8 @@ function ServicePackage({ content, consultationService }) {
   );
 }
 
-function InvitationFullPackage({ content, consultationService }) {
-  const consultationUrl = `/tu-van?service=${encodeURIComponent(consultationService)}`;
+function InvitationFullPackage({ content }) {
+  const consultationUrl = 'https://zalo.me/loihenstudio';
 
   return (
     <section className="studioFullPackage" aria-labelledby="studio-full-package-title">
@@ -676,7 +676,7 @@ function ServicePage({ type, view = 'service' }) {
   const libraryOnly = type === 'invitations' && view === 'library';
   const heroContent = libraryOnly ? content : (content.serviceHero || content);
   const packageContent = libraryOnly ? null : content.package;
-  const consultationUrl = `/tu-van?service=${encodeURIComponent(content.consultationService)}`;
+  const consultationUrl = 'https://zalo.me/loihenstudio';
   const libraryCopy = content.library || {
     eyebrow: `${content.items.length.toString().padStart(2, '0')} MẪU MỞ ĐẦU`,
     heading: 'Chọn phong cách',
@@ -687,8 +687,8 @@ function ServicePage({ type, view = 'service' }) {
     ? {
         eyebrow: 'ĐÃ CHỌN ĐƯỢC PHONG CÁCH?',
         heading: 'Xem studio hoàn thiện một gói thiệp từ mẫu đến link chính thức.',
-        href: '/dich-vu/thiep-cuoi-online',
-        label: 'Xem dịch vụ trọn gói',
+        href: 'https://zalo.me/loihenstudio',
+        label: 'Liên hệ qua Zalo',
       }
     : {
         eyebrow: 'SẴN SÀNG BẮT ĐẦU?',
@@ -727,8 +727,8 @@ function ServicePage({ type, view = 'service' }) {
         </div>
       </section>
 
-      {packageContent && <ServicePackage content={packageContent} consultationService={content.consultationService} />}
-      {content.fullPackage && !libraryOnly && <InvitationFullPackage content={content.fullPackage} consultationService={content.consultationService} />}
+      {packageContent && <ServicePackage content={packageContent} />}
+      {content.fullPackage && !libraryOnly && <InvitationFullPackage content={content.fullPackage} />}
 
       <section className="studioLibrary" id="thu-vien" aria-label={content.eyebrow}>
         <motion.div {...rise} className="studioLibraryHead">
@@ -742,7 +742,6 @@ function ServicePage({ type, view = 'service' }) {
           {visibleItems.map((item, index) => {
             const templateSlug = item.path?.match(/^\/template\/(.+)$/)?.[1] || '';
             const editable = type === 'invitations' && editableTemplateSlugs.includes(templateSlug);
-            const consultationParams = new URLSearchParams({ service: content.consultationService, template: templateSlug });
             return (
               <motion.article key={item.title} className="studioLibraryCard" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.52, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }}>
                 <div className="studioLibraryImage">
@@ -756,8 +755,8 @@ function ServicePage({ type, view = 'service' }) {
                   <div className="studioLibraryActions">
                     {item.path && <a className="is-preview" href={item.path}><ExternalLink size={15} /> Mở mẫu</a>}
                     {editable
-                      ? <a className="is-purchase" href={`/dat-thiep?template=${encodeURIComponent(templateSlug)}&source=catalog`}><PenLine size={15} /> Tùy chỉnh</a>
-                      : <a className="is-purchase" href={`/tu-van?${consultationParams.toString()}`}><CalendarDays size={15} /> {item.path ? 'Đặt theo mẫu' : 'Nhận báo giá'}</a>}
+                      ? <a className="is-purchase" href="https://zalo.me/loihenstudio" target="_blank" rel="noreferrer"><PenLine size={15} /> Liên hệ đặt</a>
+                      : <a className="is-purchase" href="https://zalo.me/loihenstudio" target="_blank" rel="noreferrer"><CalendarDays size={15} /> Liên hệ Zalo</a>}
                     {item.path && <button className="is-icon" type="button" onClick={() => copyLink(item)} aria-label={`Sao chép link ${item.title}`} title="Sao chép link"><Copy size={15} /></button>}
                   </div>
                 </div>

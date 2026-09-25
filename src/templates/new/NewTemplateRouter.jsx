@@ -41,8 +41,8 @@ export function getNewTemplateTitle(slug) {
   return templateTitles[slug] || `Thiệp cưới ${slug.replace('thiep-cuoi-', '')}`;
 }
 
-export default function NewTemplateRouter({ slug }) {
-  const template = createNewTemplateElement(slug);
+export default function NewTemplateRouter({ slug, invitation }) {
+  const template = createNewTemplateElement(slug, { invitation });
   if (!template) return null;
   return (
     <Suspense fallback={<div style={{ minHeight: '100vh', display: 'grid', placeItems: 'center', background: '#f7f7f4', fontFamily: 'Georgia, serif' }}>Đang mở thiệp...</div>}>
