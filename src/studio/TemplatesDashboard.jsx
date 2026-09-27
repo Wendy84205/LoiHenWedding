@@ -197,6 +197,7 @@ function TemplateCard({ item, favorite, onFavorite }) {
           <a
             className="tpl-card-btn"
             href={`/template/${item.slug}`}
+            aria-label={`Xem mẫu thiệp cưới ${item.title}`}
           >
             Xem mẫu
           </a>
@@ -208,6 +209,12 @@ function TemplateCard({ item, favorite, onFavorite }) {
           href={`/template/${item.slug}`}
           aria-label={`Xem thiệp cưới ${item.title}`}
         />
+      </div>
+
+      {/* Card footer: title + package */}
+      <div className="tpl-card-foot">
+        <p className="tpl-card-name">{item.title}</p>
+        <span className={`tpl-card-foot-pkg tpl-card-foot-pkg-${item.package.toLowerCase()}`}>{item.package}</span>
       </div>
     </article>
   );
@@ -242,11 +249,24 @@ export default function TemplatesDashboard() {
     <main className="tpl-page" id="top">
       <StudioHeader />
       <section className="tpl-hero">
+        <div className="tpl-hero-noise" aria-hidden="true" />
         <div className="tpl-hero-text">
           <span>LỜI HẸN STUDIO · WEDDING COLLECTION</span>
           <h1>Mẫu Thiệp Cưới</h1>
           <p>Tôn vinh câu chuyện tình yêu bằng những thiết kế thiệp cưới số chỉn chu, giàu cảm xúc và tinh tế trên mọi màn hình.</p>
-          <div className="tpl-hero-points"><span><LayoutTemplate size={16} /> {allTemplates.length} mẫu thiệp riêng</span><span><Sparkles size={16} /> {allStyles.length} phong cách</span><span><ImageIcon size={16} /> Xem đẹp trên điện thoại</span></div><div className="tpl-hero-actions"><a href="#thu-vien"><Play size={15} /> Khám phá bộ sưu tập</a><a href="#quy-trinh">Cách chọn mẫu <ChevronRight size={15} /></a></div>
+          <div className="tpl-hero-points">
+            <span><LayoutTemplate size={16} /> {allTemplates.length} mẫu thiệp riêng</span>
+            <span><Sparkles size={16} /> {allStyles.length} phong cách</span>
+            <span><ImageIcon size={16} /> Xem đẹp trên điện thoại</span>
+          </div>
+          <div className="tpl-hero-actions" id="cta">
+            <a href="#thu-vien" className="tpl-cta-primary" aria-label="Khám phá bộ sưu tập mẫu thiệp cưới">
+              <Play size={15} /> Khám phá bộ sưu tập
+            </a>
+            <a href="#quy-trinh" className="tpl-cta-secondary" aria-label="Xem cách chọn mẫu thiệp">
+              Cách chọn mẫu <ChevronRight size={15} />
+            </a>
+          </div>
         </div>
         <div className="tpl-hero-art" aria-hidden="true">
           <div className="tpl-art-card tpl-art-card-one"><img src="/assets/new-templates/thiep-cuoi-57/preview.jpg" alt="" /></div>
