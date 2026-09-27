@@ -94,3 +94,36 @@ body.template38-page { padding-top: 0; padding-bottom: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) { .t38-music.is-playing { animation: none; } }
+
+/* Template 38 typography and interactive details stay with this invitation. */
+.t38-save b { font:400 20px/1 "Mentawai",serif; }
+.t38-portraits figcaption { font-family:"Katty Diona",cursive; font-size:42px; }
+.t38-eventStamp strong,.t38-venueRsvp header p { font-family:"Lobster",cursive; }
+.t38-storyQuote,.t38-chapter blockquote { font-family:"Sacramento",cursive; }
+.t38-hero h1 { display:grid; justify-items:center; gap:1px; max-width:100%; padding-right:14px; padding-left:14px; font-size:1.48rem; line-height:1.08; }
+.t38-hero h1 i { font-size:1rem; }
+.t38-program { margin:1.25rem 0; padding:1.1rem 1rem; border:1px solid #e4d7d1; background:#fff; }
+.t38-program>small,.t38-dressCode>small { display:block; margin-bottom:.55rem; color:#9b3234; font:500 .6rem/1.3 "Montserrat",sans-serif; letter-spacing:.14em; }
+.t38-program>div { display:grid; grid-template-columns:68px 1fr; gap:.55rem; padding:.7rem 0; border-top:1px solid #f0e9e4; font:400 .76rem/1.35 "Montserrat",sans-serif; }
+.t38-program time { color:#9b3234; font-weight:600; }
+.t38-dressCode { margin:1rem 0 1.3rem; padding:1rem; border:1px solid #e8d4d2; background:#fcf6f3; text-align:center; }
+.t38-dressCode b { display:block; margin:0 0 .75rem; color:#5e2524; font:500 .8rem/1.4 "Montserrat",sans-serif; }
+.t38-dressCode>span { display:flex; justify-content:center; gap:.55rem; }
+.t38-dressCode i { width:22px; height:22px; border:1px solid #cbbdb7; border-radius:50%; background:#f5eee6; }
+.t38-dressCode i:nth-child(2) { background:#852425; }.t38-dressCode i:nth-child(3) { background:#181818; }
+.t38-venueRsvp .ni-rsvp,.t38-venueRsvp .ni-wish { display:grid; gap:1rem; max-width:350px; margin:1.2rem auto 0; padding:2rem 1.25rem; border:1px solid #e1dfd9; border-radius:4px; color:#251817; background:#fff; box-shadow:0 12px 24px rgba(76,36,32,.09); font-family:"Montserrat",sans-serif; text-align:left; }
+.t38-venueRsvp .ni-rsvp h3,.t38-venueRsvp .ni-wish h3 { margin:0; color:#251817; font:500 1.1rem/1.3 "Montserrat",sans-serif; text-align:center; }
+.t38-venueRsvp .ni-rsvp label,.t38-venueRsvp .ni-wish label { display:grid; gap:.42rem; color:#60605d; font:400 .72rem/1.3 "Montserrat",sans-serif; }
+.t38-venueRsvp .ni-rsvp input:not([type=radio]),.t38-venueRsvp .ni-rsvp select,.t38-venueRsvp .ni-wish input,.t38-venueRsvp .ni-wish textarea { width:100%; min-height:42px; border:1px solid #ddd; border-radius:3px; padding:.55rem .7rem; background:#fff; font:400 .76rem/1.4 "Montserrat",sans-serif; }
+.t38-venueRsvp .ni-rsvp fieldset { display:grid; gap:.5rem; margin:0; border:0; padding:0; }
+.t38-venueRsvp .ni-rsvp legend { margin-bottom:.4rem; color:#60605d; font:400 .75rem/1.2 "Montserrat",sans-serif; }
+.t38-venueRsvp .ni-rsvp fieldset label { grid-template-columns:18px 1fr; align-items:center; }
+.t38-venueRsvp .ni-rsvp input[type=radio] { width:17px; height:17px; accent-color:#d85f61; }
+.t38-venueRsvp .ni-rsvp button,.t38-venueRsvp .ni-wish button { min-height:44px; display:flex; align-items:center; justify-content:center; gap:.4rem; border:0; border-radius:3px; color:#fff; background:#d85f61; font:500 .8rem/1 "Montserrat",sans-serif; }
+.t38-venueRsvp .ni-wish textarea { resize:vertical; }
+.t38-venueRsvp .ni-rsvpSuccess,.t38-venueRsvp .ni-rsvpError { display:flex; align-items:center; gap:.35rem; font:500 .68rem/1.4 "Montserrat",sans-serif; }
+@media(max-width:420px) {
+  .t38-hero h1 { padding-top:3.65rem; font-size:1.32rem; }
+  .t38-portraits figcaption { font-size:30px; }
+  .t38-venueRsvp .ni-rsvp,.t38-venueRsvp .ni-wish { padding:1.45rem .95rem; }
+}

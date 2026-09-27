@@ -90,3 +90,42 @@ html.template19-page,body.template19-page{background:#e5e5e4}body.template19-pag
   .t19-ourStory{min-height:600px}.t19-ourStory>p{font-size:16px}.t19-love{min-height:1050px}.t19-lovePortrait{height:450px}.t19-lovePortrait img{width:64%;height:390px}.t19-lovePortrait span{font-size:112px;letter-spacing:12px}.t19-lovePortrait p{left:18%;bottom:0;width:78%;font-size:16px}.t19-longText{font-size:16px}.t19-coupleWide{width:100%;height:305px}
   .t19-married{min-height:500px}.t19-married>img{width:100%;height:260px}.t19-poetry{min-height:1850px;padding-right:18px;padding-left:18px}.t19-photoColumns img{height:310px}.t19-poetry>p{font-size:16px}.t19-stacked img{width:100%;height:230px}.t19-invitation{min-height:880px}.t19-invitation>img{width:100%;height:620px}.t19-inviteOverlay{top:420px}.t19-contact{min-height:820px}.t19-rsvp{min-height:470px}.t19-thanks{min-height:620px}
 }
+
+/* Formal family and event details complete this source-matched editorial invitation. */
+.t19-eventDetails{display:grid;justify-items:center;gap:25px;padding:48px 26px;background:#f5f2eb;text-align:center}
+.t19-eventDetails>h2{max-width:390px;margin:0;color:#282722;font:500 23px/1.4 "Signora",serif}
+.t19-families{width:100%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;padding:19px 0;border-top:1px solid #a6a399;border-bottom:1px solid #a6a399}
+.t19-families>div{display:grid;gap:7px}
+.t19-families>svg{width:17px;color:#67635a}
+.t19-families small,.t19-timeline>small,.t19-dresscode>small{color:#666258;font:600 9px/1.4 "Montserrat",sans-serif;letter-spacing:.12em}
+.t19-families b{font:500 11px/1.5 "Signora",serif}
+.t19-eventTime{margin:0;font:500 18px/1.55 "Signora",serif}
+.t19-eventTime b{font:500 14px/1.5 "Montserrat",sans-serif}
+.t19-eventDetails .ni-calendar{width:min(100%,360px);padding:20px 14px;border:1px solid #d2cec2;background:#fff;text-align:center}
+.t19-eventDetails .ni-calendar h3{font:500 22px/1.2 "Montserrat",sans-serif}
+.t19-eventDetails .ni-weekdays{font:500 9px/1 "Montserrat",sans-serif}
+.t19-eventDetails .ni-days>span{height:34px}
+.t19-eventDetails .ni-days svg{width:32px;color:#666258}
+.t19-timeline{width:100%;padding:18px 15px;border:1px solid #d2cec2;background:#fff;text-align:left}
+.t19-timeline>small{display:block;margin-bottom:8px;text-align:center}
+.t19-timeline>div{display:grid;grid-template-columns:64px 1fr;gap:11px;padding:11px 0;border-top:1px solid #e7e5df}
+.t19-timeline time{color:#625f55;font:600 10px/1.5 "Montserrat",sans-serif}
+.t19-timeline span{font:500 13px/1.5 "Signora",serif}
+.t19-dresscode{width:100%;padding:22px 14px;background:#e9e6dd;text-align:center}
+.t19-dresscode h3{margin:7px 0;color:#36352f;font:500 26px/1.1 "Signora",serif}
+.t19-dresscode p{margin:0;font:500 12px/1.65 "Montserrat",sans-serif}
+.t19-dresscode>div{display:flex;justify-content:center;gap:11px;margin-top:14px}
+.t19-dresscode i{width:26px;height:26px;border:1px solid #d0cec5;border-radius:50%;background:#fff}
+.t19-dresscode i:nth-child(2){background:#a89a84}
+.t19-dresscode i:nth-child(3){background:#79806d}
+.t19-eventDetails>.ni-map{display:inline-flex;justify-content:center;padding:11px 18px;border:1px solid #646157;color:#393831;background:#fff;font:500 11px/1 "Montserrat",sans-serif;text-decoration:none}
+.t19-guestNotes{display:grid;justify-items:center;gap:30px;padding:48px 22px;background:#f4f1eb;text-align:center}
+.t19-guestNotes>h2{margin:0;color:#45433d;font:500 28px/1.25 "Signora",serif}
+.t19-guestNotes>div{width:min(100%,380px)}
+.t19-wish{border:1px solid #d3d0c7!important;border-radius:3px!important;background:#fff!important;box-shadow:0 10px 28px rgba(40,38,32,.08)!important}
+.t19-wish h3{color:#514f47!important}
+.t19-wish input,.t19-wish textarea{border-color:#d3d0c7!important;border-radius:2px!important}
+.t19-wish button{border-radius:2px!important;background:#67635b!important;color:#fff!important}
+.t19-gift .ni-gift{border:1px solid #c9c6bc;border-radius:2px;background:#fff;color:#403f38;box-shadow:none}
+.t19-gift .ni-gift>svg{color:#fff;background:#777466}
+@media(max-width:420px){.t19-eventDetails{padding-right:16px;padding-left:16px}.t19-families{gap:5px}.t19-families b{font-size:10px}.t19-families small{font-size:8px}.t19-eventDetails .ni-calendar{padding-right:10px;padding-left:10px}.t19-guestNotes{padding-right:16px;padding-left:16px}}

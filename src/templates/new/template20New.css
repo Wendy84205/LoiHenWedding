@@ -2,9 +2,9 @@ html.template20new-page, body.template20new-page { background: #ddd5cc; }
 .t20n { width: min(500px, 100vw); margin: auto; overflow: hidden; color: #312d29; background: #fff; font-family: "Quicksand", Arial, sans-serif; box-shadow: 0 20px 70px rgba(60, 52, 46, .2); }
 .t20n-music { background: #303b34; }
 .t20n-hero { min-height: 205px; padding: 30px 22px 18px; background: #fff; }
-.t20n-heading { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 5px 18px; }
+.t20n-heading { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 5px 12px; }
 .t20n-heading small { font-size: 27px; font-weight: 700; letter-spacing: -.02em; }
-.t20n-heading h1 { margin: 0; font-size: 22px; font-weight: 600; }
+.t20n-heading h1 { grid-column: 1 / -1; margin: 0; font-size: 22px; font-weight: 600; }
 .t20n-heading h1 i { font-family: "Carlytte", cursive; font-weight: 400; }
 .t20n-heading p { grid-column: 1 / -1; margin: 3px 0; font-size: 18px; }
 .t20n-heading b { font-size: 22px; font-weight: 400; }
@@ -50,6 +50,23 @@ html.template20new-page, body.template20new-page { background: #ddd5cc; }
 .t20n-invite { display: grid; gap: 34px; padding: 85px 28px; text-align: center; }
 .t20n-invite h2 { margin: 8px 0; color: #bd7776; font: 400 45px/1 "Signora", cursive; }
 .t20n-invite p { line-height: 1.7; }
+.t20n-families { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px; padding: 24px 12px; border-top: 1px solid #dedbd3; border-bottom: 1px solid #dedbd3; }
+.t20n-families > div { display: grid; gap: 8px; }
+.t20n-families > div:last-child { text-align: right; }
+.t20n-families small, .t20n-inviteHeading > small, .t20n-schedule > small, .t20n-dresscode > small, .t20n-wishes > small { color: #a0786e; font-size: 10px; letter-spacing: .17em; }
+.t20n-families b { font: 400 14px/1.4 "PlayfairDisplay", serif; }
+.t20n-families > svg { width: 19px; color: #c97778; }
+.t20n-schedule { padding: 24px 20px; border: 1px solid #e5dfd7; background: #fff; text-align: left; }
+.t20n-schedule > small { display: block; padding-bottom: 13px; }
+.t20n-schedule > div { display: grid; grid-template-columns: 64px 1fr; gap: 12px; padding: 12px 0; border-top: 1px solid #eee9e3; font: 400 15px/1.5 "PlayfairDisplay", serif; }
+.t20n-schedule time { color: #a0786e; }
+.t20n-dresscode { padding: 23px 20px; background: #edf1eb; }
+.t20n-dresscode h3 { margin: 7px 0; font: 400 31px/1 "Signora", cursive; }
+.t20n-dresscode p { margin: 8px 0 15px; }
+.t20n-dresscode > div { display: flex; justify-content: center; gap: 9px; }
+.t20n-dresscode i { width: 25px; height: 25px; border: 1px solid rgba(0,0,0,.08); border-radius: 50%; background: #e9dfd0; }
+.t20n-dresscode i:nth-child(2) { background: #9ba38d; }
+.t20n-dresscode i:nth-child(3) { background: #d7b5a8; }
 .t20n-invite .ni-map { border-radius: 24px; padding: 10px 20px; color: #fff; background: #3f4c42; }
 .t20n .ni-calendar { padding: 25px 14px; border: 1px solid #bd7776; background: #fff; }
 .t20n .ni-calendar h3 { font: 400 27px/1 "PlayfairDisplay", serif; }
@@ -61,9 +78,15 @@ html.template20new-page, body.template20new-page { background: #ddd5cc; }
 .t20n-count > span { height: 72px; color: #fff; background: #bd7776; }
 .t20n-end { display: grid; justify-items: center; gap: 55px; padding: 0 24px 65px; color: #fff; background: #3f4c42; }
 .t20n-end > img { width: calc(100% + 48px); height: 620px; object-fit: cover; opacity: .86; }
+.t20n-wishes { display: grid; justify-items: center; gap: 15px; width: 100%; }
+.t20n-wishes > small { color: #ead3ce; }
+.t20n-wish { width: 100%; }
+.t20n-gift { color: #fff; }
 .t20n-end h2 { margin: 0; font: 400 44px/1 "Signora", cursive; }
 @media (max-width: 420px) {
+  .t20n-hero { padding-right: 18px; padding-left: 18px; }
   .t20n-heading small { font-size: 23px; }
+  .t20n-heading h1 { font-size: 20px; }
   .t20n-player { margin-right: 18px; margin-left: 18px; }
   .t20n-scrap { min-height: 1080px; }
   .t20n-scrap img:nth-of-type(1) { height: 480px; }
@@ -74,4 +97,9 @@ html.template20new-page, body.template20new-page { background: #ddd5cc; }
   .t20n-forever, .t20n-invite { padding-right: 18px; padding-left: 18px; }
   .t20n-forever > img { height: 650px; }
   .t20n-forever > div:last-child img { height: 480px; }
+  .t20n-invite { padding-right: 16px; padding-left: 16px; }
+  .t20n-families { gap: 7px; padding-right: 5px; padding-left: 5px; }
+  .t20n-families b { font-size: 12px; }
+  .t20n-schedule, .t20n-dresscode { padding-right: 15px; padding-left: 15px; }
+  .t20n-end { padding-right: 18px; padding-left: 18px; }
 }

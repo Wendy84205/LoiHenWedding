@@ -223,7 +223,7 @@
 }
 
 .t39-week span {
-  color: #111;
+  color: #4a4542;
   font: 600 0.72rem/1 "OpenSans", system-ui, sans-serif;
   letter-spacing: 0.04em;
 }
@@ -239,6 +239,7 @@
   place-items: center;
   position: relative;
   font: 400 1.12rem/1 "OpenSans", system-ui, sans-serif;
+  color: #4a4542;
 }
 
 .t39-days .blank {
@@ -1166,3 +1167,16 @@
     animation-iteration-count: 1 !important;
   }
 }
+
+/* Template 39 typography is kept with its own red floral editorial styling. */
+.t39-coverTitle { font:400 64px/.9 "Katty Diona",cursive; }
+.t39-coverNames b { font:400 36px/1 "Katty Diona",cursive; }
+.t39-weddingDay { font:500 40px/1 "Carlytte",cursive; }
+.t39-monthTitle { font:400 35px/1 "Madam Ghea",cursive; }
+.t39-personStack span { font:700 33px/1 "Carlytte",cursive; }
+.t39-personStack h2 { font:700 32px/1 "Madam Ghea",cursive; letter-spacing:0; }
+.t39-timeline h2 { font:400 50px/1 "Signora",cursive; }
+.t39-countdown span { font:400 57px/1 "Signora",cursive; }
+.t39-giftSection h2 { font:500 26px/1 "Signora",cursive; }
+.t39-personStack .bride img { object-position:65% center; }
+.t39-personStack .groom img { object-position:40% center; }

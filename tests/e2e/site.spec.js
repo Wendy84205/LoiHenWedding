@@ -1,7 +1,5 @@
 import { expect, test } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import { editableTemplateSlugs } from '../../src/commerce/invitationContent.js';
-import { currentCatalogSlugs } from '../../src/data/invitationCatalog.js';
 
 test.beforeEach(async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
@@ -9,40 +7,81 @@ test.beforeEach(async ({ page }) => {
 
 test('homepage and invitation library expose the complete catalog', async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('Lời Hẹn');
+  const catalogHeader = page.locator('.studioCatalogHeader');
+  await expect(catalogHeader.locator('a')).toHaveCount(1);
+  await expect(catalogHeader).toContainText('Lời Hẹn');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Mẫu Thiệp Cưới');
+  await expect(page.locator('.tpl-hero-subtitle')).toHaveCount(0);
+  await page.goto('/dich-vu/trap-cuoi');
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Mẫu Thiệp');
   await page.goto('/mau-thiep');
-  await expect(page.locator('.tpl-card')).toHaveCount(currentCatalogSlugs.length);
-  await expect(page.getByRole('link', { name: 'Dùng mẫu này' })).toHaveCount(editableTemplateSlugs.length);
-  await expect(page.getByRole('link', { name: 'Yêu cầu mẫu' })).toHaveCount(currentCatalogSlugs.length - editableTemplateSlugs.length);
-  await expect(page.getByRole('link', { name: 'Khám phá mẫu thiệp' })).toHaveAttribute('href', '#thu-vien');
+  await expect(page.locator('.tpl-card')).toHaveCount(15);
+  await expect(page.getByRole('link', { name: 'Xem preview local' })).toHaveCount(0);
+  await expect(page.locator('.tpl-card .tpl-card-image-link')).toHaveCount(15);
+  await expect(page.locator('.tpl-card-actions, .tpl-card-copy, .tpl-search, .tpl-sort, .tpl-filter-toolbar, .tpl-filter-panel, .tpl-filter-row, .tpl-filter-group, .tpl-favorite-filter')).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'Lãng mạn' })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'Đã lưu' })).toHaveCount(0);
+  await expect(page.locator('.tpl-card .tpl-card-image-link').first()).toHaveAttribute('href', /^\/template\//);
+  for (const number of [107, 106, 101, 98, 97, 83, 80, 79, 78, 75, 66, 65, 60, 52, 50, 44, 43, 42, 32]) {
+    await expect(page.locator(`.tpl-card a[href="/template/thiep-cuoi-${number}"]`)).toHaveCount(0);
+  }
+  await expect(page.getByRole('navigation', { name: 'Phân trang thiệp' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Trang 1' })).toHaveAttribute('aria-current', 'page');
+  const firstPageHref = await page.locator('.tpl-card-image-link').first().getAttribute('href');
+  await page.getByRole('button', { name: 'Trang 2' }).click();
+  await expect(page.locator('.tpl-card')).toHaveCount(15);
+  await expect(page.getByRole('button', { name: 'Trang 2' })).toHaveAttribute('aria-current', 'page');
+  await expect(page.locator('.tpl-card-image-link').first()).not.toHaveAttribute('href', firstPageHref);
+  await page.getByRole('button', { name: 'Trang 6' }).click();
+  await expect(page.locator('.tpl-card')).toHaveCount(14);
+  await page.getByRole('button', { name: 'Trang 1' }).click();
+  await expect(page.locator('.tpl-card')).toHaveCount(15);
+  await expect(page.getByRole('link', { name: 'Khám phá bộ sưu tập' })).toHaveAttribute('href', '#thu-vien');
   await expect(page.locator('a[href="/template/thiep-cuoi-112"]')).toHaveCount(0);
+  await page.goto('/template/thiep-cuoi-107');
+  await expect(page.getByRole('complementary', { name: 'Thông tin mẫu thiệp' })).toContainText('Thiệp cưới số 107');
 });
 
-test('template library quick preview explains the order-to-publish journey', async ({ page }) => {
+test('clicking an invitation card opens its wedding invitation', async ({ page }) => {
   await page.goto('/mau-thiep');
-  await page.getByRole('button', { name: 'Xem nhanh' }).first().click();
-  const dialog = page.getByRole('dialog');
-  await expect(dialog).toBeVisible();
-  await expect(dialog.locator('.tpl-preview-device')).toBeVisible();
-  await expect(dialog).toContainText('Studio hỗ trợ cá nhân hóa theo thông tin của bạn.');
-  await expect(dialog.getByRole('link', { name: /đặt thiệp theo mẫu/i })).toHaveAttribute('href', /\/dat-thiep\?template=/);
-  await expect(dialog).toContainText('Quét QR phát hành');
+  const invitationLink = page.locator('.tpl-card .tpl-card-image-link').first();
+  const invitationPath = await invitationLink.getAttribute('href');
+  await invitationLink.click();
+  await expect(page).toHaveURL((url) => url.pathname === invitationPath);
+  await expect(page.getByRole('complementary', { name: 'Thông tin mẫu thiệp' })).toBeVisible();
 });
 
-test('template previews expose the correct commercial action without changing the invitation', async ({ page }) => {
+test('hovering a card scrolls its invitation preview without zooming', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name === 'mobile-chromium', 'Hover previews are for pointer devices.');
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.goto('/mau-thiep');
+  const preview = page.locator('.tpl-card-image-link[href="/template/thiep-cuoi-1"]');
+  const previewImage = preview.locator('img');
+  await expect.poll(() => previewImage.evaluate((image) => image.complete && image.naturalHeight > 0)).toBe(true);
+  const maxScroll = await preview.evaluate((element) => element.scrollHeight - element.clientHeight);
+  expect(maxScroll).toBeGreaterThan(0);
+  await preview.hover();
+  await expect.poll(() => preview.evaluate((element) => element.scrollTop)).toBeGreaterThan(0);
+  await expect(previewImage).toHaveCSS('transform', 'none');
+  await page.mouse.move(0, 0);
+  await expect.poll(() => preview.evaluate((element) => element.scrollTop)).toBe(0);
+});
+
+test('template preview footer only shows back navigation and template identity', async ({ page }) => {
   await page.goto('/template/thiep-cuoi-44');
-  const editableBar = page.getByRole('complementary', { name: 'Hành động cho mẫu thiệp' });
-  await expect(editableBar).toContainText('ĐẶT THIỆP THEO MẪU');
-  await expect(editableBar).toContainText('Chọn mẫu · Gửi tư liệu · Quét QR 50.000đ khi phát hành');
-  await expect(editableBar.getByRole('link', { name: 'Đặt thiệp theo mẫu' })).toHaveAttribute('href', '/dat-thiep?template=thiep-cuoi-44&source=template-preview');
+  const editableBar = page.getByRole('complementary', { name: 'Thông tin mẫu thiệp' });
+  await expect(editableBar).toContainText('Thiệp cưới số 44');
+  await expect(editableBar).not.toContainText(/đặt thiệp|chọn mẫu|gửi tư liệu|quét qr/i);
+  await expect(editableBar.getByRole('link')).toHaveCount(1);
+  await expect(editableBar.getByRole('link', { name: 'Quay lại thư viện mẫu' })).toHaveAttribute('href', '/mau-thiep');
 
   await page.goto('/template/thiep-bw-1');
-  const blackAndWhiteBar = page.getByRole('complementary', { name: 'Hành động cho mẫu thiệp' });
-  await expect(blackAndWhiteBar).toContainText('ĐẶT THIỆP THEO MẪU');
-  await expect(blackAndWhiteBar.getByRole('link', { name: 'Đặt thiệp theo mẫu' })).toHaveAttribute('href', '/dat-thiep?template=thiep-bw-1&source=template-preview');
+  const blackAndWhiteBar = page.getByRole('complementary', { name: 'Thông tin mẫu thiệp' });
+  await expect(blackAndWhiteBar).toContainText('Black & White');
+  await expect(blackAndWhiteBar.getByRole('link')).toHaveCount(1);
 
   await page.goto('/template/thiep-cuoi-112');
-  await expect(page.getByRole('complementary', { name: 'Hành động cho mẫu thiệp' })).toContainText('MẪU THAM KHẢO');
+  await expect(page.getByRole('complementary', { name: 'Thông tin mẫu thiệp' })).toContainText('Thiệp cưới số 112');
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex,nofollow,noarchive');
 });
 
@@ -73,9 +112,9 @@ test('known accessibility regression pages have no serious or critical axe viola
   }
 });
 
-test('unknown route renders the dedicated not-found page', async ({ page }) => {
+test('unknown route returns to the invitation library', async ({ page }) => {
   await page.goto('/duong-dan-khong-ton-tai');
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('không tồn tại');
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Mẫu Thiệp');
 });
 
 test('key invitation intros animate and resolve to usable content', async ({ page }) => {

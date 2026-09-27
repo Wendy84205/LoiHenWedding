@@ -1,8 +1,7 @@
 import React from 'react';
 import { Heart, Scissors } from 'lucide-react';
-import { Countdown, GiftNote, MusicButton, Reveal, RsvpForm, VenueLink, WeddingCalendar, useInvitationPage } from './NewInvitationCommon.jsx';
+import { Countdown, GiftNote, MusicButton, Reveal, RsvpForm, VenueLink, WeddingCalendar, WishForm, useInvitationPage } from './NewInvitationCommon.jsx';
 import './template8New.css';
-import './auditFidelity.css';
 
 const a = '/assets/new-templates/thiep-cuoi-8';
 
@@ -30,7 +29,7 @@ export default function Template8New() {
         <Reveal as="p">Ánh sáng nghiêng xuống, ta trao chọn nhân gian<br />Tựa mình ngân sóng núi, bỗng chạm một mùa.</Reveal>
       </section>
 
-      <section className="t8n-locationPaper"><Reveal><h2>Thời gian tổ chức</h2><p>11:30 · Chủ Nhật, ngày 24 tháng 10 năm 2027<br/>Khách sạn La Vela Saigon</p></Reveal><Reveal><iframe title="Bản đồ La Vela Saigon" loading="lazy" src="https://www.google.com/maps?q=La+Vela+Saigon+Hotel&output=embed"/></Reveal><Reveal><WeddingCalendar month="OCTOBER 2027" weddingDay={24} offset={4}/></Reveal><Reveal className="t8n-notePaper" direction="left"><p>Anh chỉ muốn bên em. Dù là thu hay đông, dù gió lạnh hay nắng ấm, chỉ cần có em, mọi mùa đều hóa thành xuân.</p></Reveal><Reveal as="img" src={`${a}/image-8.jpg`} alt="Hoàng Nam và Minh Thư" direction="right"/></section>
+      <section className="t8n-locationPaper"><Reveal><h2>Thời gian tổ chức</h2><p>11:30 · Chủ Nhật, ngày 24 tháng 10 năm 2027<br/>Khách sạn La Vela Saigon</p></Reveal><Reveal><iframe title="Bản đồ La Vela Saigon" loading="lazy" src="https://www.google.com/maps?q=La+Vela+Saigon+Hotel&output=embed"/></Reveal><Reveal><WeddingCalendar month="OCTOBER 2027" weddingDay={24}/></Reveal><Reveal className="t8n-paperTimeline"><small>CHƯƠNG TRÌNH NGÀY VUI</small><h2>Our wedding day</h2><div><time>10:30</time><span>Đón khách</span></div><div><time>11:00</time><span>Lễ thành hôn</span></div><div><time>11:30</time><span>Khai tiệc</span></div></Reveal><Reveal className="t8n-dresscode"><small>GỢI Ý TRANG PHỤC</small><h2>Dress code</h2><p>Chọn sắc kem, nâu ấm hoặc đỏ gạch để cùng hòa vào trang giấy ngày vui.</p><div aria-label="Bảng màu gợi ý"><i/><i/><i/></div></Reveal><Reveal className="t8n-notePaper" direction="left"><p>Anh chỉ muốn bên em. Dù là thu hay đông, dù gió lạnh hay nắng ấm, chỉ cần có em, mọi mùa đều hóa thành xuân.</p></Reveal><Reveal as="img" src={`${a}/image-8.jpg`} alt="Hoàng Nam và Minh Thư" direction="right"/></section>
 
       <section className="t8n-invite">
         <Reveal><Scissors /><small>WEDDING INVITATION</small><h2>Hoàng Nam &amp; Minh Thư</h2><p>Trân trọng kính mời bạn tới dự tiệc thành hôn</p></Reveal>
@@ -40,7 +39,7 @@ export default function Template8New() {
 
       <section className="t8n-calendar"><Reveal><WeddingCalendar month="October 2027" weddingDay={24} offset={4} /></Reveal><Countdown values={count} className="t8n-count" /></section>
       <section className="t8n-album"><Reveal as="h2">OUR RED DIARY</Reveal><div><Reveal as="img" direction="right" src={`${a}/image-4.png`} alt="Album collage đỏ" /><Reveal as="img" direction="left" src={`${a}/image-5.png`} alt="Album ngày cưới" /><Reveal as="img" src={`${a}/image-8.jpg`} alt="Hoàng Nam và Minh Thư" /></div></section>
-      <section className="t8n-ending"><RsvpForm className="t8n-rsvp" accent="#b13b2f" /><GiftNote className="t8n-gift" /><h2><Heart fill="currentColor" /> Thank you</h2></section>
+      <section className="t8n-ending"><RsvpForm className="t8n-rsvp" accent="#b13b2f" /><Reveal className="t8n-wishes"><small>A NOTE FOR US</small><WishForm className="t8n-wish" accent="#b13b2f" /></Reveal><GiftNote className="t8n-gift" /><h2><Heart fill="currentColor" /> Thank you</h2></section>
     </main>
   );
 }

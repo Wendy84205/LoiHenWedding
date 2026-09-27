@@ -1,1 +1,37 @@
 html.template11new-page,body.template11new-page{background:#4a0808}.t11n{width:min(500px,100vw);margin:auto;overflow:hidden;color:#2c1715;background:#fffaf1;font-family:"Quicksand",Arial,sans-serif;box-shadow:0 18px 70px rgba(54,0,0,.4)}.t11n-music{background:#6f0606}.t11n-hero{height:820px;position:relative;background:#7e0809}.t11n-hero>img{height:100%;object-fit:cover}.t11n-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(80,0,0,.05),rgba(74,0,0,.62))}.t11n-title{position:absolute;z-index:2;left:28px;right:28px;bottom:40px;color:#fff;text-align:center}.t11n-title small{font-family:"PlayfairDisplay",serif;letter-spacing:.15em}.t11n-title h1{margin:12px 0;font:400 51px/.9 "Carlytte",cursive}.t11n-title p{font-family:"PlayfairDisplay",serif;font-size:20px}.t11n-portraits{padding:65px 20px;text-align:center}.t11n-portraits h2{margin:0 0 35px;color:#810b0b;font:400 31px/1 "PlayfairDisplay",serif}.t11n-portraits>div{display:grid;grid-template-columns:1fr 1fr;gap:14px}.t11n-portraits img{height:350px;border:3px solid #8d1010;object-fit:cover}.t11n-portraits small{display:block;margin-top:15px;color:#9b1111}.t11n-portraits h3{margin:5px 0;font:400 27px/1 "Carlytte",cursive}.t11n-vow{padding:0 18px 65px;color:#fff;background:#801010;text-align:center}.t11n-vow img{height:490px;border:2px solid #fff;object-fit:cover}.t11n-vow p{margin:40px auto 0;font:400 18px/1.9 "PlayfairDisplay",serif}.t11n-invite{display:grid;gap:30px;padding:70px 28px;text-align:center}.t11n-invite>div:first-child{display:grid;justify-items:center;gap:10px}.t11n-invite svg{color:#8b0c0c}.t11n-invite h2{margin:0;color:#800b0b;font:400 31px/1 "PlayfairDisplay",serif}.t11n-date{display:grid;grid-template-columns:1fr 105px 1fr;align-items:center;color:#800b0b}.t11n-date span{border-top:1px solid #800b0b;border-bottom:1px solid #800b0b;padding:11px 0}.t11n-date strong{font:400 70px/1 "PlayfairDisplay",serif}.t11n-invite h3{font-size:22px}.t11n-invite .ni-map{border:1px solid #800b0b;padding:11px 22px;color:#800b0b}.t11n-calendar{padding:65px 25px;color:#fff;background:#801010}.t11n-calendar .ni-calendar{padding:28px 18px;border:1px solid #d8aa83;text-align:center}.t11n-calendar .ni-calendar h3{margin-bottom:24px;font:400 30px/1 "PlayfairDisplay",serif}.t11n-calendar .ni-days>span{height:35px}.t11n-calendar .ni-days svg{width:40px;color:#f5b6b7}.t11n-count{gap:8px;margin-top:35px}.t11n-count>span{height:70px;border:1px solid #d8aa83}.t11n-album{padding:65px 14px;text-align:center}.t11n-album h2{margin:0 0 35px;color:#800b0b;font:400 55px/1 "Carlytte",cursive}.t11n-album>img{height:500px;object-fit:cover}.t11n-album>div{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}.t11n-album>div img{height:320px;object-fit:cover}.t11n-ending{display:grid;justify-items:center;gap:55px;padding:70px 22px 50px;color:#fff;background:#801010}.t11n-gift>svg{color:#801010;background:#e2bc98}.t11n-ending h2{margin:0;font:400 59px/1 "Carlytte",cursive}@media(max-width:420px){.t11n-hero{height:700px}.t11n-portraits{padding-left:12px;padding-right:12px}.t11n-portraits img{height:300px}.t11n-invite{padding-left:18px;padding-right:18px}.t11n-date{grid-template-columns:1fr 86px 1fr}.t11n-date strong{font-size:60px}.t11n-album>img{height:430px}.t11n-album>div img{height:270px}}
+
+/* Layered red diary pages and guest details unique to Template 11. */
+.t11n-loveStory{min-height:2050px;display:grid;align-content:space-around;gap:48px;padding:80px 22px;color:#f7ded7;background:#af6967;text-align:center}
+.t11n-loveStory>small{font:500 14px/1 "Quicksand",sans-serif;letter-spacing:.35em}
+.t11n-storyFrame{position:relative;width:78%;height:920px;justify-self:start;padding:12px;border:1px solid rgba(255,255,255,.48)}
+.t11n-storyFrame img{width:100%;height:100%;object-fit:cover}
+.t11n-storyFrame span{position:absolute;top:42%;left:calc(100% - 5px);width:125px;font:400 24px/1.55 "Signora",cursive;text-align:left}
+.t11n-loveStory>p{max-width:390px;justify-self:center;margin:0;font-size:17px;line-height:1.85}
+.t11n-loveStory>img{width:90%;height:560px;justify-self:end;object-fit:cover;border:8px solid #d4a09b}
+.t11n-redDiary{min-height:2050px;position:relative;display:grid;align-content:space-around;gap:42px;padding:80px 24px;color:#f6e0d5;background:#7c1112;text-align:center}
+.t11n-redDiary>img:first-child{height:720px;object-fit:cover;border:2px solid #c6968c;padding:12px}
+.t11n-redDiary>div{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.t11n-redDiary>div img{height:500px;object-fit:cover}
+.t11n-redDiary>p{max-width:390px;justify-self:center;margin:0;font-size:17px;line-height:1.8}
+.t11n-redDiary>.t11n-sticker{width:120px;height:120px;object-fit:contain;justify-self:center}
+.t11n-schedule{margin-top:30px;padding:24px 18px;border:1px solid #d8aa83;background:rgba(69,5,5,.28);text-align:left}
+.t11n-schedule>small,.t11n-dresscode>small,.t11n-wishes>small{display:block;color:#efc5bb;font:600 10px/1.5 "Quicksand",sans-serif;letter-spacing:.16em;text-align:center}
+.t11n-schedule h3{margin:8px 0 15px;color:#fff4ec;font:400 24px/1.2 "PlayfairDisplay",serif;text-align:center}
+.t11n-schedule>div{display:grid;grid-template-columns:75px 1fr;gap:12px;padding:12px 2px;border-top:1px solid rgba(255,255,255,.23)}
+.t11n-schedule time{color:#efb6ad;font:600 12px/1.5 "Quicksand",sans-serif}
+.t11n-schedule>div span{font:400 14px/1.5 "Quicksand",sans-serif}
+.t11n-dresscode{margin-top:22px;padding:24px 18px;color:#5c1917;background:#f3e6d8;text-align:center}
+.t11n-dresscode>small,.t11n-wishes>small{color:#8b2020}
+.t11n-dresscode h3{margin:8px 0;color:#8b2020;font:400 29px/1.1 "Carlytte",cursive}
+.t11n-dresscode p{margin:0;font:400 13px/1.7 "Quicksand",sans-serif}
+.t11n-dresscode>div{display:flex;justify-content:center;gap:12px;margin-top:16px}
+.t11n-dresscode i{width:28px;height:28px;border:1px solid rgba(0,0,0,.14);border-radius:50%;background:#801010}
+.t11n-dresscode i:nth-child(2){background:#f3e6d8}
+.t11n-dresscode i:nth-child(3){background:#d6a09b}
+.t11n-wishes{width:min(100%,380px);text-align:center}
+.t11n-wishes>small{margin-bottom:12px}
+.t11n-wish{border:1px solid #d8aa83!important;border-radius:3px!important;background:#fffaf1!important;color:#3e201d!important;box-shadow:0 14px 30px rgba(30,0,0,.15)!important}
+.t11n-wish h3{color:#800b0b!important}
+.t11n-wish input,.t11n-wish textarea{border-color:#dcc9b8!important;border-radius:2px!important}
+.t11n-wish button,.t11n-rsvp button{border-radius:2px!important;background:#800b0b!important;color:#fff!important}
+@media(max-width:420px){.t11n-loveStory{min-height:1850px;padding-right:18px;padding-left:18px}.t11n-storyFrame{height:790px}.t11n-storyFrame span{top:auto;right:8px;bottom:8px;left:auto;width:min(160px,62%);padding:11px;color:#fff;background:rgba(72,12,12,.78);font-size:14px;line-height:1.4;text-align:right}.t11n-loveStory>img{height:480px}.t11n-redDiary{min-height:1900px;padding-right:18px;padding-left:18px}.t11n-redDiary>img:first-child{height:610px}.t11n-redDiary>div img{height:410px}.t11n-schedule,.t11n-dresscode{padding-right:14px;padding-left:14px}}

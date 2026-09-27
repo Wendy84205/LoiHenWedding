@@ -1,0 +1,94 @@
+html.template12new-page,body.template12new-page{background:#eadbd1}
+.t12n{--red:#b9222c;--ink:#341b20;--paper:#fff8ef;width:min(500px,100vw);min-height:100dvh;margin:0 auto;overflow:hidden;color:var(--ink);background:var(--paper);font-family:"Quicksand",sans-serif;box-shadow:0 18px 60px rgba(77,30,33,.2)}
+.t12n-music{color:#fff!important;background:#9f1722!important}
+.t12n-cover{min-height:900px;position:relative;display:grid;grid-template-rows:auto 1fr;align-content:start;gap:28px;padding:55px 25px 24px;color:var(--paper);background:var(--red)}
+.t12n-copy{position:relative;z-index:2;display:grid;gap:12px;text-align:center}
+.t12n-copy small,.t12n-inviteLabel small,.t12n-storyTitle small,.t12n-eventHeading small,.t12n-timeline>small,.t12n-dresscode>small,.t12n-wishes>small{font:700 10px/1.5 "Quicksand",sans-serif;letter-spacing:.2em}
+.t12n-copy h2{display:grid;margin:0;font:400 clamp(3rem,12vw,4.1rem)/.88 "Signora",cursive}
+.t12n-copy h2 i{color:#f3d38d;font:400 .7em/1 "Carlytte",cursive}
+.t12n-copy>span{font:600 11px/1 "Quicksand",sans-serif;letter-spacing:.2em}
+.t12n-coverImage{width:84%;height:610px;justify-self:center;object-fit:cover;border:12px solid var(--paper);box-shadow:12px 12px 0 rgba(70,10,17,.24);transform:rotate(-2deg)}
+.t12n-sparkle{position:absolute;right:22px;bottom:60px;width:42px;height:42px;color:#f3d38d}
+.t12n-paperInvite{padding:70px 22px 80px;background-color:var(--paper);background-image:radial-gradient(rgba(176,89,78,.11) 1px,transparent 1px);background-size:9px 9px}
+.t12n-inviteLabel{display:flex;align-items:center;gap:12px;color:var(--red)}
+.t12n-inviteLabel>span{font:400 28px/1 "Signora",cursive}
+.t12n-inviteLabel small{color:#754540}
+.t12n-intro{margin:45px 0 40px;text-align:center}
+.t12n-intro>svg{width:20px;height:20px;color:var(--red)}
+.t12n-intro h2{margin:16px 0;color:var(--red);font:400 2.5rem/1.02 "Signora",cursive}
+.t12n-intro p{max-width:365px;margin:0 auto;color:#624744;font-size:14px;line-height:1.8}
+.t12n-families{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;padding:24px 0;border-top:1px solid #d8b9a9;border-bottom:1px solid #d8b9a9;text-align:center}
+.t12n-families>div{display:grid;gap:7px}
+.t12n-families small{margin-bottom:5px;color:#a82c32;font:700 9px/1.45 "Quicksand",sans-serif;letter-spacing:.11em}
+.t12n-families b,.t12n-families span{font:500 11px/1.5 "Quicksand",sans-serif}
+.t12n-families span{color:#846a61;font-size:10px}
+.t12n-families>i{color:var(--red);font:400 21px/1 Georgia,serif}
+.t12n-posterPortrait{width:82%;margin:46px auto 0;padding:11px 11px 17px;background:#e8c7ad;box-shadow:0 12px 25px rgba(89,42,39,.13);transform:rotate(2deg);text-align:center}
+.t12n-posterPortrait img{height:510px;object-fit:cover;object-position:center 25%}
+.t12n-posterPortrait small{display:block;margin-top:12px;color:#6f3632;font:700 9px/1 "Quicksand",sans-serif;letter-spacing:.19em}
+.t12n-story{padding:75px 20px;background:#f2e3d2}
+.t12n-storyTitle{text-align:center}
+.t12n-storyTitle small{color:#a22c32}
+.t12n-storyTitle h2{margin:14px 0 0;color:var(--red);font:400 2.55rem/1 "Signora",cursive}
+.t12n-story>p{max-width:390px;margin:25px auto 32px;color:#684842;font-size:15px;line-height:1.85;text-align:center}
+.t12n-stickers{display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:12px}
+.t12n-stickers img{height:350px;padding:7px;background:#fffaf1;box-shadow:0 8px 20px rgba(96,54,43,.12);object-fit:cover}
+.t12n-stickers img:last-child{margin-top:45px}
+.t12n-storyPhoto{position:relative;width:85%;margin:45px auto 0;transform:rotate(-2deg)}
+.t12n-storyPhoto img{height:430px;border:9px solid #fffaf1;object-fit:cover;box-shadow:0 13px 28px rgba(73,42,36,.18)}
+.t12n-storyPhoto span{position:absolute;right:-22px;bottom:25px;padding:10px 14px;color:#fff;background:var(--red);font:700 11px/1.5 "Quicksand",sans-serif;letter-spacing:.08em}
+.t12n-event{display:grid;gap:28px;padding:74px 22px;background:var(--paper)}
+.t12n-eventHeading{display:grid;justify-items:center;gap:12px;color:#aa2731;text-align:center}
+.t12n-eventHeading h2{margin:0;font:400 2.3rem/1 "Signora",cursive}
+.t12n-date{display:grid;justify-items:center;gap:8px;padding:22px;border-top:1px solid #b9222c;border-bottom:1px solid #b9222c;text-align:center}
+.t12n-date span{color:#704744;font:700 10px/1.5 "Quicksand",sans-serif;letter-spacing:.17em}
+.t12n-date strong{color:var(--red);font:400 6.2rem/.82 "Signora",cursive}
+.t12n-venue{text-align:center}
+.t12n-venue h3{margin:0;color:#442c27;font:400 1.4rem/1.35 "Signora",cursive}
+.t12n-venue p{margin:9px 0 18px;color:#684f47;font-size:13px;line-height:1.6}
+.t12n-venue .ni-map{display:inline-flex;align-items:center;gap:7px;padding:10px 18px;border:1px solid #ac3638;color:#8f242b;font-size:12px;text-decoration:none}
+.t12n-event .ni-calendar{padding:24px 13px;border:1px solid #e1c7b0;background:#fffaf3;text-align:center}
+.t12n-event .ni-calendar h3{color:#a52a30;font:400 1.7rem/1.1 "Signora",cursive}
+.t12n-event .ni-days>span{height:36px}
+.t12n-event .ni-days svg{width:34px;color:#b9222c}
+.t12n-timeline{padding:20px 16px;background:#f0e2d3}
+.t12n-timeline>small{display:block;margin-bottom:12px;color:#9f2730;text-align:center}
+.t12n-timeline>div{display:grid;grid-template-columns:70px 1fr 24px;gap:10px;padding:12px 0;border-top:1px dashed #cba99a}
+.t12n-timeline time{color:#a12630;font:700 12px/1.5 "Quicksand",sans-serif}
+.t12n-timeline span{font-size:13px;line-height:1.5}
+.t12n-timeline i{color:#aa8f7e;font:400 10px/1.5 "Quicksand",sans-serif;text-align:right}
+.t12n-dresscode{padding:23px 16px;border:1px solid #dfc6b4;text-align:center}
+.t12n-dresscode>small{color:#a32930}
+.t12n-dresscode h3{margin:8px 0;color:#86242b;font:400 1.8rem/1 "Signora",cursive}
+.t12n-dresscode p{margin:0;color:#75544b;font-size:13px;line-height:1.65}
+.t12n-dresscode>div{display:flex;justify-content:center;gap:12px;margin-top:15px}
+.t12n-dresscode i{width:28px;height:28px;border:1px solid rgba(0,0,0,.15);border-radius:50%;background:#b9222c}
+.t12n-dresscode i:nth-child(2){background:#e6a1a0}
+.t12n-dresscode i:nth-child(3){background:#f0d78f}
+.t12n-countdown{gap:6px}
+.t12n-countdown>span{min-height:65px!important;color:#fff;background:#98232b!important}
+.t12n-countdown b{font-size:1.25rem}
+.t12n-countdown small{font:600 .58rem/1.3 "Quicksand",sans-serif}
+.t12n-gallery{padding:70px 14px;background:#8e1d24;color:#fff;text-align:center}
+.t12n-gallery>div:first-child{margin-bottom:30px}
+.t12n-gallery>div:first-child small{color:#f1d494;font:700 10px/1.4 "Quicksand",sans-serif;letter-spacing:.17em}
+.t12n-gallery h2{margin:10px 0 0;font:400 2.3rem/1 "Signora",cursive}
+.t12n-gallery>img{height:480px;border:8px solid #f7ead9;object-fit:cover}
+.t12n-gallery>div:last-child{display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:10px;margin-top:12px}
+.t12n-gallery>div:last-child img{height:330px;border:6px solid #f7ead9;object-fit:cover}
+.t12n-gallery>div:last-child img:last-child{margin-top:38px}
+.t12n-ending{display:grid;justify-items:center;gap:36px;padding:65px 18px;background:#f2e3d2}
+.t12n-rsvp,.t12n-wish{border:1px solid #d5b5a6!important;border-radius:2px!important;background:#fffaf3!important;box-shadow:0 12px 28px rgba(92,37,36,.08)!important}
+.t12n-rsvp h3,.t12n-wish h3{color:#9e252d!important}
+.t12n-rsvp label,.t12n-rsvp legend,.t12n-wish label{color:#684842!important}
+.t12n-rsvp input:not([type="radio"]),.t12n-rsvp select,.t12n-wish input,.t12n-wish textarea{border-color:#d5b5a6!important;border-radius:2px!important;background:#fff!important;color:#341b20!important}
+.t12n-rsvp fieldset{border-color:#d5b5a6!important}
+.t12n-rsvp input[type="radio"]{accent-color:#b9222c}
+.t12n-rsvp button,.t12n-wish button{border-radius:2px!important;background:#a3202a!important;color:#fff!important}
+.t12n-wishes{width:min(100%,380px);text-align:center}
+.t12n-wishes>small{display:block;margin-bottom:12px;color:#9e252d;font:700 10px/1.4 "Quicksand",sans-serif;letter-spacing:.16em}
+.t12n-gift{width:min(100%,390px)}
+.t12n-gift .ni-gift{border:1px solid #d0aa98;border-radius:2px;background:#f8ede0;color:#4b3029;box-shadow:none}
+.t12n-gift .ni-gift>svg{color:#fff;background:#a3202a}
+.t12n-ending>h2{margin:0;color:#9e252d;font:400 2.1rem/1.1 "Signora",cursive;text-align:center}
+@media(max-width:420px){.t12n-cover{min-height:790px;padding-right:18px;padding-left:18px}.t12n-coverImage{height:530px}.t12n-paperInvite{padding-right:17px;padding-left:17px}.t12n-families{gap:7px}.t12n-families b{font-size:10px}.t12n-posterPortrait img{height:430px}.t12n-stickers img{height:300px}.t12n-event{padding-right:17px;padding-left:17px}.t12n-gallery>img{height:410px}.t12n-gallery>div:last-child img{height:270px}}

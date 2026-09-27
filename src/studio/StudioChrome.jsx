@@ -1,5 +1,5 @@
 import React from 'react';
-import './studioHome.css';
+import './studioChrome.css';
 
 export function StudioHeader() {
   return (
@@ -8,8 +8,6 @@ export function StudioHeader() {
         <span>LH</span>
         <strong>Lời Hẹn<small>Wedding Studio</small></strong>
       </a>
-      <p className="studioCatalogTagline">Thiệp cưới online · Xem &amp; đặt mẫu</p>
-      <a className="studioHeaderAction" href="https://zalo.me/loihenstudio" target="_blank" rel="noreferrer">Liên hệ Zalo</a>
     </header>
   );
 }

@@ -5,12 +5,11 @@ import WeddingMusicButton from './WeddingMusicButton.jsx';
 import useWeddingCountdown from './useWeddingCountdown.js';
 import { useInvitationContent, useRsvpSubmit, useWishSubmit } from '../commerce/CommercialInvitationContext.jsx';
 import './template39.css';
-import './new/fontFidelity.css';
 
 const t39Assets = {
   hero: '/assets/template39/couple-red.webp',
-  bride: '/assets/template39/couple-red.webp',
-  groom: '/assets/template39/couple-red.webp',
+  bride: '/assets/template39/bride-profile.jpg',
+  groom: '/assets/template39/groom-profile.jpg',
   venue: '/assets/template39/couple-red-seated.webp',
   final: '/assets/template39/couple-red-seated.webp',
 };
@@ -159,7 +158,7 @@ function Couple39() {
     <section className="t39-section t39-couple">
       <div className="t39-personStack">
         <motion.article className="bride" initial={{ opacity: 0, x: -82 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-90px' }} transition={{ duration: 1.15, ease: [0.22, 1, 0.36, 1] }}>
-          <img data-media-role="bride" src={media.bride || media.hero || t39Assets.bride} alt={couple.brideName} />
+          <img data-media-role="bride" src={media.bride || t39Assets.bride} alt={couple.brideName} />
           <div>
             <span>Cô dâu</span>
             <h2 data-editor-field="couple.brideName">{couple.brideName.toUpperCase()}</h2>
@@ -167,7 +166,7 @@ function Couple39() {
           </div>
         </motion.article>
         <motion.article className="groom" initial={{ opacity: 0, x: 82 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-90px' }} transition={{ duration: 1.15, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}>
-          <img data-media-role="groom" src={media.groom || media.hero || t39Assets.groom} alt={couple.groomName} />
+          <img data-media-role="groom" src={media.groom || t39Assets.groom} alt={couple.groomName} />
           <div>
             <span>Chú rể</span>
             <h2 data-editor-field="couple.groomName">{couple.groomName.toUpperCase()}</h2>
@@ -379,7 +378,7 @@ function Final39() {
 function Gift39() {
   const { media } = useInvitationContent();
   return (
-    <section className="t39-giftSection">
+    <section className="t39-giftSection" id="gift">
       <motion.div className="t39-giftIcon" {...rise} aria-hidden="true"><Gift size={86} strokeWidth={1.35} /></motion.div>
       {media.giftQr && <motion.figure className="t39-giftQr" {...rise} transition={{ ...rise.transition, delay: 0.05 }}><img data-gift-qr src={media.giftQr} alt="QR mừng cưới" /><figcaption>Quét mã gửi quà mừng</figcaption></motion.figure>}
       <motion.h2 {...rise} transition={{ ...rise.transition, delay: 0.08 }}>Hộp quà cưới</motion.h2>
@@ -408,8 +407,8 @@ function WishDock39({ sent, setSent }) {
         <input aria-label="Lời chúc dành cho cô dâu chú rể" placeholder="Gửi lời chúc..." value={form.message} onChange={(event) => setForm({ ...form, message: event.target.value })} required minLength={2} />
         <MessageCircle size={17} />
       </label>
-      <button className="t39-pill" type="button"><Heart size={15} fill="currentColor" /> Bắn tim</button>
-      <button className="t39-circle" type="button" aria-label="Mở thông tin quà cưới"><Gift size={18} /></button>
+      <button className="t39-pill" type="button" onClick={() => setForm((previous) => ({ ...previous, message: 'Chúc hai bạn trăm năm hạnh phúc! 💗' }))}><Heart size={15} fill="currentColor" /> Bắn tim</button>
+      <button className="t39-circle" type="button" aria-label="Mở thông tin quà cưới" onClick={() => document.getElementById('gift')?.scrollIntoView({ behavior: 'smooth' })}><Gift size={18} /></button>
       <button className="t39-circle send" type="submit" aria-label="Gửi lời chúc" disabled={wish.status === 'loading'}><Send size={18} /></button>
       {sent && <span className="t39-sent">Đã gửi</span>}
       {wish.error && <span className="t39-sent error">{wish.error}</span>}

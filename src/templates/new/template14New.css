@@ -1,1 +1,40 @@
 html.template14new-page,body.template14new-page{background:#ded8ce}.t14n{width:min(500px,100vw);margin:auto;overflow:hidden;color:#493c2e;background:#f8f4eb;font-family:"Cinelove Times",Georgia,serif;box-shadow:0 20px 70px rgba(73,60,46,.2)}.t14n-music{color:#fff;background:#856b45}.t14n-hero{min-height:850px;position:relative;padding:55px 28px;background:#e7d8c3;text-align:center}.t14n-ring{width:390px;height:590px;max-width:100%;margin:auto;border:1px solid #856b45;border-radius:50% 50% 0 0;padding:14px}.t14n-ring img{height:100%;border-radius:50% 50% 0 0;object-fit:cover}.t14n-title{margin-top:28px}.t14n-title small{letter-spacing:.28em}.t14n-title h1{margin:8px 0;color:#856b45;font:400 48px/1 "Signora",cursive}.t14n-title h1 i{font-family:Georgia,serif}.t14n-letter{padding:80px 35px;background:#fff}.t14n-letter>div{display:grid;justify-items:start;gap:12px;border-left:1px solid #856b45;padding-left:24px}.t14n-letter svg{color:#856b45}.t14n-letter small{font-size:12px;letter-spacing:.25em}.t14n-letter h2{margin:0;font-size:36px;font-weight:400;line-height:1.18}.t14n-letter p{margin:0;font-size:17px;line-height:1.8}.t14n-couple{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:70px 20px;background:#eee5d8;text-align:center}.t14n-couple img{height:390px;object-fit:cover}.t14n-couple span{display:block;margin-top:16px;font-size:10px;letter-spacing:.23em}.t14n-couple h3{margin:7px 0 0;color:#856b45;font:400 34px/1 "Signora",cursive}.t14n-quote{display:grid;justify-items:center;gap:22px;padding:75px 35px;background:#856b45;color:#fff;text-align:center}.t14n-quote p{margin:0;font-size:23px;font-style:italic;line-height:1.6}.t14n-date{display:grid;gap:36px;padding:75px 28px;text-align:center}.t14n-date h2{margin:8px 0 0;font:400 48px/1 "Signora",cursive}.t14n .ni-calendar{padding:26px 14px;border:1px solid #bba98e;background:#fff}.t14n .ni-calendar h3{font-size:26px;font-weight:400}.t14n .ni-weekdays{margin:22px 0 9px;font-size:10px}.t14n .ni-days>span{height:43px}.t14n .ni-days svg{width:36px;color:#856b45}.t14n-count{gap:8px}.t14n-count>span{height:72px;border:1px solid #856b45}.t14n-count b{font-size:25px}.t14n-date .ni-map{border-radius:2px;padding:11px 22px;color:#fff;background:#856b45}.t14n-gallery{padding:65px 14px;background:#e7d8c3}.t14n-gallery>img{height:520px;object-fit:cover}.t14n-gallery>div{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:9px}.t14n-gallery>div img{height:310px;object-fit:cover}.t14n-end{display:grid;justify-items:center;gap:55px;padding:70px 24px 50px;color:#fff;background:#856b45}.t14n-gift>svg{color:#856b45;background:#f8f4eb}.t14n-end h2{margin:0;font:400 54px/1 "Signora",cursive}@media(max-width:420px){.t14n-hero{min-height:770px;padding-left:18px;padding-right:18px}.t14n-ring{height:520px}.t14n-title h1{font-size:42px}.t14n-couple{gap:8px;padding-left:12px;padding-right:12px}.t14n-couple img{height:330px}.t14n-date{padding-left:18px;padding-right:18px}}
+
+/* Classic champagne story pages and their event details are styled within Template 14. */
+.t14n-beginning{min-height:2100px;display:grid;align-content:space-around;gap:42px;padding:72px 16px;color:#5f5144;background:#f9f4ef;text-align:center}
+.t14n-beginning>div{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:start}
+.t14n-beginning>div img{height:550px;object-fit:cover}
+.t14n-beginning>div img:last-child{margin-top:120px}
+.t14n-beginning>p{max-width:400px;justify-self:center;margin:0;padding:0 12px;font-size:17px;line-height:1.9}
+.t14n-beginning>h2{max-width:390px;justify-self:center;margin:0;font:400 25px/1.4 "Signora",serif}
+.t14n-reliance{min-height:1450px;display:grid;align-content:space-around;gap:38px;padding:72px 16px;color:#5e5145;background:#f9f4ef;text-align:center}
+.t14n-reliance>img{width:86%;height:510px;justify-self:center;object-fit:cover}
+.t14n-reliance>p{max-width:410px;justify-self:center;margin:0;padding:0 12px;font-size:17px;line-height:1.8}
+.t14n-reliance>div{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:start}
+.t14n-reliance>div img{height:530px;object-fit:cover}
+.t14n-reliance>h2{max-width:420px;justify-self:center;margin:0;padding:0 16px;font:400 23px/1.6 "Signora",serif}
+.t14n-families{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:9px;padding:20px 0;border-top:1px solid #c7b28e;border-bottom:1px solid #c7b28e}
+.t14n-families>div{display:grid;gap:7px}
+.t14n-families>svg{width:17px;color:#856b45}
+.t14n-families small{color:#856b45;font:600 9px/1.4 "Quicksand",sans-serif;letter-spacing:.13em}
+.t14n-families b{font:400 10px/1.5 "Quicksand",sans-serif}
+.t14n-timeline{padding:20px 16px;border:1px solid #d2c2a5;background:#fffdf9;text-align:left}
+.t14n-timeline>small{display:block;margin-bottom:9px;color:#856b45;font:600 9px/1.4 "Quicksand",sans-serif;letter-spacing:.18em;text-align:center}
+.t14n-timeline>div{display:grid;grid-template-columns:68px 1fr;gap:12px;padding:11px 0;border-top:1px solid #e5ded3}
+.t14n-timeline time{color:#806a48;font:600 11px/1.5 "Quicksand",sans-serif}
+.t14n-timeline span{font:400 13px/1.5 "Quicksand",sans-serif}
+.t14n-dresscode{padding:22px 15px;background:#eee5d8;text-align:center}
+.t14n-dresscode>small,.t14n-wishes>small{color:#856b45;font:600 9px/1.4 "Quicksand",sans-serif;letter-spacing:.17em}
+.t14n-dresscode h3{margin:8px 0;color:#725b3d;font:400 27px/1.1 "Signora",serif}
+.t14n-dresscode p{margin:0;color:#594c3e;font:400 12px/1.65 "Quicksand",sans-serif}
+.t14n-dresscode>div{display:flex;justify-content:center;gap:11px;margin-top:14px}
+.t14n-dresscode i{width:27px;height:27px;border:1px solid rgba(0,0,0,.13);border-radius:50%;background:#f8f4eb}
+.t14n-dresscode i:nth-child(2){background:#c3ad84}
+.t14n-dresscode i:nth-child(3){background:#79816d}
+.t14n-wishes{width:min(100%,380px);text-align:center}
+.t14n-wishes>small{display:block;margin-bottom:12px}
+.t14n-wish{border:1px solid #cbbd9f!important;border-radius:3px!important;background:#fffdf9!important;box-shadow:0 12px 28px rgba(73,60,46,.08)!important}
+.t14n-wish h3{color:#745d3e!important}
+.t14n-wish input,.t14n-wish textarea{border-color:#d1c5ad!important;border-radius:2px!important}
+.t14n-wish button,.t14n-rsvp button{border-radius:2px!important;background:#856b45!important;color:#fff!important}
+@media(max-width:420px){.t14n-beginning{padding-right:14px;padding-left:14px}.t14n-beginning>div{gap:15px}.t14n-beginning>div img{height:455px}.t14n-beginning>div img:last-child{margin-top:90px}.t14n-reliance{padding-right:14px;padding-left:14px}.t14n-reliance>img{height:440px}.t14n-reliance>div{gap:17px}.t14n-reliance>div img{height:450px}.t14n-families{gap:6px}.t14n-families b{font-size:9px}.t14n-date{gap:28px}}

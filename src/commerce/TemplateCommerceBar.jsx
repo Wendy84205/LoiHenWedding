@@ -1,22 +1,19 @@
 import React from 'react';
-import { ArrowLeft, MessageCircle } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { getInvitationDisplayTitle } from '../data/invitationCatalog.js';
 import './templateCommerceBar.css';
 
 export default function TemplateCommerceBar({ slug }) {
+  const templateNumber = slug.match(/^thiep-cuoi-(\d+)$/)?.[1];
+  const title = templateNumber ? `Thiệp cưới số ${templateNumber}` : getInvitationDisplayTitle(slug);
   return (
-    <aside className="templateCommerceBar" aria-label="Hành động cho mẫu thiệp">
+    <aside className="templateCommerceBar" aria-label="Thông tin mẫu thiệp">
       <a className="templateCommerceBack" href="/mau-thiep" aria-label="Quay lại thư viện mẫu">
         <ArrowLeft />
       </a>
       <div className="templateCommerceIdentity">
-        <small>MẪU THIỆP CƯỚI ONLINE</small>
-        <strong>{getInvitationDisplayTitle(slug)}</strong>
+        <strong>{title}</strong>
       </div>
-      <a className="templateCommerceAction" href="https://zalo.me/loihenstudio" target="_blank" rel="noreferrer">
-        <MessageCircle />
-        <span>Liên hệ đặt qua Zalo</span>
-      </a>
     </aside>
   );
 }

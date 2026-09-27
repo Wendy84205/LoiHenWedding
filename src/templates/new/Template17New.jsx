@@ -1,8 +1,7 @@
 import React from 'react';
 import { Heart, MapPinned } from 'lucide-react';
-import { Countdown, GiftNote, MusicButton, Reveal, RsvpForm, VenueLink, WeddingCalendar, useInvitationPage } from './NewInvitationCommon.jsx';
+import { Countdown, GiftNote, MusicButton, Reveal, RsvpForm, VenueLink, WeddingCalendar, WishForm, useInvitationPage } from './NewInvitationCommon.jsx';
 import './template17New.css';
-import './auditFidelity.css';
 
 const a = '/assets/new-templates/thiep-cuoi-17';
 
@@ -29,13 +28,14 @@ export default function Template17New() {
 
       <section className="t17n-invite">
         <Reveal><h2>LỄ THÀNH HÔN</h2><p>TRÂN TRỌNG KÍNH MỜI<br /><b>Bạn và Người thương</b><br />ĐẾN DỰ BỮA TIỆC CHUNG VUI</p></Reveal>
+        <Reveal className="t17n-families"><div><small>NHÀ TRAI</small><b>Ông Nguyễn Văn Hùng</b><b>Bà Trần Thị Thu</b></div><Heart/><div><small>NHÀ GÁI</small><b>Ông Lê Quang Minh</b><b>Bà Phạm Thị Lan</b></div></Reveal>
         <Reveal className="t17n-date" direction="scale"><span>CHỦ NHẬT<br />THÁNG 11</span><strong>21</strong><span>NĂM 2027<br />11:00</span></Reveal>
         <Reveal><h3>TƯ GIA NHÀ TRAI</h3><p>38 Nguyễn Trãi, Thanh Xuân, Hà Nội</p><VenueLink query="Nguyen Trai Thanh Xuan Ha Noi">Chỉ đường</VenueLink></Reveal>
       </section>
 
-      <section className="t17n-calendar"><Reveal><WeddingCalendar month="THÁNG 11 · 2027" weddingDay={21} offset={0} /></Reveal><Countdown values={count} className="t17n-count" /></section>
+      <section className="t17n-calendar"><Reveal><WeddingCalendar month="THÁNG 11 · 2027" weddingDay={21} /></Reveal><Reveal className="t17n-schedule"><small>CHƯƠNG TRÌNH NGÀY VUI</small><div><time>10:30</time><span>Đón khách</span></div><div><time>11:00</time><span>Lễ thành hôn</span></div><div><time>11:30</time><span>Khai tiệc</span></div></Reveal><Reveal className="t17n-dresscode"><small>GỢI Ý TRANG PHỤC</small><h3>Dress code</h3><p>Đỏ truyền thống, vàng champagne và kem nhạt sẽ hợp với sắc hỷ.</p><div aria-label="Bảng màu gợi ý"><i/><i/><i/></div></Reveal><Countdown values={count} className="t17n-count" /></section>
       <section className="t17n-album"><Reveal as="h2">Hỷ sự</Reveal><div><Reveal as="img" direction="right" src={`${a}/image-7.jpg`} alt="Album hỷ sự" /><Reveal as="img" direction="left" src={`${a}/image-8.jpg`} alt="Ảnh cưới truyền thống" /></div><Reveal><MapPinned /><p>Cảm ơn bạn đã dành thời gian đến chung vui cùng gia đình chúng mình.</p></Reveal></section>
-      <section className="t17n-ending"><RsvpForm className="t17n-rsvp" accent="#ad160f" /><GiftNote className="t17n-gift" title="Mừng cưới" /><Reveal as="h2">Trăm năm hạnh phúc</Reveal></section>
+      <section className="t17n-ending"><RsvpForm className="t17n-rsvp" accent="#ad160f" /><Reveal className="t17n-wishes"><small>GỬI ĐÔI MÌNH MỘT LỜI CHÚC</small><WishForm className="t17n-wish" accent="#ad160f" /></Reveal><GiftNote className="t17n-gift" title="Mừng cưới" /><Reveal as="h2">Trăm năm hạnh phúc</Reveal></section>
     </main>
   );
 }

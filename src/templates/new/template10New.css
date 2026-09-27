@@ -62,3 +62,32 @@ html.template10new-page, body.template10new-page { background: #dedede; }
   .t10n-portraits img { height: 330px; }
   .t10n-archPhoto img { height: 500px; }
 }
+
+/* The studio invitation's added event details keep its clean white editorial look. */
+.t10n-welcome{align-content:space-around;gap:38px}
+.t10n-daylight{align-content:space-around;gap:36px}
+.t10n-welcome>p,.t10n-daylight>p{max-width:410px;font-size:17px;line-height:1.8}
+.t10n-daylight>small{font:400 27px/1 "PlayfairDisplay",serif}
+.t10n-archPhoto{height:620px}
+.t10n-archPhoto img{width:100%;height:100%;object-fit:cover}
+.t10n-schedule{padding:24px 18px;border-top:1px solid #c9c7c2;border-bottom:1px solid #c9c7c2;text-align:left}
+.t10n-schedule>small{color:#65625d;font:600 10px/1.4 "Quicksand",sans-serif;letter-spacing:.19em}
+.t10n-schedule h3{margin:9px 0 14px;font:400 25px/1.1 "Signora",serif}
+.t10n-schedule>div{display:grid;grid-template-columns:72px 1fr;gap:12px;padding:12px 0;border-top:1px solid #e2e0dc}
+.t10n-schedule time{font:600 12px/1.5 "Quicksand",sans-serif}
+.t10n-schedule>div span{font:400 14px/1.5 "Quicksand",sans-serif}
+.t10n-dresscode{padding:25px 18px;background:#f4f3f0;text-align:center}
+.t10n-dresscode>small,.t10n-wishes>small{color:#68645e;font:600 10px/1.4 "Quicksand",sans-serif;letter-spacing:.17em}
+.t10n-dresscode h3{margin:8px 0;color:#171717;font:400 27px/1.1 "Signora",serif}
+.t10n-dresscode p{margin:0;color:#5a5854;font:400 14px/1.6 "Quicksand",sans-serif}
+.t10n-dresscode>div{display:flex;justify-content:center;gap:12px;margin-top:16px}
+.t10n-dresscode i{width:28px;height:28px;border:1px solid #ccc;border-radius:50%;background:#161616}
+.t10n-dresscode i:nth-child(2){background:#fff}
+.t10n-dresscode i:nth-child(3){background:#d7c4a5}
+.t10n-wishes{width:min(100%,380px);text-align:center}
+.t10n-wishes>small{display:block;margin-bottom:12px}
+.t10n-wish{border:1px solid #d6d4cf!important;border-radius:2px!important;background:#fff!important;box-shadow:0 12px 28px rgba(0,0,0,.06)!important}
+.t10n-wish h3{color:#171717!important}
+.t10n-wish input,.t10n-wish textarea{border-color:#d6d4cf!important;border-radius:2px!important}
+.t10n-wish button,.t10n-rsvp button{border-radius:2px!important;background:#171717!important;color:#fff!important}
+@media(max-width:420px){.t10n-schedule{padding-right:14px;padding-left:14px}.t10n-dresscode{padding-right:14px;padding-left:14px}.t10n-archPhoto{height:520px}}

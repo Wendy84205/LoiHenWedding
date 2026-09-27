@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Check, Gift, Heart, MapPin, Send } from 'lucide-react';
+import { Gift, Heart, MapPin } from 'lucide-react';
 import WeddingMusicButton from './WeddingMusicButton.jsx';
 import useWeddingCountdown from './useWeddingCountdown.js';
+import { RsvpForm, WishForm } from './new/NewInvitationCommon.jsx';
+import { useInvitationContent } from '../commerce/CommercialInvitationContext.jsx';
 import './template36.css';
 
 const assets36 = {
@@ -18,7 +20,6 @@ const assets36 = {
   close: '/assets/template36-ref/close.jpg',
   kiss: '/assets/template36-ref/kiss.jpg',
   laugh: '/assets/template36-ref/laugh.jpg',
-  qr: '/assets/template42/qr-demo.png',
 };
 
 const reveal36 = (direction = 'up', delay = 0) => {
@@ -26,10 +27,15 @@ const reveal36 = (direction = 'up', delay = 0) => {
   return { initial: { opacity: 0, ...delta }, whileInView: { opacity: 1, x: 0, y: 0 }, viewport: { once: true, margin: '-55px' }, transition: { duration: 1.3, delay, ease: 'easeOut' } };
 };
 
-const calendar36 = [...Array.from({ length: 2 }, (_, i) => `blank-${i}`), ...Array.from({ length: 31 }, (_, i) => i + 1)];
-
 export default function Template36() {
-  const [sent, setSent] = useState(false);
+  const content = useInvitationContent({
+    couple: { brideName: 'Mai Anh', groomName: 'Minh Quân' },
+    families: { groomFather: 'Ông Nguyễn Văn Hùng', groomMother: 'Bà Trần Thị Thu', brideFather: 'Ông Lê Quang Minh', brideMother: 'Bà Phạm Thị Lan' },
+    event: { startsAt: '2027-10-12T12:00:00+07:00', venueName: 'Trung tâm tiệc cưới Cinelove', address: 'Hà Nội' },
+  });
+  const dateValue = content.event.startsAt || '2027-10-12T12:00:00+07:00';
+  const date = new Date(dateValue);
+  const countdown = useWeddingCountdown(dateValue);
 
   useEffect(() => {
     document.documentElement.classList.add('template36-page');
@@ -43,52 +49,67 @@ export default function Template36() {
   return (
     <main className="template36">
       <WeddingMusicButton className="t36-music" />
-      <Hero36 />
-      <Invitation36 />
-      <About36 />
+      <Hero36 countdown={countdown} couple={content.couple} />
+      <Invitation36 content={content} date={date} />
+      <About36 couple={content.couple} />
+      <Families36 families={content.families} />
       <Beginning36 />
       <Freedom36 />
       <Gallery36 />
-      <DateVenue36 />
+      <DateVenue36 date={date} event={content.event} />
+      <Schedule36 schedule={content.schedule} />
       <Tips36 />
-      <Rsvp36 sent={sent} setSent={setSent} />
-      <Gift36 />
+      <Rsvp36 />
+      <Wish36 />
+      <Gift36 couple={content.couple} />
     </main>
   );
 }
 
-function Hero36() {
-  const countdown = useWeddingCountdown('2027-10-12T12:00:00+07:00');
+function Hero36({ countdown, couple }) {
   return (
     <section className="t36-hero" id="hero">
       <motion.p className="t36-topQuote" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.1 }}>I have three things in this world. Sun, moon and you.<br />Sun for morning, moon for night, and you forever.</motion.p>
-      <motion.div className="t36-orbit" initial={{ opacity: 0, scale: .9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.35, delay: .16 }}><span>WEDDING INVITATION</span><img src={assets36.hero} alt="Mai Anh và Minh Quân" fetchPriority="high" /></motion.div>
-      <motion.h1 initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.1, delay: .38 }}>Mai Anh <i>&amp;</i> Minh Quân</motion.h1>
+      <motion.div className="t36-orbit" initial={{ opacity: 0, scale: .9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.35, delay: .16 }}><span>WEDDING INVITATION</span><img src={assets36.hero} alt={`${couple.brideName} và ${couple.groomName}`} fetchPriority="high" /></motion.div>
+      <motion.h1 initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.1, delay: .38 }}>{couple.brideName} <i>&amp;</i> {couple.groomName}</motion.h1>
       <motion.p className="t36-married" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: .62 }}>WE ARE GETTING MARRIED</motion.p>
       <div className="t36-zeroCount">{['ngày', 'giờ', 'phút', 'giây'].map((label, index) => <span key={label}><b>{countdown[index]}</b><small>{label}</small></span>)}</div>
     </section>
   );
 }
 
-function Invitation36() {
+function Invitation36({ content, date }) {
   return (
     <section className="t36-invitation" id="invitation">
-      <motion.div className="t36-dateStrip" {...reveal36('up')}><span>Chủ Nhật<br /><b>12:00 PM</b></span><strong>12</strong><span>Tháng 10<br /><b>2027</b></span></motion.div>
-      <motion.div className="t36-addressStrip" {...reveal36('up', .1)}><i>Address</i><p>Trung tâm tiệc cưới Cinelove</p></motion.div>
-      <motion.div className="t36-invitePhoto" {...reveal36('up', .12)}><img loading="lazy" src={assets36.couple} alt="Ảnh cưới Mai Anh và Minh Quân" /><span>INVITATION</span></motion.div>
+      <motion.div className="t36-dateStrip" {...reveal36('up')}><span>{date.toLocaleDateString('vi-VN', { weekday: 'long' })}<br /><b>{date.toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })}</b></span><strong>{String(date.getDate()).padStart(2, '0')}</strong><span>Tháng {String(date.getMonth() + 1).padStart(2, '0')}<br /><b>{date.getFullYear()}</b></span></motion.div>
+      <motion.div className="t36-addressStrip" {...reveal36('up', .1)}><i>Address</i><p>{content.event.venueName}</p></motion.div>
+      <motion.div className="t36-invitePhoto" {...reveal36('up', .12)}><img loading="lazy" src={assets36.couple} alt={`Ảnh cưới ${content.couple.brideName} và ${content.couple.groomName}`} /><span>INVITATION</span></motion.div>
       <motion.p className="t36-formal" {...reveal36('up')}>Trân trọng kính mời bạn đến chung vui<br />và chứng kiến ngày hạnh phúc của chúng mình.</motion.p>
     </section>
   );
 }
 
-function About36() {
+function Families36({ families }) {
+  return (
+    <section className="t36-families" id="families">
+      <motion.header {...reveal36('up')}><small>OUR FAMILIES</small><h2>Hai gia đình<br />trân trọng kính mời</h2></motion.header>
+      <div className="t36-familyGrid">
+        <motion.div {...reveal36('right')}><small>NHÀ TRAI</small><b>{families.groomFather}</b><b>{families.groomMother}</b><p>{families.groomAddress}</p></motion.div>
+        <Heart aria-hidden="true" />
+        <motion.div {...reveal36('left')}><small>NHÀ GÁI</small><b>{families.brideFather}</b><b>{families.brideMother}</b><p>{families.brideAddress}</p></motion.div>
+      </div>
+    </section>
+  );
+}
+
+function About36({ couple }) {
   return (
     <section className="t36-about" id="about-us">
       <motion.div className="t36-aboutLead" {...reveal36('right')}><img loading="lazy" src={assets36.first} alt="Khoảnh khắc nắm tay" /><p>We have no idea where this story would take us,<br />but we know this chapter is ours.</p></motion.div>
       <motion.h2 {...reveal36('up')}>ABOUT US</motion.h2>
       <div className="t36-aboutCards">
-        <motion.figure {...reveal36('right')}><img loading="lazy" src={assets36.bride} alt="Cô dâu Mai Anh" /><figcaption><small>Cô dâu</small><b>Mai Anh</b></figcaption></motion.figure>
-        <motion.figure {...reveal36('left')}><img loading="lazy" src={assets36.groom} alt="Chú rể Minh Quân" /><figcaption><small>Chú rể</small><b>Minh Quân</b></figcaption></motion.figure>
+        <motion.figure {...reveal36('right')}><img loading="lazy" src={assets36.bride} alt={`Cô dâu ${couple.brideName}`} /><figcaption><small>Cô dâu</small><b>{couple.brideName}</b></figcaption></motion.figure>
+        <motion.figure {...reveal36('left')}><img loading="lazy" src={assets36.groom} alt={`Chú rể ${couple.groomName}`} /><figcaption><small>Chú rể</small><b>{couple.groomName}</b></figcaption></motion.figure>
       </div>
       <motion.blockquote {...reveal36('up')}>Tình yêu mình bắt đầu thật dịu dàng.<br />Em mang bình yên đến bên anh,<br />cùng nhau viết tiếp những ngày sau.</motion.blockquote>
     </section>
@@ -128,16 +149,30 @@ function Gallery36() {
   );
 }
 
-function DateVenue36() {
+function DateVenue36({ date, event }) {
+  const offset = (new Date(date.getFullYear(), date.getMonth(), 1).getDay() + 6) % 7;
+  const dayCount = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+  const calendar = [...Array.from({ length: offset }, (_, index) => `blank-${index}`), ...Array.from({ length: dayCount }, (_, index) => index + 1)];
+  const monthLabel = date.toLocaleString('en-US', { month: 'long' });
+  const dateLabel = date.toLocaleDateString('vi-VN', { weekday: 'long', day: '2-digit', month: '2-digit', year: 'numeric' });
   return (
     <section className="t36-dateVenue" id="date">
       <motion.div className="t36-calendar" {...reveal36('up')}>
-        <h2>October <b>2027</b></h2><div>{calendar36.map((day) => typeof day === 'string' ? <span key={day} /> : <span key={day} className={day === 12 ? 'is-wedding' : ''}>{day === 12 && <Heart fill="currentColor" strokeWidth={0} />}<i>{day}</i></span>)}</div>
+        <h2>{monthLabel} <b>{date.getFullYear()}</b></h2><div>{calendar.map((day) => typeof day === 'string' ? <span key={day} /> : <span key={day} className={day === date.getDate() ? 'is-wedding' : ''}>{day === date.getDate() && <Heart fill="currentColor" strokeWidth={0} />}<i>{day}</i></span>)}</div>
       </motion.div>
-      <motion.div className="t36-timeCopy" {...reveal36('up', .1)}><span>TIME</span><p>Chủ nhật ngày 12 tháng 10 năm 2027<br /><small>Tức ngày 21 tháng 08 âm lịch</small></p></motion.div>
-      <motion.a className="t36-map" href="https://www.google.com/maps/search/?api=1&query=Trung%20tam%20tiec%20cuoi%20Cinelove" target="_blank" rel="noreferrer" {...reveal36('up')}><MapPin /><b>Trung tâm tiệc cưới Cinelove</b><span>Xem chỉ đường</span></motion.a>
+      <motion.div className="t36-timeCopy" {...reveal36('up', .1)}><span>TIME</span><p>{dateLabel}<br /><small>{event.lunarDate || 'Thân mời bạn đến chung vui cùng gia đình.'}</small></p></motion.div>
+      <motion.a className="t36-map" href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.address || event.venueName)}`} target="_blank" rel="noreferrer" {...reveal36('up')}><MapPin /><b>{event.venueName}</b><span>Xem chỉ đường</span></motion.a>
     </section>
   );
+}
+
+function Schedule36({ schedule = [] }) {
+  const entries = schedule.length ? schedule.slice(0, 4) : [
+    { time: '11:30', label: 'Đón tiếp khách mời' },
+    { time: '12:00', label: 'Lễ thành hôn' },
+    { time: '13:00', label: 'Khai tiệc' },
+  ];
+  return <section className="t36-schedule"><motion.div {...reveal36('up')}><small>THE WEDDING PROGRAM</small><h2>Chương trình ngày vui</h2>{entries.map((entry) => <p key={`${entry.time}-${entry.label}`}><time>{entry.time}</time><span>{entry.label}</span></p>)}</motion.div></section>;
 }
 
 function Tips36() {
@@ -151,31 +186,24 @@ function Tips36() {
         <li>Bạn có thể bấm nút chỉ đường để đến đúng địa điểm tổ chức.</li>
         <li>Khoảnh khắc đẹp nhất của ngày vui là khi có bạn ở bên.</li>
       </motion.ul>
+      <motion.div className="t36-dress" {...reveal36('up')}><small>DRESS CODE</small><p>Trắng, hồng phấn và những gam màu dịu nhẹ.</p><span><i /><i /><i /></span></motion.div>
       <motion.p {...reveal36('up')}>Hẹn gặp bạn trong ngày hạnh phúc!</motion.p>
     </section>
   );
 }
 
-function Rsvp36({ sent, setSent }) {
-  const submit = (event) => { event.preventDefault(); setSent(true); };
-  return (
-    <section className="t36-rsvp" id="rsvp">
-      <motion.form onSubmit={submit} {...reveal36('up')}>
-        <h2>Xác nhận tham dự</h2>
-        <label>Họ và tên<input required placeholder="Nhập tên của bạn" /></label>
-        <fieldset><legend>Bạn sẽ tham dự chứ?</legend><label><input type="radio" name="attendance36" defaultChecked /> Có, tôi sẽ tham dự</label><label><input type="radio" name="attendance36" /> Tôi bận, rất tiếc không thể tham dự</label></fieldset>
-        <label>Số lượng người tham dự<select defaultValue="1 người"><option>1 người</option><option>2 người</option><option>3 người</option><option>4 người</option></select></label>
-        <button type="submit"><Send size={15} /> Gửi xác nhận</button>
-        {sent && <span className="t36-success" role="status"><Check size={14} /> Cảm ơn bạn đã phản hồi.</span>}
-      </motion.form>
-    </section>
-  );
+function Rsvp36() {
+  return <section className="t36-rsvp" id="rsvp"><RsvpForm className="t36-rsvpForm" accent="#d46875" /></section>;
 }
 
-function Gift36() {
+function Wish36() {
+  return <section className="t36-wishes" id="wishes"><motion.div {...reveal36('up')}><small>YOUR WISHES</small><WishForm className="t36-wishForm" accent="#d46875" /></motion.div></section>;
+}
+
+function Gift36({ couple }) {
   return (
     <section className="t36-gift" id="gift">
-      <motion.div className="t36-giftFrame" {...reveal36('up')}><Gift /><h2>Nguyễn Mai Anh</h2><img loading="lazy" src={assets36.qr} alt="Mã QR mừng cưới Mai Anh" /><small>Quét mã QR để gửi lời chúc và quà mừng</small></motion.div>
+      <motion.div className="t36-giftFrame" {...reveal36('up')}><Gift /><h2>{couple.brideName} &amp; {couple.groomName}</h2><div className="t36-giftMark" aria-hidden="true"><Heart fill="currentColor" /><span>THANK<br />YOU</span></div><small>Sự hiện diện và lời chúc của bạn là món quà quý giá nhất.</small></motion.div>
       <motion.p {...reveal36('up', .12)}>Non sông một chữ duyên dài<br />Ba sinh ước hẹn, duyên này thành đôi.</motion.p>
       <motion.h3 {...reveal36('up', .2)}>THANK YOU</motion.h3>
     </section>

@@ -2,3 +2,28 @@ html.template8new-page,body.template8new-page{background:#d7c5b4}.t8n{width:min(
 .t8n-hero{min-height:0;padding:0;background:#b44035}.t8n-hero>.t8n-cover{width:100%;height:auto;display:block;position:relative;z-index:2;object-fit:contain;clip-path:none}.t8n-showcase{padding-top:30px}.t8n-showcase img{height:560px;border:12px solid #b44035;object-fit:cover;object-position:center}.t8n-letter img{max-width:100%;object-position:center bottom}@media(max-width:420px){.t8n-hero{min-height:0}.t8n-hero>.t8n-cover{height:auto}.t8n-showcase img{height:490px}}
 
 .t8n-paperStory{display:grid;grid-template-columns:1fr 1fr;gap:30px 18px;padding:75px 22px;background-color:#eadcc7;background-image:radial-gradient(rgba(126,86,67,.09) .8px,transparent .8px);background-size:7px 7px;text-align:center}.t8n-paperNames{min-width:0;padding:10px 10px 20px;background:#d4b18e;box-shadow:0 8px 18px rgba(86,50,38,.12)}.t8n-paperNames img{height:350px;object-fit:contain;object-position:center bottom}.t8n-paperNames small{display:block;margin-top:8px;font-family:"Quicksand",sans-serif;font-size:9px;letter-spacing:.16em}.t8n-paperNames h2{margin:7px 0 0;color:#a33831;font:400 35px/1 "Carlytte",cursive}.t8n-paperStory>p,.t8n-paperStory>img,.t8n-paperStory>div{grid-column:1/-1}.t8n-paperStory>p{max-width:390px;justify-self:center;margin:20px 0 5px;color:#9f5e58;font-size:20px;line-height:1.75}.t8n-paperStory>img{width:86%;height:560px;justify-self:center;border:9px solid #b66459;padding:7px;background:#f3e6d3;object-fit:cover}.t8n-paperStory>div{display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:14px;padding-top:35px}.t8n-paperStory>div img{height:450px;padding:7px 7px 32px;background:#f4e8d6;box-shadow:0 10px 24px rgba(85,50,38,.13);object-fit:cover}.t8n-paperStory>div img:last-child{margin-top:70px}.t8n-locationPaper{display:grid;gap:34px;padding:75px 25px 85px;color:#9d5a52;background:#eadcc7;text-align:center}.t8n-locationPaper h2{margin:0 0 12px;font:400 34px/1 "Signora",serif}.t8n-locationPaper p{font-size:17px;line-height:1.65}.t8n-locationPaper iframe{width:100%;height:285px;border:9px solid #a9574e;border-radius:3px}.t8n-locationPaper .ni-calendar{padding:26px 18px;background:rgba(246,232,212,.78);box-shadow:0 12px 25px rgba(85,50,38,.12)}.t8n-locationPaper .ni-calendar h3{font:400 35px/1 "Carlytte",cursive}.t8n-locationPaper .ni-days>span{height:36px}.t8n-locationPaper .ni-days svg{width:39px;color:#b33c3a}.t8n-notePaper{width:82%;justify-self:end;padding:35px 25px;color:#a45f58;background:#f5ead9;box-shadow:-12px 14px 0 #d7b89a;transform:rotate(3deg)}.t8n-notePaper p{margin:0;font-size:18px;line-height:1.7}.t8n-locationPaper>img{width:72%;height:530px;justify-self:start;margin-top:-25px;border:8px solid #f7ead8;object-fit:cover}@media(max-width:420px){.t8n-paperStory{padding-right:16px;padding-left:16px}.t8n-paperNames img{height:300px}.t8n-paperStory>img{height:480px}.t8n-paperStory>div img{height:385px}.t8n-locationPaper{padding-right:18px;padding-left:18px}.t8n-locationPaper>img{height:450px}}
+
+/* Cut-paper event and guest details stay unique to Template 8. */
+.t8n-paperNames:nth-child(2){margin-top:40px}
+.t8n-paperTimeline{padding:28px 22px;color:#834d43;background:#f7ead7;border:1px solid #d9b99b;box-shadow:7px 8px 0 rgba(164,88,75,.2);text-align:left}
+.t8n-paperTimeline>small{display:block;margin-bottom:10px;color:#ae4c41;font:600 10px/1.4 "Quicksand",sans-serif;letter-spacing:.17em;text-align:center}
+.t8n-paperTimeline h2{margin:0 0 18px!important;color:#a33e34;font:400 32px/1.1 "Carlytte",cursive!important;text-align:center}
+.t8n-paperTimeline>div{display:grid;grid-template-columns:80px 1fr;gap:12px;padding:12px 4px;border-top:1px dashed #c49b85}
+.t8n-paperTimeline time{color:#a33e34;font:600 13px/1.5 "Quicksand",sans-serif}
+.t8n-paperTimeline>div span{font:400 14px/1.5 "Quicksand",sans-serif}
+.t8n-dresscode{padding:26px 22px;background:#d8b693;box-shadow:8px 9px 0 #c59079;transform:rotate(-1.5deg)}
+.t8n-dresscode>small,.t8n-wishes>small{color:#9f4037;font:600 10px/1.4 "Quicksand",sans-serif;letter-spacing:.18em}
+.t8n-dresscode h2{margin:8px 0;color:#9f4037;font:400 34px/1.1 "Carlytte",cursive}
+.t8n-dresscode p{max-width:340px;margin:0 auto;color:#68463d;font:400 14px/1.65 "Quicksand",sans-serif}
+.t8n-dresscode>div{display:flex;justify-content:center;gap:12px;margin-top:17px}
+.t8n-dresscode i{width:30px;height:30px;border:1px solid rgba(92,53,42,.2);border-radius:50%;background:#f4e7d4}
+.t8n-dresscode i:nth-child(2){background:#9f4037}
+.t8n-dresscode i:nth-child(3){background:#875b46}
+.t8n-wishes{width:min(100%,380px);text-align:center}
+.t8n-wishes>small{display:block;margin-bottom:12px;color:#f1d4b4}
+.t8n-wish{border:1px solid #e3c2a0!important;border-radius:2px!important;background:#f8eddd!important;color:#65423a!important;box-shadow:0 14px 30px rgba(58,24,20,.13)!important}
+.t8n-wish h3{color:#a33e34!important}
+.t8n-wish label{color:#714b41!important}
+.t8n-wish input,.t8n-wish textarea{border-color:#d8b899!important;border-radius:2px!important;background:#fffaf1!important;color:#56372f!important}
+.t8n-wish button,.t8n-rsvp button{border-radius:2px!important;background:#a33e34!important;color:#fff!important}
+@media(max-width:420px){.t8n-paperTimeline{padding:24px 17px}.t8n-dresscode{padding-inline:17px}.t8n-locationPaper>img{width:78%}}

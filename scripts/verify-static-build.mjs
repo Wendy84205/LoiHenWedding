@@ -1,8 +1,11 @@
 import { access, readFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
 import { join } from 'node:path';
 import { allInvitationSlugs, archivedInvitationSlugs } from '../src/data/invitationCatalog.js';
 
-const dist = new URL('../dist/', import.meta.url).pathname;
+const zenLoveManifestItems = JSON.parse(await readFile(new URL('../docs/zenlove-local-manifest-2026-09-26.json', import.meta.url), 'utf8')).items;
+
+const dist = fileURLToPath(new URL('../dist/', import.meta.url));
 const failures = [];
 
 for (const slug of allInvitationSlugs) {
@@ -26,6 +29,17 @@ for (const slug of allInvitationSlugs) {
     }
   } catch {
     failures.push(`${slug}: missing static HTML`);
+  }
+}
+
+for (const item of zenLoveManifestItems.filter((entry) => ['catalog-only', 'reconstructed'].includes(entry.localImplementation))) {
+  const file = join(dist, 'template', item.slug, 'index.html');
+  try {
+    const html = await readFile(file, 'utf8');
+    if (!html.includes(`https://thiep-moi-online.vercel.app/template/${item.slug}`)) failures.push(`${item.slug}: missing ZenLove preview route metadata`);
+    if (!html.includes('noindex, nofollow')) failures.push(`${item.slug}: ZenLove reference/rebuilt route must be noindex`);
+  } catch {
+    if (!allInvitationSlugs.includes(item.slug)) failures.push(`${item.slug}: missing static ZenLove preview HTML`);
   }
 }
 

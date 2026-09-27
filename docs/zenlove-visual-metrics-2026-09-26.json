@@ -1,0 +1,1031 @@
+{
+  "generatedAt": "2026-09-26T07:01:32.463Z",
+  "source": "localPreviewPath image dimensions",
+  "metrics": {
+    "thiep-cuoi-3": {
+      "width": 807,
+      "height": 10220,
+      "aspectRatio": 12.664188
+    },
+    "sac-dem-hen": {
+      "width": 818,
+      "height": 10634,
+      "aspectRatio": 13
+    },
+    "sac-be-thanh-lich": {
+      "width": 818,
+      "height": 16139,
+      "aspectRatio": 19.729829
+    },
+    "nang-luu-yeu": {
+      "width": 818,
+      "height": 13491,
+      "aspectRatio": 16.492665
+    },
+    "hen-uoc": {
+      "width": 818,
+      "height": 10729,
+      "aspectRatio": 13.116137
+    },
+    "xanh-nhu-loi-hen": {
+      "width": 818,
+      "height": 13649,
+      "aspectRatio": 16.685819
+    },
+    "la-mong-o-liu": {
+      "width": 818,
+      "height": 13999,
+      "aspectRatio": 17.113692
+    },
+    "loi-hen-kem": {
+      "width": 818,
+      "height": 11670,
+      "aspectRatio": 14.266504
+    },
+    "sac-cuoi-be": {
+      "width": 818,
+      "height": 14246,
+      "aspectRatio": 17.415648
+    },
+    "hong-phong": {
+      "width": 818,
+      "height": 8621,
+      "aspectRatio": 10.53912
+    },
+    "net-thuong": {
+      "width": 818,
+      "height": 15850,
+      "aspectRatio": 19.376528
+    },
+    "thiep-cuoi-222-pre": {
+      "width": 818,
+      "height": 11480,
+      "aspectRatio": 14.03423
+    },
+    "hong-yeu-thuong": {
+      "width": 818,
+      "height": 13377,
+      "aspectRatio": 16.353301
+    },
+    "thiep-cuoi-221-pre": {
+      "width": 818,
+      "height": 11480,
+      "aspectRatio": 14.03423
+    },
+    "thiep-cuoi-128-pre": {
+      "width": 842,
+      "height": 9908,
+      "aspectRatio": 11.767221
+    },
+    "template-06": {
+      "width": 809,
+      "height": 13416,
+      "aspectRatio": 16.583436
+    },
+    "sac-hong": {
+      "width": 808,
+      "height": 16342,
+      "aspectRatio": 20.225248
+    },
+    "sen-ngay-hy": {
+      "width": 818,
+      "height": 11779,
+      "aspectRatio": 14.399756
+    },
+    "thiep-cuoi-103-premium": {
+      "width": 818,
+      "height": 7850,
+      "aspectRatio": 9.596577
+    },
+    "thiep-cuoi-10-pre": {
+      "width": 808,
+      "height": 11700,
+      "aspectRatio": 14.480198
+    },
+    "thiep-cuoi-39-pre": {
+      "width": 430,
+      "height": 4133,
+      "aspectRatio": 9.611628
+    },
+    "thiep-cuoi-130-pre": {
+      "width": 842,
+      "height": 11327,
+      "aspectRatio": 13.452494
+    },
+    "thiep-cuoi-25-pre": {
+      "width": 806,
+      "height": 9275,
+      "aspectRatio": 11.507444
+    },
+    "thiep-cuoi-81-pre": {
+      "width": 818,
+      "height": 6667,
+      "aspectRatio": 8.150367
+    },
+    "chu-sa": {
+      "width": 818,
+      "height": 12340,
+      "aspectRatio": 15.085575
+    },
+    "mot-nha-01": {
+      "width": 860,
+      "height": 20272,
+      "aspectRatio": 23.572093
+    },
+    "dong-xanh": {
+      "width": 818,
+      "height": 13422,
+      "aspectRatio": 16.408313
+    },
+    "loi-hen-co-dien": {
+      "width": 818,
+      "height": 15220,
+      "aspectRatio": 18.606357
+    },
+    "khoi-dau-yeu": {
+      "width": 818,
+      "height": 12698,
+      "aspectRatio": 15.523227
+    },
+    "nang-trang-ngoi": {
+      "width": 818,
+      "height": 16571,
+      "aspectRatio": 20.257946
+    },
+    "hen-uoc-tan-thoi": {
+      "width": 818,
+      "height": 14773,
+      "aspectRatio": 18.059902
+    },
+    "khung-dem-diu-em": {
+      "width": 818,
+      "height": 16472,
+      "aspectRatio": 20.136919
+    },
+    "trang-tinh-khoi": {
+      "width": 818,
+      "height": 10634,
+      "aspectRatio": 13
+    },
+    "thiep-cuoi-11-pre": {
+      "width": 430,
+      "height": 4628,
+      "aspectRatio": 10.762791
+    },
+    "thiep-tot-nghiep-03-pre": {
+      "width": 808,
+      "height": 7546,
+      "aspectRatio": 9.339109
+    },
+    "thiep-cuoi-14-pre": {
+      "width": 809,
+      "height": 13559,
+      "aspectRatio": 16.760198
+    },
+    "net-chu-tinh-nhan": {
+      "width": 818,
+      "height": 15205,
+      "aspectRatio": 18.58802
+    },
+    "moc-am": {
+      "width": 818,
+      "height": 14912,
+      "aspectRatio": 18.229829
+    },
+    "thiep-cuoi-129-pre": {
+      "width": 842,
+      "height": 11654,
+      "aspectRatio": 13.840855
+    },
+    "song-hy-thanh-ngoc": {
+      "width": 818,
+      "height": 13750,
+      "aspectRatio": 16.809291
+    },
+    "chieu-nau-dien-anh": {
+      "width": 818,
+      "height": 13139,
+      "aspectRatio": 16.062347
+    },
+    "thiep-cuoi-48-pre": {
+      "width": 808,
+      "height": 14472,
+      "aspectRatio": 17.910891
+    },
+    "thiep-cuoi-60-pre": {
+      "width": 808,
+      "height": 14055,
+      "aspectRatio": 17.394802
+    },
+    "thiep-cuoi-20-pre": {
+      "width": 780,
+      "height": 14836,
+      "aspectRatio": 19.020513
+    },
+    "thiep-cuoi-01": {
+      "width": 431,
+      "height": 7299,
+      "aspectRatio": 16.935035
+    },
+    "thiep-cuoi-xanh-trend-19-pre": {
+      "width": 780,
+      "height": 8658,
+      "aspectRatio": 11.1
+    },
+    "thiep-cuoi-4": {
+      "width": 807,
+      "height": 12670,
+      "aspectRatio": 15.700124
+    },
+    "thiep-cuoi-83-pre": {
+      "width": 818,
+      "height": 11539,
+      "aspectRatio": 14.106357
+    },
+    "thiep-cuoi-132-premium": {
+      "width": 842,
+      "height": 13207,
+      "aspectRatio": 15.685273
+    },
+    "thiep-sinh-nhat-01": {
+      "width": 818,
+      "height": 11651,
+      "aspectRatio": 14.243276
+    },
+    "thiep-cuoi-96-premium": {
+      "width": 860,
+      "height": 14110,
+      "aspectRatio": 16.406977
+    },
+    "tiec-tat-nien-1-pre": {
+      "width": 808,
+      "height": 5951,
+      "aspectRatio": 7.365099
+    },
+    "thiep-cuoi-101-premium": {
+      "width": 818,
+      "height": 12102,
+      "aspectRatio": 14.794621
+    },
+    "hong-hanh-phuc": {
+      "width": 818,
+      "height": 14531,
+      "aspectRatio": 17.764059
+    },
+    "thiep-cuoi-125-pre": {
+      "width": 842,
+      "height": 10769,
+      "aspectRatio": 12.789786
+    },
+    "thiep-cuoi-58-pre": {
+      "width": 808,
+      "height": 9603,
+      "aspectRatio": 11.884901
+    },
+    "thiep-cuoi-64-pre": {
+      "width": 818,
+      "height": 9243,
+      "aspectRatio": 11.299511
+    },
+    "thiep-cuoi-69-pre": {
+      "width": 818,
+      "height": 5440,
+      "aspectRatio": 6.650367
+    },
+    "thiep-cuoi-97-premium": {
+      "width": 860,
+      "height": 14942,
+      "aspectRatio": 17.374419
+    },
+    "thiep-cuoi-70-basic": {
+      "width": 818,
+      "height": 2781,
+      "aspectRatio": 3.399756
+    },
+    "thiep-cuoi-131-basic": {
+      "width": 818,
+      "height": 9808,
+      "aspectRatio": 11.99022
+    },
+    "khung-may-trang": {
+      "width": 818,
+      "height": 13320,
+      "aspectRatio": 16.283619
+    },
+    "thiep-cuoi-63-pre": {
+      "width": 818,
+      "height": 7460,
+      "aspectRatio": 9.119804
+    },
+    "thiep-cuoi-27-pre": {
+      "width": 811,
+      "height": 4804,
+      "aspectRatio": 5.923551
+    },
+    "thiep-cuoi-02-2025": {
+      "width": 812,
+      "height": 12084,
+      "aspectRatio": 14.881773
+    },
+    "thiep-cuoi-220-pre": {
+      "width": 430,
+      "height": 4646,
+      "aspectRatio": 10.804651
+    },
+    "thiep-cuoi-115-pre": {
+      "width": 818,
+      "height": 12270,
+      "aspectRatio": 15
+    },
+    "thiep-cuoi-47-pre": {
+      "width": 809,
+      "height": 14634,
+      "aspectRatio": 18.088999
+    },
+    "thiep-cuoi-2": {
+      "width": 817,
+      "height": 15103,
+      "aspectRatio": 18.485924
+    },
+    "thiep-cuoi-55-pre": {
+      "width": 808,
+      "height": 11883,
+      "aspectRatio": 14.706683
+    },
+    "thiep-sinh-nhat-05-free": {
+      "width": 818,
+      "height": 1772,
+      "aspectRatio": 2.166259
+    },
+    "thiep-cuoi-126-pre": {
+      "width": 818,
+      "height": 11288,
+      "aspectRatio": 13.799511
+    },
+    "thiep-cuoi-18-pre": {
+      "width": 808,
+      "height": 11120,
+      "aspectRatio": 13.762376
+    },
+    "thiep-cuoi-87-pre": {
+      "width": 860,
+      "height": 15018,
+      "aspectRatio": 17.462791
+    },
+    "nang-xanh-thuy-tinh": {
+      "width": 818,
+      "height": 12401,
+      "aspectRatio": 15.160147
+    },
+    "thiep-cuoi-23-pre": {
+      "width": 808,
+      "height": 6274,
+      "aspectRatio": 7.764851
+    },
+    "template-mint-whisper": {
+      "width": 809,
+      "height": 8521,
+      "aspectRatio": 10.532756
+    },
+    "thiep-cuoi-84-pre": {
+      "width": 818,
+      "height": 10097,
+      "aspectRatio": 12.343521
+    },
+    "thiep-cuoi-24-pre": {
+      "width": 430,
+      "height": 8681,
+      "aspectRatio": 20.188372
+    },
+    "thiep-cuoi-117-pre": {
+      "width": 818,
+      "height": 17687,
+      "aspectRatio": 21.622249
+    },
+    "thiep-tot-nghiep-02-pre": {
+      "width": 430,
+      "height": 4944,
+      "aspectRatio": 11.497674
+    },
+    "thiep-cuoi-72-pre": {
+      "width": 818,
+      "height": 8954,
+      "aspectRatio": 10.94621
+    },
+    "yeu-nhu-ban-dau": {
+      "width": 818,
+      "height": 14615,
+      "aspectRatio": 17.866748
+    },
+    "thiep-cuoi-26-pre": {
+      "width": 807,
+      "height": 14493,
+      "aspectRatio": 17.959108
+    },
+    "thiep-cuoi-66-pre": {
+      "width": 818,
+      "height": 12650,
+      "aspectRatio": 15.464548
+    },
+    "thiep-tot-nghiep-04-pre": {
+      "width": 818,
+      "height": 9810,
+      "aspectRatio": 11.992665
+    },
+    "canh-dong-yeu-thuong": {
+      "width": 818,
+      "height": 13788,
+      "aspectRatio": 16.855746
+    },
+    "thiep-cuoi-54-pre": {
+      "width": 430,
+      "height": 6285,
+      "aspectRatio": 14.616279
+    },
+    "thiep-cuoi-82-new": {
+      "width": 818,
+      "height": 8149,
+      "aspectRatio": 9.962103
+    },
+    "thiep-cuoi-127-pre": {
+      "width": 842,
+      "height": 10965,
+      "aspectRatio": 13.022565
+    },
+    "net-dam-yeu-thuong": {
+      "width": 818,
+      "height": 12971,
+      "aspectRatio": 15.856968
+    },
+    "ruoc-den-ong-sao": {
+      "width": 818,
+      "height": 2400,
+      "aspectRatio": 2.933985
+    },
+    "trung-thu-01": {
+      "width": 818,
+      "height": 2602,
+      "aspectRatio": 3.180929
+    },
+    "co-dien-tinh-khoi": {
+      "width": 818,
+      "height": 15349,
+      "aspectRatio": 18.764059
+    },
+    "dau-yeu-ngay-cu": {
+      "width": 818,
+      "height": 13470,
+      "aspectRatio": 16.466993
+    },
+    "sac-xanh-diu-em": {
+      "width": 818,
+      "height": 11935,
+      "aspectRatio": 14.590465
+    },
+    "net-hoang-hon": {
+      "width": 808,
+      "height": 14318,
+      "aspectRatio": 17.720297
+    },
+    "thiep-cuoi-109-pre": {
+      "width": 818,
+      "height": 13462,
+      "aspectRatio": 16.457213
+    },
+    "vom-may-hong": {
+      "width": 818,
+      "height": 15542,
+      "aspectRatio": 19
+    },
+    "thiep-cuoi-110-pre": {
+      "width": 818,
+      "height": 10746,
+      "aspectRatio": 13.136919
+    },
+    "song-phung-hy-thanh": {
+      "width": 818,
+      "height": 13592,
+      "aspectRatio": 16.616137
+    },
+    "thiep-cuoi-100-basic": {
+      "width": 818,
+      "height": 8103,
+      "aspectRatio": 9.905868
+    },
+    "song-hy-hong-lien": {
+      "width": 818,
+      "height": 13441,
+      "aspectRatio": 16.43154
+    },
+    "net-duyen-thanh": {
+      "width": 818,
+      "height": 13966,
+      "aspectRatio": 17.07335
+    },
+    "thiep-cuoi-106-basic": {
+      "width": 818,
+      "height": 6545,
+      "aspectRatio": 8.001222
+    },
+    "thiep-cuoi-73-pre": {
+      "width": 818,
+      "height": 12150,
+      "aspectRatio": 14.853301
+    },
+    "thiep-sinh-nhat-02": {
+      "width": 818,
+      "height": 10715,
+      "aspectRatio": 13.099022
+    },
+    "thiep-sinh-nhat-04": {
+      "width": 818,
+      "height": 11543,
+      "aspectRatio": 14.111247
+    },
+    "thiep-cuoi-01-2025": {
+      "width": 803,
+      "height": 13891,
+      "aspectRatio": 17.298879
+    },
+    "thiep-cuoi-90-pre": {
+      "width": 860,
+      "height": 19398,
+      "aspectRatio": 22.555814
+    },
+    "thiep-cuoi-32-pre": {
+      "width": 430,
+      "height": 7705,
+      "aspectRatio": 17.918605
+    },
+    "thiep-cuoi-34-pre": {
+      "width": 431,
+      "height": 9226,
+      "aspectRatio": 21.406032
+    },
+    "thiep-cuoi-111-pre": {
+      "width": 818,
+      "height": 11550,
+      "aspectRatio": 14.119804
+    },
+    "thiep-cuoi-50-pre": {
+      "width": 808,
+      "height": 16280,
+      "aspectRatio": 20.148515
+    },
+    "mot-sac-thuong": {
+      "width": 818,
+      "height": 13116,
+      "aspectRatio": 16.03423
+    },
+    "thiep-cuoi-95-premium": {
+      "width": 818,
+      "height": 8784,
+      "aspectRatio": 10.738386
+    },
+    "thiep-cuoi-74-pre": {
+      "width": 818,
+      "height": 12167,
+      "aspectRatio": 14.874083
+    },
+    "sac-kem-mem": {
+      "width": 808,
+      "height": 13683,
+      "aspectRatio": 16.934406
+    },
+    "thiep-cuoi-38-pre": {
+      "width": 808,
+      "height": 11834,
+      "aspectRatio": 14.64604
+    },
+    "thiep-cuoi-80-basic": {
+      "width": 818,
+      "height": 14031,
+      "aspectRatio": 17.152812
+    },
+    "mong-thu": {
+      "width": 808,
+      "height": 10761,
+      "aspectRatio": 13.318069
+    },
+    "thiep-cuoi-88-pre": {
+      "width": 860,
+      "height": 17024,
+      "aspectRatio": 19.795349
+    },
+    "thiep-cuoi-120-pre": {
+      "width": 818,
+      "height": 13645,
+      "aspectRatio": 16.680929
+    },
+    "thiep-cuoi-12-pre": {
+      "width": 1290,
+      "height": 16384,
+      "aspectRatio": 12.700775
+    },
+    "sac-yeu": {
+      "width": 808,
+      "height": 9288,
+      "aspectRatio": 11.49505
+    },
+    "thiep-tot-nghiep-08-free": {
+      "width": 818,
+      "height": 5471,
+      "aspectRatio": 6.688264
+    },
+    "thiep-cuoi-36-pre": {
+      "width": 433,
+      "height": 7063,
+      "aspectRatio": 16.311778
+    },
+    "thiep-cuoi-123-pre": {
+      "width": 818,
+      "height": 14003,
+      "aspectRatio": 17.118582
+    },
+    "thiep-cuoi-05-pre": {
+      "width": 430,
+      "height": 7886,
+      "aspectRatio": 18.339535
+    },
+    "thiep-cuoi-49-pre": {
+      "width": 808,
+      "height": 17862,
+      "aspectRatio": 22.106436
+    },
+    "thiep-cuoi-03-2025": {
+      "width": 815,
+      "height": 10101,
+      "aspectRatio": 12.393865
+    },
+    "thiep-cuoi-98-premium": {
+      "width": 860,
+      "height": 20052,
+      "aspectRatio": 23.316279
+    },
+    "thiep-cuoi-43-pre": {
+      "width": 805,
+      "height": 15081,
+      "aspectRatio": 18.734161
+    },
+    "thiep-tot-nghiep-01-pre": {
+      "width": 809,
+      "height": 5477,
+      "aspectRatio": 6.770087
+    },
+    "thiep-cuoi-114-pre": {
+      "width": 818,
+      "height": 16327,
+      "aspectRatio": 19.959658
+    },
+    "thiep-cuoi-93-basic": {
+      "width": 818,
+      "height": 5320,
+      "aspectRatio": 6.503667
+    },
+    "thiep-cuoi-22-pre": {
+      "width": 431,
+      "height": 5541,
+      "aspectRatio": 12.856148
+    },
+    "tiec-tat-nien-1-vip": {
+      "width": 809,
+      "height": 7924,
+      "aspectRatio": 9.794808
+    },
+    "tiec-tat-nien-02": {
+      "width": 818,
+      "height": 2552,
+      "aspectRatio": 3.119804
+    },
+    "thiep-tot-nghiep-06-premium": {
+      "width": 818,
+      "height": 6671,
+      "aspectRatio": 8.155257
+    },
+    "thiep-tat-nien-03": {
+      "width": 818,
+      "height": 2533,
+      "aspectRatio": 3.096577
+    },
+    "thiep-cuoi-do-07-pre": {
+      "width": 809,
+      "height": 15769,
+      "aspectRatio": 19.491965
+    },
+    "thiep-cuoi-rong-xanh": {
+      "width": 808,
+      "height": 4145,
+      "aspectRatio": 5.12995
+    },
+    "thiep-cuoi-92-premium": {
+      "width": 818,
+      "height": 16323,
+      "aspectRatio": 19.954768
+    },
+    "thiep-cuoi-91-premium": {
+      "width": 860,
+      "height": 22426,
+      "aspectRatio": 26.076744
+    },
+    "thiep-cuoi-85-pre": {
+      "width": 818,
+      "height": 12180,
+      "aspectRatio": 14.889976
+    },
+    "thiep-cuoi-89-pre": {
+      "width": 860,
+      "height": 23170,
+      "aspectRatio": 26.94186
+    },
+    "thiep-cuoi-rong-lam": {
+      "width": 808,
+      "height": 4145,
+      "aspectRatio": 5.12995
+    },
+    "thiep-cuoi-76-pre": {
+      "width": 818,
+      "height": 15273,
+      "aspectRatio": 18.671149
+    },
+    "thiep-cuoi-67-pre": {
+      "width": 818,
+      "height": 12134,
+      "aspectRatio": 14.833741
+    },
+    "thiep-cuoi-61-pre": {
+      "width": 809,
+      "height": 13583,
+      "aspectRatio": 16.789864
+    },
+    "thiep-cuoi-do-truyen-thong-07": {
+      "width": 801,
+      "height": 5817,
+      "aspectRatio": 7.262172
+    },
+    "thiep-cuoi-65-pre": {
+      "width": 818,
+      "height": 12043,
+      "aspectRatio": 14.722494
+    },
+    "thiep-tot-nghiep-09-free": {
+      "width": 818,
+      "height": 2396,
+      "aspectRatio": 2.929095
+    },
+    "thiep-cuoi-52-pre": {
+      "width": 808,
+      "height": 12413,
+      "aspectRatio": 15.362624
+    },
+    "thiep-cuoi-do-08-pre": {
+      "width": 809,
+      "height": 11498,
+      "aspectRatio": 14.212608
+    },
+    "thiep-cuoi-77-pre": {
+      "width": 818,
+      "height": 10323,
+      "aspectRatio": 12.619804
+    },
+    "thiep-cuoi-44-pre": {
+      "width": 805,
+      "height": 15658,
+      "aspectRatio": 19.450932
+    },
+    "thiep-cuoi-46-pre": {
+      "width": 430,
+      "height": 8587,
+      "aspectRatio": 19.969767
+    },
+    "thiep-cuoi-45-pre": {
+      "width": 430,
+      "height": 10601,
+      "aspectRatio": 24.653488
+    },
+    "thiep-cuoi-68-pre": {
+      "width": 818,
+      "height": 9517,
+      "aspectRatio": 11.634474
+    },
+    "thiep-cuoi-99-premium": {
+      "width": 818,
+      "height": 11368,
+      "aspectRatio": 13.897311
+    },
+    "thiep-cuoi-40-pre": {
+      "width": 430,
+      "height": 7004,
+      "aspectRatio": 16.288372
+    },
+    "thiep-cuoi-37-pre": {
+      "width": 430,
+      "height": 9952,
+      "aspectRatio": 23.144186
+    },
+    "thiep-cuoi-94-premium": {
+      "width": 818,
+      "height": 13447,
+      "aspectRatio": 16.438875
+    },
+    "thiep-cuoi-62-pre": {
+      "width": 808,
+      "height": 19570,
+      "aspectRatio": 24.220297
+    },
+    "thiep-cuoi-30-pre": {
+      "width": 433,
+      "height": 6908,
+      "aspectRatio": 15.953811
+    },
+    "thiep-cuoi-28-pre": {
+      "width": 430,
+      "height": 5099,
+      "aspectRatio": 11.85814
+    },
+    "thiep-cuoi-41-pre": {
+      "width": 430,
+      "height": 4805,
+      "aspectRatio": 11.174419
+    },
+    "thiep-tot-nghiep-07-premium": {
+      "width": 818,
+      "height": 5497,
+      "aspectRatio": 6.720049
+    },
+    "thiep-cuoi-35-pre": {
+      "width": 430,
+      "height": 4807,
+      "aspectRatio": 11.17907
+    },
+    "thiep-cuoi-15-pre": {
+      "width": 808,
+      "height": 14942,
+      "aspectRatio": 18.492574
+    },
+    "thiep-cuoi-21-pre": {
+      "width": 768,
+      "height": 11842,
+      "aspectRatio": 15.419271
+    },
+    "thiep-cuoi-113-pre": {
+      "width": 818,
+      "height": 8337,
+      "aspectRatio": 10.191932
+    },
+    "thiep-cuoi-107-basic": {
+      "width": 818,
+      "height": 3827,
+      "aspectRatio": 4.678484
+    },
+    "thiep-cuoi-105-basic": {
+      "width": 818,
+      "height": 15425,
+      "aspectRatio": 18.856968
+    },
+    "thiep-cuoi-53-pre": {
+      "width": 430,
+      "height": 5954,
+      "aspectRatio": 13.846512
+    },
+    "thiep-cuoi-104-free": {
+      "width": 818,
+      "height": 6814,
+      "aspectRatio": 8.330073
+    },
+    "thiep-cuoi-51-pre": {
+      "width": 808,
+      "height": 16550,
+      "aspectRatio": 20.482673
+    },
+    "thiep-sinh-nhat-03": {
+      "width": 818,
+      "height": 2655,
+      "aspectRatio": 3.245721
+    },
+    "thiep-cuoi-118-basic": {
+      "width": 818,
+      "height": 5396,
+      "aspectRatio": 6.596577
+    },
+    "thiep-cuoi-09-pre": {
+      "width": 808,
+      "height": 14865,
+      "aspectRatio": 18.397277
+    },
+    "thiep-cuoi-102-premium": {
+      "width": 818,
+      "height": 9133,
+      "aspectRatio": 11.165037
+    },
+    "thiep-cuoi-06-pre": {
+      "width": 808,
+      "height": 15333,
+      "aspectRatio": 18.976485
+    },
+    "thiep-cuoi-04-2025": {
+      "width": 808,
+      "height": 13730,
+      "aspectRatio": 16.992574
+    },
+    "thiep-cuoi-78-pre": {
+      "width": 818,
+      "height": 16086,
+      "aspectRatio": 19.665037
+    },
+    "our-eternal-chapter": {
+      "width": 818,
+      "height": 14486,
+      "aspectRatio": 17.709046
+    },
+    "thiep-cuoi-119-pre": {
+      "width": 818,
+      "height": 12673,
+      "aspectRatio": 15.492665
+    },
+    "thiep-cuoi-31-pre": {
+      "width": 430,
+      "height": 8478,
+      "aspectRatio": 19.716279
+    },
+    "thiep-cuoi-33-pre": {
+      "width": 430,
+      "height": 5899,
+      "aspectRatio": 13.718605
+    },
+    "thiep-cuoi-71-pre": {
+      "width": 818,
+      "height": 13833,
+      "aspectRatio": 16.910758
+    },
+    "bich-ngoc": {
+      "width": 818,
+      "height": 12608,
+      "aspectRatio": 15.413203
+    },
+    "thiep-cuoi-59-pre": {
+      "width": 808,
+      "height": 11922,
+      "aspectRatio": 14.75495
+    },
+    "thiep-cuoi-56-pre": {
+      "width": 808,
+      "height": 8564,
+      "aspectRatio": 10.59901
+    },
+    "thiep-cuoi-122-pre": {
+      "width": 842,
+      "height": 11543,
+      "aspectRatio": 13.709026
+    },
+    "thiep-cuoi-29-pre": {
+      "width": 430,
+      "height": 8886,
+      "aspectRatio": 20.665116
+    },
+    "thiep-cuoi-86-pre": {
+      "width": 818,
+      "height": 6408,
+      "aspectRatio": 7.833741
+    },
+    "thiep-cuoi-121-pre": {
+      "width": 818,
+      "height": 8256,
+      "aspectRatio": 10.09291
+    },
+    "thiep-tot-nghiep-05-pre": {
+      "width": 808,
+      "height": 2572,
+      "aspectRatio": 3.183168
+    },
+    "thiep-cuoi-do-basic": {
+      "width": 810,
+      "height": 4143,
+      "aspectRatio": 5.114815
+    },
+    "thiep-cuoi-75-pre": {
+      "width": 818,
+      "height": 12696,
+      "aspectRatio": 15.520782
+    },
+    "thiep-cuoi-57-pre": {
+      "width": 808,
+      "height": 15780,
+      "aspectRatio": 19.529703
+    },
+    "thiep-cuoi-124-pre": {
+      "width": 842,
+      "height": 10094,
+      "aspectRatio": 11.988124
+    },
+    "thiep-cuoi-223-pre": {
+      "width": 818,
+      "height": 16810,
+      "aspectRatio": 20.550122
+    },
+    "thiep-cuoi-108-basic": {
+      "width": 818,
+      "height": 10441,
+      "aspectRatio": 12.764059
+    }
+  }
+}

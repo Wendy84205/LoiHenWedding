@@ -90,8 +90,38 @@ body.template36-page { padding-top: 0; padding-bottom: 0; }
 .t36-giftFrame{min-height:390px}.t36-giftFrame h2{font-family:"OpenSans",sans-serif}.t36-gift>p{font:500 23px/1.5 "Aquarelle",cursive}.t36-gift h3{font:700 36px/1 "Mallong",serif}
 
 @media(max-width:420px){
-  .t36-hero{height:790px}.t36-orbit{width:94%;height:640px;left:3%;top:62px}.t36-orbit img{width:88%;height:575px}.t36-orbit::before{width:89%;height:610px}.t36-orbit::after{width:92%;height:590px}.t36-orbit span{font-size:12px;letter-spacing:7px}.t36-married{bottom:70px;font-size:13px}.t36-zeroCount{top:690px;padding:5px 15px}.t36-hero h1{bottom:12px;font-size:22px}
-  .t36-invitation{min-height:790px}.t36-dateStrip{width:78%;grid-template-columns:1fr 72px 1fr}.t36-dateStrip span{font-size:15px}.t36-addressStrip{width:90%;grid-template-columns:95px 1fr}.t36-addressStrip i{font-size:29px}.t36-addressStrip p{font-size:14px}.t36-invitePhoto{width:94%;height:470px}.t36-formal{font-size:19px}
+  .t36-hero{height:870px}.t36-orbit{width:94%;height:625px;left:3%;top:62px}.t36-orbit img{width:88%;height:555px}.t36-orbit::before{width:89%;height:600px}.t36-orbit::after{width:92%;height:580px}.t36-orbit span{font-size:12px;letter-spacing:7px}.t36-hero h1{bottom:130px;font-size:22px}.t36-married{bottom:94px;font-size:13px}.t36-zeroCount{top:auto;bottom:22px;padding:7px 15px}
+  .t36-invitation{min-height:790px}.t36-dateStrip{width:78%;grid-template-columns:1fr 72px 1fr}.t36-dateStrip span{font-size:15px}.t36-addressStrip{width:min(100%,392px);grid-template-columns:95px 1fr}.t36-addressStrip i{font-size:29px}.t36-addressStrip p{font-size:14px}.t36-invitePhoto{width:min(100%,459px);height:470px}.t36-formal{font-size:19px}
   .t36-about{min-height:820px}.t36-aboutLead{grid-template-columns:58% 42%}.t36-aboutLead p{font-size:14px}.t36-aboutCards img{height:285px}.t36-about blockquote{font-size:19px}.t36-beginning{min-height:930px}.t36-roundPhoto{width:290px;height:290px}.t36-poem{font-size:20px}.t36-english img{height:350px}
   .t36-freedom{min-height:1060px}.t36-freedomGrid>img{height:300px}.t36-freedomGrid>div img{height:255px}.t36-freedom blockquote{font-size:20px}.t36-fullPortrait img{height:440px}.t36-gallery{min-height:940px}.t36-gallery>p{font-size:21px}.t36-galleryPair img{height:360px}.t36-cantHelp img{height:330px}.t36-dateVenue{min-height:790px}.t36-tips{min-height:730px}.t36-tips ul{font-size:14px}.t36-gift{min-height:650px}
 }
+
+/* The invitation scrolls as a narrow card on mobile, keeping every section in bounds. */
+.t36-invitation { overflow:hidden; }
+.t36-families { min-height:360px; padding:54px 20px; background:#fff; text-align:center; }
+.t36-families header small,.t36-schedule small,.t36-dress small,.t36-wishes>div>small { color:#c44b4b; font:500 11px/1.3 "OpenSans",sans-serif; letter-spacing:.2em; }
+.t36-families header h2,.t36-schedule h2 { margin:12px 0 28px; font:500 30px/1.18 "Mallong",serif; }
+.t36-familyGrid { display:grid; grid-template-columns:1fr 22px 1fr; align-items:center; gap:8px; }
+.t36-familyGrid>div { display:grid; gap:7px; }
+.t36-familyGrid>div>small { margin-bottom:5px; color:#c44b4b; font:500 11px/1.3 "OpenSans",sans-serif; letter-spacing:.13em; }
+.t36-familyGrid b { font:500 15px/1.4 "OpenSans",sans-serif; }
+.t36-familyGrid p { margin:0; color:#877d7a; font:400 12px/1.4 "OpenSans",sans-serif; }
+.t36-familyGrid>svg { width:19px; color:#c44b4b; }
+.t36-schedule { padding:52px 22px; background:#fbf9f8; }
+.t36-schedule>div { padding:25px 22px; border:1px solid #edced1; background:#fff; }
+.t36-schedule h2 { margin-bottom:16px; }
+.t36-schedule p { display:grid; grid-template-columns:75px 1fr; gap:8px; margin:0; padding:13px 0; border-top:1px solid #f1e9e7; font:400 15px/1.45 "OpenSans",sans-serif; }
+.t36-schedule time { color:#c44b4b; }
+.t36-dress { margin-top:25px; padding:17px 12px; border:1px solid #efdbdc; text-align:center; }
+.t36-dress p { margin:9px 0 13px; font:400 14px/1.5 "OpenSans",sans-serif; }
+.t36-dress>span { display:flex; justify-content:center; gap:9px; }
+.t36-dress i { width:23px; height:23px; border:1px solid #ddd; border-radius:50%; background:#fff; }
+.t36-dress i:nth-child(2) { background:#efb5ba; }.t36-dress i:nth-child(3) { background:#d8c8bd; }
+.t36-rsvp .t36-rsvpForm,.t36-wishes .t36-wishForm { width:min(330px,100%); font-family:"OpenSans",Arial,sans-serif; }
+.t36-rsvp .t36-rsvpForm h3,.t36-wishes .t36-wishForm h3 { font-family:"OpenSans",Arial,sans-serif; }
+.t36-rsvp .t36-rsvpForm button,.t36-wishes .t36-wishForm button { min-height:42px; display:flex; justify-content:center; align-items:center; gap:6px; border:0; border-radius:2px; color:#fff; background:#db6a77; }
+.t36-wishes { display:grid; place-items:center; padding:55px 22px; background:#fbf9f8; text-align:center; }
+.t36-wishes>div { width:min(330px,100%); }.t36-wishes>div>small { display:block; margin-bottom:11px; }
+.t36-giftMark { width:190px; height:190px; display:grid; place-items:center; align-content:center; gap:7px; border:1px solid #ecc2c6; background:#fff9f8; }
+.t36-giftMark svg { width:30px; height:30px; color:#c44b4b; }.t36-giftMark span { color:#c44b4b; font:500 14px/1.3 "OpenSans",sans-serif; letter-spacing:.15em; }
+@media(max-width:420px){.t36-familyGrid{grid-template-columns:1fr 16px 1fr;gap:5px}.t36-familyGrid b{font-size:12px}.t36-familyGrid p{font-size:10px}.t36-schedule{padding-right:16px;padding-left:16px}.t36-schedule>div{padding:22px 16px}.t36-schedule p{font-size:13px}}

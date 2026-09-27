@@ -1,24 +1,21 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
-  Check,
+  ChevronLeft,
   ChevronRight,
-  CircleCheckBig,
-  ExternalLink,
   Heart,
   Image as ImageIcon,
   LayoutTemplate,
-  MonitorSmartphone,
   Play,
-  Search,
-  SlidersHorizontal,
   Sparkles,
-  WandSparkles,
-  X,
 } from 'lucide-react';
 import { StudioFooter, StudioHeader } from './StudioChrome.jsx';
 import { currentCatalogSlugs, getInvitationDisplayTitle } from '../data/invitationCatalog.js';
 import { editableTemplateSlugs } from '../commerce/invitationContent.js';
+import { newTemplateSlugs } from '../templates/new/NewTemplateRouter.jsx';
+import { legacyTemplateSlugs } from '../templates/legacyTemplateRegistry.js';
+import templateLongThumbnails from './templateLongThumbnails.json';
 import './templatesDashboard.css';
+import './templatesDashboardRedesign.css';
 
 const FAVORITES_STORAGE_KEY = 'loihen-template-favorites';
 
@@ -60,23 +57,17 @@ const customTitles = {
   'thiep-cuoi-112': 'Burgundy Ceremony', 'thiep-cuoi-tone-xanh': 'Hỷ Xanh',
 };
 
-const styleSeeds = {
-  'Lãng mạn': ['thiep-cuoi-39', 'thiep-cuoi-38', 'thiep-cuoi-46', 'thiep-cuoi-47', 'thiep-cuoi-49', 'thiep-cuoi-57', 'thiep-cuoi-112'],
-  'Cinematic': ['thiep-cuoi-44', 'thiep-cuoi-2', 'thiep-cuoi-6', 'thiep-cuoi-30', 'thiep-cuoi-34', 'thiep-cuoi-58', 'thiep-cuoi-67'],
-  'Cổ điển': ['thiep-cuoi-11', 'thiep-cuoi-17', 'thiep-cuoi-21', 'thiep-cuoi-42', 'thiep-cuoi-43', 'thiep-cuoi-85', 'thiep-cuoi-tone-xanh'],
-  'Tối giản': ['thiep-bw-1', 'thiep-cuoi-10', 'thiep-cuoi-19', 'thiep-cuoi-31', 'thiep-cuoi-37', 'thiep-cuoi-94', 'thiep-cuoi-95', 'thiep-cuoi-99'],
-  'Botanical': ['thiep-cuoi-23', 'thiep-cuoi-28', 'thiep-cuoi-48', 'thiep-cuoi-51', 'thiep-cuoi-55', 'thiep-cuoi-73', 'thiep-cuoi-81', 'thiep-cuoi-91', 'thiep-cuoi-105'],
-  'Minh hoạ': ['thiep-cuoi-26', 'thiep-cuoi-54', 'thiep-cuoi-62', 'thiep-cuoi-63', 'thiep-cuoi-82', 'thiep-cuoi-104'],
-};
-
 const allStyles = ['Lãng mạn', 'Cinematic', 'Cổ điển', 'Tối giản', 'Botanical', 'Minh hoạ'];
-const styleBySlug = Object.fromEntries(Object.entries(styleSeeds).flatMap(([style, slugs]) => slugs.map((slug) => [slug, style])));
 
 function getPreviewImage(slug) {
+  if (templateLongThumbnails[slug]) {
+    return templateLongThumbnails[slug];
+  }
+  if (slug === 'thiep-cuoi-2') return '/assets/template61/couple-hero.webp';
   const png = ['thiep-cuoi-tone-xanh', 'thiep-cuoi-21', 'thiep-cuoi-50', 'thiep-cuoi-54', 'thiep-cuoi-104', 'thiep-cuoi-58', 'thiep-cuoi-60', 'thiep-cuoi-62'];
   const jpg = [
     'thiep-bw-1', 'thiep-cuoi-56', 'thiep-cuoi-17', 'thiep-cuoi-11', 'thiep-cuoi-28', 'thiep-cuoi-49',
-    'thiep-cuoi-57', 'thiep-cuoi-51', 'thiep-cuoi-55', 'thiep-cuoi-30', 'thiep-cuoi-6', 'thiep-cuoi-64',
+    'thiep-cuoi-57', 'thiep-cuoi-51', 'thiep-cuoi-55', 'thiep-cuoi-30', 'thiep-cuoi-64',
     'thiep-cuoi-67', 'thiep-cuoi-68', 'thiep-cuoi-69', 'thiep-cuoi-81', 'thiep-cuoi-82', 'thiep-cuoi-85',
     'thiep-cuoi-91', 'thiep-cuoi-92', 'thiep-cuoi-94', 'thiep-cuoi-95', 'thiep-cuoi-96', 'thiep-cuoi-99',
     'thiep-cuoi-105', 'thiep-cuoi-112', 'thiep-cuoi-31', 'thiep-cuoi-23', 'thiep-cuoi-18', 'thiep-cuoi-20',
@@ -88,135 +79,155 @@ function getPreviewImage(slug) {
   return `/assets/new-templates/${slug}/preview.webp`;
 }
 
-function styleForSlug(slug) {
-  if (styleBySlug[slug]) return styleBySlug[slug];
-  const number = Number.parseInt(slug.match(/\d+/)?.[0] || '0', 10);
-  return allStyles[number % allStyles.length];
-}
-
-function featuresForStyle(style) {
-  const defaults = {
-    'Lãng mạn': ['Mở thiệp có cảm xúc', 'Album ảnh & lời chúc', 'Lịch cưới và RSVP'],
-    Cinematic: ['Hero ảnh toàn màn hình', 'Kể chuyện theo chương', 'Nhạc nền và countdown'],
-    'Cổ điển': ['Họa tiết trang trọng', 'Hai lễ & bản đồ', 'QR mừng cưới'],
-    'Tối giản': ['Typography rõ ràng', 'Bố cục nhẹ, dễ đọc', 'Tối ưu điện thoại'],
-    Botanical: ['Bảng màu thiên nhiên', 'Album nhịp chậm', 'RSVP & chỉ đường'],
-    'Minh hoạ': ['Điểm nhấn đồ họa', 'Chuyển động vui tươi', 'Cá nhân hóa linh hoạt'],
-  };
-  return defaults[style] || defaults.Cinematic;
-}
-
 function packageForTemplate(slug, editable) {
   if (slug === 'thiep-cuoi-16' || slug === 'thiep-cuoi-19' || slug === 'thiep-cuoi-5' || slug === 'thiep-cuoi-23') return 'FREE';
   return editable ? 'PREMIUM' : 'BASIC';
 }
 
-const allTemplates = currentCatalogSlugs.map((slug) => {
-  const style = styleForSlug(slug);
+const viewableTemplateSlugs = new Set([...newTemplateSlugs, ...legacyTemplateSlugs]);
+const hiddenForEditingTemplateSlugs = new Set([
+  'thiep-cuoi-107', 'thiep-cuoi-106', 'thiep-cuoi-101', 'thiep-cuoi-98', 'thiep-cuoi-97',
+  'thiep-cuoi-83', 'thiep-cuoi-80', 'thiep-cuoi-79', 'thiep-cuoi-78', 'thiep-cuoi-75',
+  'thiep-cuoi-66', 'thiep-cuoi-65', 'thiep-cuoi-60', 'thiep-cuoi-52', 'thiep-cuoi-50',
+  'thiep-cuoi-44', 'thiep-cuoi-43', 'thiep-cuoi-42', 'thiep-cuoi-32',
+]);
+
+const allTemplates = currentCatalogSlugs
+  .filter((slug) => viewableTemplateSlugs.has(slug) && !hiddenForEditingTemplateSlugs.has(slug))
+  .map((slug) => {
   return {
     slug,
     title: customTitles[slug] || getInvitationDisplayTitle(slug),
-    style,
     image: getPreviewImage(slug),
     editable: editableTemplateSlugs.includes(slug),
     package: packageForTemplate(slug, editableTemplateSlugs.includes(slug)),
-    features: featuresForStyle(style),
   };
 });
 
-function TemplateCard({ item, favorite, onFavorite, onQuickView }) {
+const displayedTemplates = allTemplates;
+
+// Cinelove-style CSS scroll preview:
+// The card clips a tall full-length preview image.
+// On hover, CSS translation smoothly slides the image upwards over --scroll-duration
+// so the user can preview the entire invitation from top to bottom.
+function TemplateCard({ item, favorite, onFavorite }) {
+  const containerRef = useRef(null);
+  const imgRef = useRef(null);
+  const [containerHeight, setContainerHeight] = useState(336);
+  const [scrollHeight, setScrollHeight] = useState(0);
+
+  useEffect(() => {
+    const updateSize = () => {
+      if (containerRef.current) {
+        setContainerHeight(Math.floor(1.47 * containerRef.current.clientWidth));
+      }
+    };
+    updateSize();
+    window.addEventListener('resize', updateSize);
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
+
+  const calculateScroll = useCallback((img) => {
+    if (!img || !img.naturalWidth || !img.naturalHeight) return;
+    const aspect = img.naturalWidth / img.naturalHeight;
+    const renderedH = img.offsetWidth / aspect;
+    const delta = Math.max(0, Math.floor(renderedH - containerHeight));
+    setScrollHeight(delta);
+  }, [containerHeight]);
+
+  const handleImgLoad = useCallback((e) => {
+    calculateScroll(e.currentTarget);
+  }, [calculateScroll]);
+
+  useEffect(() => {
+    if (imgRef.current && imgRef.current.complete && imgRef.current.naturalWidth > 0) {
+      calculateScroll(imgRef.current);
+    }
+  }, [calculateScroll, item.image, containerHeight]);
+
+  // Scroll duration calculated proportionally: ~130px per second for smooth, readable scrolling
+  const scrollDuration = scrollHeight > 0 ? (scrollHeight / 130).toFixed(1) : '10';
+
   return (
     <article className="tpl-card">
-      <div className="tpl-card-media">
-        <img src={item.image} alt={`Mẫu thiệp ${item.title}`} loading="lazy" />
-        <div className="tpl-card-wash" />
-        <div className="tpl-card-topline">
-          <span className={`tpl-card-package tpl-card-package-${item.package.toLowerCase()}`}>{item.package}</span>
-          <button
-            type="button"
-            className={`tpl-favorite ${favorite ? 'is-active' : ''}`}
-            onClick={() => onFavorite(item.slug)}
-            aria-pressed={favorite}
-            aria-label={favorite ? `Bỏ yêu thích mẫu ${item.title}` : `Lưu mẫu ${item.title}`}
-          >
-            <Heart size={16} fill={favorite ? 'currentColor' : 'none'} />
-          </button>
+      <div
+        ref={containerRef}
+        className="tpl-card-media"
+        style={{
+          '--container-height': `${containerHeight}px`,
+          '--image-scroll-height': `${scrollHeight}px`,
+          '--scroll-duration': `${scrollDuration}s`,
+        }}
+      >
+        {/* Badge */}
+        <span className={`tpl-card-package tpl-card-package-${item.package.toLowerCase()}`}>
+          {item.package}
+        </span>
+
+        {/* Favorite */}
+        <button
+          type="button"
+          className={`tpl-favorite ${favorite ? 'is-active' : ''}`}
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            onFavorite(item.slug);
+          }}
+          aria-pressed={favorite}
+          aria-label={favorite ? `Bỏ yêu thích mẫu ${item.title}` : `Lưu mẫu ${item.title}`}
+        >
+          <Heart size={16} fill={favorite ? 'currentColor' : 'none'} />
+        </button>
+
+        {/* Long preview image */}
+        <div className="tpl-card-img-wrap">
+          <img
+            ref={imgRef}
+            className="tpl-card-preview-img"
+            src={item.image}
+            alt={`Mẫu ${item.title}`}
+            loading="lazy"
+            decoding="async"
+            onLoad={handleImgLoad}
+          />
         </div>
-        <div className="tpl-card-actions">
-          <a href={`/template/${item.slug}`} target="_blank" rel="noopener noreferrer" className="tpl-secondary-action">
-            <Play size={13} /> Xem mẫu
+
+        {/* Hover overlay with button */}
+        <div className="tpl-card-hover-overlay">
+          <a
+            className="tpl-card-btn"
+            href={`/template/${item.slug}`}
+          >
+            Xem mẫu
           </a>
         </div>
-      </div>
-      <div className="tpl-card-copy">
-        <div>
-          <span className="tpl-card-style">{item.style}</span>
-          <h2>{item.title}</h2>
-          <p>Xem trước và tùy chỉnh theo câu chuyện của bạn</p>
-        </div>
-        <button type="button" onClick={() => onQuickView(item)} aria-label={`Xem nhanh mẫu ${item.title}`} className="tpl-card-preview-link"><ExternalLink size={16} /></button>
+
+        {/* Clickable transparent overlay link */}
+        <a
+          className="tpl-card-overlay-link"
+          href={`/template/${item.slug}`}
+          aria-label={`Xem thiệp cưới ${item.title}`}
+        />
       </div>
     </article>
   );
 }
 
-function TemplateQuickView({ item, onClose, favorite, onFavorite }) {
-  if (!item) return null;
-
-  return (
-    <div className="tpl-modal-backdrop" role="presentation" onMouseDown={onClose}>
-      <section className="tpl-modal" role="dialog" aria-modal="true" aria-labelledby="tpl-quick-view-title" onMouseDown={(event) => event.stopPropagation()}>
-        <button type="button" className="tpl-modal-close" onClick={onClose} aria-label="Đóng xem nhanh"><X size={20} /></button>
-        <div className="tpl-modal-preview"><div className="tpl-preview-device"><div className="tpl-preview-device-bar"><span><MonitorSmartphone size={13} /> Xem thử trên điện thoại</span><i>LIVE</i></div><img src={item.image} alt={`Xem trước mẫu ${item.title}`} /></div><p><span /> Chạm vào preview để cảm nhận nhịp kể chuyện của mẫu.</p></div>
-        <div className="tpl-modal-copy">
-          <div className="tpl-modal-eyebrow"><span>THIỆP CƯỚI ONLINE</span><span>{item.style}</span></div>
-          <h2 id="tpl-quick-view-title">{item.title}</h2>
-          <p>Mở bản xem live để cảm nhận chuyển động, bố cục và nhịp kể chuyện trước khi chọn mẫu cho ngày vui của hai bạn.</p>
-          <div className="tpl-modal-assurance"><CircleCheckBig size={18} /><span><strong>Liên hệ Zalo để đặt theo mẫu này.</strong> Studio sẽ tư vấn phần thông tin và hình ảnh phù hợp.</span></div>
-          <ul>{item.features.map((feature) => <li key={feature}><Check size={16} /> {feature}</li>)}</ul>
-          <div className="tpl-modal-buttons">
-            <a href={`/template/${item.slug}`} target="_blank" rel="noopener noreferrer" className="tpl-modal-preview-link"><ExternalLink size={16} /> Xem thiệp mẫu</a>
-            <a href="https://zalo.me/loihenstudio" target="_blank" rel="noreferrer" className="tpl-modal-create-link"><WandSparkles size={16} /> Liên hệ đặt qua Zalo</a>
-          </div>
-          <ol className="tpl-modal-journey"><li><b>01</b><span>Chọn mẫu</span></li><li><b>02</b><span>Gửi thông tin</span></li><li><b>03</b><span>Nhận link thiệp</span></li></ol>
-          <button type="button" className={`tpl-modal-save ${favorite ? 'is-active' : ''}`} onClick={() => onFavorite(item.slug)}>
-            <Heart size={16} fill={favorite ? 'currentColor' : 'none'} /> {favorite ? 'Đã lưu vào yêu thích' : 'Lưu mẫu để xem lại'}
-          </button>
-        </div>
-      </section>
-    </div>
-  );
-}
 
 export default function TemplatesDashboard() {
-  const [activeStyle, setActiveStyle] = useState('Tất cả');
-  const [query, setQuery] = useState('');
-  const [favoriteOnly, setFavoriteOnly] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
   const [favorites, setFavorites] = useState(() => {
     try { return new Set(JSON.parse(window.localStorage.getItem(FAVORITES_STORAGE_KEY) || '[]')); }
     catch { return new Set(); }
   });
-  const [quickView, setQuickView] = useState(null);
 
   useEffect(() => {
     window.localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify([...favorites]));
   }, [favorites]);
 
-  useEffect(() => {
-    const closeOnEscape = (event) => { if (event.key === 'Escape') setQuickView(null); };
-    window.addEventListener('keydown', closeOnEscape);
-    return () => window.removeEventListener('keydown', closeOnEscape);
-  }, []);
-
-  const filteredTemplates = useMemo(() => {
-    const normalized = query.trim().toLocaleLowerCase('vi-VN');
-    return allTemplates.filter((item) => {
-      if (activeStyle !== 'Tất cả' && item.style !== activeStyle) return false;
-      if (favoriteOnly && !favorites.has(item.slug)) return false;
-      if (!normalized) return true;
-      return `${item.title} ${item.slug} ${item.style}`.toLocaleLowerCase('vi-VN').includes(normalized);
-    });
-  }, [activeStyle, favoriteOnly, favorites, query]);
+  const pageSize = 15;
+  const pageCount = Math.ceil(displayedTemplates.length / pageSize);
+  const visibleTemplates = displayedTemplates.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
   const toggleFavorite = (slug) => {
     setFavorites((current) => {
@@ -227,22 +238,15 @@ export default function TemplatesDashboard() {
     });
   };
 
-  const clearFilters = () => {
-    setActiveStyle('Tất cả');
-    setQuery('');
-    setFavoriteOnly(false);
-  };
-
   return (
     <main className="tpl-page" id="top">
       <StudioHeader />
       <section className="tpl-hero">
         <div className="tpl-hero-text">
-          <span>THE WEDDING INVITATION COLLECTION</span>
-          <h1>108 Mẫu Thiệp<br /><em>Cưới Online</em></h1>
-          <p className="tpl-hero-subtitle">Chọn mẫu · Xem live · Đặt ngay</p>
-          <p>Khám phá những mẫu thiệp được thiết kế để kể câu chuyện riêng của hai bạn — đẹp trên điện thoại, tinh tế trên mọi màn hình.</p>
-          <div className="tpl-hero-points"><span><LayoutTemplate size={16} /> {allTemplates.length} mẫu tuyển chọn</span><span><Sparkles size={16} /> 6 phong cách riêng</span><span><ImageIcon size={16} /> Tối ưu mọi thiết bị</span></div><div className="tpl-hero-actions"><a href="#thu-vien"><Play size={15} /> Xem kho mẫu</a><a href="#quy-trinh">Cách đặt thiệp <ChevronRight size={15} /></a></div>
+          <span>LỜI HẸN STUDIO · WEDDING COLLECTION</span>
+          <h1>Mẫu Thiệp Cưới</h1>
+          <p>Tôn vinh câu chuyện tình yêu bằng những thiết kế thiệp cưới số chỉn chu, giàu cảm xúc và tinh tế trên mọi màn hình.</p>
+          <div className="tpl-hero-points"><span><LayoutTemplate size={16} /> {allTemplates.length} mẫu thiệp riêng</span><span><Sparkles size={16} /> {allStyles.length} phong cách</span><span><ImageIcon size={16} /> Xem đẹp trên điện thoại</span></div><div className="tpl-hero-actions"><a href="#thu-vien"><Play size={15} /> Khám phá bộ sưu tập</a><a href="#quy-trinh">Cách chọn mẫu <ChevronRight size={15} /></a></div>
         </div>
         <div className="tpl-hero-art" aria-hidden="true">
           <div className="tpl-art-card tpl-art-card-one"><img src="/assets/new-templates/thiep-cuoi-57/preview.jpg" alt="" /></div>
@@ -253,23 +257,22 @@ export default function TemplatesDashboard() {
 
       <section className="tpl-browser" id="thu-vien" aria-label="Duyệt mẫu thiệp">
         <div className="tpl-browser-head">
-          <div><span>FIND YOUR SIGNATURE STYLE</span><h2>Mẫu nào khiến bạn muốn xem thêm một chút?</h2></div>
-          <p>Chọn theo phong cách, mở bản xem live và lưu lại những mẫu làm bạn rung động nhất.</p>
+           <div><span>FIND YOUR SIGNATURE STYLE</span><h2>Một thiết kế hợp với câu chuyện của hai bạn?</h2></div>
+          <p>Chọn theo phong cách, mở từng mẫu thiệp thực tế và lưu lại những thiết kế làm bạn rung động nhất.</p>
         </div>
-        <div className="tpl-filter-panel">
-          <label className="tpl-search" htmlFor="template-search"><Search size={18} /><input id="template-search" type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Tìm theo tên hoặc số mẫu..." /><span>{filteredTemplates.length} mẫu</span></label>
-          <div className="tpl-filter-row">
-            <div className="tpl-filter-group" aria-label="Lọc theo phong cách"><SlidersHorizontal size={16} /><div>{['Tất cả', ...allStyles].map((style) => <button key={style} type="button" onClick={() => setActiveStyle(style)} className={activeStyle === style ? 'is-active' : ''}>{style}</button>)}</div></div>
-            <button type="button" className={`tpl-favorite-filter ${favoriteOnly ? 'is-active' : ''}`} onClick={() => setFavoriteOnly((current) => !current)} aria-pressed={favoriteOnly}><Heart size={16} fill={favoriteOnly ? 'currentColor' : 'none'} /> Đã lưu{favorites.size ? ` (${favorites.size})` : ''}</button>
-          </div>
-        </div>
-
-        {filteredTemplates.length ? (
-          <div className="tpl-grid">
-            {filteredTemplates.map((item) => <TemplateCard key={item.slug} item={item} favorite={favorites.has(item.slug)} onFavorite={toggleFavorite} onQuickView={setQuickView} />)}
-          </div>
+        {displayedTemplates.length ? (
+          <>
+            <div className="tpl-grid">
+              {visibleTemplates.map((item) => <TemplateCard key={item.slug} item={item} favorite={favorites.has(item.slug)} onFavorite={toggleFavorite} />)}
+            </div>
+            {pageCount > 1 && <nav className="tpl-pagination" aria-label="Phân trang thiệp">
+              <button type="button" aria-label="Trang trước" onClick={() => setCurrentPage((page) => Math.max(1, page - 1))} disabled={currentPage === 1}><ChevronLeft size={16} /></button>
+              {Array.from({ length: pageCount }, (_, index) => index + 1).map((page) => <button key={page} type="button" aria-label={`Trang ${page}`} aria-current={currentPage === page ? 'page' : undefined} onClick={() => setCurrentPage(page)}>{page}</button>)}
+              <button type="button" aria-label="Trang sau" onClick={() => setCurrentPage((page) => Math.min(pageCount, page + 1))} disabled={currentPage === pageCount}><ChevronRight size={16} /></button>
+            </nav>}
+          </>
         ) : (
-          <div className="tpl-empty"><LayoutTemplate size={38} /><h2>Chưa tìm thấy mẫu phù hợp</h2><p>Thử đổi từ khóa, phong cách hoặc bộ lọc yêu thích để xem thêm lựa chọn.</p><button type="button" onClick={clearFilters}>Xóa bộ lọc</button></div>
+          <div className="tpl-empty"><LayoutTemplate size={38} /><h2>Chưa có mẫu thiệp</h2></div>
         )}
       </section>
 
@@ -282,7 +285,6 @@ export default function TemplatesDashboard() {
         </ol>
       </section>
       <StudioFooter />
-      <TemplateQuickView item={quickView} onClose={() => setQuickView(null)} favorite={quickView ? favorites.has(quickView.slug) : false} onFavorite={toggleFavorite} />
     </main>
   );
 }

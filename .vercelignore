@@ -1,6 +1,12 @@
 .audit
 .firecrawl
 .qa
+artifacts/
+coverage/
+dist/
+node_modules/
+playwright-report/
+test-results/
 .DS_Store
 .vscode
 DESIGN.md

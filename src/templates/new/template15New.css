@@ -328,3 +328,33 @@ body.template15new-page {
     padding-left: 18px;
   }
 }
+
+/* Editorial family and event details keep the bold red invitation self-contained. */
+.t15n-families{grid-column:1/-1;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;padding:28px 22px;color:#fff;background:#8f1021;text-align:center}
+.t15n-families>div{display:grid;gap:8px}
+.t15n-families>svg{width:18px;color:#f4d9d6}
+.t15n-families small{margin-bottom:3px;color:#f2c7c3;font:600 9px/1.4 "Quicksand",sans-serif;letter-spacing:.15em}
+.t15n-families b{font:500 11px/1.5 "Quicksand",sans-serif}
+.t15n-schedule{padding:22px 16px;border-top:1px solid #b7182b;border-bottom:1px solid #b7182b}
+.t15n-schedule>small{display:block;margin-bottom:10px;color:#b7182b;font:700 9px/1.5 "Quicksand",sans-serif;letter-spacing:.16em;text-align:center}
+.t15n-schedule>div{display:grid;grid-template-columns:65px 1fr;gap:12px;padding:12px 0;border-top:1px solid #e4d4d2}
+.t15n-schedule time{color:#a31629;font:700 11px/1.5 "Quicksand",sans-serif}
+.t15n-schedule span{font:500 13px/1.5 "Quicksand",sans-serif}
+.t15n-dresscode{padding:22px 16px;background:#f4f0f0;text-align:center}
+.t15n-dresscode>small,.t15n-wishes>small{color:#a31629;font:700 9px/1.5 "Quicksand",sans-serif;letter-spacing:.16em}
+.t15n-dresscode h3{margin:8px 0;color:#b7182b;font:400 30px/1.1 "Signora",cursive}
+.t15n-dresscode p{margin:0;color:#4e4545;font:500 12px/1.65 "Quicksand",sans-serif}
+.t15n-dresscode>div{display:flex;justify-content:center;gap:11px;margin-top:14px}
+.t15n-dresscode i{width:27px;height:27px;border:1px solid rgba(0,0,0,.13);border-radius:50%;background:#fff}
+.t15n-dresscode i:nth-child(2){background:#171717}
+.t15n-dresscode i:nth-child(3){background:#b7182b}
+.t15n-wishes{width:min(100%,380px);text-align:center}
+.t15n-wishes>small{display:block;margin-bottom:12px;color:#ffe1df}
+.t15n-wish{border:1px solid #dcbec0!important;border-radius:2px!important;background:#fff!important;color:#171717!important;box-shadow:0 14px 30px rgba(0,0,0,.12)!important}
+.t15n-wish h3{color:#a31629!important}
+.t15n-wish input,.t15n-wish textarea{border-color:#d7cbca!important;border-radius:2px!important}
+.t15n-wish button,.t15n-rsvp button{border-radius:2px!important;background:#901122!important;color:#fff!important}
+.t15n-gift{width:min(100%,390px)}
+.t15n-gift .ni-gift{border:1px solid rgba(255,255,255,.5);border-radius:2px;background:transparent;color:#fff;box-shadow:none}
+.t15n-gift .ni-gift>svg{color:#b7182b;background:#fff}
+@media(max-width:420px){.t15n-families{gap:7px;padding-right:13px;padding-left:13px}.t15n-families b{font-size:9px}.t15n-schedule,.t15n-dresscode{padding-right:14px;padding-left:14px}}

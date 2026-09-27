@@ -1,6 +1,7 @@
 import { templateSceneSchema } from './sceneSchema.js';
 import { profileSceneRegistry } from './sceneProfileTemplates.js';
 import { batch2SceneRegistry } from './sceneBatch2Templates.js';
+import { zenLoveRebuiltSceneRegistry } from './zenLoveRebuiltSceneTemplates.js';
 
 const serif = 'Cormorant Garamond, Georgia, serif';
 const display = 'Playfair Display, Georgia, serif';
@@ -115,8 +116,8 @@ function widget(type, id, label, x, y, width, height, options = {}) {
 function makeWeddingScene(config) {
   const { slug, name, paper, ink, accent, soft, heroLayout = 'full', envelope = false, darkEvent = false } = config;
   const hero = heroLayout === 'split'
-    ? image('hero-photo', 'Ảnh mở đầu', 'hero', 206, 70, 272, 620, slug, { borderRadius: 2, entrance: 'right' })
-    : image('hero-photo', 'Ảnh mở đầu', 'hero', 24, 70, 452, 680, slug, { borderRadius: heroLayout === 'rounded' ? 42 : 2, entrance: 'fade' });
+    ? image('hero-photo', 'Ảnh mở đầu', 'hero', 206, 70, 272, 620, slug, { src: config.heroSrc, borderRadius: 2, entrance: 'right' })
+    : image('hero-photo', 'Ảnh mở đầu', 'hero', 24, 70, 452, 680, slug, { src: config.heroSrc, borderRadius: heroLayout === 'rounded' ? 42 : 2, entrance: 'fade' });
   const heroTextX = heroLayout === 'split' ? 20 : 44;
   const heroTextWidth = heroLayout === 'split' ? 190 : 412;
   const heroTextColor = heroLayout === 'split' ? ink : '#ffffff';
@@ -168,9 +169,11 @@ function makeWeddingScene(config) {
       value: 'TWO FAMILIES, ONE LOVE', color: accent, font: sans, fontSize: 14, letterSpacing: 3,
     }),
     image('groom-photo', 'Ảnh chú rể', 'groom', 28, familyTop + 94, 210, 360, slug, {
+      src: config.heroSrc,
       borderRadius: config.photoRadius || 4, entrance: 'left', objectPositionX: 48,
     }),
     image('bride-photo', 'Ảnh cô dâu', 'bride', 262, familyTop + 94, 210, 360, slug, {
+      src: config.heroSrc,
       borderRadius: config.photoRadius || 4, entrance: 'right', objectPositionX: 52,
     }),
     text('groom-full-name', 'Họ tên chú rể', 25, familyTop + 474, 216, 56, {
@@ -215,6 +218,7 @@ function makeWeddingScene(config) {
       value: config.storyHeading || 'OUR LOVE STORY', color: accent, font: display, fontSize: 34, zIndex: 4, align: 'left',
     }),
     image('story-photo', 'Ảnh câu chuyện', 'couple', 78, storyTop + 196, 344, 250, slug, {
+      src: config.heroSrc,
       zIndex: 4, borderRadius: 2, entrance: 'fade',
     }),
     text('story-copy', 'Câu chuyện tình yêu', 78, storyTop + 470, 344, 142, {
@@ -294,6 +298,7 @@ function makeWeddingScene(config) {
 export const sceneTemplateRegistry = Object.freeze({
   ...profileSceneRegistry,
   ...batch2SceneRegistry,
+  ...zenLoveRebuiltSceneRegistry,
   'thiep-cuoi-39': makeWeddingScene({
     slug: 'thiep-cuoi-39', name: 'Editorial Red', paper: '#ffffff', ink: '#181616', accent: '#9d1728', soft: '#f4e8e8',
     heroLayout: 'split', nameFont: display, nameSize: 40, storyHeading: 'OUR LOVE STORY', calendarStyle: 'heart', darkEvent: true,

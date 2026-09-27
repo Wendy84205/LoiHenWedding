@@ -2,6 +2,8 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { allInvitationSlugs, archivedInvitationSlugs, getInvitationDisplayTitle } from '../src/data/invitationCatalog.js';
 
+const zenLoveManifestItems = JSON.parse(await readFile(new URL('../docs/zenlove-local-manifest-2026-09-26.json', import.meta.url), 'utf8')).items;
+
 const distDir = new URL('../dist/', import.meta.url).pathname;
 const sourceHtml = await readFile(join(distDir, 'index.html'), 'utf8');
 const siteUrl = (process.env.SITE_URL || 'https://thiep-moi-online.vercel.app').replace(/\/$/, '');
@@ -47,7 +49,18 @@ const invitationRoutes = allInvitationSlugs.map((slug) => {
   ];
 });
 
-const routes = [...publicRoutes, ...privateRoutes, ...projectionRoutes, ...invitationRoutes];
+const zenLovePreviewRoutes = zenLoveManifestItems
+  .filter((item) => ['catalog-only', 'reconstructed'].includes(item.localImplementation) && item.previewAvailable && item.localPreviewPath)
+  .filter((item) => !allInvitationSlugs.includes(item.slug))
+  .map((item) => [
+    `/template/${item.slug}`,
+    `${item.name || item.slug} | ZenLove catalog preview`,
+    `${item.name || item.slug} - bản dựng lại local từ preview tham chiếu ZenLove.`,
+    item.localPreviewPath,
+    { noIndex: true },
+  ]);
+
+const routes = [...publicRoutes, ...privateRoutes, ...projectionRoutes, ...invitationRoutes, ...zenLovePreviewRoutes];
 
 function escapeHtml(value) {
   return value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');

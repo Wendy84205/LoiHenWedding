@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Check, Heart, MapPin, Send } from 'lucide-react';
 import WeddingMusicButton from './WeddingMusicButton.jsx';
+import { GiftNote, WishForm } from './new/NewInvitationCommon.jsx';
 import './template16.css';
 
 const assets16 = {
@@ -47,6 +48,7 @@ export default function Template16() {
       <Collage16 />
       <Date16 />
       <VenueRsvp16 sent={sent} setSent={setSent} />
+      <GuestNotes16 />
       <ThankYou16 />
     </main>
   );
@@ -119,7 +121,20 @@ function Date16() {
       <motion.div className="t16-dateHeading" {...reveal16('up')}><span>Thứ 4</span><strong>20</strong><span>Tháng 08<br />Năm 2027</span></motion.div>
       <motion.div className="t16-calendar" {...reveal16('up', .1)}><h2>8.2027</h2><div>{calendar16.map((day) => typeof day === 'string' ? <span key={day} /> : <span key={day} className={day === 20 ? 'is-wedding' : ''}>{day === 20 && <Heart fill="currentColor" strokeWidth={0} />}<i>{day}</i></span>)}</div></motion.div>
       <motion.p {...reveal16('up')}>Thứ tư ngày 20 tháng 08 năm 2027<br /><small>Nhằm 26 tháng 07 âm lịch · 12:00 PM</small></motion.p>
+      <motion.div className="t16-families" {...reveal16('up')}><div><small>GIA ĐÌNH NHÀ TRAI</small><b>Ông Nguyễn Văn Hùng</b><b>Bà Trần Thị Thu</b></div><Heart /><div><small>GIA ĐÌNH NHÀ GÁI</small><b>Ông Lê Quang Minh</b><b>Bà Phạm Thị Lan</b></div></motion.div>
+      <motion.div className="t16-schedule" {...reveal16('up')}><small>CHƯƠNG TRÌNH NGÀY VUI</small><div><time>11:00</time><span>Đón khách</span></div><div><time>11:30</time><span>Lễ thành hôn</span></div><div><time>12:00</time><span>Khai tiệc</span></div></motion.div>
+      <motion.div className="t16-dresscode" {...reveal16('up')}><small>GỢI Ý TRANG PHỤC</small><h3>Dress code</h3><p>Đen, trắng và xanh olive — những gam màu dịu nhẹ cho ngày vui.</p><div aria-label="Bảng màu gợi ý"><i/><i/><i/></div></motion.div>
       <motion.blockquote {...reveal16('up')}>Ý đời giản dị như mây<br />Nắm tay nhau đi hết ngày bình yên.</motion.blockquote>
+    </section>
+  );
+}
+
+function GuestNotes16() {
+  return (
+    <section className="t16-guestNotes" id="wishes">
+      <motion.h2 {...reveal16('up')}>Gửi chúng mình một lời chúc</motion.h2>
+      <motion.div {...reveal16('up', .08)}><WishForm className="t16-wish" accent="#777466" /></motion.div>
+      <motion.div {...reveal16('up', .14)}><GiftNote className="t16-gift" title="Hộp quà mừng" /></motion.div>
     </section>
   );
 }

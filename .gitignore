@@ -12,3 +12,7 @@ playwright-report
 test-results
 *.log
 node_modules/
+artifacts/
+public/assets/zenlove-previews/
+stitch_wedding_invitation_showcase_redesign/
+.env*

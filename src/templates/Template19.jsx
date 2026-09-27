@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Check, Heart, MapPin, Phone, Send } from 'lucide-react';
 import WeddingMusicButton from './WeddingMusicButton.jsx';
+import { GiftNote, VenueLink, WeddingCalendar, WishForm } from './new/NewInvitationCommon.jsx';
 import './template19.css';
 
 const assets19 = {
@@ -44,8 +45,10 @@ export default function Template19() {
       <Married19 />
       <Poetry19 />
       <Invitation19 />
+      <EventDetails19 />
       <Contact19 />
       <Rsvp19 sent={sent} setSent={setSent} />
+      <GuestNotes19 />
       <ThankYou19 />
     </main>
   );
@@ -112,8 +115,32 @@ function Invitation19() {
   return (
     <section className="t19-invitation" id="invitation">
       <motion.img loading="lazy" src={assets19.third} alt="Thiệp mời cưới Minh Quân và Bảo Anh" {...reveal19('up')} />
-      <motion.div className="t19-inviteOverlay" {...reveal19('up', .12)}><small>Thời gian (Time)</small><h2>Thư <i>Mời</i></h2><strong>WEDNESDAY · 20 / 08 / 2027</strong><span>Ngày 26 tháng 07 âm lịch · 12:00 PM</span></motion.div>
+      <motion.div className="t19-inviteOverlay" {...reveal19('up', .12)}><small>Thời gian (Time)</small><h2>Thư <i>Mời</i></h2><strong>FRIDAY · 20 / 08 / 2027</strong><span>Thứ Sáu · 12:00 PM</span></motion.div>
       <motion.blockquote {...reveal19('up')}>Tháng Tám nghiêng nắng qua thềm<br />Hôm nay ta hẹn bên nhau một đời.</motion.blockquote>
+    </section>
+  );
+}
+
+function EventDetails19() {
+  return (
+    <section className="t19-eventDetails" id="event-details">
+      <motion.h2 {...reveal19('up')}>Hai gia đình trân trọng kính mời</motion.h2>
+      <motion.div className="t19-families" {...reveal19('up')}><div><small>NHÀ TRAI</small><b>Ông Nguyễn Văn Hùng</b><b>Bà Trần Thị Thu</b></div><Heart/><div><small>NHÀ GÁI</small><b>Ông Lê Quang Minh</b><b>Bà Phạm Thị Lan</b></div></motion.div>
+      <motion.p className="t19-eventTime" {...reveal19('up')}>Thứ Sáu · 20 tháng 08 năm 2027<br /><b>12:00 · 52 Miếu Đầm, Hà Nội</b></motion.p>
+      <WeddingCalendar month="AUGUST 2027" weddingDay={20} />
+      <motion.div className="t19-timeline" {...reveal19('up')}><small>CHƯƠNG TRÌNH NGÀY VUI</small><div><time>11:00</time><span>Đón khách</span></div><div><time>11:30</time><span>Lễ thành hôn</span></div><div><time>12:00</time><span>Khai tiệc</span></div></motion.div>
+      <motion.div className="t19-dresscode" {...reveal19('up')}><small>GỢI Ý TRANG PHỤC</small><h3>Dress code</h3><p>Trắng, nâu nhạt hoặc xanh olive sẽ hợp với sắc ảnh cưới nhẹ nhàng.</p><div aria-label="Bảng màu gợi ý"><i/><i/><i/></div></motion.div>
+      <VenueLink query="52 Mieu Dam Me Tri Nam Tu Liem Ha Noi">Xem địa điểm trên bản đồ</VenueLink>
+    </section>
+  );
+}
+
+function GuestNotes19() {
+  return (
+    <section className="t19-guestNotes" id="wishes">
+      <motion.h2 {...reveal19('up')}>Gửi lời chúc đến đôi mình</motion.h2>
+      <motion.div {...reveal19('up')}><WishForm className="t19-wish" accent="#69655d" /></motion.div>
+      <motion.div {...reveal19('up', .1)}><GiftNote className="t19-gift" title="Hộp quà mừng" /></motion.div>
     </section>
   );
 }

@@ -1,8 +1,7 @@
 import React from 'react';
 import { Heart, Phone } from 'lucide-react';
-import { Countdown, GiftNote, MusicButton, Reveal, RsvpForm, VenueLink, WeddingCalendar, useInvitationPage } from './NewInvitationCommon.jsx';
+import { Countdown, GiftNote, MusicButton, Reveal, RsvpForm, VenueLink, WeddingCalendar, WishForm, useInvitationPage } from './NewInvitationCommon.jsx';
 import './template10New.css';
-import './auditFidelity.css';
 
 const a = '/assets/new-templates/thiep-cuoi-10';
 
@@ -16,7 +15,7 @@ export default function Template10New() {
     <section className="t10n-portraits"><Reveal><img src={`${a}/image-5.webp`} alt="Chân dung Mona" /><h2>Mona</h2><a href="tel:0900000001"><Phone /> Liên hệ</a></Reveal><Reveal><img src={`${a}/image-6.webp`} alt="Chân dung Lisa" /><h2>Lisa</h2><a href="tel:0900000002"><Phone /> Liên hệ</a></Reveal></section>
     <section className="t10n-story"><Reveal as="small">OUR STORY</Reveal><Reveal as="h2">We grow together</Reveal><Reveal as="p">Ta cùng trưởng thành qua năm tháng, sẻ chia niềm vui và cả những nỗi buồn. Điều đẹp nhất là mỗi ngày đều nhìn thấy phiên bản tốt hơn của nhau.</Reveal><Reveal as="img" src={`${a}/image-4.webp`} alt="Câu chuyện tình yêu của Lisa và Mona" /></section>
     <section className="t10n-daylight"><Reveal as="img" src={`${a}/image-1.webp`} alt="Lisa và Mona trong ánh sáng ban mai" direction="right"/><Reveal as="small">ANOTHER DAY SUN</Reveal><Reveal as="img" src={`${a}/image-4.webp`} alt="Album cưới tối giản" direction="left"/><Reveal as="p">“Giữa đám đông, em khẽ mỉm cười với anh. Vì nụ cười ấy, anh đã chờ đợi từ lâu.”</Reveal><Reveal className="t10n-archPhoto" direction="scale"><img src={`${a}/image-4.webp`} alt="Chân dung Lisa và Mona"/></Reveal></section>
-    <section className="t10n-event"><div><Reveal><small>WEDDING DAY</small><strong>21</strong><span>MAY · 2027</span></Reveal><Reveal><p>13:00 · THỨ SÁU<br />CINELOVE GARDEN, HÀ NỘI</p><VenueLink query="Cinelove Garden Hanoi">Dẫn đường</VenueLink></Reveal></div><WeddingCalendar month="MAY 2027" weddingDay={21} offset={5} /><Countdown values={count} className="t10n-count" /></section>
-    <section className="t10n-end"><Reveal as="img" src={`${a}/image-5.webp`} alt="Ảnh cưới tối giản" /><RsvpForm accent="#1b1b1b" className="t10n-rsvp" /><GiftNote className="t10n-gift" title="With love" /></section>
+    <section className="t10n-event"><div><Reveal><small>WEDDING DAY</small><strong>21</strong><span>MAY · 2027</span></Reveal><Reveal><p>13:00 · THỨ SÁU<br />CINELOVE GARDEN, HÀ NỘI</p><VenueLink query="Cinelove Garden Hanoi">Dẫn đường</VenueLink></Reveal></div><WeddingCalendar month="MAY 2027" weddingDay={21} /><Reveal className="t10n-schedule"><small>THE CELEBRATION</small><h3>Thời gian trong ngày</h3><div><time>12:30</time><span>Đón khách</span></div><div><time>13:00</time><span>Lễ thành hôn</span></div><div><time>13:30</time><span>Khai tiệc</span></div></Reveal><Reveal className="t10n-dresscode"><small>GỢI Ý TRANG PHỤC</small><h3>Dress code</h3><p>Đen, trắng và sắc champagne nhẹ nhàng.</p><div aria-label="Bảng màu gợi ý"><i/><i/><i/></div></Reveal><Countdown values={count} className="t10n-count" /></section>
+    <section className="t10n-end"><Reveal as="img" src={`${a}/image-5.webp`} alt="Ảnh cưới tối giản" /><RsvpForm accent="#1b1b1b" className="t10n-rsvp" /><Reveal className="t10n-wishes"><small>LEAVE A WISH</small><WishForm className="t10n-wish" accent="#1b1b1b" /></Reveal><GiftNote className="t10n-gift" title="With love" /></section>
   </main>;
 }

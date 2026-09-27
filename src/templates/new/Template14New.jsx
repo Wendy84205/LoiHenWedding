@@ -1,8 +1,7 @@
 import React from 'react';
 import { Feather, Heart } from 'lucide-react';
-import { Countdown, GiftNote, MusicButton, Reveal, RsvpForm, VenueLink, WeddingCalendar, useInvitationPage } from './NewInvitationCommon.jsx';
+import { Countdown, GiftNote, MusicButton, Reveal, RsvpForm, VenueLink, WeddingCalendar, WishForm, useInvitationPage } from './NewInvitationCommon.jsx';
 import './template14New.css';
-import './auditFidelity.css';
 
 const a = '/assets/new-templates/thiep-cuoi-14';
 
@@ -16,8 +15,8 @@ export default function Template14New() {
     <section className="t14n-couple"><Reveal direction="right"><img src={`${a}/image-7.webp`} alt="Chú rể Gia Huy" /><span>GROOM</span><h3>Gia Huy</h3></Reveal><Reveal direction="left"><img src={`${a}/image-9.webp`} alt="Cô dâu Bảo Ngọc" /><span>BRIDE</span><h3>Bảo Ngọc</h3></Reveal></section>
     <section className="t14n-quote"><Reveal as="p">“Lần đầu gặp gỡ, trái tim đã rung động.<br />Dù bên nhau lâu dài, cảm xúc vẫn không thay đổi.”</Reveal><Heart fill="currentColor" /></section>
     <section className="t14n-reliance"><Reveal as="img" src={`${a}/image-10.webp`} alt="Gia Huy là chỗ dựa vững chắc" direction="scale"/><Reveal as="p">Em là chỗ dựa vững chắc của anh, dù có ở đâu, anh cũng luôn bên em.</Reveal><div><Reveal as="img" src={`${a}/image-11.webp`} alt="Cùng nhau đi suốt cuộc đời" direction="right"/><Reveal as="img" src={`${a}/image-12.webp`} alt="Khoảnh khắc bên nhau" direction="left"/></div><Reveal as="h2">The moment I met you, I decided to grow old together with you.</Reveal></section>
-    <section className="t14n-date"><Reveal><small>HAPPY EVERY DAY, FOUR SEASONS WITH YOU</small><h2>Our wedding day</h2></Reveal><WeddingCalendar month="THÁNG 06 · 2027" weddingDay={24} offset={1} /><Countdown values={count} className="t14n-count" /><Reveal><p>11:30 · Thứ Năm<br />Khách sạn CineLove, Hà Nội</p><VenueLink query="Cinelove Hanoi">Xem bản đồ</VenueLink></Reveal></section>
+    <section className="t14n-date"><Reveal><small>HAPPY EVERY DAY, FOUR SEASONS WITH YOU</small><h2>Our wedding day</h2></Reveal><Reveal className="t14n-families"><div><small>NHÀ TRAI</small><b>Ông Nguyễn Văn Hùng</b><b>Bà Trần Thị Thu</b></div><Heart/><div><small>NHÀ GÁI</small><b>Ông Lê Quang Minh</b><b>Bà Phạm Thị Lan</b></div></Reveal><WeddingCalendar month="THÁNG 06 · 2027" weddingDay={24} /><Reveal className="t14n-timeline"><small>WEDDING DAY</small><div><time>10:30</time><span>Đón khách</span></div><div><time>11:00</time><span>Lễ thành hôn</span></div><div><time>11:30</time><span>Khai tiệc</span></div></Reveal><Reveal className="t14n-dresscode"><small>GỢI Ý TRANG PHỤC</small><h3>Dress code</h3><p>Kem, champagne và xanh olive sẽ hòa cùng sắc giấy ấm áp.</p><div aria-label="Bảng màu gợi ý"><i/><i/><i/></div></Reveal><Countdown values={count} className="t14n-count" /><Reveal><p>11:30 · Thứ Năm<br />Khách sạn CineLove, Hà Nội</p><VenueLink query="Cinelove Hanoi">Xem bản đồ</VenueLink></Reveal></section>
     <section className="t14n-gallery"><Reveal as="img" src={`${a}/image-3.webp`} alt="Ảnh cưới cổ điển" /><div><Reveal as="img" src={`${a}/image-8.webp`} alt="Album cưới tông nâu" direction="right" /><Reveal as="img" src={`${a}/image-12.webp`} alt="Khoảnh khắc ngày cưới" direction="left" /></div></section>
-    <section className="t14n-end"><RsvpForm accent="#856b45" className="t14n-rsvp" /><GiftNote className="t14n-gift" /><Reveal as="h2">Thank you</Reveal></section>
+    <section className="t14n-end"><RsvpForm accent="#856b45" className="t14n-rsvp" /><Reveal className="t14n-wishes"><small>WORDS FROM YOU</small><WishForm className="t14n-wish" accent="#856b45" /></Reveal><GiftNote className="t14n-gift" /><Reveal as="h2">Thank you</Reveal></section>
   </main>;
 }

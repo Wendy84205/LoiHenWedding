@@ -1,8 +1,7 @@
 import React from 'react';
 import { Heart, Music, Wine } from 'lucide-react';
-import { Countdown, GiftNote, MusicButton, Reveal, RsvpForm, VenueLink, WeddingCalendar, useInvitationPage } from './NewInvitationCommon.jsx';
+import { Countdown, GiftNote, MusicButton, Reveal, RsvpForm, VenueLink, WeddingCalendar, WishForm, useInvitationPage } from './NewInvitationCommon.jsx';
 import './template7New.css';
-import './auditFidelity.css';
 
 const a = '/assets/new-templates/thiep-cuoi-7';
 
@@ -39,10 +38,11 @@ export default function Template7New() {
         <Reveal direction="scale"><WeddingCalendar month="MAY 2030" weddingDay={20} offset={2} /></Reveal>
         <Countdown values={count} className="t7n-count" />
         <div className="t7n-timeline"><Reveal><Music /><b>11:30</b><span>Đón khách</span></Reveal><Reveal delay={0.12}><Heart /><b>12:00</b><span>Thành hôn</span></Reveal><Reveal delay={0.24}><Wine /><b>12:30</b><span>Khai tiệc</span></Reveal></div>
+        <Reveal className="t7n-dresscode"><small>GỢI Ý TRANG PHỤC</small><h2>Dress code</h2><p>Chúng mình gợi ý sắc đỏ, kem và hồng nhạt để hòa cùng không khí ngày vui.</p><div aria-label="Bảng màu gợi ý"><i/><i/><i/></div></Reveal>
       </section>
 
       <section className="t7n-album"><Reveal as="h2">LOVE IN MOTION</Reveal><Reveal as="img" src={`${a}/image-6.jpg`} alt="Album cưới" /><div><Reveal as="img" direction="right" src={`${a}/image-7.png`} alt="Ảnh cưới Minh Anh" /><Reveal as="img" direction="left" src={`${a}/image-8.jpg`} alt="Ảnh cưới Hoàng Nam" /></div></section>
-      <section className="t7n-ending"><RsvpForm className="t7n-rsvp" accent="#990400" /><GiftNote className="t7n-gift" /><Reveal as="h2">See you at our wedding</Reveal></section>
+      <section className="t7n-ending"><RsvpForm className="t7n-rsvp" accent="#990400" /><Reveal className="t7n-wishes"><h3>A WISH FOR THE COUPLE</h3><WishForm className="t7n-wish" accent="#990400" /></Reveal><GiftNote className="t7n-gift" /><Reveal as="h2">See you at our wedding</Reveal></section>
     </main>
   );
 }

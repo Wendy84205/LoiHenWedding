@@ -1,8 +1,7 @@
 import React from 'react';
 import { Camera, GlassWater, Heart } from 'lucide-react';
-import { Countdown, GiftNote, MusicButton, Reveal, RsvpForm, VenueLink, WeddingCalendar, useInvitationPage } from './NewInvitationCommon.jsx';
+import { Countdown, GiftNote, MusicButton, Reveal, RsvpForm, VenueLink, WeddingCalendar, WishForm, useInvitationPage } from './NewInvitationCommon.jsx';
 import './template23New.css';
-import './auditFidelity.css';
 
 const a = '/assets/new-templates/thiep-cuoi-23';
 
@@ -37,11 +36,12 @@ export default function Template23New() {
       <section className="t23n-dateSection">
         <Reveal><WeddingCalendar month="September 2027" weddingDay={18} offset={2} /></Reveal>
         <div className="t23n-timeline"><Reveal><Camera /><b>10:30</b><span>Đón khách</span></Reveal><Reveal delay={0.12}><Heart /><b>11:00</b><span>Thành hôn</span></Reveal><Reveal delay={0.24}><GlassWater /><b>11:30</b><span>Khai tiệc</span></Reveal></div>
+        <Reveal className="t23n-dresscode"><small>GỢI Ý TRANG PHỤC</small><h3>Dress code</h3><p>Xanh lá dịu, kem và vàng nhạt sẽ hòa cùng khu vườn mùa thu.</p><div aria-label="Bảng màu gợi ý"><i/><i/><i/></div></Reveal>
         <Countdown values={count} className="t23n-count" />
       </section>
 
       <section className="t23n-album"><Reveal as="h2">Garden memories</Reveal><Reveal as="img" src={`${a}/image-5.jpg`} alt="Album cưới ngoài trời" /><div><Reveal as="img" direction="right" src={`${a}/image-6.jpg`} alt="Kỷ niệm trong vườn" /><Reveal as="img" direction="left" src={`${a}/image-7.jpg`} alt="Cặp đôi hạnh phúc" /></div></section>
-      <section className="t23n-ending"><RsvpForm className="t23n-rsvp" accent="#4b603b" /><GiftNote className="t23n-gift" /><Reveal as="h2">With love, thank you</Reveal></section>
+      <section className="t23n-ending"><RsvpForm className="t23n-rsvp" accent="#4b603b" /><Reveal className="t23n-wishes"><small>GỬI MỘT LỜI CHÚC</small><WishForm className="t23n-wish" accent="#4b603b" /></Reveal><GiftNote className="t23n-gift" /><Reveal as="h2">With love, thank you</Reveal></section>
     </main>
   );
 }

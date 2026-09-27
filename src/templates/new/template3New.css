@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+.template3new-page { background: #ece8e5 !important; color: #f2e7d1; }
+.template3new-page .templateCommerceBar { z-index: 50; }
+.t3h {
+  --t3h-ink: #f2e7d1;
+  --t3h-paper: #f4eee4;
+  --t3h-red: #581720;
+  --t3h-red-deep: #421118;
+  --t3h-gold: #c9a76b;
+  --t3h-body: #332326;
+  width: min(500px, 100vw);
+  min-height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  background: var(--t3h-paper);
+  color: var(--t3h-body);
+  font-family: 'DM Sans', sans-serif;
+  box-shadow: 0 20px 70px rgba(67,52,48,.16);
+}
+.t3h * { box-sizing: border-box; }
+.t3h-music { top: 1rem !important; right: 1rem !important; color: var(--t3h-ink) !important; background: var(--t3h-red) !important; }
+.t3h .ni-map { display: inline-flex; align-items: center; gap: .55rem; color: var(--t3h-ink); text-decoration: none; }
+.t3h .ni-rsvp,
+.t3h .ni-wish,
+.t3h .ni-gift { font-family: 'DM Sans', sans-serif; }
+.t3h .ni-rsvp h3,
+.t3h .ni-wish h3,
+.t3h .ni-gift h3 { color: inherit; font-family: 'Playfair Display', Georgia, serif; font-size: 1.65rem; font-weight: 400; }
+.t3h .ni-rsvp label,
+.t3h .ni-wish label { color: #5d4e47; }
+.t3h .ni-rsvp input:not([type='radio']),
+.t3h .ni-rsvp select,
+.t3h .ni-wish input,
+.t3h .ni-wish textarea { border: 1px solid #d8c9b6; border-radius: 0; background: #fffdf8; color: var(--t3h-body); }
+.t3h .ni-rsvp button,
+.t3h .ni-wish button { border-radius: 0; background: var(--t3h-red); color: var(--t3h-ink); }
+.t3h .ni-rsvp fieldset { border-color: #d8c9b6; }
+.t3h .ni-rsvp legend { color: #5d4e47; }
+.t3h .ni-gift { border: 1px solid rgba(201,167,107,.58); border-radius: 0; background: transparent; color: var(--t3h-ink); box-shadow: none; }
+.t3h .ni-gift svg { color: var(--t3h-gold); }
+.t3h .ni-gift h3 { letter-spacing: .04em; }
+
+.t3h-cover { position: relative; min-height: min(880px, 100svh); display: grid; place-items: center; padding: 2.5rem 1.25rem; background: var(--t3h-paper); }
+.t3h-cover-paper { position: absolute; inset: 0; opacity: .16; background-image: repeating-linear-gradient(0deg, transparent 0 6px, rgba(77,47,38,.08) 7px), radial-gradient(ellipse at 20% 20%, rgba(103,66,49,.3), transparent 36%), radial-gradient(ellipse at 80% 75%, rgba(103,66,49,.23), transparent 35%); }
+.t3h-cover-inner { position: relative; width: min(100%, 510px); min-height: 750px; display: flex; flex-direction: column; align-items: center; padding: clamp(1.4rem, 5vw, 3.5rem); background: var(--t3h-red); color: var(--t3h-ink); text-align: center; box-shadow: 0 28px 70px rgba(40,18,18,.2); }
+.t3h-kicker,.t3h-cover-copy > span,.t3h-cover-copy > p,.t3h-scroll,.t3h-section-label,.t3h-family > span,.t3h-family small,.t3h-announcement > span,.t3h-announcement p,.t3h-person > span,.t3h-ceremony > span,.t3h-ceremony > p,.t3h-ceremony > small,.t3h-date-card > span,.t3h-event-copy > div > span,.t3h-event-time,.t3h-overline,.t3h-palette-label,.t3h-thanks > span { font-size: .63rem; font-weight: 600; letter-spacing: .19em; line-height: 1.7; }
+.t3h-kicker { position: relative; z-index: 1; color: #deccb0; }
+.t3h-cover-ornament { position: absolute; z-index: 1; top: 4.2rem; right: clamp(1.5rem, 7vw, 3.2rem); color: #ead5b6; font-family: serif; font-size: clamp(3.7rem, 8vw, 5.4rem); line-height: .9; opacity: .9; }
+.t3h-cover-photo { width: min(100%, 355px); height: 440px; margin: 2rem 0 1.75rem; object-fit: cover; object-position: 50% 35%; filter: saturate(.82); }
+.t3h-cover-copy { max-width: 100%; }
+.t3h-cover-copy > span { color: #d9c5aa; }
+.t3h-cover-copy h1 { margin: .7rem 0; white-space: nowrap; font: 400 clamp(1.35rem, 4.2vw, 2.05rem)/1.2 'Playfair Display', Georgia, serif; }
+.t3h-cover-copy h1 i { color: var(--t3h-gold); font-size: .82em; }
+.t3h-cover-copy > p { margin: 0; color: #dfceb6; }
+.t3h-scroll { position: absolute; bottom: 1.4rem; display: inline-flex; align-items: center; gap: .65rem; color: #e6d5bd; text-decoration: none; }
+.t3h-scroll span { font-size: 1rem; }
+
+.t3h-section { width: min(100%, 1020px); margin-inline: auto; padding: clamp(4.5rem, 10vw, 8rem) clamp(1.25rem, 5vw, 3.5rem); }
+.t3h-invitation { position: relative; width: min(100%, 900px); background: var(--t3h-red); color: var(--t3h-ink); text-align: center; }
+.t3h-invitation::before,.t3h-invitation::after { position: absolute; top: 4rem; bottom: 4rem; width: 14px; border-block: 1px solid rgba(201,167,107,.6); content: ''; }
+.t3h-invitation::before { left: .75rem; border-left: 1px solid rgba(201,167,107,.6); }
+.t3h-invitation::after { right: .75rem; border-right: 1px solid rgba(201,167,107,.6); }
+.t3h-section-label { display: flex; align-items: center; justify-content: center; gap: .9rem; margin: 0 auto 3rem; color: var(--t3h-gold); }
+.t3h-section-label > span:first-child { color: #bd9573; }
+.t3h-families { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1rem; max-width: 610px; margin: 0 auto 3.2rem; }
+.t3h-family > span { color: #d7c3aa; }
+.t3h-family p { margin: .8rem 0; font: 500 1.06rem/1.75 'Playfair Display', Georgia, serif; }
+.t3h-family small { color: #ceb79d; font-size: .52rem; }
+.t3h-family-divider { color: var(--t3h-gold); font-size: .8rem; }
+.t3h-announcement { margin-bottom: 2.6rem; }
+.t3h-announcement > span,.t3h-announcement p { color: #d8c4ab; }
+.t3h-announcement p { margin: .45rem 0 0; }
+.t3h-couple { display: flex; flex-direction: column; align-items: center; gap: .25rem; }
+.t3h-person > span { color: #d8c4ab; font-size: .55rem; }
+.t3h-person h2 { margin: .3rem 0; font: 400 clamp(2.2rem, 6vw, 4.2rem)/1.15 'Playfair Display', Georgia, serif; }
+.t3h-ampersand { color: var(--t3h-gold); font: italic 2.2rem 'Playfair Display', Georgia, serif; }
+.t3h-ceremony { max-width: 560px; margin: 3.3rem auto 0; }
+.t3h-ceremony > span,.t3h-ceremony > small { color: #d8c4ab; }
+.t3h-ceremony strong { display: block; margin: .65rem 0 1.2rem; font: 500 1.2rem 'Playfair Display', Georgia, serif; letter-spacing: .08em; }
+.t3h-ceremony > p { margin: 0; color: #d8c4ab; }
+.t3h-big-date { display: flex; justify-content: center; align-items: center; gap: 1rem; margin: 1rem 0 1.1rem; }
+.t3h-big-date b { font: 400 5rem/.9 'Playfair Display', Georgia, serif; }
+.t3h-big-date span { padding-left: 1rem; border-left: 1px solid var(--t3h-gold); text-align: left; font-size: .85rem; line-height: 1.65; }
+.t3h-big-date i { font-size: .7rem; font-style: normal; }
+.t3h-ceremony > small { font-size: .52rem; }
+
+.t3h-album { padding-bottom: 5rem; }
+.t3h-album .t3h-section-label,.t3h-details .t3h-section-label { color: #7e2935; }
+.t3h-album-heading { margin: 0 0 2.5rem; text-align: center; }
+.t3h-album-heading > span { color: #92796b; font-size: .6rem; letter-spacing: .2em; }
+.t3h-album-heading h2,.t3h-event-copy h2,.t3h-dresscode h2,.t3h-rsvp h2,.t3h-wish-intro h2 { margin: .65rem 0; color: #411920; font: 400 clamp(2.2rem, 5.5vw, 3.8rem)/1.12 'Playfair Display', Georgia, serif; }
+.t3h-album-heading h2 i { color: #8c4550; font-weight: 400; }
+.t3h-photo-grid { display: grid; grid-template-columns: 1.08fr .92fr; grid-auto-rows: minmax(150px, 230px); gap: 14px; }
+.t3h-photo { position: relative; overflow: hidden; background: #e3d8c9; }
+.t3h-photo img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .65s ease; }
+.t3h-photo:hover img { transform: scale(1.035); }
+.t3h-photo span { position: absolute; right: .75rem; bottom: .55rem; color: white; font-size: .58rem; letter-spacing: .15em; text-shadow: 0 1px 8px #211; }
+.t3h-photo-1 { grid-row: span 2; }
+
+.t3h-details { background: #eee4d5; }
+.t3h-detail-layout { display: grid; grid-template-columns: minmax(230px, .8fr) minmax(0, 1fr); align-items: center; gap: clamp(2rem, 7vw, 6rem); }
+.t3h-date-card { min-height: 320px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .75rem; padding: 2rem; border: 1px solid #c9ad8b; color: #5c3035; text-align: center; }
+.t3h-date-card > svg { margin-bottom: .3rem; color: #8a3740; }
+.t3h-date-card > span { color: #775e50; font-size: .55rem; }
+.t3h-date-card strong { font: 400 6.2rem/.92 'Playfair Display', Georgia, serif; }
+.t3h-date-card i { margin-top: .3rem; color: #775e50; font: italic 1rem 'Playfair Display', Georgia, serif; }
+.t3h-event-copy > div > span { color: #8a3740; }
+.t3h-event-copy h2 { margin: .5rem 0 1.3rem; font-size: clamp(2rem, 4vw, 3rem); }
+.t3h-event-time { display: grid; grid-template-columns: 72px 1fr; align-items: baseline; gap: .85rem; padding: .7rem 0; border-top: 1px solid #d8c8b4; color: #58453d; letter-spacing: .02em; text-transform: none; }
+.t3h-event-time b { color: #702530; font-size: .85rem; letter-spacing: .08em; }
+.t3h-map-link { margin-top: 1rem; padding-bottom: .25rem; border-bottom: 1px solid #8a3740; color: #702530 !important; font-size: .82rem; }
+.t3h-calendar-wrap { max-width: 360px; margin: 3.5rem auto 0; }
+.t3h .ni-calendar { width: 100%; border: 1px solid #ddc9b3; border-radius: 0; background: #f7f0e6; color: #5c3035; box-shadow: none; }
+.t3h .ni-calendar h3 { font: 500 1rem 'Playfair Display', Georgia, serif; color: #5c3035; }
+.t3h .ni-calendar [aria-current='date'],.t3h .ni-calendar .is-wedding-day { background: #702530; color: #fff5e8; }
+
+.t3h-dresscode { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 3rem; }
+.t3h-overline { color: #8a3740; }
+.t3h-dresscode h2 { margin: .45rem 0; font-size: 2.5rem; }
+.t3h-dresscode p,.t3h-rsvp > div > p { max-width: 540px; margin: .5rem 0 0; color: #725f54; font-size: .9rem; line-height: 1.8; }
+.t3h-swatches { display: flex; gap: .55rem; }
+.t3h-swatches i { width: 34px; height: 34px; border: 1px solid rgba(69,38,31,.12); border-radius: 50%; background: #e9dec9; }
+.t3h-swatches i:nth-child(2) { background: #6b1826; }
+.t3h-swatches i:nth-child(3) { background: #725443; }
+.t3h-swatches i:nth-child(4) { background: #c18b83; }
+.t3h-palette-label { grid-column: 2; margin-top: .8rem; color: #907665; font-size: .49rem; text-align: right; }
+
+.t3h-rsvp { display: grid; grid-template-columns: 1fr; align-items: start; gap: 2.2rem; background: var(--t3h-red); color: var(--t3h-ink); }
+.t3h-rsvp .t3h-overline { color: var(--t3h-gold); }
+.t3h-rsvp h2 { color: var(--t3h-ink); }
+.t3h-rsvp > div > p { color: #d8c4ab; }
+.t3h-rsvp-form { padding: 1.7rem; border: 1px solid rgba(201,167,107,.5); background: rgba(40,8,14,.22); color: var(--t3h-ink); }
+.t3h-rsvp .ni-rsvp label,.t3h-rsvp .ni-rsvp legend { color: #e3d1ba; }
+.t3h-rsvp .ni-rsvp input:not([type='radio']),.t3h-rsvp .ni-rsvp select { border-color: rgba(241,225,201,.38); background: rgba(255,250,240,.96); }
+.t3h-rsvp .ni-rsvp fieldset { border-color: rgba(241,225,201,.35); }
+.t3h-rsvp .ni-rsvp button { background: var(--t3h-gold); color: var(--t3h-red-deep); }
+
+.t3h-wishes { display: grid; grid-template-columns: 1fr; align-items: start; gap: 2.2rem; }
+.t3h-wish-intro > svg { color: #8a3740; }
+.t3h-wish-intro > span { display: block; margin-top: .8rem; color: #8a3740; font-size: .63rem; font-weight: 600; letter-spacing: .19em; }
+.t3h-wish-intro h2 { font-size: clamp(2rem, 4vw, 3rem); }
+.t3h-wish-form { padding: 1.6rem; border: 1px solid #d8c9b6; background: #fbf7f0; }
+.t3h-gift-section { padding: 4.5rem 1.25rem 2rem; background: var(--t3h-red-deep); color: var(--t3h-ink); text-align: center; }
+.t3h-gift { width: min(100%, 490px); margin: 0 auto; padding: 2.5rem; }
+.t3h-gift .ni-gift p { color: #d8c4ab; }
+.t3h-thanks { display: flex; flex-direction: column; align-items: center; gap: .75rem; padding: 4rem 1rem 2rem; color: #d8c4ab; }
+.t3h-thanks > svg { color: var(--t3h-gold); }
+.t3h-thanks > span { max-width: 440px; font-size: .55rem; }
+.t3h-thanks > b { color: var(--t3h-ink); font: 400 1.8rem 'Playfair Display', Georgia, serif; }
+
+@media (max-width: 680px) {
+  .t3h-cover { min-height: 100svh; padding: .75rem; }
+  .t3h-cover-inner { width: min(100%, 420px); min-height: calc(100svh - 1.5rem); padding: 1.4rem 1.25rem 3.4rem; }
+  .t3h-cover-ornament { top: 3.35rem; right: 1.5rem; font-size: 3.8rem; }
+  .t3h-cover-photo { width: min(100%, 300px); height: min(48svh, 390px); margin: 1.7rem 0 1.2rem; }
+  .t3h-cover-copy h1 { font-size: clamp(1.15rem, 5.1vw, 1.55rem); }
+  .t3h-section { padding: 4.5rem 1.2rem; }
+  .t3h-invitation::before,.t3h-invitation::after { top: 2rem; bottom: 2rem; width: 8px; }
+  .t3h-invitation::before { left: .35rem; }
+  .t3h-invitation::after { right: .35rem; }
+  .t3h-section-label { margin-bottom: 2.3rem; font-size: .54rem; }
+  .t3h-families { gap: .55rem; margin-bottom: 2.6rem; }
+  .t3h-family p { font-size: .87rem; }
+  .t3h-family small { font-size: .43rem; letter-spacing: .1em; }
+  .t3h-announcement { margin-bottom: 2.2rem; }
+  .t3h-announcement > span,.t3h-announcement p { font-size: .53rem; }
+  .t3h-person h2 { font-size: clamp(2rem, 9vw, 3rem); }
+  .t3h-ceremony { margin-top: 2.5rem; }
+  .t3h-big-date b { font-size: 4.2rem; }
+  .t3h-photo-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 165px; gap: 9px; }
+  .t3h-photo-1 { grid-row: span 2; }
+  .t3h-detail-layout,.t3h-rsvp,.t3h-wishes { grid-template-columns: 1fr; gap: 2.2rem; }
+  .t3h-date-card { min-height: 265px; }
+  .t3h-event-copy h2 { font-size: 2.3rem; }
+  .t3h-dresscode { grid-template-columns: 1fr; gap: 1.2rem; }
+  .t3h-swatches { grid-row: 2; }
+  .t3h-palette-label { grid-column: 1; margin-top: -.65rem; text-align: left; }
+  .t3h-rsvp-form,.t3h-wish-form { padding: 1.25rem; }
+  .t3h-gift-section { padding-inline: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .t3h-photo img { transition: none; }
+}

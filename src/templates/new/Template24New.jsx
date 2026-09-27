@@ -1,8 +1,7 @@
 import React from 'react';
 import { Heart, Quote } from 'lucide-react';
-import { Countdown, GiftNote, MusicButton, Reveal, RsvpForm, VenueLink, WeddingCalendar, useInvitationPage } from './NewInvitationCommon.jsx';
+import { Countdown, GiftNote, MusicButton, Reveal, RsvpForm, VenueLink, WeddingCalendar, WishForm, useInvitationPage } from './NewInvitationCommon.jsx';
 import './template24New.css';
-import './auditFidelity.css';
 
 const a = '/assets/new-templates/thiep-cuoi-24';
 
@@ -16,7 +15,8 @@ export default function Template24New() {
     <section className="t24n-quote"><Quote /><Reveal as="p">“Giây phút này, chúng mình là của nhau.”</Reveal></section>
     <section className="t24n-stack"><Reveal as="img" src={`${a}/image-9.webp`} alt="Ảnh cưới Quốc Trường và Trà My" rotate={-5} direction="right" /><Reveal as="img" src={`${a}/image-11.webp`} alt="Khoảnh khắc lễ cưới" rotate={5} direction="left" /><Reveal className="t24n-seal" direction="scale"><Heart fill="currentColor" /></Reveal></section>
     <section className="t24n-address"><Reveal as="h2">WEDDING ADDRESS</Reveal><Reveal as="p">52 Miếu Đầm, Mễ Trì, Nam Từ Liêm, Hà Nội</Reveal><Reveal><iframe title="Bản đồ địa điểm tổ chức lễ cưới" loading="lazy" src="https://www.google.com/maps?q=52+Mieu+Dam+Me+Tri+Ha+Noi&output=embed"/></Reveal><Reveal as="img" src={`${a}/image-14.webp`} alt="Địa điểm ngày cưới" direction="up"/></section>
-    <section className="t24n-event"><Reveal><small>TRÂN TRỌNG KÍNH MỜI</small><h2>Tiệc mừng lễ thành hôn</h2><strong>25</strong><p>THÁNG 09 · NĂM 2027<br />11:00 · THỨ BẢY</p><VenueLink query="Hanoi wedding center">Xem chỉ đường</VenueLink></Reveal><WeddingCalendar month="SEPTEMBER" weddingDay={25} offset={3} /></section>
-    <section className="t24n-end"><Reveal as="img" src={`${a}/image-4.webp`} alt="Album cưới tông kem" /><RsvpForm accent="#a91919" className="t24n-rsvp" /><GiftNote className="t24n-gift" /><h2>With love</h2></section>
+    <section className="t24n-event"><Reveal><small>TRÂN TRỌNG KÍNH MỜI</small><h2>Tiệc mừng lễ thành hôn</h2><strong>25</strong><p>THÁNG 09 · NĂM 2027<br />11:00 · THỨ BẢY<br />52 Miếu Đầm, Mễ Trì, Nam Từ Liêm, Hà Nội</p><VenueLink query="52 Mieu Dam Me Tri Ha Noi">Xem chỉ đường</VenueLink></Reveal><WeddingCalendar month="SEPTEMBER" weddingDay={25} offset={3} /><Reveal className="t24n-timeline"><small>CHƯƠNG TRÌNH NGÀY VUI</small><div><time>10:30</time><span>Đón khách</span></div><div><time>11:00</time><span>Lễ thành hôn</span></div><div><time>11:30</time><span>Khai tiệc</span></div></Reveal><Reveal className="t24n-dresscode"><small>GỢI Ý TRANG PHỤC</small><h3>Dress code</h3><p>Kem, champagne và sắc đỏ trầm sẽ hòa cùng tông giấy ấm của tấm thiệp.</p><div aria-label="Bảng màu gợi ý"><i/><i/><i/></div></Reveal></section>
+    <section className="t24n-family"><Reveal><small>NHÀ TRAI</small><b>Ông Nguyễn Văn Hùng</b><b>Bà Trần Thị Thu</b></Reveal><Heart aria-hidden="true"/><Reveal><small>NHÀ GÁI</small><b>Ông Lê Quang Minh</b><b>Bà Phạm Thị Lan</b></Reveal></section>
+    <section className="t24n-end"><Reveal as="img" src={`${a}/image-4.webp`} alt="Album cưới tông kem" /><RsvpForm accent="#a91919" className="t24n-rsvp" /><Reveal className="t24n-wishes"><small>GỬI MỘT LỜI CHÚC</small><WishForm className="t24n-wish" accent="#a91919" /></Reveal><GiftNote className="t24n-gift" /><h2>With love</h2></section>
   </main>;
 }

@@ -1,0 +1,90 @@
+html.template13new-page,body.template13new-page{background:#d5c9af}
+.t13n{--gold:#ce7a20;--ink:#4e2b1d;--paper:#fff6df;width:min(500px,100vw);min-height:100dvh;margin:0 auto;overflow:hidden;color:var(--ink);background:var(--paper);font-family:"Poppins",sans-serif;box-shadow:0 20px 70px rgba(64,43,24,.2)}
+.t13n-music{background:#b66b20!important}
+.t13n-cover{min-height:900px;position:relative;display:grid;grid-template-rows:auto auto 1fr;gap:25px;padding:45px 24px 60px;background:#ffd77f}
+.t13n-topline{display:flex;justify-content:space-between;align-items:center;color:#734321;font:600 9px/1 "Poppins",sans-serif;letter-spacing:.19em}
+.t13n-topline svg{color:#ad5c20}
+.t13n-names{z-index:1;text-align:center}
+.t13n-names h2{display:grid;margin:0;color:#6b381b;font:400 clamp(3.1rem,12vw,4.2rem)/.86 "Mallong","Signora",cursive}
+.t13n-names h2 i{color:#bb6424;font:400 .68em/1 "Signora",cursive}
+.t13n-names p{margin:13px 0 0;color:#735033;font:600 9px/1.4 "Poppins",sans-serif;letter-spacing:.15em}
+.t13n-cover>img{width:80%;height:590px;justify-self:center;object-fit:cover;border:8px solid #fff1cd;box-shadow:16px 16px 0 #e5a94d;transform:rotate(2deg)}
+.t13n-dateSeal{position:absolute;z-index:2;right:16px;bottom:24px;width:88px;height:88px;display:grid;place-content:center;border:1px solid #f8ebd2;border-radius:50%;color:#fff8e9;background:#ad5c20;font:400 31px/1 "Mallong",cursive;text-align:center;transform:rotate(8deg)}
+.t13n-dateSeal small{font:600 8px/1.4 "Poppins",sans-serif;letter-spacing:.13em}
+.t13n-familyPage{padding:75px 22px;background:#fff6df}
+.t13n-intro{text-align:center}
+.t13n-intro>small,.t13n-storyHeader small,.t13n-detailHeading small,.t13n-schedule>small,.t13n-dresscode>small,.t13n-wishes>small{color:#9a5a2a;font:600 9px/1.5 "Poppins",sans-serif;letter-spacing:.2em}
+.t13n-intro h2{margin:14px 0;color:#aa5b20;font:400 2.8rem/.96 "Mallong","Signora",cursive}
+.t13n-intro p{max-width:360px;margin:0 auto;color:#70513d;font-size:13px;line-height:1.8}
+.t13n-familyCards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:42px 0}
+.t13n-familyCards>div{display:grid;align-content:center;gap:8px;min-height:165px;padding:17px 11px;border:1px solid #d9b876;background:#fffaf0;text-align:center}
+.t13n-familyCards span{margin-bottom:4px;color:#a95c22;font:600 8px/1.4 "Poppins",sans-serif;letter-spacing:.13em}
+.t13n-familyCards b{font:500 10px/1.5 "Poppins",sans-serif}
+.t13n-familyCards small{color:#866b4b;font:400 9px/1.5 "Poppins",sans-serif}
+.t13n-frame{position:relative;width:83%;margin:0 auto;padding:10px;background:#e7ba66;box-shadow:9px 10px 0 rgba(177,111,42,.2);transform:rotate(-2deg)}
+.t13n-frame img{height:440px;object-fit:cover}
+.t13n-frame span{display:block;padding:11px 2px 4px;color:#75461f;font:600 8px/1 "Poppins",sans-serif;letter-spacing:.18em;text-align:center}
+.t13n-story{position:relative;padding:78px 21px;background:#f1d699}
+.t13n-storyHeader{text-align:center}
+.t13n-storyHeader h2{margin:13px 0;color:#714326;font:400 2.6rem/.98 "Mallong",cursive}
+.t13n-story>p{max-width:380px;margin:24px auto 30px;color:#654c37;font:400 14px/1.85 "Poppins",sans-serif;text-align:center}
+.t13n-story>div{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}
+.t13n-story>div img{height:340px;border:6px solid #fff7e5;object-fit:cover}
+.t13n-story>div img:last-child{margin-top:36px}
+.t13n-storyStamp{position:relative;z-index:2;width:100px;height:100px;display:grid;place-content:center;gap:4px;margin:-27px 12px 0 auto;border:1px solid #f3d991;border-radius:50%;color:#fff5dc;background:#ad5d21;text-align:center;transform:rotate(9deg)}
+.t13n-storyStamp svg{width:16px;justify-self:center}
+.t13n-storyStamp span{font:600 8px/1.3 "Poppins",sans-serif;letter-spacing:.1em}
+.t13n-details{display:grid;gap:27px;padding:74px 22px;background:#fff8ea}
+.t13n-detailHeading{display:grid;justify-items:center;gap:11px;color:#b26525;text-align:center}
+.t13n-detailHeading h2{margin:0;color:#5b3b28;font:400 2.2rem/1.08 "Mallong",cursive}
+.t13n-dateCard{display:grid;justify-items:center;gap:7px;padding:22px;border-top:1px solid #c78337;border-bottom:1px solid #c78337;text-align:center}
+.t13n-dateCard span{color:#805936;font:600 9px/1.6 "Poppins",sans-serif;letter-spacing:.18em}
+.t13n-dateCard strong{color:#b86827;font:400 6rem/.85 "Mallong",cursive}
+.t13n-venue{text-align:center}
+.t13n-venue h3{margin:0;color:#523a29;font:500 1.2rem/1.4 "Poppins",sans-serif}
+.t13n-venue p{margin:8px 0 16px;color:#765d45;font:400 12px/1.65 "Poppins",sans-serif}
+.t13n-venue .ni-map{display:inline-flex;align-items:center;gap:7px;padding:9px 17px;border:1px solid #b66b20;color:#8b4e1d;font:500 11px/1 "Poppins",sans-serif;text-decoration:none}
+.t13n-details .ni-calendar{padding:22px 13px;border:1px solid #e1c68e;background:#fffdf6;text-align:center}
+.t13n-details .ni-calendar h3{color:#9e5925;font:500 1.25rem/1.2 "Poppins",sans-serif}
+.t13n-details .ni-weekdays{font:500 10px/1 "Poppins",sans-serif}
+.t13n-details .ni-days>span{height:36px}
+.t13n-details .ni-days svg{width:33px;color:#b66b20}
+.t13n-schedule{padding:20px 16px;background:#f4e8d2}
+.t13n-schedule>small{display:block;margin-bottom:10px;text-align:center}
+.t13n-schedule>div{display:grid;grid-template-columns:65px 1fr 25px;gap:10px;padding:12px 0;border-top:1px solid #dfc89d}
+.t13n-schedule time{color:#a45d25;font:600 11px/1.5 "Poppins",sans-serif}
+.t13n-schedule span{font:400 12px/1.6 "Poppins",sans-serif}
+.t13n-schedule b{color:#b48b5f;font:500 9px/1.6 "Poppins",sans-serif;text-align:right}
+.t13n-dresscode{padding:22px 15px;border:1px solid #d7b779;text-align:center}
+.t13n-dresscode h3{margin:8px 0;color:#a95d22;font:400 1.7rem/1 "Mallong",cursive}
+.t13n-dresscode p{margin:0;color:#6c513a;font:400 12px/1.7 "Poppins",sans-serif}
+.t13n-dresscode>div{display:flex;justify-content:center;gap:11px;margin-top:15px}
+.t13n-dresscode i{width:27px;height:27px;border:1px solid rgba(0,0,0,.12);border-radius:50%;background:#d5a643}
+.t13n-dresscode i:nth-child(2){background:#fff1cc}
+.t13n-dresscode i:nth-child(3){background:#687552}
+.t13n-countdown{gap:6px}
+.t13n-countdown>span{min-height:64px!important;color:#fff;background:#9f5821!important}
+.t13n-countdown b{font-size:1.2rem}
+.t13n-countdown small{font:600 8px/1.4 "Poppins",sans-serif}
+.t13n-gallery{padding:68px 15px;background:#a95d22;color:#fff5dd;text-align:center}
+.t13n-gallery>div:first-child small{font:600 9px/1.5 "Poppins",sans-serif;letter-spacing:.17em}
+.t13n-gallery h2{margin:10px 0 26px;font:400 2.5rem/1 "Mallong",cursive}
+.t13n-gallery>img{height:470px;border:8px solid #fff0d1;object-fit:cover}
+.t13n-gallery>div:last-child{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.t13n-gallery>div:last-child img{height:310px;border:6px solid #fff0d1;object-fit:cover}
+.t13n-gallery>div:last-child img:last-child{margin-top:32px}
+.t13n-ending{display:grid;justify-items:center;gap:35px;padding:65px 18px;background:#f1d699}
+.t13n-rsvp,.t13n-wish{border:1px solid #d7b779!important;border-radius:2px!important;background:#fffaf0!important;box-shadow:0 12px 26px rgba(93,57,32,.08)!important}
+.t13n-rsvp h3,.t13n-wish h3{color:#97521f!important}
+.t13n-rsvp label,.t13n-rsvp legend,.t13n-wish label{color:#6d5139!important}
+.t13n-rsvp input:not([type="radio"]),.t13n-rsvp select,.t13n-wish input,.t13n-wish textarea{border-color:#d5bd92!important;border-radius:2px!important;background:#fffdf8!important;color:#4e2b1d!important}
+.t13n-rsvp fieldset{border-color:#d5bd92!important}
+.t13n-rsvp input[type="radio"]{accent-color:#b66b20}
+.t13n-rsvp button,.t13n-wish button{border-radius:2px!important;background:#a45b21!important;color:#fff!important}
+.t13n-wishes{width:min(100%,380px);text-align:center}
+.t13n-wishes>small{display:block;margin-bottom:12px}
+.t13n-gift{width:min(100%,390px)}
+.t13n-gift .ni-gift{border:1px solid #d4b77c;border-radius:2px;background:#fff2d7;color:#4e2b1d;box-shadow:none}
+.t13n-gift .ni-gift>svg{color:#fff;background:#a45b21}
+.t13n-ending>h2{margin:0;color:#9d5620;font:400 2rem/1.1 "Mallong",cursive;text-align:center}
+@media(max-width:420px){.t13n-cover{min-height:790px;padding-right:18px;padding-left:18px}.t13n-cover>img{height:500px}.t13n-familyPage{padding-right:17px;padding-left:17px}.t13n-familyCards{gap:7px}.t13n-familyCards b{font-size:9px}.t13n-frame img{height:390px}.t13n-story>div img{height:300px}.t13n-details{padding-right:17px;padding-left:17px}.t13n-gallery>img{height:410px}.t13n-gallery>div:last-child img{height:260px}}
