@@ -1,4 +1,4 @@
-import manifest from '../../docs/zenlove-local-manifest-2026-09-26.json';
+import manifest from './data/zenlove-local-manifest-2026-09-26.json' with { type: 'json' };
 
 export const zenLoveManifestItems = Object.freeze(manifest.items);
 export const zenLoveManifestBySlug = Object.freeze(

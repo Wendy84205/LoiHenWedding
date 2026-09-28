@@ -2,7 +2,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { allInvitationSlugs, archivedInvitationSlugs, getInvitationDisplayTitle } from '../src/data/invitationCatalog.js';
 
-const zenLoveManifestItems = JSON.parse(await readFile(new URL('../docs/zenlove-local-manifest-2026-09-26.json', import.meta.url), 'utf8')).items;
+const zenLoveManifestItems = JSON.parse(await readFile(new URL('../src/commerce/data/zenlove-local-manifest-2026-09-26.json', import.meta.url), 'utf8')).items;
 
 const distDir = new URL('../dist/', import.meta.url).pathname;
 const sourceHtml = await readFile(join(distDir, 'index.html'), 'utf8');

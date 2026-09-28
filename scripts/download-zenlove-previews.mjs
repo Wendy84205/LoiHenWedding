@@ -3,7 +3,7 @@ import { join } from 'node:path';
 
 const root = new URL('../', import.meta.url).pathname;
 const catalogPath = join(root, 'docs/zenlove-catalog-2026-09-26.json');
-const manifestPath = join(root, 'docs/zenlove-local-manifest-2026-09-26.json');
+const manifestPath = join(root, 'src/commerce/data/zenlove-local-manifest-2026-09-26.json');
 const previewDir = join(root, 'public/assets/zenlove-previews');
 const previewHost = 'https://cdn-resource.zenlove.me/';
 

@@ -1,6 +1,6 @@
 import { templateSceneSchema } from './sceneSchema.js';
 import { zenLoveManifestItems } from '../zenloveManifest.js';
-import visualMetrics from '../../../docs/zenlove-visual-metrics-2026-09-26.json';
+import visualMetrics from '../data/zenlove-visual-metrics-2026-09-26.json' with { type: 'json' };
 import { closingNodes, image, motion, shape, text, widget } from './sceneProfileTemplates.js';
 import { profileSceneRegistry } from './sceneProfileTemplates.js';
 import { batch2SceneRegistry } from './sceneBatch2Templates.js';

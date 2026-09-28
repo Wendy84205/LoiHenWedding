@@ -5,7 +5,7 @@ import { join } from 'node:path';
 
 const execFileAsync = promisify(execFile);
 const root = new URL('../', import.meta.url).pathname;
-const manifest = JSON.parse(await readFile(join(root, 'docs/zenlove-local-manifest-2026-09-26.json'), 'utf8'));
+const manifest = JSON.parse(await readFile(join(root, 'src/commerce/data/zenlove-local-manifest-2026-09-26.json'), 'utf8'));
 const metrics = {};
 
 for (const item of manifest.items) {
@@ -28,7 +28,7 @@ for (const item of manifest.items) {
 }
 
 await writeFile(
-  join(root, 'docs/zenlove-visual-metrics-2026-09-26.json'),
+  join(root, 'src/commerce/data/zenlove-visual-metrics-2026-09-26.json'),
   `${JSON.stringify({ generatedAt: new Date().toISOString(), source: 'localPreviewPath image dimensions', metrics }, null, 2)}\n`,
 );
 console.log(`Generated ${Object.keys(metrics).length} ZenLove visual metrics.`);

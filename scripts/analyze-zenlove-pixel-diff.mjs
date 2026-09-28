@@ -11,7 +11,7 @@ const artifactDir = join(root, 'artifacts/zenlove-comparison');
 const normalizedDir = join(artifactDir, 'normalized-reference');
 const diffDir = join(artifactDir, 'diff');
 const captureManifest = JSON.parse(await readFile(join(artifactDir, 'manifest.json'), 'utf8'));
-const catalog = JSON.parse(await readFile(join(root, 'docs/zenlove-local-manifest-2026-09-26.json'), 'utf8'));
+const catalog = JSON.parse(await readFile(join(root, 'src/commerce/data/zenlove-local-manifest-2026-09-26.json'), 'utf8'));
 const catalogBySlug = new Map(catalog.items.map((item) => [item.slug, item]));
 
 await mkdir(diffDir, { recursive: true });

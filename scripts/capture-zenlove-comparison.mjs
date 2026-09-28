@@ -3,7 +3,7 @@ import { join } from 'node:path';
 import { chromium } from 'playwright';
 
 const root = new URL('../', import.meta.url).pathname;
-const manifestPath = join(root, 'docs/zenlove-local-manifest-2026-09-26.json');
+const manifestPath = join(root, 'src/commerce/data/zenlove-local-manifest-2026-09-26.json');
 const outputDir = join(root, 'artifacts/zenlove-comparison');
 const executablePath = process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const baseUrl = process.env.ZENLOVE_BASE_URL || 'http://127.0.0.1:4174';

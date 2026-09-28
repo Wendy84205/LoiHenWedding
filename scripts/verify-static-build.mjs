@@ -3,7 +3,7 @@ import { fileURLToPath } from 'node:url';
 import { join } from 'node:path';
 import { allInvitationSlugs, archivedInvitationSlugs } from '../src/data/invitationCatalog.js';
 
-const zenLoveManifestItems = JSON.parse(await readFile(new URL('../docs/zenlove-local-manifest-2026-09-26.json', import.meta.url), 'utf8')).items;
+const zenLoveManifestItems = JSON.parse(await readFile(new URL('../src/commerce/data/zenlove-local-manifest-2026-09-26.json', import.meta.url), 'utf8')).items;
 
 const dist = fileURLToPath(new URL('../dist/', import.meta.url));
 const failures = [];

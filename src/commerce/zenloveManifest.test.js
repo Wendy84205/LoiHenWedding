@@ -6,7 +6,7 @@ import { profileSceneRegistry } from './scene/sceneProfileTemplates.js';
 import { batch2SceneRegistry } from './scene/sceneBatch2Templates.js';
 
 const root = resolve(process.cwd());
-const manifest = JSON.parse(readFileSync(resolve(root, 'docs/zenlove-local-manifest-2026-09-26.json'), 'utf8'));
+const manifest = JSON.parse(readFileSync(resolve(root, 'src/commerce/data/zenlove-local-manifest-2026-09-26.json'), 'utf8'));
 
 describe('ZenLove local comparison manifest', () => {
   it('keeps the complete snapshot and summary internally consistent', () => {

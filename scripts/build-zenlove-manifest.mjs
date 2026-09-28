@@ -5,7 +5,7 @@ import { batch2SceneRegistry } from '../src/commerce/scene/sceneBatch2Templates.
 
 const root = new URL('../', import.meta.url).pathname;
 const catalogPath = join(root, 'docs/zenlove-catalog-2026-09-26.json');
-const outputPath = join(root, 'docs/zenlove-local-manifest-2026-09-26.json');
+const outputPath = join(root, 'src/commerce/data/zenlove-local-manifest-2026-09-26.json');
 
 const catalog = JSON.parse(await readFile(catalogPath, 'utf8'));
 let previousManifest = null;
