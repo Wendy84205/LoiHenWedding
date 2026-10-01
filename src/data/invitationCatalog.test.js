@@ -15,9 +15,9 @@ describe('invitation catalog', () => {
     expect(new Set(allInvitationSlugs).size).toBe(allInvitationSlugs.length);
   });
 
-  it('publishes all 40 recovered catalog templates in the library', () => {
-    expect(missingInvitationIds).toHaveLength(40);
-    expect(additionalInvitationItems).toHaveLength(40);
+  it('publishes every recovered catalog template in the library', () => {
+    expect(missingInvitationIds).toHaveLength(27);
+    expect(additionalInvitationItems).toHaveLength(27);
     expect(additionalInvitationItems.every((item) => item.path && item.image && item.details.length >= 3)).toBe(true);
   });
 });

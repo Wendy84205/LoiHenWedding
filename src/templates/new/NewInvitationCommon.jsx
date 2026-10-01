@@ -169,7 +169,14 @@ export function VenueLink({ query = 'Ha Noi', children = 'Xem bản đồ', clas
   );
 }
 
-export function RsvpForm({ className = '', accent = '#9b5c5c', compact = false }) {
+export function RsvpForm({
+  className = '',
+  accent = '#9b5c5c',
+  compact = false,
+  title = 'Xác nhận tham dự',
+  declineLabel = 'Rất tiếc, tôi không thể tham dự',
+  showPartySize = true,
+}) {
   const commerce = useCommercialInvitation();
   const rsvp = useRsvpSubmit();
   const [form, setForm] = useState({ fullName: '', phone: '', attendance: 'yes', partySize: 1, note: '' });
@@ -180,15 +187,15 @@ export function RsvpForm({ className = '', accent = '#9b5c5c', compact = false }
 
   return (
     <form className={`ni-rsvp ${compact ? 'is-compact' : ''} ${className}`} style={{ '--rsvp-accent': accent }} onSubmit={submit}>
-      <h3>Xác nhận tham dự</h3>
+      <h3>{title}</h3>
       <label>Họ và tên<input required placeholder="Nhập tên của bạn" value={form.fullName} onChange={(event) => setForm({ ...form, fullName: event.target.value })} /></label>
       {commerce && <label>Số điện thoại<input inputMode="tel" placeholder="Số điện thoại" value={form.phone} onChange={(event) => setForm({ ...form, phone: event.target.value })} /></label>}
       <fieldset>
         <legend>Bạn sẽ tham dự chứ?</legend>
         <label><input type="radio" name={`attendance-${className}`} checked={form.attendance === 'yes'} onChange={() => setForm({ ...form, attendance: 'yes' })} /> Có, tôi sẽ tham dự</label>
-        <label><input type="radio" name={`attendance-${className}`} checked={form.attendance === 'no'} onChange={() => setForm({ ...form, attendance: 'no' })} /> Rất tiếc, tôi không thể tham dự</label>
+        <label><input type="radio" name={`attendance-${className}`} checked={form.attendance === 'no'} onChange={() => setForm({ ...form, attendance: 'no' })} /> {declineLabel}</label>
       </fieldset>
-      <label>Số người tham dự<select value={form.partySize} onChange={(event) => setForm({ ...form, partySize: Number(event.target.value) })}><option value="1">1 người</option><option value="2">2 người</option><option value="3">3 người</option><option value="4">4 người</option></select></label>
+      {showPartySize && <label>Số người tham dự<select value={form.partySize} onChange={(event) => setForm({ ...form, partySize: Number(event.target.value) })}><option value="1">1 người</option><option value="2">2 người</option><option value="3">3 người</option><option value="4">4 người</option></select></label>}
       {commerce && <label>Lời nhắn<input placeholder="Lời nhắn cho cô dâu chú rể" value={form.note} onChange={(event) => setForm({ ...form, note: event.target.value })} /></label>}
       <button type="submit" disabled={rsvp.status === 'loading'}><Send size={15} /> {rsvp.status === 'loading' ? 'Đang gửi...' : 'Gửi xác nhận'}</button>
       {rsvp.status === 'success' && <span className="ni-rsvpSuccess" role="status"><Check size={14} /> Cảm ơn bạn đã phản hồi.</span>}

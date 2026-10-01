@@ -1,2 +1,217 @@
-html.template55new-page,body.template55new-page{background:#d8ddd8}.t55n{width:min(500px,100vw);margin:auto;overflow:hidden;color:#253d36;background:#f4f3ec;font-family:"Mallong","PlayfairDisplay",serif;box-shadow:0 18px 70px rgba(41,73,61,.22)}.t55n-music{background:#3c6b5c}.t55n-hero{height:760px;position:relative}.t55n-hero>img{height:100%;object-fit:cover}.t55n-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(25,43,37,.5))}.t55n-title{position:absolute;z-index:2;left:25px;right:25px;bottom:38px;color:#fff;text-align:center}.t55n-title h1{margin:10px 0;font:400 48px/1 "Carlytte",cursive}.t55n-profiles{display:grid;gap:65px;padding:70px 16px}.t55n-profiles>div{display:grid;grid-template-columns:1.15fr 1fr;align-items:center;gap:28px}.t55n-profiles>div:nth-child(2){grid-template-columns:1fr 1.15fr}.t55n-profiles img{height:385px;border:4px solid #3f6e60;object-fit:cover}.t55n-profiles article{padding:24px 16px;border-left:10px solid #3f6e60;background:#fff;box-shadow:0 7px 18px rgba(41,73,61,.14);text-align:center}.t55n-profiles article small{font-size:11px}.t55n-profiles article h2{margin:10px 0;font:400 31px/1 "Carlytte",cursive}.t55n-profiles article p{font:italic 14px/1.65 "Quicksand",sans-serif}.t55n-profiles>p{text-align:center;font-size:17px;line-height:1.6}.t55n-invite{display:grid;gap:30px;padding:65px 28px;border-top:5px solid #3f6e60;color:#fff;background:#3f6e60;text-align:center}.t55n-invite>div:first-child{display:grid;justify-items:center;gap:10px}.t55n-invite h2{margin:0;font:400 53px/1 "Carlytte",cursive}.t55n-date{display:grid;grid-template-columns:1fr 105px 1fr;align-items:center}.t55n-date span{border-top:1px solid #fff;border-bottom:1px solid #fff;padding:11px 0}.t55n-date strong{font:400 72px/1 "PlayfairDisplay",serif}.t55n-invite h3{font-size:23px}.t55n-invite .ni-map{border:1px solid #fff;padding:11px 22px;color:#fff}.t55n-calendar{padding:65px 25px;background:#f1d4a4}.t55n-calendar .ni-calendar{padding:28px 18px;border:1px solid #3f6e60;background:rgba(255,255,255,.35);text-align:center}.t55n-calendar .ni-calendar h3{margin-bottom:24px;font-size:31px}.t55n-calendar .ni-days>span{height:35px}.t55n-calendar .ni-days svg{width:40px;color:#c12d3a}.t55n-count{gap:8px;margin-top:35px}.t55n-count>span{height:70px;color:#fff;background:#9e2f18}.t55n-calendar>p{margin:30px 0 0;text-align:center;font:400 27px/1.5 "Carlytte",cursive}.t55n-album{padding:65px 13px;text-align:center}.t55n-album h2{margin:0 0 35px;color:#3f6e60;font:400 55px/1 "Carlytte",cursive}.t55n-album>div{display:grid;grid-template-columns:1fr 1fr;gap:8px}.t55n-album img{height:320px;object-fit:cover}.t55n-album img:first-child,.t55n-album img:last-child{grid-column:1/-1;height:460px}.t55n-ending{display:grid;justify-items:center;gap:55px;padding:70px 22px 50px;color:#fff;background:#3f6e60}.t55n-gift>svg{color:#3f6e60;background:#f1d4a4}.t55n-ending h2{display:flex;align-items:center;gap:9px;margin:0;font:400 52px/1 "Carlytte",cursive}.t55n-ending h2 svg{width:31px}@media(max-width:420px){.t55n-hero{height:660px}.t55n-profiles>div,.t55n-profiles>div:nth-child(2){gap:12px}.t55n-profiles img{height:330px}.t55n-profiles article{padding-left:10px;padding-right:10px}.t55n-invite{padding-left:18px;padding-right:18px}.t55n-date{grid-template-columns:1fr 86px 1fr}.t55n-date strong{font-size:61px}.t55n-album img{height:280px}.t55n-album img:first-child,.t55n-album img:last-child{height:400px}}
-.t55n-hero{height:820px;padding:34px 18px 105px;background:#f4f3ec}.t55n-hero:after{display:none}.t55n-envelope{height:640px;position:relative}.t55n-envelope:before{content:"";position:absolute;z-index:1;left:45px;right:45px;top:55px;height:330px;background:#315f50;clip-path:polygon(50% 0,100% 33%,100% 100%,0 100%,0 33%)}.t55n-envelope:after{content:"";position:absolute;z-index:4;left:12px;right:12px;bottom:34px;height:320px;background:#3f6e60;clip-path:polygon(0 18%,50% 57%,100% 18%,100% 100%,0 100%)}.t55n-envelope img{width:55%;height:310px;position:absolute;z-index:2;left:2px;top:182px;border:5px solid #fff;object-fit:cover;transform:rotate(-5deg);box-shadow:0 12px 26px rgba(31,66,54,.2)}.t55n-envelope article{width:54%;height:305px;position:absolute;z-index:3;right:2px;top:125px;display:grid;align-content:center;justify-items:center;gap:18px;border:1px solid #3f6e60;padding:20px;color:#315f50;background:#fffdf7;text-align:center;transform:rotate(3deg);box-shadow:0 12px 26px rgba(31,66,54,.18)}.t55n-envelope article small{font-size:14px}.t55n-envelope article strong{font:400 31px/1.05 "Carlytte",cursive}.t55n-envelope article span{font-size:13px;letter-spacing:.14em}.t55n-envelope>i{width:48px;height:48px;position:absolute;z-index:5;left:calc(50% - 24px);top:380px;display:grid;place-items:center;border-radius:50%;color:#fff7e8;background:#b08a62;font-size:25px;font-style:normal;box-shadow:0 3px 10px rgba(38,55,47,.25)}.t55n-title{bottom:34px;color:#315f50}.t55n-title h1{font-size:44px}.t55n-dress{padding:60px 24px;background:#f4f3ec;text-align:center}.t55n-dress h2{margin:0 0 13px;font:400 47px/1 "Carlytte",cursive}.t55n-dress p{line-height:1.55}.t55n-dress>div:last-child{display:flex;justify-content:center;gap:11px;margin-top:25px}.t55n-dress i{width:48px;height:48px;border:1px solid #9a9a91;border-radius:50%;background:#fff}.t55n-dress i:nth-child(2){background:#3f6e60}.t55n-dress i:nth-child(3){background:#ecebe3}.t55n-dress i:nth-child(4){background:#111}@media(max-width:420px){.t55n-hero{height:760px;padding-left:12px;padding-right:12px}.t55n-envelope{height:580px}.t55n-envelope img{height:280px;top:165px}.t55n-envelope article{height:280px;top:115px;padding:14px}.t55n-envelope:after{height:285px}.t55n-envelope>i{top:348px}.t55n-title h1{font-size:39px}}
+/* Faithful re-build of CineLove "thiệp cưới 55" (500 x 4170 canvas, scaled).
+   Layout numbers below are the source canvas coordinates at 500px width;
+   `--u` is 1 source pixel (0.2vw) so the whole template scales on narrow screens. */
+
+html.template55new-page,
+body.template55new-page { background: #d8ddd8; }
+
+.t55n {
+  --u: min(1px, 0.2vw);
+  --paper: #f3f1eb;
+  --green: #3f695d;
+  --muted: #5c4f4f;
+  --soft: #333;
+  width: min(500px, 100vw);
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  color: #000;
+  background: var(--paper);
+  font-family: "Mallong", "PlayfairDisplay", Georgia, serif;
+  box-shadow: 0 18px 70px rgba(41, 73, 61, .22);
+}
+.t55n p,
+.t55n h1,
+.t55n h2,
+.t55n h3,
+.t55n h4,
+.t55n h5 { margin: 0; }
+.t55n .t55n-music { color: #fff; background: var(--green); border-color: #fff; }
+
+/* ── Cover: envelope, gypsophila sprays, guest letter, couple photo, Lễ Vu Quy calendar ── */
+.t55n .t55n-cover { width: 100%; position: relative; aspect-ratio: 500 / 610; }
+.t55n .t55n-cover > * { position: absolute; }
+.t55n .t55n-spray--right { top: .68%; left: 51.2%; width: 46.12%; height: 64.06%; object-fit: cover; transform: rotate(14.2458deg); }
+.t55n .t55n-envelope { top: 8.53%; left: 19.25%; width: 56.4%; height: 54.8%; object-fit: cover; }
+.t55n .t55n-spray--left { top: 5.74%; left: -1.78%; width: 45.46%; height: 64.65%; object-fit: cover; }
+.t55n .t55n-guest { top: 23.23%; left: 28.2%; width: 39.8%; display: grid; gap: calc(17.8 * var(--u)); text-align: center; }
+.t55n .t55n-guest small { font-size: calc(18 * var(--u)); font-weight: 700; }
+.t55n .t55n-guest strong { font-size: calc(26 * var(--u)); font-weight: 700; line-height: calc(33 * var(--u)); }
+.t55n .t55n-couple { top: 51.76%; left: .07%; width: 50.08%; height: 27.48%; object-fit: cover; }
+
+/* ── Shared cream card with a green edge bar ── */
+.t55n .t55n-card { background: var(--paper); box-shadow: 0 calc(3 * var(--u)) calc(10 * var(--u)) rgba(41, 73, 61, .16); }
+.t55n .t55n-cardBody { width: 100%; height: 100%; position: relative; }
+.t55n .t55n-cardTrim { position: absolute; z-index: 2; display: block; width: calc(17.63 * var(--u)); background: var(--green); }
+.t55n .t55n-card--bride .t55n-cardTrim { top: calc(-1.86 * var(--u)); left: calc(-4.96 * var(--u)); height: calc(299.71 * var(--u)); }
+.t55n .t55n-card--groom .t55n-cardTrim { top: calc(-2.3 * var(--u)); left: calc(197.95 * var(--u)); height: calc(279.71 * var(--u)); }
+.t55n .t55n-card--brideG .t55n-cardTrim { top: calc(.5 * var(--u)); left: calc(-14.1 * var(--u)); height: calc(293.71 * var(--u)); }
+.t55n .t55n-card--groomG .t55n-cardTrim { top: calc(.53 * var(--u)); left: calc(-4.35 * var(--u)); height: calc(391.71 * var(--u)); }
+
+/* Calendar card in the cover (green trim top + bottom, no side bar) */
+.t55n .t55n-card--cal { top: 54.57%; left: 53.68%; width: 41.16%; height: 45.15%; }
+.t55n .t55n-card--cal .t55n-cardTrim { display: none; }
+.t55n .t55n-card--cal::before,
+.t55n .t55n-card--cal::after { content: ""; position: absolute; z-index: 2; left: calc(-.2 * var(--u)); right: calc(-.2 * var(--u)); height: calc(22.2 * var(--u)); background: var(--green); }
+.t55n .t55n-card--cal::before { top: 0; }
+.t55n .t55n-card--cal::after { bottom: 0; }
+.t55n .t55n-card--cal h2 { position: absolute; top: calc(22.2 * var(--u)); left: 0; width: 100%; color: var(--green); font-family: "HoaTay1", cursive; font-weight: 700; font-size: calc(30 * var(--u)); text-align: center; }
+.t55n .t55n-calNames { position: absolute; top: calc(66.6 * var(--u)); left: calc(2.68 * var(--u)); width: calc(199 * var(--u)); color: var(--muted); font-weight: 700; font-size: calc(15 * var(--u)); text-align: center; }
+.t55n .t55n-calgrid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); grid-auto-rows: calc(32.61 * var(--u)); font-family: Arial, sans-serif; font-size: calc(10 * var(--u)); line-height: 1; color: #000; }
+.t55n .t55n-calgrid > span { position: relative; display: grid; place-items: center; }
+.t55n .t55n-calgrid b { position: relative; z-index: 1; font-weight: 400; }
+.t55n .t55n-calgrid svg { width: calc(24 * var(--u)); height: calc(24 * var(--u)); position: absolute; color: #e2263c; }
+.t55n .t55n-calgrid > span.is-wedding b { color: #fff; }
+.t55n .t55n-card--cal .t55n-calgrid { position: absolute; top: calc(96.31 * var(--u)); left: calc(12.03 * var(--u)); width: calc(182.6 * var(--u)); height: calc(163.06 * var(--u)); }
+
+
+/* ── Invitation 1 (nhà gái) + countdown + "Chỉ còn..." ──
+   Starts 113.34 source px above the end of the cover, exactly like the original canvas. */
+.t55n .t55n-first { position: relative; margin-top: calc(-113.34 * var(--u)); height: calc(477 * var(--u)); }
+.t55n .t55n-card--bride { position: absolute; z-index: 1; top: 0; left: calc(8.46 * var(--u)); width: calc(228.59 * var(--u)); height: calc(297.74 * var(--u)); }
+.t55n .t55n-card--bride h3,
+.t55n .t55n-card--bride h4 { position: absolute; left: calc(17.54 * var(--u)); width: calc(199 * var(--u)); font-size: calc(18 * var(--u)); font-weight: 700; line-height: calc(31 * var(--u)); text-align: center; }
+.t55n .t55n-card--bride h3 { top: calc(3.34 * var(--u)); }
+.t55n .t55n-card--bride h4 { top: calc(34.34 * var(--u)); }
+.t55n .t55n-card--bride .t55n-weekday { position: absolute; top: calc(77.19 * var(--u)); left: calc(76.64 * var(--u)); width: calc(70 * var(--u)); font: 500 calc(12 * var(--u))/calc(18.48 * var(--u)) Arial, sans-serif; text-align: center; }
+.t55n .t55n-card--bride .t55n-dateRow span { position: absolute; width: calc(70 * var(--u)); font: 500 calc(15 * var(--u))/calc(23.1 * var(--u)) Arial, sans-serif; text-align: center; }
+.t55n .t55n-card--bride .t55n-dateRow span:first-child { top: calc(107.43 * var(--u)); left: calc(11.74 * var(--u)); }
+.t55n .t55n-card--bride .t55n-dateRow span:last-child { top: calc(107.64 * var(--u)); left: calc(149.24 * var(--u)); width: calc(66 * var(--u)); }
+.t55n .t55n-card--bride .t55n-dateRow strong { position: absolute; top: calc(101.64 * var(--u)); left: calc(63.64 * var(--u)); width: calc(96 * var(--u)); color: var(--green); font: 500 calc(27 * var(--u))/1 Arial, sans-serif; text-align: center; }
+.t55n .t55n-card--bride .t55n-time { position: absolute; top: calc(135.54 * var(--u)); left: calc(79.24 * var(--u)); width: calc(70 * var(--u)); font: 500 calc(12 * var(--u))/calc(18.48 * var(--u)) Arial, sans-serif; text-align: center; }
+.t55n .t55n-card--bride .t55n-lunar { position: absolute; top: calc(160.24 * var(--u)); left: calc(11.74 * var(--u)); width: calc(205.6 * var(--u)); font: 500 calc(10 * var(--u))/calc(15 * var(--u)) Arial, sans-serif; text-align: center; }
+.t55n .t55n-card--bride h5 { position: absolute; top: calc(186.14 * var(--u)); left: calc(18.34 * var(--u)); width: calc(199 * var(--u)); font-size: calc(18 * var(--u)); font-weight: 700; line-height: calc(31 * var(--u)); text-align: center; }
+.t55n .t55n-card--bride .t55n-address { position: absolute; top: calc(217.24 * var(--u)); left: calc(17.54 * var(--u)); width: calc(205.6 * var(--u)); font: 500 calc(12 * var(--u))/calc(18.48 * var(--u)) Arial, sans-serif; text-align: center; }
+.t55n .t55n-map { position: absolute; left: 50%; transform: translateX(-50%); width: max-content; padding: calc(4 * var(--u)) calc(14 * var(--u)); border-radius: calc(4 * var(--u)); color: #f8f6f6; background: var(--green); font: 500 calc(12 * var(--u))/calc(15 * var(--u)) Arial, sans-serif; text-align: center; text-decoration: none; white-space: nowrap; }
+.t55n .t55n-card--bride .t55n-map { top: calc(247.23 * var(--u)); }
+
+.t55n .t55n-countdown { position: absolute; z-index: 3; top: calc(168.01 * var(--u)); left: calc(299.23 * var(--u)); width: calc(72.47 * var(--u)); height: calc(309 * var(--u)); display: flex; flex-direction: column; gap: calc(20 * var(--u)); color: #fff; font-family: Arial, sans-serif; font-size: calc(14 * var(--u)); }
+.t55n .t55n-countdown > span { flex: 1; display: flex; align-items: center; justify-content: center; gap: calc(5 * var(--u)); border-radius: calc(4 * var(--u)); background: var(--green); }
+.t55n .t55n-countdown > span b,
+.t55n .t55n-countdown > span small { display: block; font-weight: 400; }
+.t55n .t55n-plane { position: absolute; z-index: 4; top: calc(215.39 * var(--u)); left: calc(185.91 * var(--u)); width: calc(129.6 * var(--u)); height: calc(182.55 * var(--u)); object-fit: contain; }
+.t55n .t55n-only { position: absolute; z-index: 2; top: calc(308.17 * var(--u)); left: calc(112 * var(--u)); width: calc(199 * var(--u)); font-family: "Signora", cursive; font-size: calc(43 * var(--u)); text-align: center; }
+
+
+/* ── Couple profiles ── */
+.t55n .t55n-profiles { position: relative; height: calc(726.7 * var(--u)); }
+.t55n .t55n-portrait { position: absolute; object-fit: cover; border: calc(4 * var(--u)) solid var(--green); }
+.t55n .t55n-portrait--groom { top: 0; left: calc(13.5 * var(--u)); width: calc(238.5 * var(--u)); height: calc(357.89 * var(--u)); }
+.t55n .t55n-portrait--bride { top: calc(373.34 * var(--u)); left: calc(253.95 * var(--u)); width: calc(236 * var(--u)); height: calc(353.36 * var(--u)); }
+.t55n .t55n-card--groom { position: absolute; z-index: 2; top: calc(58.84 * var(--u)); left: calc(282.8 * var(--u)); width: calc(207.11 * var(--u)); height: calc(276.62 * var(--u)); }
+.t55n .t55n-card--brideG { position: absolute; z-index: 2; top: calc(421.84 * var(--u)); left: calc(22.73 * var(--u)); width: calc(212.09 * var(--u)); height: calc(294.27 * var(--u)); }
+.t55n .t55n-hello,
+.t55n .t55n-card--groom h3,
+.t55n .t55n-card--groom h4,
+.t55n .t55n-card--brideG h3,
+.t55n .t55n-card--brideG h4,
+.t55n .t55n-home { position: absolute; left: 0; width: 100%; font-size: calc(17 * var(--u)); line-height: calc(29 * var(--u)); text-align: center; }
+.t55n .t55n-card--groom h3,
+.t55n .t55n-card--groom h4,
+.t55n .t55n-card--brideG h3,
+.t55n .t55n-card--brideG h4 { font-weight: 700; color: var(--soft); }
+.t55n .t55n-home { font-weight: 500; }
+.t55n .t55n-card--groom .t55n-hello { top: calc(10.1 * var(--u)); }
+.t55n .t55n-card--groom h3 { top: calc(39.1 * var(--u)); }
+.t55n .t55n-card--groom h4:first-of-type { top: calc(68.1 * var(--u)); }
+.t55n .t55n-card--groom h4:last-of-type { top: calc(97 * var(--u)); }
+.t55n .t55n-card--groom .t55n-home { top: calc(125.9 * var(--u)); }
+.t55n .t55n-card--brideG .t55n-hello { top: calc(9.6 * var(--u)); }
+.t55n .t55n-card--brideG h3 { top: calc(38.5 * var(--u)); }
+.t55n .t55n-card--brideG h4:first-of-type { top: calc(71.5 * var(--u)); }
+.t55n .t55n-card--brideG h4:last-of-type { top: calc(100.5 * var(--u)); }
+.t55n .t55n-card--brideG .t55n-home { top: calc(131 * var(--u)); }
+.t55n .t55n-card--groom blockquote { position: absolute; top: calc(163.6 * var(--u)); left: calc(3.2 * var(--u)); width: calc(179.9 * var(--u)); margin: 0; font: italic 500 calc(13 * var(--u))/calc(24.31 * var(--u)) "Quicksand", sans-serif; text-align: center; }
+.t55n .t55n-card--brideG blockquote { position: absolute; top: calc(175.9 * var(--u)); left: calc(12.9 * var(--u)); width: calc(171.4 * var(--u)); margin: 0; font: italic 500 calc(13 * var(--u))/calc(24.31 * var(--u)) "Quicksand", sans-serif; text-align: center; }
+.t55n .t55n-together { padding: calc(49 * var(--u)) calc(39.35 * var(--u)) 0 calc(66.05 * var(--u)); font-family: "Quicksand", sans-serif; font-weight: 500; font-size: calc(15 * var(--u)); line-height: calc(24.3 * var(--u)); text-align: center; }
+
+/* ── Lễ Thành Hôn + invitation 2 (nhà trai) ── */
+.t55n .t55n-ceremony { position: relative; margin-top: calc(38.13 * var(--u)); height: calc(474.54 * var(--u)); }
+.t55n .t55n-sprig { position: absolute; z-index: 2; top: calc(-15.51 * var(--u)); left: calc(17.17 * var(--u)); width: calc(122.6 * var(--u)); height: calc(131.63 * var(--u)); object-fit: contain; transform: rotate(346.537deg); }
+.t55n .t55n-ceremonyTitle { position: absolute; z-index: 1; top: 0; left: calc(72.1 * var(--u)); width: calc(353 * var(--u)); color: var(--green); font-family: "HoaTay1", cursive; font-weight: 700; font-size: calc(52 * var(--u)); line-height: calc(62 * var(--u)); text-align: center; }
+.t55n .t55n-card--groomG { position: absolute; z-index: 3; top: calc(82.78 * var(--u)); left: calc(65.63 * var(--u)); width: calc(366.9 * var(--u)); height: calc(391.76 * var(--u)); }
+.t55n .t55n-plane--groom { top: calc(12.26 * var(--u)); left: calc(344.96 * var(--u)); width: calc(141.99 * var(--u)); height: calc(200 * var(--u)); transform: rotate(6.87238deg); z-index: 5; }
+.t55n .t55n-ceremonyLead { position: absolute; top: calc(11.32 * var(--u)); left: calc(30.57 * var(--u)); width: calc(318.3 * var(--u)); font-family: "PlayfairDisplay", Georgia, serif; font-size: calc(26 * var(--u)); text-align: center; }
+.t55n .t55n-month { position: absolute; left: calc(24.57 * var(--u)); width: calc(318.3 * var(--u)); font-family: "OpenSans", Arial, sans-serif; font-size: calc(20 * var(--u)); text-align: center; text-transform: uppercase; }
+.t55n .t55n-card--groomG .t55n-cardBody > .t55n-month:nth-of-type(2) { top: calc(79.59 * var(--u)); }
+.t55n .t55n-card--groomG .t55n-cardBody > .t55n-month:nth-of-type(4) { top: calc(161.89 * var(--u)); }
+.t55n .t55n-card--groomG .t55n-dateRow span { position: absolute; width: calc(116.7 * var(--u)); font-family: "OpenSans", Arial, sans-serif; font-size: calc(24 * var(--u)); line-height: calc(47.28 * var(--u)); text-align: center; text-transform: uppercase; }
+.t55n .t55n-card--groomG .t55n-dateRow span:first-child { top: calc(112.49 * var(--u)); left: calc(22.17 * var(--u)); }
+.t55n .t55n-card--groomG .t55n-dateRow span:last-child { top: calc(112.39 * var(--u)); left: calc(233.57 * var(--u)); width: calc(109.7 * var(--u)); }
+.t55n .t55n-card--groomG .t55n-dateRow strong { position: absolute; top: calc(108.58 * var(--u)); left: calc(127.12 * var(--u)); width: calc(112.7 * var(--u)); color: var(--green); font: 500 calc(47 * var(--u))/1 Arial, sans-serif; text-align: center; }
+.t55n .t55n-card--groomG .t55n-lunar { position: absolute; top: calc(194.89 * var(--u)); left: calc(50.87 * var(--u)); width: calc(268.7 * var(--u)); font: 500 calc(12 * var(--u))/calc(18.48 * var(--u)) Arial, sans-serif; text-align: center; }
+.t55n .t55n-card--groomG h5 { position: absolute; top: calc(224.69 * var(--u)); left: calc(26.07 * var(--u)); width: calc(318.3 * var(--u)); font-family: "PlayfairDisplay", Georgia, serif; font-size: calc(26 * var(--u)); font-weight: 500; text-align: center; }
+.t55n .t55n-card--groomG .t55n-address { position: absolute; top: calc(271.79 * var(--u)); left: calc(44.27 * var(--u)); width: calc(290.9 * var(--u)); font: 500 calc(12 * var(--u))/calc(18.48 * var(--u)) Arial, sans-serif; text-align: center; }
+.t55n .t55n-card--groomG .t55n-map { top: calc(308.73 * var(--u)); }
+
+
+/* ── Dress code: chữ script bên trái, 4 vòng màu bên phải ──
+   (toạ độ source: chữ y=2379.35, vòng y≈2368, lề phải kết thúc ở 400.95) */
+.t55n .t55n-dress { position: relative; height: calc(157.29 * var(--u)); }
+.t55n .t55n-dress h2 { position: absolute; top: calc(68.72 * var(--u)); left: calc(13.5 * var(--u)); width: calc(147.7 * var(--u)); font-family: "Carlytte", cursive; font-weight: 500; font-size: calc(38 * var(--u)); line-height: normal; text-align: center; }
+.t55n .t55n-swatches { position: absolute; top: calc(57.26 * var(--u)); left: 0; width: 100%; height: calc(65.5 * var(--u)); }
+.t55n .t55n-swatches i { position: absolute; top: 0; width: calc(65.5 * var(--u)); height: calc(65.5 * var(--u)); border: 1px solid currentColor; border-radius: 50%; }
+.t55n .t55n-swatches i:nth-child(1) { left: calc(167.45 * var(--u)); background: #fff; }
+.t55n .t55n-swatches i:nth-child(2) { left: calc(225.75 * var(--u)); background: var(--green); }
+.t55n .t55n-swatches i:nth-child(3) { left: calc(282.85 * var(--u)); background: var(--paper); }
+.t55n .t55n-swatches i:nth-child(4) { left: calc(335.45 * var(--u)); background: #000; }
+
+/* ── Xác nhận tham dự (form 300 x 359, trắng, bo 5px, đổ bóng nhẹ) ── */
+.t55n .t55n-rsvp { position: relative; height: calc(484.9 * var(--u)); }
+.t55n .t55n-rsvpCard.ni-rsvp {
+  position: absolute; top: 0; left: calc(105.3 * var(--u));
+  width: calc(300 * var(--u)); height: calc(359 * var(--u));
+  gap: calc(10 * var(--u)); padding: calc(21 * var(--u)) calc(23.7 * var(--u)) calc(16 * var(--u));
+  border: 0; border-radius: calc(5 * var(--u));
+  color: #333; background: #fff;
+  box-shadow: 0 calc(2 * var(--u)) calc(10 * var(--u)) rgba(0, 0, 0, .1);
+  font: 400 calc(14 * var(--u))/calc(20 * var(--u)) Arial, sans-serif;
+  text-align: left;
+}
+.t55n .t55n-rsvpCard h3 { margin: 0; font-size: calc(18 * var(--u)); font-weight: 700; line-height: calc(20 * var(--u)); }
+.t55n .t55n-rsvpCard label { gap: calc(8 * var(--u)); }
+.t55n .t55n-rsvpCard input:not([type='radio']),
+.t55n .t55n-rsvpCard select { height: calc(34 * var(--u)); border: 1px solid #e2e2e2; border-radius: calc(4 * var(--u)); padding: 0 calc(8 * var(--u)); font-size: calc(14 * var(--u)); }
+.t55n .t55n-rsvpCard fieldset { gap: 0; }
+.t55n .t55n-rsvpCard legend { margin: 0 0 calc(8 * var(--u)); }
+.t55n .t55n-rsvpCard fieldset label { grid-template-columns: calc(18 * var(--u)) 1fr; gap: calc(8 * var(--u)); align-items: center; line-height: calc(21 * var(--u)); }
+.t55n .t55n-rsvpCard input[type='radio'] { width: calc(17 * var(--u)); height: calc(17 * var(--u)); }
+.t55n .t55n-rsvpCard button { min-height: calc(32 * var(--u)); border-radius: calc(4 * var(--u)); font-size: calc(14 * var(--u)); }
+
+
+/* ── Album of Love: ảnh nhỏ viền xanh, tiêu đề 3 dòng, khung ảnh lớn + thumbnail, ảnh full-bleed, lời cảm ơn ── */
+.t55n .t55n-album { position: relative; height: calc(1222.18 * var(--u)); }
+
+/* Ảnh nhỏ: khung xanh 4px (dùng padding + background để nội dung ảnh là 138.87 x 192.82) */
+.t55n .t55n-albumSmall { position: absolute; top: 0; left: calc(13.94 * var(--u)); width: calc(146.87 * var(--u)); height: calc(200.82 * var(--u)); padding: calc(4 * var(--u)); object-fit: cover; background: var(--green); }
+
+/* Tiêu đề: "ALBUM" + "of" (script) + "LOVE" */
+.t55n .t55n-albumTitle { position: absolute; top: 0; left: 0; width: 100%; height: 0; }
+.t55n .t55n-albumTitle em,
+.t55n .t55n-albumTitle i { position: absolute; display: block; font-style: normal; line-height: normal; text-align: center; }
+.t55n .t55n-albumTitle em { width: calc(176.7 * var(--u)); color: var(--green); font-family: "PlayfairDisplay", Georgia, serif; font-weight: 700; font-size: calc(40 * var(--u)); text-transform: uppercase; }
+.t55n .t55n-albumTitle em:first-of-type { top: calc(47.09 * var(--u)); left: calc(165.6 * var(--u)); }
+.t55n .t55n-albumTitle em:last-of-type { top: calc(133.92 * var(--u)); left: calc(299.2 * var(--u)); }
+.t55n .t55n-albumTitle i { top: calc(83.04 * var(--u)); left: calc(290.2 * var(--u)); width: calc(58 * var(--u)); font-family: "Signora", cursive; font-weight: 500; font-size: calc(66 * var(--u)); }
+
+/* Khung ảnh lớn: nền xanh 498.4 x 498.4, bo 8px, đệm 10px */
+.t55n .t55n-gallery { position: absolute; top: calc(212.76 * var(--u)); left: 0; width: calc(498.4 * var(--u)); height: calc(498.4 * var(--u)); display: flex; flex-direction: column; gap: calc(12 * var(--u)); padding: calc(10 * var(--u)); background: var(--green); border-radius: calc(8 * var(--u)); }
+.t55n .t55n-stage { position: relative; flex: 1 1 auto; min-height: 0; border-radius: calc(16 * var(--u)); background: #f3f4f6; overflow: hidden; }
+.t55n .t55n-stage > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.t55n .t55n-nav { position: absolute; z-index: 2; top: 50%; transform: translateY(-50%); width: calc(40 * var(--u)); height: calc(40 * var(--u)); display: grid; place-items: center; padding: 0; border: 0; border-radius: 50%; color: #374151; background: rgba(255, 255, 255, .8); cursor: pointer; }
+.t55n .t55n-nav svg { width: calc(20 * var(--u)); height: calc(20 * var(--u)); }
+.t55n .t55n-nav--prev { left: calc(8 * var(--u)); }
+.t55n .t55n-nav--next { right: calc(8 * var(--u)); }
+.t55n .t55n-thumbs { flex: 0 0 auto; display: flex; gap: calc(8 * var(--u)); overflow-x: auto; scrollbar-width: none; }
+.t55n .t55n-thumbs::-webkit-scrollbar { display: none; }
+.t55n .t55n-thumbs button { flex: 0 0 auto; width: calc(64 * var(--u)); height: calc(64 * var(--u)); padding: 0; border: 1px solid rgba(255, 255, 255, .62); border-radius: calc(6 * var(--u)); background: transparent; overflow: hidden; cursor: pointer; }
+.t55n .t55n-thumbs button.is-active { border-color: #3b82f6; box-shadow: 0 calc(10 * var(--u)) calc(15 * var(--u)) calc(-3 * var(--u)) rgba(59, 130, 246, .3); }
+.t55n .t55n-thumbs img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+/* Ảnh cưới tràn viền + lớp mờ đen và lời cảm ơn chữ trắng */
+.t55n .t55n-albumWide { position: absolute; top: calc(718.94 * var(--u)); left: 0; width: calc(498 * var(--u)); height: calc(333.41 * var(--u)); object-fit: cover; }
+.t55n .t55n-thanks { position: absolute; top: calc(975.88 * var(--u)); left: calc(1.2 * var(--u)); width: calc(496.8 * var(--u)); height: calc(76.33 * var(--u)); }
+.t55n .t55n-thanks::before { content: ""; position: absolute; inset: 0; background: #000; opacity: .27; }
+.t55n .t55n-thanks p { position: absolute; top: calc(9.11 * var(--u)); left: calc(16.3 * var(--u)); width: calc(465.5 * var(--u)); color: #fff; font: 500 calc(17 * var(--u))/calc(26.18 * var(--u)) "Quicksand", sans-serif; text-align: center; }
+.t55n .t55n-bear { position: absolute; top: calc(1036.8 * var(--u)); left: calc(97.6 * var(--u)); width: calc(280.6 * var(--u)); height: calc(158 * var(--u)); object-fit: contain; }
+

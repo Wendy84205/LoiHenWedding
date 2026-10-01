@@ -56,19 +56,12 @@ export const editorTemplateManifests = {
   'thiep-cuoi-36': sceneManifest('Oval Promise', '#d94747'),
   'thiep-cuoi-38': sceneManifest('Red Double Joy', '#8f2428'),
   'thiep-cuoi-40': sceneManifest('Pearl Portrait', '#7c3436'),
-  'thiep-cuoi-42': sceneManifest('Crimson Envelope', '#b13b44'),
   'thiep-cuoi-46': sceneManifest('Red Arch Schedule', '#8b181c'),
   'thiep-cuoi-48': sceneManifest('Botanical Envelope', '#385c3d'),
-  'thiep-cuoi-60': sceneManifest('Pink Envelope', '#b85f79'),
   'thiep-cuoi-39': {
     name: 'Editorial Red', accent: '#9d1728', rootSelector: '.template39', slots: commonSlots,
     mediaRoles: ['hero', 'bride', 'groom', 'venue', 'final'],
     layers: layers({ cover: '.t39-cover', couple: '.t39-couple', families: '.t39-families', event: '.t39-save', story: '.t39-story', media: '.t39-final' }),
-  },
-  'thiep-cuoi-44': {
-    name: 'Minimal Envelope', accent: '#a18569', rootSelector: '.template44', slots: commonSlots,
-    mediaRoles: ['hero', 'couple', 'bride', 'groom', 'final', 'gallery'],
-    layers: layers({ cover: '.t44-cover', couple: '.t44-couple', families: '.t44-openInvite', event: '.t44-calendarSection', story: '.t44-quotePaper', media: '.t44-welcome' }),
   },
   'thiep-cuoi-47': {
     name: 'Ruby Editorial', accent: '#7b1519', rootSelector: '.template47', slots: commonSlots,

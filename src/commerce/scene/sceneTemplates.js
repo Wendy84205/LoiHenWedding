@@ -303,10 +303,6 @@ export const sceneTemplateRegistry = Object.freeze({
     slug: 'thiep-cuoi-39', name: 'Editorial Red', paper: '#ffffff', ink: '#181616', accent: '#9d1728', soft: '#f4e8e8',
     heroLayout: 'split', nameFont: display, nameSize: 40, storyHeading: 'OUR LOVE STORY', calendarStyle: 'heart', darkEvent: true,
   }),
-  'thiep-cuoi-44': makeWeddingScene({
-    slug: 'thiep-cuoi-44', name: 'Minimal Envelope', paper: '#ffffff', ink: '#252321', accent: '#a18569', soft: '#e8e0d4',
-    heroLayout: 'rounded', envelope: true, nameFont: script, storyHeading: 'MY LOVER', calendarStyle: 'minimal', particle: 'sparkle',
-  }),
   'thiep-cuoi-47': makeWeddingScene({
     slug: 'thiep-cuoi-47', name: 'Ruby Editorial', paper: '#fffafa', ink: '#260c0d', accent: '#7b1519', soft: '#f1dedd',
     heroLayout: 'full', nameFont: display, nameSize: 48, storyHeading: 'THE STORY OF US', calendarStyle: 'editorial', darkEvent: true,

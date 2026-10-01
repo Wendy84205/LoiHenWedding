@@ -71,7 +71,7 @@ describe('scene graph schema', () => {
   });
 
   it('creates sparse node overrides and preserves the original template', () => {
-    const template = getSceneTemplate('thiep-cuoi-44');
+    const template = getSceneTemplate('thiep-cuoi-47');
     const sourceNode = template.nodes.find((node) => node.type === 'text');
     const patch = patchSceneNode(createScenePatch(template), template, sourceNode.id, {
       x: sourceNode.x + 20,

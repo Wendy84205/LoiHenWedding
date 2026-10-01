@@ -771,22 +771,6 @@
 .t54n .t54n-ending { min-height: 670px; padding-top: 45px; padding-bottom: 45px; align-content: center; }
 .t54n .t54n-illustration { min-height: 650px; }
 
-.t55n .t55n-hero { height: 760px; }
-.t55n .t55n-profiles { min-height: 760px; gap: 28px; padding-top: 38px; padding-bottom: 38px; }
-.t55n .t55n-profiles img { height: 260px; }
-.t55n .t55n-profiles article { padding-top: 14px; padding-bottom: 14px; }
-.t55n .t55n-invite { min-height: 500px; gap: 20px; padding-top: 38px; padding-bottom: 38px; align-content: center; }
-.t55n .t55n-calendar { min-height: 500px; padding-top: 35px; padding-bottom: 35px; }
-.t55n .t55n-calendar .ni-calendar { padding-top: 16px; padding-bottom: 16px; }
-.t55n .t55n-calendar .ni-days > span { height: 29px; }
-.t55n .t55n-calendar > p { margin-top: 15px; }
-.t55n .t55n-dress { min-height: 170px; padding-top: 28px; padding-bottom: 28px; }
-.t55n .t55n-ending { min-height: 610px; padding-top: 38px; padding-bottom: 38px; align-content: center; }
-.t55n .t55n-album { min-height: 880px; padding-top: 38px; padding-bottom: 38px; }
-.t55n .t55n-album img { height: 155px; }
-.t55n .t55n-album img:first-child,
-.t55n .t55n-album img:last-child { height: 230px; }
-
 .t81n { background: #f7f4ed; }
 .t81n .t81n-hero { height: 720px; }
 .t81n .t81n-title { display: none; }

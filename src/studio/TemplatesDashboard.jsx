@@ -21,8 +21,8 @@ const FAVORITES_STORAGE_KEY = 'loihen-template-favorites';
 
 const customTitles = {
   'thiep-cuoi-61': 'Nắng Mai', 'thiep-cuoi-39': 'Đỏ Nhung',
-  'thiep-cuoi-44': 'Thiên Thanh', 'thiep-cuoi-47': 'Hỷ Đỏ',
-  'thiep-cuoi-42': 'Hồng Thư', 'thiep-cuoi-2': 'Lục Ảnh',
+  'thiep-cuoi-47': 'Hỷ Đỏ',
+  'thiep-cuoi-2': 'Lục Ảnh',
   'thiep-cuoi-38': 'Hỷ Duyên', 'thiep-cuoi-46': 'Tơ Hồng',
   'thiep-cuoi-36': 'Mai Anh', 'thiep-cuoi-40': 'Phương Nga',
   'thiep-cuoi-16': 'Thảo My', 'thiep-cuoi-48': 'Mộc Nhiên',
@@ -32,10 +32,8 @@ const customTitles = {
   'thiep-cuoi-7': 'Ribbon Love', 'thiep-cuoi-17': 'Song Hỷ',
   'thiep-cuoi-8': 'Red Scrapbook', 'thiep-cuoi-49': 'Hỷ Vòm',
   'thiep-cuoi-11': 'Love Life', 'thiep-cuoi-28': 'Hoa Trắng',
-  'thiep-cuoi-52': 'Nắng Đất', 'thiep-cuoi-60': 'Hồng Phấn',
   'thiep-bw-1': 'Black & White', 'thiep-cuoi-21': 'Hỷ Họa',
   'thiep-cuoi-57': 'Hoàng Hôn', 'thiep-cuoi-31': 'Mono Player',
-  'thiep-cuoi-55': 'Mộc Trắng', 'thiep-cuoi-50': 'Kim Thư',
   'thiep-cuoi-30': 'Sơn Ca', 'thiep-cuoi-6': 'Love on Repeat',
   'thiep-cuoi-54': 'Navy Blossom', 'thiep-cuoi-62': 'Palace Night',
   'thiep-cuoi-104': 'Ngày Vui', 'thiep-cuoi-108': 'Autumn Vow',
@@ -45,7 +43,7 @@ const customTitles = {
   'thiep-cuoi-20': 'Scrapbook Song', 'thiep-cuoi-24': 'Cream Letter',
   'thiep-cuoi-26': 'Happy Menu', 'thiep-cuoi-34': 'Pine Hill',
   'thiep-cuoi-37': 'Wine Editorial', 'thiep-cuoi-41': 'Green Envelope',
-  'thiep-cuoi-43': 'Đại Hỷ', 'thiep-cuoi-51': 'Forest Gold',
+  'thiep-cuoi-51': 'Forest Gold',
   'thiep-cuoi-63': 'Ever & Forever', 'thiep-cuoi-64': 'Wedding Playlist',
   'thiep-cuoi-67': 'Photograph', 'thiep-cuoi-68': 'Blessing Begins',
   'thiep-cuoi-69': 'After Dark', 'thiep-cuoi-73': 'Forest Letter',
@@ -64,14 +62,14 @@ function getPreviewImage(slug) {
     return templateLongThumbnails[slug];
   }
   if (slug === 'thiep-cuoi-2') return '/assets/template61/couple-hero.webp';
-  const png = ['thiep-cuoi-tone-xanh', 'thiep-cuoi-21', 'thiep-cuoi-50', 'thiep-cuoi-54', 'thiep-cuoi-104', 'thiep-cuoi-58', 'thiep-cuoi-60', 'thiep-cuoi-62'];
+  const png = ['thiep-cuoi-tone-xanh', 'thiep-cuoi-21', 'thiep-cuoi-54', 'thiep-cuoi-104', 'thiep-cuoi-58', 'thiep-cuoi-62'];
   const jpg = [
     'thiep-bw-1', 'thiep-cuoi-56', 'thiep-cuoi-17', 'thiep-cuoi-11', 'thiep-cuoi-28', 'thiep-cuoi-49',
     'thiep-cuoi-57', 'thiep-cuoi-51', 'thiep-cuoi-55', 'thiep-cuoi-30', 'thiep-cuoi-64',
     'thiep-cuoi-67', 'thiep-cuoi-68', 'thiep-cuoi-69', 'thiep-cuoi-81', 'thiep-cuoi-82', 'thiep-cuoi-85',
     'thiep-cuoi-91', 'thiep-cuoi-92', 'thiep-cuoi-94', 'thiep-cuoi-95', 'thiep-cuoi-96', 'thiep-cuoi-99',
     'thiep-cuoi-105', 'thiep-cuoi-112', 'thiep-cuoi-31', 'thiep-cuoi-23', 'thiep-cuoi-18', 'thiep-cuoi-20',
-    'thiep-cuoi-24', 'thiep-cuoi-26', 'thiep-cuoi-34', 'thiep-cuoi-37', 'thiep-cuoi-41', 'thiep-cuoi-43',
+    'thiep-cuoi-24', 'thiep-cuoi-26', 'thiep-cuoi-34', 'thiep-cuoi-37', 'thiep-cuoi-41',
     'thiep-cuoi-63', 'thiep-cuoi-73',
   ];
   if (png.includes(slug)) return `/assets/new-templates/${slug}/preview.png`;
@@ -85,12 +83,8 @@ function packageForTemplate(slug, editable) {
 }
 
 const viewableTemplateSlugs = new Set([...newTemplateSlugs, ...legacyTemplateSlugs]);
-const hiddenForEditingTemplateSlugs = new Set([
-  'thiep-cuoi-107', 'thiep-cuoi-106', 'thiep-cuoi-101', 'thiep-cuoi-98', 'thiep-cuoi-97',
-  'thiep-cuoi-83', 'thiep-cuoi-80', 'thiep-cuoi-79', 'thiep-cuoi-78', 'thiep-cuoi-75',
-  'thiep-cuoi-66', 'thiep-cuoi-65', 'thiep-cuoi-60', 'thiep-cuoi-52', 'thiep-cuoi-50',
-  'thiep-cuoi-44', 'thiep-cuoi-43', 'thiep-cuoi-42', 'thiep-cuoi-32',
-]);
+// Templates temporarily hidden from the public browsing grid.
+const hiddenForEditingTemplateSlugs = new Set([]);
 
 const allTemplates = currentCatalogSlugs
   .filter((slug) => viewableTemplateSlugs.has(slug) && !hiddenForEditingTemplateSlugs.has(slug))

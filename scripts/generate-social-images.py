@@ -28,8 +28,6 @@ path_to_image.update({
     'thiep-cuoi-38': '/assets/template39/couple-red-seated.webp',
     'thiep-cuoi-39': '/assets/template39/couple-red.webp',
     'thiep-cuoi-40': '/assets/template44/couple-sticker.webp',
-    'thiep-cuoi-42': '/assets/template61/couple-close.webp',
-    'thiep-cuoi-44': '/assets/template44/mountain-couple.webp',
     'thiep-cuoi-46': '/assets/template44/couple-sticker.webp',
     'thiep-cuoi-47': '/assets/template39/couple-red.webp',
     'thiep-cuoi-48': '/assets/template44/mountain-couple.webp',

@@ -62,7 +62,7 @@ Warm, specific, and service-led. Avoid generic wedding-platform claims. Explain 
 
 ## Agent Build Instructions
 
-- Keep `/template/thiep-cuoi-39`, `/template/thiep-cuoi-44`, and `/template/thiep-cuoi-61` as independent customer-facing invitation pages.
+- Keep `/template/thiep-cuoi-39`, `/template/thiep-cuoi-48`, and `/template/thiep-cuoi-61` as independent customer-facing invitation pages.
 - Use local WebP images and independent brand assets only.
 - Make the homepage an independent brand called `Lời Hẹn Studio` until final brand assets are supplied.
 - Treat template links as stable demo URLs. A production per-customer URL system requires persistent storage and an API, not only a static React build.

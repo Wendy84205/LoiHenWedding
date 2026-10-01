@@ -30,7 +30,7 @@ const orderInput = {
   mapUrl: '',
   invitationMessage: 'Trân trọng kính mời.',
   packageCode: 'basic',
-  templateSlug: 'thiep-cuoi-44',
+  templateSlug: 'thiep-cuoi-46',
   customerNote: '',
 };
 
@@ -108,8 +108,8 @@ describe('local commerce draft versions', () => {
     expect(after.invitation.content).toEqual(before.invitation.content);
     expect(localListInvitationVersions(created.orderId).versions[0].version).toBe(2);
     const restored = localRestoreInvitationVersion(created.orderId, 1);
-    expect(restored.templateSlug).toBe('thiep-cuoi-44');
-    expect(localGetOrder(created.orderId).template_slug).toBe('thiep-cuoi-44');
+    expect(restored.templateSlug).toBe('thiep-cuoi-46');
+    expect(localGetOrder(created.orderId).template_slug).toBe('thiep-cuoi-46');
   });
 
   it('restores an old draft as a new version without deleting newer history', () => {

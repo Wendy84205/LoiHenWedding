@@ -38,8 +38,8 @@ test('homepage and invitation library expose the complete catalog', async ({ pag
   await expect(page.locator('.tpl-card')).toHaveCount(15);
   await expect(page.getByRole('link', { name: 'Khám phá bộ sưu tập' })).toHaveAttribute('href', '#thu-vien');
   await expect(page.locator('a[href="/template/thiep-cuoi-112"]')).toHaveCount(0);
-  await page.goto('/template/thiep-cuoi-107');
-  await expect(page.getByRole('complementary', { name: 'Thông tin mẫu thiệp' })).toContainText('Thiệp cưới số 107');
+  await page.goto('/template/thiep-cuoi-108');
+  await expect(page.getByRole('complementary', { name: 'Thông tin mẫu thiệp' })).toContainText('Thiệp cưới số 108');
 });
 
 test('clicking an invitation card opens its wedding invitation', async ({ page }) => {
@@ -68,9 +68,9 @@ test('hovering a card scrolls its invitation preview without zooming', async ({ 
 });
 
 test('template preview footer only shows back navigation and template identity', async ({ page }) => {
-  await page.goto('/template/thiep-cuoi-44');
+  await page.goto('/template/thiep-cuoi-46');
   const editableBar = page.getByRole('complementary', { name: 'Thông tin mẫu thiệp' });
-  await expect(editableBar).toContainText('Thiệp cưới số 44');
+  await expect(editableBar).toContainText('Thiệp cưới số 46');
   await expect(editableBar).not.toContainText(/đặt thiệp|chọn mẫu|gửi tư liệu|quét qr/i);
   await expect(editableBar.getByRole('link')).toHaveCount(1);
   await expect(editableBar.getByRole('link', { name: 'Quay lại thư viện mẫu' })).toHaveAttribute('href', '/mau-thiep');
@@ -86,7 +86,7 @@ test('template preview footer only shows back navigation and template identity',
 });
 
 test('representative source-aligned invitation families render without broken images or horizontal overflow', async ({ page }) => {
-  const routes = [3, 13, 22, 32, 59, 71, 75, 97].map((id) => `/template/thiep-cuoi-${id}`);
+  const routes = [3, 13, 22, 59, 71, 84, 86, 103].map((id) => `/template/thiep-cuoi-${id}`);
   for (const route of routes) {
     await page.goto(route);
     const openButton = page.getByRole('button', { name: 'Mở thiệp' });
@@ -120,18 +120,18 @@ test('unknown route returns to the invitation library', async ({ page }) => {
 test('key invitation intros animate and resolve to usable content', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'no-preference' });
 
-  await page.goto('/template/thiep-cuoi-44');
-  const envelope44 = page.locator('.t44-envelope');
-  await envelope44.click();
-  await expect(envelope44).toHaveClass(/open/);
+  await page.goto('/template/thiep-cuoi-48');
+  const envelope48 = page.locator('.t48-envelope');
+  await envelope48.click();
+  await expect(envelope48).toHaveClass(/is-open/);
   await page.waitForTimeout(950);
-  const envelopeState = await page.locator('.t44-envPhoto').evaluate((element) => ({
+  const envelopeState = await page.locator('.t48-envelopeCard').evaluate((element) => ({
     height: element.getBoundingClientRect().height,
     imageSource: element.querySelector('img')?.getAttribute('src') || '',
   }));
   expect(envelopeState.height).toBeGreaterThan(100);
   expect(envelopeState.imageSource).not.toBe('');
-  await expect(envelope44).toHaveAttribute('aria-pressed', 'true');
+  await expect(envelope48).toHaveAttribute('aria-expanded', 'true');
 
   await page.goto('/template/thiep-cuoi-61');
   const sparkle = page.locator('.t61-openingSparkles i').first();
@@ -141,9 +141,9 @@ test('key invitation intros animate and resolve to usable content', async ({ pag
   await expect(page.locator('.t61-opening')).toHaveCount(0);
   await expect(page.locator('.t61-hero')).toBeVisible();
 
-  await page.goto('/template/thiep-cuoi-42');
-  await page.getByRole('button', { name: /chạm để mở thiệp/i }).click();
-  await expect(page.locator('.t42-envelope')).toHaveClass(/is-opening/);
-  await expect(page.locator('.t42-intro')).toHaveCount(0, { timeout: 3_000 });
-  await expect(page.locator('.t42-hero')).toBeVisible();
+  await page.goto('/template/thiep-cuoi-53');
+  const envelope53 = page.locator('.t53n-envelopeShape');
+  await envelope53.click();
+  await expect(envelope53).toHaveClass(/is-open/);
+  await expect(envelope53).toHaveAttribute('aria-expanded', 'true');
 });

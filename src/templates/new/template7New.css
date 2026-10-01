@@ -1,35 +1,137 @@
-html.template7new-page,body.template7new-page{background:#ebebeb}.t7n{width:min(500px,100vw);margin:auto;overflow:hidden;color:#111;background:#fff;font-family:"Signora","Quicksand",sans-serif;box-shadow:0 20px 70px rgba(0,0,0,.16)}.t7n-music{background:#8f0000}.t7n-hero{min-height:920px;position:relative;padding:30px 35px 55px}.t7n-intro{position:relative;z-index:2;display:grid;justify-items:end;gap:12px;font-family:"Quicksand",sans-serif}.t7n-intro p{width:100%;margin:0;font-size:17px}.t7n-intro span{display:flex;align-items:center;gap:5px}.t7n-intro svg{width:18px;color:#c00000}.t7n-intro b{font-weight:400}.t7n-hero>img{width:78%;height:545px;position:relative;z-index:2;margin:90px auto 0;object-fit:cover}.t7n-ribbon{height:45px;position:absolute;z-index:1;background:#990400;transform:rotate(9deg)}.t7n-ribbon.r1{width:340px;right:22px;top:205px}.t7n-ribbon.r2{width:300px;right:-30px;top:270px;transform:rotate(72deg)}.t7n-ribbon.r3{width:230px;left:18px;top:650px;transform:rotate(-32deg)}.t7n-caption{text-align:center}.t7n-caption h1{margin:35px 0 8px;font:italic 28px/1 "Quicksand",sans-serif}.t7n-caption p{margin:0;font:italic 19px/1 "Quicksand",sans-serif}.t7n-story{padding:45px 26px 65px}.t7n-story>div{display:grid;grid-template-columns:1fr 1fr;gap:18px}.t7n-story>div img{height:280px;object-fit:cover}.t7n-story>p{margin:30px 0;font:italic 17px/1.55 "Quicksand",sans-serif}.t7n-story blockquote{margin:38px 0;text-align:right;font:italic 18px/1.65 "Quicksand",sans-serif}.t7n-story>img{width:85%;height:350px;margin:auto;object-fit:cover}.t7n-invite{display:grid;gap:28px;padding:65px 30px;color:#fff;background:#920600;text-align:center}.t7n-invite h2{margin:10px 0;font:400 43px/1 "Carlytte",cursive}.t7n-invite p{font-family:"Quicksand",sans-serif;line-height:1.5}.t7n-date{display:grid;grid-template-columns:1fr 105px 1fr;align-items:center}.t7n-date span{border-top:1px solid #fff;border-bottom:1px solid #fff;padding:11px 0}.t7n-date strong{font:400 69px/1 "PlayfairDisplay",serif}.t7n-invite h3{font:400 24px/1 "Quicksand",sans-serif}.t7n-invite .ni-map{border:1px solid #fff;padding:11px 22px;color:#fff}.t7n-dateSection{padding:65px 25px;text-align:center}.t7n-dateSection .ni-calendar{padding:28px 18px;border:1px solid #990400}.t7n-dateSection .ni-calendar h3{margin-bottom:24px;font:400 31px/1 "Quicksand",sans-serif}.t7n-dateSection .ni-days>span{height:35px}.t7n-dateSection .ni-days svg{width:40px;color:#bd0012}.t7n-count{gap:9px;margin:35px 0}.t7n-count>span{height:70px;color:#fff;background:#050505}.t7n-timeline{display:grid;grid-template-columns:repeat(3,1fr);margin-top:50px}.t7n-timeline>div{display:grid;justify-items:center;gap:8px}.t7n-timeline svg{width:40px;height:40px}.t7n-album{padding:65px 14px;background:#eeeae3;text-align:center}.t7n-album h2{font:italic 37px/1 "Quicksand",sans-serif}.t7n-album>img{height:500px;object-fit:cover}.t7n-album>div{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}.t7n-album>div img{height:320px;object-fit:cover}.t7n-ending{display:grid;justify-items:center;gap:55px;padding:70px 22px 50px}.t7n-gift>svg{color:#990400;background:#f2d8d0}.t7n-ending h2{margin:0;color:#990400;font:400 42px/1 "Carlytte",cursive}@media(max-width:420px){.t7n-hero{min-height:820px;padding-left:20px;padding-right:20px}.t7n-hero>img{height:465px}.t7n-story{padding-left:18px;padding-right:18px}.t7n-story>div img{height:235px}.t7n-invite{padding-left:18px;padding-right:18px}.t7n-date{grid-template-columns:1fr 86px 1fr}.t7n-date strong{font-size:59px}.t7n-album>img{height:420px}.t7n-album>div img{height:270px}}
+html.template7new-page,
+body.template7new-page { background: #ebebeb; }
 
-/* This invitation owns its handwritten story and map layouts. */
-.t7n-tronVen{min-height:2600px;display:grid;align-content:space-around;gap:55px;padding:95px 25px;color:#444;background:#fff;text-align:center}
-.t7n-lineArt{height:80px;position:relative}
-.t7n-lineArt span{display:block;width:82%;height:42px;margin:auto;border-top:2px solid #333;border-radius:50%;transform:rotate(-3deg)}
-.t7n-tronVen>small,.t7n-vowCard small{width:max-content;justify-self:center;padding:12px 30px;color:#fff;background:#a44747;font:500 12px/1 "Quicksand",sans-serif;letter-spacing:.16em}
-.t7n-tronVen>p,.t7n-vowCard p{max-width:400px;justify-self:center;margin:0;font:400 23px/1.95 "Signora",cursive}
-.t7n-tronVen>img{width:88%;height:760px;justify-self:center;object-fit:cover}
-.t7n-tronVen>div:not(.t7n-lineArt){display:grid;grid-template-columns:1fr 1.35fr;gap:12px;align-items:start}
-.t7n-tronVen>div:not(.t7n-lineArt) img{height:720px;object-fit:cover}
-.t7n-tronVen>div:not(.t7n-lineArt) img:first-child{height:540px;margin-top:120px}
-.t7n-tronVen>h2{margin:0;font:400 48px/1.2 "Loving Ambros","PlayfairDisplay",serif;text-align:left}
-.t7n-mapVow{min-height:1600px;display:grid;grid-template-columns:1fr 1fr;align-content:space-around;gap:35px 14px;padding:90px 24px;background:#fff;text-align:center}
-.t7n-mapVow>div:not(.t7n-vowCard) iframe{width:100%;height:320px;border:0;filter:grayscale(.45)}
-.t7n-mapVow>div:not(.t7n-vowCard) small{display:block;margin-top:14px;font-size:11px;letter-spacing:.18em}
-.t7n-mapVow>div:not(.t7n-vowCard) p{font:400 13px/1.7 "Quicksand",sans-serif}
-.t7n-vowCard{grid-column:1/-1;display:grid;gap:30px;padding:70px 10px}
-.t7n-mapVow>img{grid-column:1/-1;width:72%;height:580px;justify-self:end;object-fit:cover}
-.t7n-dresscode{max-width:390px;margin:35px auto 0;padding:28px 22px;border:1px solid #d9b8b5}
-.t7n-dresscode>small{color:#920600;font-size:10px;font-weight:600;letter-spacing:.18em}
-.t7n-dresscode h2{margin:9px 0;color:#920600;font:italic 32px/1.1 "Quicksand",sans-serif}
-.t7n-dresscode p{margin:0;color:#514543;font:400 14px/1.7 "Quicksand",sans-serif}
-.t7n-dresscode>div{display:flex;justify-content:center;gap:12px;margin-top:18px}
-.t7n-dresscode i{width:30px;height:30px;border:1px solid #d7c9c2;border-radius:50%;background:#920600}
-.t7n-dresscode i:nth-child(2){background:#f2e9df}
-.t7n-dresscode i:nth-child(3){background:#e8cbd0}
-.t7n-wishes{width:min(100%,380px);text-align:center}
-.t7n-wishes>h3{margin:0 0 15px;color:#920600;font-size:12px;letter-spacing:.16em}
-.t7n-wish{border:1px solid #dbc9c5!important;border-radius:3px!important;background:#fffdfb!important;box-shadow:0 12px 30px rgba(93,40,32,.08)!important}
-.t7n-wish h3{color:#920600!important}
-.t7n-wish input,.t7n-wish textarea{border-color:#dbc9c5!important;border-radius:2px!important}
-.t7n-wish button{border-radius:2px!important;background:#920600!important;color:#fff!important}
-.t7n-rsvp button{border-radius:2px!important}
-@media(max-width:420px){.t7n-mapVow{padding-right:14px;padding-left:14px}.t7n-tronVen{padding-right:18px;padding-left:18px}.t7n-tronVen>div:not(.t7n-lineArt){gap:8px}.t7n-tronVen>div:not(.t7n-lineArt) img{height:580px}.t7n-tronVen>div:not(.t7n-lineArt) img:first-child{height:440px;margin-top:95px}.t7n-tronVen>img{height:630px}}
+.t7n {
+  width: min(500px, 100vw);
+  margin: auto;
+  overflow: hidden;
+  color: #111;
+  background: #fff;
+  font-family: "Signora", "Quicksand", "PlayfairDisplay", sans-serif;
+  box-shadow: 0 20px 70px rgba(0, 0, 0, .16);
+}
+.t7n .t7n-music { background: #8f0000; }
+.t7n p, .t7n h1, .t7n h2, .t7n h3, .t7n blockquote { margin: 0; }
+
+/* ── Cover ── */
+.t7n .t7n-hero { position: relative; min-height: 920px; padding: 30px 30px 60px; }
+.t7n .t7n-ribbon { position: absolute; z-index: 1; height: 45px; background: #990400; transform: rotate(9deg); }
+.t7n .t7n-ribbon.r1 { width: 340px; top: 205px; right: 22px; }
+.t7n .t7n-ribbon.r2 { width: 300px; top: 270px; right: -30px; transform: rotate(72deg); }
+.t7n .t7n-ribbon.r3 { width: 230px; top: 650px; left: 18px; transform: rotate(-32deg); }
+.t7n .t7n-intro { position: relative; z-index: 2; display: grid; gap: 12px; font-family: "Quicksand", sans-serif; }
+.t7n .t7n-intro p { width: 100%; margin: 0; font-size: 17px; font-weight: 500; text-align: center; }
+.t7n .t7n-intro span { width: max-content; justify-self: end; display: flex; align-items: center; gap: 5px; font-size: 17px; }
+.t7n .t7n-intro svg { width: 18px; color: #c00000; }
+.t7n .t7n-intro b { justify-self: end; font-weight: 400; font-size: 17px; }
+.t7n .t7n-hero > img { width: 78%; height: 545px; position: relative; z-index: 2; margin: 90px auto 0; object-fit: cover; }
+.t7n .t7n-caption { text-align: center; }
+.t7n .t7n-caption h1 { margin: 35px 0 8px; font: italic 28px/1 "Quicksand", sans-serif; }
+.t7n .t7n-caption p { margin: 0; font: italic 19px/1 "Quicksand", sans-serif; }
+
+/* ── Welcome letter ── */
+.t7n .t7n-letter { padding: 70px 24px 60px; text-align: center; }
+.t7n .t7n-letterTitle { font: 400 46px/1.1 "Signora", cursive; color: #a50000; }
+.t7n .t7n-letterBody { max-width: 410px; margin: 18px auto 0; }
+.t7n .t7n-letterBody p { margin: 0 0 22px; font: 400 22px/1.95 "Signora", cursive; }
+.t7n .t7n-letterBody p:last-child { margin: 0; }
+
+/* ── Quote over photo ── */
+.t7n .t7n-quote { position: relative; min-height: 520px; color: #fff; }
+.t7n .t7n-quoteBg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.t7n .t7n-quote::after { content: ""; position: absolute; inset: 0; background: #000; opacity: .42; }
+.t7n .t7n-quote blockquote { position: relative; z-index: 2; display: grid; place-items: center; padding: 0 30px; font: italic 500 32px/1.5 "Quicksand", sans-serif; text-align: center; }
+/* ── Trọn vẹn ── */
+.t7n .t7n-tronVen { display: grid; gap: 30px; padding: 70px 24px 50px; text-align: center; }
+.t7n .t7n-tronVen small,
+.t7n .t7n-sauTatCa small,
+.t7n .t7n-danh small,
+.t7n .t7n-vow small { width: max-content; justify-self: center; padding: 12px 30px; color: #fff; background: #a44747; font: 500 12px/1 "Quicksand", sans-serif; letter-spacing: .16em; }
+.t7n .t7n-tronVen > p { max-width: 400px; justify-self: center; margin: 0; font: 400 23px/1.95 "Signora", cursive; }
+.t7n .t7n-duo { display: grid; grid-template-columns: 1fr 1.35fr; gap: 12px; align-items: start; }
+.t7n .t7n-duo img { height: 720px; width: 100%; object-fit: cover; }
+.t7n .t7n-duo img:first-child { height: 540px; margin-top: 120px; }
+.t7n .t7n-tronVen > img.t7n-wide,
+.t7n .t7n-danh > img.t7n-wide { width: 88%; height: 760px; justify-self: center; object-fit: cover; }
+
+/* ── Story ── */
+.t7n .t7n-story { padding: 60px 26px 60px; text-align: center; }
+.t7n .t7n-story > p { margin: 0; font: italic 500 17px/1.55 "Quicksand", sans-serif; }
+.t7n .t7n-story blockquote { margin: 38px 0 0; font: italic 500 18px/1.65 "Quicksand", sans-serif; text-align: right; }
+.t7n .t7n-story > img { width: 85%; height: 350px; margin: 40px auto 0; display: block; object-fit: cover; }
+
+/* ── Countdown ── */
+.t7n .t7n-count { padding: 55px 24px; text-align: center; }
+.t7n .t7n-count .t7n-countblock { justify-content: center; }
+
+/* ── Sau tất cả ── */
+.t7n .t7n-sauTatCa { display: grid; gap: 26px; padding: 70px 24px 50px; text-align: center; }
+.t7n .t7n-sauTatCa > p { max-width: 400px; justify-self: center; margin: 0; font: 400 23px/1.9 "Signora", cursive; color: #6d4a3f; }
+.t7n .t7n-sauTatCa .t7n-duo { grid-template-columns: 1fr 1fr; }
+.t7n .t7n-sauTatCa .t7n-duo img { height: 430px; }
+.t7n .t7n-sauTatCa .t7n-duo img:first-child { margin-top: 0; height: 430px; }
+
+/* ── Names ── */
+.t7n .t7n-names { padding: 40px 24px 30px; text-align: left; }
+.t7n .t7n-names h2 { font: 400 44px/1.2 "Loving Ambros", "PlayfairDisplay", serif; color: #a50000; }
+.t7n .t7n-names h2 span { display: block; }
+/* ── Dành cho nhau ── */
+.t7n .t7n-danh { display: grid; gap: 26px; padding: 80px 24px 40px; text-align: center; }
+.t7n .t7n-danh > p { max-width: 400px; justify-self: center; margin: 0; font: 400 23px/1.9 "Signora", cursive; text-align: right; }
+
+/* ── Calendar + countdown ── */
+.t7n .t7n-calendar { display: grid; gap: 30px; padding: 70px 24px; text-align: center; }
+.t7n .t7n-calendar h3 { color: #a50000; font: italic 500 20px/1 "Quicksand", sans-serif; margin: 0; }
+.t7n .t7n-calendar .t7n-count2 { justify-content: center; }
+
+/* ── Maps Nhà trai / Nhà gái ── */
+.t7n .t7n-maps { display: grid; grid-template-columns: 1fr 1fr; gap: 30px 14px; padding: 70px 24px; text-align: center; }
+.t7n .t7n-mapCard { border: 1px solid #d9b8b5; padding: 26px 14px; background: #fff; }
+.t7n .t7n-mapCard small { display: block; font-size: 11px; letter-spacing: .18em; color: #920600; }
+.t7n .t7n-mapCard p { margin: 14px 0 0; font: 400 13px/1.7 "Quicksand", sans-serif; }
+.t7n .t7n-mapCard .ni-map { margin-top: 16px; color: #fff; background: #920600; }
+
+/* ── Closing vow ── */
+.t7n .t7n-vow { display: grid; gap: 26px; padding: 70px 24px 50px; text-align: center; }
+.t7n .t7n-vow > p { max-width: 410px; justify-self: center; margin: 0; font: 400 23px/1.9 "Signora", cursive; text-align: right; }
+.t7n .t7n-vow h2 { margin: 0; font: 400 44px/1.2 "Loving Ambros", "PlayfairDisplay", serif; color: #a50000; text-align: right; }
+.t7n .t7n-vow h2 i { font-style: normal; color: #c00000; }
+
+/* ── Message ── */
+.t7n .t7n-message { padding: 70px 26px 50px; text-align: left; }
+.t7n .t7n-message h3 { color: #a50000; font: italic 500 24px/1 "Quicksand", sans-serif; }
+.t7n .t7n-message p { margin: 18px 0; font: 400 17px/1.7 "Quicksand", sans-serif; }
+.t7n .t7n-message p:last-of-type { margin: 0; }
+.t7n .t7n-phones { display: flex; justify-content: center; gap: 22px; margin-top: 30px; }
+.t7n .t7n-phones small { display: inline-flex; align-items: center; gap: 6px; color: #920600; font: 600 14px/1 "Quicksand", sans-serif; }
+.t7n .t7n-phones svg { width: 15px; }
+
+/* ── RSVP + wishes + gift ── */
+.t7n .t7n-rsvp { display: grid; justify-items: center; gap: 40px; padding: 70px 24px 20px; text-align: center; }
+.t7n .t7n-rsvpNote { width: 100%; color: #6d4a3f; font: 400 15px/1.7 "Quicksand", sans-serif; }
+.t7n .t7n-rsvp-card,
+.t7n .t7n-wish { text-align: left; }
+.t7n .t7n-wish { border: 1px solid #dbc9c5 !important; border-radius: 3px !important; background: #fffdfb !important; box-shadow: 0 12px 30px rgba(93, 40, 32, .08) !important; }
+.t7n .t7n-wish h3 { color: #920600 !important; }
+.t7n .t7n-wish input, .t7n .t7n-wish textarea { border-color: #dbc9c5 !important; border-radius: 2px !important; }
+.t7n .t7n-wish button { border-radius: 2px !important; background: #920600 !important; color: #fff !important; }
+.t7n .t7n-rsvp-card button,
+.t7n .t7n-rsvp-card fieldset,
+.t7n .t7n-rsvp-card label { border-radius: 2px !important; }
+
+/* ── Closing ── */
+.t7n .t7n-closing { padding: 70px 26px 90px; text-align: center; }
+.t7n .t7n-closing h2 { color: #a50000; font: 400 30px/1 "Carlytte", "PlayfairDisplay", serif; }
+.t7n .t7n-closing p { margin: 22px 0; font: 400 17px/1.8 "Quicksand", sans-serif; }
+.t7n .t7n-closing h3 { margin: 26px 0 0; color: #a50000; font: 400 44px/1 "Signora", cursive; }
+
+@media (max-width: 420px) {
+  .t7n .t7n-quote blockquote { font-size: 26px; }
+  .t7n .t7n-duo { gap: 8px; }
+  .t7n .t7n-duo img { height: 520px; }
+  .t7n .t7n-duo img:first-child { height: 400px; margin-top: 90px; }
+  .t7n .t7n-tronVen > img.t7n-wide,
+  .t7n .t7n-danh > img.t7n-wide { height: 620px; }
+  .t7n .t7n-maps { grid-template-columns: 1fr; }
+}
+.t7n .t7n-quote--second blockquote { font: italic 500 34px/1.5 "Quicksand", sans-serif; }

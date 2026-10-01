@@ -5,9 +5,9 @@ import { getSceneTemplate } from './sceneTemplates.js';
 import { runInvitationPreflight } from './scenePreflight.js';
 
 describe('invitation scene preflight', () => {
-  const template = getSceneTemplate('thiep-cuoi-44');
+  const template = getSceneTemplate('thiep-cuoi-47');
   const baseInput = {
-    content: { ...defaultInvitationContent, media: { ...defaultInvitationContent.media, social: '/social/thiep-cuoi-44.jpg' } },
+    content: { ...defaultInvitationContent, media: { ...defaultInvitationContent.media, social: '/social/thiep-cuoi-47.jpg' } },
     design: createScenePatch(template),
     template,
     slug: 'minh-tri-thanh-hang',

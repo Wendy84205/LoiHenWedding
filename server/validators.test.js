@@ -7,7 +7,7 @@ const orderInput = {
   phone: '0900000000',
   zalo: '',
   packageCode: 'basic',
-  templateSlug: 'thiep-cuoi-44',
+  templateSlug: 'thiep-cuoi-46',
   groomName: 'Minh',
   brideName: 'An',
   eventDate: '2027-12-15',
