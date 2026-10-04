@@ -1,36 +1,104 @@
-html.template5new-page,body.template5new-page{background:#2b1110}.t5n{width:min(500px,100vw);margin:auto;overflow:hidden;color:#922e22;background:#fff;font-family:"PlayfairDisplay",Georgia,serif;box-shadow:0 18px 70px rgba(33,8,7,.4)}.t5n-music{color:#e6c57c;background:#8f291d}.t5n-hero{display:grid;justify-items:center;gap:38px;padding:50px 28px 65px;color:#e3bd70;background:#9d2d20;text-align:center}.t5n-hero p{margin:0;font-size:18px;line-height:1.5}.t5n-hero img{height:380px;object-fit:cover}.t5n-hero h1{margin:5px 0 0;font-size:38px;font-weight:400}.t5n-hero h2{margin:0;font-size:28px;font-weight:400}.t5n-invite{display:grid;justify-items:center;gap:25px;padding:55px 32px 75px;text-align:center}.t5n-invite>div:first-child{display:grid;justify-items:center;gap:15px}.t5n-invite>div:first-child svg{width:50px;height:50px;stroke-width:1}.t5n-invite h2{margin:0;font-size:27px;font-weight:400}.t5n-invite>img{width:82%;height:340px;object-fit:cover}.t5n-invite>p{font-size:16px;line-height:1.7}.t5n-date{width:100%;display:grid;grid-template-columns:1fr 100px 1fr;align-items:center}.t5n-date span{border-top:1px solid #9d2d20;border-bottom:1px solid #9d2d20;padding:12px 0}.t5n-date strong{font-size:72px;font-weight:400}.t5n-invite h3{margin:0 0 12px;font-size:24px}.t5n-invite b{font-size:18px}.t5n-invite .ni-map{margin-top:12px;border:1px solid #9d2d20;padding:10px 20px;color:#9d2d20}.t5n-love{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:45px 20px;background:#9d2d20;color:#efca79}.t5n-love>div img{height:360px;object-fit:cover}.t5n-love h2{margin:18px 0 0;text-align:center;font-size:34px;font-style:italic}.t5n-love p{margin:18px 0 0;font-size:17px;line-height:1.5}.t5n-love>img{grid-column:1/-1;height:550px;margin-top:18px;object-fit:cover}.t5n-calendarSection{padding:65px 28px 75px;text-align:center}.t5n-calendarSection>h2{margin:0 0 32px;font:400 53px/1 "Carlytte",cursive}.t5n-calendarSection .ni-calendar{padding:26px 18px;border:1px solid #9d2d20}.t5n-calendarSection .ni-calendar h3{margin-bottom:25px;font-size:26px}.t5n-calendarSection .ni-days>span{height:36px}.t5n-calendarSection .ni-days svg{width:40px;color:#c9222a}.t5n-count{gap:8px;margin-top:35px}.t5n-count>span{height:70px;color:#efca79;background:#9d2d20}.t5n-gallery{padding:65px 18px;background:#f3e3d1;text-align:center}.t5n-gallery h2{margin:0 0 35px;font:400 41px/1 "Carlytte",cursive}.t5n-gallery>div{display:grid;grid-template-columns:1fr 1fr;gap:9px}.t5n-gallery img{height:390px;object-fit:cover}.t5n-ending{display:grid;justify-items:center;gap:55px;padding:70px 22px 50px;color:#e8c374;background:#9d2d20}.t5n-gift>svg{color:#9d2d20;background:#e8c374}.t5n-ending h2{margin:0;font:400 62px/1 "Carlytte",cursive}@media(max-width:420px){.t5n-hero{padding-left:18px;padding-right:18px}.t5n-hero img{height:330px}.t5n-invite{padding-left:18px;padding-right:18px}.t5n-date{grid-template-columns:1fr 84px 1fr}.t5n-date strong{font-size:61px}.t5n-love{gap:10px;padding-left:12px;padding-right:12px}.t5n-love>div img{height:320px}.t5n-love>img{height:470px}.t5n-calendarSection{padding-left:18px;padding-right:18px}.t5n-gallery img{height:330px}}
+@import url("../cineloveFonts.css");
 
-/* This template keeps its own Valentine red and warm-gold design. */
-.t5n .t5n-hero{min-height:1020px;align-content:center}
-.t5n .t5n-invite{min-height:1300px;align-content:center}
-.t5n .t5n-love{min-height:1500px;align-content:center}
-.t5n .t5n-calendarSection{min-height:900px;align-content:center}
-.t5n .t5n-gallery{min-height:1300px;align-content:center}
-.t5n .t5n-ending{min-height:1100px;align-content:center}
-.t5n-families{padding:75px 25px 70px;color:#7e251c;background:#f6e5d5;text-align:center}
-.t5n-families>div:first-child>small,.t5n-families>div:last-child>div>span,.t5n-families>div:last-child>div>small,.t5n-timeline>small,.t5n-dresscode>small,.t5n-wishes>div>small{font:600 9px/1.5 "Quicksand",sans-serif;letter-spacing:.15em;color:#9d2d20}
-.t5n-families>div:first-child h2{margin:12px 0 28px;font:400 41px/1.05 "Carlytte",cursive}
-.t5n-families>div:last-child{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px}
-.t5n-families>div:last-child>div{min-height:140px;display:grid;align-content:center;gap:8px;padding:14px 7px;border:1px solid #d1a65f;background:#fff9ef}
-.t5n-families>div:last-child h3{margin:0;color:#48221d;font:400 14px/1.7 "PlayfairDisplay",Georgia,serif}
-.t5n-families>div:last-child>div>small{font-size:8px;letter-spacing:.07em}
-.t5n-families>div:last-child>i{color:#9d2d20;font:italic 23px Georgia,serif}
-.t5n-timeline,.t5n-dresscode{margin-top:30px;padding:25px 20px;border:1px solid #d6b365;background:#fff9ef;text-align:left}
-.t5n-timeline h3,.t5n-dresscode h3,.t5n-wishes h3{margin:8px 0 17px;color:#8f291d;font:400 34px/1.05 "Carlytte",cursive}
-.t5n-timeline>div{display:grid;grid-template-columns:62px 1fr;gap:10px;padding:11px 0;border-top:1px solid #ead8bd;color:#4d3229;font:400 13px/1.4 "Quicksand",sans-serif}
-.t5n-timeline>div b{color:#9d2d20;font-size:12px;letter-spacing:.04em}
-.t5n-dresscode p{margin:0;color:#5d4840;font:400 13px/1.7 "Quicksand",sans-serif}
-.t5n-dresscode>div{display:flex;gap:9px;margin-top:19px}
-.t5n-dresscode>div i{width:28px;height:28px;border:1px solid rgba(76,43,28,.13);border-radius:50%;background:#c78982}
-.t5n-dresscode>div i:nth-child(2){background:#ead6bd}
-.t5n-dresscode>div i:nth-child(3){background:#781e1b}
-.t5n-dresscode>div i:nth-child(4){background:#d5ad63}
-.t5n-dresscode>span{display:block;margin-top:9px;color:#90654c;font:600 8px/1.4 "Quicksand",sans-serif;letter-spacing:.1em}
-.t5n-wishes{width:100%;display:grid;justify-items:center;gap:20px}
-.t5n-wishes>div:first-child p{max-width:330px;margin:0 auto 8px;color:#f4d999;font:400 14px/1.7 "Quicksand",sans-serif}
-.t5n-wishForm{width:100%;padding:22px 18px;border:1px solid #d6b365;background:#fff9ef;color:#4d3229;text-align:left}
-.t5n-wishForm h3{margin:0 0 16px;font:400 26px/1.1 "Carlytte",cursive;text-align:center}
-.t5n-wishForm label{color:#59443b;font:500 12px/1.5 "Quicksand",sans-serif}
-.t5n-wishForm input,.t5n-wishForm textarea{border:1px solid #e5d1b0;border-radius:0;background:#fffdf8;color:#42312b}
-.t5n-wishForm button{border-radius:0;background:#9d2d20;color:#fff4d3}
-@media(max-width:420px){.t5n .t5n-hero,.t5n .t5n-invite,.t5n .t5n-love,.t5n .t5n-calendarSection,.t5n .t5n-gallery,.t5n .t5n-ending{min-height:0}.t5n-families{padding-right:16px;padding-left:16px}.t5n-families>div:last-child{gap:5px}.t5n-families>div:last-child h3{font-size:12px}.t5n-timeline,.t5n-dresscode{padding-right:15px;padding-left:15px}}
+/* ── Khung hai bên: đo trực tiếp trên cinelove.me/template/thiep-cuoi-5 ──
+   Bản gốc chỉ bọc thiệp vào khung từ 768px trở lên (>=768px là .pc-content,
+   dưới 768px là .mobile-view tràn viền, nền trắng, không viền).
+   Khung gốc: nền trang #f0f2f5, border 1px solid #e0e0e0 (rgb 224,224,224),
+   box-shadow 0 0 10px rgba(0,0,0,.1) — profile pixel hai bên:
+   ...239,241,244 | 224,224,224 (viền) | 255,255,255 (thiệp).
+   #root chính là cột thiệp 500px căn giữa, nên đặt khung ở đây thì viền chạy
+   liền một mạch suốt thiệp; cộng 1px mỗi bên và giữ nguyên 500px vùng nội dung
+   nên toạ độ tuyệt đối của mọi node không thay đổi. */
+html.template5new-page,
+body.template5new-page {
+  background: #fff;
+  overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+  html.template5new-page,
+  body.template5new-page {
+    background: #f0f2f5;
+  }
+
+  body.template5new-page #root {
+    box-sizing: border-box;
+    width: 502px;
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.t5n {
+  width: 100%;
+  color: #932c20;
+  background: #fff;
+  font-family: "PlayfairDisplay", Georgia, serif;
+}
+
+.t5n-canvas {
+  position: relative;
+  width: 500px;
+  height: 7116px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.t5n-node { position: absolute; }
+.t5n-text { display: flex; align-items: center; box-sizing: border-box; }
+.t5n-textwrap { width: 100%; }
+.t5n-textwrap p { margin: 0; }
+.t5n-photo { width: 100%; height: 100%; background-repeat: no-repeat; background-position: 50% 50%; background-size: cover; background-clip: border-box; }
+.t5n-art { display: block; width: 100%; height: 100%; }
+.t5n-shape { width: 100%; height: 100%; }
+.t5n-blank { width: 100%; }
+.t5n-music { background: #932c20; z-index: 60; }
+.t5n-map-frame { width: 100%; height: 100%; overflow: hidden; border-radius: 5px; }
+.t5n-map-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+
+/* Lịch: node 6318..6624 (306px), viền trùng đúng mép node -> top 0.
+   Thanh tiêu đề đỏ cách mép trên 19px, cao 46px. */
+.t5n .t5n-cal { position: absolute; top: 0; left: 0; box-sizing: border-box; width: 100%; height: 306px; border: 1px solid #333; border-radius: 3px; font-family: Arial, sans-serif; }
+.t5n .t5n-cal-back { position: absolute; top: 6.08px; right: 6.52px; bottom: 6.08px; left: 6.52px; background: #fff; }
+.t5n .t5n-cal-head { position: absolute; top: 18px; left: 0; display: flex; align-items: center; box-sizing: border-box; width: 100%; height: 46px; padding-left: 33px; background: #932c20; color: #fff; font-size: 29px; line-height: 20px; }
+.t5n .t5n-cal-body { position: absolute; top: 76px; left: 9.77px; display: flex; flex-wrap: wrap; align-content: flex-start; width: 306.44px; }
+.t5n .t5n-cal-body > div { display: flex; align-items: center; justify-content: center; width: 14%; height: 35.47px; }
+.t5n .t5n-cal-body > div > div { width: 100%; color: #932c20; font-size: 14px; line-height: 20px; text-align: center; }
+.t5n .t5n-cal-week { color: #000; font-size: 14px; line-height: 20px; }
+/* Tim nằm DƯỚI số 14 (z-index thấp hơn) để chữ trắng vẫn đọc được trên tim */
+.t5n .t5n-cal-heart { position: absolute; z-index: 1; top: 110.5px; left: 174px; width: 38px; height: 36px; }
+.t5n .t5n-cal-wedding { position: relative; z-index: 2; color: #fff !important; }
+/* Watermark "2025" bản gốc: chữ số cao 71px, rộng 237px, tâm (246, 6500).
+   Cần đặt ngoài flow flex (đã absolute) và nới specificity để không bị
+   rule "> div" áp width:14%/height:35.47px ghi đè. */
+.t5n .t5n-cal-body > .t5n-cal-year { position: absolute; top: 57px; left: 0; display: flex; align-items: center; justify-content: center; box-sizing: border-box; width: 306.44px; height: 100px; color: #932c20; font-size: 100px; font-weight: 400; line-height: 100px; text-align: center; opacity: 0.18; z-index: 0; pointer-events: none; }
+
+.t5n .t5n-node .t5n-textwrap.t5n-tBgy14pParS { width: 100%; font-size: 36px; font-weight: 500; color: #deb561; text-align: left; font-family: "PlayfairDisplay"; }
+.t5n .t5n-node .t5n-textwrap.t5n-tgxCZXMNlsq { width: 100%; font-size: 13px; font-weight: 500; color: #deb561; text-align: center; font-family: "PlayfairDisplay"; line-height: 1.63; }
+.t5n .t5n-node .t5n-textwrap.t5n-tiPrsY_C_LB { width: 100%; font-size: 30px; font-weight: 500; color: #deb561; text-align: left; font-family: "PlayfairDisplay"; letter-spacing: 1px; }
+.t5n .t5n-node .t5n-textwrap.t5n-tBDwlSOt2JR { width: 100%; font-size: 24px; font-weight: 500; color: #deb561; text-align: left; font-family: "PlayfairDisplay"; }
+.t5n .t5n-node .t5n-textwrap.t5n-tSitPNP_OeK { width: 100%; font-size: 17px; font-weight: 500; color: #932c20; text-align: left; font-family: "PlayfairDisplay"; }
+.t5n .t5n-node .t5n-textwrap.t5n-tTZGPVBI1Ev { width: 100%; font-size: 24px; font-weight: 500; color: #932c20; text-align: center; font-family: "Sacramento"; }
+.t5n .t5n-node .t5n-textwrap.t5n-t4WTIvTs5Ea { width: 100%; font-size: 28px; font-weight: 500; color: #932c20; text-align: left; font-family: "Arial"; }
+.t5n .t5n-node .t5n-textwrap.t5n-tt8LdIx3R2l { width: 100%; font-size: 33px; font-weight: 500; color: #932c20; text-align: left; font-family: "Roboto"; }
+.t5n .t5n-node .t5n-textwrap.t5n-tqkpdc2XBmZ { width: 100%; font-size: 64px; font-weight: 500; color: #932c20; text-align: left; font-family: "Roboto"; padding: 0px 0px 0px 8px; }
+.t5n .t5n-node .t5n-textwrap.t5n-tKaTfNTY66u { width: 100%; font-size: 29px; font-weight: 500; color: #932c20; text-align: left; font-family: "Roboto"; }
+.t5n .t5n-node .t5n-textwrap.t5n-tOk3IlinN9M { width: 100%; font-size: 38px; font-weight: 500; color: #deb561; text-align: left; font-family: "PlayfairDisplay"; }
+.t5n .t5n-node .t5n-textwrap.t5n-t_eoq08AXG9 { width: 100%; font-size: 38px; font-weight: 500; color: #deb561; text-align: left; font-family: "PlayfairDisplay"; }
+.t5n .t5n-node .t5n-textwrap.t5n-twlK1xFFvo4 { width: 100%; font-size: 21px; font-weight: 500; color: #932c20; text-align: left; font-family: "PlayfairDisplay"; padding: 0px 0px 9px 0px; }
+.t5n .t5n-node .t5n-textwrap.t5n-tjM3N3XAfju { width: 100%; font-size: 25px; font-weight: 500; color: #932c20; text-align: center; font-family: "Sacramento"; }
+.t5n .t5n-node .t5n-textwrap.t5n-th_Gd9YuoJd { width: 100%; font-size: 35px; font-weight: 500; color: #deb561; text-align: left; font-family: "PlayfairDisplay"; }
+.t5n .t5n-node .t5n-textwrap.t5n-tnpOIy2AsN8 { width: 100%; font-size: 19px; font-weight: 500; color: #932c20; text-align: left; font-family: "PlayfairDisplay"; padding: 4px 0px 4px 0px; }
+.t5n .t5n-node .t5n-textwrap.t5n-tiCB_OkhAks { width: 100%; font-size: 28px; font-weight: 500; color: #932c20; text-align: left; font-family: "PlayfairDisplay"; letter-spacing: 6px; }
+.t5n .t5n-node .t5n-textwrap.t5n-tKGFr0Z3TYb { width: 100%; font-size: 23px; font-weight: 500; color: #932c20; text-align: left; font-family: "Sacramento"; }
+.t5n .t5n-node .t5n-textwrap.t5n-tbITmedQsYe { width: 100%; font-size: 29px; font-weight: 500; color: #deb561; text-align: left; font-family: "PlayfairDisplay"; padding: 0px 45px 10px 0px; }
+.t5n .t5n-node .t5n-textwrap.t5n-tkCTq_HIb2w { width: 100%; font-size: 15px; font-weight: 500; color: #deb561; text-align: left; font-family: "PlayfairDisplay"; line-height: 1.57; }
+.t5n .t5n-node .t5n-textwrap.t5n-tRekt5kD0gk { width: 100%; font-size: 30px; font-weight: 500; color: #deb561; text-align: center; font-family: "PlayfairDisplay"; }
+.t5n .t5n-node .t5n-textwrap.t5n-tlmzvg3HXim { width: 100%; font-size: 26px; font-weight: 500; color: #deb561; text-align: left; font-family: "PlayfairDisplay"; }
+.t5n .t5n-node .t5n-textwrap.t5n-t2xikVEefdE { width: 100%; font-size: 26px; font-weight: 500; color: #deb561; text-align: left; font-family: "PlayfairDisplay"; letter-spacing: 4px; }
+.t5n .t5n-node .t5n-textwrap.t5n-t5f7cLGohKa { width: 100%; font-size: 22px; font-weight: 500; color: #932c20; text-align: center; font-family: "PlayfairDisplay"; letter-spacing: 2px; }
+.t5n .t5n-node .t5n-textwrap.t5n-tNNzc25blWZ { width: 100%; font-size: 17px; font-weight: normal; color: #932c20; text-align: center; font-family: "PlayfairDisplay"; line-height: 1.58; }
+.t5n .t5n-node .t5n-textwrap.t5n-tt6UV_tKBQX { width: 100%; font-size: 18px; font-weight: 500; color: #000000; text-align: left; font-family: "Playfair Display, serif"; }
+.t5n .t5n-node .t5n-textwrap.t5n-tCUa3u8tTQd { width: 100%; font-size: 22px; font-weight: 500; color: #932c20; text-align: left; font-family: "PlayfairDisplay"; }
+.t5n .t5n-node .t5n-textwrap.t5n-t01Hmyqi9m9 { width: 100%; font-size: 18px; font-weight: 500; color: #000000; text-align: center; font-family: "Signora"; }

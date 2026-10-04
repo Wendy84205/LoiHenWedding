@@ -1,93 +1,120 @@
-html.template10new-page, body.template10new-page { background: #dedede; }
-.t10n { width: min(500px, 100vw); margin: auto; overflow: hidden; color: #171717; background: #fff; font-family: "Signora", "PlayfairDisplay", serif; box-shadow: 0 18px 70px rgba(0, 0, 0, .18); }
-.t10n-music { background: #111; }
-.t10n-hero { min-height: 760px; position: relative; padding: 28px 25px 0; }
-.t10n-heading { display: grid; grid-template-columns: auto 1fr; align-items: end; gap: 8px 22px; }
-.t10n-heading span { font: 500 11px/1 "Quicksand", sans-serif; letter-spacing: .28em; }
-.t10n-heading h1 { margin: 0; font: 400 47px/.9 "Signora", serif; }
-.t10n-heading p { margin: 0; font: 500 12px/1 "Quicksand", sans-serif; letter-spacing: .18em; }
-.t10n-heading i { font-family: Georgia, serif; }
-.t10n-hero > img { height: 535px; margin-top: 28px; object-fit: cover; }
-.t10n-stamp { width: 70px; height: 70px; position: absolute; right: 18px; bottom: 20px; display: grid; place-content: center; border: 1px solid #111; border-radius: 50%; background: #fff; font-size: 26px; line-height: .75; }
-.t10n-stamp small { font: 500 9px/1 "Quicksand", sans-serif; letter-spacing: .14em; }
-.t10n-vow { display: grid; justify-items: center; gap: 24px; padding: 65px 25px; text-align: center; }
-.t10n-vow p { margin: 0; font-size: 24px; line-height: 1.55; }
-.t10n-vow svg { width: 21px; }
-.t10n-welcome { display: grid; justify-items: center; gap: 34px; padding: 30px 22px 80px; text-align: center; }
-.t10n-welcome > img:first-child { height: 330px; object-fit: cover; }
-.t10n-welcome h2 { margin: 0; font: 400 40px/1 "Carlytte", cursive; letter-spacing: .08em; }
-.t10n-familyArt { height: 360px; object-fit: contain; }
-.t10n-welcome > p { max-width: 380px; margin: 0; font-size: 20px; line-height: 1.75; }
-.t10n-portraits { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; padding: 70px 22px; text-align: center; }
-.t10n-portraits img { height: 390px; object-fit: cover; object-position: top; }
-.t10n-portraits h2 { margin: 15px 0 8px; font: 400 37px/1 "Signora", cursive; }
-.t10n-portraits a { display: inline-flex; align-items: center; gap: 5px; color: #111; font: 500 10px/1 "Quicksand", sans-serif; text-decoration: none; letter-spacing: .12em; }
-.t10n-portraits a svg { width: 13px; }
-.t10n-story { padding: 85px 38px; color: #fff; background: #151515; text-align: center; }
-.t10n-story > small { letter-spacing: .28em; }
-.t10n-story h2 { margin: 14px 0 22px; font: 400 46px/1 "Carlytte", cursive; }
-.t10n-story p { font-size: 18px; line-height: 1.75; }
-.t10n-story img { height: 480px; margin-top: 35px; object-fit: cover; filter: grayscale(1); }
-.t10n-daylight { display: grid; gap: 22px; padding: 90px 22px; text-align: center; }
-.t10n-daylight > img { height: 420px; object-fit: cover; }
-.t10n-daylight > small { font: 400 31px/1 "Signora", serif; }
-.t10n-daylight > p { max-width: 350px; justify-self: center; margin: 5px 0 25px; font-size: 21px; line-height: 1.65; }
-.t10n-archPhoto { width: 82%; justify-self: center; overflow: hidden; border-radius: 220px 220px 0 0; }
-.t10n-archPhoto img { height: 580px; object-fit: cover; }
-.t10n-event { display: grid; gap: 38px; padding: 75px 28px; text-align: center; }
-.t10n-event > div:first-child { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center; }
-.t10n-event > div:first-child > div:first-child { display: grid; border-right: 1px solid #111; }
-.t10n-event strong { font-size: 92px; font-weight: 400; line-height: 1; }
-.t10n-event small, .t10n-event span { font: 500 10px/1.5 "Quicksand", sans-serif; letter-spacing: .15em; }
-.t10n-event .ni-map { border-bottom: 1px solid #111; padding: 7px; color: #111; }
-.t10n .ni-calendar { border-top: 1px solid #111; border-bottom: 1px solid #111; padding: 25px 0; }
-.t10n .ni-calendar h3 { font-size: 27px; font-weight: 400; }
-.t10n .ni-weekdays { margin: 22px 0 9px; font: 500 10px/1 "Quicksand", sans-serif; }
-.t10n .ni-days > span { height: 42px; }
-.t10n .ni-days svg { width: 33px; color: #111; }
-.t10n-count > span { height: 75px; border-right: 1px solid #111; }
-.t10n-count > span:last-child { border: 0; }
-.t10n-count b { font-size: 28px; }
-.t10n-end { display: grid; justify-items: center; gap: 55px; padding: 0 24px 65px; background: #f4f3f0; }
-.t10n-end > img { width: calc(100% + 48px); height: 550px; object-fit: cover; filter: grayscale(.25); }
-.t10n-gift > svg { color: #fff; background: #111; }
-.t10n-gift h3 { font: 400 35px/1 "Signora", cursive; }
-@media (max-width: 420px) {
-  .t10n-heading h1 { font-size: 40px; }
-  .t10n-hero { min-height: 700px; padding-right: 18px; padding-left: 18px; }
-  .t10n-hero > img { height: 490px; }
-  .t10n-welcome, .t10n-daylight, .t10n-event { padding-right: 18px; padding-left: 18px; }
-  .t10n-familyArt { height: 300px; }
-  .t10n-portraits { gap: 10px; padding-right: 12px; padding-left: 12px; }
-  .t10n-portraits img { height: 330px; }
-  .t10n-archPhoto img { height: 500px; }
+@import url("../cineloveFonts.css");
+
+html.template10new-page,
+body.template10new-page {
+  background: #fff;
+  overflow-x: hidden;
 }
 
-/* The studio invitation's added event details keep its clean white editorial look. */
-.t10n-welcome{align-content:space-around;gap:38px}
-.t10n-daylight{align-content:space-around;gap:36px}
-.t10n-welcome>p,.t10n-daylight>p{max-width:410px;font-size:17px;line-height:1.8}
-.t10n-daylight>small{font:400 27px/1 "PlayfairDisplay",serif}
-.t10n-archPhoto{height:620px}
-.t10n-archPhoto img{width:100%;height:100%;object-fit:cover}
-.t10n-schedule{padding:24px 18px;border-top:1px solid #c9c7c2;border-bottom:1px solid #c9c7c2;text-align:left}
-.t10n-schedule>small{color:#65625d;font:600 10px/1.4 "Quicksand",sans-serif;letter-spacing:.19em}
-.t10n-schedule h3{margin:9px 0 14px;font:400 25px/1.1 "Signora",serif}
-.t10n-schedule>div{display:grid;grid-template-columns:72px 1fr;gap:12px;padding:12px 0;border-top:1px solid #e2e0dc}
-.t10n-schedule time{font:600 12px/1.5 "Quicksand",sans-serif}
-.t10n-schedule>div span{font:400 14px/1.5 "Quicksand",sans-serif}
-.t10n-dresscode{padding:25px 18px;background:#f4f3f0;text-align:center}
-.t10n-dresscode>small,.t10n-wishes>small{color:#68645e;font:600 10px/1.4 "Quicksand",sans-serif;letter-spacing:.17em}
-.t10n-dresscode h3{margin:8px 0;color:#171717;font:400 27px/1.1 "Signora",serif}
-.t10n-dresscode p{margin:0;color:#5a5854;font:400 14px/1.6 "Quicksand",sans-serif}
-.t10n-dresscode>div{display:flex;justify-content:center;gap:12px;margin-top:16px}
-.t10n-dresscode i{width:28px;height:28px;border:1px solid #ccc;border-radius:50%;background:#161616}
-.t10n-dresscode i:nth-child(2){background:#fff}
-.t10n-dresscode i:nth-child(3){background:#d7c4a5}
-.t10n-wishes{width:min(100%,380px);text-align:center}
-.t10n-wishes>small{display:block;margin-bottom:12px}
-.t10n-wish{border:1px solid #d6d4cf!important;border-radius:2px!important;background:#fff!important;box-shadow:0 12px 28px rgba(0,0,0,.06)!important}
-.t10n-wish h3{color:#171717!important}
-.t10n-wish input,.t10n-wish textarea{border-color:#d6d4cf!important;border-radius:2px!important}
-.t10n-wish button,.t10n-rsvp button{border-radius:2px!important;background:#171717!important;color:#fff!important}
-@media(max-width:420px){.t10n-schedule{padding-right:14px;padding-left:14px}.t10n-dresscode{padding-right:14px;padding-left:14px}.t10n-archPhoto{height:520px}}
+/* ── Khung hai bên: đo trực tiếp trên cinelove.me/template/thiep-cuoi-10 ──
+   Bản gốc chỉ bọc thiệp vào khung từ 768px trở lên (>=768px là .pc-content,
+   dưới 768px là .mobile-view tràn viền, nền trắng, không viền).
+   Khung gốc: nền trang #f0f2f5, border 1px solid #e0e0e0 (rgb 224,224,224),
+   box-shadow 0 0 10px rgba(0,0,0,.1) — profile pixel hai bên:
+   ...239,241,244 | 224,224,224 (viền) | 255,255,255 (thiệp).
+   #root chính là cột thiệp 500px căn giữa, nên đặt khung ở đây thì viền chạy
+   liền một mạch suốt thiệp; cộng 1px mỗi bên và giữ nguyên 500px vùng nội dung
+   nên toạ độ tuyệt đối của mọi node không thay đổi. */
+@media (min-width: 768px) {
+  html.template10new-page,
+  body.template10new-page {
+    background: #f0f2f5;
+  }
+
+  body.template10new-page #root {
+    box-sizing: border-box;
+    width: 502px;
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.t10n {
+  width: 100%;
+  color: #000;
+  background: #fff;
+  font-family: "Signora", cursive;
+}
+
+.t10n-canvas {
+  position: relative;
+  width: 500px;
+  height: 9250px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.t10n-node { position: absolute; }
+.t10n-text { display: flex; align-items: flex-start; justify-content: center; box-sizing: border-box; }
+.t10n-textwrap { width: 100%; }
+.t10n-textwrap p { margin: 0; }
+.t10n-photo { width: 100%; height: 100%; background-repeat: no-repeat; background-position: 50% 50%; background-size: cover; background-clip: border-box; }
+.t10n-art { display: block; width: 100%; height: 100%; }
+.t10n-map { width: 100%; height: 100%; }
+.t10n-map iframe { display: block; }
+.t10n-music { z-index: 60; }
+
+.t10n-tx0 { font-family: "Signora", cursive; font-size: 25px; font-weight: 500; font-style: normal; line-height: normal; letter-spacing: 1px; text-align: left; color: rgb(0, 0, 0); justify-content: flex-start; }
+.t10n-tx1 { font-family: "Signora", cursive; font-size: 23px; font-weight: 500; font-style: normal; line-height: normal; letter-spacing: 1px; text-align: left; color: rgb(0, 0, 0); justify-content: flex-start; }
+.t10n-tx2 { font-family: "Signora", cursive; font-size: 21px; font-weight: 500; font-style: normal; line-height: normal; letter-spacing: 0px; text-align: left; color: rgb(0, 0, 0); justify-content: flex-start; }
+.t10n-tx3 { font-family: "Signora", cursive; font-size: 20px; font-weight: 500; font-style: normal; line-height: 1.38; letter-spacing: 0px; text-align: right; color: rgb(0, 0, 0); justify-content: flex-end; }
+.t10n-tx4 { font-family: "Mallong", cursive; font-size: 19px; font-weight: bold; font-style: normal; line-height: normal; letter-spacing: 0px; text-align: center; color: rgb(0, 0, 0); justify-content: center; }
+.t10n-tx5 { font-family: "Signora", cursive; font-size: 26px; font-weight: normal; font-style: normal; line-height: normal; letter-spacing: 1px; text-align: center; color: rgb(0, 0, 0); justify-content: center; }
+.t10n-tx6 { font-family: "Signora", cursive; font-size: 19px; font-weight: 500; font-style: normal; line-height: normal; letter-spacing: 0px; text-align: center; color: rgb(0, 0, 0); justify-content: center; }
+.t10n-tx7 { font-family: "Mallong", cursive; font-size: 18px; font-weight: normal; font-style: normal; line-height: 1.57; letter-spacing: 0px; text-align: center; color: rgb(0, 0, 0); justify-content: center; }
+.t10n-tx8 { font-family: "Mallong", cursive; font-size: 18px; font-weight: bold; font-style: normal; line-height: 1.57; letter-spacing: 0px; text-align: right; color: rgb(0, 0, 0); justify-content: flex-end; }
+.t10n-tx9 { font-family: "Signora", cursive; font-size: 21px; font-weight: 500; font-style: normal; line-height: normal; letter-spacing: 0px; text-align: center; color: rgb(0, 0, 0); justify-content: center; }
+.t10n-tx10 { font-family: "Signora", cursive; font-size: 22px; font-weight: 500; font-style: normal; line-height: normal; letter-spacing: 2px; text-align: center; color: rgb(0, 0, 0); justify-content: center; }
+.t10n-tx11 { font-family: "Signora", cursive; font-size: 20px; font-weight: 500; font-style: normal; line-height: normal; letter-spacing: 2px; text-align: center; color: rgb(0, 0, 0); justify-content: center; }
+.t10n-tx12 { font-family: "Signora", cursive; font-size: 20px; font-weight: 500; font-style: normal; line-height: normal; letter-spacing: 0px; text-align: center; color: rgb(0, 0, 0); justify-content: center; }
+.t10n-tx13 { font-family: "Signora", cursive; font-size: 18px; font-weight: 500; font-style: normal; line-height: 1.92; letter-spacing: 0px; text-align: right; color: rgb(0, 0, 0); justify-content: flex-end; }
+.t10n-tx14 { font-family: "Signora", cursive; font-size: 18px; font-weight: 500; font-style: normal; line-height: 2.04; letter-spacing: 0px; text-align: center; color: rgb(0, 0, 0); justify-content: center; }
+.t10n-tx15 { font-family: Arial, sans-serif; font-size: 24px; font-weight: 500; font-style: normal; line-height: normal; letter-spacing: 0px; text-align: center; color: rgb(0, 0, 0); justify-content: center; }
+.t10n-tx16 { font-family: "Quicksand", sans-serif; font-size: 17px; font-weight: 500; font-style: normal; line-height: normal; letter-spacing: 0px; text-align: center; color: rgb(0, 0, 0); justify-content: center; }
+.t10n-tx17 { font-family: "Quicksand", sans-serif; font-size: 15px; font-weight: bold; font-style: normal; line-height: normal; letter-spacing: 0px; text-align: center; color: rgb(0, 0, 0); justify-content: center; }
+.t10n-tx18 { font-family: "Quicksand", sans-serif; font-size: 14px; font-weight: normal; font-style: normal; line-height: 1.71; letter-spacing: 0px; text-align: center; color: rgb(0, 0, 0); justify-content: center; }
+.t10n-tx19 { font-family: "Signora", cursive; font-size: 18px; font-weight: 500; font-style: normal; line-height: 1.7; letter-spacing: 0px; text-align: center; color: rgb(0, 0, 0); justify-content: center; }
+.t10n-tx20 { font-family: "Katty Diona", cursive; font-size: 24px; font-weight: bold; font-style: italic; line-height: 2.16; letter-spacing: 0px; text-align: center; color: rgb(0, 0, 0); justify-content: center; }
+
+.t10n .t10n-countdown { display: flex; gap: 2px; width: 100%; height: 100%; align-items: stretch; justify-content: center; }
+.t10n .t10n-countdown > span { display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; background: #000; color: #fff; font-size: 13px; line-height: 1.2; }
+.t10n .t10n-countdown b { font-weight: 500; }
+.t10n .t10n-countdown small { font-size: 10px; }
+
+.t10n .t10n-calendar { width: 100%; height: 100%; }
+.t10n .t10n-calendar h3 { color: #b10000; }
+
+/* Lịch: khung đỏ 2px, trục trái 2 nút bo, thanh ngày trong tuần bo tròn, 5 hàng ngày */
+.t10n .t10n-cal { position: relative; width: 100%; height: 100%; font-family: Arial, sans-serif; }
+.t10n .t10n-cal-box { position: absolute; top: 27px; left: 22px; right: 7px; bottom: 0; border: 2px solid #b10000; }
+.t10n .t10n-cal-axis i { position: absolute; left: -7px; width: 12px; height: 37px; border-radius: 6px; background: #b10000; }
+.t10n .t10n-cal-axis i:first-child { top: 53px; }
+.t10n .t10n-cal-axis i:last-child { top: 215px; }
+.t10n .t10n-cal-inner { position: absolute; inset: 0; }
+.t10n .t10n-cal-head { position: absolute; top: 18px; left: 22px; right: 22px; display: flex; justify-content: space-between; color: #8b0000; font-size: 23px; line-height: 1; }
+.t10n .t10n-cal-weekrow { position: absolute; top: 82px; left: 21px; right: 21px; height: 22px; display: flex; padding-right: 5px; background: #b10000; border-radius: 11px; }
+.t10n .t10n-cal-week { flex: 1; position: relative; top: -6px; color: #000; text-align: center; font-size: 14px; line-height: 1; }
+.t10n .t10n-cal-days { position: absolute; top: 112px; left: 21px; right: 27px; display: grid; grid-template-columns: repeat(7, 1fr); }
+.t10n .t10n-cal-cell, .t10n .t10n-cal-empty { position: relative; height: 36.5px; display: flex; align-items: flex-start; justify-content: center; font-size: 14px; line-height: 1; }
+.t10n .t10n-cal-cell > div { position: relative; }
+.t10n .t10n-cal-cell .is-wedding { color: #fff; }
+.t10n .t10n-cal-heart { position: absolute; top: -13.5px; left: 50%; width: 40px; transform: translateX(-50%); }
+
+
+/* ── Lời chúc & mừng cưới nằm dưới canvas mẫu ── */
+.t10n-extras {
+  display: grid;
+  justify-items: center;
+  gap: 34px;
+  width: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 54px 24px 76px;
+  color: #333;
+  background: #fff;
+}
+.t10n-extras .t10n-wish,
+.t10n-extras .t10n-gift { width: min(355px, 100%); margin: 0 auto; }
+.t10n .t10n-music { background: #b10000; }
+

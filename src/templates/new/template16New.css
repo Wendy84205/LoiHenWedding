@@ -7,6 +7,30 @@ body.template16new-page {
   overflow-x: hidden;
 }
 
+/* ── Khung hai bên: đo trực tiếp trên cinelove.me/template/thiep-cuoi-16 ──
+   Bản gốc chỉ bọc thiệp vào khung từ 768px trở lên (>=768px là .pc-content,
+   dưới 768px là .mobile-view tràn viền, nền trắng, không viền).
+   Khung gốc: nền trang #f0f2f5, border 1px solid #e0e0e0 (rgb 224,224,224),
+   box-shadow 0 0 10px rgba(0,0,0,.1) — profile pixel hai bên giống hệt mẫu 10:
+   ...239,241,244 | 224,224,224 (viền) | 255,255,255 (thiệp).
+   #root chính là cột thiệp 500px căn giữa, nên đặt khung ở đây thì viền chạy
+   liền một mạch suốt thiệp; cộng 1px mỗi bên và giữ nguyên 500px vùng nội dung
+   nên toạ độ tuyệt đối của mọi node không thay đổi. */
+@media (min-width: 768px) {
+  html.template16new-page,
+  body.template16new-page {
+    background: #f0f2f5;
+  }
+
+  body.template16new-page #root {
+    box-sizing: border-box;
+    width: 502px;
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
 .t16n {
   width: 100%;
   color: #000;
