@@ -6,7 +6,6 @@ import { MusicButton, RsvpForm, useInvitationPage } from "./NewInvitationCommon.
 import "./template22New.css";
 
 const R = "/assets/template22-ref";
-const IMG = "/assets/new-templates/thiep-cuoi-22";
 
 const NODES = [
   {"id": "photo107", "kind": "photo", "style": {"top": "0px", "left": "0px", "width": "368px", "height": "613px"}, "direction": "up", "delay": 0.2, "src": `${R}/t22-c506cdec.png`, "size": "cover", "pos": "50% 50%"},
