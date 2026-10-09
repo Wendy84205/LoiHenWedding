@@ -1,89 +1,145 @@
-@import url('../cineloveFonts.css');
-html.template22new-page,body.template22new-page{background:#dad5cf}
-.t22n{--t22-ink:#332b25;--t22-paper:#f4eee5;--t22-copper:#a77f70;width:min(500px,100vw);min-height:100dvh;margin:0 auto;overflow:hidden;color:var(--t22-paper);background:#211d19;box-shadow:0 18px 70px rgba(36,29,23,.25);font-family:'Quicksand',Arial,sans-serif}
-.t22n-music{color:#fff!important;background:#58443b!important}
-.t22n-cover{height:min(900px,100svh);min-height:680px;position:relative;display:grid;align-items:end;padding:46px 27px;background:#392d28}
-.t22n-cover>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 34%;filter:saturate(.72)}
-.t22n-coverShade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(25,20,17,.08) 30%,rgba(25,20,17,.8) 100%)}
-.t22n-coverCopy{position:relative;z-index:1;width:100%}
-.t22n-coverCopy>small,.t22n-noteMark small,.t22n-kicker small,.t22n-dayHeading small,.t22n-galleryHeading small,.t22n-rsvpTitle small,.t22n-wishes>small{font:600 .59rem/1.5 'Quicksand',sans-serif;letter-spacing:.2em}
-.t22n-coverCopy h2{display:grid;margin:20px 0;color:#fff8ef;font:400 clamp(3rem,12vw,4.5rem)/.86 'Mallong','Signora',cursive}
-.t22n-coverCopy h2 i{color:#d6ad93;font-size:.58em}
-.t22n-coverCopy p{margin:0;color:#e8d8ca;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase}
-.t22n-vertical{position:absolute;right:16px;top:50%;color:#f8eee1;font:600 .5rem/1 'Quicksand',sans-serif;letter-spacing:.2em;writing-mode:vertical-rl}
-.t22n-note{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:30px 16px;padding:78px 22px;background:#f2ece2;color:var(--t22-ink)}
-.t22n-noteMark{grid-column:1/-1;display:flex;align-items:center;gap:12px;color:#82695a}
-.t22n-noteMark span,.t22n-kicker>span{font:400 2.2rem/1 'Mallong',cursive}
-.t22n-noteCopy{grid-column:1/-1;max-width:390px}
-.t22n-noteCopy h2,.t22n-inviteTitle h2,.t22n-dayHeading h2,.t22n-galleryHeading h2,.t22n-rsvpTitle h2{margin:0 0 15px;font:400 2.15rem/1.15 'Mallong','Signora',cursive}
-.t22n-noteCopy p{margin:0;color:#62574d;font:400 .9rem/1.85 'Signora',Georgia,serif}
-.t22n-noteCopy svg{width:18px;margin-top:20px;color:var(--t22-copper)}
-.t22n-note>img{grid-column:1/-1;width:82%;height:510px;justify-self:end;object-fit:cover;filter:saturate(.72)}
-.t22n-noteQuote{grid-column:1/-1;max-width:360px;justify-self:start;padding:6px 0 6px 17px;border-left:1px solid #bfa691}
-.t22n-noteQuote p{margin:0 0 12px;color:#54483f;font:italic 1.25rem/1.6 'Signora',Georgia,serif}
-.t22n-noteQuote span{color:#8b7061;font-size:.58rem;letter-spacing:.15em;text-transform:uppercase}
-.t22n-invitation{padding:76px 23px 82px;background:#29231e}
-.t22n-kicker{display:flex;align-items:center;gap:13px;color:#c19b83}
-.t22n-kicker small{color:#d6c7b8}
-.t22n-inviteTitle{margin:40px 0 42px;text-align:center}
-.t22n-inviteTitle>small{display:block;margin-bottom:12px;color:#c19b83;font-size:.56rem;letter-spacing:.18em}
-.t22n-inviteTitle h2{color:#f4ece2}
-.t22n-inviteTitle p{max-width:350px;margin:0 auto;color:#cbbdb0;font:400 .86rem/1.8 'Signora',Georgia,serif}
-.t22n-families{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;padding:23px 0;border-top:1px solid #55473e;border-bottom:1px solid #55473e;text-align:center}
-.t22n-families>div{display:grid;gap:8px}
-.t22n-families>svg{width:16px;color:#c19b83}
-.t22n-families small{color:#c19b83;font:600 .5rem/1.5 'Quicksand',sans-serif;letter-spacing:.1em}
-.t22n-families b,.t22n-families span{color:#eee2d5;font:400 .69rem/1.5 'Quicksand',sans-serif}
-.t22n-families span{color:#bdafa3;font-size:.59rem}
-.t22n-date{display:grid;justify-items:center;gap:8px;margin:45px 0 37px;text-align:center}
-.t22n-date span{font:600 .58rem/1.4 'Quicksand',sans-serif;letter-spacing:.16em}
-.t22n-date strong{color:#c19b83;font:400 5.7rem/.82 'Mallong',cursive}
-.t22n-venue{text-align:center}
-.t22n-venue h3{margin:0;color:#f5ebdf;font:400 1.35rem/1.3 'Signora',Georgia,serif}
-.t22n-venue p{margin:10px 0 18px;color:#cbbdb0;font-size:.75rem;line-height:1.6}
-.t22n-venue .ni-map{display:inline-flex;align-items:center;gap:8px;padding:10px 17px;border:1px solid #8d7465;color:#f1e5d8;font-size:.62rem;text-decoration:none}
-.t22n-day{padding:78px 22px;background:#e8dfd3;color:#342d27}
-.t22n-dayHeading,.t22n-galleryHeading,.t22n-rsvpTitle{display:grid;justify-items:center;gap:11px;margin-bottom:34px;text-align:center}
-.t22n-dayHeading>svg{color:#987766}
-.t22n-dayHeading small,.t22n-galleryHeading small,.t22n-rsvpTitle small{color:#8c6c5b}
-.t22n-dayHeading h2,.t22n-galleryHeading h2,.t22n-rsvpTitle h2{margin:0}
-.t22n-day .ni-calendar{padding:22px 14px;border:1px solid #c8b8a8;background:#f5efe6}
-.t22n-day .ni-calendar h3{color:#705749;font:400 1.4rem/1.2 'Quicksand',sans-serif}
-.t22n-day .ni-weekdays{font-family:'Quicksand',sans-serif}
-.t22n-day .ni-days>span{height:38px}
-.t22n-day .ni-days svg{width:33px;color:#9a7561}
-.t22n-timeline{margin-top:28px;padding:21px 17px;border:1px solid #cabbac;background:#f5efe6}
-.t22n-timeline>small{display:block;margin-bottom:10px;color:#8a6e5d;font-size:.56rem;letter-spacing:.16em}
-.t22n-timeline>div{display:grid;grid-template-columns:60px 1fr 22px;align-items:center;gap:10px;padding:13px 0;border-top:1px solid #e1d8ce}
-.t22n-timeline time{color:#8b6857;font-size:.68rem}
-.t22n-timeline span{font:400 .8rem/1.5 'Signora',Georgia,serif}
-.t22n-timeline i{color:#a48c7a;font-size:.6rem;text-align:right}
-.t22n-dress{margin-top:26px;padding:23px 17px;border:1px solid #c5b29e;background:#dbcec0;text-align:center}
-.t22n-dress>small{color:#8a6453;font-size:.53rem;letter-spacing:.17em}
-.t22n-dress h3{margin:10px 0;color:#493a31;font:400 1.6rem/1.2 'Mallong','Signora',cursive}
-.t22n-dress p{margin:0 0 16px;color:#574a40;font:400 .8rem/1.6 'Signora',Georgia,serif}
-.t22n-dress>div{display:flex;justify-content:center;gap:10px}
-.t22n-dress i{width:24px;height:24px;border:1px solid rgba(0,0,0,.12);border-radius:50%;background:#44372f}
-.t22n-dress i:nth-child(2){background:#d6c5ae}.t22n-dress i:nth-child(3){background:#849081}
-.t22n-count{margin-top:27px;gap:8px}
-.t22n-count>span{min-height:64px!important;color:#fff;background:#58453a!important}
-.t22n-count b{font:400 1.15rem/1 'Quicksand',sans-serif}.t22n-count small{color:#eee3d7;font-size:.55rem}
-.t22n-gallery{padding:76px 17px 88px;background:#211d19}
-.t22n-galleryHeading{color:#f2e9de}
-.t22n-galleryHeading h2{font-size:2.4rem}
-.t22n-gallery>div:last-child{display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:9px}
-.t22n-gallery img{width:100%;height:280px;object-fit:cover;filter:saturate(.7)}
-.t22n-gallery img:nth-child(even){margin-top:35px}
-.t22n-gallery img:first-child{grid-column:1/-1;height:330px}
-.t22n-ending{display:grid;justify-items:center;gap:30px;padding:72px 20px 58px;background:#29231e}
-.t22n-rsvpTitle{margin:0;color:#f4eadf}
-.t22n-rsvp,.t22n-wish{border:1px solid #5b4b40!important;border-radius:2px!important;background:#211d19!important;color:#f5eadf!important;box-shadow:none!important}
-.t22n-rsvp h3,.t22n-wish h3{color:#d5b29b!important}
-.t22n-rsvp label,.t22n-rsvp legend,.t22n-wish label{color:#eaded2!important}
-.t22n-rsvp input:not([type=radio]),.t22n-rsvp select,.t22n-wish input,.t22n-wish textarea{border-color:#5d4c41!important;border-radius:2px!important;background:#191613!important;color:#fff!important}
-.t22n-rsvp fieldset{border-color:#5d4c41!important}.t22n-rsvp input[type=radio]{accent-color:#c19b83}
-.t22n-rsvp button,.t22n-wish button{border-radius:2px!important;background:#94725f!important;color:#fff!important}
-.t22n-wishes{width:min(100%,390px);text-align:center}.t22n-wishes>small{display:block;margin-bottom:12px;color:#d5b29b}
-.t22n-gift{width:min(100%,390px)}.t22n-gift .ni-gift{border:1px solid #5b4b40;border-radius:2px;background:transparent;color:#f3e9df;box-shadow:none}.t22n-gift .ni-gift>svg{color:#211d19;background:#c19b83}
-.t22n-thanks{margin:0;color:#c19b83;font:italic 1rem/1.5 'Signora',Georgia,serif;text-align:center}
-@media(max-width:420px){.t22n-cover{min-height:660px;padding-right:21px;padding-left:21px}.t22n-note{padding-right:18px;padding-left:18px}.t22n-note>img{height:440px}.t22n-invitation{padding-right:18px;padding-left:18px}.t22n-families{gap:7px}.t22n-families b{font-size:.61rem}.t22n-families span{font-size:.52rem}.t22n-day{padding-right:18px;padding-left:18px}.t22n-dayHeading h2{font-size:1.75rem}.t22n-gallery img{height:245px}.t22n-gallery img:first-child{height:290px}.t22n-ending{padding-right:17px;padding-left:17px}}
+@import url("../cineloveFonts.css");
+
+html.template22new-page,
+body.template22new-page {
+  background: #473529;
+  overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+  html.template22new-page,
+  body.template22new-page {
+    background: #f0f2f5;
+  }
+
+  body.template22new-page #root {
+    box-sizing: border-box;
+    width: 502px;
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.t22n {
+  width: 100%;
+  color: #473529;
+  background: #473529;
+}
+
+/* Canvas tuyệt đối 500x11572: toạ độ node lấy 1:1 từ ref cinelove */
+.t22n-canvas {
+  position: relative;
+  width: 500px;
+  height: 11572px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #473529;
+}
+
+.t22n-node { position: absolute; }
+.t22n-photo { width: 100%; height: 100%; background-repeat: no-repeat; background-clip: border-box; }
+.t22n-text { width: 100%; }
+.t22n-box { box-sizing: border-box; }
+
+/* Nut nhac nen: khop 30x30 tai (460,10) cua ref, nen nau (122,81,56) */
+.t22n .t22n-music {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  left: auto;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: #fff;
+  background: rgb(122, 81, 56);
+  box-shadow: none;
+  backdrop-filter: none;
+}
+.t22n .t22n-music svg { width: 18px; height: 18px; }
+
+/* Google Map embed: ref x51 y9280 401x278 */
+.t22n-mapframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 8px;
+}
+
+/* Form xac nhan tham du: dung 1:1 .rsvp-form cua ban goc */
+.t22n .t22n-rsvpBox {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 51px 50px 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  color: #333;
+  background: #fff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  font: 400 14px/1.35 Arial, sans-serif;
+  text-align: left;
+}
+.t22n .t22n-rsvpBox > * { width: 100%; }
+.t22n .t22n-rsvpBox h3 {
+  margin: 0 0 21px;
+  color: #333;
+  font: 700 18px/24px Arial, sans-serif;
+  text-align: center;
+}
+.t22n .t22n-rsvpBox label {
+  display: grid;
+  gap: 2px;
+  color: #333;
+  font: 400 14px/21px Arial, sans-serif;
+}
+.t22n .t22n-rsvpBox > label:not(:first-of-type) { display: none; }
+.t22n .t22n-rsvpBox input:not([type="radio"]) {
+  box-sizing: border-box;
+  width: 100%;
+  height: 34px;
+  padding: 0 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  color: #333;
+  background: #fff;
+  font: 400 14px Arial, sans-serif;
+}
+.t22n .t22n-rsvpBox fieldset { margin: 11px 0 0; padding: 0; border: 0; }
+.t22n .t22n-rsvpBox legend { margin: 0 0 6px; padding: 0; color: #333; font: 400 14px/20px Arial, sans-serif; }
+.t22n .t22n-rsvpBox fieldset label {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  line-height: 21px;
+}
+.t22n .t22n-rsvpBox input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: #1c64f2;
+}
+.t22n .t22n-rsvpBox button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 32px;
+  min-height: 0;
+  margin-top: 17px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  background: var(--rsvp-accent, #7a5138);
+  font: 400 14px Arial, sans-serif;
+  cursor: pointer;
+}
+.t22n .t22n-rsvpBox button svg { display: none; }

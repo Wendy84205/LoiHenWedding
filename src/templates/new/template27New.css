@@ -1,35 +1,113 @@
-@import url('../cineloveFonts.css');
-html.template27new-page,body.template27new-page{background:#dfdedb}
-.t27n{--t27-ink:#242422;--t27-paper:#faf9f6;--t27-muted:#88877f;width:min(500px,100vw);min-height:100dvh;margin:0 auto;overflow:hidden;color:var(--t27-ink);background:var(--t27-paper);box-shadow:0 16px 58px rgba(25,25,22,.18);font-family:'Quicksand',Arial,sans-serif}
-.t27n-music{color:#fff;background:#55564f}
-.t27n-cover{height:min(930px,100svh);min-height:700px;position:relative;display:grid;align-items:end;padding:42px 26px;background:#5d5b53}
-.t27n-cover>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%;filter:saturate(.72)}
-.t27n-cover:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(20,20,18,.78))}
-.t27n-coverTitle{position:relative;z-index:1;color:#fff}
-.t27n-coverTitle small,.t27n-sectionMark small,.t27n-caption small,.t27n-schedule>small,.t27n-dress>small,.t27n-endTitle small,.t27n-wishes>small{font:600 .58rem/1.5 'Quicksand',sans-serif;letter-spacing:.2em}
-.t27n-coverTitle h2{display:grid;margin:18px 0;color:#fff;font:400 clamp(3rem,11vw,4.25rem)/.9 'Mallong','Signora',cursive}
-.t27n-coverTitle h2 i{color:#d4d1c6;font-size:.58em}
-.t27n-coverTitle p{margin:0;color:#e7e5de;font-size:.67rem;letter-spacing:.18em}
-.t27n-index{position:absolute;z-index:1;top:28px;left:26px;color:#fff;font-size:.53rem;line-height:1.7;letter-spacing:.16em}
-.t27n-intro{display:grid;grid-template-columns:72px 1fr;gap:22px;padding:78px 26px;background:#f1f0ec}
-.t27n-sectionMark{display:flex;align-items:center;gap:11px;color:#77766f}
-.t27n-intro>.t27n-sectionMark,.t27n-invitation>.t27n-sectionMark,.t27n-program>.t27n-sectionMark,.t27n-photos>.t27n-sectionMark{grid-column:1/-1}
-.t27n-sectionMark span{font:400 2.1rem/1 'Mallong',cursive}.t27n-sectionMark small{color:#797970}
-.t27n-intro>div:last-child{grid-column:2;max-width:360px}.t27n-intro h2,.t27n-programTitle h2,.t27n-endTitle h2{margin:0 0 15px;font:400 2.25rem/1.05 'Mallong','Signora',cursive}
-.t27n-intro p{margin:0;color:#67665e;font:400 .94rem/1.8 'Signora',Georgia,serif}.t27n-intro svg{width:17px;margin-top:18px;color:#929188}
-.t27n-editorial{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:0;background:#e7e6e1}
-.t27n-editorial>img{width:100%;height:390px;object-fit:cover;filter:grayscale(.25)}
-.t27n-caption{padding:24px 17px}.t27n-caption small{color:#77766f}.t27n-caption h3{margin:8px 0;font:400 1.65rem/1 'Mallong','Signora',cursive}.t27n-caption p{margin:0;color:#68675f;font:italic .83rem/1.65 'Signora',Georgia,serif}.t27n-captionGroom{text-align:right}
-.t27n-invitation{padding:76px 24px;background:#fbfaf7}
-.t27n-names{margin:38px 0 34px;text-align:center}.t27n-names h2{display:grid;gap:4px;margin:0;font:400 3rem/.92 'Mallong','Signora',cursive}.t27n-names h2 i{color:#939287;font-size:.58em}.t27n-names p{max-width:360px;margin:18px auto 0;color:#6e6d65;font:400 .85rem/1.7 'Signora',Georgia,serif}
-.t27n-families{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;padding:21px 0;border-top:1px solid #deddd7;border-bottom:1px solid #deddd7;text-align:center}
-.t27n-families>div{display:grid;gap:8px}.t27n-families>svg{width:16px;color:#89887f}.t27n-families small{color:#7c7b72;font-size:.49rem;font-weight:700;letter-spacing:.12em}.t27n-families b,.t27n-families span{color:#373733;font:400 .68rem/1.5 'Quicksand',sans-serif}.t27n-families span{color:#84837b;font-size:.58rem}
-.t27n-venue{display:grid;justify-items:center;gap:8px;margin-top:35px;text-align:center}.t27n-venue>span{color:#77766e;font-size:.55rem;letter-spacing:.18em}.t27n-venue strong{color:#77766e;font:400 5rem/.84 'Mallong',cursive}.t27n-venue h3{margin:17px 0 0;font:400 1.3rem/1.3 'Signora',Georgia,serif}.t27n-venue p{margin:0;color:#74736b;font-size:.7rem;line-height:1.6}.t27n-venue .ni-map{display:inline-flex;align-items:center;gap:7px;margin-top:8px;padding:9px 16px;border:1px solid #aaa99f;color:#50504a;font-size:.6rem;text-decoration:none}
-.t27n-program{padding:76px 22px;background:#eeede8}.t27n-programTitle{display:grid;justify-items:center;gap:12px;margin:30px 0;text-align:center}.t27n-programTitle>svg{color:#77766e}.t27n-programTitle h2{margin:0}
-.t27n-program .ni-calendar{padding:23px 14px;border:1px solid #c9c8c0;background:#faf9f6}.t27n-program .ni-calendar h3{color:#55554f;font:400 1.35rem 'Quicksand',sans-serif}.t27n-program .ni-weekdays{font-family:'Quicksand',sans-serif}.t27n-program .ni-days>span{height:38px}.t27n-program .ni-days svg{width:33px;color:#77766e}
-.t27n-schedule{margin-top:25px;padding:20px 17px;border:1px solid #d5d4cc;background:#faf9f6}.t27n-schedule>small{display:block;margin-bottom:10px;color:#77766e}.t27n-schedule>div{display:grid;grid-template-columns:62px 1fr;gap:10px;padding:12px 0;border-top:1px solid #e7e6e0;font:400 .84rem/1.4 'Signora',Georgia,serif}.t27n-schedule time{color:#77766e}
-.t27n-dress{margin-top:20px;padding:21px 16px;border:1px solid #d0cfc7;background:#e4e3dd;text-align:center}.t27n-dress>small{color:#77766e}.t27n-dress h3{margin:8px 0;color:#45453f;font:400 1.7rem/1 'Mallong',cursive}.t27n-dress p{margin:0 0 14px;color:#67665f;font:400 .78rem/1.5 'Quicksand',sans-serif}.t27n-dress>div{display:flex;justify-content:center;gap:9px}.t27n-dress i{width:23px;height:23px;border:1px solid rgba(0,0,0,.1);border-radius:50%;background:#252522}.t27n-dress i:nth-child(2){background:#f7f6f1}.t27n-dress i:nth-child(3){background:#c7b79c}
-.t27n-count{gap:7px;margin-top:22px}.t27n-count>span{min-height:60px!important;color:#fff;background:#5a5a53!important}.t27n-count b{font:400 1.05rem 'Quicksand',sans-serif}.t27n-count small{color:#eee;font-size:.55rem}
-.t27n-photos{display:grid;gap:12px;padding:72px 16px;background:#22221f}.t27n-photos>.t27n-sectionMark{margin-bottom:18px;color:#fff}.t27n-photos>.t27n-sectionMark small{color:#d1d0c8}.t27n-photos>img{width:100%;height:480px;object-fit:cover;filter:grayscale(.3)}.t27n-photos>div{display:grid;grid-template-columns:1fr 1fr;gap:10px}.t27n-photos>div img{width:100%;height:290px;object-fit:cover;filter:grayscale(.3)}
-.t27n-ending{display:grid;justify-items:center;gap:30px;padding:72px 20px 55px;background:#fbfaf7}.t27n-endTitle{text-align:center}.t27n-endTitle small{display:block;margin-bottom:15px;color:#77766e}.t27n-endTitle h2{margin:0;color:#30302c;font-size:2.7rem}.t27n-rsvp,.t27n-wish{width:min(100%,390px);border:1px solid #d4d3cb!important;border-radius:0!important;background:#fff!important;color:#282824!important;box-shadow:none!important}.t27n-rsvp h3,.t27n-wish h3{color:#595952!important}.t27n-rsvp label,.t27n-rsvp legend,.t27n-wish label{color:#55554e!important}.t27n-rsvp input:not([type=radio]),.t27n-rsvp select,.t27n-wish input,.t27n-wish textarea{border-color:#d3d2ca!important;border-radius:0!important;background:#faf9f6!important;color:#252521!important}.t27n-rsvp fieldset{border-color:#d3d2ca!important}.t27n-rsvp input[type=radio]{accent-color:#77766e}.t27n-rsvp button,.t27n-wish button{border-radius:0!important;background:#77766e!important;color:#fff!important}.t27n-wishes{width:min(100%,390px);text-align:center}.t27n-wishes>small{display:block;margin-bottom:12px;color:#77766e}.t27n-wish{width:100%}.t27n-gift{width:min(100%,390px)}.t27n-gift .ni-gift{border:1px solid #d4d3cb;border-radius:0;background:transparent;color:#34342f;box-shadow:none}.t27n-gift .ni-gift>svg{color:#fbfaf7;background:#77766e}
-@media(max-width:420px){.t27n-cover{min-height:660px;padding-right:21px;padding-left:21px}.t27n-intro{grid-template-columns:55px 1fr;padding-right:19px;padding-left:19px}.t27n-intro>div:last-child{grid-column:2}.t27n-editorial>img{height:310px}.t27n-caption{padding:18px 12px}.t27n-families{gap:7px}.t27n-families b{font-size:.61rem}.t27n-families span{font-size:.52rem}.t27n-invitation{padding-right:18px;padding-left:18px}.t27n-program{padding-right:18px;padding-left:18px}.t27n-photos>img{height:390px}.t27n-photos>div img{height:250px}.t27n-ending{padding-right:17px;padding-left:17px}}
+@import url("../cineloveFonts.css");
+
+html.template27new-page,
+body.template27new-page {
+  background: #fff;
+  overflow-x: hidden;
+}
+
+/* Vien hai ben giong template 3/5/10/14/16 */
+@media (min-width: 768px) {
+  html.template27new-page,
+  body.template27new-page {
+    background: #f0f2f5;
+  }
+
+  body.template27new-page #root {
+    box-sizing: border-box;
+    width: 502px;
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.t27n {
+  width: 100%;
+  color: #000;
+  background: #fff;
+}
+
+.t27n-canvas {
+  position: relative;
+  width: 500px;
+  height: 10332px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #fff;
+}
+
+.t27n-node { position: absolute; }
+.t27n-art { display: block; width: 100%; height: 100%; }
+.t27n-photo { width: 100%; height: 100%; background-repeat: no-repeat; background-position: 50% 50%; background-size: cover; background-clip: border-box; }
+.t27n-text { display: flex; box-sizing: border-box; align-items: flex-start; }
+.t27n-textwrap { width: 100%; }
+.t27n-textwrap p { margin: 0; }
+.t27n-music { z-index: 90; }
+
+.t27n-phoneBtn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; height: 100%; padding: 0; border: 0; color: #720f0f; background: #fefcfe; font: 400 15px/1 Arial, sans-serif; cursor: pointer; }
+.t27n-phoneBtn svg { margin-right: 5px; }
+
+.t27n-mapBox { width: 100%; height: 100%; overflow: hidden; border: 2px solid #720f0f; border-radius: 13px; }
+.t27n-mapBox iframe { display: block; border: 0; border-radius: 13px; }
+
+.t27n .t27n-count { display: flex; flex-direction: row; justify-content: space-between; gap: 20px; width: 100%; height: 100%; color: #fff; background: #720f0f; font-family: Arial, sans-serif; font-size: 14px; }
+.t27n .t27n-count > span { display: flex; flex: 1; flex-direction: column; align-items: center; justify-content: center; width: 25%; border-radius: 4px; color: #fff; background: #720f0f; font-size: 14px; }
+.t27n .t27n-count b { font-size: 14px; font-weight: 400; }
+.t27n .t27n-count small { display: block; color: #fff; font-size: 14px; }
+
+/* Lich thang: do 1:1 tu .calendar .template-two cua ban goc */
+.t27n .t27n-cal { width: 100%; height: 100%; color: #cf7200; font-family: Arial, sans-serif; font-size: 14px; }
+.t27n .template-two { position: relative; width: 100%; height: 100%; padding: 1px; }
+.t27n .two-back { width: 92%; height: 92%; margin-left: 2%; background-color: #fff; }
+.t27n .two-body { position: absolute; right: 2%; bottom: 0; display: flex; align-items: center; justify-content: center; width: 92%; height: 92%; border: 2px solid #750000; background-color: #fff; }
+.t27n .body-axis { position: absolute; top: 50%; left: -7px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; width: 12px; height: 66%; transform: translateY(-50%); }
+.t27n .body-axis > div { width: 100%; height: 38px; border-radius: 10px; background-color: #750000; }
+.t27n .body-box { display: flex; flex-direction: column; justify-content: space-between; width: 87%; height: 87%; }
+.t27n .two-head { display: flex; justify-content: space-between; width: 100%; color: #750000; font-size: 24px; }
+.t27n .two-date { position: relative; display: flex; flex-wrap: wrap; width: 100%; height: 83%; }
+.t27n .two-date > div { display: flex; align-items: center; justify-content: center; width: 14%; }
+.t27n .body-week { z-index: 10; color: #000 !important; }
+.t27n .template-two img.heart-date { position: absolute; width: 15%; height: 18%; }
+.t27n .colorF { z-index: 20; color: #fff !important; }
+.t27n .template-two .two-body .body-box .two-date .cal-shadow { position: absolute; top: 8%; left: 0; width: 100%; height: 10%; border-radius: 10px; background-color: #750000; }
+
+/* Form xac nhan tham du: do theo .rsvp-form cua ban goc */
+.t27n .t27n-rsvpBox { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 1.15em; width: 100%; height: 100%; min-height: 100%; padding: 16px; overflow: visible; border: 1px solid #e0e0e0; border-radius: 5px; color: #333; background: #fff; box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1); font: 400 14px/1.35 Arial, sans-serif; text-align: left; }
+.t27n .t27n-rsvpBox > * { width: 100%; }
+.t27n .t27n-rsvpBox h3 { margin: 0 0 1.15em; color: #333; font-size: 18px; font-weight: 700; text-align: center; }
+.t27n .t27n-rsvpBox label { display: grid; gap: 0.43em; color: #333; font-size: 14px; }
+.t27n .t27n-rsvpBox input:not([type="radio"]), .t27n .t27n-rsvpBox select { width: 100%; height: auto; padding: 0.29em 0.57em; border: 1px solid #e0e0e0; border-radius: 4px; color: #333; background: #fff; font-size: 14px; }
+.t27n .t27n-rsvpBox fieldset { display: grid; gap: 0.57em; margin: 0; padding: 0; border: 0; }
+.t27n .t27n-rsvpBox legend { margin-bottom: 0.43em; font-size: 14px; }
+.t27n .t27n-rsvpBox fieldset label { grid-template-columns: 16px 1fr; gap: 0.5em; align-items: center; white-space: break-spaces; }
+.t27n .t27n-rsvpBox input[type="radio"] { width: 16px; height: 16px; accent-color: #720f0f; }
+.t27n .t27n-rsvpBox button { width: 100%; min-height: 0; margin-top: 0.57em; padding: 0.43em 0.86em; border: 0; border-radius: 4px; color: #fff; background: #720f0f; font-size: 14px; cursor: pointer; }
+
+/* Text classes measured 1:1 from cinelove.me/template/thiep-cuoi-27 */
+.t27n-tx0 { font-family: "Signora", serif; font-size: 26px; font-weight: 700; font-style: normal; line-height: normal; letter-spacing: 0px; text-align: left; color: #2d54c4; justify-content: flex-start; }
+.t27n-tx1 { font-family: "Signora", serif; font-size: 20px; font-weight: 400; font-style: normal; line-height: normal; letter-spacing: 0px; text-align: left; color: #000000; justify-content: flex-start; }
+.t27n-tx2 { font-family: "Arial", serif; font-size: 26px; font-weight: 500; font-style: normal; line-height: normal; letter-spacing: 2px; text-align: center; color: #720f0f; justify-content: center; }
+.t27n-tx3 { font-family: "Signora", serif; font-size: 26px; font-weight: 400; font-style: normal; line-height: normal; letter-spacing: 0px; text-align: center; color: #000000; justify-content: center; }
+.t27n-tx4 { font-family: "Arial", serif; font-size: 20px; font-weight: 500; font-style: normal; line-height: normal; letter-spacing: 0px; text-align: left; color: #720f0f; justify-content: flex-start; }
+.t27n-tx5 { font-family: "Arial", serif; font-size: 26px; font-weight: 400; font-style: normal; line-height: normal; letter-spacing: 2px; text-align: left; color: #000000; justify-content: flex-start; }
+.t27n-tx6 { font-family: "Carlytte", serif; font-size: 26px; font-weight: 700; font-style: normal; line-height: normal; letter-spacing: 2px; text-align: left; color: #000000; justify-content: flex-start; }
+.t27n-tx7 { font-family: "Signora", serif; font-size: 24px; font-weight: 400; font-style: normal; line-height: 39.84px; letter-spacing: 0px; text-align: center; color: #000000; justify-content: center; }
+.t27n-tx8 { font-family: "Signora", serif; font-size: 31px; font-weight: 500; font-style: normal; line-height: normal; letter-spacing: 0px; text-align: center; color: #000000; justify-content: center; }
+.t27n-tx9 { font-family: "Signora", serif; font-size: 22px; font-weight: 400; font-style: normal; line-height: 36.52px; letter-spacing: 0px; text-align: center; color: #000000; justify-content: center; }
+.t27n-tx10 { font-family: "Carlytte", serif; font-size: 28px; font-weight: 700; font-style: normal; line-height: normal; letter-spacing: 2px; text-align: center; color: #000000; justify-content: center; }
+.t27n-tx11 { font-family: "Signora", serif; font-size: 22px; font-weight: 400; font-style: normal; line-height: 34.54px; letter-spacing: 0px; text-align: center; color: #000000; justify-content: center; }
+.t27n-tx12 { font-family: "Carlytte", serif; font-size: 36px; font-weight: 400; font-style: normal; line-height: 56.52px; letter-spacing: 0px; text-align: center; color: #720f0f; justify-content: center; }
+.t27n-tx13 { font-family: "Quicksand", serif; font-size: 16px; font-weight: 400; font-style: normal; line-height: 25.12px; letter-spacing: 0px; text-align: center; color: #000000; justify-content: center; }
+.t27n-tx14 { font-family: "Carlytte", serif; font-size: 29px; font-weight: 400; font-style: normal; line-height: normal; letter-spacing: 2px; text-align: center; color: #000000; justify-content: center; }
+.t27n-tx15 { font-family: "Signora", serif; font-size: 23px; font-weight: 400; font-style: normal; line-height: 30.82px; letter-spacing: 0px; text-align: center; color: #000000; justify-content: center; }
+.t27n-tx16 { font-family: "Quicksand", serif; font-size: 18px; font-weight: 400; font-style: normal; line-height: 34.2px; letter-spacing: 0px; text-align: center; color: #000000; justify-content: center; }
+.t27n-tx17 { font-family: "Quicksand", serif; font-size: 22px; font-weight: 400; font-style: normal; line-height: 41.8px; letter-spacing: 0px; text-align: center; color: #720f0f; justify-content: center; }
+.t27n-tx18 { font-family: "Quicksand", serif; font-size: 22px; font-weight: 400; font-style: normal; line-height: 41.8px; letter-spacing: 0px; text-align: center; color: #000000; justify-content: center; }
+.t27n-tx19 { font-family: "Signora", serif; font-size: 23px; font-weight: 400; font-style: normal; line-height: 30.82px; letter-spacing: 0px; text-align: left; color: #000000; justify-content: flex-start; }
+.t27n-tx20 { font-family: "Arial", serif; font-size: 26px; font-weight: 500; font-style: normal; line-height: 36.4px; letter-spacing: 4px; text-align: right; color: #000000; justify-content: flex-end; }
+.t27n-tx21 { font-family: "Signora", serif; font-size: 24px; font-weight: 400; font-style: normal; line-height: 32.16px; letter-spacing: 0px; text-align: left; color: #000000; justify-content: flex-start; }
+.t27n-tx22 { font-family: "Signora", serif; font-size: 20px; font-weight: 500; font-style: normal; line-height: 29.6px; letter-spacing: 0px; text-align: center; color: #000000; justify-content: center; }
+.t27n-tx23 { font-family: "Signora", serif; font-size: 20px; font-weight: 500; font-style: normal; line-height: 28.6px; letter-spacing: 0px; text-align: center; color: #000000; justify-content: center; }
+.t27n-tx24 { font-family: "Signora", serif; font-size: 20px; font-weight: 500; font-style: normal; line-height: 33.6px; letter-spacing: 0px; text-align: center; color: #000000; justify-content: center; }
+.t27n-tx25 { font-family: "Signora", serif; font-size: 23px; font-weight: 400; font-style: normal; line-height: 34.96px; letter-spacing: 0px; text-align: left; color: #000000; justify-content: flex-start; }

@@ -1,73 +1,231 @@
-import React from 'react';
-import { CalendarDays, Heart, MapPin } from 'lucide-react';
-import { Countdown, GiftNote, MusicButton, Reveal, RsvpForm, VenueLink, WeddingCalendar, WishForm, useInvitationPage } from './NewInvitationCommon.jsx';
-import { useInvitationContent } from '../../commerce/CommercialInvitationContext.jsx';
-import './template22New.css';
+/* Thiệp cưới mẫu 22 - dựng 1:1 theo cinelove.me/template/thiep-cuoi-22.
+   NODES sinh bởi scripts/_t22_gen.py từ /tmp/t22_layout.json + số đo pixel ref.png.
+   Ảnh: /assets/template22-ref (tải từ ref); slot 404 -> ảnh webp local. */
+import React from "react";
+import { MusicButton, RsvpForm, useInvitationPage } from "./NewInvitationCommon.jsx";
+import "./template22New.css";
 
-const asset = '/assets/new-templates/thiep-cuoi-22';
-const fallbackDate = '2027-10-14T10:30:00+07:00';
+const R = "/assets/template22-ref";
+const IMG = "/assets/new-templates/thiep-cuoi-22";
+
+const NODES = [
+  {"id": "photo107", "kind": "photo", "style": {"top": "0px", "left": "0px", "width": "368px", "height": "613px"}, "direction": "up", "delay": 0.2, "src": `${R}/t22-c506cdec.png`, "size": "cover", "pos": "50% 50%"},
+  {"id": "text0", "kind": "text", "style": {"top": "89px", "left": "185px", "width": "299px", "height": "27px", "fontFamily": "Signora", "fontSize": "19px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "lineHeight": "27.17px", "textAlign": "right", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Chào bạn~"},
+  {"id": "text1", "kind": "text", "style": {"top": "116px", "left": "185px", "width": "299px", "height": "27px", "fontFamily": "Signora", "fontSize": "19px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "lineHeight": "27.0px", "textAlign": "right", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Khi bạn đọc được những dòng này,"},
+  {"id": "text2", "kind": "text", "style": {"top": "143px", "left": "185px", "width": "299px", "height": "54px", "fontFamily": "Signora", "fontSize": "19px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "lineHeight": "27.17px", "textAlign": "right", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "chúng mình đã gần hoàn tất việc chuẩn bị cho đám cưới rồi.\""},
+  {"id": "text3", "kind": "text", "style": {"top": "212px", "left": "198px", "width": "289px", "height": "88px", "fontFamily": "Signora", "fontSize": "19px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "lineHeight": "29.07px", "textAlign": "right", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Đây là tấm thiệp cưới do chính tay chúng mình biên soạn và thiết kế, chan chứa yêu thương và tràn đầy mong đợi."},
+  {"id": "text4", "kind": "text", "style": {"top": "300px", "left": "198px", "width": "289px", "height": "58px", "fontFamily": "Signora", "fontSize": "19px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "lineHeight": "29.07px", "textAlign": "right", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Chúng mình muốn kể cho bạn nghe câu chuyện của ‘chúng mình’.”"},
+  {"id": "text5", "kind": "text", "style": {"top": "375px", "left": "180px", "width": "186px", "height": "52px", "fontFamily": "Carlytte", "fontSize": "48px", "fontWeight": "700", "color": "rgb(224, 224, 224)", "textAlign": "center", "lineHeight": "52.0px"}, "direction": "up", "delay": 0, "text": "T & H"},
+  {"id": "text6", "kind": "text", "style": {"top": "389px", "left": "283px", "width": "77px", "height": "69px", "fontFamily": "The Hamstter", "fontSize": "42px", "fontWeight": "400", "color": "rgb(247, 244, 244)", "textAlign": "center"}, "direction": "up", "delay": 0, "text": "/"},
+  {"id": "text7", "kind": "text", "style": {"top": "424px", "left": "304px", "width": "156px", "height": "25px", "fontFamily": "Signora", "fontSize": "21px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "textAlign": "center", "letterSpacing": "2px", "lineHeight": "25.0px"}, "direction": "up", "delay": 0, "text": "20/08/2025"},
+  {"id": "photo108", "kind": "photo", "style": {"top": "511px", "left": "99px", "width": "268px", "height": "88px"}, "direction": "up", "delay": 0.2, "src": `${R}/t22-dc2ee894.png`, "size": "cover", "pos": "50% 50%"},
+  {"id": "photo109", "kind": "photo", "style": {"top": "642px", "left": "13px", "width": "156px", "height": "251px"}, "direction": "up", "delay": 0.2, "src": `${R}/t22-84ce07c2.jpg`, "size": "cover", "pos": "50% 50%"},
+  {"id": "text8", "kind": "text", "style": {"top": "651px", "left": "183px", "width": "242px", "height": "31px", "fontFamily": "Signora", "fontSize": "26px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "textAlign": "left", "lineHeight": "31.0px"}, "direction": "up", "delay": 0, "text": "ngày cưới của chúng mình"},
+  {"id": "text9", "kind": "text", "style": {"top": "685px", "left": "183px", "width": "200px", "height": "28px", "fontFamily": "Arial, sans-serif", "fontSize": "24px", "fontWeight": "400", "color": "rgb(247, 244, 244)", "textAlign": "left", "lineHeight": "28.0px"}, "direction": "up", "delay": 0, "text": "Love on the roof"},
+  {"id": "box134", "kind": "box", "style": {"top": "734px", "left": "185px", "width": "72px", "height": "32px", "background": "rgb(250, 208, 148)"}, "direction": "up", "delay": 0},
+  {"id": "box135", "kind": "box", "style": {"top": "734px", "left": "268px", "width": "176px", "height": "32px", "background": "rgb(103, 95, 89)"}, "direction": "up", "delay": 0},
+  {"id": "text10", "kind": "text", "style": {"top": "737px", "left": "391px", "width": "53px", "height": "23px", "fontFamily": "Quicksand", "fontSize": "18px", "fontWeight": "500", "color": "rgb(227, 209, 171)", "textAlign": "left", "lineHeight": "23.0px"}, "direction": "up", "delay": 0, "text": "Top>"},
+  {"id": "text11", "kind": "text", "style": {"top": "739px", "left": "179px", "width": "83px", "height": "23px", "fontFamily": "Arial, sans-serif", "fontSize": "20px", "fontWeight": "500", "color": "rgb(145, 97, 31)", "textAlign": "center", "lineHeight": "23.0px"}, "direction": "up", "delay": 0, "text": "NO.1"},
+  {"id": "text12", "kind": "text", "style": {"top": "740px", "left": "275px", "width": "171px", "height": "20px", "fontFamily": "Quicksand", "fontSize": "16px", "fontWeight": "500", "color": "rgb(227, 209, 171)", "textAlign": "left", "lineHeight": "20.0px"}, "direction": "up", "delay": 0, "text": "Phim MY LOVE <"},
+  {"id": "text13", "kind": "text", "style": {"top": "787px", "left": "183px", "width": "304px", "height": "26px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "textAlign": "left", "letterSpacing": "1px", "lineHeight": "26.0px"}, "direction": "up", "delay": 0, "text": "Việt Nam/Lãng Mạn/20/08/2025"},
+  {"id": "text14", "kind": "text", "style": {"top": "819px", "left": "185px", "width": "304px", "height": "26px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "textAlign": "left", "letterSpacing": "1px", "lineHeight": "26.0px"}, "direction": "up", "delay": 0, "text": "Thời lượng : 135p"},
+  {"id": "box132", "kind": "box", "style": {"top": "853px", "left": "185px", "width": "136px", "height": "36px", "background": "rgb(247, 244, 244)", "borderRadius": "4px"}, "direction": "up", "delay": 0},
+  {"id": "box133", "kind": "box", "style": {"top": "853px", "left": "342px", "width": "136px", "height": "36px", "background": "rgb(247, 244, 244)", "borderRadius": "4px"}, "direction": "up", "delay": 0},
+  {"id": "text15", "kind": "text", "style": {"top": "860px", "left": "374px", "width": "86px", "height": "24px", "fontFamily": "Signora", "fontSize": "20px", "fontWeight": "700", "color": "rgb(0, 0, 0)", "textAlign": "left", "letterSpacing": "1px", "lineHeight": "24.0px"}, "direction": "up", "delay": 0, "text": "Đã Xem"},
+  {"id": "text16", "kind": "text", "style": {"top": "862px", "left": "235px", "width": "86px", "height": "24px", "fontFamily": "Signora", "fontSize": "20px", "fontWeight": "700", "color": "rgb(0, 0, 0)", "textAlign": "left", "letterSpacing": "1px", "lineHeight": "24.0px"}, "direction": "up", "delay": 0, "text": "Muốn xem"},
+  {"id": "box127", "kind": "box", "style": {"top": "938px", "left": "24px", "width": "452px", "height": "146px", "background": "rgb(59, 40, 34)", "borderRadius": "8px"}, "direction": "up", "delay": 0},
+  {"id": "text17", "kind": "text", "style": {"top": "948px", "left": "34px", "width": "136px", "height": "23px", "fontFamily": "Signora", "fontSize": "19px", "fontWeight": "500", "color": "rgb(214, 170, 144)", "textAlign": "left", "lineHeight": "23.0px"}, "direction": "up", "delay": 0, "text": "xếp hạng My Love"},
+  {"id": "photo110", "kind": "photo", "style": {"top": "971px", "left": "164px", "width": "277px", "height": "74px"}, "direction": "up", "delay": 0.2, "src": `${R}/t22-48028ee0.png`, "size": "cover", "pos": "50% 50%"},
+  {"id": "text18", "kind": "text", "style": {"top": "984px", "left": "59px", "width": "83px", "height": "31px", "fontFamily": "Arial, sans-serif", "fontSize": "27px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "textAlign": "center", "lineHeight": "31.0px"}, "direction": "up", "delay": 0, "text": "9.9"},
+  {"id": "photo111", "kind": "photo", "style": {"top": "1016px", "left": "52px", "width": "92px", "height": "22px"}, "direction": "up", "delay": 0.2, "src": `${R}/t22-d9a33dfe.png`, "size": "cover", "pos": "50% 50%"},
+  {"id": "text19", "kind": "text", "style": {"top": "1042px", "left": "353px", "width": "115px", "height": "18px", "fontFamily": "Signora", "fontSize": "15px", "fontWeight": "700", "color": "rgb(194, 166, 154)", "textAlign": "center", "letterSpacing": "1px", "lineHeight": "18.0px"}, "direction": "up", "delay": 0, "text": "131425 đánh giá"},
+  {"id": "text20", "kind": "text", "style": {"top": "1056px", "left": "33px", "width": "115px", "height": "18px", "fontFamily": "Signora", "fontSize": "15px", "fontWeight": "700", "color": "rgb(194, 166, 154)", "textAlign": "left", "letterSpacing": "1px", "lineHeight": "18.0px"}, "direction": "up", "delay": 0, "text": "1.314M đã xem"},
+  {"id": "text21", "kind": "text", "style": {"top": "1056px", "left": "122px", "width": "115px", "height": "18px", "fontFamily": "Signora", "fontSize": "15px", "fontWeight": "700", "color": "rgb(194, 166, 154)", "textAlign": "left", "letterSpacing": "1px", "lineHeight": "18.0px"}, "direction": "up", "delay": 0, "text": "35.570N Muốn xem"},
+  {"id": "box128", "kind": "box", "style": {"top": "1124px", "left": "24px", "width": "452px", "height": "114px", "background": "rgb(119, 115, 115)", "borderRadius": "10px"}, "direction": "up", "delay": 0},
+  {"id": "text22", "kind": "text", "style": {"top": "1143px", "left": "54px", "width": "215px", "height": "31px", "fontFamily": "Quicksand", "fontSize": "25px", "fontWeight": "700", "color": "rgb(59, 40, 34)", "textAlign": "left", "letterSpacing": "1px", "lineHeight": "31.0px"}, "direction": "up", "delay": 0, "text": "Lễ đường"},
+  {"id": "text23", "kind": "text", "style": {"top": "1186px", "left": "54px", "width": "135px", "height": "18px", "fontFamily": "Signora", "fontSize": "19px", "fontWeight": "700", "color": "rgb(205, 205, 205)", "textAlign": "left", "letterSpacing": "1px", "lineHeight": "18.0px"}, "direction": "up", "delay": 0, "text": "Đang phát bài hát...."},
+  {"id": "box129", "kind": "box", "style": {"top": "1290px", "left": "215px", "width": "18px", "height": "18px", "background": "rgb(31, 16, 11)"}, "direction": "up", "delay": 0},
+  {"id": "box130", "kind": "box", "style": {"top": "1290px", "left": "251px", "width": "18px", "height": "18px", "background": "rgb(122, 81, 56)"}, "direction": "up", "delay": 0},
+  {"id": "box131", "kind": "box", "style": {"top": "1290px", "left": "292px", "width": "18px", "height": "18px", "background": "rgb(113, 95, 82)"}, "direction": "up", "delay": 0},
+  {"id": "text24", "kind": "text", "style": {"top": "1972px", "left": "62px", "width": "390px", "height": "31px", "fontFamily": "Quicksand", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "30.6px", "textAlign": "center", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "\"I love three things in this world."},
+  {"id": "text25", "kind": "text", "style": {"top": "2003px", "left": "62px", "width": "390px", "height": "30px", "fontFamily": "Quicksand", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "30.6px", "textAlign": "center", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Sun,moon and you."},
+  {"id": "text26", "kind": "text", "style": {"top": "2033px", "left": "62px", "width": "390px", "height": "31px", "fontFamily": "Quicksand", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "30.6px", "textAlign": "center", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Sun for morning,moon for night,"},
+  {"id": "text27", "kind": "text", "style": {"top": "2064px", "left": "62px", "width": "390px", "height": "31px", "fontFamily": "Quicksand", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "30.6px", "textAlign": "center", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "and you forever\""},
+  {"id": "text28", "kind": "text", "style": {"top": "2119px", "left": "62px", "width": "390px", "height": "31px", "fontFamily": "Quicksand", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "30.6px", "textAlign": "center", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Giữa trần ba cõi mộng trôi,"},
+  {"id": "text29", "kind": "text", "style": {"top": "2150px", "left": "62px", "width": "390px", "height": "31px", "fontFamily": "Quicksand", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "30.6px", "textAlign": "center", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Tôi thương mặt nhật, mặt trời và em."},
+  {"id": "text30", "kind": "text", "style": {"top": "2180px", "left": "62px", "width": "390px", "height": "31px", "fontFamily": "Quicksand", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "30.6px", "textAlign": "center", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Trời là sáng sớm êm đềm,"},
+  {"id": "text31", "kind": "text", "style": {"top": "2211px", "left": "62px", "width": "390px", "height": "31px", "fontFamily": "Quicksand", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "30.6px", "textAlign": "center", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Em là tất cả sớm đêm trong đời."},
+  {"id": "text32", "kind": "text", "style": {"top": "2244px", "left": "78px", "width": "350px", "height": "34px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "33.66px", "textAlign": "center", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "----------"},
+  {"id": "text33", "kind": "text", "style": {"top": "2339px", "left": "86px", "width": "112px", "height": "28px", "fontFamily": "Signora", "fontSize": "24px", "fontWeight": "700", "color": "rgb(147, 113, 86)", "textAlign": "center", "letterSpacing": "1px", "lineHeight": "28.0px"}, "direction": "up", "delay": 0, "text": "Chú rể"},
+  {"id": "text34", "kind": "text", "style": {"top": "2385px", "left": "153px", "width": "143px", "height": "28px", "fontFamily": "Signora", "fontSize": "24px", "fontWeight": "700", "color": "rgb(147, 113, 86)", "textAlign": "center", "letterSpacing": "1px", "lineHeight": "28.0px"}, "direction": "up", "delay": 0, "text": "Mạnh Hải"},
+  {"id": "photo112", "kind": "photo", "style": {"top": "2546px", "left": "34px", "width": "185px", "height": "185px"}, "direction": "up", "delay": 0.2, "src": `${R}/t22-b5f930d5.jpg`, "size": "cover", "pos": "50% 50%"},
+  {"id": "text35", "kind": "text", "style": {"top": "2623px", "left": "221px", "width": "112px", "height": "28px", "fontFamily": "Signora", "fontSize": "24px", "fontWeight": "700", "color": "rgb(147, 113, 86)", "textAlign": "center", "letterSpacing": "1px", "lineHeight": "28.0px"}, "direction": "up", "delay": 0, "text": "Cô dâu"},
+  {"id": "text36", "kind": "text", "style": {"top": "2664px", "left": "289px", "width": "143px", "height": "28px", "fontFamily": "Signora", "fontSize": "24px", "fontWeight": "700", "color": "rgb(147, 113, 86)", "textAlign": "center", "letterSpacing": "1px", "lineHeight": "28.0px"}, "direction": "up", "delay": 0, "text": "Yến Trang"},
+  {"id": "text37", "kind": "text", "style": {"top": "2798px", "left": "81px", "width": "350px", "height": "31px", "fontFamily": "Quicksand", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "30.6px", "textAlign": "center", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "I′m so happy i get to be"},
+  {"id": "text38", "kind": "text", "style": {"top": "2829px", "left": "81px", "width": "350px", "height": "31px", "fontFamily": "Quicksand", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "30.6px", "textAlign": "center", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "next to you and look at the world"},
+  {"id": "text39", "kind": "text", "style": {"top": "2859px", "left": "81px", "width": "350px", "height": "31px", "fontFamily": "Quicksand", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "30.6px", "textAlign": "center", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "through your eyes"},
+  {"id": "text40", "kind": "text", "style": {"top": "2920px", "left": "46px", "width": "287px", "height": "21px", "fontFamily": "Quicksand", "fontSize": "17px", "fontWeight": "700", "color": "rgb(206, 189, 181)", "lineHeight": "21.0px", "textAlign": "center", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Tôi thấy mình thật may mắn khi"},
+  {"id": "text41", "kind": "text", "style": {"top": "2920px", "left": "333px", "width": "124px", "height": "21px", "fontFamily": "Quicksand", "fontSize": "17px", "fontWeight": "700", "color": "rgb(206, 189, 181)", "lineHeight": "21.0px", "textAlign": "center", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "được bên em,"},
+  {"id": "text42", "kind": "text", "style": {"top": "2946px", "left": "119px", "width": "265px", "height": "21px", "fontFamily": "Quicksand", "fontSize": "17px", "fontWeight": "700", "color": "rgb(206, 189, 181)", "lineHeight": "21.0px", "textAlign": "center", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "nhìn thế giới bằng đôi mắt em"},
+  {"id": "photo113", "kind": "photo", "style": {"top": "3306px", "left": "151px", "width": "200px", "height": "65px"}, "direction": "up", "delay": 0.2, "src": `${R}/t22-dc2ee894.png`, "size": "cover", "pos": "50% 50%"},
+  {"id": "text43", "kind": "text", "style": {"top": "3431px", "left": "179px", "width": "142px", "height": "33px", "fontFamily": "Quicksand", "fontSize": "26px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "textAlign": "left", "lineHeight": "33.0px"}, "direction": "up", "delay": 0, "text": "Chapter 1"},
+  {"id": "text44", "kind": "text", "style": {"top": "3461px", "left": "297px", "width": "76px", "height": "28px", "fontFamily": "Signora", "fontSize": "23px", "fontWeight": "700", "color": "rgb(147, 113, 86)", "textAlign": "left", "lineHeight": "28.0px"}, "direction": "up", "delay": 0, "text": "Gặp gỡ"},
+  {"id": "photo114", "kind": "photo", "style": {"top": "3559px", "left": "229px", "width": "240px", "height": "362px"}, "direction": "up", "delay": 0.2, "src": `${R}/t22-a1c733eb.png`, "size": "cover", "pos": "50% 50%"},
+  {"id": "photo115", "kind": "photo", "style": {"top": "3602px", "left": "34px", "width": "167px", "height": "254px"}, "direction": "up", "delay": 0.2, "src": `${R}/t22-48af7451.png`, "size": "cover", "pos": "50% 50%"},
+  {"id": "box147", "kind": "box", "style": {"top": "3872px", "left": "86px", "width": "143px", "height": "2px", "background": "rgb(149, 120, 112)"}, "direction": "up", "delay": 0},
+  {"id": "text45", "kind": "text", "style": {"top": "3882px", "left": "21px", "width": "157px", "height": "49px", "fontFamily": "Quicksand", "fontSize": "16px", "fontWeight": "500", "color": "rgb(149, 120, 112)", "lineHeight": "24.48px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Love is the beauty of the soul"},
+  {"id": "text46", "kind": "text", "style": {"top": "3968px", "left": "32px", "width": "450px", "height": "34px", "fontFamily": "Signora", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "34.4px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "2022/05/21"},
+  {"id": "text47", "kind": "text", "style": {"top": "4002px", "left": "32px", "width": "450px", "height": "103px", "fontFamily": "Signora", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "34.4px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Gặp được em là khởi đầu cho mọi điều tốt đẹp trong đời tôi. Chỉ mong điều ước nhỏ nhoi này đủ may mắn để có em mãi bên tôi."},
+  {"id": "text48", "kind": "text", "style": {"top": "4105px", "left": "32px", "width": "450px", "height": "69px", "fontFamily": "Signora", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "34.4px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Em là người tôi yêu không chút do dự, không chút giả dối – bằng tất cả chân thành."},
+  {"id": "text49", "kind": "text", "style": {"top": "4637px", "left": "109px", "width": "142px", "height": "33px", "fontFamily": "Quicksand", "fontSize": "26px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "textAlign": "left", "lineHeight": "33.0px"}, "direction": "up", "delay": 0, "text": "Chapter 2"},
+  {"id": "text50", "kind": "text", "style": {"top": "4665px", "left": "227px", "width": "76px", "height": "28px", "fontFamily": "Signora", "fontSize": "23px", "fontWeight": "700", "color": "rgb(147, 113, 86)", "textAlign": "left", "lineHeight": "28.0px"}, "direction": "up", "delay": 0, "text": "Tình yêu"},
+  {"id": "box148", "kind": "box", "style": {"top": "5079px", "left": "241px", "width": "170px", "height": "2px", "background": "rgb(149, 120, 112)"}, "direction": "up", "delay": 0},
+  {"id": "text51", "kind": "text", "style": {"top": "5102px", "left": "321px", "width": "157px", "height": "49px", "fontFamily": "Quicksand", "fontSize": "16px", "fontWeight": "500", "color": "rgb(149, 120, 112)", "lineHeight": "24.48px", "textAlign": "right", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Love is the beauty of the soul"},
+  {"id": "text52", "kind": "text", "style": {"top": "5213px", "left": "34px", "width": "89px", "height": "19px", "fontFamily": "Signora", "fontSize": "20px", "fontWeight": "700", "color": "rgb(206, 189, 181)", "lineHeight": "19.0px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "2022 – 2025"},
+  {"id": "text53", "kind": "text", "style": {"top": "5240.4px", "left": "34px", "width": "439px", "height": "171.6px", "fontFamily": "Signora", "fontSize": "20px", "fontWeight": "700", "color": "rgb(206, 189, 181)", "lineHeight": "34.4px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Chúng mình đã nắm tay nhau đi qua bao cảnh sắc khác nhau, Gặp gỡ biết bao người, lắng nghe những câu chuyện xưa cũ. Lãng mạn hay không, điều đó chẳng còn quan trọng — Điều quan trọng là những ký ức vui vẻ còn đọng lại, Và khi ngoảnh lại… em vẫn luôn ở đó bên tôi"},
+  {"id": "photo116", "kind": "photo", "style": {"top": "5440px", "left": "36px", "width": "428px", "height": "295px"}, "direction": "up", "delay": 0.2, "src": `${R}/t22-5e7c2053.jpg`, "size": "cover", "pos": "50% 50%"},
+  {"id": "text54", "kind": "text", "style": {"top": "5855px", "left": "177px", "width": "142px", "height": "33px", "fontFamily": "Quicksand", "fontSize": "26px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "textAlign": "left", "lineHeight": "33.0px"}, "direction": "up", "delay": 0, "text": "Chapter 3"},
+  {"id": "text55", "kind": "text", "style": {"top": "5876px", "left": "295px", "width": "76px", "height": "28px", "fontFamily": "Signora", "fontSize": "23px", "fontWeight": "700", "color": "rgb(147, 113, 86)", "textAlign": "left", "lineHeight": "28.0px"}, "direction": "up", "delay": 0, "text": "Bên nhau"},
+  {"id": "photo117", "kind": "photo", "style": {"top": "5948px", "left": "219px", "width": "253px", "height": "380px"}, "direction": "up", "delay": 0.2, "src": `${R}/t22-c1a410b4.jpg`, "size": "cover", "pos": "50% 50%"},
+  {"id": "photo118", "kind": "photo", "style": {"top": "5982px", "left": "26px", "width": "167px", "height": "245px"}, "direction": "up", "delay": 0.2, "src": `${R}/t22-6564fe2b.jpg`, "size": "cover", "pos": "50% 50%"},
+  {"id": "text56", "kind": "text", "style": {"top": "6278px", "left": "20px", "width": "157px", "height": "49px", "fontFamily": "Quicksand", "fontSize": "16px", "fontWeight": "500", "color": "rgb(149, 120, 112)", "lineHeight": "24.48px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Love is the beauty of the soul"},
+  {"id": "text57", "kind": "text", "style": {"top": "6367px", "left": "17px", "width": "336px", "height": "29px", "fontFamily": "Signora", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "29.2px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "20/08/2025"},
+  {"id": "text58", "kind": "text", "style": {"top": "6396px", "left": "17px", "width": "336px", "height": "29px", "fontFamily": "Signora", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "29.0px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "chúng mình đã có câu trả lời cho tương lai"},
+  {"id": "text59", "kind": "text", "style": {"top": "6425px", "left": "17px", "width": "336px", "height": "29px", "fontFamily": "Signora", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "29.0px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Bên nhau – qua hoàng hôn và bốn mùa.’"},
+  {"id": "photo119", "kind": "photo", "style": {"top": "6499px", "left": "34px", "width": "431px", "height": "286px"}, "direction": "up", "delay": 0.2, "src": `${R}/t22-3a74b1e7.jpg`, "size": "cover", "pos": "50% 50%"},
+  {"id": "photo120", "kind": "photo", "style": {"top": "6836px", "left": "135px", "width": "244px", "height": "80px"}, "direction": "up", "delay": 0.2, "src": `${R}/t22-dc2ee894.png`, "size": "cover", "pos": "50% 50%"},
+  {"id": "text60", "kind": "text", "style": {"top": "6957px", "left": "4px", "width": "480px", "height": "30px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "30.36px", "textAlign": "center", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Ngày mình quen nhau:"},
+  {"id": "text61", "kind": "text", "style": {"top": "6987px", "left": "4px", "width": "480px", "height": "30px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "30.0px", "textAlign": "center", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Cảm ơn định mệnh đã cho chúng mình gặp gỡ"},
+  {"id": "text62", "kind": "text", "style": {"top": "7036px", "left": "7px", "width": "480px", "height": "30px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "30.36px", "textAlign": "center", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Khi yêu nhau:"},
+  {"id": "text63", "kind": "text", "style": {"top": "7066px", "left": "7px", "width": "480px", "height": "30px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "30.0px", "textAlign": "center", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Em là báu vật giữa nhân gian,"},
+  {"id": "text64", "kind": "text", "style": {"top": "7097px", "left": "7px", "width": "480px", "height": "30px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "30.0px", "textAlign": "center", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Vừa thú vị, vừa đầy hy vọng."},
+  {"id": "text65", "kind": "text", "style": {"top": "7140px", "left": "9px", "width": "480px", "height": "30px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "30.36px", "textAlign": "center", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Khi cưới nhau:"},
+  {"id": "text66", "kind": "text", "style": {"top": "7170px", "left": "9px", "width": "480px", "height": "30px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "30.0px", "textAlign": "center", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Ba kiếp mới được may mắn này,"},
+  {"id": "text67", "kind": "text", "style": {"top": "7200px", "left": "9px", "width": "480px", "height": "30px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "30.0px", "textAlign": "center", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "cả quãng đời còn lại – chỉ dành cho em."},
+  {"id": "box137", "kind": "box", "style": {"top": "7289px", "left": "47px", "width": "405px", "height": "256px", "background": "rgb(230, 188, 163)"}, "direction": "up", "delay": 0},
+  {"id": "box126", "kind": "box", "style": {"top": "7297px", "left": "54px", "width": "390px", "height": "241px", "background": "rgb(190, 146, 109)"}, "direction": "up", "delay": 0},
+  {"id": "photo121", "kind": "photo", "style": {"top": "7566px", "left": "47px", "width": "453px", "height": "864px"}, "direction": "up", "delay": 0.2, "src": `${R}/t22-ac0ff1e2.png`, "size": "cover", "pos": "50% 50%"},
+  {"id": "box149", "kind": "box", "style": {"top": "7707px", "left": "52px", "width": "9px", "height": "9px", "background": "rgb(113, 95, 82)"}, "direction": "up", "delay": 0},
+  {"id": "box150", "kind": "box", "style": {"top": "7707px", "left": "71px", "width": "10px", "height": "10px", "background": "rgb(122, 81, 56)"}, "direction": "up", "delay": 0},
+  {"id": "box151", "kind": "box", "style": {"top": "7707px", "left": "89px", "width": "10px", "height": "10px", "background": "rgb(31, 16, 11)"}, "direction": "up", "delay": 0},
+  {"id": "text68", "kind": "text", "style": {"top": "7745px", "left": "58px", "width": "49px", "height": "56px", "fontFamily": "The Hamstter", "fontSize": "38px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "textAlign": "left"}, "direction": "up", "delay": 0, "text": "/"},
+  {"id": "text69", "kind": "text", "style": {"top": "7748px", "left": "37px", "width": "41px", "height": "26px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "textAlign": "left", "lineHeight": "26.0px"}, "direction": "up", "delay": 0, "text": "To"},
+  {"id": "text70", "kind": "text", "style": {"top": "7766px", "left": "77px", "width": "349px", "height": "26px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "textAlign": "left", "letterSpacing": "1px", "lineHeight": "26.0px"}, "direction": "up", "delay": 0, "text": "Những người thân yêu nhất của chúng mình"},
+  {"id": "text71", "kind": "text", "style": {"top": "7836px", "left": "37px", "width": "349px", "height": "34px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "lineHeight": "33.66px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Trên hành trình yêu thương,"},
+  {"id": "text72", "kind": "text", "style": {"top": "7870px", "left": "37px", "width": "349px", "height": "67px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "lineHeight": "33.66px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "chúng mình luôn mang trong tim lòng biết ơn sâu sắc."},
+  {"id": "text73", "kind": "text", "style": {"top": "7937px", "left": "37px", "width": "349px", "height": "34px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "lineHeight": "33.66px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Vì những quan tâm, chăm sóc,"},
+  {"id": "text74", "kind": "text", "style": {"top": "7971px", "left": "37px", "width": "349px", "height": "34px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "lineHeight": "33.66px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "vì sự chứng kiến và đồng hành"},
+  {"id": "text75", "kind": "text", "style": {"top": "8005px", "left": "37px", "width": "349px", "height": "67px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "lineHeight": "33.66px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "tất cả đều là ký ức quý giá, được chúng mình trân trọng ghi nhớ."},
+  {"id": "text76", "kind": "text", "style": {"top": "8078px", "left": "37px", "width": "347px", "height": "55px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "lineHeight": "33.66px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Trong ngày trọng đại và ý nghĩa nhất cuộc đời,"},
+  {"id": "text77", "kind": "text", "style": {"top": "8145px", "left": "37px", "width": "201px", "height": "21px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "lineHeight": "21.0px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "cùng với cha mẹ hai bên,"},
+  {"id": "text78", "kind": "text", "style": {"top": "8179px", "left": "37px", "width": "257px", "height": "21px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "lineHeight": "21.0px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "chúng mình trân trọng kính mời"},
+  {"id": "text79", "kind": "text", "style": {"top": "8212px", "left": "37px", "width": "129px", "height": "21px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "lineHeight": "21.0px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Bạn và gia đình"},
+  {"id": "text80", "kind": "text", "style": {"top": "8246px", "left": "37px", "width": "344px", "height": "55px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "lineHeight": "33.66px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "đến chung vui trong lễ cưới của chúng mình, để cùng chia sẻ khoảnh khắc hạnh phúc này."},
+  {"id": "text81", "kind": "text", "style": {"top": "8339px", "left": "235px", "width": "49px", "height": "56px", "fontFamily": "The Hamstter", "fontSize": "38px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "textAlign": "left"}, "direction": "up", "delay": 0, "text": "/"},
+  {"id": "text82", "kind": "text", "style": {"top": "8341px", "left": "196px", "width": "41px", "height": "26px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "textAlign": "left", "lineHeight": "26.0px"}, "direction": "up", "delay": 0, "text": "From"},
+  {"id": "text83", "kind": "text", "style": {"top": "8359px", "left": "258px", "width": "191px", "height": "26px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "textAlign": "center", "letterSpacing": "1px", "lineHeight": "26.0px"}, "direction": "up", "delay": 0, "text": "Mạnh Hài & Yến Trang"},
+  {"id": "photo122", "kind": "photo", "style": {"top": "8480px", "left": "33px", "width": "435px", "height": "281px"}, "direction": "up", "delay": 0.2, "src": `${R}/t22-9b756b8d.jpg`, "size": "cover", "pos": "50% 50%"},
+  {"id": "box136", "kind": "box", "style": {"top": "8761px", "left": "32px", "width": "435px", "height": "51px", "background": "rgb(230, 188, 163)"}, "direction": "up", "delay": 0},
+  {"id": "text84", "kind": "text", "style": {"top": "8774px", "left": "122px", "width": "309px", "height": "29px", "fontFamily": "Quicksand", "fontSize": "19px", "fontWeight": "500", "color": "rgb(71, 53, 41)", "textAlign": "center"}, "direction": "up", "delay": 0, "text": "T&H｜SAVE THE DATE"},
+  {"id": "box152", "kind": "box", "style": {"top": "8869px", "left": "237px", "width": "11px", "height": "11px", "background": "rgb(230, 188, 163)"}, "direction": "up", "delay": 0},
+  {"id": "box153", "kind": "box", "style": {"top": "8869px", "left": "261px", "width": "12px", "height": "12px", "background": "rgb(113, 95, 82)"}, "direction": "up", "delay": 0},
+  {"id": "box154", "kind": "box", "style": {"top": "8869px", "left": "283px", "width": "12px", "height": "12px", "background": "rgb(122, 81, 56)"}, "direction": "up", "delay": 0},
+  {"id": "box141", "kind": "box", "style": {"top": "8931px", "left": "193px", "width": "19px", "height": "31px", "borderTop": "2px solid rgb(147, 113, 86)", "borderLeft": "2px solid rgb(147, 113, 86)", "boxSizing": "border-box"}, "direction": "up", "delay": 0},
+  {"id": "box138", "kind": "box", "style": {"top": "8940px", "left": "202px", "width": "113px", "height": "33px", "background": "rgb(122, 81, 56)"}, "direction": "up", "delay": 0},
+  {"id": "text85", "kind": "text", "style": {"top": "8944px", "left": "194px", "width": "132px", "height": "26px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(230, 188, 163)", "textAlign": "center", "lineHeight": "26.0px"}, "direction": "up", "delay": 0, "text": "Thời gian"},
+  {"id": "box142", "kind": "box", "style": {"top": "8961px", "left": "304px", "width": "19px", "height": "19px", "borderBottom": "2px solid rgb(147, 113, 86)", "borderRight": "2px solid rgb(147, 113, 86)", "boxSizing": "border-box"}, "direction": "up", "delay": 0},
+  {"id": "text86", "kind": "text", "style": {"top": "9016px", "left": "115px", "width": "282px", "height": "26px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "textAlign": "center", "lineHeight": "26.0px"}, "direction": "up", "delay": 0, "text": "Thứ 4 ngày 20 tháng 08 năm 2025"},
+  {"id": "text87", "kind": "text", "style": {"top": "9048px", "left": "115px", "width": "282px", "height": "26px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "textAlign": "center", "lineHeight": "26.0px"}, "direction": "up", "delay": 0, "text": "Ngày 16 tháng 07 âm lịch 12:00 PM"},
+  {"id": "box143", "kind": "box", "style": {"top": "9144px", "left": "190px", "width": "19px", "height": "31px", "borderTop": "2px solid rgb(147, 113, 86)", "borderLeft": "2px solid rgb(147, 113, 86)", "boxSizing": "border-box"}, "direction": "up", "delay": 0},
+  {"id": "box139", "kind": "box", "style": {"top": "9152px", "left": "201px", "width": "113px", "height": "33px", "background": "rgb(122, 81, 56)"}, "direction": "up", "delay": 0},
+  {"id": "text88", "kind": "text", "style": {"top": "9155px", "left": "193px", "width": "132px", "height": "26px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(230, 188, 163)", "textAlign": "center", "lineHeight": "26.0px"}, "direction": "up", "delay": 0, "text": "Địa điểm"},
+  {"id": "box144", "kind": "box", "style": {"top": "9173px", "left": "304px", "width": "19px", "height": "19px", "borderBottom": "2px solid rgb(147, 113, 86)", "borderRight": "2px solid rgb(147, 113, 86)", "boxSizing": "border-box"}, "direction": "up", "delay": 0},
+  {"id": "text89", "kind": "text", "style": {"top": "9269px", "left": "78px", "width": "345px", "height": "26px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(247, 244, 244)", "textAlign": "center", "lineHeight": "26.0px"}, "direction": "up", "delay": 0, "text": "52 Miếu Đầm, Mễ Trì, Nam Từ Liêm, Hà Nội"},
+  {"id": "map165", "kind": "map", "style": {"top": "9280px", "left": "51px", "width": "401px", "height": "278px"}, "direction": "up", "delay": 0, "src": "https://maps.google.com/maps?q=52%20Mi%E1%BB%85u%20%C4%90%C3%A2m%2C%20M%E1%BB%85%20Tr%C3%AC%2C%20Nam%20T%E1%BB%AB%20Li%C3%AAm%2C%20H%C3%A0%20N%E1%BB%99i&t=&z=14&ie=UTF8&iwloc=&output=embed"},
+  {"id": "rsvp164", "kind": "rsvp", "style": {"top": "9603px", "left": "71px", "width": "355px", "height": "350px"}, "direction": "up", "delay": 0.2},
+  {"id": "box145", "kind": "box", "style": {"top": "9998px", "left": "191px", "width": "19px", "height": "31px", "borderTop": "2px solid rgb(147, 113, 86)", "borderLeft": "2px solid rgb(147, 113, 86)", "boxSizing": "border-box"}, "direction": "up", "delay": 0},
+  {"id": "box140", "kind": "box", "style": {"top": "10008px", "left": "202px", "width": "113px", "height": "33px", "background": "rgb(122, 81, 56)"}, "direction": "up", "delay": 0},
+  {"id": "text90", "kind": "text", "style": {"top": "10013px", "left": "191px", "width": "132px", "height": "26px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(230, 188, 163)", "textAlign": "center", "lineHeight": "26.0px"}, "direction": "up", "delay": 0, "text": "Tips"},
+  {"id": "box146", "kind": "box", "style": {"top": "10031px", "left": "306px", "width": "19px", "height": "19px", "borderBottom": "2px solid rgb(147, 113, 86)", "borderRight": "2px solid rgb(147, 113, 86)", "boxSizing": "border-box"}, "direction": "up", "delay": 0},
+  {"id": "photo123", "kind": "photo", "style": {"top": "10100px", "left": "41px", "width": "422px", "height": "269px"}, "direction": "up", "delay": 0.2, "src": `${R}/t22-9096d8a9.jpg`, "size": "cover", "pos": "50% 50%"},
+  {"id": "box155", "kind": "box", "style": {"top": "10402px", "left": "24px", "width": "13px", "height": "13px", "background": "rgb(113, 95, 82)"}, "direction": "up", "delay": 0},
+  {"id": "text91", "kind": "text", "style": {"top": "10413px", "left": "45px", "width": "175px", "height": "26px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(149, 120, 112)", "textAlign": "left", "letterSpacing": "1px", "lineHeight": "26.0px"}, "direction": "up", "delay": 0, "text": "Thông tin chỗ ở"},
+  {"id": "box156", "kind": "box", "style": {"top": "10419px", "left": "24px", "width": "13px", "height": "13px", "background": "rgb(122, 81, 56)"}, "direction": "up", "delay": 0},
+  {"id": "box157", "kind": "box", "style": {"top": "10436px", "left": "24px", "width": "13px", "height": "13px", "background": "rgb(31, 16, 11)"}, "direction": "up", "delay": 0},
+  {"id": "text92", "kind": "text", "style": {"top": "10469px", "left": "26px", "width": "442px", "height": "28px", "fontFamily": "Signora", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "28.6px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Các bạn ở xa ơi"},
+  {"id": "text93", "kind": "text", "style": {"top": "10497px", "left": "26px", "width": "442px", "height": "29px", "fontFamily": "Signora", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "28.6px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "xin vui lòng báo trước cho chúng mình,"},
+  {"id": "text94", "kind": "text", "style": {"top": "10526px", "left": "26px", "width": "442px", "height": "29px", "fontFamily": "Signora", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "28.6px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "để tụi mình có thể sắp xếp chỗ ở thật chu đáo cho bạn nhé!"},
+  {"id": "box158", "kind": "box", "style": {"top": "10570px", "left": "26px", "width": "13px", "height": "13px", "background": "rgb(113, 95, 82)"}, "direction": "up", "delay": 0},
+  {"id": "text95", "kind": "text", "style": {"top": "10584px", "left": "47px", "width": "200px", "height": "26px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(149, 120, 112)", "textAlign": "left", "letterSpacing": "1px", "lineHeight": "26.0px"}, "direction": "up", "delay": 0, "text": "Thông tin di chuyển"},
+  {"id": "box159", "kind": "box", "style": {"top": "10588px", "left": "26px", "width": "13px", "height": "13px", "background": "rgb(122, 81, 56)"}, "direction": "up", "delay": 0},
+  {"id": "box160", "kind": "box", "style": {"top": "10605px", "left": "26px", "width": "13px", "height": "13px", "background": "rgb(31, 16, 11)"}, "direction": "up", "delay": 0},
+  {"id": "text96", "kind": "text", "style": {"top": "10638px", "left": "21px", "width": "465px", "height": "57px", "fontFamily": "Signora", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "28.6px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Tìm kiếm địa chỉ \" 52 Miếu đầm, Mễ trì , Nam Từ Liêm . Hà Nội\" trên ứng dụng Gaode Map,"},
+  {"id": "text97", "kind": "text", "style": {"top": "10695px", "left": "21px", "width": "465px", "height": "29px", "fontFamily": "Signora", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "28.6px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "hoặc bấm vào chỉ dẫn trên bản đồ, theo hướng dẫn để đến nơi."},
+  {"id": "text98", "kind": "text", "style": {"top": "10723px", "left": "21px", "width": "465px", "height": "29px", "fontFamily": "Signora", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "28.6px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Xe tự lái có thể đỗ tại bãi đỗ xe của khách sạn"},
+  {"id": "box161", "kind": "box", "style": {"top": "10770px", "left": "24px", "width": "13px", "height": "13px", "background": "rgb(113, 95, 82)"}, "direction": "up", "delay": 0},
+  {"id": "text99", "kind": "text", "style": {"top": "10783px", "left": "49px", "width": "142px", "height": "26px", "fontFamily": "Signora", "fontSize": "22px", "fontWeight": "500", "color": "rgb(149, 120, 112)", "textAlign": "left", "letterSpacing": "1px", "lineHeight": "26.0px"}, "direction": "up", "delay": 0, "text": "Lưu ý đặc biệt"},
+  {"id": "box162", "kind": "box", "style": {"top": "10788px", "left": "24px", "width": "13px", "height": "13px", "background": "rgb(122, 81, 56)"}, "direction": "up", "delay": 0},
+  {"id": "box163", "kind": "box", "style": {"top": "10806px", "left": "24px", "width": "13px", "height": "13px", "background": "rgb(31, 16, 11)"}, "direction": "up", "delay": 0},
+  {"id": "text100", "kind": "text", "style": {"top": "10855px", "left": "20px", "width": "465px", "height": "28px", "fontFamily": "Signora", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "28.6px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Do cô dâu chú rể chưa thành công với kế hoạch giảm cân,"},
+  {"id": "text101", "kind": "text", "style": {"top": "10883px", "left": "20px", "width": "465px", "height": "29px", "fontFamily": "Signora", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "28.6px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "nếu ai chụp ảnh cùng cô dâu chú rể trong ngày cưới,"},
+  {"id": "text102", "kind": "text", "style": {"top": "10912px", "left": "20px", "width": "465px", "height": "29px", "fontFamily": "Signora", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "28.6px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "xin vui lòng \"chỉnh sửa\" cho đẹp một chút nhé,"},
+  {"id": "text103", "kind": "text", "style": {"top": "10940px", "left": "20px", "width": "465px", "height": "29px", "fontFamily": "Signora", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "28.6px", "textAlign": "left", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "cảm ơn cả nhà rất nhiều!"},
+  {"id": "photo124", "kind": "photo", "style": {"top": "11017px", "left": "129px", "width": "234px", "height": "77px"}, "direction": "up", "delay": 0.2, "src": `${R}/t22-dc2ee894.png`, "size": "cover", "pos": "50% 50%"},
+  {"id": "text104", "kind": "text", "style": {"top": "11157px", "left": "16px", "width": "465px", "height": "29px", "fontFamily": "Signora", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "28.6px", "textAlign": "center", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "Vì bận rộn với lễ cưới,"},
+  {"id": "text105", "kind": "text", "style": {"top": "11186px", "left": "16px", "width": "465px", "height": "29px", "fontFamily": "Signora", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "28.6px", "textAlign": "center", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "nếu có điều gì sơ suất trong việc tiếp đón,"},
+  {"id": "text106", "kind": "text", "style": {"top": "11214px", "left": "16px", "width": "465px", "height": "29px", "fontFamily": "Signora", "fontSize": "20px", "fontWeight": "500", "color": "rgb(206, 189, 181)", "lineHeight": "28.6px", "textAlign": "center", "letterSpacing": "1px"}, "direction": "up", "delay": 0, "text": "mong các bạn thông cảm và bỏ qua cho chúng mình nhé!"},
+  {"id": "photo125", "kind": "photo", "style": {"top": "11291px", "left": "200px", "width": "142px", "height": "220px"}, "direction": "up", "delay": 0.2, "src": `${R}/t22-8a4e8e6a.png`, "size": "cover", "pos": "50% 50%"}
+];
+
+function NodeContent({ node }) {
+  if (node.kind === "photo") {
+    return (
+      <div
+        className="t22n-photo"
+        style={{
+          backgroundImage: `url(${node.src})`,
+          backgroundSize: node.size || "cover",
+          backgroundPosition: node.pos || "50% 50%",
+        }}
+      />
+    );
+  }
+  if (node.kind === "text") {
+    return <div className="t22n-text">{node.text}</div>;
+  }
+  if (node.kind === "map") {
+    return <iframe className="t22n-mapframe" src={node.src} title="Bản đồ" />;
+  }
+  if (node.kind === "rsvp") {
+    return (
+      <RsvpForm
+        className="t22n-rsvpBox"
+        accent="#7a5138"
+        declineLabel="Tôi bận, rất tiếc không thể tham dự"
+        showPartySize={false}
+      />
+    );
+  }
+  return null;
+}
 
 export default function Template22New() {
-  const content = useInvitationContent({
-    couple: { groomName: 'Trí Hưng', brideName: 'Thùy An' },
-    event: { startsAt: fallbackDate, venueName: 'Không gian tiệc cưới', address: 'Thành phố Hồ Chí Minh' },
-  });
-  const date = new Date(content.event.startsAt || fallbackDate);
-  const dateValue = content.event.startsAt || fallbackDate;
-  const count = useInvitationPage('template22new-page', dateValue);
-  const month = date.toLocaleString('en-US', { month: 'long', year: 'numeric' }).toUpperCase();
-  const schedule = content.schedule?.length ? content.schedule.slice(0, 4) : [];
+  useInvitationPage("template22new-page", "2025-08-20T12:00:00+07:00");
 
   return (
     <main className="new-invitation-page t22n">
-      <h1 className="visually-hidden">Thiệp cưới của {content.couple.brideName} và {content.couple.groomName}</h1>
-      <MusicButton className="t22n-music" />
-      <section className="t22n-cover">
-        <Reveal as="img" src={`${asset}/image-2.webp`} alt={`${content.couple.brideName} và ${content.couple.groomName}`} direction="scale" />
-        <div className="t22n-coverShade" />
-        <Reveal className="t22n-coverCopy"><small>AN AUTUMN WEDDING · 2027</small><h2>{content.couple.brideName}<i>&amp;</i>{content.couple.groomName}</h2><p>{date.toLocaleDateString('vi-VN', { day: '2-digit', month: 'long', year: 'numeric' })}</p></Reveal>
-        <span className="t22n-vertical">A DAY TO REMEMBER</span>
-      </section>
-
-      <section className="t22n-note">
-        <Reveal className="t22n-noteMark"><span>01</span><small>A NOTE FROM US</small></Reveal>
-        <Reveal className="t22n-noteCopy"><h2>Tháng năm dịu dàng<br />đưa ta về bên nhau.</h2><p>{content.copy.story}</p><Heart aria-hidden="true" /></Reveal>
-        <Reveal as="img" src={`${asset}/image-3.webp`} alt="Cô dâu trong khoảnh khắc ngày vui" direction="left" />
-        <Reveal className="t22n-noteQuote"><p>“{content.copy.quote}”</p><span>{content.couple.groomName} &amp; {content.couple.brideName}</span></Reveal>
-      </section>
-
-      <section className="t22n-invitation">
-        <Reveal className="t22n-kicker"><span>02</span><small>THE WEDDING INVITATION</small></Reveal>
-        <Reveal className="t22n-inviteTitle"><small>WITH OUR FAMILIES</small><h2>Trân trọng kính mời</h2><p>{content.copy.intro}</p></Reveal>
-        <div className="t22n-families">
-          <Reveal><small>GIA ĐÌNH NHÀ TRAI</small><b>{content.families.groomFather}</b><b>{content.families.groomMother}</b><span>{content.families.groomAddress}</span></Reveal>
-          <Heart aria-hidden="true" />
-          <Reveal><small>GIA ĐÌNH NHÀ GÁI</small><b>{content.families.brideFather}</b><b>{content.families.brideMother}</b><span>{content.families.brideAddress}</span></Reveal>
-        </div>
-        <Reveal className="t22n-date"><span>{date.toLocaleDateString('vi-VN', { weekday: 'long' }).toUpperCase()}</span><strong>{String(date.getDate()).padStart(2, '0')}</strong><span>{month}</span></Reveal>
-        <Reveal className="t22n-venue"><h3>{content.event.venueName}</h3><p>{content.event.address}</p><VenueLink query={content.event.address}><MapPin size={15} /> Xem địa điểm</VenueLink></Reveal>
-      </section>
-
-      <section className="t22n-day">
-        <Reveal className="t22n-dayHeading"><CalendarDays /><small>03 · THE CELEBRATION</small><h2>Hẹn nhau trong ngày vui</h2></Reveal>
-        <WeddingCalendar month={month} weddingDay={date.getDate()} date={dateValue} />
-        <Reveal className="t22n-timeline"><small>CHƯƠNG TRÌNH</small>{schedule.map((item, index) => <div key={`${item.time}-${item.label}`}><time>{item.time}</time><span>{item.label}</span><i>{`0${index + 1}`}</i></div>)}</Reveal>
-        <Reveal className="t22n-dress"><small>ATTIRE NOTES</small><h3>Gợi ý trang phục</h3><p>Nâu trầm, kem và xanh olive dịu nhẹ sẽ hòa cùng sắc ảnh mùa thu.</p><div aria-label="Bảng màu gợi ý"><i /><i /><i /></div></Reveal>
-        <Countdown values={count} className="t22n-count" />
-      </section>
-
-      <section className="t22n-gallery">
-        <Reveal className="t22n-galleryHeading"><small>04 · LITTLE MOMENTS</small><h2>Những điều bình dị<br />thành thương nhớ.</h2></Reveal>
-        <div><Reveal as="img" src={`${asset}/image-4.webp`} alt="Đôi mình dưới ánh chiều" /><Reveal as="img" src={`${asset}/image-5.webp`} alt="Ánh mắt trao nhau" /><Reveal as="img" src={`${asset}/image-6.webp`} alt="Khoảnh khắc bên nhau" /><Reveal as="img" src={`${asset}/image-7.webp`} alt="Nụ hôn ngày cưới" /><Reveal as="img" src={`${asset}/image-8.webp`} alt="Cùng nhau bước tiếp" /></div>
-      </section>
-
-      <section className="t22n-ending">
-        <Reveal className="t22n-rsvpTitle"><small>05 · SAVE US A SEAT</small><h2>Chờ bạn đến chung vui</h2></Reveal>
-        <RsvpForm className="t22n-rsvp" accent="#a77f70" />
-        <Reveal className="t22n-wishes"><small>LEAVE A WISH</small><WishForm className="t22n-wish" accent="#a77f70" /></Reveal>
-        <GiftNote className="t22n-gift" title="With love" />
-        <Reveal as="p" className="t22n-thanks">Thank you for being part of our story.</Reveal>
-      </section>
+      <div className="t22n-canvas">
+        <MusicButton className="t22n-music" />
+        {NODES.map((node) => (
+          <div
+            key={node.id}
+            className={`t22n-node t22n-node-static t22n-${node.kind}`}
+            style={node.style}
+          >
+            <NodeContent node={node} />
+          </div>
+        ))}
+      </div>
     </main>
   );
 }
