@@ -1,7 +1,6 @@
 import React, { lazy, Suspense, useEffect } from 'react';
 import NewTemplateRouter, { getNewTemplateSlug } from './templates/new/NewTemplateRouter.jsx';
 import { archivedInvitationSlugs, getInvitationDisplayTitle } from './data/invitationCatalog.js';
-import TemplateCommerceBar from './commerce/TemplateCommerceBar.jsx';
 import ZenLoveScenePreview from './templates/ZenLoveScenePreview.jsx';
 import legacyTemplates from './templates/legacyTemplateRegistry.js';
 import { getZenLovePreviewItem } from './commerce/zenloveManifest.js';
@@ -29,8 +28,8 @@ function RoutedPage({ children, invitation = false }) {
   return <Suspense fallback={<main className={invitation ? 'invitationLoading' : 'pageLoading'} style={invitation ? { color: '#fff', background: '#15100e' } : undefined}>Đang tải…</main>}>{children}</Suspense>;
 }
 
-function TemplatePreview({ slug, children }) {
-  return <><RoutedPage invitation>{children}</RoutedPage><div className="templateCommerceSpacer" aria-hidden="true" /><TemplateCommerceBar slug={slug} /></>;
+function TemplatePreview({ children }) {
+  return <RoutedPage invitation>{children}</RoutedPage>;
 }
 
 export default function App() {
