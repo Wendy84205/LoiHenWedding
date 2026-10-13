@@ -1,40 +1,54 @@
 import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { CarFront, Check, ChevronLeft, ChevronRight, Gift, Heart, House, MapPin, Maximize2, MessageCircle, Send, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Heart, Maximize2, MessageCircle, Send, X, Check } from 'lucide-react';
 import WeddingMusicButton from './WeddingMusicButton.jsx';
 import { useCommercialInvitation, useInvitationContent, useRsvpSubmit, useWishSubmit } from '../commerce/CommercialInvitationContext.jsx';
 import './template47.css';
 import './new/auditFidelity.css';
 
 const t47Assets = {
-  cover: '/assets/template61/couple-hero.webp',
-  close: '/assets/template61/couple-close.webp',
-  portrait: '/assets/template44/sea-couple.webp',
-  celebration: '/assets/template44/mountain-couple.webp',
-  detail: '/assets/template39/couple-red-seated.webp',
-  galleryA: '/assets/template61/gallery-2.webp',
-  galleryB: '/assets/template61/gallery-4.webp',
-  galleryC: '/assets/template61/story.webp',
-  galleryD: '/assets/template44/couple-sticker.webp',
+  cover: '/assets/template47-ref/cover-b1f9e370.jpeg',
+  photo: '/assets/template47-ref/photo-c8135150.jpeg',
+  story: '/assets/template47-ref/story-4c5cc0c8.jpeg',
+  love: '/assets/template47-ref/love-b3548f69.jpeg',
+  you: '/assets/template47-ref/you-b05ac3fe.jpeg',
+  gallery: '/assets/template47-ref/gallery-4616e740.jpeg',
+  rsvp: '/assets/template47-ref/rsvpbg-968fd388.jpeg',
+  final: '/assets/template47-ref/final-f2c9a769.jpeg',
+  lantern: '/assets/template47-ref/lantern-3i1sx.png',
+  road: '/assets/template47-ref/road-a37d1bf5.png',
+  lips: '/assets/template47-ref/lips-calen-heart.png',
+  giftbox: '/assets/template47-ref/giftbox-bc7ro23.png',
+  sparkle: '/assets/template47-ref/sparkle-2dd69166.png',
 };
+const WEEKDAYS_47 = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'];
 
 const reveal = {
-  initial: { opacity: 0, y: 34 },
+  initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-80px' },
-  transition: { duration: 0.76, ease: [0.22, 1, 0.36, 1] },
+  viewport: { once: true, margin: '-70px' },
+  transition: { duration: 0.72, ease: [0.22, 1, 0.36, 1] },
 };
+
+function capitalize47(text) {
+  const value = String(text || '');
+  return value.charAt(0).toUpperCase() + value.slice(1);
+}
 
 function date47(startsAt) {
   const date = new Date(startsAt);
-  const offset = (new Date(date.getFullYear(), date.getMonth(), 1).getDay() + 6) % 7;
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  const firstDow = (new Date(year, month, 1).getDay() + 6) % 7;
+  const totalDays = new Date(year, month + 1, 0).getDate();
   return {
     day: date.getDate(),
-    month: date.getMonth() + 1,
-    year: date.getFullYear(),
-    time: date.toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit', hour12: false }),
-    weekday: date.toLocaleDateString('vi-VN', { weekday: 'long' }).toUpperCase(),
-    cells: [...Array.from({ length: offset }, (_, index) => `empty-${index}`), ...Array.from({ length: new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate() }, (_, index) => index + 1)],
+    month: month + 1,
+    year,
+    time: `${String(date.getHours()).padStart(2, '0')} : ${String(date.getMinutes()).padStart(2, '0')}`,
+    timeTight: `${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`,
+    weekday: capitalize47(date.toLocaleDateString('vi-VN', { weekday: 'long' })),
+    cells: [...Array(firstDow).fill(null), ...Array.from({ length: totalDays }, (_, index) => index + 1)],
   };
 }
 
@@ -67,48 +81,43 @@ function Template47() {
   return (
     <main className="template47">
       <h1 className="visually-hidden">Thiệp cưới online mẫu 47</h1>
-      <FloatingHearts47 />
       <WeddingMusicButton className="t47-music" src={content.media.music || undefined} />
-
       <Cover47 />
       <Family47 />
       <Invitation47 />
-      <Date47 />
+      <Ceremony47 />
       <Story47 />
-      <CountdownBand47 />
+      <LoveYou47 />
       <Rsvp47 sent={rsvpSent} setSent={setRsvpSent} />
-      <Album47 />
       <Gift47 />
-      <Wish47 sent={wishSent} setSent={setWishSent} />
+      <Album47 />
+      <FinalWish47 sent={wishSent} setSent={setWishSent} />
     </main>
-  );
-}
-
-function FloatingHearts47() {
-  return (
-    <div className="t47-hearts" aria-hidden="true">
-      {Array.from({ length: 14 }, (_, index) => <span key={index}>♥</span>)}
-    </div>
   );
 }
 
 function Cover47() {
   const { couple, event, media } = useInvitationContent();
   const date = date47(event.startsAt);
+  const stamp = `${String(date.day).padStart(2, '0')}.${String(date.month).padStart(2, '0')}.${date.year}`;
   return (
-    <section className="t47-cover" data-media-role="hero" style={{ '--cover-image': `url(${media.hero || media.couple || t47Assets.cover})` }}>
-      <div className="t47-coverShade" />
-      <motion.p className="t47-coverKicker" initial={{ opacity: 0, y: -16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.72 }}>
-        WEDDING INVITATION
-      </motion.p>
-      <motion.div className="t47-coverNames" initial={{ opacity: 0, y: 42 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.05, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}>
-        <span data-editor-field="couple.groomName">{couple.groomName}</span><b>♥</b><span data-editor-field="couple.brideName">{couple.brideName}</span>
+    <section className="t47-cover" data-media-role="hero" style={{ '--t47-cover': `url(${media.hero || media.couple || t47Assets.cover})` }}>
+      <div className="t47-coverSeal" aria-hidden="true"><img src={t47Assets.lips} alt="" /></div>
+      <motion.div className="t47-coverNames" initial={{ opacity: 0, y: -18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+        <span data-editor-field="couple.groomName">{couple.groomName}</span>
+        <i aria-hidden="true"><Heart size={16} fill="currentColor" strokeWidth={0} /></i>
+        <span data-editor-field="couple.brideName">{couple.brideName}</span>
       </motion.div>
-      <motion.div className="t47-coverDetails" initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.84, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}>
-        <span>THƯ MỜI TIỆC CƯỚI</span>
-        <strong>{String(date.day).padStart(2, '0')}.{String(date.month).padStart(2, '0')}.{date.year}</strong>
-        <em>{date.weekday} · {date.time}</em><i>LỄ THÀNH HÔN</i>
+      <motion.div className="t47-coverSchedule" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.86, delay: 0.18 }}>
+        <p>THƯ MỜI TIỆC CƯỚI</p>
+        <span>{date.weekday} - {date.time}</span>
+        <strong>{stamp}</strong>
+        <em aria-hidden="true" />
+        <p>LỄ THÀNH HÔN</p>
+        <span>{date.weekday} - {date.time}</span>
+        <strong>{stamp}</strong>
       </motion.div>
+      <div className="t47-coverScript" aria-hidden="true"><span>Nhà</span></div>
     </section>
   );
 }
@@ -116,117 +125,180 @@ function Cover47() {
 function Family47() {
   const { couple, families, media } = useInvitationContent();
   return (
-    <section className="t47-section t47-family">
-      <motion.p className="t47-eyebrow" {...reveal}>NHÀ CÓ HỶ</motion.p>
-      <motion.h2 {...reveal} transition={{ ...reveal.transition, delay: 0.06 }}>Trân trọng báo tin<br />lễ thành hôn của</motion.h2>
-      <motion.div className="t47-nameLine" {...reveal} transition={{ ...reveal.transition, delay: 0.12 }}>
-        <span data-editor-field="couple.groomName">{couple.groomName}</span><i>♥</i><span data-editor-field="couple.brideName">{couple.brideName}</span>
+    <section className="t47-family">
+      <div className="t47-familyScript" aria-hidden="true"><span>Nhà</span><span>Có</span><span>Hỷ</span></div>
+      <div className="t47-familyTag" aria-hidden="true"><img src={t47Assets.lantern} alt="" /></div>
+      <motion.div className="t47-familyBlocks" {...reveal}>
+        <article>
+          <h3>NHÀ TRAI</h3>
+          <p><span data-editor-field="families.groomFather">{families.groomFather}</span> <span data-editor-field="families.groomMother">{families.groomMother}</span></p>
+          <small data-editor-field="families.groomAddress">{families.groomAddress}</small>
+        </article>
+        <article>
+          <h3>NHÀ GÁI</h3>
+          <p><span data-editor-field="families.brideFather">{families.brideFather}</span> <span data-editor-field="families.brideMother">{families.brideMother}</span></p>
+          <small data-editor-field="families.brideAddress">{families.brideAddress}</small>
+        </article>
       </motion.div>
-      <motion.figure className="t47-familyPortrait" {...reveal} transition={{ ...reveal.transition, delay: 0.16 }}>
-        <img data-media-role="couple" src={media.couple || media.hero || t47Assets.close} alt={`Khoảnh khắc của ${couple.groomName} và ${couple.brideName}`} />
+      <motion.p className="t47-familyLead" {...reveal}>TRÂN TRỌNG BÁO TIN LỄ THÀNH HÔN CỦA</motion.p>
+      <motion.div className="t47-familyNames" {...reveal} transition={{ ...reveal.transition, delay: 0.08 }}>
+        <span data-editor-field="couple.groomName">{couple.groomName}</span>
+        <em>&amp;</em>
+        <span data-editor-field="couple.brideName">{couple.brideName}</span>
+      </motion.div>
+      <motion.figure className="t47-familyPortrait" {...reveal} transition={{ ...reveal.transition, delay: 0.12 }}>
+        <img data-media-role="couple" src={media.couple || media.hero || t47Assets.photo} alt={`Khoảnh khắc của ${couple.groomName} và ${couple.brideName}`} />
       </motion.figure>
-      <div className="t47-familyGrid">
-        <motion.article initial={{ opacity: 0, x: -38 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}>
-          <p>NHÀ TRAI</p>
-          <strong><span data-editor-field="families.groomFather">{families.groomFather}</span><br /><span data-editor-field="families.groomMother">{families.groomMother}</span></strong>
-          <span data-editor-field="families.groomAddress">{families.groomAddress}</span>
-        </motion.article>
-        <motion.article initial={{ opacity: 0, x: 38 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.7, delay: 0.07, ease: [0.22, 1, 0.36, 1] }}>
-          <p>NHÀ GÁI</p>
-          <strong><span data-editor-field="families.brideFather">{families.brideFather}</span><br /><span data-editor-field="families.brideMother">{families.brideMother}</span></strong>
-          <span data-editor-field="families.brideAddress">{families.brideAddress}</span>
-        </motion.article>
-      </div>
     </section>
-  );
-}
-
-function EventCard47({ title, day, time, location, address, href, lunarDate, locationField = '', addressField = '' }) {
-  return (
-    <motion.article className="t47-eventCard" {...reveal}>
-      <p>{title}</p><span>{time}</span><strong>{day}</strong><small>{lunarDate}</small>
-      <h3 data-editor-field={locationField || undefined}>{location}</h3><em data-editor-field={addressField || undefined}>{address}</em>
-      <a href={href} target="_blank" rel="noreferrer"><MapPin size={14} /> Xem chỉ đường</a>
-    </motion.article>
   );
 }
 
 function Invitation47() {
   const { event, families, schedule } = useInvitationContent();
   const date = date47(event.startsAt);
-  const displayDate = `${String(date.day).padStart(2, '0')} . ${String(date.month).padStart(2, '0')} . ${date.year}`;
+  const stamp = `${String(date.day).padStart(2, '0')} . ${String(date.month).padStart(2, '0')} . ${date.year}`;
+  const morning = schedule[0]?.time || date.timeTight;
+  const evening = schedule[2]?.time || date.timeTight;
   return (
-    <section className="t47-section t47-invitation">
-      <motion.div className="t47-sectionTitle" {...reveal}><span>THƯ MỜI THAM DỰ</span><h2>Ngày vui của<br /><em>chúng mình.</em></h2></motion.div>
-      <div className="t47-eventStack">
-        <EventCard47 title="LỄ THÀNH HÔN" time={`${date.weekday} · ${date.time}`} day={displayDate} location={event.venueName.toUpperCase()} address={event.address} href={event.mapUrl} lunarDate={event.lunarDate} locationField="event.venueName" addressField="event.address" />
-        <EventCard47 title="TIỆC MỪNG" time={`${date.weekday} · ${schedule[2]?.time || date.time}`} day={displayDate} location="CÙNG HAI GIA ĐÌNH" address={`${families.groomAddress} · ${families.brideAddress}`} href={event.mapUrl} lunarDate={event.lunarDate} />
-      </div>
+    <section className="t47-invitation">
+      <motion.h2 className="t47-inviteTitle" {...reveal}>THƯ MỜI THAM DỰ</motion.h2>
+      <motion.article className="t47-inviteCard" {...reveal}>
+        <h3 data-editor-field="event.venueName">TIỆC CƯỜI NHÀ TRAI</h3>
+        <p className="t47-cardTime">{date.weekday} - {morning}</p>
+        <strong className="t47-cardDate" data-editor-field="event.startsAt.date">{stamp}</strong>
+        <span className="t47-cardLunar" data-editor-field="event.lunarDate">{event.lunarDate}</span>
+        <h4>TẠI TƯ GIA NHÀ TRAI</h4>
+        <p className="t47-cardAddr" data-editor-field="families.groomAddress">{families.groomAddress}</p>
+        <a href={event.mapUrl} target="_blank" rel="noreferrer">Xem chỉ đường</a>
+      </motion.article>
+      <motion.article className="t47-inviteCard" {...reveal} transition={{ ...reveal.transition, delay: 0.08 }}>
+        <h3>TIỆC CƯỜI NHÀ GÁI</h3>
+        <p className="t47-cardTime">{date.weekday} - {evening}</p>
+        <strong className="t47-cardDate" data-editor-field="event.startsAt.date">{stamp}</strong>
+        <span className="t47-cardLunar" data-editor-field="event.lunarDate">{event.lunarDate}</span>
+        <h4 data-editor-field="event.venueName">{event.venueName.toUpperCase()}</h4>
+        <p className="t47-cardAddr" data-editor-field="event.address">{event.address}</p>
+        <a href={event.mapUrl} target="_blank" rel="noreferrer">Xem chỉ đường</a>
+      </motion.article>
     </section>
   );
 }
 
-function Date47() {
-  const { event, families } = useInvitationContent();
+function Ceremony47() {
+  const { event, families, schedule } = useInvitationContent();
+  const date = date47(event.startsAt);
+  const morning = schedule[0]?.time || date.timeTight;
+  return (
+    <section className="t47-ceremony">
+      <motion.h2 className="t47-cereTitle" {...reveal}>LỄ VU QUY</motion.h2>
+      <motion.p className="t47-cereTime" {...reveal}>VÀO {date.weekday.toUpperCase()} - {morning.replace(/\s/g, '')}</motion.p>
+      <motion.div className="t47-cereDate" {...reveal} transition={{ ...reveal.transition, delay: 0.06 }}>
+        <span>THÁNG {String(date.month).padStart(2, '0')}</span>
+        <strong data-editor-field="event.startsAt.date">{date.day}</strong>
+        <span>NĂM {date.year}</span>
+      </motion.div>
+      <motion.p className="t47-cereLunar" data-editor-field="event.lunarDate" {...reveal}>{event.lunarDate}</motion.p>
+      <motion.p className="t47-cereVenue" {...reveal}>TẠI TƯ GIA NHÀ GÁI</motion.p>
+      <motion.p className="t47-cereAddr" data-editor-field="families.brideAddress" {...reveal}>{families.brideAddress}</motion.p>
+
+      <motion.div className="t47-road" {...reveal} transition={{ ...reveal.transition, delay: 0.1 }}>
+        <img className="t47-roadImg" src={t47Assets.road} alt="" aria-hidden="true" />
+        <a className="t47-roadBtn gai" href={event.mapUrl} target="_blank" rel="noreferrer">CHỈ ĐƯỜNG</a>
+        <a className="t47-roadBtn trai" href={event.mapUrl} target="_blank" rel="noreferrer">CHỈ ĐƯỜNG</a>
+      </motion.div>
+
+      <Ceremony47Second />
+    </section>
+  );
+}
+
+function Ceremony47Second() {
+  const { event, schedule } = useInvitationContent();
+  const date = date47(event.startsAt);
+  const evening = schedule[2]?.time || date.timeTight;
+  return (
+    <>
+      <motion.h2 className="t47-cereTitle" {...reveal}>LỄ THÀNH HÔN</motion.h2>
+      <motion.p className="t47-cereTime" {...reveal}>VÀO {date.weekday.toUpperCase()} - {evening.replace(/\s/g, '')}</motion.p>
+      <motion.div className="t47-cereDate" {...reveal} transition={{ ...reveal.transition, delay: 0.06 }}>
+        <span>THÁNG {String(date.month).padStart(2, '0')}</span>
+        <strong data-editor-field="event.startsAt.date">{date.day}</strong>
+        <span>NĂM {date.year}</span>
+      </motion.div>
+      <motion.p className="t47-cereLunar" data-editor-field="event.lunarDate" {...reveal}>{event.lunarDate}</motion.p>
+      <motion.p className="t47-cereVenue" {...reveal} data-editor-field="event.venueName">{event.venueName.toUpperCase()}</motion.p>
+      <motion.p className="t47-cereAddr" data-editor-field="event.address" {...reveal}>{event.address}</motion.p>
+      <Calendar47 />
+    </>
+  );
+}
+
+function Calendar47() {
+  const { event } = useInvitationContent();
   const date = date47(event.startsAt);
   return (
-    <section className="t47-date">
-      <div className="t47-dateShade" />
-      <motion.div className="t47-dateIntro" {...reveal}><span>LỄ VU QUY</span><p>Vào {date.weekday} · {date.time}</p></motion.div>
-      <motion.div className="t47-dateStamp" {...reveal} transition={{ ...reveal.transition, delay: 0.08 }}>
-        <span>THÁNG {String(date.month).padStart(2, '0')}</span><strong>{date.day}</strong><span>NĂM {date.year}</span>
-      </motion.div>
-      <motion.p className="t47-dateLunar" data-editor-field="event.lunarDate" {...reveal} transition={{ ...reveal.transition, delay: 0.13 }}>{event.lunarDate}</motion.p>
-      <motion.div className="t47-route" {...reveal} transition={{ ...reveal.transition, delay: 0.16 }}>
-        <div className="t47-routeStop"><House size={22} /><span>NHÀ GÁI</span><small data-editor-field="families.brideAddress">{families.brideAddress}</small></div>
-        <div className="t47-routeRoad"><i /><CarFront size={26} /><i /></div>
-        <div className="t47-routeStop"><House size={22} /><span>NHÀ TRAI</span><small data-editor-field="families.groomAddress">{families.groomAddress}</small></div>
-      </motion.div>
-      <motion.div className="t47-dateSecond" {...reveal} transition={{ ...reveal.transition, delay: 0.19 }}><span>LỄ THÀNH HÔN</span><p>Vào {date.weekday} · {date.time}</p><strong data-editor-field="event.venueName">{event.venueName.toUpperCase()}</strong></motion.div>
-      <motion.div className="t47-calendar47" {...reveal} transition={{ ...reveal.transition, delay: 0.18 }}>
-        {['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'].map((day) => <span className="weekday" key={day}>{day}</span>)}
-        {date.cells.map((day) => (
-          typeof day === 'number'
-            ? <span key={day} className={day === date.day ? 'marked' : ''}>{day === date.day && <Heart size={19} fill="currentColor" strokeWidth={0} />}<b>{day}</b></span>
-            : <span key={day} aria-hidden="true" />
+    <motion.div className="t47-calendar" {...reveal}>
+      <div className="t47-calHead"><span>Tháng {String(date.month).padStart(2, '0')}</span></div>
+      <div className="t47-calGrid">
+        {WEEKDAYS_47.map((day) => <span key={day} className="t47-calDow">{day}</span>)}
+        {date.cells.map((day, index) => (
+          <span key={day == null ? `e${index}` : `d${day}`} className={day === date.day ? 't47-calDay marked' : 't47-calDay'}>
+            {day === date.day && <img className="t47-calLips" src={t47Assets.lips} alt="" aria-hidden="true" />}
+            {day}
+          </span>
         ))}
-      </motion.div>
-    </section>
+      </div>
+    </motion.div>
   );
 }
 
 function Countdown47() {
   const { event } = useInvitationContent();
   const [time, setTime] = useState(() => countDown(event.startsAt));
-
   useEffect(() => {
     setTime(countDown(event.startsAt));
     const timer = window.setInterval(() => setTime(countDown(event.startsAt)), 1000);
     return () => window.clearInterval(timer);
   }, [event.startsAt]);
-
-  return <div className="t47-countdown">{time.map(([value, label]) => <span key={label}><b>{String(value).padStart(2, '0')}</b><em>{label}</em></span>)}</div>;
+  return (
+    <div className="t47-countdown">
+      {time.map(([value, label]) => (
+        <span key={label}><b>{String(value).padStart(2, '0')}</b><em>{label}</em></span>
+      ))}
+    </div>
+  );
 }
 
 function Story47() {
   const { couple, copy, media } = useInvitationContent();
   return (
-    <section className="t47-story" data-media-role="couple" style={{ '--story-image': `url(${media.couple || media.hero || t47Assets.close})` }}>
-      <div className="t47-storyShade" />
+    <section className="t47-story" data-media-role="couple" style={{ '--t47-story': `url(${media.couple || media.hero || t47Assets.story})` }}>
       <motion.div className="t47-storyPaper" {...reveal}>
-        <p>INVITATION</p><h2><span data-editor-field="couple.groomName">{couple.groomName}</span> <i>&amp;</i> <span data-editor-field="couple.brideName">{couple.brideName}</span></h2>
-        <span data-editor-field="copy.story">{copy.story}</span>
-        <span data-editor-field="copy.quote">{copy.quote}</span>
-        <span data-editor-field="copy.intro">{copy.intro}</span>
+        <h3>INVITATION</h3>
+        <p className="t47-storyNames" data-editor-field="couple.groomName">
+          {couple.groomName} - {couple.brideName}
+        </p>
+        <p className="t47-storyText" data-editor-field="copy.story">{copy.story}</p>
       </motion.div>
+      <Countdown47 />
     </section>
   );
 }
 
-function CountdownBand47() {
+function LoveYou47() {
+  const { copy, media } = useInvitationContent();
   return (
-    <section className="t47-countdownBand">
-      <motion.div {...reveal}><Heart size={22} fill="currentColor" strokeWidth={0} /><p>ĐẾM NGƯỢC TỚI NGÀY VUI</p><Countdown47 /></motion.div>
+    <section className="t47-loveyou">
+      <motion.figure {...reveal}>
+        <img data-media-role="gallery" src={media.couple || t47Assets.love} alt="Khoảnh khắc yêu thương" />
+        <span className="t47-lyLabel left">Love</span>
+      </motion.figure>
+      <motion.figure {...reveal} transition={{ ...reveal.transition, delay: 0.06 }}>
+        <img data-media-role="gallery" src={media.couple || t47Assets.you} alt="Khoảnh khắc yêu thương" />
+        <img className="t47-sparkle" src={t47Assets.sparkle} alt="" aria-hidden="true" />
+        <span className="t47-lyLabel right">You</span>
+      </motion.figure>
+      <motion.p className="t47-lyQuote" data-editor-field="copy.quote" {...reveal}>{copy.quote}</motion.p>
     </section>
   );
 }
@@ -235,6 +307,7 @@ function Rsvp47({ sent, setSent }) {
   const { media } = useInvitationContent();
   const rsvp = useRsvpSubmit();
   const [form, setForm] = useState({ fullName: '', attendance: 'yes', partySize: 1, note: '' });
+  const update = (key) => (event) => setForm({ ...form, [key]: event.target.value });
   const submit = async (event) => {
     event.preventDefault();
     const success = await rsvp.submit({ ...form, phone: '', partySize: Number(form.partySize) });
@@ -242,70 +315,43 @@ function Rsvp47({ sent, setSent }) {
   };
 
   return (
-    <section className="t47-rsvp" data-media-role="hero" style={{ '--rsvp-image': `url(${media.hero || media.couple || t47Assets.cover})` }}>
-      <div className="t47-rsvpShade" />
-      <motion.form className="t47-rsvpForm" onSubmit={submit} {...reveal}>
-        <Heart size={22} fill="currentColor" strokeWidth={0} /><h2>Xác nhận tham dự</h2>
-        <label>Họ và tên<input required placeholder="Nhập tên của bạn" value={form.fullName} onChange={(event) => setForm({ ...form, fullName: event.target.value })} /></label>
-        <fieldset><legend>Bạn sẽ tham dự chứ?</legend><label><input type="radio" name="attendance47" value="yes" checked={form.attendance === 'yes'} onChange={(event) => setForm({ ...form, attendance: event.target.value })} /> Có, tôi sẽ tham dự</label><label><input type="radio" name="attendance47" value="no" checked={form.attendance === 'no'} onChange={(event) => setForm({ ...form, attendance: event.target.value })} /> Tôi bận, rất tiếc không thể tham dự</label></fieldset>
-        <label>Số lượng người tham dự<select value={form.partySize} onChange={(event) => setForm({ ...form, partySize: Number(event.target.value) })}><option value="1">1 người</option><option value="2">2 người</option><option value="3">3 người</option><option value="4">4 người</option></select></label>
-        <label>Bạn là khách của ai?<select value={form.note} onChange={(event) => setForm({ ...form, note: event.target.value })}><option value="">Chọn gia đình</option><option value="Khách nhà trai">Nhà trai</option><option value="Khách nhà gái">Nhà gái</option></select></label>
-        <button type="submit" disabled={rsvp.status === 'loading'}><Send size={16} /> {rsvp.status === 'loading' ? 'Đang gửi...' : 'Gửi xác nhận'}</button>
-        {sent && <p className="t47-formSuccess" role="status"><Check size={16} /> Cảm ơn bạn. Xác nhận đã được ghi nhận.</p>}
+    <section className="t47-rsvp" data-media-role="hero" style={{ '--t47-rsvp': `url(${media.hero || media.couple || t47Assets.rsvp})` }}>
+      <motion.form className="t47-rsvpCard" onSubmit={submit} {...reveal}>
+        <h2>Xác nhận tham dự</h2>
+        <label>Họ và tên
+          <input required placeholder="Nhập tên của bạn" value={form.fullName} onChange={update('fullName')} />
+        </label>
+        <fieldset>
+          <legend>Bạn sẽ tham dự chứ?</legend>
+          <label className={form.attendance === 'yes' ? 't47-radio on' : 't47-radio'}>
+            <input type="radio" name="attendance47" value="yes" checked={form.attendance === 'yes'} onChange={update('attendance')} /> Có, tôi sẽ tham dự
+          </label>
+          <label className={form.attendance === 'no' ? 't47-radio on' : 't47-radio'}>
+            <input type="radio" name="attendance47" value="no" checked={form.attendance === 'no'} onChange={update('attendance')} /> Tôi bận, rất tiếc không thể tham dự
+          </label>
+        </fieldset>
+        <label>Số lượng người tham dự
+          <select value={form.partySize} onChange={update('partySize')}>
+            <option value="1">1 người</option>
+            <option value="2">2 người</option>
+            <option value="3">3 người</option>
+            <option value="4">4 người</option>
+          </select>
+        </label>
+        <fieldset>
+          <legend>Bạn là khách của ai?</legend>
+          <label className={form.note === 'Khách nhà trai' ? 't47-radio on' : 't47-radio'}>
+            <input type="radio" name="guest47" value="Khách nhà trai" checked={form.note === 'Khách nhà trai'} onChange={update('note')} /> Nhà trai
+          </label>
+          <label className={form.note === 'Khách nhà gái' ? 't47-radio on' : 't47-radio'}>
+            <input type="radio" name="guest47" value="Khách nhà gái" checked={form.note === 'Khách nhà gái'} onChange={update('note')} /> Nhà gái
+          </label>
+        </fieldset>
+        <button type="submit" disabled={rsvp.status === 'loading'}>{rsvp.status === 'loading' ? 'Đang gửi...' : 'Gửi xác nhận'}</button>
+        {sent && <p className="t47-formSuccess" role="status"><Check size={15} /> Cảm ơn bạn, xác nhận đã được ghi nhận.</p>}
         {rsvp.error && <p className="t47-formError" role="alert">{rsvp.error}</p>}
       </motion.form>
     </section>
-  );
-}
-
-function Album47() {
-  const { couple, media } = useInvitationContent();
-  const sources = media.gallery.length ? media.gallery : [media.couple || t47Assets.close, media.hero || t47Assets.cover, media.final || t47Assets.detail, media.venue || t47Assets.celebration];
-  const photos = sources.map((src, index) => ({ src, alt: `Khoảnh khắc của ${couple.groomName} và ${couple.brideName} ${index + 1}` }));
-  const [activePhoto, setActivePhoto] = useState(0);
-  const [fullscreen, setFullscreen] = useState(false);
-  const photo = photos[activePhoto] || photos[0];
-  const previous = () => setActivePhoto((index) => (index - 1 + photos.length) % photos.length);
-  const next = () => setActivePhoto((index) => (index + 1) % photos.length);
-
-  return (
-    <section className="t47-section t47-album">
-      <motion.div className="t47-albumTitle" {...reveal}>
-        <span>ALBUM</span><i>of</i><strong>LOVE</strong>
-      </motion.div>
-      <motion.div className="t47-albumCarousel" {...reveal}>
-        <div className="t47-carouselMain">
-          <AnimatePresence mode="wait">
-            <motion.img data-media-role="gallery" key={photo.src} src={photo.src} alt={photo.alt} initial={{ opacity: 0, scale: 1.035 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.985 }} transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }} />
-          </AnimatePresence>
-          <button className="t47-carouselArrow previous" type="button" onClick={previous} aria-label="Ảnh trước" title="Ảnh trước"><ChevronLeft size={31} strokeWidth={2.25} /></button>
-          <button className="t47-carouselArrow next" type="button" onClick={next} aria-label="Ảnh tiếp theo" title="Ảnh tiếp theo"><ChevronRight size={31} strokeWidth={2.25} /></button>
-          <button className="t47-carouselExpand" type="button" onClick={() => setFullscreen(true)} aria-label="Xem ảnh lớn" title="Xem ảnh lớn"><Maximize2 size={21} strokeWidth={2.4} /></button>
-          <Heart className="t47-carouselHeart" size={28} fill="currentColor" strokeWidth={0} aria-hidden="true" />
-        </div>
-        <div className="t47-carouselThumbs" role="group" aria-label="Danh sách ảnh cưới">
-          {photos.map((item, index) => (
-            <button key={item.src} className={index === activePhoto ? 'is-active' : ''} type="button" onClick={() => setActivePhoto(index)} aria-label={`Xem ảnh ${index + 1}`} aria-current={index === activePhoto ? 'true' : undefined}>
-              <img data-media-role="gallery" src={item.src} alt="" />
-            </button>
-          ))}
-        </div>
-      </motion.div>
-      <AnimatePresence>
-        {fullscreen && <AlbumLightbox47 photo={photo} onClose={() => setFullscreen(false)} onPrevious={previous} onNext={next} />}
-      </AnimatePresence>
-    </section>
-  );
-}
-
-function AlbumLightbox47({ photo, onClose, onPrevious, onNext }) {
-  return (
-    <motion.div className="t47-lightbox" role="dialog" aria-modal="true" aria-label="Xem ảnh cưới lớn" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-      <button className="t47-lightboxClose" type="button" onClick={onClose} aria-label="Đóng ảnh lớn" title="Đóng"><X size={24} /></button>
-      <button className="t47-lightboxArrow previous" type="button" onClick={onPrevious} aria-label="Ảnh trước" title="Ảnh trước"><ChevronLeft size={32} /></button>
-      <AnimatePresence mode="wait"><motion.img data-media-role="gallery" key={photo.src} src={photo.src} alt={photo.alt} initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 1.02 }} transition={{ duration: 0.24 }} /></AnimatePresence>
-      <button className="t47-lightboxArrow next" type="button" onClick={onNext} aria-label="Ảnh tiếp theo" title="Ảnh tiếp theo"><ChevronRight size={32} /></button>
-    </motion.div>
   );
 }
 
@@ -313,16 +359,86 @@ function Gift47() {
   const { couple, media } = useInvitationContent();
   return (
     <section className="t47-gift">
-      <motion.div {...reveal}><Gift size={34} /><p>GỬI QUÀ MỪNG TỚI<br />CÔ DÂU - CHÚ RỂ</p><span>Chia sẻ niềm vui cùng chúng mình</span>{media.giftQr && <figure className="t47-giftQr"><img data-gift-qr src={media.giftQr} alt="QR mừng cưới" /><figcaption>Quét mã gửi quà mừng</figcaption></figure>}</motion.div>
-      <motion.div className="t47-giftNames" {...reveal} transition={{ ...reveal.transition, delay: 0.1 }}><span data-editor-field="couple.groomName">{couple.groomName}</span> <i>♥</i> <span data-editor-field="couple.brideName">{couple.brideName}</span></motion.div>
+      <motion.div className="t47-giftInner" {...reveal}>
+        <img className="t47-giftBox" src={t47Assets.giftbox} alt="" aria-hidden="true" />
+        <h2 data-editor-field="couple.groomName">Gửi quà mừng tới Cô Dâu - Chú Rể</h2>
+        {media.giftQr && (
+          <figure className="t47-giftQr">
+            <img data-gift-qr src={media.giftQr} alt="QR mừng cưới" />
+            <figcaption>Quét mã gửi quà mừng</figcaption>
+          </figure>
+        )}
+        <p className="t47-giftNames"><span data-editor-field="couple.groomName">{couple.groomName}</span> ♥ <span data-editor-field="couple.brideName">{couple.brideName}</span></p>
+      </motion.div>
     </section>
   );
 }
 
-function Wish47({ sent, setSent }) {
+function Album47() {
+  const { couple, media } = useInvitationContent();
+  const sources = media.gallery.length
+    ? media.gallery
+    : [media.couple || t47Assets.gallery, media.hero || t47Assets.cover, media.couple || t47Assets.love, media.couple || t47Assets.you, media.final || t47Assets.story];
+  const photos = sources.map((src, index) => ({ src, alt: `Khoảnh khắc của ${couple.groomName} và ${couple.brideName} ${index + 1}` }));
+  const [active, setActive] = useState(0);
+  const [open, setOpen] = useState(false);
+  const photo = photos[active] || photos[0];
+  const go = (delta) => setActive((index) => (index + delta + photos.length) % photos.length);
+
+  useEffect(() => {
+    if (!open) return undefined;
+    const onKey = (event) => {
+      if (event.key === 'Escape') setOpen(false);
+      if (event.key === 'ArrowLeft') go(-1);
+      if (event.key === 'ArrowRight') go(1);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  });
+
+  return (
+    <section className="t47-album">
+      <motion.div className="t47-albumTitle" {...reveal}>
+        <span>ALBUM</span><i>of</i><strong>LOVE</strong>
+      </motion.div>
+      <motion.div className="t47-albumStage" {...reveal}>
+        <img data-media-role="gallery" src={photo.src} alt={photo.alt} />
+        <button className="t47-albumExpand" type="button" onClick={() => setOpen(true)} aria-label="Xem ảnh lớn" title="Xem ảnh lớn"><Maximize2 size={17} /></button>
+        <button className="t47-albumArrow prev" type="button" onClick={() => go(-1)} aria-label="Ảnh trước" title="Ảnh trước"><ChevronLeft size={22} /></button>
+        <button className="t47-albumArrow next" type="button" onClick={() => go(1)} aria-label="Ảnh tiếp theo" title="Ảnh tiếp theo"><ChevronRight size={22} /></button>
+      </motion.div>
+      <div className="t47-albumThumbs">
+        {photos.map((item, index) => (
+          <button key={item.src + index} type="button" className={index === active ? 'on' : ''} onClick={() => setActive(index)} aria-label={`Chọn ảnh ${index + 1}`}>
+            <img src={item.src} alt="" />
+          </button>
+        ))}
+      </div>
+      <AnimatePresence>
+        {open && (
+          <motion.div className="t47-lightbox" role="dialog" aria-modal="true" aria-label="Xem ảnh cưới lớn" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <button className="t47-lightboxClose" type="button" onClick={() => setOpen(false)} aria-label="Đóng ảnh lớn" title="Đóng"><X size={24} /></button>
+            <button className="t47-lightboxArrow previous" type="button" onClick={() => go(-1)} aria-label="Ảnh trước" title="Ảnh trước"><ChevronLeft size={32} /></button>
+            <AnimatePresence mode="wait">
+              <motion.img key={photo.src} src={photo.src} alt={photo.alt} initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 1.02 }} transition={{ duration: 0.24 }} />
+            </AnimatePresence>
+            <button className="t47-lightboxArrow next" type="button" onClick={() => go(1)} aria-label="Ảnh tiếp theo" title="Ảnh tiếp theo"><ChevronRight size={32} /></button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </section>
+  );
+}
+
+function FinalWish47({ sent, setSent }) {
   const commerce = useCommercialInvitation();
   const wish = useWishSubmit();
-  const sampleWishes = [{ full_name: 'Hà', message: 'Tân hôn hạnh phúc, trăm năm bên nhau!' }, { full_name: 'Khải', message: 'Đồng tâm đồng lòng, xây đắp tổ ấm thịnh vượng!' }, { full_name: 'Thu', message: 'Mong tình yêu của hai bạn mãi vĩnh cửu!' }];
+  const { copy, media } = useInvitationContent();
+  const sampleWishes = [
+    { full_name: 'Hà', message: 'Tân hôn hạnh phúc, trăm năm bên nhau!' },
+    { full_name: 'Khải', message: 'Đồng tâm đồng lòng, xây đắp tổ ấm thịnh vượng!' },
+    { full_name: 'Thu', message: 'Mong tình yêu của hai bạn mãi vĩnh cửu!' },
+  ];
   const visibleWishes = commerce ? commerce.wishes.slice(0, 3) : sampleWishes;
   const [form, setForm] = useState({ fullName: '', message: '' });
   const submit = async (event) => {
@@ -335,15 +451,24 @@ function Wish47({ sent, setSent }) {
   };
 
   return (
-    <section className="t47-wish">
-      <motion.div className="t47-wishHeading" {...reveal}><MessageCircle size={20} /><span>GỬI LỜI CHÚC</span></motion.div>
-      <motion.div className="t47-wishList" {...reveal} transition={{ ...reveal.transition, delay: 0.06 }}>
-        {visibleWishes.length ? visibleWishes.map((item) => <p key={`${item.full_name}-${item.message}`}><b>{item.full_name}:</b> {item.message}</p>) : <p>Hãy là người đầu tiên gửi lời chúc đến cô dâu chú rể.</p>}
-      </motion.div>
-      <form onSubmit={submit}><input className="t47-wishName" required aria-label="Tên người gửi" placeholder="Tên của bạn" value={form.fullName} onChange={(event) => setForm({ ...form, fullName: event.target.value })} /><input required minLength={2} aria-label="Lời chúc dành cho cô dâu chú rể" placeholder="Gửi lời chúc đến cô dâu chú rể" value={form.message} onChange={(event) => setForm({ ...form, message: event.target.value })} /><button type="submit" aria-label="Gửi lời chúc" disabled={wish.status === 'loading'}><Send size={17} /></button></form>
-      {sent && <p className="t47-wishSuccess" role="status">Lời chúc đã được gửi và đang chờ duyệt. ♥</p>}
-      {wish.error && <p className="t47-wishSuccess error" role="alert">{wish.error}</p>}
-      <p className="t47-thank">Thank you</p>
+    <section className="t47-final" data-media-role="final" style={{ '--t47-final': `url(${media.final || t47Assets.final})` }}>
+      <div className="t47-finalShade" />
+      <div className="t47-finalInner">
+        <motion.p className="t47-wishHeading" {...reveal}><MessageCircle size={18} /> LỜI NHẮN GỬI TỚI CÔ DÂU &amp; CHÚ RỂ</motion.p>
+        <motion.div className="t47-wishList" {...reveal} transition={{ ...reveal.transition, delay: 0.06 }}>
+          {visibleWishes.length
+            ? visibleWishes.map((item) => <p key={`${item.full_name}-${item.message}`}><b>{item.full_name}:</b> {item.message}</p>)
+            : <p>Hãy là người đầu tiên gửi lời chúc đến cô dâu chú rể.</p>}
+        </motion.div>
+        <motion.form className="t47-wishForm" onSubmit={submit} {...reveal} transition={{ ...reveal.transition, delay: 0.1 }}>
+          <input required aria-label="Tên người gửi" placeholder="Tên của bạn" value={form.fullName} onChange={(event) => setForm({ ...form, fullName: event.target.value })} />
+          <input required minLength={2} aria-label="Lời chúc dành cho cô dâu chú rể" placeholder="Gửi lời chúc đến cô dâu chú rể" value={form.message} onChange={(event) => setForm({ ...form, message: event.target.value })} />
+          <button type="submit" aria-label="Gửi lời chúc" disabled={wish.status === 'loading'}><Send size={16} /></button>
+        </motion.form>
+        {sent && <p className="t47-wishSuccess" role="status">Lời chúc đã được gửi và đang chờ duyệt. ♥</p>}
+        {wish.error && <p className="t47-wishSuccess error" role="alert">{wish.error}</p>}
+        <motion.p className="t47-thank" data-editor-field="copy.thankYou" {...reveal}>{copy.thankYou || 'Thank you'}</motion.p>
+      </div>
     </section>
   );
 }
