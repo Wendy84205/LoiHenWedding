@@ -1,16 +1,25 @@
 import React, { lazy, Suspense, useEffect } from 'react';
-import NewTemplateRouter, { getNewTemplateSlug } from './templates/new/NewTemplateRouter.jsx';
-import { archivedInvitationSlugs, getInvitationDisplayTitle } from './data/invitationCatalog.js';
-import ZenLoveScenePreview from './templates/ZenLoveScenePreview.jsx';
-import legacyTemplates from './templates/legacyTemplateRegistry.js';
-import { getZenLovePreviewItem } from './commerce/zenloveManifest.js';
+import { getInvitationDisplayTitle } from './data/invitationCatalog.js';
 
 const TemplatesDashboard = lazy(() => import('./studio/TemplatesDashboard.jsx'));
-const CommercialInvitationPage = lazy(() => import('./commerce/CommercialInvitationPage.jsx'));
+
+const templateRegistry = {
+  'thiep-cuoi-3': lazy(() => import('./templates/new/Template3New.jsx')),
+  'thiep-cuoi-4': lazy(() => import('./templates/new/Template4New.jsx')),
+  'thiep-cuoi-7': lazy(() => import('./templates/new/Template7New.jsx')),
+  'thiep-cuoi-10': lazy(() => import('./templates/new/Template10New.jsx')),
+  'thiep-cuoi-14': lazy(() => import('./templates/new/Template14New.jsx')),
+  'thiep-cuoi-16': lazy(() => import('./templates/new/Template16New.jsx')),
+  'thiep-cuoi-27': lazy(() => import('./templates/new/Template27New.jsx')),
+  'thiep-cuoi-47': lazy(() => import('./templates/Template47.jsx')),
+  'thiep-cuoi-48': lazy(() => import('./templates/Template48.jsx')),
+  'thiep-cuoi-55': lazy(() => import('./templates/new/Template55New.jsx')),
+  'thiep-cuoi-56': lazy(() => import('./templates/new/Template56New.jsx')),
+};
 
 const pageTitles = {
   '/': 'Mẫu thiệp cưới Online | Lời Hẹn Wedding Studio',
-  '/mau-thiep': '108 Mẫu Thiệp Cưới Online | Lời Hẹn Wedding Studio',
+  '/mau-thiep': '11 Mẫu Thiệp Cưới Online Tuyển Chọn | Lời Hẹn Wedding Studio',
 };
 
 function upsertMeta(selector, attributes) {
@@ -25,31 +34,35 @@ function upsertMeta(selector, attributes) {
 }
 
 function RoutedPage({ children, invitation = false }) {
-  return <Suspense fallback={<main className={invitation ? 'invitationLoading' : 'pageLoading'} style={invitation ? { color: '#fff', background: '#15100e' } : undefined}>Đang tải…</main>}>{children}</Suspense>;
-}
-
-function TemplatePreview({ children }) {
-  return <RoutedPage invitation>{children}</RoutedPage>;
+  return (
+    <Suspense
+      fallback={
+        <main
+          className={invitation ? 'invitationLoading' : 'pageLoading'}
+          style={invitation ? { color: '#fff', background: '#15100e' } : undefined}
+        >
+          Đang tải…
+        </main>
+      }
+    >
+      {children}
+    </Suspense>
+  );
 }
 
 export default function App() {
   const pathname = window.location.pathname.replace(/\/$/, '') || '/';
-  const newTemplateSlug = getNewTemplateSlug(pathname);
   const routeSlug = pathname.match(/^\/template\/([^/]+)$/)?.[1] || null;
-  const commercialSlug = pathname.match(/^\/w\/([^/]+)$/)?.[1] || null;
-  const LegacyTemplate = routeSlug ? legacyTemplates[routeSlug] : null;
-  const zenLovePreviewItem = routeSlug ? getZenLovePreviewItem(routeSlug) : null;
+  const TemplateComponent = routeSlug ? templateRegistry[routeSlug] : null;
 
   useEffect(() => {
-    const invitationTitle = routeSlug && (newTemplateSlug || LegacyTemplate || zenLovePreviewItem)
-      ? `${zenLovePreviewItem?.name || getInvitationDisplayTitle(routeSlug)} | Lời Hẹn Wedding Studio`
+    const invitationTitle = TemplateComponent
+      ? `${getInvitationDisplayTitle(routeSlug)} | Lời Hẹn Wedding Studio`
       : null;
-    const title = invitationTitle || pageTitles[pathname] || (commercialSlug ? 'Thiệp cưới | Lời Hẹn Wedding Studio' : pageTitles['/mau-thiep']);
+    const title = invitationTitle || pageTitles[pathname] || pageTitles['/mau-thiep'];
     const description = invitationTitle
-      ? `${zenLovePreviewItem?.name || getInvitationDisplayTitle(routeSlug)} - preview local catalog của Lời Hẹn Wedding Studio.`
-      : commercialSlug
-        ? 'Thiệp cưới online cá nhân hóa của Lời Hẹn Wedding Studio.'
-      : 'Khám phá bộ sưu tập mẫu thiệp cưới online của Lời Hẹn Wedding Studio.';
+      ? `${getInvitationDisplayTitle(routeSlug)} - Mẫu thiệp cưới online tuyển chọn của Lời Hẹn Wedding Studio.`
+      : 'Khám phá bộ sưu tập 11 mẫu thiệp cưới online tuyển chọn của Lời Hẹn Wedding Studio.';
     const canonical = `${window.location.origin}${pathname}`;
     document.title = title;
     upsertMeta('meta[name="description"]', { name: 'description', content: description });
@@ -57,13 +70,20 @@ export default function App() {
     upsertMeta('meta[property="og:description"]', { property: 'og:description', content: description });
     upsertMeta('meta[property="og:url"]', { property: 'og:url', content: canonical });
     upsertMeta('link[rel="canonical"]', { tag: 'link', rel: 'canonical', href: canonical });
-    const noIndexRoute = zenLovePreviewItem || archivedInvitationSlugs.includes(routeSlug);
-    upsertMeta('meta[name="robots"]', { name: 'robots', content: noIndexRoute ? 'noindex,nofollow,noarchive' : 'index,follow' });
-    }, [commercialSlug, LegacyTemplate, newTemplateSlug, pathname, routeSlug, zenLovePreviewItem]);
+    upsertMeta('meta[name="robots"]', { name: 'robots', content: 'index,follow' });
+  }, [TemplateComponent, pathname, routeSlug]);
 
-  if (commercialSlug) return <RoutedPage><CommercialInvitationPage slug={commercialSlug} /></RoutedPage>;
-  if (newTemplateSlug) return <TemplatePreview slug={newTemplateSlug}><NewTemplateRouter slug={newTemplateSlug} /></TemplatePreview>;
-  if (LegacyTemplate) return <TemplatePreview slug={routeSlug}><LegacyTemplate /></TemplatePreview>;
-  if (zenLovePreviewItem) return <ZenLoveScenePreview item={zenLovePreviewItem} />;
-  return <RoutedPage><TemplatesDashboard /></RoutedPage>;
+  if (TemplateComponent) {
+    return (
+      <RoutedPage invitation>
+        <TemplateComponent />
+      </RoutedPage>
+    );
+  }
+
+  return (
+    <RoutedPage>
+      <TemplatesDashboard />
+    </RoutedPage>
+  );
 }

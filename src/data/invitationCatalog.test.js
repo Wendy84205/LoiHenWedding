@@ -1,23 +1,17 @@
 import { describe, expect, it } from 'vitest';
 import {
-  additionalInvitationItems,
   allInvitationSlugs,
   archivedInvitationSlugs,
   currentCatalogSlugs,
-  missingInvitationIds,
+  keptTemplateIds,
 } from './invitationCatalog.js';
 
 describe('invitation catalog', () => {
-  it('contains the 108 current templates and two archived templates without duplicates', () => {
-    expect(currentCatalogSlugs).toHaveLength(108);
-    expect(archivedInvitationSlugs).toEqual(['thiep-cuoi-51', 'thiep-cuoi-112']);
-    expect(allInvitationSlugs).toHaveLength(110);
-    expect(new Set(allInvitationSlugs).size).toBe(allInvitationSlugs.length);
-  });
-
-  it('publishes every recovered catalog template in the library', () => {
-    expect(missingInvitationIds).toHaveLength(27);
-    expect(additionalInvitationItems).toHaveLength(27);
-    expect(additionalInvitationItems.every((item) => item.path && item.image && item.details.length >= 3)).toBe(true);
+  it('contains exactly the 11 kept templates without duplicates', () => {
+    expect(currentCatalogSlugs).toHaveLength(11);
+    expect(keptTemplateIds).toEqual([3, 4, 7, 10, 14, 16, 27, 47, 48, 55, 56]);
+    expect(archivedInvitationSlugs).toHaveLength(0);
+    expect(allInvitationSlugs).toHaveLength(11);
+    expect(new Set(allInvitationSlugs).size).toBe(11);
   });
 });

@@ -1,0 +1,10 @@
+import { chromium } from 'playwright';
+const b = await chromium.launch();
+const p = await b.newPage({ viewport: { width: 500, height: 1000 } });
+const bad = [];
+p.on('requestfailed', (r) => bad.push(r.url().split('/').slice(-2).join('/') + ' :: ' + (r.failure() && r.failure().errorText)));
+await p.goto('file:///Users/wendy/Documents/Thiepcuoi28-10-2026/thiep/index.html', { waitUntil: 'load', timeout: 30000 });
+await p.waitForTimeout(1500);
+console.log('FAILED REQUESTS:');
+bad.forEach((x) => console.log(' -', x));
+await b.close();

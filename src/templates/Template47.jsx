@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Heart, Maximize2, MessageCircle, Send, X, Check } from 'lucide-react';
 import WeddingMusicButton from './WeddingMusicButton.jsx';
-import { useCommercialInvitation, useInvitationContent, useRsvpSubmit, useWishSubmit } from '../commerce/CommercialInvitationContext.jsx';
+import { useCommercialInvitation, useInvitationContent, useRsvpSubmit, useWishSubmit } from './invitationContext.js';
 import './template47.css';
 import './new/auditFidelity.css';
 

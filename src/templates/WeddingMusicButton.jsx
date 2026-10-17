@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Music2 } from 'lucide-react';
-import { DEFAULT_INVITATION_MUSIC, INVITATION_MUSIC_DISABLED } from '../commerce/invitationMusic.js';
-
+export const DEFAULT_INVITATION_MUSIC = '/assets/audio/wedding-harp.mp3';
+export const INVITATION_MUSIC_DISABLED = 'none';
 export const DEFAULT_WEDDING_MUSIC = DEFAULT_INVITATION_MUSIC;
 
 export default function WeddingMusicButton({

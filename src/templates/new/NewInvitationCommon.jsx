@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Check, Gift, Heart, MapPin, Send } from 'lucide-react';
 import WeddingMusicButton from '../WeddingMusicButton.jsx';
-import { useCommercialInvitation, useRsvpSubmit, useWishSubmit } from '../../commerce/CommercialInvitationContext.jsx';
+import { useCommercialInvitation, useRsvpSubmit, useWishSubmit } from '../invitationContext.js';
 import './newInvitationCommon.css';
 
 const directions = {

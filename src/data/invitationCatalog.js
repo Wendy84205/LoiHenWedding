@@ -1,74 +1,31 @@
-const missingTemplateProfiles = [
-  [3, 'Hồng Song Hỷ', 'Traditional', 'ivory & rose'],
-  [9, 'Vượt Qua Năm Tháng', 'Cinematic', 'forest story'],
-  [12, 'Uyên Ương Họa', 'Illustration', 'red illustration'],
-  [13, 'Mèo Cưới Vui', 'Illustration', 'playful yellow'],
-  [22, 'Nâu Huyền', 'Cinematic', 'mocha nocturne'],
-  [25, 'Hỷ Tân Hôn', 'Traditional', 'clean red'],
-  [27, 'Chứng Kiến Hạnh Phúc', 'Editorial', 'photo journal'],
-  [29, 'Hoàng Hôn Thành Thị', 'Cinematic', 'sunset portrait'],
-  [33, 'Duyên Bất Kiến', 'Editorial', 'oriental minimal'],
-  [35, 'Mộng Hỷ', 'Traditional', 'white & red'],
-  [59, 'Vườn Hồng', 'Botanical', 'rose garden'],
-  [70, 'Retro Save the Date', 'Editorial', 'film red'],
-  [71, 'Blush Portrait', 'Romantic red', 'soft blush'],
-  [72, 'Happy Wedding Minimal', 'Editorial', 'black & ivory'],
-  [74, 'Ink Romance', 'Editorial', 'ink & blush'],
-  [76, 'Violet Poetry', 'Editorial', 'violet type'],
-  [77, 'Fall in Love', 'Botanical', 'soft foliage'],
-  [84, 'Contemporary Classic', 'Traditional', 'modern ivory'],
-  [86, 'Olive Typography', 'Editorial', 'olive minimal'],
-  [87, 'Dusty Rose Formal', 'Romantic red', 'dusty rose'],
-  [88, 'Phượng Hỷ', 'Traditional', 'phoenix red'],
-  [89, 'Cartoon Love', 'Illustration', 'colorful story'],
-  [90, 'Warm Film', 'Cinematic', 'warm grain'],
-  [93, 'Dark Ballroom', 'Cinematic', 'black editorial'],
-  [100, 'Vermilion Red', 'Traditional', 'vermilion'],
-  [102, 'Long Phụng', 'Traditional', 'ornate red'],
-  [103, 'Forest Story', 'Botanical', 'natural green'],
-];
+export const keptTemplateIds = [3, 4, 7, 10, 14, 16, 27, 47, 48, 55, 56];
 
-export const missingInvitationIds = missingTemplateProfiles.map(([id]) => id);
+export const currentCatalogSlugs = keptTemplateIds.map((id) => `thiep-cuoi-${id}`);
 
-export const additionalInvitationItems = missingTemplateProfiles.map(([id, title, category, mood]) => ({
-  title,
-  category,
-  subtitle: `Mẫu ${id} · ${mood}`,
-  image: `/assets/new-templates/thiep-cuoi-${id}/preview.webp`,
-  details: ['Bố cục riêng theo mẫu', 'Animation khi cuộn', 'Nhạc, lịch, bản đồ & RSVP'],
-  path: `/template/thiep-cuoi-${id}`,
-}));
+export const archivedInvitationSlugs = [];
 
-const currentNumericIds = Array.from({ length: 108 }, (_, index) => index + 1)
-  .filter((id) => id !== 45 && id !== 51);
+export const allInvitationSlugs = [...currentCatalogSlugs];
 
-export const currentCatalogSlugs = [
-  'thiep-bw-1',
-  ...currentNumericIds.map((id) => `thiep-cuoi-${id}`),
-  'thiep-cuoi-tone-xanh',
-];
+export const missingInvitationIds = [];
+export const additionalInvitationItems = [];
 
-export const archivedInvitationSlugs = ['thiep-cuoi-51', 'thiep-cuoi-112'];
-
-export const allInvitationSlugs = [...currentCatalogSlugs, ...archivedInvitationSlugs]
-  .sort((left, right) => left.localeCompare(right, 'vi', { numeric: true }));
-
-const profileTitleBySlug = Object.fromEntries(
-  missingTemplateProfiles.map(([id, title]) => [`thiep-cuoi-${id}`, title]),
-);
-
-const featuredTitles = {
-  'thiep-cuoi-39': 'Đỏ Nhung',
-  'thiep-cuoi-47': 'Hỷ Đỏ',
-  'thiep-cuoi-61': 'Nắng Mai',
-  'thiep-cuoi-tone-xanh': 'Hỷ Xanh',
-  'thiep-bw-1': 'Black & White',
+export const templateProfiles = {
+  'thiep-cuoi-3': { id: 3, title: 'Hồng Song Hỷ', category: 'Traditional', mood: 'ivory & rose' },
+  'thiep-cuoi-4': { id: 4, title: 'Blush Diary', category: 'Romantic', mood: 'soft blush' },
+  'thiep-cuoi-7': { id: 7, title: 'Ribbon Love', category: 'Romantic', mood: 'ribbon red' },
+  'thiep-cuoi-10': { id: 10, title: 'Black Vow', category: 'Cinematic', mood: 'editorial black' },
+  'thiep-cuoi-14': { id: 14, title: 'Sepia Circle', category: 'Editorial', mood: 'warm sepia' },
+  'thiep-cuoi-16': { id: 16, title: 'Thảo My', category: 'Editorial', mood: 'clean modern' },
+  'thiep-cuoi-27': { id: 27, title: 'Chứng Kiến Hạnh Phúc', category: 'Editorial', mood: 'photo journal' },
+  'thiep-cuoi-47': { id: 47, title: 'Hỷ Đỏ', category: 'Traditional', mood: 'oriental red' },
+  'thiep-cuoi-48': { id: 48, title: 'Mộc Nhiên', category: 'Botanical', mood: 'natural green' },
+  'thiep-cuoi-55': { id: 55, title: 'Lãng Mạn', category: 'Romantic', mood: 'soft pastel' },
+  'thiep-cuoi-56': { id: 56, title: 'Khánh Hỷ', category: 'Traditional', mood: 'classic red' },
 };
 
 export function getInvitationDisplayTitle(slug) {
-  if (profileTitleBySlug[slug]) return profileTitleBySlug[slug];
-  if (featuredTitles[slug]) return featuredTitles[slug];
-  const number = slug.match(/thiep-cuoi-(\d+)/)?.[1];
+  if (templateProfiles[slug]) return templateProfiles[slug].title;
+  const number = slug?.match(/thiep-cuoi-(\d+)/)?.[1];
   return number ? `Mẫu thiệp cưới ${number}` : 'Mẫu thiệp cưới online';
 }
 
