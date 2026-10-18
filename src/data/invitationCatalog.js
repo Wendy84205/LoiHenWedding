@@ -1,4 +1,4 @@
-export const keptTemplateIds = [3, 4, 7, 10, 14, 16, 27, 47, 48, 55, 56];
+export const keptTemplateIds = [3, 4, 7, 10, 14, 16, 27, 47, 48, 55, 56, 122, 123, 124];
 
 export const currentCatalogSlugs = keptTemplateIds.map((id) => `thiep-cuoi-${id}`);
 
@@ -21,6 +21,9 @@ export const templateProfiles = {
   'thiep-cuoi-48': { id: 48, title: 'Mộc Nhiên', category: 'Botanical', mood: 'natural green' },
   'thiep-cuoi-55': { id: 55, title: 'Lãng Mạn', category: 'Romantic', mood: 'soft pastel' },
   'thiep-cuoi-56': { id: 56, title: 'Khánh Hỷ', category: 'Traditional', mood: 'classic red' },
+  'thiep-cuoi-122': { id: 122, title: 'Minimalism Đỏ Đậm', category: 'Minimalist', mood: 'burgundy & cream' },
+  'thiep-cuoi-123': { id: 123, title: 'Minimalism Xanh', category: 'Minimalist', mood: 'sage green & ivory' },
+  'thiep-cuoi-124': { id: 124, title: 'Thanh Diệp Xanh', category: 'Botanical', mood: 'forest green & white' },
 };
 
 export function getInvitationDisplayTitle(slug) {

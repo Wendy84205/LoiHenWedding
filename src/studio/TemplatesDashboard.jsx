@@ -26,6 +26,7 @@ const customTitles = {
   'thiep-cuoi-48': 'Mộc Nhiên',
   'thiep-cuoi-55': 'Lãng Mạn',
   'thiep-cuoi-56': 'Khánh Hỷ',
+  'thiep-cuoi-122': 'Minimalism Đỏ Đậm',
 };
 
 function getPreviewImage(slug) {
@@ -34,6 +35,9 @@ function getPreviewImage(slug) {
   }
   if (slug === 'thiep-cuoi-55' || slug === 'thiep-cuoi-56') {
     return `/assets/new-templates/${slug}/preview.jpg`;
+  }
+  if (slug === 'thiep-cuoi-122') {
+    return `/assets/new-templates/${slug}/preview.svg`;
   }
   return `/assets/new-templates/${slug}/preview.webp`;
 }
@@ -185,7 +189,7 @@ export default function TemplatesDashboard() {
           <h1>Mẫu Thiệp Cưới</h1>
           <p>Tôn vinh câu chuyện tình yêu bằng những thiết kế thiệp cưới số chỉn chu, giàu cảm xúc và tinh tế trên mọi màn hình.</p>
           <div className="tpl-hero-points">
-            <span><LayoutTemplate size={16} /> 11 mẫu thiệp tuyển chọn</span>
+            <span><LayoutTemplate size={16} /> 12 mẫu thiệp tuyển chọn</span>
             <span><Sparkles size={16} /> Phong cách tinh tế</span>
             <span><ImageIcon size={16} /> Xem đẹp trên điện thoại</span>
           </div>

@@ -15,11 +15,14 @@ const templateRegistry = {
   'thiep-cuoi-48': lazy(() => import('./templates/Template48.jsx')),
   'thiep-cuoi-55': lazy(() => import('./templates/new/Template55New.jsx')),
   'thiep-cuoi-56': lazy(() => import('./templates/new/Template56New.jsx')),
+  'thiep-cuoi-122': lazy(() => import('./templates/new/Template122New.jsx')),
+  'thiep-cuoi-123': lazy(() => import('./templates/new/Template123New.jsx')),
+  'thiep-cuoi-124': lazy(() => import('./templates/new/Template124New.jsx')),
 };
 
 const pageTitles = {
   '/': 'Mẫu thiệp cưới Online | Lời Hẹn Wedding Studio',
-  '/mau-thiep': '11 Mẫu Thiệp Cưới Online Tuyển Chọn | Lời Hẹn Wedding Studio',
+  '/mau-thiep': '12 Mẫu Thiệp Cưới Online Tuyển Chọn | Lời Hẹn Wedding Studio',
 };
 
 function upsertMeta(selector, attributes) {
@@ -62,7 +65,7 @@ export default function App() {
     const title = invitationTitle || pageTitles[pathname] || pageTitles['/mau-thiep'];
     const description = invitationTitle
       ? `${getInvitationDisplayTitle(routeSlug)} - Mẫu thiệp cưới online tuyển chọn của Lời Hẹn Wedding Studio.`
-      : 'Khám phá bộ sưu tập 11 mẫu thiệp cưới online tuyển chọn của Lời Hẹn Wedding Studio.';
+      : 'Khám phá bộ sưu tập 12 mẫu thiệp cưới online tuyển chọn của Lời Hẹn Wedding Studio.';
     const canonical = `${window.location.origin}${pathname}`;
     document.title = title;
     upsertMeta('meta[name="description"]', { name: 'description', content: description });

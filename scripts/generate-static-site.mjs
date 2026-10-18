@@ -8,8 +8,8 @@ const siteUrl = (process.env.SITE_URL || 'https://thiep-moi-online.vercel.app').
 const buildDate = new Date().toISOString().slice(0, 10);
 
 const publicRoutes = [
-  ['/', 'Mẫu thiệp cưới Online | Lời Hẹn Wedding Studio', 'Khám phá bộ sưu tập 11 mẫu thiệp cưới online tuyển chọn của Lời Hẹn Wedding Studio.', '/social/studio.jpg'],
-  ['/mau-thiep', '11 Mẫu Thiệp Cưới Online Tuyển Chọn | Lời Hẹn Wedding Studio', 'Thư viện 11 mẫu thiệp cưới tuyển chọn tinh tế, có bố cục và animation riêng.', '/social/studio.jpg'],
+  ['/', 'Mẫu thiệp cưới Online | Lời Hẹn Wedding Studio', 'Khám phá bộ sưu tập 12 mẫu thiệp cưới online tuyển chọn của Lời Hẹn Wedding Studio.', '/social/studio.jpg'],
+  ['/mau-thiep', '12 Mẫu Thiệp Cưới Online Tuyển Chọn | Lời Hẹn Wedding Studio', 'Thư viện 12 mẫu thiệp cưới tuyển chọn tinh tế, có bố cục và animation riêng.', '/social/studio.jpg'],
 ];
 
 const invitationRoutes = allInvitationSlugs.map((slug) => {

@@ -1,0 +1,1773 @@
+/* ==========================================================================
+   TEMPLATE 124 NEW - THANH DIỆP XANH (Botanical Forest Green & White)
+   Inspired by Chung Đôi "Thanh Diệp Xanh" Demo
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Pinyon+Script&display=swap');
+
+:root {
+  --t124n-bg-dark: #1e3321;
+  --t124n-bg-forest: #233b26;
+  --t124n-bg-light: #fcfcfb;
+  --t124n-card-bg: #ffffff;
+  --t124n-color-primary: #385233;
+  --t124n-color-primary-dark: #233b26;
+  --t124n-color-primary-light: #526f4c;
+  --t124n-color-sage: #8da488;
+  --t124n-color-sage-soft: #eaf0e8;
+  --t124n-color-text-dark: #223020;
+  --t124n-color-text-muted: #5e6d5b;
+  --t124n-color-text-light: #ffffff;
+  --t124n-color-text-light-trans: rgba(255, 255, 255, 0.85);
+  --t124n-font-serif: 'Cormorant Garamond', 'Times New Roman', serif;
+  --t124n-font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --t124n-font-script: 'Pinyon Script', cursive;
+}
+
+.t124n-root {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  font-family: var(--t124n-font-sans);
+  color: var(--t124n-color-text-dark);
+  background: var(--t124n-bg-light);
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.t124n-root *,
+.t124n-root *::before,
+.t124n-root *::after {
+  box-sizing: border-box;
+}
+
+/* ═══════════════════════════════════════════════
+   COVER & ENVELOPE (PHONG BÌ MỞ ĐẦU)
+   ═══════════════════════════════════════════════ */
+.t124n-coverOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 40% 30%, #2d5233 0%, #1e3a24 40%, #0f1f14 100%);
+  padding: 20px 16px;
+  overflow: hidden;
+  animation: t124n-bgAurora 10s ease-in-out infinite alternate;
+}
+
+@keyframes t124n-bgAurora {
+  0%   { background: radial-gradient(ellipse at 40% 30%, #2d5233 0%, #1e3a24 40%, #0f1f14 100%); }
+  50%  { background: radial-gradient(ellipse at 65% 70%, #264d2e 0%, #172e1c 40%, #0a1a0d 100%); }
+  100% { background: radial-gradient(ellipse at 20% 55%, #305936 0%, #1c3821 40%, #101e13 100%); }
+}
+
+/* Deep Bokeh Orbs */
+.t124n-coverOverlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 28%, rgba(56, 82, 51, 0.38) 0%, transparent 45%),
+    radial-gradient(circle at 82% 18%, rgba(141, 164, 136, 0.15) 0%, transparent 35%),
+    radial-gradient(circle at 65% 78%, rgba(56, 82, 51, 0.28) 0%, transparent 40%),
+    radial-gradient(circle at 8% 78%, rgba(82, 111, 76, 0.2) 0%, transparent 30%);
+  animation: t124n-bokehOrbs 14s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+@keyframes t124n-bokehOrbs {
+  0%   { opacity: 0.65; transform: scale(1) rotate(0deg); }
+  50%  { opacity: 1;    transform: scale(1.12) rotate(5deg); }
+  100% { opacity: 0.8;  transform: scale(0.93) rotate(-4deg); }
+}
+
+/* Emerald Sparkle Dust */
+.t124n-coverOverlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.88) 1px, transparent 1px),
+    radial-gradient(circle, rgba(141, 164, 136, 0.7) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.55) 1.5px, transparent 1.5px),
+    radial-gradient(circle, rgba(56, 82, 51, 0.75) 1px, transparent 1px);
+  background-size: 170px 170px, 230px 230px, 115px 115px, 290px 290px;
+  background-position: 18px 28px, 76px 58px, 140px 85px, 48px 135px;
+  animation: t124n-sparkleGlow 7s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.45;
+}
+@keyframes t124n-sparkleGlow {
+  0%   { transform: translateY(0) translateX(0);   opacity: 0.3; }
+  50%  { transform: translateY(-11px) translateX(7px); opacity: 0.55; }
+  100% { transform: translateY(5px) translateX(-5px);  opacity: 0.38; }
+}
+
+/* Falling leaves background animation */
+.t124n-fallingLeaves {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.t124n-fallingLeaf {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  opacity: 0.55;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  animation-name: t124nLeafDrift;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes t124nLeafDrift {
+  0% {
+    transform: translateY(-40px) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.65;
+  }
+  85% {
+    opacity: 0.65;
+  }
+  100% {
+    transform: translateY(105vh) translateX(60px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Cover Card */
+.t124n-coverCard {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 375px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.5), 0 0 60px rgba(56, 82, 51, 0.3);
+  padding: 44px 24px 38px;
+  text-align: center;
+  overflow: hidden;
+  animation: t124nCardPop 0.8s cubic-bezier(0.16, 1, 0.3, 1) both, t124n-cardFloat 5s ease-in-out 0.9s infinite;
+}
+
+@keyframes t124nCardPop {
+  0%   { opacity: 0; transform: scale(0.92) translateY(30px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes t124n-cardFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* Emerald border shimmer */
+.t124n-coverCard::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 22px;
+  background: linear-gradient(135deg,
+    rgba(56, 82, 51, 0.6) 0%,
+    rgba(141, 164, 136, 0.25) 25%,
+    rgba(82, 111, 76, 0.45) 50%,
+    rgba(255, 255, 255, 0.12) 75%,
+    rgba(56, 82, 51, 0.6) 100%
+  );
+  background-size: 300% 300%;
+  animation: t124n-cardBorderShimmer 4s linear infinite;
+  z-index: -1;
+}
+@keyframes t124n-cardBorderShimmer {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.t124n-coverDecorTop {
+  position: absolute;
+  top: -15px;
+  right: -25px;
+  width: 150px;
+  height: auto;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.t124n-coverDecorBottom {
+  position: absolute;
+  bottom: -20px;
+  left: -25px;
+  width: 140px;
+  height: auto;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.t124n-coverHeartIcon {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  background: var(--t124n-color-primary);
+  border-radius: 50%;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(56, 82, 51, 0.35), 0 0 28px rgba(56, 82, 51, 0.2);
+  animation: t124n-heartIconPulse 2s ease-in-out infinite;
+}
+/* Dual halo rings */
+.t124n-coverHeartIcon::before {
+  content: '';
+  position: absolute;
+  inset: -7px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(141, 164, 136, 0.55);
+  animation: t124n-haloExpand 2s ease-in-out infinite;
+}
+.t124n-coverHeartIcon::after {
+  content: '';
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  border: 1px solid rgba(141, 164, 136, 0.28);
+  animation: t124n-haloExpand 2s ease-in-out infinite 0.5s;
+}
+@keyframes t124n-haloExpand {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50%       { transform: scale(1.1); opacity: 1; }
+}
+@keyframes t124n-heartIconPulse {
+  0%, 100% { box-shadow: 0 8px 18px rgba(56, 82, 51, 0.35), 0 0 28px rgba(56, 82, 51, 0.2); transform: scale(1); }
+  50%       { box-shadow: 0 10px 26px rgba(56, 82, 51, 0.5), 0 0 48px rgba(56, 82, 51, 0.38); transform: scale(1.06); }
+}
+
+.t124n-coverNames {
+  font-family: var(--t124n-font-serif);
+  font-size: 32px;
+  line-height: 1.15;
+  font-weight: 600;
+  color: var(--t124n-color-primary-dark);
+  margin: 0 0 10px;
+}
+
+.t124n-coverNames span {
+  display: block;
+}
+
+.t124n-coverAmp {
+  font-family: var(--t124n-font-serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--t124n-color-sage);
+  margin: 4px 0;
+}
+
+.t124n-coverDivider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 12px 0 14px;
+}
+
+.t124n-coverDivider::before,
+.t124n-coverDivider::after {
+  content: '';
+  height: 1px;
+  width: 44px;
+  background: rgba(56, 82, 51, 0.3);
+}
+
+.t124n-coverDivider span {
+  color: var(--t124n-color-primary);
+  font-size: 15px;
+}
+
+.t124n-coverDateVi {
+  font-family: var(--t124n-font-serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--t124n-color-primary-dark);
+  margin: 0;
+}
+
+.t124n-coverDateEn {
+  font-family: var(--t124n-font-sans);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--t124n-color-text-muted);
+  margin: 2px 0 20px;
+}
+
+.t124n-coverInviteLabel {
+  font-family: var(--t124n-font-serif);
+  font-size: 16px;
+  color: var(--t124n-color-text-dark);
+  margin: 0 0 10px;
+}
+
+.t124n-coverGuestPill {
+  display: inline-block;
+  background: var(--t124n-color-sage-soft);
+  color: var(--t124n-color-primary-dark);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 8px 22px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.t124n-coverInviteSub {
+  font-family: var(--t124n-font-serif);
+  font-size: 13.5px;
+  color: var(--t124n-color-text-muted);
+  line-height: 1.4;
+  margin: 0 0 24px;
+}
+
+.t124n-coverOpenBtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 36px;
+  background: var(--t124n-color-primary);
+  color: #ffffff;
+  border: 0;
+  border-radius: 9999px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(56, 82, 51, 0.35);
+  transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+  overflow: hidden;
+}
+
+.t124n-coverOpenBtn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 14px 28px rgba(56, 82, 51, 0.45);
+  background: var(--t124n-color-primary-dark);
+}
+
+.t124n-coverOpenBtn .t124n-shine {
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-20deg);
+  animation: t124nShine 3s infinite;
+}
+
+@keyframes t124nShine {
+  0% { left: -75%; }
+  50%, 100% { left: 125%; }
+}
+
+/* ── HIỆU ỨNG KHI BẤM MỞ THIỆP (OPENING ANIMATION) ──────── */
+.t124n-coverHeartIcon {
+  cursor: pointer;
+  user-select: none;
+}
+
+.t124n-coverOverlay.t124n-coverOverlay--opening {
+  pointer-events: none;
+  animation: t124n-coverFadeOut 0.85s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes t124n-coverFadeOut {
+  0%   { opacity: 1; }
+  65%  { opacity: 0.95; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+/* Card slide-up & 3D tilt */
+.t124n-coverOverlay.t124n-coverOverlay--opening .t124n-coverCard {
+  animation: t124n-cardOpenSlide 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+@keyframes t124n-cardOpenSlide {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 1;
+    filter: drop-shadow(0 25px 65px rgba(0, 0, 0, 0.5));
+  }
+  30% {
+    transform: translateY(-22px) scale(1.03) rotate(-1deg);
+    filter: drop-shadow(0 35px 75px rgba(56, 82, 51, 0.65));
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-90px) scale(0.92) rotate(2deg);
+    opacity: 0;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+  }
+}
+
+/* Heart icon badge peel & burst upward */
+.t124n-coverOverlay.t124n-coverOverlay--opening .t124n-coverHeartIcon {
+  animation: t124n-heartBadgeBreak 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards !important;
+}
+
+@keyframes t124n-heartBadgeBreak {
+  0% {
+    transform: scale(1) rotate(0deg);
+    box-shadow: 0 8px 18px rgba(56, 82, 51, 0.35);
+    filter: brightness(1);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(1.4) rotate(-12deg);
+    box-shadow: 0 0 45px rgba(141, 164, 136, 1), 0 0 90px rgba(56, 82, 51, 0.8), inset 0 2px 8px #fff;
+    filter: brightness(1.7);
+    opacity: 1;
+  }
+  55% {
+    transform: translateY(-70px) scale(1.15) rotate(25deg);
+    opacity: 0.85;
+    filter: brightness(1.4);
+  }
+  100% {
+    transform: translateY(-150px) scale(0.3) rotate(60deg);
+    opacity: 0;
+    filter: brightness(2) blur(2px);
+  }
+}
+
+/* Heart shockwave explosion */
+.t124n-heartShockwave {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 3px solid #8da488;
+  animation: t124n-heartShockwaveAnim 0.75s ease-out forwards;
+  pointer-events: none;
+}
+@keyframes t124n-heartShockwaveAnim {
+  0% {
+    transform: scale(0.4);
+    opacity: 1;
+    box-shadow: 0 0 25px #8da488, inset 0 0 20px #8da488;
+  }
+  100% {
+    transform: scale(4.5);
+    opacity: 0;
+    box-shadow: 0 0 60px rgba(141, 164, 136, 0), inset 0 0 60px rgba(141, 164, 136, 0);
+  }
+}
+
+/* Top decorative botanical leaves sticker peels & flies up-right */
+.t124n-coverOverlay.t124n-coverOverlay--opening .t124n-coverDecorTop {
+  animation: t124n-leafFlyTop 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
+}
+@keyframes t124n-leafFlyTop {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 0.85;
+  }
+  35% {
+    transform: translate(30px, -35px) scale(1.22) rotate(25deg);
+    opacity: 1;
+    filter: drop-shadow(0 15px 25px rgba(56, 82, 51, 0.45));
+  }
+  100% {
+    transform: translate(110px, -110px) scale(0.65) rotate(65deg);
+    opacity: 0;
+  }
+}
+
+/* Bottom decorative botanical leaves sticker peels & flies down-left */
+.t124n-coverOverlay.t124n-coverOverlay--opening .t124n-coverDecorBottom {
+  animation: t124n-leafFlyBottom 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
+}
+@keyframes t124n-leafFlyBottom {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 0.85;
+  }
+  35% {
+    transform: translate(-30px, 35px) scale(1.22) rotate(-25deg);
+    opacity: 1;
+    filter: drop-shadow(0 15px 25px rgba(56, 82, 51, 0.45));
+  }
+  100% {
+    transform: translate(-110px, 110px) scale(0.65) rotate(-65deg);
+    opacity: 0;
+  }
+}
+
+/* The open button dissolves into a ripple on click */
+.t124n-coverOverlay.t124n-coverOverlay--opening .t124n-coverOpenBtn {
+  animation: t124n-btnPopDisappear 0.45s ease-out forwards;
+}
+@keyframes t124n-btnPopDisappear {
+  0%   { transform: scale(1); opacity: 1; }
+  30%  { transform: scale(1.15); opacity: 1; filter: brightness(1.35); }
+  100% { transform: scale(0.8); opacity: 0; }
+}
+
+/* Guest pill and invitations smooth dissolution */
+.t124n-coverOverlay.t124n-coverOverlay--opening .t124n-coverGuestPill,
+.t124n-coverOverlay.t124n-coverOverlay--opening .t124n-coverInviteLabel,
+.t124n-coverOverlay.t124n-coverOverlay--opening .t124n-coverInviteSub,
+.t124n-coverOverlay.t124n-coverOverlay--opening .t124n-coverDateVi,
+.t124n-coverOverlay.t124n-coverOverlay--opening .t124n-coverDateEn,
+.t124n-coverOverlay.t124n-coverOverlay--opening .t124n-coverNames,
+.t124n-coverOverlay.t124n-coverOverlay--opening .t124n-coverDivider {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+/* ═══════════════════════════════════════════════
+   MAIN CONTENT WRAPPER
+   ═══════════════════════════════════════════════ */
+.t124n-main {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  position: relative;
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Floating Music Player Button */
+.t124n-musicBtn {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  z-index: 100;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--t124n-color-primary);
+  color: #ffffff;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(35, 59, 38, 0.4);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.t124n-musicBtn:hover {
+  transform: scale(1.08);
+  background: var(--t124n-color-primary-dark);
+}
+
+.t124n-musicBars {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 16px;
+}
+
+.t124n-musicBar {
+  width: 3px;
+  background: #ffffff;
+  border-radius: 2px;
+  height: 100%;
+  animation: t124nBarWave 1.2s ease-in-out infinite alternate;
+}
+
+.t124n-musicBar:nth-child(1) { animation-delay: 0.1s; height: 40%; }
+.t124n-musicBar:nth-child(2) { animation-delay: 0.3s; height: 100%; }
+.t124n-musicBar:nth-child(3) { animation-delay: 0.2s; height: 65%; }
+
+@keyframes t124nBarWave {
+  0% { transform: scaleY(0.3); }
+  100% { transform: scaleY(1); }
+}
+
+/* ═══════════════════════════════════════════════
+   SECTION 1: THE STORY OF LOVE & POLAROID COUPLE
+   ═══════════════════════════════════════════════ */
+.t124n-heroSection {
+  position: relative;
+  padding: 50px 20px 40px;
+  background: #ffffff;
+  overflow: hidden;
+  text-align: center;
+}
+
+.t124n-leafDecorHeroTop {
+  position: absolute;
+  top: -10px;
+  left: -20px;
+  width: 180px;
+  height: auto;
+  pointer-events: none;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.t124n-leafDecorHeroBottom {
+  position: absolute;
+  bottom: -40px;
+  right: -25px;
+  width: 220px;
+  height: auto;
+  pointer-events: none;
+  opacity: 0.85;
+  z-index: 1;
+}
+
+.t124n-heroSubTitle {
+  position: relative;
+  z-index: 2;
+  font-family: var(--t124n-font-serif);
+  font-size: 20px;
+  letter-spacing: 0.22em;
+  color: var(--t124n-color-primary);
+  text-transform: uppercase;
+  margin: 0 0 34px;
+}
+
+.t124n-heroSubTitle span {
+  font-size: 15px;
+  font-style: italic;
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+  margin: 0 4px;
+}
+
+.t124n-polaroidsWrap {
+  position: relative;
+  z-index: 2;
+  max-width: 380px;
+  margin: 0 auto 30px;
+  height: 520px;
+}
+
+/* Groom Card (tilted left) */
+.t124n-polaroidGroom {
+  position: absolute;
+  top: 0;
+  left: 8px;
+  width: 220px;
+  background: #ffffff;
+  padding: 10px 10px 14px;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+  transform: rotate(-4deg);
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.t124n-polaroidGroom:hover {
+  transform: rotate(-1deg) scale(1.02);
+  z-index: 4;
+}
+
+.t124n-polaroidGroomImg {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.t124n-polaroidGroomMeta {
+  position: absolute;
+  top: 90px;
+  left: 235px;
+  text-align: left;
+  width: 140px;
+  z-index: 3;
+}
+
+.t124n-polaroidRole {
+  font-family: var(--t124n-font-serif);
+  font-style: italic;
+  font-size: 13.5px;
+  color: var(--t124n-color-sage);
+  margin: 0 0 2px;
+}
+
+.t124n-polaroidName {
+  font-family: var(--t124n-font-serif);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--t124n-color-primary-dark);
+  margin: 0;
+}
+
+/* Bride Card (tilted right) */
+.t124n-polaroidBride {
+  position: absolute;
+  top: 220px;
+  right: 10px;
+  width: 220px;
+  background: #ffffff;
+  padding: 10px 10px 14px;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+  transform: rotate(3deg);
+  transition: transform 0.3s ease;
+  z-index: 3;
+}
+
+.t124n-polaroidBride:hover {
+  transform: rotate(0deg) scale(1.02);
+  z-index: 5;
+}
+
+.t124n-polaroidBrideImg {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.t124n-polaroidBrideMeta {
+  position: absolute;
+  top: 310px;
+  right: 235px;
+  text-align: right;
+  width: 140px;
+  z-index: 3;
+}
+
+/* ═══════════════════════════════════════════════
+   SECTION 2: ALBUM ẢNH 3D (CHUYỂN ĐỘNG CHUẨN MẪU 122)
+   ═══════════════════════════════════════════════ */
+.t124n-albumSection {
+  position: relative;
+  padding: 40px 16px 50px;
+  background: #ffffff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.t124n-albumTitle {
+  font-family: var(--t124n-font-serif);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--t124n-color-primary-dark);
+  margin: 0 0 4px;
+}
+
+.t124n-albumSubtitle {
+  font-family: var(--t124n-font-sans);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--t124n-color-sage);
+  margin: 0 0 24px;
+}
+
+.t124n-albumWrap {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.t124n-albumStage {
+  position: relative;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+  touch-action: pan-y;
+}
+
+.t124n-album3dViewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.t124n-albumSlideCard {
+  position: absolute;
+  top: 5%;
+  left: 22%;
+  width: 56%;
+  height: 90%;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease;
+  user-select: none;
+}
+
+.t124n-albumSlideCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.t124n-albumSlideCard--active {
+  box-shadow: 0 20px 48px rgba(35, 59, 38, 0.35);
+}
+
+.t124n-albumNavBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(56, 82, 51, 0.25);
+  color: var(--t124n-color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 110;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.t124n-albumNavBtn:hover {
+  background: #ffffff;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.t124n-albumNavBtn--prev { left: 4px; }
+.t124n-albumNavBtn--next { right: 4px; }
+
+.t124n-albumDots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.t124n-albumDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(56, 82, 51, 0.25);
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.t124n-albumDot--active {
+  background: var(--t124n-color-primary);
+  width: 22px;
+  border-radius: 4px;
+}
+
+/* ═══════════════════════════════════════════════
+   SECTION 3: DARK GREEN CEREMONY & RECEPTION
+   ═══════════════════════════════════════════════ */
+.t124n-darkSection {
+  position: relative;
+  background: var(--t124n-bg-forest);
+  color: #ffffff;
+  padding: 50px 20px 60px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.t124n-darkLeafDecor1 {
+  position: absolute;
+  top: 60px;
+  left: -90px;
+  width: 320px;
+  height: auto;
+  pointer-events: none;
+  opacity: 0.18;
+  z-index: 1;
+}
+
+.t124n-darkLeafDecor2 {
+  position: absolute;
+  bottom: 80px;
+  right: -80px;
+  width: 300px;
+  height: auto;
+  pointer-events: none;
+  opacity: 0.18;
+  z-index: 1;
+}
+
+.t124n-darkContent {
+  position: relative;
+  z-index: 2;
+}
+
+.t124n-darkHeading {
+  font-family: var(--t124n-font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0 0 32px;
+}
+
+.t124n-familyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 34px;
+}
+
+.t124n-familyCol {
+  text-align: center;
+}
+
+.t124n-familyLabel {
+  font-family: var(--t124n-font-serif);
+  font-style: italic;
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 4px;
+}
+
+.t124n-familyName {
+  font-family: var(--t124n-font-serif);
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 2px 0;
+}
+
+.t124n-familyAddr {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.4;
+  margin-top: 4px;
+}
+
+.t124n-announcementBlock {
+  margin: 30px 0 20px;
+}
+
+.t124n-announceVi {
+  font-family: var(--t124n-font-serif);
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+
+.t124n-announceEn {
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 24px;
+}
+
+.t124n-mainCoupleNames {
+  margin: 24px 0 32px;
+}
+
+.t124n-mainName {
+  font-family: var(--t124n-font-serif);
+  font-size: 34px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 4px 0;
+}
+
+.t124n-mainRole {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+}
+
+.t124n-mainAmp {
+  font-family: var(--t124n-font-serif);
+  font-size: 28px;
+  color: var(--t124n-color-sage);
+  margin: 8px 0;
+}
+
+/* Ceremony event card */
+.t124n-ceremonyDetails {
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  padding-top: 28px;
+  margin-top: 28px;
+}
+
+.t124n-eventTitleVi {
+  font-family: var(--t124n-font-serif);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin: 0 0 2px;
+}
+
+.t124n-eventTitleEn {
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 16px;
+}
+
+.t124n-eventHour {
+  font-family: var(--t124n-font-serif);
+  font-size: 38px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 12px;
+}
+
+.t124n-dateTriple {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 12px 0;
+}
+
+.t124n-dateCol {
+  text-align: center;
+}
+
+.t124n-dateColLabel {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.t124n-dateColSub {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.t124n-datePipe {
+  font-size: 26px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.t124n-dateDayNum {
+  font-family: var(--t124n-font-serif);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.t124n-dateYearNum {
+  font-family: var(--t124n-font-serif);
+  font-size: 18px;
+  margin: 4px 0;
+}
+
+.t124n-lunarNotice {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 6px 0 28px;
+}
+
+/* Reception Time Row */
+.t124n-receptionTimeRow {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 20px 0 28px;
+}
+
+.t124n-recItemTitle {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.t124n-recItemSub {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 4px;
+}
+
+.t124n-recItemHour {
+  font-family: var(--t124n-font-serif);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Calendar Box */
+.t124n-calendarFrame {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 18px 14px;
+  max-width: 340px;
+  margin: 0 auto 24px;
+}
+
+.t124n-calendarTitle {
+  font-size: 13.5px;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.t124n-calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  font-size: 11px;
+}
+
+.t124n-calDayHeader {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 4px 0;
+}
+
+.t124n-calCell {
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 11.5px;
+}
+
+.t124n-calCell--active {
+  background: #ffffff;
+  color: var(--t124n-bg-dark);
+  font-weight: 700;
+  position: relative;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+}
+
+.t124n-calCell--active::after {
+  content: '♥';
+  position: absolute;
+  top: -8px;
+  right: -3px;
+  font-size: 10px;
+  color: #ff4757;
+}
+
+.t124n-addCalendarLink {
+  display: inline-block;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font-family: inherit;
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-size: 12.5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.t124n-addCalendarLink:hover {
+  opacity: 0.8;
+}
+
+.t124n-rsvpBtn {
+  background: #ffffff;
+  color: var(--t124n-color-primary-dark);
+  border: 0;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 12px 32px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.t124n-rsvpBtn:hover {
+  transform: scale(1.04);
+  background: #f0f4ef;
+}
+
+/* ═══════════════════════════════════════════════
+   VENUE & MAP
+   ═══════════════════════════════════════════════ */
+.t124n-venueBlock {
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  padding-top: 36px;
+  margin-top: 36px;
+}
+
+.t124n-venueHeading {
+  font-family: var(--t124n-font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0 0 2px;
+}
+
+.t124n-venueSubHeading {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 16px;
+}
+
+.t124n-venueAddr {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 340px;
+  margin: 0 auto 20px;
+}
+
+.t124n-mapBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  padding: 10px 24px;
+  border-radius: 9999px;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.t124n-mapBtn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-2px);
+}
+
+/* Dress Code */
+.t124n-dresscodeBlock {
+  margin: 40px 0 20px;
+}
+
+.t124n-dresscodeTitle {
+  font-family: var(--t124n-font-serif);
+  font-size: 17px;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.t124n-dresscodeSub {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 16px;
+}
+
+.t124n-dresscodePalette {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.t124n-dressSwatch {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Timeline */
+.t124n-timelineBlock {
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  padding-top: 36px;
+  margin-top: 36px;
+}
+
+.t124n-timelineList {
+  position: relative;
+  max-width: 320px;
+  margin: 24px auto 0;
+  padding-left: 20px;
+}
+
+.t124n-timelineList::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 65px;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.t124n-timelineItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 26px;
+  position: relative;
+}
+
+.t124n-timelineHour {
+  width: 50px;
+  font-family: var(--t124n-font-serif);
+  font-size: 17px;
+  font-weight: 600;
+  text-align: right;
+  padding-right: 14px;
+}
+
+.t124n-timelineDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid var(--t124n-bg-dark);
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  margin-right: 16px;
+}
+
+.t124n-timelineText {
+  text-align: left;
+}
+
+.t124n-timelineTitle {
+  font-size: 13.5px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.t124n-timelineSub {
+  font-size: 10.5px;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 2px 0 0;
+}
+
+/* ═══════════════════════════════════════════════
+   SECTION 4: GUESTBOOK & WISHES (LIGHT SECTION)
+   ═══════════════════════════════════════════════ */
+.t124n-guestbookSection {
+  position: relative;
+  padding: 50px 20px 40px;
+  background: #ffffff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.t124n-guestbookHeading {
+  font-family: var(--t124n-font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--t124n-color-primary-dark);
+  margin: 0 0 24px;
+}
+
+.t124n-guestbookFormCard {
+  background: #fbfdfa;
+  border: 1px solid rgba(56, 82, 51, 0.2);
+  border-radius: 16px;
+  padding: 24px 18px;
+  max-width: 380px;
+  margin: 0 auto 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.t124n-inputName,
+.t124n-inputTextarea {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(56, 82, 51, 0.25);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13.5px;
+  font-family: inherit;
+  color: var(--t124n-color-text-dark);
+  margin-bottom: 12px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.t124n-inputName:focus,
+.t124n-inputTextarea:focus {
+  border-color: var(--t124n-color-primary);
+  box-shadow: 0 0 0 3px rgba(56, 82, 51, 0.12);
+}
+
+.t124n-inputTextarea {
+  height: 90px;
+  resize: vertical;
+}
+
+.t124n-sendWishBtn {
+  background: var(--t124n-color-primary);
+  color: #ffffff;
+  border: 0;
+  border-radius: 9999px;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 10px 28px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(56, 82, 51, 0.3);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.t124n-sendWishBtn:hover {
+  transform: translateY(-2px);
+  background: var(--t124n-color-primary-dark);
+}
+
+/* Wish List */
+.t124n-wishList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.t124n-wishCard {
+  background: #fbfcfb;
+  border: 1px solid rgba(56, 82, 51, 0.15);
+  border-radius: 12px;
+  padding: 14px 16px;
+  text-align: left;
+}
+
+.t124n-wishHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.t124n-wishAuthor {
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--t124n-color-primary-dark);
+}
+
+.t124n-wishTime {
+  font-size: 10.5px;
+  color: var(--t124n-color-text-muted);
+}
+
+.t124n-wishContent {
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--t124n-color-text-dark);
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════
+   SECTION 5: HỘP QUÀ MỪNG (LÌ XÌ & BANK QR)
+   ═══════════════════════════════════════════════ */
+.t124n-giftboxSection {
+  position: relative;
+  padding: 40px 20px 50px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.t124n-giftboxHeading {
+  font-family: var(--t124n-font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--t124n-color-primary-dark);
+  margin: 0 0 2px;
+}
+
+.t124n-giftboxSub {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--t124n-color-sage);
+  margin: 0 0 28px;
+}
+
+.t124n-lixiTrigger {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.t124n-lixiBoxImg {
+  width: 140px;
+  height: auto;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(0 12px 24px rgba(35, 59, 38, 0.25));
+}
+
+.t124n-lixiTrigger:hover .t124n-lixiBoxImg {
+  transform: translateY(-8px) scale(1.06);
+}
+
+.t124n-lixiTriggerLabel {
+  margin-top: 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--t124n-color-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.t124n-lixiTriggerHint {
+  font-size: 11px;
+  color: var(--t124n-color-text-muted);
+}
+
+/* Footer note */
+.t124n-footerNote {
+  margin-top: 48px;
+  padding: 0 16px;
+}
+
+.t124n-footerTextVi {
+  font-family: var(--t124n-font-serif);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--t124n-color-primary-dark);
+  line-height: 1.45;
+  margin: 0 0 4px;
+}
+
+.t124n-footerTextEn {
+  font-size: 11.5px;
+  color: var(--t124n-color-text-muted);
+  line-height: 1.4;
+  margin: 0 0 20px;
+}
+
+.t124n-brandFooter {
+  font-size: 11px;
+  color: rgba(34, 48, 32, 0.45);
+  margin: 20px 0 10px;
+}
+
+/* ═══════════════════════════════════════════════
+   MODALS: RSVP & LÌ XÌ QR & LIGHTBOX
+   ═══════════════════════════════════════════════ */
+.t124n-modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: t124nFadeIn 0.25s ease;
+}
+
+@keyframes t124nFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.t124n-modalCard {
+  background: #ffffff;
+  border-radius: 20px;
+  max-width: 380px;
+  width: 100%;
+  padding: 28px 20px 24px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  animation: t124nPopIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@keyframes t124nPopIn {
+  from { transform: scale(0.9) translateY(20px); opacity: 0; }
+  to { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.t124n-modalCloseBtn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(0, 0, 0, 0.06);
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 0.2s;
+}
+
+.t124n-modalCloseBtn:hover {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.t124n-modalTitle {
+  font-family: var(--t124n-font-serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--t124n-color-primary-dark);
+  margin: 0 0 16px;
+}
+
+/* Lì xì Tabs */
+.t124n-qrTabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.t124n-qrTab {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(56, 82, 51, 0.25);
+  background: transparent;
+  color: var(--t124n-color-text-dark);
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.t124n-qrTab--active {
+  background: var(--t124n-color-primary);
+  color: #ffffff;
+  border-color: var(--t124n-color-primary);
+}
+
+.t124n-qrBox {
+  background: #fbfdfa;
+  border: 1px solid rgba(56, 82, 51, 0.2);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.t124n-qrImg {
+  width: 170px;
+  height: 170px;
+  object-fit: contain;
+  margin: 0 auto 12px;
+  display: block;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.t124n-qrInfoItem {
+  font-size: 12.5px;
+  color: var(--t124n-color-text-dark);
+  margin: 4px 0;
+}
+
+.t124n-copyBtn {
+  background: var(--t124n-color-sage-soft);
+  color: var(--t124n-color-primary-dark);
+  border: 0;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+.t124n-copyBtn:hover {
+  background: var(--t124n-color-primary);
+  color: #ffffff;
+}
+
+/* Lightbox Modal */
+.t124n-lightboxOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: t124nFadeIn 0.2s ease;
+}
+
+.t124n-lightboxModal {
+  position: relative;
+  max-width: 92vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.t124n-lightboxImg {
+  max-width: 90vw;
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+.t124n-lightboxClose {
+  position: absolute;
+  top: -46px;
+  right: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.t124n-lightboxNav {
+  position: absolute;
+  bottom: -46px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.t124n-lightboxArrow {
+  background: rgba(255, 255, 255, 0.25);
+  border: 0;
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

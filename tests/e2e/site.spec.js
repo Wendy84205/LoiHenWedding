@@ -6,7 +6,7 @@ test.beforeEach(async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
 });
 
-test('homepage and invitation library expose the complete 11 templates', async ({ page }) => {
+test('homepage and invitation library expose the complete 12 templates', async ({ page }) => {
   await page.goto('/');
   const catalogHeader = page.locator('.studioCatalogHeader');
   await expect(catalogHeader.locator('a')).toHaveCount(1);
@@ -14,9 +14,9 @@ test('homepage and invitation library expose the complete 11 templates', async (
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Mẫu Thiệp Cưới');
 
   await page.goto('/mau-thiep');
-  await expect(page.locator('.tpl-card')).toHaveCount(11);
+  await expect(page.locator('.tpl-card')).toHaveCount(12);
   for (const slug of allInvitationSlugs) {
-    await expect(page.locator(`.tpl-card a[href="/template/${slug}"]`)).toBeVisible();
+    await expect(page.locator(`.tpl-card a[href="/template/${slug}"]`).first()).toBeVisible();
   }
 });
 
