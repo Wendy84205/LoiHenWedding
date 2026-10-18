@@ -6,7 +6,6 @@ import {
   ChevronRight,
   Copy,
   Download,
-  Heart,
   Navigation,
   Sparkles,
   Volume2,
@@ -146,9 +145,6 @@ function T125nReveal({
 }
 
 export default function Template125New() {
-  const [opened, setOpened] = useState(false);
-  const [opening, setOpening] = useState(false);
-  const [flapOpen, setFlapOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const [giftOpen, setGiftOpen] = useState(false);
@@ -192,19 +188,6 @@ export default function Template125New() {
     return () => clearInterval(timer);
   }, []);
 
-  // Open invitation handler — envelope flap opens first, then cover reveals
-  const handleOpen = () => {
-    setFlapOpen(true);
-    setOpening(true);
-    if (audioRef.current) {
-      audioRef.current.play().then(() => setIsPlaying(true)).catch(() => {});
-    }
-    setTimeout(() => {
-      setOpened(true);
-      setOpening(false);
-    }, 1100);
-  };
-
   const toggleMusic = () => {
     if (!audioRef.current) return;
     if (isPlaying) {
@@ -243,95 +226,25 @@ export default function Template125New() {
       <audio ref={audioRef} src={`${a}/music.mp3`} loop preload="metadata" />
 
       {/* Floating Audio Control */}
-      {opened && (
-        <button
-          type="button"
-          onClick={toggleMusic}
-          className={`t125n-audio-btn ${isPlaying ? 'playing' : ''}`}
-          aria-label={isPlaying ? 'Tắt nhạc' : 'Bật nhạc'}
-        >
-          {isPlaying ? <Volume2 size={22} /> : <VolumeX size={22} />}
-        </button>
-      )}
+      <button
+        type="button"
+        onClick={toggleMusic}
+        className={`t125n-audio-btn ${isPlaying ? 'playing' : ''}`}
+        aria-label={isPlaying ? 'Tắt nhạc' : 'Bật nhạc'}
+      >
+        {isPlaying ? <Volume2 size={22} /> : <VolumeX size={22} />}
+      </button>
 
       {/* Ambient Orchid Petals */}
       <AmbientOrchids />
 
-      {/* Envelope Opening Screen */}
-      <AnimatePresence>
-        {!opened && (
-          <motion.div
-            className="t125n-cover"
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0, scale: 1.05, transition: { duration: 0.7, ease: 'easeInOut' } }}
-          >
-            <div className="t125n-cover-card-wrapper">
-              <div className="t125n-seal">
-                <Heart size={26} fill="currentColor" className="t125n-seal-heart" />
-              </div>
-
-              {/* Envelope flap — swings open when "Mở thiệp" is clicked */}
-              <div
-                className={`t125n-envelope-flap ${flapOpen ? 't125n-envelope-flap-open' : ''}`}
-                aria-hidden="true"
-              />
-
-              {/* Confetti burst when flap opens */}
-              {flapOpen && (
-                <div className="t125n-confetti">
-                  {[...Array(18)].map((_, i) => (
-                    <span
-                      key={i}
-                      className="t125n-confetti-piece"
-                      style={{
-                        left: `${30 + i * 4}%`,
-                        top: '55%',
-                        backgroundColor:
-                          i % 3 === 0
-                            ? '#c49e4d'
-                            : i % 3 === 1
-                            ? '#737b49'
-                            : '#f6f3ed',
-                        '--r': `${i * 20}deg`,
-                        '--tx': `${(i - 9) * 22}px`,
-                        animationDelay: `${i * 0.04}s`,
-                        animationDuration: `${0.6 + i * 0.03}s`,
-                      }}
-                    />
-                  ))}
-                </div>
-              )}
-
-              <T125nReveal as="div" direction="scale" duration={1.6} className="t125n-cover-card">
-                <img src={`${a}/orchid-bouquet-right.webp`} alt="" className="t125n-cover-orchid-tr" />
-                <img src={`${a}/orchid-bouquet-left.webp`} alt="" className="t125n-cover-orchid-bl" />
-
-                <h1 className="t125n-cover-title">
-                  <span>{GROOM_SHORT}</span>
-                  <span className="t125n-amp">&amp;</span>
-                  <span>{BRIDE_SHORT}</span>
-                </h1>
-
-                <div className="t125n-cover-date">20 tháng 12, 2026</div>
-                <div className="t125n-cover-sub">Thân Mời</div>
-
-                <button
-                  type="button"
-                  className="t125n-open-btn"
-                  onClick={handleOpen}
-                  disabled={opening}
-                >
-                  <span>{opening ? 'Đang mở…' : 'Mở thiệp'}</span>
-                  <div className="t125n-btn-shine" />
-                </button>
-              </T125nReveal>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       {/* Main Invitation Content */}
-      <div className="t125n-sheet">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="t125n-sheet">
         <div className="t125n-paper" />
 
         {/* 1. HERO SECTION */}
@@ -882,6 +795,7 @@ export default function Template125New() {
           </a>
         </footer>
       </div>
+      </motion.div>
 
       {/* Lightbox Modal */}
       <AnimatePresence>
