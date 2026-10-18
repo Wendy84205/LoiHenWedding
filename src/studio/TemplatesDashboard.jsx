@@ -27,6 +27,9 @@ const customTitles = {
   'thiep-cuoi-55': 'Lãng Mạn',
   'thiep-cuoi-56': 'Khánh Hỷ',
   'thiep-cuoi-122': 'Minimalism Đỏ Đậm',
+  'thiep-cuoi-123': 'Minimalism Xanh',
+  'thiep-cuoi-124': 'Thanh Diệp Xanh',
+  'thiep-cuoi-125': 'Hoa Lan Xanh Rêu',
 };
 
 function getPreviewImage(slug) {

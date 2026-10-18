@@ -4,7 +4,7 @@ import handler from '../endpoints/sitemap.js';
 afterEach(() => vi.unstubAllEnvs());
 
 describe('sitemap endpoint', () => {
-  it('publishes only the 14 active catalog templates', async () => {
+  it('publishes only the 15 active catalog templates', async () => {
     vi.stubEnv('SUPABASE_URL', '');
     vi.stubEnv('SUPABASE_SERVICE_ROLE_KEY', '');
     const response = {
@@ -20,6 +20,6 @@ describe('sitemap endpoint', () => {
 
     expect(response.statusCode).toBe(200);
     expect(response.headers['Content-Type']).toContain('application/xml');
-    expect(response.body.match(/\/template\//g)).toHaveLength(14);
+    expect(response.body.match(/\/template\//g)).toHaveLength(15);
   });
 });

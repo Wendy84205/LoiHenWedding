@@ -7,11 +7,11 @@ import {
 } from './invitationCatalog.js';
 
 describe('invitation catalog', () => {
-  it('contains exactly the 14 kept templates without duplicates', () => {
-    expect(currentCatalogSlugs).toHaveLength(14);
-    expect(keptTemplateIds).toEqual([3, 4, 7, 10, 14, 16, 27, 47, 48, 55, 56, 122, 123, 124]);
+  it('contains exactly the 15 kept templates without duplicates', () => {
+    expect(currentCatalogSlugs).toHaveLength(15);
+    expect(keptTemplateIds).toEqual([3, 4, 7, 10, 14, 16, 27, 47, 48, 55, 56, 122, 123, 124, 125]);
     expect(archivedInvitationSlugs).toHaveLength(0);
-    expect(allInvitationSlugs).toHaveLength(14);
-    expect(new Set(allInvitationSlugs).size).toBe(14);
+    expect(allInvitationSlugs).toHaveLength(15);
+    expect(new Set(allInvitationSlugs).size).toBe(15);
   });
 });
