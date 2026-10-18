@@ -6,6 +6,7 @@ import {
   ChevronRight,
   Copy,
   Download,
+  Heart,
   Navigation,
   Sparkles,
   Volume2,
@@ -60,9 +61,9 @@ const ORCHID_PETALS = [
   { left: 94, size: 17, color: '#e6e9d8', dur: 26, delay: -1, sway: 15 },
 ];
 
-function AmbientOrchids() {
+function AmbientOrchids({ className = 't125n-ambient' }) {
   return (
-    <div className="t125n-ambient" aria-hidden="true">
+    <div className={className} aria-hidden="true">
       {ORCHID_PETALS.map((p, i) => (
         <span
           key={i}
@@ -102,6 +103,28 @@ const T125N_IN = {
 };
 
 const T125N_EASE = [0.22, 1, 0.36, 1];
+
+const COVER_SPARKLES = [
+  { left: '12%', top: '22%', size: 13, delay: 0, dur: 3.4 },
+  { left: '20%', top: '68%', size: 10, delay: 0.9, dur: 4.1 },
+  { left: '32%', top: '16%', size: 12, delay: 1.7, dur: 3.8 },
+  { left: '48%', top: '30%', size: 9, delay: 0.4, dur: 3.1 },
+  { left: '63%', top: '14%', size: 14, delay: 1.2, dur: 4.4 },
+  { left: '72%', top: '56%', size: 10, delay: 2, dur: 3.6 },
+  { left: '81%', top: '28%', size: 12, delay: 0.6, dur: 3.9 },
+  { left: '88%', top: '72%', size: 11, delay: 1.4, dur: 4.2 },
+];
+
+const COVER_BURST = Array.from({ length: 22 }, (_, i) => {
+  const angle = (i / 22) * Math.PI * 2 + 0.18;
+  return {
+    x: Math.cos(angle) * (104 + (i % 5) * 22),
+    y: Math.sin(angle) * (84 + (i % 4) * 18),
+    size: 8 + (i % 4) * 3,
+    rotate: (i % 2 === 0 ? 1 : -1) * (90 + i * 18),
+    color: i % 3 === 0 ? '#ffffff' : i % 3 === 1 ? '#dfe6c8' : '#c9cfa9',
+  };
+});
 
 function T125nReveal({
   as = 'div',
@@ -144,7 +167,132 @@ function T125nReveal({
   );
 }
 
+function Cover({ onOpen, isOpening }) {
+  const reduce = useReducedMotion();
+  const cardAnim = reduce
+    ? {}
+    : {
+        initial: { opacity: 0, y: 54, scale: 0.94 },
+        animate: isOpening
+          ? { opacity: 1, y: -26, scale: 1.06 }
+          : { opacity: 1, y: 0, scale: 1 },
+        transition: { duration: isOpening ? 0.55 : 0.9, ease: [0.22, 1, 0.36, 1] },
+      };
+  const itemAnim = (delay) =>
+    reduce
+      ? {}
+      : {
+          initial: { opacity: 0, y: 26 },
+          animate: { opacity: 1, y: 0 },
+          transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] },
+        };
+  return (
+    <motion.div
+      className={`t125n-coverOverlay ${isOpening ? 't125n-coverOverlay--opening' : ''}`}
+      aria-label="Bìa thiệp cưới"
+      initial={reduce ? false : { opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={reduce ? { opacity: 0 } : { opacity: 0, scale: 1.12, filter: 'blur(10px)' }}
+      transition={{ duration: reduce ? 0.01 : 0.65, ease: [0.22, 1, 0.36, 1] }}
+    >
+      <span className="t125n-coverGlow" aria-hidden="true" />
+      <span className="t125n-coverSparkles" aria-hidden="true">
+        {COVER_SPARKLES.map((s, i) => (
+          <i
+            key={i}
+            style={{
+              left: s.left,
+              top: s.top,
+              width: s.size,
+              height: s.size,
+              animationDelay: `${s.delay}s`,
+              animationDuration: `${s.dur}s`,
+            }}
+          />
+        ))}
+      </span>
+      <AmbientOrchids className="t125n-coverPetals" />
+
+      {/* Main Cover Card */}
+      <motion.div className="t125n-coverCard" {...cardAnim}>
+        <img
+          src={`${a}/orchid-bouquet-left.webp`}
+          alt=""
+          aria-hidden="true"
+          className="t125n-coverDecorTop"
+        />
+        <img
+          src={`${a}/orchid-bouquet-left.webp`}
+          alt=""
+          aria-hidden="true"
+          className="t125n-coverDecorBottom"
+        />
+
+        <motion.button
+          type="button"
+          className="t125n-coverHeartIcon"
+          onClick={onOpen}
+          disabled={isOpening}
+          aria-label="Mở thiệp bằng nút trái tim"
+          title="Nhấn để mở thiệp"
+          {...itemAnim(0.15)}
+        >
+          {isOpening && <span className="t125n-heartShockwave" aria-hidden="true" />}
+          <Heart size={28} fill="currentColor" strokeWidth={0} aria-hidden="true" />
+        </motion.button>
+
+        <motion.h1 className="t125n-coverNames" {...itemAnim(0.3)}>
+          <span>{GROOM_SHORT}</span>
+          <span className="t125n-coverAmp">&amp;</span>
+          <span>{BRIDE_SHORT}</span>
+        </motion.h1>
+
+        <motion.p className="t125n-coverDateVi" {...itemAnim(0.45)}>
+          20 tháng 12, 2026
+        </motion.p>
+        <motion.p className="t125n-coverInviteLabel" {...itemAnim(0.55)}>
+          Thân Mời
+        </motion.p>
+
+        <motion.button
+          type="button"
+          className="t125n-coverOpenBtn"
+          onClick={onOpen}
+          disabled={isOpening}
+          aria-busy={isOpening}
+          aria-label="Mở thiệp cưới"
+          {...itemAnim(0.65)}
+        >
+          <span>{isOpening ? 'Đang mở…' : 'Mở thiệp'}</span>
+          <span className="t125n-shine" aria-hidden="true" />
+        </motion.button>
+      </motion.div>
+
+      {isOpening && !reduce && (
+        <span className="t125n-coverBurst" aria-hidden="true">
+          {COVER_BURST.map((b, i) => (
+            <i
+              key={i}
+              style={{
+                '--bx': `${b.x}px`,
+                '--by': `${b.y}px`,
+                '--br': `${b.rotate}deg`,
+                width: b.size,
+                height: b.size,
+                background: b.color,
+              }}
+            />
+          ))}
+        </span>
+      )}
+    </motion.div>
+  );
+}
+
 export default function Template125New() {
+  const [opened, setOpened] = useState(false);
+  const [opening, setOpening] = useState(false);
+  const [veilGone, setVeilGone] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const [giftOpen, setGiftOpen] = useState(false);
@@ -169,6 +317,19 @@ export default function Template125New() {
   });
 
   const audioRef = useRef(null);
+  const openTimerRef = useRef(null);
+  const reduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    return () => clearTimeout(openTimerRef.current);
+  }, []);
+
+  useEffect(() => {
+    if (opened) return undefined;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = previousOverflow; };
+  }, [opened]);
 
   // Countdown calculation to 2026-12-20 17:00:00
   useEffect(() => {
@@ -187,6 +348,28 @@ export default function Template125New() {
     const timer = setInterval(updateCountdown, 1000);
     return () => clearInterval(timer);
   }, []);
+
+  // Fade the cover away, then reveal the invitation and start its entrance animations.
+  const handleOpen = () => {
+    if (openTimerRef.current !== null || opened || opening) return;
+    setOpening(true);
+    setVeilGone(false);
+    if (audioRef.current) {
+      audioRef.current.play().then(() => setIsPlaying(true)).catch(() => {});
+    }
+    openTimerRef.current = setTimeout(() => {
+      setOpened(true);
+      window.requestAnimationFrame(() => {
+        window.requestAnimationFrame(() => {
+          setVeilGone(true);
+        });
+      });
+      openTimerRef.current = setTimeout(() => {
+        setOpening(false);
+        openTimerRef.current = null;
+      }, reduceMotion ? 0 : 1250);
+    }, reduceMotion ? 0 : 880);
+  };
 
   const toggleMusic = () => {
     if (!audioRef.current) return;
@@ -225,7 +408,7 @@ export default function Template125New() {
       {/* Background audio */}
       <audio ref={audioRef} src={`${a}/music.mp3`} loop preload="metadata" />
 
-      {/* Floating Audio Control */}
+      {/* Floating Audio Control — luôn hiển thị kể cả trên bìa */}
       <button
         type="button"
         onClick={toggleMusic}
@@ -236,15 +419,54 @@ export default function Template125New() {
       </button>
 
       {/* Ambient Orchid Petals */}
-      <AmbientOrchids />
+      {opened && <AmbientOrchids />}
 
-      {/* Main Invitation Content */}
+      {/* Cover / Bìa mở đầu (phong bì đậy lên trên thiệp chính) */}
+      <AnimatePresence mode="wait">
+        {!opened && (
+          <Cover
+            key="cover"
+            onOpen={handleOpen}
+            isOpening={opening}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Thiệp chính (Main Invitation) */}
+      {!veilGone && (
+        <div className="t125n-openVeil" aria-hidden="true">
+          <span className="t125n-openVeil-ring" />
+          <span className="t125n-openVeil-ring t125n-openVeil-ring--late" />
+          <span className="t125n-openVeil-flash" />
+          <span className="t125n-openVeil-bloom">
+            {Array.from({ length: 30 }).map((_, i) => {
+              const angle = (i / 30) * Math.PI * 2;
+              const dist = 120 + (i % 5) * 34;
+              return (
+                <i
+                  key={i}
+                  style={{
+                    '--vx': `${Math.cos(angle) * dist}px`,
+                    '--vy': `${Math.sin(angle) * dist}px`,
+                    '--vr': `${(i % 2 === 0 ? 1 : -1) * (120 + i * 23)}deg`,
+                    width: 7 + (i % 4) * 3,
+                    height: 7 + ((i + 2) % 4) * 3,
+                    background: i % 3 === 0 ? '#ffffff' : i % 3 === 1 ? '#dfe6c8' : '#c9cfa9',
+                    animationDelay: `${(i % 10) * 0.018}s`,
+                  }}
+                />
+              );
+            })}
+          </span>
+        </div>
+      )}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
+        className={`t125n-sheet ${opened ? 't125n-sheet--entered' : ''}`}
+        aria-hidden={!opened}
+        initial={false}
+        animate={opened && !reduceMotion ? { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' } : {}}
+        transition={{ duration: 1.05, ease: [0.22, 1, 0.36, 1] }}
       >
-        <div className="t125n-sheet">
         <div className="t125n-paper" />
 
         {/* 1. HERO SECTION */}
@@ -794,7 +1016,6 @@ export default function Template125New() {
             ♡ Thiết kế bởi Lời Hẹn Wedding Studio
           </a>
         </footer>
-      </div>
       </motion.div>
 
       {/* Lightbox Modal */}
