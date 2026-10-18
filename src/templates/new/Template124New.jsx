@@ -3,16 +3,11 @@ import {
   ChevronLeft,
   ChevronRight,
   Heart,
-  Calendar,
   MapPin,
-  Clock,
   Sparkles,
-  Send,
   X,
-  Volume2,
   VolumeX,
-  Check,
-  Gift
+  Check
 } from 'lucide-react';
 import './template124New.css';
 

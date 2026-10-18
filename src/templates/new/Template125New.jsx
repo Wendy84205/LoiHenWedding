@@ -1,14 +1,12 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import {
-  CalendarPlus,
   Check,
   ChevronLeft,
   ChevronRight,
   Copy,
   Download,
   Heart,
-  MapPin,
   Navigation,
   Sparkles,
   Volume2,
@@ -23,7 +21,6 @@ const GROOM = 'Đặng Thái Sơn';
 const BRIDE = 'Mai Lan Hương';
 const GROOM_SHORT = 'Thái Sơn';
 const BRIDE_SHORT = 'Lan Hương';
-const VENUE = 'Trung tâm Tiệc cưới Hoa Hồng, 123 Đường ABC, Quận 1, TP.HCM';
 const MAP_QUERY = 'Trung tâm Tiệc cưới Hoa Hồng, 123 Đường ABC, Quận 1, TP.HCM';
 const MAP_EMBED = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.460237751918!2d106.69741167570397!3d10.77601938937279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f385570472f%3A0x119454483ac7b9bc!2zRGluaCDEkOG7mWMgTOG6rXAgLSBEaW5oIFRo4buRbmcgTmjhuqV0!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s';
 const LUNAR = 'Tức ngày 12 tháng 11 năm Bính Ngọ';
@@ -37,13 +34,6 @@ const ALBUM = [
   `${a}/album-6.webp`,
   `${a}/album-7.webp`,
   `${a}/album-8.webp`,
-];
-
-const SCHEDULE = [
-  { time: '17:00', label: 'Đón Khách', icon: `${a}/icon-welcome.webp` },
-  { time: '17:30', label: 'Làm Lễ', icon: `${a}/icon-ceremony.webp` },
-  { time: '18:00', label: 'Khai Tiệc', icon: `${a}/icon-banquet.webp` },
-  { time: '20:00', label: 'Chụp Ảnh Kỷ Niệm & Tiễn Khách', icon: `${a}/icon-clock.webp` },
 ];
 
 const INITIAL_WISHES = [
@@ -103,9 +93,62 @@ function AmbientOrchids() {
   );
 }
 
+const T125N_IN = {
+  up: { opacity: 0, y: 54 },
+  down: { opacity: 0, y: -16 },
+  left: { opacity: 0, x: 68 },
+  right: { opacity: 0, x: -68 },
+  scale: { opacity: 0, scale: 0.72 },
+  fade: { opacity: 0 },
+};
+
+const T125N_EASE = [0.22, 1, 0.36, 1];
+
+function T125nReveal({
+  as = 'div',
+  direction = 'up',
+  delay = 0,
+  duration = 1.5,
+  className,
+  children,
+  ...props
+}) {
+  const reduceMotion = useReducedMotion();
+  // Plain <img>, không bọc motion để giữ bố cục position/absolute của thư viện.
+  if (as === 'img') {
+    return (
+      <img
+        className={className}
+        src={props.src}
+        alt={props.alt}
+        loading={props.loading}
+        aria-hidden={props['aria-hidden']}
+      />
+    );
+  }
+
+  const motionAny = motion;
+  const Component =
+    (typeof as === 'string' && motionAny[as]) || motionAny.div;
+
+  return (
+    <Component
+      className={className}
+      initial={reduceMotion ? false : { ...T125N_IN[direction] }}
+      whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+      viewport={{ once: true, margin: '0px 0px -55px 0px' }}
+      transition={reduceMotion ? { duration: 0 } : { duration, delay, ease: T125N_EASE }}
+      {...props}
+    >
+      {children}
+    </Component>
+  );
+}
+
 export default function Template125New() {
   const [opened, setOpened] = useState(false);
   const [opening, setOpening] = useState(false);
+  const [flapOpen, setFlapOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const [giftOpen, setGiftOpen] = useState(false);
@@ -149,8 +192,9 @@ export default function Template125New() {
     return () => clearInterval(timer);
   }, []);
 
-  // Open invitation handler
+  // Open invitation handler — envelope flap opens first, then cover reveals
   const handleOpen = () => {
+    setFlapOpen(true);
     setOpening(true);
     if (audioRef.current) {
       audioRef.current.play().then(() => setIsPlaying(true)).catch(() => {});
@@ -158,7 +202,7 @@ export default function Template125New() {
     setTimeout(() => {
       setOpened(true);
       setOpening(false);
-    }, 700);
+    }, 1100);
   };
 
   const toggleMusic = () => {
@@ -191,34 +235,6 @@ export default function Template125New() {
     e.preventDefault();
     if (!rsvpState.name.trim()) return;
     setRsvpState((prev) => ({ ...prev, submitted: true }));
-  };
-
-  const downloadIcs = () => {
-    const icsContent = [
-      'BEGIN:VCALENDAR',
-      'VERSION:2.0',
-      'PRODID:-//LoiHenWedding//WeddingInvitation//VI',
-      'BEGIN:VEVENT',
-      'UID:wedding-125-20261220@loihen.online',
-      'DTSTAMP:20261018T000000Z',
-      'DTSTART:20261220T100000Z',
-      'DTEND:20261220T140000Z',
-      'SUMMARY:Lễ Cưới Đặng Thái Sơn & Mai Lan Hương',
-      `DESCRIPTION:Trân trọng kính mời quý khách tham dự tiệc cưới của Thái Sơn & Lan Hương tại ${VENUE}`,
-      `LOCATION:${VENUE}`,
-      'STATUS:CONFIRMED',
-      'END:VEVENT',
-      'END:VCALENDAR',
-    ].join('\r\n');
-    const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'wedding-thaison-lanhuong.ics';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
   };
 
   return (
@@ -254,9 +270,41 @@ export default function Template125New() {
                 <Heart size={26} fill="currentColor" className="t125n-seal-heart" />
               </div>
 
-              <div className="t125n-cover-card">
-                <img src={`${a}/orchid-corner.webp`} alt="" className="t125n-cover-orchid-tr" />
-                <img src={`${a}/orchid-corner.webp`} alt="" className="t125n-cover-orchid-bl" />
+              {/* Envelope flap — swings open when "Mở thiệp" is clicked */}
+              <div
+                className={`t125n-envelope-flap ${flapOpen ? 't125n-envelope-flap-open' : ''}`}
+                aria-hidden="true"
+              />
+
+              {/* Confetti burst when flap opens */}
+              {flapOpen && (
+                <div className="t125n-confetti">
+                  {[...Array(18)].map((_, i) => (
+                    <span
+                      key={i}
+                      className="t125n-confetti-piece"
+                      style={{
+                        left: `${30 + i * 4}%`,
+                        top: '55%',
+                        backgroundColor:
+                          i % 3 === 0
+                            ? '#c49e4d'
+                            : i % 3 === 1
+                            ? '#737b49'
+                            : '#f6f3ed',
+                        '--r': `${i * 20}deg`,
+                        '--tx': `${(i - 9) * 22}px`,
+                        animationDelay: `${i * 0.04}s`,
+                        animationDuration: `${0.6 + i * 0.03}s`,
+                      }}
+                    />
+                  ))}
+                </div>
+              )}
+
+              <T125nReveal as="div" direction="scale" duration={1.6} className="t125n-cover-card">
+                <img src={`${a}/orchid-bouquet-right.webp`} alt="" className="t125n-cover-orchid-tr" />
+                <img src={`${a}/orchid-bouquet-left.webp`} alt="" className="t125n-cover-orchid-bl" />
 
                 <h1 className="t125n-cover-title">
                   <span>{GROOM_SHORT}</span>
@@ -264,8 +312,8 @@ export default function Template125New() {
                   <span>{BRIDE_SHORT}</span>
                 </h1>
 
-                <div className="t125n-cover-date">20 Tháng 12, 2026</div>
-                <div className="t125n-cover-sub">Thân Mời Quý Khách</div>
+                <div className="t125n-cover-date">20 tháng 12, 2026</div>
+                <div className="t125n-cover-sub">Thân Mời</div>
 
                 <button
                   type="button"
@@ -276,7 +324,7 @@ export default function Template125New() {
                   <span>{opening ? 'Đang mở…' : 'Mở thiệp'}</span>
                   <div className="t125n-btn-shine" />
                 </button>
-              </div>
+              </T125nReveal>
             </div>
           </motion.div>
         )}
@@ -290,72 +338,133 @@ export default function Template125New() {
         <header className="t125n-hero">
           <img src={`${a}/hero-bg.webp`} alt="" className="t125n-hero-bg" />
 
-          <div className="t125n-hero-card">
-            <img src={`${a}/orchid-corner.webp`} alt="" className="t125n-hero-orchid-top" />
-            <img src={`${a}/orchid-corner.webp`} alt="" className="t125n-hero-orchid-bottom" />
+          <T125nReveal as="div" direction="fade" duration={1.2} className="t125n-hero-card" />
+          <T125nReveal as="div" direction="down" duration={1.2} className="t125n-hero-label">
+            Wedding Day
+          </T125nReveal>
 
-            <div className="t125n-hero-header-label">Wedding Day</div>
+          <T125nReveal as="div" direction="scale" duration={1.4} className="t125n-hero-photo">
+            <img src={`${a}/hero-photo.webp`} alt="Wedding couple" />
+          </T125nReveal>
 
-            <div className="t125n-hero-photo-wrapper">
-              <img src={`${a}/card-frame.webp`} alt="" className="t125n-hero-photo-frame" />
-              <img src={`${a}/hero-photo.webp`} alt="Wedding couple" className="t125n-hero-photo" />
-            </div>
-
-            <h2 className="t125n-hero-names">
-              {GROOM_SHORT} &amp; {BRIDE_SHORT}
-            </h2>
-
-            <div className="t125n-hero-date">20 . 12 . 2026</div>
-          </div>
+          <h2 className="t125n-hero-names">
+            <T125nReveal
+              as="span"
+              direction="left"
+              duration={1.2}
+              delay={0.15}
+              className="t125n-hero-name t125n-hero-name-groom"
+            >
+              {GROOM_SHORT}
+            </T125nReveal>
+            <T125nReveal
+              as="span"
+              direction="fade"
+              duration={1.2}
+              delay={0.3}
+              className="t125n-hero-name t125n-hero-name-and"
+            >
+              and
+            </T125nReveal>
+            <T125nReveal
+              as="span"
+              direction="right"
+              duration={1.2}
+              delay={0.45}
+              className="t125n-hero-name t125n-hero-name-bride"
+            >
+              {BRIDE_SHORT}
+            </T125nReveal>
+          </h2>
         </header>
 
-        {/* 2. INVITATION LETTER & PARENTS */}
-        <section className="t125n-letter">
-          <div className="t125n-monogram">
-            <span className="t125n-monogram-line" />
-            <span>S &amp; H</span>
-            <span className="t125n-monogram-line right" />
-          </div>
+        {/* 2. ENVELOPE, MONOGRAM & PARENTS (demo: hlx-envelope) */}
+        <section className="t125n-envelope">
+          <T125nReveal as="img" direction="fade" duration={1.2} src={`${a}/orchid-bouquet-left.webp`} alt="" aria-hidden="true" className="t125n-env-abs t125n-env-bouquet-left" />
+          <T125nReveal as="img" direction="up" duration={1.2} src={`${a}/envelope-back.webp`} alt="" aria-hidden="true" className="t125n-env-abs t125n-env-back" />
 
-          <div className="t125n-parents-grid">
-            <div className="t125n-parent-box">
-              <div className="t125n-parent-tag">Nhà Trai</div>
-              <div className="t125n-parent-names">
-                Ông Đặng Công Sơn<br />Bà Đặng Kim Thủy
+          {[
+            { cls: 't125n-env-polaroid-1', photo: ALBUM[0] },
+            { cls: 't125n-env-polaroid-2', photo: ALBUM[1] },
+            { cls: 't125n-env-polaroid-3', photo: ALBUM[2] },
+          ].map(({ cls, photo }, idx) => (
+            <T125nReveal key={cls} direction="up" duration={1.4} delay={idx * 0.15} className={`t125n-env-polaroid ${cls}`}>
+              <img
+                src={`${a}/polaroid-frame.webp`}
+                alt=""
+                aria-hidden="true"
+                className="t125n-env-pola-frame"
+              />
+              <div className="t125n-env-pola-photo">
+                <img src={photo} alt="Ảnh cưới" loading="lazy" />
               </div>
-              <div className="t125n-parent-addr">123 Đường Hoa, P. 1, Q. 1, TP.HCM</div>
+            </T125nReveal>
+          ))}
+
+          <T125nReveal as="img" direction="up" duration={1.2} src={`${a}/envelope-front.webp`} alt="" aria-hidden="true" className="t125n-env-abs t125n-env-front" />
+          <T125nReveal as="img" direction="fade" duration={1.2} src={`${a}/orchid-bouquet-right.webp`} alt="" aria-hidden="true" className="t125n-env-abs t125n-env-bouquet-right" />
+
+          <T125nReveal direction="right" className="t125n-env-monogram">S &amp; H</T125nReveal>
+
+          <T125nReveal direction="left" className="t125n-env-family t125n-env-family-groom">
+            <div className="t125n-env-family-label">Nhà trai</div>
+            <div className="t125n-env-family-parents">
+              <div>Ông Đặng Công Sơn</div>
+              <div>Bà Đặng Kim Thủy</div>
             </div>
+            <div className="t125n-env-family-address">123 Đường Hoa, Phường 1, Quận 1, TP.HCM</div>
+          </T125nReveal>
 
-            <div className="t125n-parent-box">
-              <div className="t125n-parent-tag">Nhà Gái</div>
-              <div className="t125n-parent-names">
-                Ông Mai Quốc Vinh<br />Bà Mai Hoài Tuyết
-              </div>
-              <div className="t125n-parent-addr">456 Đường Sen, P. 2, Q. 3, TP.HCM</div>
+          <T125nReveal direction="right" className="t125n-env-family t125n-env-family-bride">
+            <div className="t125n-env-family-label">Nhà gái</div>
+            <div className="t125n-env-family-parents">
+              <div>Ông Mai Quốc Vinh</div>
+              <div>Bà Mai Hoài Tuyết</div>
             </div>
-          </div>
+            <div className="t125n-env-family-address">456 Đường Sen, Phường 2, Quận 3, TP.HCM</div>
+          </T125nReveal>
 
-          <div className="t125n-invite-text-box">
-            <div className="t125n-invite-subtitle">Lời Ngỏ Trân Trọng</div>
-            <div className="t125n-invite-intro">
-              Trân trọng kính mời quý khách đến chung vui tiệc cưới cùng gia đình chúng tôi
-            </div>
-          </div>
+          <T125nReveal direction="fade" className="t125n-env-intro">
+            Trân trọng kính mời<br />
+            quý khách đến chung vui<br />
+            tiệc cưới cùng gia đình chúng tôi
+          </T125nReveal>
 
-          <div className="t125n-couple-calligraphy">
-            {GROOM} &amp; {BRIDE}
-          </div>
+          <img
+            src={`${a}/orchid-stem.webp`}
+            alt=""
+            aria-hidden="true"
+            className="t125n-env-abs t125n-env-stem"
+          />
 
-          <img src={`${a}/orchid-stem.webp`} alt="" className="t125n-stem-decor" />
+          <T125nReveal
+            direction="left"
+            className="t125n-env-script t125n-env-name-groom"
+            style={{ '--len': GROOM_SHORT.replace(/\s/g, '').length }}
+          >
+            {GROOM_SHORT}
+          </T125nReveal>
+          <T125nReveal direction="fade" className="t125n-env-script t125n-env-name-and">and</T125nReveal>
+          <T125nReveal
+            direction="right"
+            className="t125n-env-script t125n-env-name-bride"
+            style={{ '--len': BRIDE_SHORT.replace(/\s/g, '').length }}
+          >
+            {BRIDE_SHORT}
+          </T125nReveal>
         </section>
 
         {/* 3. COUPLE PROFILES */}
         <section className="t125n-couple-section">
-          <div className="t125n-sec-title">Cô Dâu &amp; Chú Rể</div>
-          <div className="t125n-sec-subtitle">Groom &amp; Bride</div>
+          <T125nReveal direction="down" className="t125n-sec-title">
+            Cô Dâu &amp; Chú Rể
+          </T125nReveal>
+          <T125nReveal direction="up" className="t125n-sec-subtitle">
+            Groom &amp; Bride
+          </T125nReveal>
 
           <div className="t125n-couple-cards">
-            <div className="t125n-person-card">
+            <T125nReveal direction="up" delay={0.1} className="t125n-person-card">
               <div className="t125n-person-photo-wrap">
                 <img src={`${a}/groom.webp`} alt={GROOM} className="t125n-person-photo" />
               </div>
@@ -364,9 +473,9 @@ export default function Template125New() {
               <div className="t125n-person-bio">
                 "Cảm ơn em đã bước vào cuộc đời anh, biến những ngày bình thường thành những ngày ngập tràn ý nghĩa."
               </div>
-            </div>
+            </T125nReveal>
 
-            <div className="t125n-person-card">
+            <T125nReveal direction="up" delay={0.3} className="t125n-person-card">
               <div className="t125n-person-photo-wrap">
                 <img src={`${a}/bride.webp`} alt={BRIDE} className="t125n-person-photo" />
               </div>
@@ -375,24 +484,36 @@ export default function Template125New() {
               <div className="t125n-person-bio">
                 "Hạnh phúc là khi được cùng anh già đi, cùng nhau sẻ chia mọi khoảnh khắc trong cuộc sống."
               </div>
-            </div>
+            </T125nReveal>
           </div>
         </section>
 
         {/* 4. WEDDING PARTY & RECEPTION */}
         <section className="t125n-party">
-          <div className="t125n-party-title-tag">Hôn Lễ Được Tổ Chức Vào Lúc</div>
-          <div className="t125n-party-time">17:00 • CHỦ NHẬT</div>
+          <T125nReveal direction="down" className="t125n-party-title-tag">
+            Hôn Lễ Được Tổ Chức Vào Lúc
+          </T125nReveal>
+          <T125nReveal direction="up" className="t125n-party-time">
+            17:00 • CHỦ NHẬT
+          </T125nReveal>
 
           <div className="t125n-date-block">
-            <div className="t125n-date-side">Tháng 12</div>
-            <div className="t125n-date-main">20</div>
-            <div className="t125n-date-side">Năm 2026</div>
+            <T125nReveal direction="left" className="t125n-date-side">
+              Tháng 12
+            </T125nReveal>
+            <T125nReveal direction="scale" className="t125n-date-main">
+              20
+            </T125nReveal>
+            <T125nReveal direction="right" className="t125n-date-side">
+              Năm 2026
+            </T125nReveal>
           </div>
 
-          <div className="t125n-lunar">{LUNAR}</div>
+          <T125nReveal direction="up" className="t125n-lunar">
+            {LUNAR}
+          </T125nReveal>
 
-          <div className="t125n-venue-box">
+          <T125nReveal direction="fade" className="t125n-venue-box">
             <h3 className="t125n-venue-name">Trung tâm Tiệc cưới Hoa Hồng</h3>
             <p className="t125n-venue-addr">123 Đường Hoa, Phường 1, Quận 1, TP.HCM</p>
             <a
@@ -411,147 +532,176 @@ export default function Template125New() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
-          </div>
+          </T125nReveal>
         </section>
 
-        {/* 5. CALENDAR SECTION */}
+        {/* 5. CALENDAR (demo: hlx-calendar) */}
         <section className="t125n-calendar">
-          <div className="t125n-sec-title">Lịch Cưới</div>
-          <div className="t125n-sec-subtitle">Save The Date</div>
+          <T125nReveal direction="up" className="t125n-cal-month" style={{ '--len': 8 }}>
+            December
+          </T125nReveal>
+          <T125nReveal direction="up" className="t125n-cal-year">
+            2026
+          </T125nReveal>
+          <T125nReveal direction="up" className="t125n-cal-rule t125n-cal-rule-left" />
+          <T125nReveal direction="up" className="t125n-cal-rule t125n-cal-rule-right" />
 
-          <div className="t125n-cal-card">
-            <img src={`${a}/calendar-frame.webp`} alt="" className="t125n-cal-frame" />
-            <div className="t125n-cal-month">December 2026</div>
+          {['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'].map((d, i) => (
+            <T125nReveal
+              key={d}
+              direction="up"
+              duration={1.2}
+              delay={i * 0.1}
+              className="t125n-cal-cell t125n-cal-weekday"
+              style={{ left: `calc(var(--k) * ${(14.75 + i * 55.7).toFixed(2)})` }}
+            >
+              {d}
+            </T125nReveal>
+          ))}
 
-            <div className="t125n-cal-grid">
-              {['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'].map((d) => (
-                <div key={d} className="t125n-cal-head">{d}</div>
-              ))}
-              {/* December 2026 starts on Tuesday (offset 1 day) */}
-              <div className="t125n-cal-day empty" />
-              {Array.from({ length: 31 }, (_, i) => i + 1).map((day) => (
-                <div
-                  key={day}
-                  className={`t125n-cal-day ${day === 20 ? 'active' : ''}`}
-                >
-                  {day}
-                </div>
-              ))}
-            </div>
-
-            <div className="t125n-cal-actions">
-              <a
-                href={`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent('Đám Cưới Thái Sơn & Lan Hương')}&dates=20261220T100000Z/20261220T140000Z&details=${encodeURIComponent('Trân trọng kính mời quý khách tham dự tiệc cưới của Thái Sơn & Lan Hương.')}&location=${encodeURIComponent(VENUE)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="t125n-cal-btn primary"
+          {/* December 2026 starts on Tuesday */}
+          {Array.from({ length: 31 }, (_, i) => i + 1).map((day) => {
+            const col = day % 7;
+            const row = Math.floor(day / 7);
+            return (
+              <T125nReveal
+                key={day}
+                direction="up"
+                duration={1.2}
+                delay={(col + row * 7) * 0.06}
+                className="t125n-cal-cell"
+                style={{
+                  left: `calc(var(--k) * ${(14.75 + col * 55.7).toFixed(2)})`,
+                  top: `calc(var(--k) * ${(208.45 + row * 44.6).toFixed(2)})`,
+                }}
               >
-                <CalendarPlus size={15} />
-                <span>Google Calendar</span>
-              </a>
-              <button
-                type="button"
-                onClick={downloadIcs}
-                className="t125n-cal-btn outline"
-              >
-                <Download size={15} />
-                <span>Tải File .ICS</span>
-              </button>
-            </div>
-          </div>
+                {day}
+              </T125nReveal>
+            );
+          })}
+
+          <T125nReveal direction="up" className="t125n-cal-heart">
+            <img src={`${a}/heart-ring.webp`} alt="" aria-hidden="true" loading="lazy" />
+          </T125nReveal>
         </section>
 
-        {/* 6. TIMELINE SECTION */}
+        {/* 6. TIMELINE (demo: hlx-timeline) */}
         <section className="t125n-timeline">
-          <div className="t125n-sec-title">Lịch Trình Tiệc Cưới</div>
-          <div className="t125n-sec-subtitle">Wedding Timeline</div>
+          <T125nReveal direction="down" className="t125n-tl-title" style={{ '--len': 8 }}>
+            Timeline
+          </T125nReveal>
 
-          <div className="t125n-timeline-items">
-            {SCHEDULE.map((item, idx) => (
-              <div key={idx} className="t125n-timeline-card">
-                <div className="t125n-tl-icon-wrap">
-                  <img src={item.icon} alt={item.label} className="t125n-tl-icon-img" />
-                </div>
-                <div>
-                  <div className="t125n-tl-time">{item.time}</div>
-                  <div className="t125n-tl-label">{item.label}</div>
-                </div>
+          {[
+            { icon: `${a}/tl-camera.webp`, time: '17:00', label: 'Đón Khách' },
+            { icon: `${a}/tl-rings.webp`, time: '17:30', label: 'Làm Lễ' },
+            { icon: `${a}/tl-dinner.webp`, time: '18:00', label: 'Khai Tiệc' },
+          ].map((item, idx) => (
+            <T125nReveal
+              key={item.time}
+              direction="up"
+              duration={1.3}
+              delay={idx * 0.2}
+              className="t125n-tl-row"
+            >
+              <img src={item.icon} alt="" aria-hidden="true" className="t125n-tl-icon" loading="lazy" />
+              <div className="t125n-tl-rule" />
+              <div className="t125n-tl-text">
+                {item.time}
+                {'  '}
+                {item.label}
               </div>
-            ))}
-          </div>
+            </T125nReveal>
+          ))}
         </section>
 
-        {/* 7. DRESS CODE */}
+        {/* 7. DRESS CODE (demo: hlx-dress) */}
         <section className="t125n-dress">
-          <div className="t125n-sec-title">Trang Phục Tham Dự</div>
-          <div className="t125n-sec-subtitle">Dress Code</div>
-
-          <div className="t125n-dress-palette">
-            {[
-              { color: '#737b49', name: 'Xanh Rêu' },
-              { color: '#6b8f7f', name: 'Xanh Sage' },
-              { color: '#aac6cb', name: 'Bạc Hà' },
-              { color: '#8d9db6', name: 'Slate Blue' },
-            ].map((d, i) => (
-              <div key={i} className="t125n-dress-dot-wrap">
-                <span className="t125n-dress-circle" style={{ backgroundColor: d.color }} />
-                <span className="t125n-dress-name">{d.name}</span>
-              </div>
-            ))}
+          <div className="t125n-dress-head">
+            <T125nReveal direction="down" className="t125n-dress-title" style={{ '--len': 10 }}>
+              Dress Code
+            </T125nReveal>
+            <div className="t125n-dress-dots">
+              {['#737b49', '#6b8f7f', '#aac6cb', '#8d9db6'].map((color, idx) => (
+                <T125nReveal
+                  key={color}
+                  direction="up"
+                  duration={1}
+                  delay={idx * 0.15}
+                  className="t125n-dress-dot"
+                  style={{ backgroundColor: color }}
+                />
+              ))}
+            </div>
           </div>
-
-          <p className="t125n-dress-note">
-            Quý khách vui lòng chọn trang phục theo bảng màu gợi ý để những khoảnh khắc kỷ niệm thêm phần hài hòa và trọn vẹn.
-          </p>
         </section>
 
         {/* 8. COUNTDOWN TIMER */}
         <section className="t125n-countdown">
-          <div className="t125n-sec-title">Hẹn Gặp Quý Khách Trong</div>
-          <div className="t125n-sec-subtitle">Countdown to Big Day</div>
+          <T125nReveal direction="down" className="t125n-sec-title">
+            Hẹn Gặp Quý Khách Trong
+          </T125nReveal>
+          <T125nReveal direction="up" className="t125n-sec-subtitle">
+            Countdown to Big Day
+          </T125nReveal>
 
           <div className="t125n-cd-grid">
-            <div className="t125n-cd-box">
+            <T125nReveal direction="up" delay={0.2} className="t125n-cd-box">
               <div className="t125n-cd-number">{timeLeft.days}</div>
               <div className="t125n-cd-label">Ngày</div>
-            </div>
-            <div className="t125n-cd-box">
+            </T125nReveal>
+            <T125nReveal direction="up" delay={0.4} className="t125n-cd-box">
               <div className="t125n-cd-number">{timeLeft.hours}</div>
               <div className="t125n-cd-label">Giờ</div>
-            </div>
-            <div className="t125n-cd-box">
+            </T125nReveal>
+            <T125nReveal direction="up" delay={0.6} className="t125n-cd-box">
               <div className="t125n-cd-number">{timeLeft.minutes}</div>
               <div className="t125n-cd-label">Phút</div>
-            </div>
-            <div className="t125n-cd-box">
+            </T125nReveal>
+            <T125nReveal direction="up" delay={0.8} className="t125n-cd-box">
               <div className="t125n-cd-number">{timeLeft.seconds}</div>
               <div className="t125n-cd-label">Giây</div>
-            </div>
+            </T125nReveal>
           </div>
         </section>
 
         {/* 9. PHOTO GALLERY / ALBUM */}
         <section className="t125n-gallery">
-          <div className="t125n-sec-title">Album Kỷ Niệm</div>
-          <div className="t125n-sec-subtitle">Our Wedding Moments</div>
+          <T125nReveal direction="down" className="t125n-sec-title">
+            Album Kỷ Niệm
+          </T125nReveal>
+          <T125nReveal direction="up" className="t125n-sec-subtitle">
+            Our Wedding Moments
+          </T125nReveal>
 
           <div className="t125n-album-grid">
             {ALBUM.map((src, idx) => (
-              <div
+              <T125nReveal
                 key={idx}
+                direction="up"
+                duration={1}
+                delay={idx * 0.15}
                 className={`t125n-album-card ${idx === 0 || idx === 3 ? 'wide' : ''}`}
                 onClick={() => setLightboxIndex(idx)}
               >
-                <img src={src} alt={`Khoảnh khắc cưới ${idx + 1}`} className="t125n-album-img" loading="lazy" />
-              </div>
+                <img
+                  src={src}
+                  alt={`Khoảnh khắc cưới ${idx + 1}`}
+                  className="t125n-album-img"
+                  loading="lazy"
+                />
+              </T125nReveal>
             ))}
           </div>
         </section>
 
         {/* 10. GUESTBOOK / WISHES */}
         <section className="t125n-guestbook">
-          <div className="t125n-sec-title">Sổ Lưu Bút</div>
-          <div className="t125n-sec-subtitle">Gửi Lời Chúc Mừng</div>
+          <T125nReveal direction="down" className="t125n-sec-title">
+            Sổ Lưu Bút
+          </T125nReveal>
+          <T125nReveal direction="up" className="t125n-sec-subtitle">
+            Gửi Lời Chúc Mừng
+          </T125nReveal>
 
           <div className="t125n-ai-suggestions">
             {AI_SUGGESTIONS.map((sug, i) => (
@@ -590,13 +740,19 @@ export default function Template125New() {
 
           <div className="t125n-wishes-list">
             {wishes.map((w, idx) => (
-              <div key={idx} className="t125n-wish-card">
+              <T125nReveal
+                key={idx}
+                direction="up"
+                duration={0.9}
+                delay={idx * 0.1}
+                className="t125n-wish-card"
+              >
                 <div className="t125n-wish-top">
                   <span className="t125n-wish-name">{w.name}</span>
                   <span className="t125n-wish-time">{w.time}</span>
                 </div>
                 <p className="t125n-wish-msg">{w.message}</p>
-              </div>
+              </T125nReveal>
             ))}
           </div>
         </section>
@@ -671,40 +827,49 @@ export default function Template125New() {
 
         {/* 12. GIFT BOX / PHONG BAO MỪNG CƯỚI */}
         <section className="t125n-gift">
-          <div className="t125n-sec-title">Gửi Quà Mừng Cưới</div>
-          <div className="t125n-sec-subtitle">Wedding Gift Box</div>
+          <T125nReveal direction="down" className="t125n-sec-title">
+            Gửi Quà Mừng Cưới
+          </T125nReveal>
+          <T125nReveal direction="up" className="t125n-sec-subtitle">
+            Wedding Gift Box
+          </T125nReveal>
 
-          <button
-            type="button"
+          <T125nReveal
+            direction="up"
+            duration={1.2}
             className="t125n-gift-btn-box"
             onClick={() => setGiftOpen(true)}
             aria-label="Mở phong bao mừng cưới"
           >
-            <span className="t125n-gift-sparkle" style={{ top: '5%', left: '10%' }}>✦</span>
-            <span className="t125n-gift-sparkle" style={{ top: '20%', right: '8%' }}>✦</span>
-            <span className="t125n-gift-sparkle" style={{ bottom: '15%', left: '6%' }}>✦</span>
+            <span className="t125n-gift-sparkle" style={{ top: '5%', left: '10%' }}>
+              ✦
+            </span>
+            <span className="t125n-gift-sparkle" style={{ top: '20%', right: '8%' }}>
+              ✦
+            </span>
+            <span className="t125n-gift-sparkle" style={{ bottom: '15%', left: '6%' }}>
+              ✦
+            </span>
             <img src={`${a}/giftbox.webp`} alt="Giftbox" className="t125n-gift-img" />
-          </button>
+          </T125nReveal>
 
-          <div>
-            <button
-              type="button"
-              className="t125n-open-btn"
-              onClick={() => setGiftOpen(true)}
-            >
-              <span>Nhấn Để Mừng Cưới</span>
-              <div className="t125n-btn-shine" />
-            </button>
-          </div>
+          <T125nReveal direction="up" className="t125n-open-btn" onClick={() => setGiftOpen(true)}>
+            <span>Nhấn Để Mừng Cưới</span>
+            <div className="t125n-btn-shine" />
+          </T125nReveal>
         </section>
 
         {/* 13. THANK YOU */}
         <section className="t125n-thanks">
-          <img src={`${a}/orchid-stem.webp`} alt="" className="t125n-thanks-stem" />
-          <h2 className="t125n-thanks-title">Thank You</h2>
-          <p className="t125n-thanks-text">
+          <T125nReveal direction="up" className="t125n-thanks-stem">
+            <img src={`${a}/orchid-stem.webp`} alt="" />
+          </T125nReveal>
+          <T125nReveal direction="up" className="t125n-thanks-title">
+            Thank You
+          </T125nReveal>
+          <T125nReveal direction="up" className="t125n-thanks-text">
             Sự hiện diện và lời chúc phúc của bạn là món quà ý nghĩa nhất đối với chúng mình trong ngày trọng đại này!
-          </p>
+          </T125nReveal>
         </section>
 
         {/* 14. FOOTER */}
