@@ -278,7 +278,8 @@ export default function Template126New() {
         }
         transition={{ duration: 1.05, ease: T126N_EASE }}
       >
-        <main className="t126n-main">
+                        <main className="t126n-main">
+          {/* Hero */}
           <header className="t126n-hero">
             <img
               src={`${a}/flower_top.webp`}
@@ -293,7 +294,7 @@ export default function Template126New() {
               className="t126n-heroFlower t126n-heroFlower--bottom"
             />
             <T126nReveal direction="fade" className="t126n-heroKicker">
-              Wedding Invitation
+              Lời mời chung vui
             </T126nReveal>
             <h1 className="t126n-heroNames">
               <T126nReveal as="span" direction="left" delay={0.1}>
@@ -306,23 +307,84 @@ export default function Template126New() {
                 {GROOM_SHORT}
               </T126nReveal>
             </h1>
+            <div className="t126n-heroDivider">❦</div>
             <T126nReveal direction="up" delay={0.55} className="t126n-heroDate">
               {EVENT_DATE_TEXT}
             </T126nReveal>
           </header>
 
-          <section className="t126n-cardSection">
-            <T126nReveal direction="up" className="t126n-infoCard">
-              <h2>Lễ Thành Hôn</h2>
-              <div className="t126n-infoDivider">
-                <span />
-                ❦
-                <span />
-              </div>
-              <p className="t126n-infoDate">{EVENT_DATE_TEXT}</p>
-              <p className="t126n-infoText">
-                Trân trọng kính mời {GUEST_NAME} {INVITE_MESSAGE}.
+          {/* Story */}
+          <section className="t126n-story">
+            <T126nReveal direction="up" className="t126n-storyCard">
+              <div className="t126n-storyDivider">❦</div>
+              <p className="t126n-storyText">
+                Tiếng cười và lời hẹn của hai chúng tôi sẽ gắn liền nhau trong một mùa xuân trọ nở. Trân trọng mời {GUEST_NAME} cùng chứng kiến niềm hạnh phúc mới.
               </p>
+            </T126nReveal>
+          </section>
+
+          {/* Details */}
+          <section className="t126n-details">
+            <T126nReveal direction="up" className="t126n-detailItem" delay={0.1}>
+              <div className="t126n-detailIcon">💒</div>
+              <div className="t126n-detailLabel">Lễ thành hôn</div>
+              <div className="t126n-detailValue">{EVENT_DATE_TEXT}</div>
+              <div className="t126n-detailLocation">Vườn Xuân — sân vườn xanh tươi</div>
+            </T126nReveal>
+            <T126nReveal direction="up" className="t126n-detailItem" delay={0.2}>
+              <div className="t126n-detailIcon">🍽</div>
+              <div className="t126n-detailLabel">Tiệc cưới</div>
+              <div className="t126n-detailValue">{EVENT_DATE_TEXT}</div>
+              <div className="t126n-detailLocation">Tọa tại Vườn Xuân</div>
+            </T126nReveal>
+          </section>
+
+          {/* Gallery */}
+          <section className="t126n-gallery">
+            <T126nReveal direction="up" className="t126n-galleryTitle">
+              <h2>Khoảnh khắc</h2>
+              <div className="t126n-storyDivider">❦</div>
+            </T126nReveal>
+            <div className="t126n-galleryGrid">
+              <T126nReveal direction="up" className="t126n-galleryItem" delay={0.1}>
+                <img src={`${a}/flower_top.webp`} alt="" className="t126n-galleryImg" />
+              </T126nReveal>
+              <T126nReveal direction="up" className="t126n-galleryItem" delay={0.2}>
+                <img src={`${a}/flower_paralax.webp`} alt="" className="t126n-galleryImg" />
+              </T126nReveal>
+            </div>
+          </section>
+
+          {/* Location / Map */}
+          <section className="t126n-location">
+            <T126nReveal direction="up" className="t126n-locationCard">
+              <div className="t126n-locationIcon">📍</div>
+              <div className="t126n-locationTitle">Địa điểm tiệc</div>
+              <div className="t126n-locationText">Vườn Xuân</div>
+              <a
+                href="https://maps.google.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="t126n-locationLink"
+              >
+                Xem bản đồ ›
+              </a>
+            </T126nReveal>
+          </section>
+
+          {/* RSVP */}
+          <section className="t126n-rsvp">
+            <T126nReveal direction="up" className="t126n-rsvpCard">
+              <h2 className="t126n-rsvpTitle">Xác nhận tham dự</h2>
+              <p className="t126n-rsvpText">Chúng tôi mong đợi sự đến của bạn.</p>
+              <a
+                href="https://zalo.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="t126n-rsvpBtn"
+              >
+                Liên hệ qua Zalo
+              </a>
             </T126nReveal>
           </section>
 
