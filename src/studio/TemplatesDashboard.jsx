@@ -30,6 +30,7 @@ const customTitles = {
   'thiep-cuoi-123': 'Minimalism Xanh',
   'thiep-cuoi-124': 'Thanh Diệp Xanh',
   'thiep-cuoi-125': 'Hoa Lan Xanh Rêu',
+  'thiep-cuoi-126': 'Vườn Xuân',
 };
 
 function getPreviewImage(slug) {

@@ -321,6 +321,15 @@ export default function Template125New() {
   const reduceMotion = useReducedMotion();
 
   useEffect(() => {
+    document.documentElement.classList.add('template125new-page');
+    document.body.classList.add('template125new-page');
+    return () => {
+      document.documentElement.classList.remove('template125new-page');
+      document.body.classList.remove('template125new-page');
+    };
+  }, []);
+
+  useEffect(() => {
     return () => clearTimeout(openTimerRef.current);
   }, []);
 
@@ -725,6 +734,9 @@ export default function Template125New() {
           <T125nReveal direction="down" className="t125n-tl-title" style={{ '--len': 8 }}>
             Timeline
           </T125nReveal>
+          <span className="t125n-tl-spine" aria-hidden="true">
+            <span className="t125n-tl-spine-flow" aria-hidden="true" />
+          </span>
 
           {[
             { icon: `${a}/tl-camera.webp`, time: '17:00', label: 'Đón Khách' },
@@ -739,6 +751,7 @@ export default function Template125New() {
               className="t125n-tl-row"
             >
               <img src={item.icon} alt="" aria-hidden="true" className="t125n-tl-icon" loading="lazy" />
+              <span className="t125n-tl-dot" aria-hidden="true" />
               <div className="t125n-tl-rule" />
               <div className="t125n-tl-text">
                 {item.time}

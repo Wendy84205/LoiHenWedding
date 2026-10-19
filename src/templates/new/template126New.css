@@ -1,0 +1,696 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap");
+
+/* Font hiển thị của bìa "Vườn Xuân" — self-hosted (bản UNI Chu truyền thống). */
+@font-face {
+  font-family: "UNI Chu truyen thong";
+  src: url("/assets/new-templates/thiep-cuoi-126/fonts/uni-truyen-thong.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+html.template126new-page,
+body.template126new-page {
+  background: #22291f !important;
+  margin: 0;
+  padding: 0;
+}
+
+html.template126new-page body,
+html.template126new-page #root {
+  background: linear-gradient(to bottom right, #364131, #2c3528, #22291f) !important;
+}
+
+.t126n {
+  --t126-green-deep: #22291f;
+  --t126-green-mid: #2c3528;
+  --t126-green-soft: #364131;
+  --t126-leaf: #5d6a57;
+  --t126-leaf-line: #697a62;
+  --t126-card: #fffffff2;
+  --t126-text: #2c3528;
+
+  width: min(480px, 100vw);
+  margin: 0 auto;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  color: var(--t126-text);
+  background: var(--t126-green-deep);
+  font-family: "Lora", "Times New Roman", serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========================================================
+   BÌA — clone từ slr rules (theme vuonxuan-green)
+   ======================================================== */
+.t126n-coverOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: linear-gradient(to bottom right, #364131, #2c3528, #22291f);
+  font-family: "Lora", "Times New Roman", serif;
+  line-height: 1.6;
+}
+
+.t126n-coverOverlay--opening {
+  animation: t126n-coverZoomOut 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes t126n-coverZoomOut {
+  0% { opacity: 1; transform: scale(1); filter: blur(0); }
+  45% { opacity: 1; transform: scale(1.035); filter: blur(0); }
+  100% { opacity: 0; transform: scale(1.16); filter: blur(12px); }
+}
+
+/* Lớp 囍 trôi nổi (slr-floating-layer / slr-floating-symbol) */
+.t126n-floatLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.t126n-floatSymbol {
+  position: absolute;
+  top: auto;
+  bottom: -30px;
+  text-shadow: 0 0 8px #ffc10740;
+  will-change: transform, opacity;
+}
+
+@keyframes ambient-rise {
+  0% { opacity: 0; transform: translate(0) translateY(0); }
+  20% { opacity: 0.45; }
+  to { transform: translateX(var(--sway)) translateY(-110vh); opacity: 0; }
+}
+
+/* Lớp nội dung (slr-content-layer) */
+.t126n-contentLayer {
+  position: relative;
+  z-index: 10;
+}
+
+/* Frame — mobile 310px, 340 @640, 520 @768, 600 @1024 */
+.t126n-frame {
+  --slr-font-display: "UNI Chu truyen thong", "Baskerville", "Times New Roman", serif;
+  --slr-card-glow-rgb: 105, 122, 98;
+  --slr-open-button-shadow-rgb: 93, 106, 87;
+  --slr-guest-badge-bg: rgba(93, 106, 87, 0.1);
+  --slr-text-color: #5d6a57;
+  --slr-open-button-bg: #5d6a57;
+  --slr-open-button-text-color: #ffffff;
+
+  width: 310px;
+  position: relative;
+}
+
+/* Seal sáp — 56px, pulse vô hạn, vỡ ra khi bấm mở */
+.t126n-seal {
+  background: radial-gradient(
+    circle at 30% 30%,
+    color-mix(in srgb, var(--slr-open-button-bg) 90%, white),
+    color-mix(in srgb, var(--slr-open-button-bg) 68%, black)
+  );
+  width: 56px;
+  height: 56px;
+  box-shadow: 0 4px 20px rgba(var(--slr-open-button-shadow-rgb), 0.5),
+    inset 0 2px 4px #ffffff4d;
+  z-index: 30;
+  pointer-events: none;
+  border-radius: 9999px;
+  justify-content: center;
+  align-items: center;
+  animation: slr-ui-seal-pulse 2s ease-in-out infinite;
+  display: flex;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.t126n-seal--break {
+  animation: slr-ui-seal-break 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.t126n-sealRing {
+  border: 3px solid var(--slr-open-button-bg);
+  z-index: 29;
+  pointer-events: none;
+  border-radius: 999px;
+  width: 56px;
+  height: 56px;
+  animation: slr-ui-seal-ring 0.6s ease-out forwards;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+.t126n-sealHeart {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+}
+
+.t126n-sealHeart path {
+  fill: #fff;
+}
+
+@keyframes slr-ui-seal-pulse {
+  0%, to { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.04); }
+}
+
+@keyframes slr-ui-seal-break {
+  0% { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(0); }
+  60% { opacity: 1; filter: brightness(1.2); transform: translate(-50%, -50%) scale(1.18) rotate(15deg); }
+  to { opacity: 0; filter: brightness(2); transform: translate(-50%, -50%) scale(0) rotate(15deg); }
+}
+
+@keyframes slr-ui-seal-ring {
+  0% { opacity: 0.8; transform: translate(-50%, -50%) scale(0.8); }
+  to { opacity: 0; transform: translate(-50%, -50%) scale(2.5); }
+}
+
+/* Card + shadow */
+.t126n-cardShadow {
+  box-shadow: 0 25px 60px -12px #00000073, 0 8px 24px #0003,
+    0 0 40px rgba(var(--slr-card-glow-rgb), 0.15);
+  z-index: 10;
+  border-radius: 8px;
+  position: relative;
+}
+
+.t126n-card {
+  clip-path: inset(0 round 8px);
+  background: var(--t126-card);
+  border: 1px solid #697a6226;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.t126n-art {
+  pointer-events: none;
+  position: absolute;
+  user-select: none;
+}
+
+/* Hoa positioned theo theme vuonxuan-green */
+.t126n-flowerTop {
+  opacity: 0.7;
+  z-index: 1;
+  width: 1200px;
+  top: -100px;
+  right: -100px;
+}
+
+.t126n-flowerBottom {
+  opacity: 0.7;
+  z-index: 1;
+  width: 1200px;
+  bottom: -100px;
+  left: -100px;
+  transform: rotate(180deg);
+}
+
+/* Text block */
+.t126n-textWrap {
+  z-index: 10;
+  text-align: center;
+  padding: 112px 24px 56px;
+  position: relative;
+}
+
+.t126n-coupleName {
+  color: var(--slr-text-color);
+  font-family: var(--slr-font-display);
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 8px;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.16;
+  display: flex;
+}
+
+.t126n-coupleName span {
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
+.t126n-coupleAnd {
+  font-family: "Lora", "Times New Roman", serif;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.t126n-divider {
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.t126n-dividerFlower {
+  color: #697a62;
+  opacity: 0.7;
+  font-size: 10px;
+}
+
+.t126n-dividerLine {
+  width: 30px;
+  height: 1px;
+}
+
+.t126n-dividerLine--left {
+  background: linear-gradient(90deg, #0000, #697a62);
+}
+
+.t126n-dividerLine--right {
+  background: linear-gradient(270deg, #0000, #697a62);
+}
+
+.t126n-date {
+  color: var(--slr-text-color);
+  margin-bottom: 14px;
+  font-family: "Lora", "Times New Roman", serif;
+  font-size: 15px;
+}
+
+.t126n-invitation {
+  margin-bottom: 16px;
+}
+
+.t126n-invitationLabel {
+  color: var(--slr-text-color);
+  margin: 0 0 8px;
+  font-family: "Lora", "Times New Roman", serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.t126n-guestBadge {
+  background-color: var(--slr-guest-badge-bg);
+  border-radius: 12px;
+  margin-bottom: 8px;
+  padding: 7px 16px;
+  display: inline-block;
+}
+
+.t126n-guestBadge h2 {
+  color: var(--slr-text-color);
+  margin: 0;
+  font-family: "Lora", "Times New Roman", serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.t126n-invitationText {
+  color: var(--slr-text-color);
+  margin: 0;
+  font-family: "Lora", "Times New Roman", serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+/* Nút mở thiệp +shine */
+.t126n-openButton {
+  background-color: var(--slr-open-button-bg);
+  color: var(--slr-open-button-text-color);
+  box-shadow: 0 4px 14px rgba(var(--slr-open-button-shadow-rgb), 0.35);
+  cursor: pointer;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 30px;
+  font-family: "Lora", "Times New Roman", serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.1;
+  position: relative;
+  overflow: hidden;
+}
+
+.t126n-openButton:disabled {
+  cursor: not-allowed;
+}
+
+.t126n-openButton:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.t126n-openButtonShine {
+  pointer-events: none;
+  background: linear-gradient(90deg, #0000, #fff6, #0000);
+  width: 32px;
+  height: 100%;
+  animation: slr-ui-shine 3s ease-in-out infinite;
+  position: absolute;
+  top: 0;
+}
+
+@keyframes slr-ui-shine {
+  0% { left: -100%; }
+  50%, to { left: 100%; }
+}
+
+/* ========================================================
+   RESPONSIVE FRAME
+   ======================================================== */
+@media (min-width: 640px) {
+  .t126n-frame {
+    width: 340px;
+  }
+}
+
+@media (min-width: 768px) {
+  .t126n-frame {
+    width: 520px;
+  }
+
+  .t126n-textWrap {
+    padding-top: 96px;
+    padding-bottom: 32px;
+  }
+
+  .t126n-coupleName {
+    font-size: 32px;
+  }
+
+  .t126n-coupleAnd {
+    font-size: 16px;
+  }
+
+  .t126n-date {
+    font-size: 17px;
+  }
+
+  .t126n-invitationLabel {
+    font-size: 19px;
+  }
+
+  .t126n-guestBadge h2 {
+    font-size: 18px;
+  }
+
+  .t126n-invitationText {
+    font-size: 16px;
+  }
+
+  .t126n-openButton {
+    font-size: 19px;
+  }
+
+  .t126n-flowerTop {
+    width: 1680px;
+    top: -140px;
+    right: -140px;
+  }
+
+  .t126n-flowerBottom {
+    width: 1680px;
+    bottom: -140px;
+    left: -140px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .t126n-frame {
+    width: 600px;
+  }
+}
+
+/* ========================================================
+   VỆT SÁNG KHI MỞ (open veil)
+   ======================================================== */
+.t126n-openVeil {
+  position: fixed;
+  inset: 0;
+  z-index: 390;
+  overflow: hidden;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 50% 42%,
+    rgba(238, 244, 233, 0.96) 0%,
+    rgba(223, 232, 212, 0.78) 30%,
+    rgba(93, 106, 87, 0.34) 58%,
+    rgba(34, 41, 31, 0.22) 100%
+  );
+  animation: t126n-veilOut 1.25s ease forwards;
+}
+
+@keyframes t126n-veilOut {
+  0% { opacity: 0; }
+  18% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.t126n-openVeil-flash {
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  width: min(72vw, 360px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.35) 38%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  animation: t126n-veilFlash 0.9s ease-out forwards;
+}
+
+@keyframes t126n-veilFlash {
+  from { opacity: 0.95; transform: translate(-50%, -50%) scale(0.35); }
+  to { opacity: 0; transform: translate(-50%, -50%) scale(1.45); }
+}
+
+.t126n-openVeil-ring {
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  width: 72px;
+  height: 72px;
+  transform: translate(-50%, -50%);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  box-shadow: 0 0 34px rgba(255, 255, 255, 0.55);
+  animation: t126n-veilRing 1.05s cubic-bezier(0.16, 0.84, 0.44, 1) forwards;
+}
+
+.t126n-openVeil-ring--late {
+  animation-delay: 0.12s;
+}
+
+@keyframes t126n-veilRing {
+  from { opacity: 0.95; transform: translate(-50%, -50%) scale(0.35); }
+  to { opacity: 0; transform: translate(-50%, -50%) scale(5.2); }
+}
+
+/* ========================================================
+   THIỆP CHÍNH (sheet) — placeholder, sẽ code nốt các section
+   ======================================================== */
+.t126n-sheet {
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(48px) scale(0.985);
+  transform-origin: 50% 0%;
+  filter: blur(8px);
+}
+
+.t126n-sheet[aria-hidden="true"] {
+  display: none;
+}
+
+.t126n-sheet--entered {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+  animation: t126n-sheetSettle 1.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes t126n-sheetSettle {
+  0% { opacity: 0; transform: translateY(58px) scale(0.978); filter: blur(9px); }
+  45% { opacity: 1; transform: translateY(-8px) scale(1.004); filter: blur(0); }
+  72% { transform: translateY(4px) scale(0.999); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+.t126n-main {
+  display: block;
+  background: linear-gradient(to bottom, #2c3528 0%, #22291f 60%, #1c221a 100%);
+  color: #eef2e8;
+  min-height: 100vh;
+}
+
+.t126n-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 96px 24px 72px;
+  text-align: center;
+  background: linear-gradient(to bottom right, #364131, #2c3528);
+}
+
+.t126n-heroFlower {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.55;
+  width: 720px;
+  z-index: 0;
+}
+
+.t126n-heroFlower--top {
+  top: -80px;
+  right: -180px;
+}
+
+.t126n-heroFlower--bottom {
+  bottom: -80px;
+  left: -180px;
+  transform: rotate(180deg);
+}
+
+.t126n-heroKicker {
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  font-family: "Montserrat", "Times New Roman", serif;
+  font-size: 11px;
+  font-weight: 400;
+  color: #b9c4ac;
+  margin-bottom: 22px;
+}
+
+.t126n-heroNames {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 18px;
+  font-family: "UNI Chu truyen thong", "Baskerville", "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 1.16;
+  color: #f2f5ec;
+}
+
+.t126n-heroNames span {
+  display: block;
+}
+
+.t126n-heroNames span:nth-child(2) {
+  font-family: "Lora", "Times New Roman", serif;
+  font-size: 18px;
+  color: #a9b698;
+}
+
+.t126n-heroDate {
+  position: relative;
+  z-index: 1;
+  font-size: 16px;
+  color: #cdd6c0;
+}
+
+.t126n-cardSection {
+  padding: 56px 24px;
+}
+
+.t126n-infoCard {
+  background: #fffffff2;
+  color: var(--t126-leaf);
+  border: 1px solid #697a6226;
+  border-radius: 10px;
+  box-shadow: 0 25px 60px -12px #00000073, 0 0 40px rgba(105, 122, 98, 0.15);
+  padding: 40px 26px;
+  text-align: center;
+}
+
+.t126n-infoCard h2 {
+  margin: 0 0 12px;
+  font-family: "UNI Chu truyen thong", "Baskerville", "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 28px;
+  color: var(--t126-leaf);
+}
+
+.t126n-infoDivider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 10px;
+  color: var(--t126-leaf-line);
+  opacity: 0.85;
+  margin-bottom: 18px;
+}
+
+.t126n-infoDivider span {
+  width: 30px;
+  height: 1px;
+  background: linear-gradient(90deg, #0000, #697a62);
+}
+
+.t126n-infoDivider span:last-child {
+  background: linear-gradient(270deg, #0000, #697a62);
+}
+
+.t126n-infoDate {
+  margin: 0 0 10px;
+  font-size: 16px;
+  color: var(--t126-text);
+}
+
+.t126n-infoText {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--t126-leaf);
+}
+
+.t126n-foot {
+  padding: 28px 24px 48px;
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #93a184;
+}
+
+/* ========================================================
+   REDUCED MOTION
+   ======================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .t126n-floatSymbol,
+  .t126n-seal,
+  .t126n-sealRing,
+  .t126n-openButtonShine,
+  .t126n-coverOverlay--opening,
+  .t126n-sheet--entered,
+  .t126n-openVeil,
+  .t126n-openVeil-flash,
+  .t126n-openVeil-ring {
+    animation: none !important;
+  }
+}
