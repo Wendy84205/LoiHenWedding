@@ -281,34 +281,33 @@ export default function Template126New() {
                         <main className="t126n-main">
           {/* Hero */}
           <header className="t126n-hero">
-            <img
-              src={`${a}/flower_top.webp`}
-              alt=""
-              aria-hidden="true"
-              className="t126n-heroFlower t126n-heroFlower--top"
-            />
-            <img
-              src={`${a}/flower_paralax.webp`}
-              alt=""
-              aria-hidden="true"
-              className="t126n-heroFlower t126n-heroFlower--bottom"
-            />
             <T126nReveal direction="fade" className="t126n-heroKicker">
-              Lời mời chung vui
+              Chúng tôi sẽ kết hôn
             </T126nReveal>
-            <h1 className="t126n-heroNames">
-              <T126nReveal as="span" direction="left" delay={0.1}>
-                {BRIDE_SHORT}
-              </T126nReveal>
-              <T126nReveal as="span" direction="fade" delay={0.25}>
-                &amp;
-              </T126nReveal>
-              <T126nReveal as="span" direction="right" delay={0.4}>
-                {GROOM_SHORT}
-              </T126nReveal>
-            </h1>
-            <div className="t126n-heroDivider">❦</div>
-            <T126nReveal direction="up" delay={0.55} className="t126n-heroDate">
+            <div className="t126n-envelope">
+              <img
+                src={`${a}/flower_top.webp`}
+                alt=""
+                aria-hidden="true"
+                className="t126n-envPhoto t126n-envPhoto--left"
+              />
+              <img
+                src={`${a}/flower_paralax.webp`}
+                alt=""
+                aria-hidden="true"
+                className="t126n-envPhoto t126n-envPhoto--right"
+              />
+              <div className="t126n-cardInside">
+                <div className="t126n-cardText">Chúng tôi sẽ kết hôn!</div>
+                <div className="t126n-cardSub">Celebrate with us</div>
+                <div className="t126n-cardHeart">❤</div>
+              </div>
+              <div className="t126n-sealBadge">M</div>
+            </div>
+            <T126nReveal as="h1" direction="up" className="t126n-heroNames" delay={0.35}>
+              {BRIDE_SHORT} &amp; {GROOM_SHORT}
+            </T126nReveal>
+            <T126nReveal direction="up" className="t126n-heroDate" delay={0.55}>
               {EVENT_DATE_TEXT}
             </T126nReveal>
           </header>

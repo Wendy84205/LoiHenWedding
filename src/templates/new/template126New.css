@@ -9,6 +9,96 @@
   font-display: swap;
 }
 
+/* Hero — envelope (mẫu thiệp chính, theo ngày chung doi) */
+.t126n-hero {
+  text-align: center;
+  padding: 20px 14px 12px;
+}
+.t126n-heroKicker {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #5d6a57;
+  margin: 0 0 14px;
+  display: block;
+}
+.t126n-envelope {
+  position: relative;
+  max-width: 300px;
+  margin: 0 auto 22px;
+  perspective: 1000px;
+}
+.t126n-envPhoto {
+  position: absolute;
+  width: 150px;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  opacity: 0.92;
+}
+.t126n-envPhoto--left { top: 0; left: -10px; transform: rotate(-6deg); z-index: 2; }
+.t126n-envPhoto--right { top: 4px; right: -10px; transform: rotate(6deg); z-index: 2; }
+.t126n-cardInside {
+  position: relative;
+  z-index: 3;
+  background: #f5f7f1;
+  border-radius: 10px;
+  padding: 20px 16px 26px;
+  margin: 0 18px;
+  box-shadow: 0 12px 34px rgba(0,0,0,0.4);
+}
+.t126n-cardText {
+  font-family: "UNI Chu truyen thong", serif;
+  font-size: 17px;
+  color: #2c3528;
+  margin: 0 0 6px;
+  line-height: 1.25;
+}
+.t126n-cardSub {
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #697a62;
+  margin: 0 0 10px;
+}
+.t126n-cardHeart {
+  font-size: 20px;
+  color: #b24a3c;
+  display: inline-block;
+}
+.t126n-sealBadge {
+  position: absolute;
+  left: 50%;
+  bottom: -22px;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #7a8e72, #2c3528);
+  color: #f2f5ec;
+  font-family: "UNI Chu truyen thong", serif;
+  font-size: 20px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.45);
+  border: 2px solid #f2f5ec;
+}
+.t126n-heroNames {
+  font-family: "UNI Chu truyen thong", serif;
+  font-size: 26px;
+  color: #2c3528;
+  margin: 8px 0 4px;
+  letter-spacing: 0.02em;
+}
+.t126n-heroDate {
+  font-family: "Lora", serif;
+  font-size: 17px;
+  color: #465242;
+  margin: 0;
+}
 html.template126new-page,
 body.template126new-page {
   background: #22291f !important;
