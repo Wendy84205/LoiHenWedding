@@ -19,7 +19,7 @@ const templateRegistry = {
   'thiep-cuoi-123': lazy(() => import('./templates/new/Template123New.jsx')),
   'thiep-cuoi-124': lazy(() => import('./templates/new/Template124New.jsx')),
   'thiep-cuoi-125': lazy(() => import('./templates/new/Template125New.jsx')),
-  'thiep-cuoi-126': lazy(() => import('./templates/new/Template126New.jsx')),
+  'thiep-cuoi-127': lazy(() => import('./templates/new/Template127New.jsx')),
 };
 
 const pageTitles = {

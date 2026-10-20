@@ -1,0 +1,515 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&family=Great+Vibes&display=swap");
+
+/* Font hiển thị của bìa "Thảo Đài" — self-hosted (UNI Chu truyền thống). */
+@font-face {
+  font-family: "UNI Chu truyen thong";
+  src: url("/assets/new-templates/thiep-cuoi-127/fonts/uni-truyen-thong.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+html.template127new-page,
+body.template127new-page {
+  background: #efe9df !important;
+  margin: 0;
+  padding: 0;
+}
+
+.t127n {
+  --t127-cream: #efe9df;
+  --t127-paper: #faf6ef;
+  --t127-sage: #7a8b6f;
+  --t127-sage-deep: #5c6b53;
+  --t127-ink: #3b4238;
+  --t127-mute: #8a8578;
+
+  width: min(480px, 100vw);
+  margin: 0 auto;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  color: var(--t127-ink);
+  background: var(--t127-cream);
+  font-family: "Lora", "Times New Roman", serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ====== BÌA ====== */
+.t127n-coverOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: radial-gradient(circle at 50% 32%, #f6f1e8, #ece4d6 55%, #ddd3c0);
+  font-family: "Lora", "Times New Roman", serif;
+  line-height: 1.6;
+}
+
+.t127n-coverOverlay--opening {
+  animation: t127n-coverZoomOut 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes t127n-coverZoomOut {
+  0% { opacity: 1; transform: scale(1); filter: blur(0); }
+  45% { opacity: 1; transform: scale(1.03); filter: blur(0); }
+  100% { opacity: 0; transform: scale(1.14); filter: blur(10px); }
+}
+
+.t127n-contentLayer {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding: 26px 18px;
+}
+
+.t127n-coverCard {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+  padding: 40px 26px 44px;
+  border-radius: 22px;
+  background: var(--t127-paper);
+  box-shadow: 0 30px 70px rgba(60, 66, 56, 0.28), 0 2px 0 rgba(255,255,255,0.6) inset;
+  text-align: center;
+  overflow: hidden;
+}
+
+.t127n-coverFlower {
+  position: absolute;
+  width: 130px;
+  height: auto;
+  opacity: 0.85;
+  pointer-events: none;
+  object-fit: contain;
+}
+.t127n-coverFlower--top { top: -26px; right: -22px; transform: rotate(24deg); }
+.t127n-coverFlower--bottom { bottom: -30px; left: -26px; transform: rotate(-16deg); }
+
+.t127n-coverKicker {
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--t127-sage);
+  margin: 0 0 6px;
+}
+
+.t127n-coverTogether {
+  font-family: "Great Vibes", cursive;
+  font-size: 30px;
+  color: var(--t127-sage-deep);
+  margin: 0 0 10px;
+  line-height: 1.1;
+}
+
+.t127n-coverNames {
+  font-family: "UNI Chu truyen thong", "Baskerville", serif;
+  font-size: 30px;
+  font-weight: 400;
+  color: var(--t127-ink);
+  margin: 0 0 12px;
+  line-height: 1.25;
+}
+.t127n-coverNames span { color: var(--t127-sage); }
+
+.t127n-coverGuest {
+  font-family: "Lora", serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--t127-mute);
+  margin: 0 0 22px;
+  padding: 0 10px;
+}
+
+.t127n-seal {
+  position: relative;
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: radial-gradient(circle at 32% 30%, #9fb28f, #5c6b53 70%, #43503b);
+  color: #f4f1e9;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  box-shadow: 0 12px 26px rgba(60, 66, 56, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+}
+.t127n-seal:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 16px 30px rgba(60, 66, 56, 0.46); }
+.t127n-seal:disabled { cursor: default; }
+.t127n-sealHeart { font-size: 26px; line-height: 1; }
+.t127n-sealHint { font-family: "Montserrat", sans-serif; font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.85; }
+.t127n-sealRing {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid rgba(122, 139, 111, 0.5);
+  animation: t127n-sealPulse 2.4s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes t127n-sealPulse {
+  0% { transform: scale(0.92); opacity: 0.7; }
+  70% { transform: scale(1.18); opacity: 0; }
+  100% { opacity: 0; }
+}
+.t127n-seal--break { animation: t127n-sealBreak 0.6s ease forwards; }
+@keyframes t127n-sealBreak {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.6); opacity: 0; }
+
+/* ====== THIỆP CHÍNH (sheet) ====== */
+.t127n-sheet {
+  opacity: 0;
+  transform: translateY(24px);
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f6f1e8, var(--t127-cream));
+}
+.t127n-sheet--entered { opacity: 1; transform: translateY(0); }
+
+.t127n-main { position: relative; z-index: 1; padding: 0 0 40px; }
+
+/* Hero */
+.t127n-hero { text-align: center; padding: 54px 22px 30px; }
+.t127n-heroTogether {
+  font-family: "Great Vibes", cursive;
+  font-size: 34px;
+  color: var(--t127-sage-deep);
+  margin: 0 0 6px;
+  line-height: 1.1;
+}
+.t127n-heroNames {
+  font-family: "UNI Chu truyen thong", "Baskerville", serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--t127-ink);
+  margin: 0 0 26px;
+  line-height: 1.25;
+}
+.t127n-heroNames span { color: var(--t127-sage); }
+
+.t127n-couple {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 420px;
+  margin: 0 auto;
+}
+.t127n-coupleItem {
+  background: var(--t127-paper);
+  border-radius: 16px;
+  padding: 20px 18px;
+  box-shadow: 0 8px 24px rgba(60, 66, 56, 0.08);
+}
+.t127n-coupleRole {
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--t127-sage);
+  margin: 0 0 6px;
+}
+.t127n-coupleName {
+  font-family: "UNI Chu truyen thong", serif;
+  font-size: 22px;
+  color: var(--t127-ink);
+  margin: 0 0 8px;
+}
+.t127n-coupleQuote {
+  font-family: "Lora", serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--t127-mute);
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* Countdown */
+.t127n-countdown { text-align: center; padding: 12px 22px 34px; }
+.t127n-countdownTitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--t127-sage);
+  margin: 0 0 16px;
+}
+.t127n-countdownGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  max-width: 360px;
+  margin: 0 auto 14px;
+}
+.t127n-countCell {
+  background: var(--t127-paper);
+  border-radius: 14px;
+  padding: 14px 6px 10px;
+  box-shadow: 0 6px 18px rgba(60, 66, 56, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.t127n-countValue {
+  font-family: "UNI Chu truyen thong", serif;
+  font-size: 24px;
+  color: var(--t127-sage-deep);
+  line-height: 1;
+}
+.t127n-countLabel {
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--t127-mute);
+}
+.t127n-countdownNote {
+  font-family: "Lora", serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--t127-ink);
+  margin: 0;
+}
+
+/* Section chung */
+.t127n-section { padding: 26px 22px; }
+.t127n-sectionHead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 18px;
+}
+.t127n-sectionTitle {
+  font-family: "UNI Chu truyen thong", serif;
+  font-size: 20px;
+  color: var(--t127-ink);
+  white-space: nowrap;
+}
+.t127n-sectionRule {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--t127-sage), transparent);
+  opacity: 0.5;
+}
+
+/* Lễ vu quy */
+.t127n-familyGrid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-bottom: 18px; }
+.t127n-familyCard {
+  background: var(--t127-paper);
+  border-radius: 14px;
+  padding: 16px 16px;
+  box-shadow: 0 6px 18px rgba(60, 66, 56, 0.07);
+  text-align: center;
+}
+.t127n-familyRole {
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--t127-sage);
+  margin: 0 0 6px;
+}
+.t127n-familyHost { font-family: "Lora", serif; font-size: 15px; color: var(--t127-ink); margin: 0 0 4px; }
+.t127n-familyAddr { font-family: "Lora", serif; font-size: 13px; color: var(--t127-mute); margin: 0; }
+
+.t127n-announce {
+  text-align: center;
+  border-top: 1px dashed rgba(122, 139, 111, 0.4);
+  border-bottom: 1px dashed rgba(122, 139, 111, 0.4);
+  padding: 16px 6px;
+}
+.t127n-announceHead {
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--t127-sage);
+  margin: 0 0 8px;
+}
+.t127n-announceCouple {
+  font-family: "UNI Chu truyen thong", serif;
+  font-size: 18px;
+  color: var(--t127-ink);
+  margin: 0 0 8px;
+}
+.t127n-announceTime { font-family: "Lora", serif; font-size: 13px; color: var(--t127-mute); margin: 0; line-height: 1.6; }
+
+
+/* Album */
+.t127n-albumGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.t127n-albumItem {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  aspect-ratio: 4 / 5;
+  box-shadow: 0 8px 22px rgba(60, 66, 56, 0.12);
+}
+.t127n-albumImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.t127n-albumItem:hover .t127n-albumImg { transform: scale(1.05); }
+
+/* Tiệc cưới */
+.t127n-partyTimeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.t127n-partyTimeCell {
+  background: var(--t127-paper);
+  border-radius: 14px;
+  padding: 16px 10px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(60, 66, 56, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.t127n-partyTimeLabel {
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--t127-sage);
+}
+.t127n-partyTimeValue {
+  font-family: "UNI Chu truyen thong", serif;
+  font-size: 26px;
+  color: var(--t127-sage-deep);
+  line-height: 1;
+}
+.t127n-partyVenue { text-align: center; }
+.t127n-partyVenueLabel {
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--t127-sage);
+  margin: 0 0 6px;
+}
+.t127n-partyVenueAddr { font-family: "Lora", serif; font-size: 14px; color: var(--t127-ink); margin: 0; line-height: 1.6; }
+
+/* Lịch trình */
+.t127n-timelineDay {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--t127-sage-deep);
+  margin: 14px 0 10px;
+  padding-left: 2px;
+}
+.t127n-timelineItem {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 8px 0 8px 6px;
+  border-left: 2px solid rgba(122, 139, 111, 0.4);
+  margin-left: 6px;
+  padding-left: 16px;
+  position: relative;
+}
+.t127n-timelineItem::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 14px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--t127-sage);
+}
+.t127n-timelineTime {
+  font-family: "UNI Chu truyen thong", serif;
+  font-size: 18px;
+  color: var(--t127-sage-deep);
+  min-width: 56px;
+}
+.t127n-timelineDesc { font-family: "Lora", serif; font-size: 14px; color: var(--t127-ink); flex: 1; }
+
+/* RSVP + Guestbook */
+.t127n-rsvpText, .t127n-guestbookText {
+  font-family: "Lora", serif;
+  font-size: 14px;
+  color: var(--t127-mute);
+  margin: 0 0 18px;
+  line-height: 1.65;
+}
+.t127n-rsvpBtns { display: flex; flex-wrap: wrap; gap: 12px; }
+.t127n-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 12px 22px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+.t127n-btn--primary { background: var(--t127-sage); color: #fff; border: 1px solid var(--t127-sage); }
+.t127n-btn--primary:hover { background: var(--t127-sage-deep); border-color: var(--t127-sage-deep); }
+.t127n-btn--ghost { background: transparent; color: var(--t127-sage-deep); border: 1px solid var(--t127-sage); }
+.t127n-btn--ghost:hover { background: rgba(122, 139, 111, 0.1); }
+.t127n-btn:active { transform: scale(0.97); }
+
+/* Footer */
+.t127n-foot {
+  text-align: center;
+  padding: 34px 26px 40px;
+  background: linear-gradient(to bottom, transparent, rgba(122, 139, 111, 0.12));
+}
+.t127n-footThanks {
+  font-family: "Lora", serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--t127-mute);
+  max-width: 380px;
+  margin: 0 auto 20px;
+  line-height: 1.7;
+}
+.t127n-footNames {
+  font-family: "UNI Chu truyen thong", serif;
+  font-size: 22px;
+  color: var(--t127-ink);
+  margin: 0 0 4px;
+}
+.t127n-footDate {
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--t127-sage);
+  margin: 0;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (min-width: 640px) {
+  .t127n-couple { grid-template-columns: 1fr 1fr; max-width: 480px; }
+  .t127n-familyGrid { grid-template-columns: 1fr 1fr; max-width: 480px; margin: 0 auto 18px; }
+  .t127n-countdownGrid { max-width: 420px; }
+}
+
+}
